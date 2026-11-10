@@ -20,4 +20,15 @@ export default defineConfig({
       { hostname: 'localhost', protocol: 'http' },
     ],
   },
+  // Alte deutsche URLs (ohne /de/-Präfix) auf die neue Struktur umleiten.
+  redirects: {
+    '/pakete': '/de/pakete',
+    '/pakete/[slug]': '/de/pakete/[slug]',
+    '/kontakt': '/de/kontakt',
+    '/kontakt/danke': '/de/kontakt/danke',
+    '/ueber-uns': '/de/ueber-uns',
+    '/impressum': '/de/impressum',
+    '/datenschutz': '/de/datenschutz',
+    '/agb': '/de/agb',
+  },
 });

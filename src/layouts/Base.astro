@@ -7,7 +7,15 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../content/site';
 import type { Locale } from '../content/packages';
-import { path, other, ui, type RouteKey } from '../lib/i18n';
+import {
+  path,
+  otherLocales,
+  ui,
+  locales,
+  localeConfig,
+  langStorageKey,
+  type RouteKey,
+} from '../lib/i18n';
 
 interface Props {
   lang: Locale;
@@ -16,20 +24,35 @@ interface Props {
   routeKey: RouteKey;
   slug?: string;
   image?: string;
-  /** z. B. 404 ohne sinnvolle Alternative */
+  /** z. B. 404 ohne sinnvolle alternative URL je Sprache */
   altHref?: string;
+  /** Sprache in localStorage merken (Standard: ja; nicht auf der 404) */
+  persistLang?: boolean;
 }
-const { lang, title, description, routeKey, slug, image, altHref: altOverride } = Astro.props;
-const o = other(lang);
+const {
+  lang,
+  title,
+  description,
+  routeKey,
+  slug,
+  image,
+  altHref: altOverride,
+  persistLang = true,
+} = Astro.props;
 const selfPath = path(routeKey, lang, slug);
-const altHref = altOverride ?? path(routeKey, o, slug);
+const alternates = otherLocales(lang).map((l) => ({
+  lang: l,
+  href: altOverride ?? path(routeKey, l, slug),
+}));
 const fullTitle = title ? `${title} · ${site.name}` : `${site.name} – ${site.tagline[lang]}`;
 const desc = description ?? site.description[lang];
 const ogImage = new URL(image ?? '/og-studio-breve.jpg', site.url).href;
 const canonical = new URL(selfPath, site.url).href;
+const xDefault = new URL('/', site.url).href;
+const meta = localeConfig[lang];
 ---
 <!doctype html>
-<html lang={lang}>
+<html lang={meta.htmlLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,9 +61,10 @@ const canonical = new URL(selfPath, site.url).href;
     <!-- Entwurf: keine Indexierung bis zum offiziellen Start -->
     <meta name="robots" content="noindex, nofollow" />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang={lang} href={canonical} />
-    {!altOverride && <link rel="alternate" hreflang={o} href={new URL(altHref, site.url).href} />}
-    {!altOverride && <link rel="alternate" hreflang="x-default" href={new URL(path(routeKey, 'de', slug), site.url).href} />}
+    {!altOverride && locales.map((l) => (
+      <link rel="alternate" hreflang={l} href={new URL(path(routeKey, l, slug), site.url).href} />
+    ))}
+    {!altOverride && <link rel="alternate" hreflang="x-default" href={xDefault} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#F6F1E8" />
     <meta property="og:type" content="website" />
@@ -49,16 +73,23 @@ const canonical = new URL(selfPath, site.url).href;
     <meta property="og:description" content={desc} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'it_IT'} />
-    <meta property="og:locale:alternate" content={lang === 'de' ? 'it_IT' : 'de_DE'} />
+    <meta property="og:locale" content={meta.ogLocale} />
+    {otherLocales(lang).map((l) => (
+      <meta property="og:locale:alternate" content={localeConfig[l].ogLocale} />
+    ))}
     <meta name="twitter:card" content="summary_large_image" />
+    {persistLang && (
+      <script is:inline define:vars={{ lang, langStorageKey }}>
+        try { localStorage.setItem(langStorageKey, lang); } catch {}
+      </script>
+    )}
   </head>
   <body>
     <a class="skip-link" href="#inhalt">{ui[lang].skip}</a>
-    <Header lang={lang} routeKey={routeKey} altHref={altHref} />
+    <Header lang={lang} routeKey={routeKey} alternates={alternates} />
     <main id="inhalt" tabindex="-1">
       <slot />
     </main>
-    <Footer lang={lang} altHref={altHref} />
+    <Footer lang={lang} alternates={alternates} />
   </body>
 </html>

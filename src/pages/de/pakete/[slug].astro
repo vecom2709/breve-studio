@@ -1,6 +1,6 @@
 ---
-import View from '../../views/PackageDetail.astro';
-import { packages, type Package } from '../../content/packages';
+import View from '../../../views/PackageDetail.astro';
+import { packages, type Package } from '../../../content/packages';
 export function getStaticPaths() {
   return packages.map((pkg) => ({ params: { slug: pkg.slug }, props: { pkg } }));
 }

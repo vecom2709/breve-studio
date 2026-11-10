@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { path } from '../lib/i18n';
 ---
-<Base lang="de" routeKey="home" title="Seite nicht gefunden" altHref="/it/">
+<Base lang="de" routeKey="home" title="Seite nicht gefunden" altHref={path('home', 'it')} persistLang={false}>
   <section class="wrap nf">
     <p class="eyebrow">404</p>
     <h1>Diese Seite gibt es nicht <em class="accent">– oder nicht mehr.</em></h1>

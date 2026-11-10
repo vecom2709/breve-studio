@@ -1,11 +1,14 @@
 ---
 import Wordmark from './Wordmark.astro';
 import type { Locale } from '../content/packages';
-import { path, ui, other, type RouteKey } from '../lib/i18n';
-interface Props { lang: Locale; routeKey: RouteKey; altHref: string }
-const { lang, routeKey, altHref } = Astro.props;
+import { path, ui, switchToLabel, type RouteKey } from '../lib/i18n';
+interface Props {
+  lang: Locale;
+  routeKey: RouteKey;
+  alternates: { lang: Locale; href: string }[];
+}
+const { lang, routeKey, alternates } = Astro.props;
 const t = ui[lang];
-const o = other(lang);
 const items: { key: RouteKey; label: string }[] = [
   { key: 'packages', label: t.nav.packages },
   { key: 'about', label: t.nav.about },
@@ -23,8 +26,10 @@ const isCurrent = (k: RouteKey) => k === routeKey || (k === 'packages' && routeK
         ))}
       </ul>
       <div class="lang" role="group" aria-label={lang === 'de' ? 'Sprache' : 'Lingua'}>
-        <span class="lang-cur" aria-current="true" title={t.langName}>{t.langShort}</span>
-        <a href={altHref} hreflang={o} lang={o} title={t.switchTo}>{ui[o].langShort}<span class="visually-hidden"> – {ui[o].langName}</span></a>
+        <span class="lang-cur" aria-current="true" aria-label={t.langName} title={t.langName}>{t.langShort}</span>
+        {alternates.map((a) => (
+          <a href={a.href} hreflang={a.lang} lang={a.lang} aria-label={switchToLabel(lang, a.lang)} title={switchToLabel(lang, a.lang)}>{ui[a.lang].langShort}</a>
+        ))}
       </div>
     </nav>
     <details class="nav-mobile">
@@ -36,7 +41,9 @@ const isCurrent = (k: RouteKey) => k === routeKey || (k === 'packages' && routeK
             <li><a href={path(i.key, lang)} aria-current={isCurrent(i.key) ? 'page' : undefined}>{i.label}</a></li>
           ))}
         </ul>
-        <a class="lang-m" href={altHref} hreflang={o} lang={o}>{ui[o].langName}</a>
+        {alternates.map((a) => (
+          <a class="lang-m" href={a.href} hreflang={a.lang} lang={a.lang} aria-label={switchToLabel(lang, a.lang)}>{ui[a.lang].langName}</a>
+        ))}
       </div>
     </details>
   </div>
@@ -52,7 +59,7 @@ const isCurrent = (k: RouteKey) => k === routeKey || (k === 'packages' && routeK
   .lang { display: flex; align-items: center; border: 1px solid var(--line-strong); border-radius: 999px; padding: 2px; font-size: var(--step--1); font-weight: 600; letter-spacing: 0.04em; }
   .lang > * { padding: 0.25rem 0.65rem; border-radius: 999px; line-height: 1.2; border: 0 !important; }
   .lang-cur { background: var(--ink); color: var(--paper); }
-  .lang a { color: var(--ink-2); }
+  .lang a { color: var(--ink-2); text-decoration: none; }
   .lang a:hover { color: var(--petrol); }
   .nav-mobile summary { list-style: none; cursor: pointer; font-weight: 600; padding: 0.55rem 0.95rem; border: 1px solid var(--line-strong); border-radius: 999px; font-size: var(--step--1); letter-spacing: .03em; }
   .nav-mobile summary::-webkit-details-marker { display: none; }
@@ -63,7 +70,7 @@ const isCurrent = (k: RouteKey) => k === routeKey || (k === 'packages' && routeK
   .sheet ul { list-style: none; margin: 0; padding: 0; }
   .sheet li a { display: block; padding: 0.85rem 0; border-bottom: 1px solid var(--line); text-decoration: none; font-family: var(--serif); font-size: var(--step-2); }
   .sheet a[aria-current='page'] { color: var(--petrol); }
-  .lang-m { display: inline-block; margin-top: 1rem; font-weight: 600; color: var(--petrol); }
+  .lang-m { display: inline-block; margin-top: 1rem; margin-right: 1rem; font-weight: 600; color: var(--petrol); }
   @media (min-width: 52rem) {
     .nav-desktop { display: flex; }
     .nav-mobile { display: none; }

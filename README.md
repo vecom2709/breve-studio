@@ -24,19 +24,27 @@ Die laufende Vorschau (URL und Prozess-ID) steht in `PREVIEW.txt`. Beenden: `kil
 - Schriften lokal eingebunden über `@fontsource-variable`: **Fraunces** (Überschriften) und **Source Sans 3** (Text), beide SIL Open Font License 1.1. Keine Google Fonts, keine CDN.
 - Keine Cookies, kein Tracking, keine externen Skripte, keine bezahlten APIs.
 
-## Seiten
+## Sprachen und Seiten
+
+Die Website hat zwei länderbezogene Fassungen, jeweils mit eigenem Präfix und lokalisierten Pfaden:
+
+- `/de/…` – Deutsch (Deutschland, Österreich, Schweiz)
+- `/it/…` – Italiano (Italia)
+
+Die Wurzel `/` ist eine kleine Sprachwahl. Ein kurzes Skript darf nur dann automatisch weiterleiten (navigator.language), wenn noch keine Wahl in `localStorage` gespeichert ist. Es setzt keine Cookies und keine Tracker. Die Links bleiben ohne JavaScript sichtbar. Alte deutsche URLs ohne `/de/`-Präfix (z. B. `/pakete/`) leiten auf die neuen Pfade um.
 
 | Deutsch | Italienisch |
 |---|---|
-| `/` | `/it/` |
-| `/pakete/` (Katalog mit Kategorie-Filter, `?k=<kategorie>`) | `/it/pacchetti/` |
-| `/pakete/<slug>/` | `/it/pacchetti/<slug>/` |
-| `/ueber-uns/` | `/it/chi-siamo/` |
-| `/kontakt/` (Formular, `?paket=<slug>` wählt ein Paket vor) | `/it/contatti/` |
-| `/kontakt/danke/?ref=…` (serverseitig) | `/it/contatti/grazie/?ref=…` |
-| `/impressum/` | `/it/note-legali/` |
-| `/datenschutz/` | `/it/privacy/` |
-| `/agb/` | `/it/condizioni/` |
+| `/` (Sprachwahl) | `/` (scelta della lingua) |
+| `/de/` | `/it/` |
+| `/de/pakete/` (Katalog mit Kategorie-Filter, `?k=<kategorie>`) | `/it/pacchetti/` |
+| `/de/pakete/<slug>/` | `/it/pacchetti/<slug>/` |
+| `/de/ueber-uns/` | `/it/chi-siamo/` |
+| `/de/kontakt/` (Formular, `?paket=<slug>` wählt ein Paket vor) | `/it/contatti/` |
+| `/de/kontakt/danke/?ref=…` (serverseitig) | `/it/contatti/grazie/?ref=…` |
+| `/de/impressum/` | `/it/note-legali/` |
+| `/de/datenschutz/` | `/it/privacy/` |
+| `/de/agb/` | `/it/condizioni/` |
 | `404` (zweisprachig) | |
 
 ## Ein neues Paket hinzufügen
@@ -45,7 +53,7 @@ Alle Paketinhalte stehen in **einer Datei**: `src/content/packages.ts`. Katalog,
 
 1. Optional ein Bild (16:9, z. B. 1024×576) nach `public/images/packages/` legen.
 2. Im Array `packages` ein Objekt ergänzen. Pflichtfelder prüft TypeScript beim `npm run build`.
-3. `npm run build` – fertig. Die Seiten `/pakete/<slug>/` und `/it/pacchetti/<slug>/` entstehen automatisch.
+3. `npm run build` – fertig. Die Seiten `/de/pakete/<slug>/` und `/it/pacchetti/<slug>/` entstehen automatisch.
 
 Minimalbeispiel:
 
@@ -90,7 +98,7 @@ Es ist **kein** Zahlungsanbieter angebunden. Das Feld `checkout` im Pakettyp ist
 
 ## Anfragen (Formular)
 
-- Formular auf `/kontakt/`, `/it/contatti/` und auf jeder Paketseite. Felder: Name, E-Mail, bevorzugte Sprache, Paket (optional), Nachricht, Pflicht-Einwilligung, optionale Werbe-Einwilligung.
+- Formular auf `/de/kontakt/`, `/it/contatti/` und auf jeder Paketseite. Felder: Name, E-Mail, bevorzugte Sprache, Paket (optional), Nachricht, Pflicht-Einwilligung, optionale Werbe-Einwilligung.
 - Absenden schreibt **nur lokal** in `data/inquiries.json` (JSON-Array, atomar geschrieben). Pfad änderbar über die Umgebungsvariable `INQUIRIES_FILE`.
 - Es wird **keine E-Mail** versendet und nichts an Dritte übertragen. IP-Adressen werden nicht gespeichert.
 - Funktioniert mit und ohne JavaScript. Die Danke-Seite liest den gespeicherten Eintrag über die Vorgangsnummer (`SB-JJJJMMTT-XXXXXX`) aus der Datei – sie zeigt nur Erfolg, wenn wirklich gespeichert wurde.

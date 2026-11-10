@@ -2,11 +2,10 @@
 import Wordmark from './Wordmark.astro';
 import { site } from '../content/site';
 import { categories, type Locale } from '../content/packages';
-import { path, ui, other } from '../lib/i18n';
-interface Props { lang: Locale; altHref: string }
-const { lang, altHref } = Astro.props;
+import { path, ui, chooserHref } from '../lib/i18n';
+interface Props { lang: Locale; alternates: { lang: Locale; href: string }[] }
+const { lang, alternates } = Astro.props;
 const t = ui[lang];
-const o = other(lang);
 const op = site.operator;
 ---
 <footer class="site-footer">
@@ -48,7 +47,10 @@ const op = site.operator;
         <p class="h">{lang === 'de' ? 'Sprache' : 'Lingua'}</p>
         <ul>
           <li><span aria-current="true" class="cur">{t.langName}</span></li>
-          <li><a href={altHref} hreflang={o} lang={o}>{ui[o].langName}</a></li>
+          {alternates.map((a) => (
+            <li><a href={a.href} hreflang={a.lang} lang={a.lang}>{ui[a.lang].langName}</a></li>
+          ))}
+          <li><a href={chooserHref}>{t.chooseLanguage}</a></li>
         </ul>
         <p class="small muted note">{lang === 'de'
           ? 'Diese Website setzt keine Cookies und nutzt keine Analyse- oder Tracking-Dienste.'

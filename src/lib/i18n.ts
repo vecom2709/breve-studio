@@ -1,34 +1,76 @@
 import type { Locale, Price, PackageStatus, CtaType, L10n } from '../content/packages';
 
-export const locales: Locale[] = ['de', 'it'];
+/**
+ * Sprachen der Website. Eine weitere Sprache (z. B. Englisch) später so ergänzen:
+ * 1. `Locale` in `src/content/packages.ts` erweitern,
+ * 2. hier einen Eintrag in `locales`, `localeConfig` und `ui` anlegen,
+ * 3. alle `L10n`-Felder in `packages.ts` und `site.ts` ergänzen,
+ * 4. Seitenordner unter `src/pages/<code>/` mit lokalisierten Slugs anlegen.
+ * Keine Sprache hier erfinden, die noch keine Übersetzung hat.
+ */
+export const locales = ['de', 'it'] as const satisfies readonly Locale[];
 export const defaultLocale: Locale = 'de';
+
+export const langStorageKey = 'studio-breve-lang';
+export const chooserPath = '/';
+export const chooserQuery = 'wahl=1';
+export const chooserHref = `${chooserPath}?${chooserQuery}`;
+
+export const localeConfig: Record<Locale, {
+  /** URL-Präfix mit führendem Slash, ohne trailing Slash am Ende des Codes selbst – Home ist prefix + '/' */
+  prefix: string;
+  htmlLang: string;
+  ogLocale: string;
+  regions: string;
+}> = {
+  de: { prefix: '/de', htmlLang: 'de', ogLocale: 'de_DE', regions: 'Deutschland · Österreich · Schweiz' },
+  it: { prefix: '/it', htmlLang: 'it', ogLocale: 'it_IT', regions: 'Italia' },
+};
 
 export type RouteKey =
   | 'home' | 'packages' | 'package' | 'about' | 'contact' | 'thanks'
   | 'imprint' | 'privacy' | 'terms';
 
-const routes: Record<RouteKey, L10n> = {
-  home: { de: '/', it: '/it/' },
-  packages: { de: '/pakete/', it: '/it/pacchetti/' },
-  package: { de: '/pakete/:slug/', it: '/it/pacchetti/:slug/' },
-  about: { de: '/ueber-uns/', it: '/it/chi-siamo/' },
-  contact: { de: '/kontakt/', it: '/it/contatti/' },
-  thanks: { de: '/kontakt/danke/', it: '/it/contatti/grazie/' },
-  imprint: { de: '/impressum/', it: '/it/note-legali/' },
-  privacy: { de: '/datenschutz/', it: '/it/privacy/' },
-  terms: { de: '/agb/', it: '/it/condizioni/' },
+/** Pfade relativ zum Sprachpräfix, jeweils mit führendem und abschließendem Slash. */
+const routeStems: Record<RouteKey, L10n> = {
+  home: { de: '/', it: '/' },
+  packages: { de: '/pakete/', it: '/pacchetti/' },
+  package: { de: '/pakete/:slug/', it: '/pacchetti/:slug/' },
+  about: { de: '/ueber-uns/', it: '/chi-siamo/' },
+  contact: { de: '/kontakt/', it: '/contatti/' },
+  thanks: { de: '/kontakt/danke/', it: '/contatti/grazie/' },
+  imprint: { de: '/impressum/', it: '/note-legali/' },
+  privacy: { de: '/datenschutz/', it: '/privacy/' },
+  terms: { de: '/agb/', it: '/condizioni/' },
 };
 
 export const path = (key: RouteKey, lang: Locale, slug?: string) =>
-  routes[key][lang].replace(':slug', slug ?? '');
+  localeConfig[lang].prefix + routeStems[key][lang].replace(':slug', slug ?? '');
 
-export const other = (lang: Locale): Locale => (lang === 'de' ? 'it' : 'de');
+export const isLocale = (value: string): value is Locale =>
+  (locales as readonly string[]).includes(value);
+
+export const otherLocales = (lang: Locale): Locale[] =>
+  locales.filter((item): item is Locale => item !== lang);
+
+export const other = (lang: Locale): Locale => otherLocales(lang)[0] ?? lang;
+
+/** Texte der zweisprachigen Sprachwahl auf `/`. */
+export const chooserCopy = {
+  title: 'Sprache wählen / Scegli la lingua',
+  description: 'Studio Breve – klare digitale Pakete für Betriebe. Bitte Sprache wählen. / Pacchetti digitali chiari per la tua attività. Scegli la lingua.',
+  leadDe: 'Bitte wählen Sie die Fassung für Ihre Region.',
+  leadIt: 'Scegli la versione per il tuo Paese.',
+  draftDe: 'Entwurf, nicht veröffentlicht. Diese Seite setzt keine Cookies und keine Tracker.',
+  draftIt: 'Bozza, non pubblicata. Questo sito non usa cookie né strumenti di tracciamento.',
+} as const;
 
 export const ui = {
   de: {
     langName: 'Deutsch',
     langShort: 'DE',
-    switchTo: 'Diese Seite auf Italienisch',
+    switchTo: { it: 'Diese Seite auf Italienisch' } as Partial<Record<Locale, string>>,
+    chooseLanguage: 'Sprache oder Land wählen',
     skip: 'Zum Inhalt springen',
     nav: { home: 'Start', packages: 'Pakete', about: 'Über uns', contact: 'Kontakt' },
     menu: 'Menü',
@@ -120,7 +162,8 @@ export const ui = {
   it: {
     langName: 'Italiano',
     langShort: 'IT',
-    switchTo: 'Questa pagina in tedesco',
+    switchTo: { de: 'Questa pagina in tedesco' } as Partial<Record<Locale, string>>,
+    chooseLanguage: 'Scegli lingua o Paese',
     skip: 'Vai al contenuto',
     nav: { home: 'Home', packages: 'Pacchetti', about: 'Chi siamo', contact: 'Contatti' },
     menu: 'Menu',
@@ -212,6 +255,9 @@ export const ui = {
 } as const;
 
 export type UI = (typeof ui)['de'];
+
+export const switchToLabel = (from: Locale, to: Locale): string =>
+  ui[from].switchTo[to] ?? ui[to].langName;
 
 /* ---------- Preise formatieren ---------- */
 

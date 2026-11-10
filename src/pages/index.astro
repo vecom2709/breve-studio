@@ -1,4 +1,158 @@
 ---
-import View from '../views/Home.astro';
+import '@fontsource-variable/fraunces/opsz.css';
+import '@fontsource-variable/fraunces/opsz-italic.css';
+import '@fontsource-variable/source-sans-3/wght.css';
+import '../styles/global.css';
+import Mark from '../components/Mark.astro';
+import { site } from '../content/site';
+import {
+  locales,
+  localeConfig,
+  path,
+  ui,
+  langStorageKey,
+  chooserCopy,
+  chooserQuery,
+} from '../lib/i18n';
+
+const title = `${site.name} – ${chooserCopy.title}`;
+const canonical = new URL('/', site.url).href;
+const destinations = Object.fromEntries(locales.map((l) => [l, path('home', l)])) as Record<string, string>;
 ---
-<View lang="de" />
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={chooserCopy.description} />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href={canonical} />
+    {locales.map((l) => (
+      <link rel="alternate" hreflang={l} href={new URL(path('home', l), site.url).href} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#F6F1E8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={chooserCopy.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/og-studio-breve.jpg', site.url).href} />
+    <meta property="og:locale" content={localeConfig.de.ogLocale} />
+    <meta property="og:locale:alternate" content={localeConfig.it.ogLocale} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script is:inline define:vars={{ langStorageKey, destinations, chooserQuery }}>
+      (function () {
+        var allowed = destinations;
+        try {
+          var params = new URLSearchParams(location.search);
+          if (params.has(chooserQuery.split('=')[0])) return;
+          var stored = localStorage.getItem(langStorageKey);
+          if (stored && allowed[stored]) {
+            location.replace(allowed[stored]);
+            return;
+          }
+          var nav = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+          var tag = String(nav).toLowerCase();
+          var guess = '';
+          for (var code in allowed) {
+            if (Object.prototype.hasOwnProperty.call(allowed, code) && (tag === code || tag.indexOf(code + '-') === 0)) {
+              guess = code;
+              break;
+            }
+          }
+          if (guess && allowed[guess]) location.replace(allowed[guess]);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="chooser-body">
+    <main class="chooser" id="inhalt">
+      <p class="brand">
+        <Mark size={36} />
+        <span>Studio <em>Breve</em></span>
+      </p>
+      <h1>
+        <span lang="de">Sprache wählen</span>
+        <span class="sep" aria-hidden="true"> / </span>
+        <span lang="it">Scegli la lingua</span>
+      </h1>
+      <p class="leads">
+        <span lang="de">{chooserCopy.leadDe}</span>
+        <span lang="it">{chooserCopy.leadIt}</span>
+      </p>
+      <ul class="choices">
+        {locales.map((l) => (
+          <li>
+            <a class="choice" href={path('home', l)} hreflang={l} lang={l} data-lang={l}>
+              <span class="code">{ui[l].langShort}</span>
+              <span class="name">{ui[l].langName}</span>
+              <span class="regions">{localeConfig[l].regions}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p class="note">
+        <span lang="de">{chooserCopy.draftDe}</span>
+        <span lang="it">{chooserCopy.draftIt}</span>
+      </p>
+    </main>
+    <script is:inline define:vars={{ langStorageKey }}>
+      document.querySelectorAll('a[data-lang]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          try { localStorage.setItem(langStorageKey, a.getAttribute('data-lang') || ''); } catch (e) {}
+        });
+      });
+    </script>
+  </body>
+</html>
+<style>
+  .chooser-body { min-height: 100vh; display: grid; place-items: center; }
+  .chooser {
+    width: min(100% - 2.5rem, 36rem);
+    padding-block: var(--space-xl);
+    display: grid;
+    gap: 1.25rem;
+    justify-items: start;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    font-weight: 460;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .brand em { font-style: italic; color: var(--petrol); font-weight: 420; }
+  h1 { font-size: var(--step-3); font-weight: 390; }
+  h1 .sep { color: var(--muted); font-weight: 350; }
+  .leads, .note { display: grid; gap: 0.2rem; color: var(--ink-2); }
+  .note { font-size: var(--step--1); color: var(--muted); margin-top: 0.5rem; }
+  .choices { list-style: none; margin: 0.4rem 0 0; padding: 0; display: grid; gap: 0.85rem; width: 100%; }
+  @media (min-width: 36rem) { .choices { grid-template-columns: 1fr 1fr; } }
+  .choice {
+    display: grid;
+    gap: 0.2rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--card);
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    padding: 1.15rem 1.2rem 1.2rem;
+    min-height: 7.5rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .choice:hover { color: var(--ink); border-color: var(--petrol); box-shadow: 0 0 0 1px var(--petrol); }
+  .code {
+    font-size: var(--step--1);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--petrol);
+  }
+  .name { font-family: var(--serif); font-size: var(--step-2); font-weight: 450; }
+  .regions { font-size: var(--step--1); color: var(--ink-2); line-height: 1.4; }
+</style>
