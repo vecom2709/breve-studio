@@ -53,6 +53,8 @@ const ogImage = new URL(image ?? '/og-studio-breve.jpg', site.url).href;
 const canonical = new URL(selfPath, site.url).href;
 const xDefault = new URL('/', site.url).href;
 const meta = localeConfig[lang];
+/** Statische Online-Vorschau (GitHub Pages): ohne Server, also ohne Zähler und Formularversand */
+const statisch = import.meta.env.PUBLIC_STATISCH === '1';
 ---
 <!doctype html>
 <html lang={meta.htmlLang}>
@@ -85,9 +87,9 @@ const meta = localeConfig[lang];
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Studio Breve" />
-    <script is:inline>
+    {!statisch && <script is:inline>
       window.__sbVisits = fetch('/api/track/', { headers: { Accept: 'application/json' }, cache: 'no-store' }).then(function (r) { return r.json(); });
-    </script>
+    </script>}
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={fullTitle} />
@@ -113,7 +115,7 @@ const meta = localeConfig[lang];
       <slot />
     </main>
     <Footer lang={lang} alternates={alternates} />
-    <Tracker lang={lang} />
+    {!statisch && <Tracker lang={lang} />}
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function () {

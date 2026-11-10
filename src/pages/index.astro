@@ -107,7 +107,7 @@ const destinations = Object.fromEntries(locales.map((l) => [l, path('home', l)])
         });
       });
     </script>
-      <Tracker lang="de" />
+      {import.meta.env.PUBLIC_STATISCH !== '1' && <Tracker lang="de" />}
   </body>
 </html>
 <style>

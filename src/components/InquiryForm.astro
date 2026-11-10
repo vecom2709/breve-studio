@@ -69,7 +69,9 @@ const id = (n: string) => `${uid}-${n}`;
   </div>
   <p class="req-note small muted"><span aria-hidden="true">*</span> {f.required}</p>
   <div class="actions">
-    <button class="btn btn-primary" type="submit">{f.submit} <span class="arrow" aria-hidden="true">→</span></button>
+    {import.meta.env.PUBLIC_STATISCH === '1'
+      ? <p class="statisch-hinweis" role="note">{lang === 'de' ? 'In dieser Online-Vorschau ist der Versand abgeschaltet. Bitte nutzen Sie vorerst E-Mail oder Telefon aus dem Impressum.' : 'In questa anteprima online l’invio è disattivato. Per ora usa e-mail o telefono indicati nelle note legali.'}</p>
+      : <button class="btn btn-primary" type="submit">{f.submit} <span class="arrow" aria-hidden="true">→</span></button>}
   </div>
   <p class="local small">{f.localNote}</p>
 </form>
@@ -129,6 +131,7 @@ const id = (n: string) => `${uid}-${n}`;
 </script>
 
 <style>
+  .statisch-hinweis { padding: .8rem 1rem; border: 1px dashed var(--line-strong); border-radius: 8px; color: var(--ink-2); font-size: var(--step--1); }
   .inquiry { display: grid; gap: 1.15rem; }
   .ftitle { font-size: var(--step-3); margin-bottom: .25rem; }
   .row.two { display: grid; gap: 1.15rem; }

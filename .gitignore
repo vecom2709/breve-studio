@@ -10,3 +10,4 @@ data/analytics/
 data/geoip/
 *.mmdb
 __pycache__/
+dist-pages/

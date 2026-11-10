@@ -139,6 +139,12 @@ Kundenstimmen stehen in `src/content/testimonials.ts` und werden nur mit Einwill
 - Bildstrecke neu erzeugen: `python3 tools/bilder/aufnahme.py http://127.0.0.1:4173 <ordner>` (Seitenaufnahmen) und danach `python3 tools/bilder/startseite_bilder.py <quellen> public/images/home <ordner>/screen-de.png <ordner>/screen-it.png`. Quellen: KI-Szene (Kie.ai, nano-banana-pro), `v-emblem.png` von vecom-design.it, Kartenbilder.
 - Das 3D-Handy im Abschnitt „App-Version“ wird in Blender (Cycles) auf dem eigenen Rechner gerendert: `tools/bilder/handy.py`.
 
+## Online-Vorschau (GitHub Pages)
+
+- Adresse: https://vecom2709.github.io/breve-studio/ (Zweig `gh-pages`, nur die fertigen Seiten; `noindex` bleibt).
+- Bauen: `PUBLIC_STATISCH=1 npm run build:fast && node tools/pages-bauen.mjs` → `dist-pages/`. Im statischen Modus sind Besuchszähler und Formularversand abgeschaltet (kein Server); das Formular zeigt dann einen Hinweis.
+- `tools/pages-bauen.mjs` schreibt die Wurzelpfade auf `/breve-studio/` um und legt `.nojekyll` an.
+
 ## Domain
 
 Platzhalter im Text: **studiobreve.it** (nicht registriert). Laut DNS-Abfrage über Google Public DNS am 9.11.2026 hatten folgende Namen keinen Eintrag – das ist **nur ein Hinweis**, kein Nachweis, dass sie frei sind: studiobreve.it, studiobreve.de, studiobreve.eu, studio-breve.it, inbreve.de, in-breve.it. Vergeben (DNS vorhanden): inbreve.it, inbreve.com, inbreve.eu, breve.it, breve.de, studiobreve.com. Eine Markenrecherche (UIBM, DPMA, EUIPO) steht aus.
