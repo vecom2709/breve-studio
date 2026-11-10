@@ -30,42 +30,135 @@ SETTINGS_FILE = ANALYTICS_DIR / "settings.json"
 HOST = "127.0.0.1"
 PORT = 4173
 EMAIL_RE = re.compile(r"^[^\s@]+@[^\s@]+\.[^\s@]{2,}$")
-DEFAULT_ADMIN_PASSWORD = "vorschau-lokal"
+ADMIN_FILE = ROOT / "data" / "admin.json"
 ADMIN_COOKIE = "sb_admin"
 ADMIN_MAX_AGE = 60 * 60 * 12
+ADMIN_MIN_LEN = 10
+ADMIN_MAX_ATTEMPTS = 10
+ADMIN_WINDOW_S = 15 * 60
+ENV_SALT = b"studio-breve-admin-env"
 ANALYTICS_TZ = ZoneInfo("Europe/Rome")
 _login_attempts: dict[str, tuple[int, float]] = {}
 _lock = threading.Lock()
 
 
-def admin_password() -> str:
-    return os.environ.get("ADMIN_PASSWORD") or DEFAULT_ADMIN_PASSWORD
+def read_admin():
+    try:
+        data = json.loads(ADMIN_FILE.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    if not isinstance(data, dict):
+        return None
+    if (
+        data.get("algo") == "scrypt"
+        and isinstance(data.get("salt"), str)
+        and isinstance(data.get("hash"), str)
+        and isinstance(data.get("sessionKey"), str)
+        and len(data["salt"]) >= 16
+        and len(data["hash"]) >= 16
+        and len(data["sessionKey"]) >= 16
+    ):
+        return data
+    return None
 
 
-def _scrypt(pw: str) -> bytes:
-    return hashlib.scrypt(pw.encode("utf-8"), salt=b"studio-breve-admin", n=16384, r=8, p=1, dklen=32)
+def write_admin(data: dict) -> None:
+    ADMIN_FILE.parent.mkdir(parents=True, exist_ok=True)
+    tmp = ADMIN_FILE.with_name(ADMIN_FILE.name + f".{os.getpid()}.{secrets.token_hex(4)}.tmp")
+    tmp.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+    tmp.replace(ADMIN_FILE)
+    try:
+        os.chmod(ADMIN_FILE, 0o600)
+    except OSError:
+        pass
+
+
+def needs_setup() -> bool:
+    return read_admin() is None and not os.environ.get("ADMIN_PASSWORD")
+
+
+def _scrypt(pw: str, salt: bytes) -> bytes:
+    return hashlib.scrypt(pw.encode("utf-8"), salt=salt, n=16384, r=8, p=1, dklen=32)
 
 
 def verify_password(value: str) -> bool:
-    a, b = _scrypt(value), _scrypt(admin_password())
-    return hmac.compare_digest(a, b)
+    ok = False
+    rec = read_admin()
+    if rec:
+        try:
+            got = _scrypt(value, bytes.fromhex(rec["salt"]))
+            expect = bytes.fromhex(rec["hash"])
+            if hmac.compare_digest(got, expect):
+                ok = True
+        except Exception:
+            pass
+    env = os.environ.get("ADMIN_PASSWORD")
+    if env:
+        if hmac.compare_digest(_scrypt(value, ENV_SALT), _scrypt(env, ENV_SALT)):
+            ok = True
+    return ok
 
 
-def allow_login(ip: str) -> bool:
+def validate_new_password(password: str, repeat: str) -> str | None:
+    if len(password) < ADMIN_MIN_LEN:
+        return f"Das Passwort muss mindestens {ADMIN_MIN_LEN} Zeichen haben."
+    if password != repeat:
+        return "Die Passwörter stimmen nicht überein."
+    return None
+
+
+def set_password(password: str) -> None:
+    err = validate_new_password(password, password)
+    if err:
+        raise ValueError(err)
+    salt = secrets.token_bytes(16)
+    rec = {
+        "algo": "scrypt",
+        "salt": salt.hex(),
+        "hash": _scrypt(password, salt).hex(),
+        "sessionKey": secrets.token_hex(32),
+        "updatedAt": datetime.now(timezone.utc).isoformat(),
+    }
+    write_admin(rec)
+
+
+def check_login_allowed(ip: str) -> dict:
     now = time.time()
     row = _login_attempts.get(ip)
     if not row or now > row[1]:
-        _login_attempts[ip] = (1, now + 15 * 60)
-        return True
+        return {"ok": True, "remaining": ADMIN_MAX_ATTEMPTS, "locked": False}
+    n, _reset = row
+    if n >= ADMIN_MAX_ATTEMPTS:
+        return {"ok": False, "remaining": 0, "locked": True}
+    return {"ok": True, "remaining": ADMIN_MAX_ATTEMPTS - n, "locked": False}
+
+
+def record_login_failure(ip: str) -> dict:
+    now = time.time()
+    row = _login_attempts.get(ip)
+    if not row or now > row[1]:
+        _login_attempts[ip] = (1, now + ADMIN_WINDOW_S)
+        return {"ok": True, "remaining": ADMIN_MAX_ATTEMPTS - 1, "locked": False}
     n, reset = row
-    if n >= 5:
-        return False
-    _login_attempts[ip] = (n + 1, reset)
-    return True
+    n += 1
+    _login_attempts[ip] = (n, reset)
+    if n >= ADMIN_MAX_ATTEMPTS:
+        return {"ok": False, "remaining": 0, "locked": True}
+    return {"ok": True, "remaining": ADMIN_MAX_ATTEMPTS - n, "locked": False}
+
+
+def clear_login_failures(ip: str) -> None:
+    _login_attempts.pop(ip, None)
 
 
 def _secret() -> bytes:
-    return hashlib.sha256(("studio-breve-admin:" + admin_password()).encode()).digest()
+    rec = read_admin()
+    if rec and rec.get("sessionKey"):
+        return bytes.fromhex(rec["sessionKey"])
+    env = os.environ.get("ADMIN_PASSWORD")
+    if env:
+        return hashlib.sha256(("studio-breve-admin:" + env).encode()).digest()
+    return hashlib.sha256(b"studio-breve-admin:unset").digest()
 
 
 def mint_session() -> str:
@@ -267,17 +360,140 @@ def _esc(v) -> str:
     return str(v or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 
-def login_page(err: bool) -> str:
-    err_html = """<p class="err" role="alert"><strong>Anmeldung fehlgeschlagen.</strong> Das Kennwort ist nicht richtig. Bitte prüfen Sie die Eingabe und versuchen Sie es erneut.</p>""" if err else ""
-    return """<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Anmeldung — Verwaltung</title>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F7F8F6;font-family:system-ui,sans-serif;color:#14221f;padding:1.5rem}.card{width:min(26rem,100%);background:#fff;border:1px solid #d7ddd9;border-radius:18px;padding:2rem 1.8rem 1.6rem;display:grid;gap:1rem}.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}.brand img{width:44px;height:44px}.brand strong{display:block;font-weight:700}.brand small{color:#4a5b56}h1{font-size:1.45rem;margin:.2rem 0 0}p{margin:0;color:#4a5b56}form{display:grid;gap:.85rem}input{font:inherit;padding:.75rem .85rem;border:1px solid #c5cdc8;border-radius:10px}button{font:650 1rem/1 system-ui;background:#0f3b33;color:#fff;border:0;border-radius:999px;padding:.9rem 1.2rem;cursor:pointer}.err{color:#7a1515;background:#fdecec;border:1px solid #f0c4c4;border-radius:10px;padding:.8rem .9rem}.back{color:#0f3b33;font-weight:600;text-decoration:none}</style></head>
-  <body><div class="card"><a class="brand" href="/de/"><img src="/logo-studio-breve.svg" width="44" height="44" alt=""><span><strong>Studio Breve</strong><small>Digitalstudio · Aragona, Sizilien</small></span></a>
-  <h1>Anmeldung zur Verwaltung</h1>
-  <p>Geschützter Bereich für den Betreiber. Der Link steht dezent im Fußbereich der Website.</p>
-  __ERR__
-  <form method="post" action="/api/verwaltung/login/"><label for="password">Kennwort</label><input id="password" name="password" type="password" autocomplete="current-password" required><button type="submit">Anmelden</button></form>
-  <a class="back" href="/de/">← Zurück zur Website</a></div></body></html>""".replace("__ERR__", err_html)
+def _auth_css() -> str:
+    return (
+        "body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F7F8F6;font-family:system-ui,sans-serif;color:#14221f;padding:1.5rem}"
+        ".card{width:min(26rem,100%);background:#fff;border:1px solid #d7ddd9;border-radius:18px;padding:2rem 1.8rem 1.6rem;display:grid;gap:1rem}"
+        ".brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}.brand img{width:44px;height:44px}.brand strong{display:block;font-weight:700}.brand small{color:#4a5b56}"
+        "h1{font-size:1.45rem;margin:.2rem 0 0}p{margin:0;color:#4a5b56}form{display:grid;gap:.85rem}label{font-weight:600}"
+        ".pw-wrap{position:relative;display:grid}.pw-wrap input{font:inherit;padding:.75rem 2.7rem .75rem .85rem;border:1px solid #c5cdc8;border-radius:10px;width:100%;box-sizing:border-box}"
+        ".pw-toggle{position:absolute;right:.25rem;top:50%;transform:translateY(-50%);width:2.2rem;height:2.2rem;border:0;background:transparent;color:#4a5b56;cursor:pointer;display:grid;place-items:center;border-radius:8px}"
+        "button[type=submit]{font:650 1rem/1 system-ui;background:#0f3b33;color:#fff;border:0;border-radius:999px;padding:.9rem 1.2rem;cursor:pointer}"
+        ".err{color:#7a1515;background:#fdecec;border:1px solid #f0c4c4;border-radius:10px;padding:.8rem .9rem}"
+        ".ok{color:#14532d;background:#e7f6ea;border-radius:10px;padding:.8rem .9rem}"
+        ".back{color:#0f3b33;font-weight:600;text-decoration:none}.tools{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}"
+    )
+
+
+def _pw_field(fid: str, name: str, label: str, autocomplete: str, extra: str = "") -> str:
+    return (
+        f'<label for="{fid}">{label}</label><div class="pw-wrap">'
+        f'<input id="{fid}" name="{name}" type="password" autocomplete="{autocomplete}" required {extra}>'
+        f'<button type="button" class="pw-toggle" data-for="{fid}" aria-label="Passwort anzeigen" aria-pressed="false">'
+        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">'
+        '<path d="M2.5 12S6 6.5 12 6.5 21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.6"/></svg></button></div>'
+    )
+
+
+def _auth_shell(title: str, body: str) -> str:
+    script = (
+        '<script>(function(){document.addEventListener("click",function(ev){var btn=ev.target.closest&&ev.target.closest(".pw-toggle");'
+        'if(!btn)return;var input=document.getElementById(btn.getAttribute("data-for"));if(!input)return;'
+        'var show=input.type==="password";input.type=show?"text":"password";btn.setAttribute("aria-pressed",show?"true":"false");'
+        'btn.setAttribute("aria-label",show?"Passwort verbergen":"Passwort anzeigen");});})();</script>'
+    )
+    brand = (
+        '<a class="brand" href="/de/"><img src="/logo-studio-breve.svg" width="44" height="44" alt="">'
+        '<span><strong>Studio Breve</strong><small>Digitalstudio · Aragona, Sizilien</small></span></a>'
+    )
+    # brand is included by callers as needed
+    return (
+        '<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
+        f'<meta name="robots" content="noindex, nofollow"><title>{title} — Verwaltung</title>'
+        '<link rel="icon" href="/favicon.svg" type="image/svg+xml">'
+        f'<style>{_auth_css()}</style></head><body><div class="card">{body}</div>{script}</body></html>'
+    )
+
+
+def _brand() -> str:
+    return (
+        '<a class="brand" href="/de/"><img src="/logo-studio-breve.svg" width="44" height="44" alt="">'
+        '<span><strong>Studio Breve</strong><small>Digitalstudio · Aragona, Sizilien</small></span></a>'
+    )
+
+
+def login_page(query: str) -> str:
+    qs = urllib.parse.parse_qs(query)
+    locked = (qs.get("sperre") or [""])[0] == "1"
+    err = (qs.get("fehler") or [""])[0] == "1"
+    rest_raw = (qs.get("rest") or [None])[0]
+    rest = int(rest_raw) if rest_raw is not None and str(rest_raw).isdigit() else None
+    if locked:
+        alert = '<p class="err" role="alert"><strong>Zu viele Versuche.</strong> Bitte in 15 Minuten erneut versuchen.</p>'
+    elif err:
+        if rest is None:
+            more = "Bitte prüfen Sie die Eingabe und versuchen Sie es erneut."
+        elif rest > 0:
+            more = f"Noch {rest} {'Versuch' if rest == 1 else 'Versuche'}."
+        else:
+            more = "Keine Versuche mehr. Bitte in 15 Minuten erneut versuchen."
+        alert = f'<p class="err" role="alert"><strong>Passwort falsch</strong> {more}</p>'
+    else:
+        alert = ""
+    body = (
+        f"{_brand()}<h1>Anmeldung zur Verwaltung</h1>"
+        "<p>Geschützter Bereich für den Betreiber. Der Link steht dezent im Fußbereich der Website.</p>"
+        f"{alert}<form method=\"post\" action=\"/api/verwaltung/login/\">"
+        f"{_pw_field('password','password','Passwort','current-password','autofocus')}"
+        "<button type=\"submit\">Anmelden</button></form>"
+        "<a class=\"back\" href=\"/de/\">← Zurück zur Website</a>"
+    )
+    return _auth_shell("Anmeldung", body)
+
+
+def setup_page(query: str) -> str:
+    qs = urllib.parse.parse_qs(query)
+    fehler = (qs.get("fehler") or [""])[0]
+    if fehler == "kurz":
+        msg = f"Das Passwort muss mindestens {ADMIN_MIN_LEN} Zeichen haben."
+    elif fehler == "wiederholung":
+        msg = "Die Passwörter stimmen nicht überein."
+    elif fehler:
+        msg = "Das Passwort konnte nicht gespeichert werden. Bitte erneut versuchen."
+    else:
+        msg = ""
+    alert = f'<p class="err" role="alert">{msg}</p>' if msg else ""
+    body = (
+        f"{_brand()}<h1>Passwort festlegen</h1>"
+        f"<p>Beim ersten Aufruf legen Sie ein eigenes Passwort für die Verwaltung fest. Mindestens {ADMIN_MIN_LEN} Zeichen, bitte wiederholen.</p>"
+        f"{alert}<form method=\"post\" action=\"/api/verwaltung/setup/\">"
+        f"{_pw_field('password','password','Neues Passwort','new-password', f'autofocus minlength=\"{ADMIN_MIN_LEN}\"')}"
+        f"{_pw_field('password2','password2','Passwort wiederholen','new-password', f'minlength=\"{ADMIN_MIN_LEN}\"')}"
+        "<button type=\"submit\">Passwort speichern und anmelden</button></form>"
+        "<a class=\"back\" href=\"/de/\">← Zurück zur Website</a>"
+    )
+    return _auth_shell("Passwort festlegen", body)
+
+
+def password_page(query: str) -> str:
+    qs = urllib.parse.parse_qs(query)
+    fehler = (qs.get("fehler") or [""])[0]
+    ok = (qs.get("ok") or [""])[0] == "1"
+    if fehler == "aktuell":
+        msg = "Aktuelles Passwort falsch."
+    elif fehler == "kurz":
+        msg = f"Das neue Passwort muss mindestens {ADMIN_MIN_LEN} Zeichen haben."
+    elif fehler == "wiederholung":
+        msg = "Die neuen Passwörter stimmen nicht überein."
+    elif fehler:
+        msg = "Das Passwort konnte nicht geändert werden."
+    else:
+        msg = ""
+    alert = ('<p class="ok" role="status">Passwort geändert.</p>' if ok else "") + (f'<p class="err" role="alert">{msg}</p>' if msg else "")
+    body = (
+        "<h1>Passwort ändern</h1>"
+        f"<p>Geben Sie das aktuelle Passwort und zweimal das neue Passwort ein (mindestens {ADMIN_MIN_LEN} Zeichen).</p>"
+        f"{alert}<form method=\"post\" action=\"/api/verwaltung/passwort/\">"
+        f"{_pw_field('current','current','Aktuelles Passwort','current-password','autofocus')}"
+        f"{_pw_field('password','password','Neues Passwort','new-password', f'minlength=\"{ADMIN_MIN_LEN}\"')}"
+        f"{_pw_field('password2','password2','Neues Passwort wiederholen','new-password', f'minlength=\"{ADMIN_MIN_LEN}\"')}"
+        "<button type=\"submit\">Passwort speichern</button></form>"
+        "<div class=\"tools\"><a class=\"back\" href=\"/verwaltung/\">← Zurück zur Verwaltung</a>"
+        "<form method=\"post\" action=\"/api/verwaltung/logout/\" style=\"margin:0\">"
+        "<button type=\"submit\" style=\"position:static;transform:none;width:auto;height:auto;padding:.45rem .85rem;border:1px solid #d7ddd9;color:#0f3b33;background:transparent;border-radius:999px\">Abmelden</button>"
+        "</form></div>"
+    )
+    return _auth_shell("Passwort ändern", body)
 
 
 def dashboard_page(query: str) -> str:
@@ -323,8 +539,8 @@ def dashboard_page(query: str) -> str:
     settings = read_settings()
     checked = "checked" if settings.get("excludeAdmin") else ""
     return f"""<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Besuche — Verwaltung</title>
-    <style>body{{margin:0;background:#F7F8F6;font-family:system-ui;color:#14221f}}header{{display:flex;justify-content:space-between;padding:1rem 1.5rem;background:#fff;border-bottom:1px solid #d7ddd9}}main{{max-width:72rem;margin:0 auto;padding:1.25rem 1.5rem;display:grid;gap:1.25rem}}.kpis{{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.8rem}}.kpi,.card{{background:#fff;border:1px solid #d7ddd9;border-radius:12px;padding:1rem}}table{{width:100%;border-collapse:collapse}}th,td{{text-align:left;padding:.4rem;border-bottom:1px solid #d7ddd9}}button,.btn{{background:#0f3b33;color:#fff;border:0;border-radius:999px;padding:.55rem .95rem;text-decoration:none;display:inline-block}}.ghost{{background:transparent;color:#0f3b33;border:1px solid #d7ddd9}}.row{{display:flex;flex-wrap:wrap;gap:.6rem}}</style></head>
-    <body><header><h1>Besuche — Studio Breve</h1><form method="post" action="/api/verwaltung/logout/"><button class="ghost" type="submit">Abmelden</button></form></header>
+    <style>body{{margin:0;background:#F7F8F6;font-family:system-ui;color:#14221f}}header{{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:1rem 1.5rem;background:#fff;border-bottom:1px solid #d7ddd9}}.admin-tools{{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem}}main{{max-width:72rem;margin:0 auto;padding:1.25rem 1.5rem;display:grid;gap:1.25rem}}.kpis{{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.8rem}}.kpi,.card{{background:#fff;border:1px solid #d7ddd9;border-radius:12px;padding:1rem}}table{{width:100%;border-collapse:collapse}}th,td{{text-align:left;padding:.4rem;border-bottom:1px solid #d7ddd9}}button,.btn{{background:#0f3b33;color:#fff;border:0;border-radius:999px;padding:.55rem .95rem;text-decoration:none;display:inline-block}}.ghost{{background:transparent;color:#0f3b33;border:1px solid #d7ddd9}}.row{{display:flex;flex-wrap:wrap;gap:.6rem}}</style></head>
+    <body><header><h1>Besuche — Studio Breve</h1><div class="admin-tools"><a class="btn ghost" href="/verwaltung/passwort/">Passwort ändern</a><form method="post" action="/api/verwaltung/logout/"><button class="ghost" type="submit">Abmelden</button></form></div></header>
     <main>
     {"<p>Einstellung gespeichert.</p>" if ok else ""}
     <section class="kpis"><div class="kpi"><b>{daily.get(today, 0)}</b><span>Heute</span></div><div class="kpi"><b>{sum_range(days_ago(6))}</b><span>7 Tage</span></div><div class="kpi"><b>{sum_range(days_ago(29))}</b><span>30 Tage</span></div><div class="kpi"><b>{unique_total()}</b><span>Seit Start</span></div></section>
@@ -495,12 +711,27 @@ class PreviewHandler(SimpleHTTPRequestHandler):
             self.wfile.write(body)
             return
         if clean == "/verwaltung/anmelden":
+            if needs_setup():
+                self._redirect("/verwaltung/")
+                return
             if self._is_authed():
                 self._redirect("/verwaltung/")
                 return
-            self._send_html(200, login_page("fehler=1" in parsed.query))
+            self._send_html(200, login_page(parsed.query))
+            return
+        if clean == "/verwaltung/passwort":
+            if needs_setup():
+                self._redirect("/verwaltung/")
+                return
+            if not self._is_authed():
+                self._redirect("/verwaltung/anmelden/")
+                return
+            self._send_html(200, password_page(parsed.query))
             return
         if clean == "/verwaltung":
+            if needs_setup():
+                self._send_html(200, setup_page(parsed.query))
+                return
             if not self._is_authed():
                 self._redirect("/verwaltung/anmelden/")
                 return
@@ -570,19 +801,59 @@ class PreviewHandler(SimpleHTTPRequestHandler):
             })
             self._send_json(200, {"ok": True, "unique": result["unique"], "n": result["total"]})
             return
+        if clean == "/api/verwaltung/setup":
+            if not needs_setup():
+                self._redirect("/verwaltung/anmelden/")
+                return
+            form = parse_form(self)
+            pw = form.get("password") or ""
+            err = validate_new_password(pw, form.get("password2") or form.get("repeat") or "")
+            if err:
+                code = "kurz" if len(pw) < ADMIN_MIN_LEN else "wiederholung"
+                self._redirect("/verwaltung/?fehler=" + code)
+                return
+            set_password(pw)
+            self._redirect("/verwaltung/", cookie=cookie_header(mint_session(), ADMIN_MAX_AGE))
+            return
         if clean == "/api/verwaltung/login":
             ip = (self.headers.get("X-Forwarded-For") or self.client_address[0] or "127.0.0.1").split(",")[0].strip()
-            if not allow_login(re.sub(r"\d+$", "0", ip)):
-                self.send_error(429, "Zu viele Versuche. Bitte in 15 Minuten erneut versuchen.")
+            ip_key = re.sub(r"\d+$", "0", ip)
+            if needs_setup():
+                self._redirect("/verwaltung/")
+                return
+            if not check_login_allowed(ip_key)["ok"]:
+                self._redirect("/verwaltung/anmelden/?sperre=1")
                 return
             form = parse_form(self)
             if not verify_password(form.get("password") or ""):
-                self._redirect("/verwaltung/anmelden/?fehler=1")
+                after = record_login_failure(ip_key)
+                if after["locked"]:
+                    self._redirect("/verwaltung/anmelden/?sperre=1")
+                    return
+                self._redirect("/verwaltung/anmelden/?fehler=1&rest=" + str(after["remaining"]))
                 return
+            clear_login_failures(ip_key)
             self._redirect("/verwaltung/", cookie=cookie_header(mint_session(), ADMIN_MAX_AGE))
             return
         if clean == "/api/verwaltung/logout":
             self._redirect("/verwaltung/anmelden/", cookie=cookie_header("", 0))
+            return
+        if clean == "/api/verwaltung/passwort":
+            if not self._is_authed():
+                self._redirect("/verwaltung/anmelden/")
+                return
+            form = parse_form(self)
+            if not verify_password(form.get("current") or ""):
+                self._redirect("/verwaltung/passwort/?fehler=aktuell")
+                return
+            pw = form.get("password") or ""
+            err = validate_new_password(pw, form.get("password2") or form.get("repeat") or "")
+            if err:
+                code = "kurz" if len(pw) < ADMIN_MIN_LEN else "wiederholung"
+                self._redirect("/verwaltung/passwort/?fehler=" + code)
+                return
+            set_password(pw)
+            self._redirect("/verwaltung/passwort/?ok=1", cookie=cookie_header(mint_session(), ADMIN_MAX_AGE))
             return
         if clean == "/api/verwaltung/settings":
             if not self._is_authed():
@@ -706,10 +977,10 @@ def main() -> int:
     print(f"Deutsch:     http://{HOST}:{port}/de/")
     print(f"Italienisch: http://{HOST}:{port}/it/")
     print(f"Verwaltung:  http://{HOST}:{port}/verwaltung/")
-    if not os.environ.get("ADMIN_PASSWORD"):
-        print("Kennwort (nur lokal, bitte ändern): " + DEFAULT_ADMIN_PASSWORD)
-    else:
-        print("Kennwort:    aus ADMIN_PASSWORD")
+    if needs_setup():
+        print("Verwaltung: beim ersten Aufruf Passwort festlegen")
+    elif os.environ.get("ADMIN_PASSWORD") and read_admin() is None:
+        print("Verwaltung: Kennwort aus ADMIN_PASSWORD")
     print("Zum Beenden: Strg+C")
     print()
     threading.Thread(target=lambda: (time.sleep(0.4), webbrowser.open(url)), daemon=True).start()

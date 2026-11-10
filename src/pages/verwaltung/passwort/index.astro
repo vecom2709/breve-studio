@@ -1,0 +1,62 @@
+---
+export const prerender = false;
+import AdminPwField from '../../../components/AdminPwField.astro';
+import { isAuthed, minPasswordLength, needsSetup } from '../../../lib/admin-auth';
+
+if (needsSetup()) return Astro.redirect('/verwaltung/');
+if (!isAuthed(Astro.request)) return Astro.redirect('/verwaltung/anmelden/');
+
+const fehler = Astro.url.searchParams.get('fehler');
+const ok = Astro.url.searchParams.get('ok') === '1';
+const msg =
+  fehler === 'aktuell' ? 'Aktuelles Passwort falsch.' :
+  fehler === 'kurz' ? `Das neue Passwort muss mindestens ${minPasswordLength} Zeichen haben.` :
+  fehler === 'wiederholung' ? 'Die neuen Passwörter stimmen nicht überein.' :
+  fehler ? 'Das Passwort konnte nicht geändert werden.' :
+  null;
+---
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Passwort ändern — Verwaltung</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root { color-scheme: light; font-family: "Source Sans 3", system-ui, sans-serif; --forest:#0f3b33; --ink:#14221f; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #F7F8F6; color: var(--ink); padding: 1.5rem; }
+    .card { width: min(26rem, 100%); background: #fff; border: 1px solid #d7ddd9; border-radius: 18px; padding: 2rem 1.8rem 1.6rem; display: grid; gap: 1rem; box-shadow: 0 10px 30px rgba(15,59,51,.06); }
+    h1 { font: 650 1.45rem/1.2 Outfit, system-ui, sans-serif; margin: 0; }
+    p { margin: 0; color: #4a5b56; }
+    button[type=submit] { font: 650 1rem/1 inherit; background: var(--forest); color: #fff; border: 0; border-radius: 999px; padding: .9rem 1.2rem; cursor: pointer; }
+    button[type=submit]:hover { background: #164a40; }
+    .err { color: #7a1515; background: #fdecec; border: 1px solid #f0c4c4; border-radius: 10px; padding: .8rem .9rem; }
+    .ok { color: #14532d; background: #e7f6ea; border-radius: 10px; padding: .8rem .9rem; }
+    .back { justify-self: start; color: var(--forest); font-weight: 600; text-decoration: none; font-size: .95rem; }
+    .back:hover { text-decoration: underline; }
+    form { display: grid; gap: .85rem; margin: 0; }
+    .tools { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Passwort ändern</h1>
+    <p>Geben Sie das aktuelle Passwort und zweimal das neue Passwort ein (mindestens {minPasswordLength} Zeichen).</p>
+    {ok && <p class="ok" role="status">Passwort geändert.</p>}
+    {msg && <p class="err" role="alert">{msg}</p>}
+    <form method="post" action="/api/verwaltung/passwort/">
+      <AdminPwField id="current" name="current" label="Aktuelles Passwort" autocomplete="current-password" autofocus={true} />
+      <AdminPwField id="password" name="password" label="Neues Passwort" autocomplete="new-password" minlength={minPasswordLength} />
+      <AdminPwField id="password2" name="password2" label="Neues Passwort wiederholen" autocomplete="new-password" minlength={minPasswordLength} />
+      <button type="submit">Passwort speichern</button>
+    </form>
+    <div class="tools">
+      <a class="back" href="/verwaltung/">← Zurück zur Verwaltung</a>
+      <form method="post" action="/api/verwaltung/logout/" style="margin:0">
+        <button type="submit" style="background:transparent;color:var(--forest);border:1px solid #d7ddd9;border-radius:999px;padding:.45rem .85rem;font:600 .95rem/1 inherit;cursor:pointer">Abmelden</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

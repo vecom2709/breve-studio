@@ -18,8 +18,7 @@ Start
    Italienisch: http://127.0.0.1:4173/it/
 
    Verwaltung:  http://127.0.0.1:4173/verwaltung/
-   Kennwort der lokalen Vorschau, wenn ADMIN_PASSWORD nicht gesetzt ist:
-   vorschau-lokal  (bitte ändern, bevor die Seite jemals öffentlich laufen würde)
+   Beim ersten Aufruf legen Sie dort ein eigenes Passwort fest.
 
 
 Beenden: im Terminalfenster Strg+C, danach das Fenster schließen.
@@ -32,8 +31,11 @@ Hinweise
 - Einmalige Besuche werden lokal in data/analytics/ gezählt (ohne volle IP,
   ohne Tracking-Cookies). Der Zähler im Fußbereich beginnt bei 0.
 - Der Verwaltungsbereich /verwaltung/ ist passwortgeschützt und nicht
-  öffentlich verlinkt. Das voreingestellte Kennwort steht oben und wird
-  beim Start ausgegeben. Mit der Umgebungsvariable ADMIN_PASSWORD ersetzen.
+  in der Navigation. Beim ersten Aufruf legen Sie ein Passwort fest
+  (mindestens 10 Zeichen). Es wird lokal als Hash in data/admin.json
+  gespeichert. Zum Zurücksetzen diese Datei löschen; die Besuchszahlen
+  in data/analytics/ bleiben. Optional: Umgebungsvariable ADMIN_PASSWORD
+  als Übersteuerung oder Anfangskennwort.
 - Die rechtlichen Seiten sind Entwürfe mit Platzhaltern.
 - Alte deutsche Adressen ohne /de/ (zum Beispiel /pakete/) werden
   automatisch auf die neuen Pfade umgeleitet.

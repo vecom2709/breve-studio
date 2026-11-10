@@ -108,7 +108,7 @@ Es ist **kein** Zahlungsanbieter angebunden. Das Feld `checkout` im Pakettyp ist
 - Es wird **keine E-Mail** versendet und nichts an Dritte übertragen. IP-Adressen werden nicht gespeichert.
 - Funktioniert mit und ohne JavaScript. Die Danke-Seite liest den gespeicherten Eintrag über die Vorgangsnummer (`SB-JJJJMMTT-XXXXXX`) aus der Datei – sie zeigt nur Erfolg, wenn wirklich gespeichert wurde.
 - Schutz: Same-Origin-Prüfung von Astro, Honeypot-Feld, Längenbegrenzungen, serverseitige Validierung.
-- `data/inquiries.json` und `data/analytics/` sind in `.gitignore`.
+- `data/inquiries.json`, `data/admin.json` und `data/analytics/` sind in `.gitignore`.
 
 
 ## Reichweitenmessung und Verwaltung
@@ -116,9 +116,11 @@ Es ist **kein** Zahlungsanbieter angebunden. Das Feld `checkout` im Pakettyp ist
 - Ein kleines Erste-Partei-Skript (`src/components/Tracker.astro`) sendet Seitenaufrufe an `POST /api/track/`. Der öffentliche Zähler (`GET /api/track/`) zeigt die Summe einmaliger Besuche seit Start und beginnt bei 0.
 - Einmalig heißt: derselbe Sitzungskennzeichner in `sessionStorage` zählt pro Kalendertag (Europe/Rome) höchstens einmal. Do Not Track und Global Privacy Control werden beachtet; dann wird nichts gespeichert.
 - Die volle IP-Adresse wird nie gespeichert. Aufzeichnungen liegen als JSONL unter `data/analytics/` (gitignored). Einzelbesuche werden nach 12 Monaten gelöscht; die Tagessummen für den öffentlichen Zähler bleiben.
-- Der Verwaltungsbereich liegt unter **`/verwaltung/`** (nur Deutsch, `noindex, nofollow`, nicht in Navigation, Sprachwahl oder hreflang). Anmeldung: `POST /api/verwaltung/login/` mit dem Kennwort aus der Umgebung.
-- Kennwort: Umgebungsvariable **`ADMIN_PASSWORD`**. Vergleich per scrypt und zeitkonstantem Vergleich. Die Sitzung ist ein HttpOnly-Cookie mit SameSite=Strict (ohne `Secure` auf reinem HTTP, z. B. localhost). Anmeldeversuche sind je gekürzter Adresse auf 5 in 15 Minuten begrenzt.
-- **Lokale Vorschau:** Wenn `ADMIN_PASSWORD` nicht gesetzt ist, gilt das voreingestellte Kennwort `vorschau-lokal`. Es wird beim Start der portablen Vorschau ausgegeben. Vor einem späteren öffentlichen Betrieb unbedingt durch ein eigenes Kennwort ersetzen.
+- Der Verwaltungsbereich liegt unter **`/verwaltung/`** (nur Deutsch, `noindex, nofollow`, nicht in Navigation, Sprachwahl oder hreflang).
+- **Erstes Passwort:** Solange `data/admin.json` fehlt und `ADMIN_PASSWORD` nicht gesetzt ist, zeigt `/verwaltung/` das Formular „Passwort festlegen“ (Passwort und Wiederholung, mindestens 10 Zeichen). Beim Speichern wird ein scrypt-Hash mit Salt in `data/admin.json` geschrieben (nur lokal, gitignored) und Sie sind angemeldet.
+- **Anmeldung:** `POST /api/verwaltung/login/`. Vergleich gegen den gespeicherten Hash (und zusätzlich gegen **`ADMIN_PASSWORD`**, falls gesetzt — als Übersteuerung oder Anfangskennwort). Die Sitzung ist ein HttpOnly-Cookie mit SameSite=Strict (ohne `Secure` auf reinem HTTP, z. B. localhost). Anmeldeversuche sind je gekürzter Adresse auf 10 in 15 Minuten begrenzt. Falsche Eingaben zeigen „Passwort falsch“ und die restlichen Versuche.
+- Im Dashboard: **Passwort ändern** (`/verwaltung/passwort/`, aktuell + neu + Wiederholung) und **Abmelden**.
+- **Zurücksetzen:** `data/admin.json` löschen und beim nächsten Aufruf ein neues Passwort festlegen. Die Besuchszahlen in `data/analytics/` bleiben erhalten.
 - Der Betreiber kann im Dashboard eigene Aufrufe von der Zählung ausnehmen, nach Datum filtern und eine CSV-Datei exportieren.
 
 ## Logo und Bilder

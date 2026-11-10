@@ -1,0 +1,222 @@
+---
+import { listVisits, readDaily, readSettings, todayStamp, uniqueVisitTotal, type Visit } from '../lib/analytics';
+
+const von = Astro.url.searchParams.get('von') || '';
+const bis = Astro.url.searchParams.get('bis') || '';
+const okParam = Astro.url.searchParams.get('ok');
+const ok = okParam === '1';
+const pwOk = okParam === 'pw';
+const settings = await readSettings();
+const allVisits = await listVisits();
+const dailyAll = await readDaily();
+const totalAll = await uniqueVisitTotal();
+const today = todayStamp();
+
+const daysAgo = (n: number) => {
+  const d = new Date();
+  d.setUTCDate(d.getUTCDate() - n);
+  return todayStamp(d);
+};
+const sumRange = (from: string) =>
+  Object.entries(dailyAll).filter(([d]) => d >= from).reduce((a, [, n]) => a + Number(n || 0), 0);
+
+const todayN = dailyAll[today] || 0;
+const d7 = sumRange(daysAgo(6));
+const d30 = sumRange(daysAgo(29));
+
+let visits = allVisits.slice();
+if (von) visits = visits.filter((v) => v.date >= von);
+if (bis) visits = visits.filter((v) => v.date <= bis);
+
+const countBy = (key: (v: Visit) => string) => {
+  const m = new Map<string, number>();
+  for (const v of visits) {
+    const k = key(v) || '—';
+    m.set(k, (m.get(k) || 0) + 1);
+  }
+  return [...m.entries()].sort((a, b) => b[1] - a[1]);
+};
+
+const pages = new Map<string, number>();
+for (const v of visits) for (const p of v.pages) pages.set(p.path, (pages.get(p.path) || 0) + 1);
+const topPages = [...pages.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12);
+const sources = countBy((v) => v.source).slice(0, 12);
+const countries = countBy((v) => [v.country, v.region, v.city].filter(Boolean).join(' · ') || 'unbekannt').slice(0, 12);
+const devices = countBy((v) => v.device);
+const browsers = countBy((v) => v.browser);
+const oses = countBy((v) => v.os);
+
+const dayKeys = Object.keys(dailyAll).sort();
+const fromKey = von || (dayKeys[0] ?? today);
+const toKey = bis || today;
+const chartDays: { d: string; n: number }[] = [];
+{
+  const start = new Date(fromKey + 'T12:00:00Z');
+  const end = new Date(toKey + 'T12:00:00Z');
+  for (let t = start.getTime(); t <= end.getTime(); t += 86400000) {
+    const d = todayStamp(new Date(t));
+    chartDays.push({ d, n: dailyAll[d] || 0 });
+  }
+}
+const maxN = Math.max(1, ...chartDays.map((x) => x.n));
+const recent = [...visits].sort((a, b) => b.startedAt.localeCompare(a.startedAt)).slice(0, 40);
+const qs = new URLSearchParams();
+if (von) qs.set('von', von);
+if (bis) qs.set('bis', bis);
+const exportHref = '/api/verwaltung/export/' + (qs.toString() ? '?' + qs.toString() : '');
+---
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Besuche — Verwaltung</title>
+  <style>
+    :root { color-scheme: light; font-family: "Source Sans 3", system-ui, sans-serif; --ink:#14221f; --forest:#0f3b33; --line:#d7ddd9; --paper:#fff; --bg:#F7F8F6; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); }
+    header { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; justify-content: space-between; padding: 1rem 1.5rem; background: var(--paper); border-bottom: 1px solid var(--line); }
+    .admin-tools { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; }
+    h1, h2 { font-family: Outfit, system-ui, sans-serif; font-weight: 650; margin: 0; }
+    h1 { font-size: 1.2rem; }
+    h2 { font-size: 1.05rem; margin-bottom: .8rem; }
+    main { padding: 1.25rem 1.5rem 3rem; display: grid; gap: 1.25rem; max-width: 72rem; margin-inline: auto; }
+    .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: .8rem; }
+    .kpi { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 1rem; }
+    .kpi b { display: block; font-size: 1.6rem; font-family: Outfit, system-ui, sans-serif; }
+    .kpi span { color: #4a5b56; font-size: .9rem; }
+    .card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.1rem; overflow: auto; }
+    .grid2 { display: grid; gap: 1.25rem; }
+    @media (min-width: 56rem) { .grid2 { grid-template-columns: 1fr 1fr; } }
+    table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+    th, td { text-align: left; padding: .4rem .3rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: .8rem; color: #4a5b56; font-weight: 600; }
+    .bar { display: block; height: .45rem; background: #dce8e4; border-radius: 99px; margin-top: .25rem; }
+    .bar > i { display: block; height: 100%; background: var(--forest); border-radius: inherit; }
+    form.row, .row { display: flex; flex-wrap: wrap; gap: .6rem; align-items: end; }
+    label { font-size: .85rem; display: grid; gap: .2rem; }
+    input[type=date] { font: inherit; padding: .4rem .5rem; border: 1px solid var(--line); border-radius: 6px; }
+    button, .btn { font: 600 .95rem/1 inherit; background: var(--forest); color: #fff; border: 0; border-radius: 999px; padding: .55rem .95rem; cursor: pointer; text-decoration: none; display: inline-block; }
+    button.ghost, .btn.ghost { background: transparent; color: var(--forest); border: 1px solid var(--line); }
+    .ok { background: #e7f6ea; color: #14532d; padding: .6rem .8rem; border-radius: 8px; }
+    .muted { color: #4a5b56; font-size: .9rem; }
+    svg.chart { width: 100%; height: 140px; display: block; }
+    .paths { font-size: .85rem; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Besuche — Studio Breve</h1>
+    <div class="admin-tools">
+      <a class="btn ghost" href="/verwaltung/passwort/">Passwort ändern</a>
+      <form method="post" action="/api/verwaltung/logout/"><button class="ghost" type="submit">Abmelden</button></form>
+    </div>
+  </header>
+  <main>
+    {ok && <p class="ok">Einstellung gespeichert.</p>}
+    {pwOk && <p class="ok">Passwort geändert.</p>}
+    <section class="kpis" aria-label="Kennzahlen">
+      <div class="kpi"><b>{todayN}</b><span>Heute</span></div>
+      <div class="kpi"><b>{d7}</b><span>7 Tage</span></div>
+      <div class="kpi"><b>{d30}</b><span>30 Tage</span></div>
+      <div class="kpi"><b>{totalAll}</b><span>Seit Start</span></div>
+    </section>
+
+    <form class="row card" method="get" action="/verwaltung/">
+      <label>Von <input type="date" name="von" value={von} /></label>
+      <label>Bis <input type="date" name="bis" value={bis} /></label>
+      <button type="submit">Filtern</button>
+      <a class="btn ghost" href="/verwaltung/">Zurücksetzen</a>
+      <a class="btn ghost" href={exportHref}>CSV exportieren</a>
+    </form>
+
+    <section class="card">
+      <h2>Verläufe je Tag</h2>
+      {chartDays.length === 0 ? <p class="muted">Noch keine Daten.</p> : (
+        <svg class="chart" viewBox={`0 0 ${Math.max(chartDays.length * 18, 200)} 140`} role="img" aria-label="Besuche je Tag">
+          {chartDays.map((x, i) => {
+            const h = Math.round((x.n / maxN) * 110);
+            const bx = 8 + i * 18;
+            return (
+              <g>
+                <rect x={bx} y={120 - h} width="12" height={h} fill="#0f3b33" rx="2" />
+                {i % Math.ceil(chartDays.length / 8) === 0 && <text x={bx} y="136" font-size="8" fill="#4a5b56">{x.d.slice(5)}</text>}
+              </g>
+            );
+          })}
+        </svg>
+      )}
+    </section>
+
+    <div class="grid2">
+      <section class="card">
+        <h2>Häufigste Seiten</h2>
+        {topPages.length === 0 ? <p class="muted">Keine Seiten.</p> : (
+          <table><thead><tr><th>Pfad</th><th>Aufrufe</th></tr></thead>
+          <tbody>
+            {topPages.map(([p, n]) => (
+              <tr><td class="paths">{p}</td><td>{n}<span class="bar"><i style={`width:${Math.round(n / topPages[0][1] * 100)}%`} /></span></td></tr>
+            ))}
+          </tbody></table>
+        )}
+      </section>
+      <section class="card">
+        <h2>Quellen</h2>
+        {sources.length === 0 ? <p class="muted">Keine Quellen.</p> : (
+          <table><thead><tr><th>Quelle</th><th>Besuche</th></tr></thead>
+          <tbody>{sources.map(([p, n]) => <tr><td>{p}</td><td>{n}</td></tr>)}</tbody></table>
+        )}
+      </section>
+      <section class="card">
+        <h2>Länder und Orte</h2>
+        <p class="muted">Ohne Speicherung der vollen IP. Ohne lokale GeoIP-Datei nur Hinweis aus der Spracheinstellung des Browsers.</p>
+        {countries.length === 0 ? <p class="muted">Keine Angaben.</p> : (
+          <table><thead><tr><th>Ort</th><th>Besuche</th></tr></thead>
+          <tbody>{countries.map(([p, n]) => <tr><td>{p}</td><td>{n}</td></tr>)}</tbody></table>
+        )}
+      </section>
+      <section class="card">
+        <h2>Geräte und Browser</h2>
+        <table><thead><tr><th>Merkmal</th><th>Anzahl</th></tr></thead>
+        <tbody>
+          {devices.map(([p, n]) => <tr><td>Gerät: {p}</td><td>{n}</td></tr>)}
+          {browsers.map(([p, n]) => <tr><td>Browser: {p}</td><td>{n}</td></tr>)}
+          {oses.map(([p, n]) => <tr><td>System: {p}</td><td>{n}</td></tr>)}
+        </tbody></table>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>Letzte Besuche</h2>
+      {recent.length === 0 ? <p class="muted">Noch keine aufgezeichneten Besuche.</p> : (
+        <table>
+          <thead><tr><th>Zeit</th><th>Sprache</th><th>Gerät</th><th>Quelle</th><th>Seiten</th></tr></thead>
+          <tbody>
+            {recent.map((v) => (
+              <tr>
+                <td>{v.startedAt.replace('T', ' ').slice(0, 19)}</td>
+                <td>{v.lang}</td>
+                <td>{v.device} · {v.os} · {v.browser}</td>
+                <td>{v.source}</td>
+                <td class="paths">{v.pages.map((p) => p.path + (p.ms != null ? ` (${Math.round(p.ms / 1000)}s)` : '')).join(' → ')}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </section>
+
+    <section class="card">
+      <h2>Einstellungen</h2>
+      <form method="post" action="/api/verwaltung/settings/">
+        <label>
+          <input type="checkbox" name="excludeAdmin" value="yes" checked={settings.excludeAdmin} />
+          Eigene Besuche aus der Verwaltung nicht mitzählen
+        </label>
+        <p><button type="submit">Speichern</button></p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

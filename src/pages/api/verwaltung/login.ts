@@ -1,19 +1,39 @@
 import type { APIRoute } from 'astro';
-import { allowLoginAttempt, mintSession, sessionCookie, verifyPassword } from '../../../lib/admin-auth';
+import {
+  checkLoginAllowed,
+  clearLoginFailures,
+  mintSession,
+  needsSetup,
+  recordLoginFailure,
+  sessionCookie,
+  verifyPassword,
+} from '../../../lib/admin-auth';
 import { truncateIp } from '../../../lib/analytics';
 
 export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
+  if (needsSetup()) {
+    return new Response(null, { status: 303, headers: { location: '/verwaltung/' } });
+  }
   const ip = truncateIp(request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || '127.0.0.1') || '0';
-  if (!allowLoginAttempt(ip)) {
-    return new Response('Zu viele Versuche. Bitte in 15 Minuten erneut versuchen.', { status: 429, headers: { 'content-type': 'text/plain; charset=utf-8' } });
+  const gate = checkLoginAllowed(ip);
+  if (!gate.ok) {
+    return new Response(null, { status: 303, headers: { location: '/verwaltung/anmelden/?sperre=1' } });
   }
   const form = await request.formData().catch(() => null);
   const pw = String(form?.get('password') || '');
   if (!verifyPassword(pw)) {
-    return new Response(null, { status: 303, headers: { location: '/verwaltung/anmelden/?fehler=1' } });
+    const after = recordLoginFailure(ip);
+    if (after.locked) {
+      return new Response(null, { status: 303, headers: { location: '/verwaltung/anmelden/?sperre=1' } });
+    }
+    return new Response(null, {
+      status: 303,
+      headers: { location: `/verwaltung/anmelden/?fehler=1&rest=${after.remaining}` },
+    });
   }
+  clearLoginFailures(ip);
   const secure = new URL(request.url).protocol === 'https:';
   return new Response(null, {
     status: 303,

@@ -1,8 +1,15 @@
 ---
 export const prerender = false;
-import { isAuthed } from '../../../lib/admin-auth';
+import AdminPwField from '../../../components/AdminPwField.astro';
+import { isAuthed, needsSetup } from '../../../lib/admin-auth';
+
+if (needsSetup()) return Astro.redirect('/verwaltung/');
 if (isAuthed(Astro.request)) return Astro.redirect('/verwaltung/');
+
 const err = Astro.url.searchParams.get('fehler') === '1';
+const locked = Astro.url.searchParams.get('sperre') === '1';
+const restRaw = Astro.url.searchParams.get('rest');
+const rest = restRaw != null && /^\d+$/.test(restRaw) ? Number(restRaw) : null;
 ---
 <!doctype html>
 <html lang="de">
@@ -22,11 +29,8 @@ const err = Astro.url.searchParams.get('fehler') === '1';
     .brand span { display: block; font-size: .8rem; color: #4a5b56; font-weight: 500; margin-top: .15rem; }
     h1 { font: 650 1.45rem/1.2 Outfit, system-ui, sans-serif; margin: .4rem 0 0; }
     p { margin: 0; color: #4a5b56; }
-    label { font-weight: 600; font-size: .95rem; }
-    input { font: inherit; padding: .75rem .85rem; border: 1px solid #c5cdc8; border-radius: 10px; width: 100%; box-sizing: border-box; }
-    input:focus { outline: 2px solid var(--forest); outline-offset: 1px; }
-    button { font: 650 1rem/1 inherit; background: var(--forest); color: #fff; border: 0; border-radius: 999px; padding: .9rem 1.2rem; cursor: pointer; }
-    button:hover { background: #164a40; }
+    button[type=submit] { font: 650 1rem/1 inherit; background: var(--forest); color: #fff; border: 0; border-radius: 999px; padding: .9rem 1.2rem; cursor: pointer; }
+    button[type=submit]:hover { background: #164a40; }
     .err { color: #7a1515; background: #fdecec; border: 1px solid #f0c4c4; border-radius: 10px; padding: .8rem .9rem; }
     .err strong { display: block; margin-bottom: .2rem; }
     .back { justify-self: start; color: var(--forest); font-weight: 600; text-decoration: none; font-size: .95rem; }
@@ -42,15 +46,22 @@ const err = Astro.url.searchParams.get('fehler') === '1';
     </a>
     <h1>Anmeldung zur Verwaltung</h1>
     <p>Geschützter Bereich für den Betreiber. Der Link steht dezent im Fußbereich der Website.</p>
-    {err && (
+    {locked && (
       <p class="err" role="alert">
-        <strong>Anmeldung fehlgeschlagen.</strong>
-        Das Kennwort ist nicht richtig. Bitte prüfen Sie die Eingabe und versuchen Sie es erneut.
+        <strong>Zu viele Versuche.</strong>
+        Bitte in 15 Minuten erneut versuchen.
+      </p>
+    )}
+    {err && !locked && (
+      <p class="err" role="alert">
+        <strong>Passwort falsch</strong>
+        {rest != null
+          ? (rest > 0 ? `Noch ${rest} ${rest === 1 ? 'Versuch' : 'Versuche'}.` : 'Keine Versuche mehr. Bitte in 15 Minuten erneut versuchen.')
+          : 'Bitte prüfen Sie die Eingabe und versuchen Sie es erneut.'}
       </p>
     )}
     <form method="post" action="/api/verwaltung/login/">
-      <label for="password">Kennwort</label>
-      <input id="password" name="password" type="password" autocomplete="current-password" required autofocus />
+      <AdminPwField id="password" name="password" label="Passwort" autocomplete="current-password" autofocus={true} />
       <button type="submit">Anmelden</button>
     </form>
     <a class="back" href="/de/">← Zurück zur Website</a>

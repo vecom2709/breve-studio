@@ -17,9 +17,13 @@ const DAILY_FILE = path.join(ANALYTICS_DIR, "daily.json");
 const SETTINGS_FILE = path.join(ANALYTICS_DIR, "settings.json");
 const HOST = "127.0.0.1";
 const PREFERRED_PORT = 4173;
-const DEFAULT_ADMIN_PASSWORD = "vorschau-lokal";
+const ADMIN_FILE = path.join(ROOT, "data", "admin.json");
 const ADMIN_COOKIE = "sb_admin";
 const ADMIN_MAX_AGE = 60 * 60 * 12;
+const ADMIN_MIN_LEN = 10;
+const ADMIN_MAX_ATTEMPTS = 10;
+const ADMIN_WINDOW_MS = 15 * 60 * 1000;
+const ENV_SALT = "studio-breve-admin-env";
 const ANALYTICS_TZ = "Europe/Rome";
 const loginAttempts = new Map();
 
@@ -130,30 +134,110 @@ async function readBody(req) {
 }
 
 
-function adminPassword() {
-  return process.env.ADMIN_PASSWORD || DEFAULT_ADMIN_PASSWORD;
+function readAdmin() {
+  try {
+    const data = JSON.parse(fs.readFileSync(ADMIN_FILE, "utf8"));
+    if (
+      data?.algo === "scrypt" &&
+      typeof data.salt === "string" &&
+      typeof data.hash === "string" &&
+      typeof data.sessionKey === "string" &&
+      data.salt.length >= 16 &&
+      data.hash.length >= 16 &&
+      data.sessionKey.length >= 16
+    ) {
+      return data;
+    }
+  } catch {}
+  return null;
 }
 
-function adminSecret() {
-  return createHash("sha256").update("studio-breve-admin:" + adminPassword()).digest();
+function writeAdmin(data) {
+  const dir = path.dirname(ADMIN_FILE);
+  fs.mkdirSync(dir, { recursive: true });
+  const tmp = `${ADMIN_FILE}.${process.pid}.${randomBytes(4).toString("hex")}.tmp`;
+  fs.writeFileSync(tmp, JSON.stringify(data, null, 2) + "\n", { encoding: "utf8", mode: 0o600 });
+  fs.renameSync(tmp, ADMIN_FILE);
+  try { fs.chmodSync(ADMIN_FILE, 0o600); } catch {}
+}
+
+function needsSetup() {
+  return !readAdmin() && !process.env.ADMIN_PASSWORD;
 }
 
 function verifyPassword(input) {
-  const a = scryptSync(String(input), "studio-breve-admin", 32);
-  const b = scryptSync(adminPassword(), "studio-breve-admin", 32);
-  return timingSafeEqual(a, b);
+  let ok = false;
+  const rec = readAdmin();
+  if (rec) {
+    try {
+      const got = scryptSync(String(input), Buffer.from(rec.salt, "hex"), 32);
+      const expect = Buffer.from(rec.hash, "hex");
+      if (got.length === expect.length && timingSafeEqual(got, expect)) ok = true;
+    } catch {}
+  }
+  const env = process.env.ADMIN_PASSWORD;
+  if (env) {
+    const a = scryptSync(String(input), ENV_SALT, 32);
+    const b = scryptSync(env, ENV_SALT, 32);
+    if (a.length === b.length && timingSafeEqual(a, b)) ok = true;
+  }
+  return ok;
 }
 
-function allowLoginAttempt(ipKey) {
+function validateNewPassword(password, repeat) {
+  if (String(password).length < ADMIN_MIN_LEN) {
+    return `Das Passwort muss mindestens ${ADMIN_MIN_LEN} Zeichen haben.`;
+  }
+  if (password !== repeat) return "Die Passwörter stimmen nicht überein.";
+  return null;
+}
+
+function setPassword(password) {
+  const err = validateNewPassword(password, password);
+  if (err) throw new Error(err);
+  const salt = randomBytes(16);
+  const hash = scryptSync(password, salt, 32);
+  const sessionKey = randomBytes(32);
+  writeAdmin({
+    algo: "scrypt",
+    salt: salt.toString("hex"),
+    hash: hash.toString("hex"),
+    sessionKey: sessionKey.toString("hex"),
+    updatedAt: new Date().toISOString(),
+  });
+}
+
+function checkLoginAllowed(ipKey) {
+  const now = Date.now();
+  const row = loginAttempts.get(ipKey);
+  if (!row || now > row.reset) return { ok: true, remaining: ADMIN_MAX_ATTEMPTS, locked: false };
+  if (row.n >= ADMIN_MAX_ATTEMPTS) return { ok: false, remaining: 0, locked: true };
+  return { ok: true, remaining: ADMIN_MAX_ATTEMPTS - row.n, locked: false };
+}
+
+function recordLoginFailure(ipKey) {
   const now = Date.now();
   const row = loginAttempts.get(ipKey);
   if (!row || now > row.reset) {
-    loginAttempts.set(ipKey, { n: 1, reset: now + 15 * 60 * 1000 });
-    return true;
+    loginAttempts.set(ipKey, { n: 1, reset: now + ADMIN_WINDOW_MS });
+    return { ok: true, remaining: ADMIN_MAX_ATTEMPTS - 1, locked: false };
   }
-  if (row.n >= 5) return false;
   row.n += 1;
-  return true;
+  if (row.n >= ADMIN_MAX_ATTEMPTS) return { ok: false, remaining: 0, locked: true };
+  return { ok: true, remaining: ADMIN_MAX_ATTEMPTS - row.n, locked: false };
+}
+
+function clearLoginFailures(ipKey) {
+  loginAttempts.delete(ipKey);
+}
+
+function adminSecret() {
+  const rec = readAdmin();
+  if (rec?.sessionKey) return Buffer.from(rec.sessionKey, "hex");
+  if (process.env.ADMIN_PASSWORD) {
+    return createHash("sha256").update("studio-breve-admin:" + process.env.ADMIN_PASSWORD).digest();
+  }
+  return createHash("sha256").update("studio-breve-admin:unset").digest();
 }
 
 function mintSession() {
@@ -384,24 +468,93 @@ function escapeHtml(v) {
   return String(v ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 }
 
-function loginPage(err) {
-  const html = `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Anmeldung — Verwaltung</title>
+function authShell(title, body) {
+  return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>${title} — Verwaltung</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F7F8F6;font-family:system-ui,sans-serif;color:#14221f;padding:1.5rem}.card{width:min(26rem,100%);background:#fff;border:1px solid #d7ddd9;border-radius:18px;padding:2rem 1.8rem 1.6rem;display:grid;gap:1rem}.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}.brand img{width:44px;height:44px}.brand strong{display:block;font-weight:700}.brand small{color:#4a5b56}h1{font-size:1.45rem;margin:.2rem 0 0}p{margin:0;color:#4a5b56}form{display:grid;gap:.85rem}input{font:inherit;padding:.75rem .85rem;border:1px solid #c5cdc8;border-radius:10px}button{font:650 1rem/1 system-ui;background:#0f3b33;color:#fff;border:0;border-radius:999px;padding:.9rem 1.2rem;cursor:pointer}.err{color:#7a1515;background:#fdecec;border:1px solid #f0c4c4;border-radius:10px;padding:.8rem .9rem}.back{color:#0f3b33;font-weight:600;text-decoration:none}</style></head>
-  <body><div class="card"><a class="brand" href="/de/"><img src="/logo-studio-breve.svg" width="44" height="44" alt=""><span><strong>Studio Breve</strong><small>Digitalstudio · Aragona, Sizilien</small></span></a>
+  <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F7F8F6;font-family:system-ui,sans-serif;color:#14221f;padding:1.5rem}.card{width:min(26rem,100%);background:#fff;border:1px solid #d7ddd9;border-radius:18px;padding:2rem 1.8rem 1.6rem;display:grid;gap:1rem}.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}.brand img{width:44px;height:44px}.brand strong{display:block;font-weight:700}.brand small{color:#4a5b56}h1{font-size:1.45rem;margin:.2rem 0 0}p{margin:0;color:#4a5b56}form{display:grid;gap:.85rem}label{font-weight:600}.pw-wrap{position:relative;display:grid}.pw-wrap input{font:inherit;padding:.75rem 2.7rem .75rem .85rem;border:1px solid #c5cdc8;border-radius:10px;width:100%;box-sizing:border-box}.pw-toggle{position:absolute;right:.25rem;top:50%;transform:translateY(-50%);width:2.2rem;height:2.2rem;border:0;background:transparent;color:#4a5b56;cursor:pointer;display:grid;place-items:center;border-radius:8px}button[type=submit]{font:650 1rem/1 system-ui;background:#0f3b33;color:#fff;border:0;border-radius:999px;padding:.9rem 1.2rem;cursor:pointer}.err{color:#7a1515;background:#fdecec;border:1px solid #f0c4c4;border-radius:10px;padding:.8rem .9rem}.ok{color:#14532d;background:#e7f6ea;border-radius:10px;padding:.8rem .9rem}.back{color:#0f3b33;font-weight:600;text-decoration:none}.tools{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}</style></head>
+  <body><div class="card">${body}</div>
+  <script>(function(){document.addEventListener("click",function(ev){var btn=ev.target.closest&&ev.target.closest(".pw-toggle");if(!btn)return;var input=document.getElementById(btn.getAttribute("data-for"));if(!input)return;var show=input.type==="password";input.type=show?"text":"password";btn.setAttribute("aria-pressed",show?"true":"false");btn.setAttribute("aria-label",show?"Passwort verbergen":"Passwort anzeigen");});})();</script>
+  </body></html>`;
+}
+
+function pwField(id, name, label, autocomplete, extra) {
+  return `<label for="${id}">${label}</label><div class="pw-wrap"><input id="${id}" name="${name}" type="password" autocomplete="${autocomplete}" required ${extra || ""}><button type="button" class="pw-toggle" data-for="${id}" aria-label="Passwort anzeigen" aria-pressed="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 12S6 6.5 12 6.5 21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.6"/></svg></button></div>`;
+}
+
+function brandBlock() {
+  return `<a class="brand" href="/de/"><img src="/logo-studio-breve.svg" width="44" height="44" alt=""><span><strong>Studio Breve</strong><small>Digitalstudio · Aragona, Sizilien</small></span></a>`;
+}
+
+function loginPage(search) {
+  const q = new URLSearchParams((search || "").replace(/^\?/, ""));
+  const locked = q.get("sperre") === "1";
+  const err = q.get("fehler") === "1";
+  const rest = q.has("rest") && /^\d+$/.test(q.get("rest") || "") ? Number(q.get("rest")) : null;
+  let alert = "";
+  if (locked) {
+    alert = `<p class="err" role="alert"><strong>Zu viele Versuche.</strong> Bitte in 15 Minuten erneut versuchen.</p>`;
+  } else if (err) {
+    const more = rest == null ? "Bitte prüfen Sie die Eingabe und versuchen Sie es erneut."
+      : rest > 0 ? `Noch ${rest} ${rest === 1 ? "Versuch" : "Versuche"}.`
+      : "Keine Versuche mehr. Bitte in 15 Minuten erneut versuchen.";
+    alert = `<p class="err" role="alert"><strong>Passwort falsch</strong> ${more}</p>`;
+  }
+  return authShell("Anmeldung", `${brandBlock()}
   <h1>Anmeldung zur Verwaltung</h1>
   <p>Geschützter Bereich für den Betreiber. Der Link steht dezent im Fußbereich der Website.</p>
-  __ERR__
-  <form method="post" action="/api/verwaltung/login/"><label for="password">Kennwort</label><input id="password" name="password" type="password" autocomplete="current-password" required><button type="submit">Anmelden</button></form>
-  <a class="back" href="/de/">← Zurück zur Website</a></div></body></html>`;
-  return html.replace('__ERR__', err ? `<p class="err" role="alert"><strong>Anmeldung fehlgeschlagen.</strong> Das Kennwort ist nicht richtig. Bitte prüfen Sie die Eingabe und versuchen Sie es erneut.</p>` : '');
+  ${alert}
+  <form method="post" action="/api/verwaltung/login/">${pwField("password", "password", "Passwort", "current-password", "autofocus")}
+  <button type="submit">Anmelden</button></form>
+  <a class="back" href="/de/">← Zurück zur Website</a>`);
 }
+
+function setupPage(search) {
+  const q = new URLSearchParams((search || "").replace(/^\?/, ""));
+  const fehler = q.get("fehler");
+  const msg = fehler === "kurz" ? `Das Passwort muss mindestens ${ADMIN_MIN_LEN} Zeichen haben.`
+    : fehler === "wiederholung" ? "Die Passwörter stimmen nicht überein."
+    : fehler ? "Das Passwort konnte nicht gespeichert werden. Bitte erneut versuchen."
+    : "";
+  const alert = msg ? `<p class="err" role="alert">${msg}</p>` : "";
+  return authShell("Passwort festlegen", `${brandBlock()}
+  <h1>Passwort festlegen</h1>
+  <p>Beim ersten Aufruf legen Sie ein eigenes Passwort für die Verwaltung fest. Mindestens ${ADMIN_MIN_LEN} Zeichen, bitte wiederholen.</p>
+  ${alert}
+  <form method="post" action="/api/verwaltung/setup/">${pwField("password", "password", "Neues Passwort", "new-password", `autofocus minlength="${ADMIN_MIN_LEN}"`)}
+  ${pwField("password2", "password2", "Passwort wiederholen", "new-password", `minlength="${ADMIN_MIN_LEN}"`)}
+  <button type="submit">Passwort speichern und anmelden</button></form>
+  <a class="back" href="/de/">← Zurück zur Website</a>`);
+}
+
+function passwordPage(search) {
+  const q = new URLSearchParams((search || "").replace(/^\?/, ""));
+  const fehler = q.get("fehler");
+  const ok = q.get("ok") === "1";
+  const msg = fehler === "aktuell" ? "Aktuelles Passwort falsch."
+    : fehler === "kurz" ? `Das neue Passwort muss mindestens ${ADMIN_MIN_LEN} Zeichen haben.`
+    : fehler === "wiederholung" ? "Die neuen Passwörter stimmen nicht überein."
+    : fehler ? "Das Passwort konnte nicht geändert werden."
+    : "";
+  const alert = (ok ? `<p class="ok" role="status">Passwort geändert.</p>` : "") + (msg ? `<p class="err" role="alert">${msg}</p>` : "");
+  return authShell("Passwort ändern", `<h1>Passwort ändern</h1>
+  <p>Geben Sie das aktuelle Passwort und zweimal das neue Passwort ein (mindestens ${ADMIN_MIN_LEN} Zeichen).</p>
+  ${alert}
+  <form method="post" action="/api/verwaltung/passwort/">${pwField("current", "current", "Aktuelles Passwort", "current-password", "autofocus")}
+  ${pwField("password", "password", "Neues Passwort", "new-password", `minlength="${ADMIN_MIN_LEN}"`)}
+  ${pwField("password2", "password2", "Neues Passwort wiederholen", "new-password", `minlength="${ADMIN_MIN_LEN}"`)}
+  <button type="submit">Passwort speichern</button></form>
+  <div class="tools"><a class="back" href="/verwaltung/">← Zurück zur Verwaltung</a>
+  <form method="post" action="/api/verwaltung/logout/" style="margin:0"><button type="submit" style="position:static;transform:none;width:auto;height:auto;padding:.45rem .85rem;border:1px solid #d7ddd9;color:#0f3b33;background:transparent;border-radius:999px">Abmelden</button></form></div>`);
+}
+
 
 function dashboardPage(reqUrl) {
   const url = new URL(reqUrl, `http://${HOST}`);
   const von = url.searchParams.get("von") || "";
   const bis = url.searchParams.get("bis") || "";
-  const ok = url.searchParams.get("ok") === "1";
+  const okParam = url.searchParams.get("ok");
+  const ok = okParam === "1";
+  const pwOk = okParam === "pw";
   const settings = readSettings();
   const dailyAll = readDaily();
   const totalAll = uniqueVisitTotal();
@@ -434,10 +587,10 @@ function dashboardPage(reqUrl) {
   const row = (cells) => "<tr>" + cells.map((c) => `<td>${c}</td>`).join("") + "</tr>";
   const table = (head, rows) => !rows.length ? '<p class="muted">Keine Daten.</p>' : `<table><thead><tr>${head.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.join("")}</tbody></table>`;
   return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Besuche — Verwaltung</title>
-  <style>body{margin:0;background:#F7F8F6;color:#14221f;font-family:system-ui,sans-serif}header{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;background:#fff;border-bottom:1px solid #d7ddd9}main{max-width:72rem;margin:0 auto;padding:1.25rem 1.5rem 3rem;display:grid;gap:1.25rem}.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.8rem}.kpi,.card{background:#fff;border:1px solid #d7ddd9;border-radius:12px;padding:1rem}.kpi b{display:block;font-size:1.6rem}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:.4rem .3rem;border-bottom:1px solid #d7ddd9;vertical-align:top}button,.btn{font:600 .95rem/1 system-ui;background:#0f3b33;color:#fff;border:0;border-radius:999px;padding:.55rem .95rem;text-decoration:none;display:inline-block}.ghost{background:transparent;color:#0f3b33;border:1px solid #d7ddd9}.row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:end}.muted{color:#4a5b56}.grid2{display:grid;gap:1.25rem}@media(min-width:56rem){.grid2{grid-template-columns:1fr 1fr}}</style></head>
-  <body><header><h1>Besuche — Studio Breve</h1><form method="post" action="/api/verwaltung/logout/"><button class="ghost" type="submit">Abmelden</button></form></header>
+  <style>body{margin:0;background:#F7F8F6;color:#14221f;font-family:system-ui,sans-serif}header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding:1rem 1.5rem;background:#fff;border-bottom:1px solid #d7ddd9}.admin-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem}main{max-width:72rem;margin:0 auto;padding:1.25rem 1.5rem 3rem;display:grid;gap:1.25rem}.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.8rem}.kpi,.card{background:#fff;border:1px solid #d7ddd9;border-radius:12px;padding:1rem}.kpi b{display:block;font-size:1.6rem}table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:.4rem .3rem;border-bottom:1px solid #d7ddd9;vertical-align:top}button,.btn{font:600 .95rem/1 system-ui;background:#0f3b33;color:#fff;border:0;border-radius:999px;padding:.55rem .95rem;text-decoration:none;display:inline-block}.ghost{background:transparent;color:#0f3b33;border:1px solid #d7ddd9}.row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:end}.muted{color:#4a5b56}.grid2{display:grid;gap:1.25rem}@media(min-width:56rem){.grid2{grid-template-columns:1fr 1fr}}</style></head>
+  <body><header><h1>Besuche — Studio Breve</h1><div class="admin-tools"><a class="btn ghost" href="/verwaltung/passwort/">Passwort ändern</a><form method="post" action="/api/verwaltung/logout/"><button class="ghost" type="submit">Abmelden</button></form></div></header>
   <main>
-    ${ok ? '<p>Einstellung gespeichert.</p>' : ""}
+    ${ok ? '<p>Einstellung gespeichert.</p>' : ""}${pwOk ? '<p>Passwort geändert.</p>' : ""}
     <section class="kpis"><div class="kpi"><b>${dailyAll[today] || 0}</b><span>Heute</span></div><div class="kpi"><b>${sumRange(daysAgo(6))}</b><span>7 Tage</span></div><div class="kpi"><b>${sumRange(daysAgo(29))}</b><span>30 Tage</span></div><div class="kpi"><b>${totalAll}</b><span>Seit Start</span></div></section>
     <form class="row card" method="get" action="/verwaltung/"><label>Von <input type="date" name="von" value="${escapeHtml(von)}"></label><label>Bis <input type="date" name="bis" value="${escapeHtml(bis)}"></label><button type="submit">Filtern</button><a class="btn ghost" href="/verwaltung/">Zurücksetzen</a><a class="btn ghost" href="${exportHref}">CSV exportieren</a></form>
     <div class="grid2">
@@ -462,14 +615,36 @@ function dashboardPage(reqUrl) {
 
 async function handleAdminApi(req, res, pathname) {
   const secure = false;
-  if (pathname === "/api/verwaltung/login") {
-    if (req.method !== "POST") return send(res, 405, "Method Not Allowed", { Allow: "POST" });
-    const ip = (req.headers["x-forwarded-for"] || req.socket?.remoteAddress || "127.0.0.1").toString();
-    if (!allowLoginAttempt(ip.replace(/\d+$/, "0"))) return send(res, 429, "Zu viele Versuche. Bitte in 15 Minuten erneut versuchen.");
+  const ip = (req.headers["x-forwarded-for"] || req.socket?.remoteAddress || "127.0.0.1").toString().replace(/\d+$/, "0");
+  const readForm = async () => {
     const raw = await readBody(req);
     const ctype = req.headers["content-type"] || "";
-    const form = ctype.includes("multipart/form-data") ? parseMultipart(raw, ctype) : parseUrlEncoded(raw);
-    if (!verifyPassword(form.password || "")) return sendRedirect(res, "/verwaltung/anmelden/?fehler=1");
+    return ctype.includes("multipart/form-data") ? parseMultipart(raw, ctype) : parseUrlEncoded(raw);
+  };
+  if (pathname === "/api/verwaltung/setup") {
+    if (req.method !== "POST") return send(res, 405, "Method Not Allowed", { Allow: "POST" });
+    if (!needsSetup()) return sendRedirect(res, "/verwaltung/anmelden/");
+    const form = await readForm();
+    const err = validateNewPassword(form.password || "", form.password2 || form.repeat || "");
+    if (err) {
+      const code = String(form.password || "").length < ADMIN_MIN_LEN ? "kurz" : "wiederholung";
+      return sendRedirect(res, "/verwaltung/?fehler=" + code);
+    }
+    setPassword(form.password);
+    res.writeHead(303, { Location: "/verwaltung/", "Set-Cookie": cookieHeader(mintSession(), ADMIN_MAX_AGE, secure) });
+    return res.end();
+  }
+  if (pathname === "/api/verwaltung/login") {
+    if (req.method !== "POST") return send(res, 405, "Method Not Allowed", { Allow: "POST" });
+    if (needsSetup()) return sendRedirect(res, "/verwaltung/");
+    if (!checkLoginAllowed(ip).ok) return sendRedirect(res, "/verwaltung/anmelden/?sperre=1");
+    const form = await readForm();
+    if (!verifyPassword(form.password || "")) {
+      const after = recordLoginFailure(ip);
+      if (after.locked) return sendRedirect(res, "/verwaltung/anmelden/?sperre=1");
+      return sendRedirect(res, "/verwaltung/anmelden/?fehler=1&rest=" + after.remaining);
+    }
+    clearLoginFailures(ip);
     res.writeHead(303, { Location: "/verwaltung/", "Set-Cookie": cookieHeader(mintSession(), ADMIN_MAX_AGE, secure) });
     return res.end();
   }
@@ -478,6 +653,19 @@ async function handleAdminApi(req, res, pathname) {
     return res.end();
   }
   if (!isAuthed(req)) return sendRedirect(res, "/verwaltung/anmelden/");
+  if (pathname === "/api/verwaltung/passwort") {
+    if (req.method !== "POST") return send(res, 405, "Method Not Allowed", { Allow: "POST" });
+    const form = await readForm();
+    if (!verifyPassword(form.current || "")) return sendRedirect(res, "/verwaltung/passwort/?fehler=aktuell");
+    const err = validateNewPassword(form.password || "", form.password2 || form.repeat || "");
+    if (err) {
+      const code = String(form.password || "").length < ADMIN_MIN_LEN ? "kurz" : "wiederholung";
+      return sendRedirect(res, "/verwaltung/passwort/?fehler=" + code);
+    }
+    setPassword(form.password);
+    res.writeHead(303, { Location: "/verwaltung/passwort/?ok=1", "Set-Cookie": cookieHeader(mintSession(), ADMIN_MAX_AGE, secure) });
+    return res.end();
+  }
   if (pathname === "/api/verwaltung/settings") {
     if (req.method !== "POST") return send(res, 405, "Method Not Allowed", { Allow: "POST" });
     const raw = await readBody(req);
@@ -508,10 +696,17 @@ async function handleAdminApi(req, res, pathname) {
 
 function handleAdminPage(req, res, pathname, search) {
   if (pathname === "/verwaltung/anmelden") {
+    if (needsSetup()) return sendRedirect(res, "/verwaltung/");
     if (isAuthed(req)) return sendRedirect(res, "/verwaltung/");
-    return sendHtml(res, 200, loginPage(search.includes("fehler=1")));
+    return sendHtml(res, 200, loginPage(search));
+  }
+  if (pathname === "/verwaltung/passwort") {
+    if (needsSetup()) return sendRedirect(res, "/verwaltung/");
+    if (!isAuthed(req)) return sendRedirect(res, "/verwaltung/anmelden/");
+    return sendHtml(res, 200, passwordPage(search));
   }
   if (pathname === "/verwaltung") {
+    if (needsSetup()) return sendHtml(res, 200, setupPage(search));
     if (!isAuthed(req)) return sendRedirect(res, "/verwaltung/anmelden/");
     return sendHtml(res, 200, dashboardPage(req.url || "/verwaltung/"));
   }
@@ -605,7 +800,7 @@ function handler(req, res) {
     handleAdminApi(req, res, clean).catch(() => send(res, 500, "Fehler"));
     return;
   }
-  if (clean === "/verwaltung" || clean === "/verwaltung/anmelden") {
+  if (clean === "/verwaltung" || clean === "/verwaltung/anmelden" || clean === "/verwaltung/passwort") {
     handleAdminPage(req, res, clean, url.search);
     return;
   }
@@ -716,10 +911,10 @@ async function main() {
   console.log("Deutsch:     " + `http://${HOST}:${port}/de/`);
   console.log("Italienisch: " + `http://${HOST}:${port}/it/`);
   console.log("Verwaltung:  " + `http://${HOST}:${port}/verwaltung/`);
-  if (!process.env.ADMIN_PASSWORD) {
-    console.log("Kennwort (nur lokal, bitte ändern): " + DEFAULT_ADMIN_PASSWORD);
-  } else {
-    console.log("Kennwort:    aus ADMIN_PASSWORD");
+  if (needsSetup()) {
+    console.log("Verwaltung: beim ersten Aufruf Passwort festlegen");
+  } else if (process.env.ADMIN_PASSWORD && !readAdmin()) {
+    console.log("Verwaltung: Kennwort aus ADMIN_PASSWORD");
   }
   console.log("Zum Beenden: Strg+C");
   console.log("");
