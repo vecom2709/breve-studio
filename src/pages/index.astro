@@ -4,7 +4,7 @@ import '@fontsource-variable/fraunces/opsz.css';
 import '@fontsource-variable/fraunces/opsz-italic.css';
 import '@fontsource-variable/source-sans-3/wght.css';
 import '../styles/global.css';
-import Mark from '../components/Mark.astro';
+import Wordmark from '../components/Wordmark.astro';
 import { site } from '../content/site';
 import {
   locales,
@@ -72,8 +72,7 @@ const destinations = Object.fromEntries(locales.map((l) => [l, path('home', l)])
   <body class="chooser-body">
     <main class="chooser" id="inhalt">
       <p class="brand">
-        <Mark size={36} />
-        <span>Studio <em>Breve</em></span>
+        <Wordmark lang="de" theme="light" width={200} link={false} />
       </p>
       <h1>
         <span lang="de">Sprache wählen</span>

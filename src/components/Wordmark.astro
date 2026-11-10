@@ -1,38 +1,21 @@
 ---
+/** Logo „Studio Breve“ mit goldenem V. `dark` = helle Schrift für dunkle Flächen, `light` = dunkle Schrift für helle Flächen. */
 import type { Locale } from '../content/packages';
-import { path, ui } from '../lib/i18n';
-interface Props { lang: Locale; theme?: 'dark' | 'light' }
-const { lang, theme = 'light' } = Astro.props;
+import { path } from '../lib/i18n';
+interface Props { lang: Locale; theme?: 'dark' | 'light'; width?: number; link?: boolean }
+const { lang, theme = 'light', width = 180, link = true } = Astro.props;
+const datei = theme === 'dark' ? 'logo-studio-breve-gold' : 'logo-studio-breve-gold-hell';
+const hoehe = Math.round((width * 372) / 1223);
+const Tag = link ? 'a' : 'span';
 ---
-<a class:list={['wordmark', theme]} href={path('home', lang)} aria-label={lang === 'de' ? 'Studio Breve – Startseite' : 'Studio Breve – home'}>
-  <span class="tile" aria-hidden="true">
-    <!-- Zeichen: das typografische Breve (˘) als Monogramm -->
-    <svg viewBox="0 0 48 48" width="30" height="30" focusable="false">
-      <path d="M13.5 12.5v11.2a10.5 10.5 0 0 0 21 0V12.5" fill="none" stroke="currentColor" stroke-width="6.4" stroke-linecap="round" />
-    </svg>
-  </span>
-  <span class="wm-col">
-    <span class="wm-text">Studio <em>Breve</em></span>
-    <span class="wm-tag">{ui[lang].taglineSmall}</span>
-  </span>
-</a>
+<Tag class:list={['wordmark', theme]} href={link ? path('home', lang) : undefined} aria-label={link ? (lang === 'de' ? 'Studio Breve – Startseite' : 'Studio Breve – home') : undefined}>
+  <picture>
+    <source type="image/webp" srcset={`/${datei}-240.webp 240w, /${datei}-480.webp 480w, /${datei}-720.webp 720w`} sizes={`${width}px`} />
+    <img src={`/${datei}-480.png`} width={width} height={hoehe} alt="Studio Breve" decoding="async" />
+  </picture>
+</Tag>
 <style>
-  .wordmark { display: inline-flex; align-items: center; gap: 0.85rem; text-decoration: none; color: var(--ink); flex: none; }
-  .tile { width: 3.1rem; height: 3.1rem; flex: none; display: grid; place-items: center; border-radius: 0.85rem; background: #fff; color: #10201d; box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 6px 18px rgba(0,0,0,.18); }
-  .light .tile { background: var(--forest); color: #fff; box-shadow: none; }
-  .wm-col { display: grid; gap: 0.32rem; line-height: 1; }
-  .wm-text { font-family: var(--serif); font-size: 1.62rem; letter-spacing: -0.01em; font-weight: 420; }
-  .wm-text em { font-style: italic; font-weight: 400; }
-  .wm-tag { font-family: var(--geo); font-size: 0.64rem; font-weight: 640; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
-  .wordmark.light .wm-text em { color: var(--forest-mid); }
-  .wordmark.dark { color: #fff; }
-  .wordmark.dark .wm-tag { color: rgba(255,255,255,.86); }
-  .wordmark.dark:hover, .wordmark.light:hover { color: inherit; }
-  .wordmark.dark:hover { color: #fff; }
-  @media (max-width: 32rem) {
-    .wm-tag { display: none; }
-    .wm-text { font-size: 1.3rem; }
-    .tile { width: 2.6rem; height: 2.6rem; border-radius: 0.7rem; }
-    .tile svg { width: 25px; height: 25px; }
-  }
+  .wordmark { display: inline-block; line-height: 0; border-radius: 6px; text-decoration: none; }
+  .wordmark img { height: auto; }
+  .wordmark:focus-visible { box-shadow: 0 0 0 3px var(--gold); }
 </style>
