@@ -1,0 +1,100 @@
+---
+import Base from '../layouts/Base.astro';
+import PackageCard from '../components/PackageCard.astro';
+import BundleCard from '../components/BundleCard.astro';
+import { categories, packagesSorted, bundles, type Locale } from '../content/packages';
+import { ui } from '../lib/i18n';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = ui[lang];
+const de = lang === 'de';
+const all = packagesSorted();
+const used = categories.filter((c) => all.some((p) => p.category === c.id));
+---
+<Base lang={lang} routeKey="packages"
+  title={de ? 'Pakete' : 'Pacchetti'}
+  description={de ? 'Alle digitalen Pakete von Studio Breve mit Listenpreis und aktuellem Stand: Ausschreibungen, Immobilien und Gastgewerbe, Website und Sichtbarkeit, Wissen und Vorlagen.' : 'Tutti i pacchetti digitali di Studio Breve con prezzo di listino e stato attuale: gare e incentivi, immobiliare e ospitalità, sito web e visibilità, formazione e modelli.'}>
+  <section class="head">
+    <div class="wrap">
+      <p class="eyebrow">{de ? 'Katalog' : 'Catalogo'}</p>
+      <h1>{de ? <>Pakete mit klarem Umfang <em class="accent">und offenem Preis.</em></> : <>Pacchetti con un perimetro chiaro <em class="accent">e un prezzo in vista.</em></>}</h1>
+      <p class="lead">{de
+        ? 'Jedes Paket zeigt Listenpreis und ehrlichen Stand. Produkte in Entwicklung können Sie vormerken, persönliche Leistungen unverbindlich anfragen. Der Katalog wächst.'
+        : 'Ogni pacchetto indica prezzo di listino e stato reale. I prodotti in sviluppo puoi segnarli, i servizi personali puoi richiederli senza impegno. Il catalogo crescerà.'}</p>
+      <ul class="legend" aria-label={de ? 'Bedeutung der Status' : 'Significato degli stati'}>
+        {(['inquiry', 'waitlist', 'soon'] as const).map((s) => <li><span class="status" data-status={s}>{t.status[s]}</span><span class="small muted">{t.statusExplain[s].split('. ')[0]}.</span></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="catalog" aria-labelledby="cat-h">
+    <div class="wrap">
+      <h2 id="cat-h" class="visually-hidden">{de ? 'Alle Pakete' : 'Tutti i pacchetti'}</h2>
+      <div class="filters" data-filters hidden>
+        <p class="flabel" id="flabel">{t.filterLabel}</p>
+        <div class="chips" role="group" aria-labelledby="flabel">
+          <button type="button" class="chip" data-filter="" aria-pressed="true">{t.all}</button>
+          {used.map((c) => <button type="button" class="chip" data-filter={c.id} aria-pressed="false">{c.label[lang]}</button>)}
+        </div>
+        <p class="count small muted" aria-live="polite" data-count data-one={t.resultCount(1)} data-many={t.resultCount(2)}>{t.resultCount(all.length)}</p>
+      </div>
+      <div class="grid grid-2 grid-3 cards" data-cards>
+        {all.map((p) => <PackageCard pkg={p} lang={lang} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bundles" aria-labelledby="bu-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">{t.bundles}</p>
+        <h2 id="bu-h">{de ? 'Vorgeschlagene Kombinationen' : 'Combinazioni proposte'}</h2>
+        <p class="muted">{t.bundlesIntro}</p>
+      </div>
+      <div class="grid grid-2 grid-3">
+        {bundles.map((b) => <BundleCard bundle={b} lang={lang} />)}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const wrap = document.querySelector<HTMLElement>('[data-filters]');
+  if (wrap) {
+    wrap.hidden = false;
+    const chips = [...wrap.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+    const cards = [...document.querySelectorAll<HTMLElement>('[data-cards] > [data-category]')];
+    const count = wrap.querySelector<HTMLElement>('[data-count]')!;
+    const fmt = (n: number) => (n === 1 ? count.dataset.one! : count.dataset.many!.replace(/^\d+/, String(n)));
+    const apply = (cat: string, push = true) => {
+      if (cat && !chips.some((c) => c.dataset.filter === cat)) cat = '';
+      chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.filter === cat)));
+      let n = 0;
+      cards.forEach((el) => { const show = !cat || el.dataset.category === cat; el.hidden = !show; if (show) n++; });
+      count.textContent = fmt(n);
+      if (push) { const u = new URL(location.href); cat ? u.searchParams.set('k', cat) : u.searchParams.delete('k'); history.replaceState(null, '', u); }
+    };
+    chips.forEach((c) => c.addEventListener('click', () => apply(c.dataset.filter ?? '')));
+    apply(new URLSearchParams(location.search).get('k') ?? '', false);
+  }
+</script>
+
+<style>
+  .head { padding-block: var(--space-xl) var(--space-l); }
+  .head h1 { max-width: 16em; margin-top: 1rem; }
+  .head .lead { margin-top: 1.4rem; }
+  .legend { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: .6rem; }
+  @media (min-width: 62rem) { .legend { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; } }
+  .legend li { display: grid; gap: .2rem; padding-top: .8rem; border-top: 1px solid var(--line); }
+  .filters { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.25rem; margin-bottom: var(--space-m); padding-block: 1rem; border-block: 1px solid var(--line); }
+  .filters[hidden] { display: none; }
+  .flabel { font-size: var(--step--1); font-weight: 600; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .chip { font: 500 var(--step--1)/1.2 var(--sans); color: var(--ink); background: transparent; border: 1px solid var(--line-strong); border-radius: 999px; padding: .55rem .95rem; min-height: 2.5rem; cursor: pointer; }
+  .chip:hover { border-color: var(--ink); }
+  .chip[aria-pressed='true'] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+  .count { margin-left: auto; }
+  .cards > :global([hidden]) { display: none !important; }
+  .bundles { margin-top: var(--space-xl); border-top: 1px solid var(--line); }
+  .sec-head { max-width: 40rem; margin-bottom: var(--space-l); display: grid; gap: .7rem; }
+</style>

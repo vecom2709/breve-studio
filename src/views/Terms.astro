@@ -1,0 +1,52 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { site } from '../content/site';
+import type { Locale } from '../content/packages';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const op = site.operator;
+const de = lang === 'de';
+---
+{de ? (
+<Legal lang={lang} routeKey="terms" title="Allgemeine Geschäftsbedingungen" description="Allgemeine Geschäftsbedingungen von Studio Breve (Entwurf).">
+  <h2>1. Geltungsbereich und Anbieter</h2>
+  <p>Diese Bedingungen gelten für Leistungen von Studio Breve, {op.name}, {op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.de}, P.IVA [wird ergänzt].</p>
+  <h2>2. Aktueller Stand</h2>
+  <p>Studio Breve hat den Geschäftsbetrieb noch nicht aufgenommen. Über diese Website kommen <strong>keine Verträge</strong> zustande. Das Absenden des Formulars ist eine unverbindliche Anfrage bzw. Vormerkung und verpflichtet weder Sie noch uns.</p>
+  <h2>3. Darstellung der Pakete und Preise</h2>
+  <p>Die Darstellung der Pakete ist kein bindendes Angebot. Genannte Preise sind Listenpreise in Euro. Preise mit dem Zusatz „zzgl. MwSt.“ verstehen sich zuzüglich der gesetzlichen Mehrwertsteuer (IVA). Bei Preisen mit dem Hinweis „Steuerausweis vor Start zu klären“ wird die steuerliche Behandlung vor dem Start festgelegt. Als geplant bezeichnete Startangebote (z. B. Testzeiträume) sind Absichten und noch nicht verbindlich.</p>
+  <h2>4. Vertragsschluss nach dem Start</h2>
+  <p>Nach dem Start kommt ein Vertrag erst durch ein ausdrückliches, schriftliches oder elektronisches Angebot von Studio Breve und Ihre Annahme zustande. Umfang, Laufzeit, Kündigungsfristen und Preis ergeben sich aus diesem Angebot und der jeweiligen Paketbeschreibung. [Detailregelungen je Paket werden ergänzt.]</p>
+  <h2>5. Verbraucher</h2>
+  <p>Sind Sie Verbraucher, gelten zusätzlich die zwingenden Verbraucherschutzvorschriften, insbesondere des italienischen Codice del Consumo (D.Lgs. 206/2005) und die Schutzvorschriften Ihres Aufenthaltsstaats. Bei Fernabsatzverträgen besteht in der Regel ein Widerrufsrecht von 14 Tagen; eine Widerrufsbelehrung wird mit dem Angebot bereitgestellt. Bei digitalen Inhalten kann das Widerrufsrecht unter den gesetzlichen Voraussetzungen vorzeitig erlöschen.</p>
+  <h2>6. KI-gestützte Leistungen</h2>
+  <p>Einige Pakete nutzen KI-Verfahren. Solche Ergebnisse werden gekennzeichnet und sind vor Verwendung durch Sie zu prüfen. Sie ersetzen keine Rechts-, Steuer- oder sonstige Fachberatung.</p>
+  <h2>7. Haftung</h2>
+  <p>Studio Breve haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie bei Verletzung von Leben, Körper und Gesundheit. Im Übrigen wird die Haftung im gesetzlich zulässigen Umfang begrenzt; die konkrete Regelung wird vor dem Start festgelegt. [wird ergänzt]</p>
+  <h2>8. Anwendbares Recht und Gerichtsstand</h2>
+  <p>Es gilt italienisches Recht. Für Verbraucher bleiben die zwingenden Vorschriften ihres Aufenthaltsstaats unberührt. Gerichtsstand für Unternehmer ist, soweit zulässig, Agrigento; für Verbraucher gilt der gesetzliche Gerichtsstand.</p>
+  <h2>9. Änderungen</h2>
+  <p>Diese Bedingungen sind ein Entwurf und werden vor dem Start überarbeitet und rechtlich geprüft.</p>
+</Legal>
+) : (
+<Legal lang={lang} routeKey="terms" title="Condizioni generali" description="Condizioni generali di Studio Breve (bozza).">
+  <h2>1. Ambito e fornitore</h2>
+  <p>Le presenti condizioni si applicano ai servizi di Studio Breve, {op.name}, {op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.it}, P.IVA [da inserire].</p>
+  <h2>2. Stato attuale</h2>
+  <p>Studio Breve non ha ancora avviato l’attività. Tramite questo sito <strong>non si conclude alcun contratto</strong>. L’invio del modulo è una richiesta o una segnalazione di interesse non vincolante, né per te né per noi.</p>
+  <h2>3. Presentazione dei pacchetti e prezzi</h2>
+  <p>La presentazione dei pacchetti non costituisce un’offerta vincolante. I prezzi indicati sono prezzi di listino in euro. I prezzi con la dicitura “+ IVA” si intendono al netto dell’IVA di legge. Per i prezzi con la nota “trattamento IVA da definire prima del lancio” il regime fiscale sarà stabilito prima dell’avvio. Le offerte di lancio indicate come previste (per esempio periodi di prova) sono intenzioni e non ancora impegni.</p>
+  <h2>4. Conclusione del contratto dopo il lancio</h2>
+  <p>Dopo il lancio, un contratto si conclude solo con un’offerta espressa di Studio Breve, scritta o elettronica, e la tua accettazione. Contenuto, durata, termini di disdetta e prezzo risultano da tale offerta e dalla descrizione del pacchetto. [Le condizioni specifiche per ogni pacchetto saranno aggiunte.]</p>
+  <h2>5. Consumatori</h2>
+  <p>Se sei un consumatore, si applicano inoltre le norme inderogabili a tutela dei consumatori, in particolare il Codice del Consumo (D.Lgs. 206/2005) e le norme del tuo Paese di residenza. Per i contratti a distanza è di norma previsto un diritto di recesso di 14 giorni; le relative informazioni saranno fornite con l’offerta. Per i contenuti digitali il diritto di recesso può estinguersi in anticipo nei casi previsti dalla legge.</p>
+  <h2>6. Servizi basati sull’AI</h2>
+  <p>Alcuni pacchetti utilizzano sistemi di intelligenza artificiale. I relativi risultati sono indicati come tali e vanno verificati da te prima dell’uso. Non sostituiscono una consulenza legale, fiscale o professionale.</p>
+  <h2>7. Responsabilità</h2>
+  <p>Studio Breve risponde senza limiti in caso di dolo e colpa grave e per danni alla vita, all’integrità fisica e alla salute. Per il resto la responsabilità è limitata nei limiti consentiti dalla legge; la disciplina concreta sarà definita prima del lancio. [da inserire]</p>
+  <h2>8. Legge applicabile e foro competente</h2>
+  <p>Si applica la legge italiana. Per i consumatori restano salve le norme inderogabili del Paese di residenza. Per i professionisti, ove consentito, è competente il foro di Agrigento; per i consumatori vale il foro previsto dalla legge.</p>
+  <h2>9. Modifiche</h2>
+  <p>Le presenti condizioni sono una bozza e saranno riviste e verificate da un professionista prima del lancio.</p>
+</Legal>
+)}

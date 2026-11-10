@@ -1,0 +1,80 @@
+---
+import Wordmark from './Wordmark.astro';
+import { site } from '../content/site';
+import { categories, type Locale } from '../content/packages';
+import { path, ui, other } from '../lib/i18n';
+interface Props { lang: Locale; altHref: string }
+const { lang, altHref } = Astro.props;
+const t = ui[lang];
+const o = other(lang);
+const op = site.operator;
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="draft" role="note"><strong>{t.draft}.</strong> {site.draftNote[lang]}</p>
+    <div class="cols">
+      <div class="col brand">
+        <Wordmark lang={lang} />
+        <p class="tag">{site.tagline[lang]}</p>
+        <address>
+          {op.name}<br />
+          {op.street}<br />
+          {op.postalCode} {op.city} ({op.province}), {op.country[lang]}<br />
+          <a href={op.phoneHref}>{op.phone}</a><br />
+          <span>{op.email}</span> <span class="muted small">({lang === 'de' ? 'Platzhalter' : 'provvisorio'})</span>
+        </address>
+      </div>
+      <nav class="col" aria-label={t.nav.packages}>
+        <p class="h">{t.nav.packages}</p>
+        <ul>
+          {categories.map((c) => <li><a href={`${path('packages', lang)}?k=${c.id}`}>{c.label[lang]}</a></li>)}
+          <li><a href={path('packages', lang)}>{t.allPackages}</a></li>
+        </ul>
+      </nav>
+      <nav class="col" aria-label="Studio Breve">
+        <p class="h">Studio Breve</p>
+        <ul>
+          <li><a href={path('about', lang)}>{t.nav.about}</a></li>
+          <li><a href={path('contact', lang)}>{t.nav.contact}</a></li>
+        </ul>
+        <p class="h h2">{lang === 'de' ? 'Rechtliches' : 'Informazioni legali'}</p>
+        <ul>
+          <li><a href={path('imprint', lang)}>{t.legal.imprint}</a></li>
+          <li><a href={path('privacy', lang)}>{t.legal.privacy}</a></li>
+          <li><a href={path('terms', lang)}>{t.legal.terms}</a></li>
+        </ul>
+      </nav>
+      <div class="col">
+        <p class="h">{lang === 'de' ? 'Sprache' : 'Lingua'}</p>
+        <ul>
+          <li><span aria-current="true" class="cur">{t.langName}</span></li>
+          <li><a href={altHref} hreflang={o} lang={o}>{ui[o].langName}</a></li>
+        </ul>
+        <p class="small muted note">{lang === 'de'
+          ? 'Diese Website setzt keine Cookies und nutzt keine Analyse- oder Tracking-Dienste.'
+          : 'Questo sito non usa cookie né servizi di analisi o tracciamento.'}</p>
+      </div>
+    </div>
+    <div class="base small">
+      <span>© 2026 Studio Breve · {op.name} · P.IVA {op.vatId[lang]}</span>
+      <span>{lang === 'de' ? 'Preise sind Listenpreise; ein Vertrag kommt über diese Seite nicht zustande.' : 'I prezzi sono di listino; tramite questo sito non si conclude alcun contratto.'}</span>
+    </div>
+  </div>
+</footer>
+<style>
+  .site-footer { margin-top: var(--space-2xl); border-top: 1px solid var(--line); background: var(--paper-2); padding-block: var(--space-l) var(--space-m); }
+  .draft { border: 1px dashed var(--line-strong); border-radius: var(--radius); padding: 0.85rem 1.1rem; font-size: var(--step--1); color: var(--ink-2); background: var(--paper); }
+  .cols { display: grid; gap: 2rem; padding-block: var(--space-l); }
+  @media (min-width: 44rem) { .cols { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 64rem) { .cols { grid-template-columns: 1.5fr 1fr 1fr 1fr; } }
+  .tag { margin-top: 1rem; font-family: var(--serif); font-style: italic; color: var(--ink-2); max-width: 22em; }
+  address { font-style: normal; margin-top: 1.2rem; font-size: var(--step--1); line-height: 1.7; color: var(--ink-2); }
+  .h { font-size: var(--step--1); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: .7rem; }
+  .h2 { margin-top: 1.6rem; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; }
+  .col a { text-decoration: none; color: var(--ink); }
+  .col a:hover { color: var(--petrol); text-decoration: underline; }
+  .cur { font-weight: 600; }
+  .note { margin-top: 1.2rem; }
+  .base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; border-top: 1px solid var(--line); padding-top: 1rem; color: var(--muted); }
+</style>

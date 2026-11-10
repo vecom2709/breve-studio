@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import { findInquiry } from '../lib/inquiries';
+import { getPackage, bundles, type Locale } from '../content/packages';
+import { path, ui } from '../lib/i18n';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = ui[lang].thanks;
+const de = lang === 'de';
+const ref = Astro.url.searchParams.get('ref') ?? '';
+const entry = ref ? await findInquiry(ref) : undefined;
+const pkgName = entry?.package
+  ? entry.package.startsWith('bundle:')
+    ? bundles.find((b) => `bundle:${b.slug}` === entry.package)?.title[lang]
+    : getPackage(entry.package)?.brand
+  : null;
+const date = entry ? new Intl.DateTimeFormat(de ? 'de-DE' : 'it-IT', { dateStyle: 'long', timeStyle: 'short', timeZone: 'Europe/Rome' }).format(new Date(entry.createdAt)) : '';
+---
+<Base lang={lang} routeKey="thanks" title={entry ? t.title : t.notFound}>
+  <section class="wrap narrow box">
+    {entry ? (
+      <div class="stack" style="--flow: 1.2rem">
+        <p class="eyebrow">{de ? 'Gespeichert' : 'Salvata'}</p>
+        <h1>{t.title}</h1>
+        <p class="lead">{t.body}</p>
+        <dl>
+          <div><dt>{t.ref}</dt><dd><code>{entry.id}</code></dd></div>
+          <div><dt>{t.saved}</dt><dd>{date}</dd></div>
+          {pkgName && <div><dt>{ui[lang].package}</dt><dd>{pkgName}</dd></div>}
+          <div><dt>{de ? 'Werbe-Einwilligung' : 'Consenso marketing'}</dt><dd>{entry.consent.marketing ? (de ? 'erteilt (jederzeit widerrufbar)' : 'concesso (revocabile in ogni momento)') : (de ? 'nicht erteilt' : 'non concesso')}</dd></div>
+        </dl>
+        <p class="small muted">{ui[lang].form.localNote}</p>
+        <p><a class="btn btn-ghost" href={path('home', lang)}>{t.back}</a></p>
+      </div>
+    ) : (
+      <div class="stack" style="--flow: 1.2rem">
+        <h1>{t.notFound}</h1>
+        <p><a class="btn btn-ghost" href={path('contact', lang)}>{ui[lang].nav.contact}</a></p>
+      </div>
+    )}
+  </section>
+</Base>
+<style>
+  .box { padding-block: var(--space-xl); }
+  h1 { font-size: var(--step-3); }
+  dl { margin: 0; border-top: 1px solid var(--line); }
+  dl div { display: grid; grid-template-columns: minmax(9rem, 14rem) 1fr; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid var(--line); }
+  dt { color: var(--muted); font-weight: 600; }
+  dd { margin: 0; }
+  code { font-family: ui-monospace, 'SFMono-Regular', Menlo, monospace; font-size: .95em; }
+</style>

@@ -1,0 +1,81 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { site } from '../content/site';
+import type { Locale } from '../content/packages';
+import { path } from '../lib/i18n';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const op = site.operator;
+const de = lang === 'de';
+---
+{de ? (
+<Legal lang={lang} routeKey="imprint" title="Impressum" description="Impressum von Studio Breve (Entwurf): Anbieterangaben nach Art. 7 D.Lgs. 70/2003.">
+  <h2>Anbieter</h2>
+  <p>Angaben gemäß Art. 7 D.Lgs. 70/2003 (Italien) und Art. 2250 Codice civile; für Leser im deutschsprachigen Raum entspricht dies der Anbieterkennzeichnung (Impressum).</p>
+  <address>
+    <strong>Studio Breve</strong> (Geschäftsbezeichnung)<br />
+    Inhaber: {op.name}<br />
+    {op.street}<br />
+    {op.postalCode} {op.city} ({op.province})<br />
+    {op.country.de}
+  </address>
+  <h2>Kontakt</h2>
+  <p>Telefon: <a href={op.phoneHref}>{op.phone}</a><br />
+  E-Mail: {op.email} [Platzhalter, Postfach noch nicht eingerichtet]<br />
+  PEC: [wird ergänzt]</p>
+  <h2>Steuer- und Registerangaben</h2>
+  <ul>
+    <li>Partita IVA / USt-IdNr.: [wird ergänzt]</li>
+    <li>Codice fiscale: [wird ergänzt]</li>
+    <li>Rechtsform: [wird ergänzt]</li>
+    <li>Eintragung im Registro delle imprese / REA: [wird ergänzt, sofern erforderlich]</li>
+  </ul>
+  <p>Studio Breve hat den Geschäftsbetrieb noch nicht aufgenommen. Die Angaben werden vor der Veröffentlichung der Website vervollständigt.</p>
+  <h2>Inhaltlich verantwortlich</h2>
+  <p>{op.name}, Anschrift wie oben.</p>
+  <h2>Domain</h2>
+  <p>Die auf dieser Seite genannte Adresse {site.host} ist ein Platzhalter. Sie ist nicht auf Studio Breve registriert.</p>
+  <h2>Streitbeilegung</h2>
+  <p>Angaben zur alternativen Streitbeilegung für Verbraucher werden vor dem Start ergänzt.</p>
+  <h2>Haftung für Inhalte und Links</h2>
+  <p>Die Inhalte dieser Seite werden sorgfältig erstellt. Beschreibungen von Paketen, die noch in Entwicklung sind, geben den geplanten Umfang wieder und können sich bis zum Start ändern. Für Inhalte externer Websites, auf die verwiesen wird, sind deren Betreiber verantwortlich.</p>
+  <h2>Urheberrecht und Schriften</h2>
+  <p>Texte, Logo und Entwurfsgrafiken: Studio Breve. Die Schriften Fraunces und Source Sans 3 stehen unter der SIL Open Font License 1.1 und werden von diesem Server geladen, nicht von Dritten.</p>
+  <p>Siehe auch: <a href={path('privacy', 'de')}>Datenschutz</a> · <a href={path('terms', 'de')}>AGB</a></p>
+</Legal>
+) : (
+<Legal lang={lang} routeKey="imprint" title="Note legali" description="Note legali di Studio Breve (bozza): informazioni ai sensi dell’art. 7 D.Lgs. 70/2003.">
+  <h2>Titolare del sito</h2>
+  <p>Informazioni ai sensi dell’art. 7 del D.Lgs. 70/2003 e dell’art. 2250 del Codice civile.</p>
+  <address>
+    <strong>Studio Breve</strong> (denominazione commerciale)<br />
+    Titolare: {op.name}<br />
+    {op.street}<br />
+    {op.postalCode} {op.city} ({op.province})<br />
+    {op.country.it}
+  </address>
+  <h2>Contatti</h2>
+  <p>Telefono: <a href={op.phoneHref}>{op.phone}</a><br />
+  Email: {op.email} [provvisoria, casella non ancora attiva]<br />
+  PEC: [da inserire]</p>
+  <h2>Dati fiscali e registro</h2>
+  <ul>
+    <li>Partita IVA: [da inserire]</li>
+    <li>Codice fiscale: [da inserire]</li>
+    <li>Forma giuridica: [da inserire]</li>
+    <li>Iscrizione al Registro delle imprese / REA: [da inserire, se prevista]</li>
+  </ul>
+  <p>Studio Breve non ha ancora avviato l’attività. I dati saranno completati prima della pubblicazione del sito.</p>
+  <h2>Responsabile dei contenuti</h2>
+  <p>{op.name}, indirizzo come sopra.</p>
+  <h2>Dominio</h2>
+  <p>L’indirizzo {site.host} citato in queste pagine è provvisorio. Non è registrato a nome di Studio Breve.</p>
+  <h2>Risoluzione delle controversie</h2>
+  <p>Le informazioni sulla risoluzione alternativa delle controversie per i consumatori saranno aggiunte prima del lancio.</p>
+  <h2>Responsabilità per contenuti e link</h2>
+  <p>I contenuti di questo sito sono redatti con cura. Le descrizioni dei pacchetti ancora in sviluppo indicano il perimetro previsto e possono cambiare fino al lancio. Dei contenuti dei siti esterni citati rispondono i rispettivi gestori.</p>
+  <h2>Diritti d’autore e caratteri</h2>
+  <p>Testi, logo e bozze grafiche: Studio Breve. I caratteri Fraunces e Source Sans 3 sono distribuiti con licenza SIL Open Font License 1.1 e vengono caricati da questo server, non da terzi.</p>
+  <p>Vedi anche: <a href={path('privacy', 'it')}>Privacy</a> · <a href={path('terms', 'it')}>Condizioni</a></p>
+</Legal>
+)}

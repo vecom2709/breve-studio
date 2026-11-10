@@ -1,0 +1,71 @@
+---
+import Wordmark from './Wordmark.astro';
+import type { Locale } from '../content/packages';
+import { path, ui, other, type RouteKey } from '../lib/i18n';
+interface Props { lang: Locale; routeKey: RouteKey; altHref: string }
+const { lang, routeKey, altHref } = Astro.props;
+const t = ui[lang];
+const o = other(lang);
+const items: { key: RouteKey; label: string }[] = [
+  { key: 'packages', label: t.nav.packages },
+  { key: 'about', label: t.nav.about },
+  { key: 'contact', label: t.nav.contact },
+];
+const isCurrent = (k: RouteKey) => k === routeKey || (k === 'packages' && routeKey === 'package') || (k === 'contact' && routeKey === 'thanks');
+---
+<header class="site-header">
+  <div class="wrap bar">
+    <Wordmark lang={lang} />
+    <nav class="nav-desktop" aria-label={lang === 'de' ? 'Hauptnavigation' : 'Navigazione principale'}>
+      <ul>
+        {items.map((i) => (
+          <li><a href={path(i.key, lang)} aria-current={isCurrent(i.key) ? 'page' : undefined}>{i.label}</a></li>
+        ))}
+      </ul>
+      <div class="lang" role="group" aria-label={lang === 'de' ? 'Sprache' : 'Lingua'}>
+        <span class="lang-cur" aria-current="true" title={t.langName}>{t.langShort}</span>
+        <a href={altHref} hreflang={o} lang={o} title={t.switchTo}>{ui[o].langShort}<span class="visually-hidden"> – {ui[o].langName}</span></a>
+      </div>
+    </nav>
+    <details class="nav-mobile">
+      <summary><span class="sum-open">{t.menu}</span><span class="sum-close">{t.close}</span></summary>
+      <div class="sheet">
+        <ul>
+          <li><a href={path('home', lang)} aria-current={routeKey === 'home' ? 'page' : undefined}>{t.nav.home}</a></li>
+          {items.map((i) => (
+            <li><a href={path(i.key, lang)} aria-current={isCurrent(i.key) ? 'page' : undefined}>{i.label}</a></li>
+          ))}
+        </ul>
+        <a class="lang-m" href={altHref} hreflang={o} lang={o}>{ui[o].langName}</a>
+      </div>
+    </details>
+  </div>
+</header>
+<style>
+  .site-header { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  .bar { display: flex; align-items: center; justify-content: space-between; min-height: 4.5rem; gap: 1rem; }
+  .nav-desktop { display: none; align-items: center; gap: 2.25rem; }
+  .nav-desktop ul { display: flex; gap: 1.9rem; list-style: none; margin: 0; padding: 0; }
+  .nav-desktop a { text-decoration: none; font-weight: 500; color: var(--ink-2); padding-block: 0.4rem; border-bottom: 1px solid transparent; }
+  .nav-desktop a:hover { color: var(--ink); border-bottom-color: var(--line-strong); }
+  .nav-desktop a[aria-current='page'] { color: var(--ink); border-bottom-color: var(--petrol); }
+  .lang { display: flex; align-items: center; border: 1px solid var(--line-strong); border-radius: 999px; padding: 2px; font-size: var(--step--1); font-weight: 600; letter-spacing: 0.04em; }
+  .lang > * { padding: 0.25rem 0.65rem; border-radius: 999px; line-height: 1.2; border: 0 !important; }
+  .lang-cur { background: var(--ink); color: var(--paper); }
+  .lang a { color: var(--ink-2); }
+  .lang a:hover { color: var(--petrol); }
+  .nav-mobile summary { list-style: none; cursor: pointer; font-weight: 600; padding: 0.55rem 0.95rem; border: 1px solid var(--line-strong); border-radius: 999px; font-size: var(--step--1); letter-spacing: .03em; }
+  .nav-mobile summary::-webkit-details-marker { display: none; }
+  .nav-mobile .sum-close { display: none; }
+  .nav-mobile[open] .sum-open { display: none; }
+  .nav-mobile[open] .sum-close { display: inline; }
+  .sheet { position: absolute; left: 0; right: 0; top: 100%; background: var(--paper); border-bottom: 1px solid var(--line); padding: 1rem 1.25rem 1.5rem; }
+  .sheet ul { list-style: none; margin: 0; padding: 0; }
+  .sheet li a { display: block; padding: 0.85rem 0; border-bottom: 1px solid var(--line); text-decoration: none; font-family: var(--serif); font-size: var(--step-2); }
+  .sheet a[aria-current='page'] { color: var(--petrol); }
+  .lang-m { display: inline-block; margin-top: 1rem; font-weight: 600; color: var(--petrol); }
+  @media (min-width: 52rem) {
+    .nav-desktop { display: flex; }
+    .nav-mobile { display: none; }
+  }
+</style>

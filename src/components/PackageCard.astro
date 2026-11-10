@@ -1,0 +1,45 @@
+---
+import PriceBlock from './PriceBlock.astro';
+import { categoryById, type Locale, type Package } from '../content/packages';
+import { path, ui } from '../lib/i18n';
+interface Props { pkg: Package; lang: Locale; showImage?: boolean; headingLevel?: 'h2' | 'h3' }
+const { pkg, lang, showImage = true, headingLevel = 'h3' } = Astro.props;
+const t = ui[lang];
+const H = headingLevel;
+const href = path('package', lang, pkg.slug);
+---
+<article class="card" data-category={pkg.category}>
+  {showImage && pkg.image && (
+    <div class="media" aria-hidden="true">
+      <img src={pkg.image} alt="" width="1024" height="576" loading="lazy" decoding="async" />
+    </div>
+  )}
+  <div class="body">
+    <p class="meta"><span class="num">{t.number} {String(pkg.number).padStart(2, '0')}</span><span class="cat">{categoryById(pkg.category).label[lang]}</span></p>
+    <H class="brand"><a href={href}>{pkg.brand}</a></H>
+    <p class="tagline">{pkg.tagline[lang]}</p>
+    <p class="benefit">{pkg.benefit[lang]}</p>
+    <div class="foot">
+      <PriceBlock prices={pkg.prices} lang={lang} compact />
+      <span class="status" data-status={pkg.status}>{t.status[pkg.status]}</span>
+    </div>
+  </div>
+</article>
+<style>
+  .card { position: relative; display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; transition: border-color .15s ease, transform .15s ease; }
+  .card:hover { border-color: var(--line-strong); }
+  @media (prefers-reduced-motion: no-preference) { .card:hover { transform: translateY(-2px); } }
+  .card:focus-within { box-shadow: var(--focus); }
+  .media { background: var(--paper-2); border-bottom: 1px solid var(--line); }
+  .media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+  .body { display: flex; flex-direction: column; gap: .55rem; padding: 1.25rem 1.35rem 1.35rem; flex: 1; }
+  .meta { display: flex; flex-wrap: wrap; gap: .35rem .9rem; font-size: var(--step--1); color: var(--muted); }
+  .num { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--petrol); }
+  .brand { font-size: var(--step-2); font-weight: 440; }
+  .brand a { text-decoration: none; color: var(--ink); }
+  .brand a::after { content: ''; position: absolute; inset: 0; }
+  .brand a:focus-visible { box-shadow: none; }
+  .tagline { font-family: var(--serif); font-style: italic; color: var(--ink-2); }
+  .benefit { color: var(--ink-2); font-size: var(--step--1); line-height: 1.55; }
+  .foot { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: .75rem; }
+</style>

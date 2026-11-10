@@ -1,0 +1,157 @@
+---
+import { packagesSorted, bundles, type Locale, type CtaType } from '../content/packages';
+import { ui } from '../lib/i18n';
+interface Props { lang: Locale; preselect?: string; intent?: CtaType | 'general'; source: string; title?: string; compact?: boolean }
+const { lang, preselect = '', intent = 'general', source, title, compact = false } = Astro.props;
+const t = ui[lang];
+const f = t.form;
+const uid = 'f' + Math.random().toString(36).slice(2, 7);
+const id = (n: string) => `${uid}-${n}`;
+---
+<form class:list={['inquiry', { compact }]} method="post" action="/api/inquiry/" novalidate data-inquiry
+  data-msg-name={f.errors.name} data-msg-email={f.errors.email} data-msg-message={f.errors.message}
+  data-msg-consent={f.errors.consent} data-msg-generic={f.errors.generic} data-msg-submitting={f.submitting}>
+  {title && <h2 class="ftitle">{title}</h2>}
+  <div class="summary" role="alert" tabindex="-1" hidden>{f.errors.summary}</div>
+  <input type="hidden" name="lang" value={lang} />
+  <input type="hidden" name="intent" value={intent} />
+  <input type="hidden" name="source" value={source} />
+  <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+
+  <div class="row two">
+    <div class="field">
+      <label for={id('name')}>{f.name} <span class="req" aria-hidden="true">*</span></label>
+      <input id={id('name')} name="name" type="text" autocomplete="name" required maxlength="120" aria-describedby={id('name-err')} />
+      <p class="err" id={id('name-err')} hidden></p>
+    </div>
+    <div class="field">
+      <label for={id('email')}>{f.email} <span class="req" aria-hidden="true">*</span></label>
+      <input id={id('email')} name="email" type="email" autocomplete="email" required maxlength="200" inputmode="email" aria-describedby={id('email-err')} />
+      <p class="err" id={id('email-err')} hidden></p>
+    </div>
+  </div>
+  <div class="row two">
+    <div class="field">
+      <label for={id('language')}>{f.language}</label>
+      <select id={id('language')} name="language">
+        <option value="de" selected={lang === 'de'}>Deutsch</option>
+        <option value="it" selected={lang === 'it'}>Italiano</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for={id('package')}>{f.package}</label>
+      <select id={id('package')} name="package" data-package-select>
+        <option value="">{f.packageNone}</option>
+        <optgroup label={lang === 'de' ? 'Pakete' : 'Pacchetti'}>
+          {packagesSorted().map((p) => <option value={p.slug} selected={preselect === p.slug}>{String(p.number).padStart(2, '0')} · {p.brand}</option>)}
+        </optgroup>
+        <optgroup label={t.bundles}>
+          {bundles.map((b) => <option value={`bundle:${b.slug}`} selected={preselect === `bundle:${b.slug}`}>{b.title[lang]}</option>)}
+        </optgroup>
+      </select>
+    </div>
+  </div>
+  <div class="field">
+    <label for={id('message')}>{f.message} <span class="req" aria-hidden="true">*</span></label>
+    <p class="hint" id={id('message-hint')}>{f.messageHint}</p>
+    <textarea id={id('message')} name="message" rows={compact ? 4 : 6} required minlength="10" maxlength="4000" aria-describedby={`${id('message-hint')} ${id('message-err')}`}></textarea>
+    <p class="err" id={id('message-err')} hidden></p>
+  </div>
+  <div class="field check">
+    <input id={id('consent')} name="consent" type="checkbox" value="yes" required aria-describedby={id('consent-err')} />
+    <label for={id('consent')}>{f.consent} <span class="req" aria-hidden="true">*</span></label>
+    <p class="err" id={id('consent-err')} hidden></p>
+  </div>
+  <div class="field check">
+    <input id={id('marketing')} name="marketing" type="checkbox" value="yes" />
+    <label for={id('marketing')}>{f.marketing}</label>
+  </div>
+  <p class="req-note small muted"><span aria-hidden="true">*</span> {f.required}</p>
+  <div class="actions">
+    <button class="btn btn-primary" type="submit">{f.submit} <span class="arrow" aria-hidden="true">→</span></button>
+  </div>
+  <p class="local small">{f.localNote}</p>
+</form>
+
+<script>
+  const forms = document.querySelectorAll<HTMLFormElement>('form[data-inquiry]');
+  const params = new URLSearchParams(location.search);
+  const pre = params.get('paket') || params.get('pacchetto');
+  forms.forEach((form) => {
+    const sel = form.querySelector<HTMLSelectElement>('[data-package-select]');
+    if (pre && sel && [...sel.options].some((o) => o.value === pre)) sel.value = pre;
+    const summary = form.querySelector<HTMLElement>('.summary')!;
+    const btn = form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+    const btnLabel = btn.innerHTML;
+    const d = form.dataset;
+
+    const setErr = (name: string, msg: string | null) => {
+      const el = form.elements.namedItem(name) as HTMLInputElement | null;
+      if (!el) return;
+      const err = document.getElementById(el.id + '-err');
+      if (msg) { el.setAttribute('aria-invalid', 'true'); if (err) { err.textContent = msg; err.hidden = false; } }
+      else { el.removeAttribute('aria-invalid'); if (err) { err.textContent = ''; err.hidden = true; } }
+    };
+    const validate = () => {
+      const v = (n: string) => ((form.elements.namedItem(n) as HTMLInputElement).value || '').trim();
+      const errs: Record<string, string> = {};
+      if (v('name').length < 2) errs.name = d.msgName!;
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v('email'))) errs.email = d.msgEmail!;
+      if (v('message').length < 10) errs.message = d.msgMessage!;
+      if (!(form.elements.namedItem('consent') as HTMLInputElement).checked) errs.consent = d.msgConsent!;
+      ['name', 'email', 'message', 'consent'].forEach((n) => setErr(n, errs[n] ?? null));
+      return errs;
+    };
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      summary.hidden = true;
+      const errs = validate();
+      const keys = Object.keys(errs);
+      if (keys.length) {
+        summary.hidden = false;
+        (form.elements.namedItem(keys[0]) as HTMLElement).focus();
+        return;
+      }
+      btn.disabled = true; btn.textContent = d.msgSubmitting!;
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.ok && data.redirect) { location.assign(data.redirect); return; }
+        if (data.errors) { Object.entries(data.errors as Record<string, string>).forEach(([k, m]) => setErr(k, m)); summary.hidden = false; summary.focus(); }
+        else { summary.textContent = d.msgGeneric!; summary.hidden = false; summary.focus(); }
+      } catch {
+        summary.textContent = d.msgGeneric!; summary.hidden = false; summary.focus();
+      }
+      btn.disabled = false; btn.innerHTML = btnLabel;
+    });
+  });
+</script>
+
+<style>
+  .inquiry { display: grid; gap: 1.15rem; }
+  .ftitle { font-size: var(--step-3); margin-bottom: .25rem; }
+  .row.two { display: grid; gap: 1.15rem; }
+  @media (min-width: 40rem) { .row.two { grid-template-columns: 1fr 1fr; } }
+  .field { display: grid; gap: .35rem; }
+  label { font-weight: 600; font-size: var(--step--1); color: var(--ink); }
+  .req { color: var(--petrol); }
+  .hint { font-size: var(--step--1); color: var(--muted); margin-top: -.2rem; }
+  input[type=text], input[type=email], select, textarea {
+    width: 100%; font: inherit; color: var(--ink); background: #FFFDF9;
+    border: 1px solid var(--line-strong); border-radius: var(--radius); padding: .7rem .85rem; min-height: 3rem;
+  }
+  textarea { resize: vertical; line-height: 1.5; }
+  select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--ink-2) 50%), linear-gradient(135deg, var(--ink-2) 50%, transparent 50%); background-position: calc(100% - 18px) 55%, calc(100% - 13px) 55%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 2.2rem; }
+  input:focus-visible, select:focus-visible, textarea:focus-visible { border-color: var(--petrol); }
+  [aria-invalid='true'] { border-color: var(--error) !important; }
+  .err { color: var(--error); font-size: var(--step--1); font-weight: 600; }
+  .check { grid-template-columns: auto 1fr; align-items: start; column-gap: .75rem; }
+  .check input { width: 1.2rem; height: 1.2rem; margin-top: .2rem; accent-color: var(--petrol); }
+  .check label { font-weight: 400; line-height: 1.5; color: var(--ink-2); }
+  .check .err { grid-column: 2; }
+  .summary { border: 1px solid var(--error); color: var(--error); border-radius: var(--radius); padding: .75rem 1rem; font-weight: 600; background: #FBF1EE; }
+  .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+  .local { border-top: 1px solid var(--line); padding-top: .9rem; color: var(--muted); }
+  .req-note { margin-top: -.4rem; }
+</style>

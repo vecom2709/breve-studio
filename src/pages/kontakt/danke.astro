@@ -1,0 +1,7 @@
+---
+import View from '../../views/Thanks.astro';
+import { findInquiry } from '../../lib/inquiries';
+export const prerender = false;
+if (!(await findInquiry(Astro.url.searchParams.get('ref') ?? ''))) Astro.response.status = 404;
+---
+<View lang="de" />

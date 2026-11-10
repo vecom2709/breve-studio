@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import { path } from '../lib/i18n';
+---
+<Base lang="de" routeKey="home" title="Seite nicht gefunden" altHref="/it/">
+  <section class="wrap nf">
+    <p class="eyebrow">404</p>
+    <h1>Diese Seite gibt es nicht <em class="accent">– oder nicht mehr.</em></h1>
+    <p class="lead">Vielleicht hilft der Katalog weiter.</p>
+    <p class="cta"><a class="btn btn-primary" href={path('packages', 'de')}>Zu den Paketen <span class="arrow" aria-hidden="true">→</span></a> <a class="btn btn-ghost" href={path('home', 'de')}>Startseite</a></p>
+    <hr class="rule" />
+    <div lang="it" class="it">
+      <h2>Pagina non trovata.</h2>
+      <p>Questa pagina non esiste o non esiste più. <a href={path('packages', 'it')}>Vai ai pacchetti</a> o <a href={path('home', 'it')}>torna alla home</a>.</p>
+    </div>
+  </section>
+</Base>
+<style>
+  .nf { padding-block: var(--space-xl); display: grid; gap: 1.2rem; max-width: 48rem; }
+  .cta { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .it { display: grid; gap: .6rem; padding-top: .5rem; }
+  .it h2 { font-size: var(--step-2); }
+</style>

@@ -1,0 +1,114 @@
+# Studio Breve – Website (Entwurf)
+
+Zweisprachige Marketing-Website (Deutsch / Italienisch) für **Studio Breve**, ein kleines Digitalstudio in Aragona (AG), Sizilien.
+
+> **Status: Entwurf, nicht veröffentlicht.** Die Seite läuft nur lokal. Nichts ist deployt, keine Domain ist registriert, es wird nichts verkauft und keine E-Mail versendet. Alle Seiten tragen `noindex, nofollow`, `robots.txt` sperrt alles.
+
+## Starten
+
+Voraussetzung: Node.js 22 oder neuer (getestet mit Node 24).
+
+```bash
+cd /workspace/studio-breve
+npm install          # nur beim ersten Mal
+npm run build        # Typprüfung (astro check) + Build nach dist/
+npm run preview      # Vorschau auf http://127.0.0.1:4173 (nur localhost)
+npm run dev          # Entwicklungsmodus auf http://127.0.0.1:4321
+```
+
+Die laufende Vorschau (URL und Prozess-ID) steht in `PREVIEW.txt`. Beenden: `kill <PID>` oder `pkill -f "astro preview"`.
+
+## Technik
+
+- [Astro](https://astro.build) 7 + TypeScript, statisch vorgerendert. Nur der Formular-Endpunkt `/api/inquiry/` und die Danke-Seiten laufen serverseitig (Adapter `@astrojs/node`, standalone).
+- Schriften lokal eingebunden über `@fontsource-variable`: **Fraunces** (Überschriften) und **Source Sans 3** (Text), beide SIL Open Font License 1.1. Keine Google Fonts, keine CDN.
+- Keine Cookies, kein Tracking, keine externen Skripte, keine bezahlten APIs.
+
+## Seiten
+
+| Deutsch | Italienisch |
+|---|---|
+| `/` | `/it/` |
+| `/pakete/` (Katalog mit Kategorie-Filter, `?k=<kategorie>`) | `/it/pacchetti/` |
+| `/pakete/<slug>/` | `/it/pacchetti/<slug>/` |
+| `/ueber-uns/` | `/it/chi-siamo/` |
+| `/kontakt/` (Formular, `?paket=<slug>` wählt ein Paket vor) | `/it/contatti/` |
+| `/kontakt/danke/?ref=…` (serverseitig) | `/it/contatti/grazie/?ref=…` |
+| `/impressum/` | `/it/note-legali/` |
+| `/datenschutz/` | `/it/privacy/` |
+| `/agb/` | `/it/condizioni/` |
+| `404` (zweisprachig) | |
+
+## Ein neues Paket hinzufügen
+
+Alle Paketinhalte stehen in **einer Datei**: `src/content/packages.ts`. Katalog, Startseite, Detailseiten in beiden Sprachen, Formularauswahl und Statistik im Kopfbereich werden daraus erzeugt.
+
+1. Optional ein Bild (16:9, z. B. 1024×576) nach `public/images/packages/` legen.
+2. Im Array `packages` ein Objekt ergänzen. Pflichtfelder prüft TypeScript beim `npm run build`.
+3. `npm run build` – fertig. Die Seiten `/pakete/<slug>/` und `/it/pacchetti/<slug>/` entstehen automatisch.
+
+Minimalbeispiel:
+
+```ts
+{
+  number: 11,
+  slug: 'menuchiaro',
+  brand: 'MenuChiaro',
+  category: 'website-sichtbarkeit',           // oder eine neue Kategorie in `categories`
+  status: 'waitlist',                         // waitlist | inquiry | soon | available
+  cta: 'interest',                            // interest | inquiry | notify | checkout
+  prices: [{ amount: 15, interval: 'month', vat: 'excl' }],
+  image: '/images/packages/11-menuchiaro.jpg', // optional
+  imageAlt: { de: 'Entwurfsansicht von MenuChiaro', it: 'Bozza di MenuChiaro' },
+  tagline: { de: 'Die Speisekarte, immer aktuell.', it: 'Il menu, sempre aggiornato.' },
+  benefit: { de: 'Digitale Speisekarte per QR-Code, zweisprachig.', it: 'Menu digitale con QR code, in due lingue.' },
+  headline: { de: '…', it: '…' },
+  intro: { de: '…', it: '…' },
+  audience: { de: '…', it: '…' },
+  job: { de: '…', it: '…' },
+  why: { de: '…', it: '…' },
+  features: { de: ['…', '…'], it: ['…', '…'] },
+  plannedOffer: { de: 'Geplant zum Start: …', it: 'Previsto al lancio: …' },
+  faq: { de: [{ q: '…', a: '…' }], it: [{ q: '…', a: '…' }] },
+  notes: { de: '…', it: '…' },
+  market: { de: 'Italien · IT/DE', it: 'Italia · IT/DE' },
+  checkout: { provider: 'none' },
+},
+```
+
+**Status ehrlich halten:** `waitlist` = in Entwicklung (Button „Interesse merken“), `inquiry` = persönliche Leistung (Button „Unverbindlich anfragen“), `soon` = geplant (Button „Zum Start benachrichtigen“), `available` = kaufbar.
+
+**Bündel** stehen im Array `bundles` in derselben Datei (`includes` = Liste von Paket-Slugs, `price` optional, `featured: true` = auf der Startseite).
+
+**Kategorien** stehen im Array `categories`. Eine neue Kategorie erscheint automatisch als Filter, sobald ihr ein Paket zugeordnet ist.
+
+Marken- und Betreiberangaben (Name, Adresse, Telefon, Platzhalter-E-Mail, P.IVA, Entwurfshinweis) stehen in `src/content/site.ts`. Oberflächentexte (Buttons, Statusnamen, Formular) in `src/lib/i18n.ts`.
+
+### Späterer Zahlungsanbieter
+
+Es ist **kein** Zahlungsanbieter angebunden. Das Feld `checkout` im Pakettyp ist der Erweiterungspunkt (`provider: 'stripe' | 'paypal' | 'lemonsqueezy' | 'gumroad' | 'invoice'`, `url`, `reference`). Ein Kauf-Button erscheint nur, wenn `status: 'available'`, `cta: 'checkout'` **und** `checkout.provider` ≠ `'none'` mit `url` gesetzt sind (Funktion `isPurchasable`). Sonst wird automatisch das Anfrageformular gezeigt. Vor dem Umschalten: Produkt fertig, P.IVA, AGB/Widerruf, Datenschutz und Steuerausweis klären.
+
+## Anfragen (Formular)
+
+- Formular auf `/kontakt/`, `/it/contatti/` und auf jeder Paketseite. Felder: Name, E-Mail, bevorzugte Sprache, Paket (optional), Nachricht, Pflicht-Einwilligung, optionale Werbe-Einwilligung.
+- Absenden schreibt **nur lokal** in `data/inquiries.json` (JSON-Array, atomar geschrieben). Pfad änderbar über die Umgebungsvariable `INQUIRIES_FILE`.
+- Es wird **keine E-Mail** versendet und nichts an Dritte übertragen. IP-Adressen werden nicht gespeichert.
+- Funktioniert mit und ohne JavaScript. Die Danke-Seite liest den gespeicherten Eintrag über die Vorgangsnummer (`SB-JJJJMMTT-XXXXXX`) aus der Datei – sie zeigt nur Erfolg, wenn wirklich gespeichert wurde.
+- Schutz: Same-Origin-Prüfung von Astro, Honeypot-Feld, Längenbegrenzungen, serverseitige Validierung.
+- `data/inquiries.json` ist in `.gitignore`.
+
+## Domain
+
+Platzhalter im Text: **studiobreve.it** (nicht registriert). Laut DNS-Abfrage über Google Public DNS am 9.11.2026 hatten folgende Namen keinen Eintrag – das ist **nur ein Hinweis**, kein Nachweis, dass sie frei sind: studiobreve.it, studiobreve.de, studiobreve.eu, studio-breve.it, inbreve.de, in-breve.it. Vergeben (DNS vorhanden): inbreve.it, inbreve.com, inbreve.eu, breve.it, breve.de, studiobreve.com. Eine Markenrecherche (UIBM, DPMA, EUIPO) steht aus.
+
+## Vor dem Start (nicht erledigt)
+
+- Domain registrieren, Hosting wählen, Postfach `info@…` einrichten.
+- P.IVA, Codice fiscale, Rechtsform, PEC eintragen (`src/content/site.ts`, Impressum).
+- Rechtstexte (Impressum, Datenschutz, AGB) vervollständigen und prüfen lassen; Hosting-Logs in der Datenschutzerklärung ergänzen.
+- Vor Veröffentlichung `noindex` entfernen (`src/layouts/Base.astro`) und `public/robots.txt` anpassen.
+- Formular-Speicherung für den Betrieb ersetzen (z. B. selbst gehostete Datenbank oder Mailversand mit Auftragsverarbeitung), Double-Opt-in für Werbe-Einwilligungen einführen.
+
+## Bilder
+
+`public/images/packages/*.jpg` sind Entwurfsvisualisierungen aus der Planungsphase (keine fertigen Produkte, keine Kundenprojekte) und werden auf der Seite so gekennzeichnet. `public/og-studio-breve.jpg` ist das Vorschaubild für Link-Vorschauen (erzeugt aus `tools/og.html`).

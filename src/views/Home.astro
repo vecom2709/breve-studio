@@ -1,0 +1,214 @@
+---
+import Base from '../layouts/Base.astro';
+import BundleCard from '../components/BundleCard.astro';
+import PriceBlock from '../components/PriceBlock.astro';
+import { categories, packagesSorted, bundles, getPackage, type Locale } from '../content/packages';
+import { site } from '../content/site';
+import { path, ui } from '../lib/i18n';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = ui[lang];
+const all = packagesSorted();
+const count = (s: string) => all.filter((p) => p.status === s).length;
+const featured = bundles.filter((b) => b.featured);
+const showcase = ['sitotranquillo', 'ospiteguida', 'gareinbreve'].map((s) => getPackage(s)!);
+const de = lang === 'de';
+
+const principles = de
+  ? [
+      ['Ein Paket, eine Aufgabe.', 'Jedes Paket löst genau ein Problem im Betrieb – mit klarem Umfang statt eines Baukastens, den man erst verstehen muss.'],
+      ['Preise stehen dabei.', 'Listenpreise sind auf jeder Seite sichtbar, mit Hinweis zur Mehrwertsteuer. Keine versteckten Einrichtungsgebühren, keine Lockangebote.'],
+      ['Zweisprachig, persönlich.', 'Wir arbeiten auf Deutsch und Italienisch und sitzen in Aragona. Für Betriebe in Sizilien heißt das: Wir kommen vorbei.'],
+      ['Offen und datensparsam.', 'Wir setzen bevorzugt auf bewährte Open-Source-Software, speichern Daten in der EU und kennzeichnen KI-Ergebnisse als solche.'],
+    ]
+  : [
+      ['Un pacchetto, un obiettivo.', 'Ogni pacchetto risolve un problema preciso dell’attività – con un perimetro chiaro, non una piattaforma da imparare.'],
+      ['I prezzi sono in chiaro.', 'Il prezzo di listino è indicato su ogni pagina, con l’indicazione dell’IVA. Nessun costo nascosto, nessuna offerta civetta.'],
+      ['Bilingue, di persona.', 'Lavoriamo in italiano e in tedesco e siamo ad Aragona. Per le attività in Sicilia significa: veniamo a trovarvi.'],
+      ['Aperti e attenti ai dati.', 'Preferiamo software open source collaudato, conserviamo i dati nell’UE e indichiamo sempre i contenuti generati con AI.'],
+    ];
+---
+<Base lang={lang} routeKey="home">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{de ? 'Digitalstudio · Aragona, Sizilien' : 'Studio digitale · Aragona, Sicilia'}</p>
+        <h1>
+          {de
+            ? <>Klare digitale Pakete für Betriebe – <em class="accent">ohne Ballast.</em></>
+            : <>Pacchetti digitali chiari per la <em class="accent">tua attività.</em></>}
+        </h1>
+        <p class="lead">{de
+          ? 'Studio Breve entwickelt kleine, klar umrissene digitale Pakete für Betriebe in Italien und im deutschsprachigen Raum: von der gepflegten Website bis zum Ausschreibungs-Alarm. Jedes mit festem Preis und ehrlichem Stand.'
+          : 'Studio Breve sviluppa pacchetti digitali piccoli e ben definiti per attività in Italia e nei Paesi di lingua tedesca: dal sito curato all’avviso quotidiano sulle gare. Ognuno con un prezzo chiaro e uno stato dichiarato con onestà.'}</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href={path('packages', lang)}>{de ? 'Pakete ansehen' : 'Scopri i pacchetti'} <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href={path('contact', lang)}>{de ? 'Kontakt aufnehmen' : 'Contattaci'}</a>
+        </div>
+      </div>
+      <aside class="ledger" aria-labelledby="ledger-h">
+        <p class="eyebrow" id="ledger-h">{de ? 'Stand heute' : 'Stato attuale'}</p>
+        <dl>
+          <div><dt>{all.length}</dt><dd>{de ? 'Pakete im Katalog' : 'pacchetti in catalogo'}</dd></div>
+          <div><dt>{count('inquiry')}</dt><dd>{de ? 'Dienstleistungen auf Anfrage' : 'servizi su richiesta'}</dd></div>
+          <div><dt>{count('waitlist')}</dt><dd>{de ? 'Produkte in Entwicklung, mit Warteliste' : 'prodotti in sviluppo, con lista d’attesa'}</dd></div>
+          <div><dt>{count('soon')}</dt><dd>{de ? 'Pakete in Planung' : 'pacchetti in preparazione'}</dd></div>
+        </dl>
+        <p class="small muted">{de
+          ? 'Studio Breve befindet sich im Aufbau. Noch ist kein Paket kaufbar; Sie können sich unverbindlich vormerken oder anfragen.'
+          : 'Studio Breve è in fase di avvio. Nessun pacchetto è ancora acquistabile; puoi segnalare il tuo interesse o chiedere informazioni senza impegno.'}</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="idx-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">{de ? 'Verzeichnis' : 'Indice'}</p>
+        <h2 id="idx-h">{de ? 'Alle Pakete auf einen Blick' : 'Tutti i pacchetti in un colpo d’occhio'}</h2>
+      </div>
+      <div class="index">
+        {categories.map((c) => {
+          const items = all.filter((p) => p.category === c.id);
+          if (!items.length) return null;
+          return (
+            <section class="cat" aria-labelledby={`cat-${c.id}`}>
+              <div class="cat-head">
+                <h3 id={`cat-${c.id}`}>{c.label[lang]}</h3>
+                <p class="muted small">{c.text[lang]}</p>
+              </div>
+              <ul class="rows">
+                {items.map((p) => (
+                  <li>
+                    <a class="row" href={path('package', lang, p.slug)}>
+                      <span class="num">{String(p.number).padStart(2, '0')}</span>
+                      <span class="name"><strong>{p.brand}</strong><span class="ben">{p.benefit[lang]}</span></span>
+                      <span class="pr"><PriceBlock prices={[p.prices.find((x) => x.amount > 0) ?? p.prices[0]]} lang={lang} compact /></span>
+                      <span class="status" data-status={p.status}>{t.status[p.status]}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          );
+        })}
+      </div>
+      <p class="after"><a class="text-link" href={path('packages', lang)}>{de ? 'Zum Katalog mit Filter' : 'Al catalogo con filtri'}</a></p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="pr-h">
+    <div class="wrap princ-grid">
+      <div class="sec-head sticky">
+        <p class="eyebrow">{de ? 'Arbeitsweise' : 'Come lavoriamo'}</p>
+        <h2 id="pr-h">{de ? <>Weniger Funktionen, <em class="accent">mehr Klarheit.</em></> : <>Meno funzioni, <em class="accent">più chiarezza.</em></>}</h2>
+      </div>
+      <ol class="princ">
+        {principles.map(([h, p], i) => (
+          <li><span class="pn">{String(i + 1).padStart(2, '0')}</span><div><h3>{h}</h3><p>{p}</p></div></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="sh-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">{de ? 'Einblick' : 'Anteprima'}</p>
+        <h2 id="sh-h">{de ? 'So sollen die Pakete aussehen' : 'Come saranno i pacchetti'}</h2>
+        <p class="muted">{de ? 'Entwurfsansichten aus der Planung – keine fertigen Produkte und keine Kundenprojekte.' : 'Bozze grafiche di progetto – non prodotti finiti né lavori per clienti.'}</p>
+      </div>
+      <div class="show">
+        {showcase.map((p, i) => (
+          <figure class:list={['shot', { big: i === 0 }]}>
+            <div class="frame">              <img src={p.image} alt={p.imageAlt?.[lang] ?? ''} width="1024" height="576" loading="lazy" decoding="async" />
+            </div>
+            <figcaption><a href={path('package', lang, p.slug)}>{p.brand}</a> · {p.tagline[lang]}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="bu-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">{t.bundles}</p>
+        <h2 id="bu-h">{de ? 'Pakete, die sich ergänzen' : 'Pacchetti che si completano'}</h2>
+        <p class="muted">{t.bundlesIntro}</p>
+      </div>
+      <div class="grid grid-3">
+        {featured.map((b) => <BundleCard bundle={b} lang={lang} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section closing" aria-labelledby="cl-h">
+    <div class="wrap close-grid">
+      <div>
+        <p class="eyebrow">{de ? 'Vor Ort' : 'Sul territorio'}</p>
+        <h2 id="cl-h">{de ? <>Aus Aragona, für Betriebe in Sizilien <em class="accent">und darüber hinaus.</em></> : <>Da Aragona, per le attività in Sicilia <em class="accent">e oltre.</em></>}</h2>
+      </div>
+      <div class="stack" style="--flow: 1.25rem">
+        <p class="lead">{de
+          ? 'Sie haben eine Frage zu einem Paket oder eine Aufgabe, die in keinem Paket steht? Schreiben Sie uns. Wir antworten persönlich – auf Deutsch oder Italienisch.'
+          : 'Hai una domanda su un pacchetto o un’esigenza che non trovi nel catalogo? Scrivici. Rispondiamo di persona, in italiano o in tedesco.'}</p>
+        <p><a class="btn btn-primary" href={path('contact', lang)}>{de ? 'Anfrage schreiben' : 'Scrivi una richiesta'} <span class="arrow" aria-hidden="true">→</span></a></p>
+        <p class="small muted">{site.operator.street} · {site.operator.postalCode} {site.operator.city} ({site.operator.province})</p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero { padding-block: var(--space-xl) var(--space-xl); border-bottom: 1px solid var(--line); }
+  .hero-grid { display: grid; gap: var(--space-l); align-items: end; }
+  @media (min-width: 64rem) { .hero-grid { grid-template-columns: 1.65fr 1fr; gap: var(--space-xl); } }
+  .hero h1 { font-size: var(--step-5); font-weight: 380; line-height: 1.02; letter-spacing: -0.025em; max-width: 13em; margin-top: 1.1rem; font-variation-settings: 'opsz' 72, 'SOFT' 50, 'WONK' 0; }
+  .hero .lead { margin-top: 1.6rem; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+  .ledger { border-top: 2px solid var(--ink); padding-top: 1rem; }
+  .ledger dl { margin: .9rem 0 1.1rem; display: grid; }
+  .ledger dl > div { display: grid; grid-template-columns: 3.2rem 1fr; align-items: baseline; padding: .65rem 0; border-bottom: 1px solid var(--line); }
+  .ledger dt { font-family: var(--serif); font-size: var(--step-2); font-variant-numeric: tabular-nums; color: var(--petrol); }
+  .ledger dd { margin: 0; color: var(--ink-2); }
+
+  .sec-head { max-width: 40rem; margin-bottom: var(--space-l); display: grid; gap: .7rem; }
+  .index { display: grid; gap: var(--space-l); }
+  .cat { display: grid; gap: 1rem; }
+  @media (min-width: 62rem) { .cat { grid-template-columns: 17rem 1fr; gap: var(--space-l); } }
+  .cat-head h3 { font-size: var(--step-1); margin-bottom: .35rem; }
+  .rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-strong); }
+  .rows li { border-bottom: 1px solid var(--line); }
+  .row { display: grid; grid-template-columns: 2.2rem 1fr; gap: .25rem .9rem; padding: 1rem .25rem; text-decoration: none; color: var(--ink); align-items: baseline; }
+  .row:hover { background: var(--paper-2); color: var(--ink); }
+  .row .num { font-variant-numeric: tabular-nums; font-weight: 600; color: var(--petrol); font-size: var(--step--1); }
+  .row .name { display: grid; gap: .15rem; }
+  .row strong { font-family: var(--serif); font-weight: 480; font-size: var(--step-1); }
+  .row .ben { color: var(--ink-2); font-size: var(--step--1); line-height: 1.5; }
+  .row .pr, .row .status { grid-column: 2; }
+  @media (min-width: 48rem) {
+    .row { grid-template-columns: 2.6rem 1fr 11rem 12rem; }
+    .row .pr, .row .status { grid-column: auto; }
+    .row .status { justify-self: end; white-space: normal; text-align: right; }
+  }
+  .after { margin-top: var(--space-l); }
+
+  .princ-grid { display: grid; gap: var(--space-l); }
+  @media (min-width: 62rem) { .princ-grid { grid-template-columns: 1fr 1.3fr; gap: var(--space-xl); } .sticky { position: sticky; top: 7rem; align-self: start; } }
+  .princ { list-style: none; margin: 0; padding: 0; }
+  .princ li { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1.4rem 0; border-top: 1px solid var(--line); }
+  .princ li:last-child { border-bottom: 1px solid var(--line); }
+  .pn { font-family: var(--serif); font-style: italic; color: var(--petrol); font-size: var(--step-1); }
+  .princ h3 { font-size: var(--step-1); margin-bottom: .4rem; }
+  .princ p { color: var(--ink-2); }
+
+  .show { display: grid; gap: var(--space-m); }
+  @media (min-width: 56rem) { .show { grid-template-columns: 1.4fr 1fr; grid-template-rows: auto auto; } .shot.big { grid-row: span 2; } }
+  .shot { margin: 0; }
+  .shot figcaption { margin-top: .7rem; font-size: var(--step--1); color: var(--muted); }
+  .shot figcaption a { font-weight: 600; color: var(--ink); }
+
+  .close-grid { display: grid; gap: var(--space-l); }
+  @media (min-width: 62rem) { .close-grid { grid-template-columns: 1.2fr 1fr; align-items: end; } }
+</style>

@@ -1,0 +1,187 @@
+---
+import Base from '../layouts/Base.astro';
+import PriceBlock from '../components/PriceBlock.astro';
+import PackageCard from '../components/PackageCard.astro';
+import InquiryForm from '../components/InquiryForm.astro';
+import { categoryById, packagesSorted, bundles, isPurchasable, type Locale, type Package } from '../content/packages';
+import { path, ui } from '../lib/i18n';
+interface Props { lang: Locale; pkg: Package }
+const { lang, pkg } = Astro.props;
+const t = ui[lang];
+const de = lang === 'de';
+const cat = categoryById(pkg.category);
+const related = packagesSorted().filter((p) => p.category === pkg.category && p.slug !== pkg.slug);
+const inBundles = bundles.filter((b) => b.includes.includes(pkg.slug));
+const buy = isPurchasable(pkg);
+const ctaLabel = buy ? t.cta.checkout : t.cta[pkg.cta === 'checkout' ? 'inquiry' : pkg.cta];
+const formIntent = buy ? 'inquiry' : pkg.cta === 'checkout' ? 'inquiry' : pkg.cta;
+const formTitle = pkg.status === 'inquiry'
+  ? (de ? `${pkg.brand} unverbindlich anfragen` : `Richiedi informazioni su ${pkg.brand}`)
+  : pkg.status === 'soon'
+    ? (de ? `Zum Start von ${pkg.brand} benachrichtigen` : `Avvisami al lancio di ${pkg.brand}`)
+    : (de ? `Interesse an ${pkg.brand} vormerken` : `Segnala interesse per ${pkg.brand}`);
+const selfPath = path('package', lang, pkg.slug);
+---
+<Base lang={lang} routeKey="package" slug={pkg.slug} title={`${pkg.brand} – ${pkg.tagline[lang]}`} description={pkg.benefit[lang]} image={pkg.image}>
+  <nav class="wrap crumbs small" aria-label={de ? 'Brotkrumen' : 'Percorso'}>
+    <ol>
+      <li><a href={path('home', lang)}>{t.nav.home}</a></li>
+      <li><a href={path('packages', lang)}>{t.nav.packages}</a></li>
+      <li><a href={`${path('packages', lang)}?k=${cat.id}`}>{cat.label[lang]}</a></li>
+      <li aria-current="page">{pkg.brand}</li>
+    </ol>
+  </nav>
+
+  <section class="top">
+    <div class="wrap top-grid">
+      <div class="intro">
+        <p class="eyebrow">{t.number} {String(pkg.number).padStart(2, '0')} · {pkg.brand}</p>
+        <h1>{pkg.headline[lang]}</h1>
+        <p class="lead">{pkg.intro[lang]}</p>
+      </div>
+      <aside class="panel" aria-labelledby="panel-h">
+        <h2 id="panel-h" class="visually-hidden">{de ? 'Preis und Stand' : 'Prezzo e stato'}</h2>
+        <span class="status" data-status={pkg.status}>{t.status[pkg.status]}</span>
+        <PriceBlock prices={pkg.prices} lang={lang} showListLabel />
+        <p class="small expl">{t.statusExplain[pkg.status]}</p>
+        {buy
+          ? <a class="btn btn-primary full" href={pkg.checkout!.url} rel="noopener">{ctaLabel} <span class="arrow" aria-hidden="true">→</span></a>
+          : <a class="btn btn-primary full" href="#formular">{ctaLabel} <span class="arrow" aria-hidden="true">→</span></a>}
+        <dl class="facts small">
+          <div><dt>{t.category}</dt><dd>{cat.label[lang]}</dd></div>
+          <div><dt>{t.market}</dt><dd>{pkg.market[lang]}</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  {pkg.image && (
+    <section class="wrap visual">
+      <figure>
+        <div class="frame">          <img src={pkg.image} alt={pkg.imageAlt?.[lang] ?? ''} width="1024" height="576" />
+        </div>
+        <figcaption class="small muted">{t.conceptImage}</figcaption>
+      </figure>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="wrap three">
+      <div><h2 class="h3">{t.forWhom}</h2><p>{pkg.audience[lang]}</p></div>
+      <div><h2 class="h3">{t.task}</h2><p>{pkg.job[lang]}</p></div>
+      <div><h2 class="h3">{t.whyUs}</h2><p>{pkg.why[lang]}</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">{t.whatYouGet}</p>
+        <h2>{pkg.tagline[lang]}</h2>
+      </div>
+      <div>
+        <ol class="features">
+          {pkg.features[lang].map((f, i) => <li><span class="fn">{String(i + 1).padStart(2, '0')}</span><p>{f}</p></li>)}
+        </ol>
+        <div class="planned">
+          <p class="eyebrow">{t.planned}</p>
+          <p>{pkg.plannedOffer[lang]}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div><h2>{t.faq}</h2></div>
+      <div class="faq">
+        {pkg.faq[lang].map((q) => (
+          <details>
+            <summary><span>{q.q}</span><span class="pm" aria-hidden="true"></span></summary>
+            <p>{q.a}</p>
+          </details>
+        ))}
+        <div class="notes small">
+          <p class="eyebrow">{t.notes}</p>
+          <p>{pkg.notes[lang]}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section form-sec" id="formular" aria-labelledby="form-h">
+    <div class="wrap split">
+      <div class="stack" style="--flow: 1rem">
+        <p class="eyebrow">{t.status[pkg.status]}</p>
+        <h2 id="form-h">{formTitle}</h2>
+        <p class="muted">{t.statusExplain[pkg.status]}</p>
+        {inBundles.length > 0 && (
+          <p class="small">{de ? 'Auch als Bündel:' : 'Anche in combinazione:'} {inBundles.map((b, i) => (<>{i > 0 && ', '}<a href={`${path('packages', lang)}#bu-h`}>{b.title[lang]}</a></>))}</p>
+        )}
+      </div>
+      <div class="form-box">
+        <InquiryForm lang={lang} preselect={pkg.slug} intent={formIntent} source={selfPath} compact />
+      </div>
+    </div>
+  </section>
+
+  {related.length > 0 && (
+    <section class="section" aria-labelledby="rel-h">
+      <div class="wrap">
+        <h2 id="rel-h" class="rel-h">{t.related}</h2>
+        <div class="grid grid-2 grid-3">
+          {related.map((p) => <PackageCard pkg={p} lang={lang} />)}
+        </div>
+        <p class="back"><a class="text-link" href={path('packages', lang)}>{t.backToCatalog}</a></p>
+      </div>
+    </section>
+  )}
+</Base>
+
+<style>
+  .crumbs { padding-top: 1.5rem; }
+  .crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .3rem; color: var(--muted); }
+  .crumbs li + li::before { content: '/'; margin-right: .3rem; color: var(--line-strong); }
+  .crumbs a { color: var(--muted); }
+  .top { padding-block: var(--space-l) var(--space-l); }
+  .top-grid { display: grid; gap: var(--space-l); align-items: start; }
+  @media (min-width: 64rem) { .top-grid { grid-template-columns: 1.6fr 1fr; gap: var(--space-xl); } }
+  .intro h1 { font-size: var(--step-4); margin-top: 1rem; font-weight: 390; }
+  .intro .lead { margin-top: 1.4rem; }
+  .panel { display: grid; gap: 1rem; padding: 1.5rem; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+  @media (min-width: 64rem) { .panel { position: sticky; top: 6.5rem; } }
+  .expl { color: var(--ink-2); }
+  .full { width: 100%; }
+  .facts { margin: 0; display: grid; gap: .5rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+  .facts div { display: grid; gap: .1rem; }
+  .facts dt { color: var(--muted); font-weight: 600; }
+  .facts dd { margin: 0; }
+  .visual figure { margin: 0; }
+  .visual figcaption { margin-top: .6rem; }
+  .h3 { font-size: var(--step-1); margin-bottom: .6rem; }
+  .three { display: grid; gap: var(--space-l); }
+  @media (min-width: 56rem) { .three { grid-template-columns: repeat(3, 1fr); } }
+  .three p { color: var(--ink-2); }
+  .split { display: grid; gap: var(--space-l); }
+  @media (min-width: 62rem) { .split { grid-template-columns: 1fr 1.4fr; gap: var(--space-xl); } }
+  .split h2 { margin-top: .6rem; }
+  .features { list-style: none; margin: 0; padding: 0; }
+  .features li { display: grid; grid-template-columns: 2.8rem 1fr; gap: .9rem; padding: 1.15rem 0; border-top: 1px solid var(--line); }
+  .features li:last-child { border-bottom: 1px solid var(--line); }
+  .fn { font-family: var(--serif); font-style: italic; color: var(--petrol); font-size: var(--step-1); line-height: 1.3; }
+  .planned { margin-top: 1.5rem; padding: 1.1rem 1.25rem; background: var(--petrol-tint); border-radius: var(--radius); display: grid; gap: .3rem; }
+  .faq details { border-top: 1px solid var(--line); }
+  .faq details:last-of-type { border-bottom: 1px solid var(--line); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 1rem; padding: 1.1rem 0; font-family: var(--serif); font-size: var(--step-1); font-weight: 450; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .pm { position: relative; width: 14px; height: 14px; flex: none; margin-top: .45rem; }
+  .pm::before, .pm::after { content: ''; position: absolute; left: 0; top: 6px; width: 14px; height: 1.5px; background: var(--petrol); }
+  .pm::after { transform: rotate(90deg); transition: transform .15s ease; }
+  details[open] .pm::after { transform: rotate(0); }
+  .faq details p { padding: 0 0 1.2rem; color: var(--ink-2); max-width: 40em; }
+  .notes { margin-top: 1.8rem; display: grid; gap: .35rem; color: var(--muted); }
+  .form-sec { background: var(--paper-2); }
+  .form-box { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: clamp(1.25rem, 3vw, 2rem); }
+  .rel-h { font-size: var(--step-2); margin-bottom: var(--space-m); }
+  .back { margin-top: var(--space-l); }
+</style>

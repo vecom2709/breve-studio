@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+data/inquiries.json
+data/*.lock
+PREVIEW.txt
+preview.log

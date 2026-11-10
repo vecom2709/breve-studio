@@ -1,0 +1,91 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../content/site';
+import type { Locale } from '../content/packages';
+import { path } from '../lib/i18n';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const de = lang === 'de';
+
+const dos = de
+  ? ['Klar umrissene Pakete mit festem Listenpreis.', 'Persönliche Betreuung auf Deutsch und Italienisch.', 'Bewährte Open-Source-Software, wo sie passt.', 'KI-Ergebnisse kennzeichnen und vor Veröffentlichung freigeben lassen.', 'Daten sparsam erheben und in der EU verarbeiten.']
+  : ['Pacchetti ben definiti con prezzo di listino.', 'Assistenza personale in italiano e in tedesco.', 'Software open source collaudato, dove ha senso.', 'Contenuti generati con AI sempre indicati e approvati prima della pubblicazione.', 'Pochi dati, trattati nell’UE.'];
+const donts = de
+  ? ['Keine gekauften oder geschönten Bewertungen.', 'Keine Kaltakquise per E-Mail, PEC oder Telefon.', 'Keine Erfolgsversprechen und keine erfundenen Kennzahlen.', 'Keine Rechts- oder Steuerberatung.', 'Keine Bindung an Plattformen, aus denen Sie nicht wieder herauskommen.']
+  : ['Nessuna recensione comprata o ritoccata.', 'Nessun contatto a freddo via email, PEC o telefono.', 'Nessuna promessa di risultato e nessun dato inventato.', 'Nessuna consulenza legale o fiscale.', 'Nessun vincolo a piattaforme da cui non si può uscire.'];
+---
+<Base lang={lang} routeKey="about" title={de ? 'Über uns' : 'Chi siamo'}
+  description={de ? 'Studio Breve ist ein kleines Digitalstudio in Aragona (Sizilien), geführt von Uwe Vetter. Klare Pakete, offene Preise, zweisprachig.' : 'Studio Breve è un piccolo studio digitale ad Aragona (Sicilia), gestito da Uwe Vetter. Pacchetti chiari, prezzi trasparenti, bilingue.'}>
+  <section class="head">
+    <div class="wrap">
+      <p class="eyebrow">{de ? 'Über uns' : 'Chi siamo'}</p>
+      <h1>{de ? <>Ein kleines Studio <em class="accent">mit kurzen Wegen.</em></> : <>Un piccolo studio, <em class="accent">a portata di mano.</em></>}</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div><p class="name">{de ? 'Der Name' : 'Il nome'}</p></div>
+      <div class="stack prose" style="--flow: 1.1rem">
+        <p class="lead">{de
+          ? '„Breve“ heißt auf Italienisch „kurz“. Das Breve ist zugleich das kleine Bogenzeichen ˘ in der Typografie, das einen kurzen Laut markiert. Es steht für das, was wir anbieten wollen: kurze Wege, kurze Texte, klar umrissene Pakete.'
+          : '“Breve” vuol dire corto, conciso. In tipografia è anche il piccolo segno ad arco ˘ che indica una vocale breve. Rappresenta ciò che vogliamo offrire: percorsi brevi, testi chiari, pacchetti ben definiti.'}</p>
+        <p>{de
+          ? 'Studio Breve wird von Uwe Vetter in Aragona in der Provinz Agrigento aufgebaut. Als deutschsprachiger Gründer in Sizilien arbeiten wir zwischen zwei Märkten: für lokale Betriebe in Italien, die eine verlässliche digitale Grundausstattung brauchen, und für Kunden im deutschsprachigen Raum – etwa Eigentümer von Ferienwohnungen in Italien.'
+          : 'Studio Breve è avviato da Uwe Vetter ad Aragona, in provincia di Agrigento. Da fondatore di lingua tedesca in Sicilia lavoriamo tra due mercati: per le attività locali in Italia che hanno bisogno di strumenti digitali affidabili, e per clienti dei Paesi di lingua tedesca, per esempio proprietari di case vacanza in Italia.'}</p>
+        <p>{de
+          ? 'Statt einer großen Plattform entstehen einzelne Pakete. Jedes löst eine Aufgabe, hat einen Listenpreis und einen ehrlich ausgewiesenen Stand. Neue Pakete kommen hinzu, wenn sie gebraucht werden.'
+          : 'Invece di una grande piattaforma nascono singoli pacchetti. Ognuno risolve un compito, ha un prezzo di listino e uno stato dichiarato con onestà. Nuovi pacchetti si aggiungeranno quando serviranno.'}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="two">
+        <div>
+          <h2 class="h2">{de ? 'Was wir tun' : 'Cosa facciamo'}</h2>
+          <ul class="list">{dos.map((d) => <li>{d}</li>)}</ul>
+        </div>
+        <div>
+          <h2 class="h2">{de ? 'Was wir nicht tun' : 'Cosa non facciamo'}</h2>
+          <ul class="list no">{donts.map((d) => <li>{d}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div><p class="name">{de ? 'Stand' : 'Stato'}</p></div>
+      <div class="stack" style="--flow: 1.1rem">
+        <p>{de
+          ? 'Studio Breve befindet sich im Aufbau. Die Website ist ein Entwurf, die Produkte werden schrittweise entwickelt. Bis zum offiziellen Start wird nichts verkauft und kein Vertrag geschlossen.'
+          : 'Studio Breve è in fase di avvio. Il sito è una bozza e i prodotti vengono sviluppati passo dopo passo. Fino all’avvio ufficiale non si vende nulla e non si concludono contratti.'}</p>
+        <p class="muted small">{site.operator.street} · {site.operator.postalCode} {site.operator.city} ({site.operator.province}) · {site.operator.phone}</p>
+        <p><a class="btn btn-primary" href={path('contact', lang)}>{de ? 'Kontakt aufnehmen' : 'Contattaci'} <span class="arrow" aria-hidden="true">→</span></a></p>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .head { padding-block: var(--space-xl) var(--space-l); }
+  .head h1 { font-size: var(--step-5); font-weight: 370; max-width: 12em; margin-top: 1rem; line-height: 1.02; }
+  .split { display: grid; gap: var(--space-m); }
+  @media (min-width: 62rem) { .split { grid-template-columns: 1fr 2fr; gap: var(--space-xl); } }
+  .name { font-family: var(--serif); font-style: italic; font-size: var(--step-2); color: var(--petrol); }
+  .prose { max-width: 40rem; }
+  .prose p:not(.lead) { color: var(--ink-2); }
+  .two { display: grid; gap: var(--space-l); }
+  @media (min-width: 52rem) { .two { grid-template-columns: 1fr 1fr; gap: var(--space-xl); } }
+  .h2 { font-size: var(--step-2); margin-bottom: 1rem; }
+  .list { list-style: none; margin: 0; padding: 0; }
+  .list li { padding: .85rem 0 .85rem 1.8rem; border-top: 1px solid var(--line); position: relative; }
+  .list li:last-child { border-bottom: 1px solid var(--line); }
+  .list li::before { content: ''; position: absolute; left: 0; top: 1.35rem; width: .9rem; height: 1.5px; background: var(--petrol); }
+  .list.no li::before { background: var(--line-strong); }
+  .list.no li::after { content: ''; position: absolute; left: 0; top: 1.35rem; width: .9rem; height: 1.5px; background: var(--line-strong); transform: rotate(90deg); }
+  .list.no li::before, .list.no li::after { transform-origin: center; }
+  .list.no li::before { transform: rotate(45deg); }
+  .list.no li::after { transform: rotate(-45deg); }
+</style>

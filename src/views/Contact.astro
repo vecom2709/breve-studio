@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import InquiryForm from '../components/InquiryForm.astro';
+import { site } from '../content/site';
+import type { Locale } from '../content/packages';
+import { path, ui } from '../lib/i18n';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const de = lang === 'de';
+const op = site.operator;
+---
+<Base lang={lang} routeKey="contact" title={de ? 'Kontakt' : 'Contatti'}
+  description={de ? 'Kontakt zu Studio Breve in Aragona: Anfrage zu einem Paket oder allgemeine Frage, auf Deutsch oder Italienisch.' : 'Contatta Studio Breve ad Aragona: richiesta su un pacchetto o domanda generale, in italiano o in tedesco.'}>
+  <section class="head">
+    <div class="wrap grid-c">
+      <div class="stack" style="--flow: 1.2rem">
+        <p class="eyebrow">{de ? 'Kontakt' : 'Contatti'}</p>
+        <h1>{de ? <>Schreiben Sie uns <em class="accent">ein paar Zeilen.</em></> : <>Scrivici <em class="accent">due righe.</em></>}</h1>
+        <p class="lead">{de
+          ? 'Ob Interesse an einem Paket oder eine Frage, die nirgends steht: Wir antworten persönlich, auf Deutsch oder Italienisch. Da Studio Breve noch im Aufbau ist, kann eine Antwort einige Tage dauern.'
+          : 'Che si tratti di un pacchetto o di una domanda che non trovi qui, ti rispondiamo di persona, in italiano o in tedesco. Studio Breve è in fase di avvio: la risposta può richiedere qualche giorno.'}</p>
+        <div class="direct">
+          <h2 class="h3">{de ? 'Direkt' : 'Direttamente'}</h2>
+          <address>
+            Studio Breve · {op.name}<br />
+            {op.street}<br />
+            {op.postalCode} {op.city} ({op.province}), {op.country[lang]}
+          </address>
+          <p><a href={op.phoneHref}>{op.phone}</a></p>
+          <p>{op.email} <span class="small muted">{de ? '(Platzhalter, Postfach noch nicht aktiv)' : '(provvisorio, casella non ancora attiva)'}</span></p>
+        </div>
+        <p class="small muted">{de ? 'Wir rufen nicht ungefragt an und versenden keine Werbung ohne Ihre Einwilligung.' : 'Non chiamiamo senza richiesta e non inviamo pubblicità senza il tuo consenso.'}</p>
+      </div>
+      <div class="box" id="formular">
+        <p class="err-banner" role="alert" data-error-banner hidden>{ui[lang].form.errors.summary}</p>
+        <InquiryForm lang={lang} source={path('contact', lang)} title={ui[lang].form.title} />
+        <p class="small muted pv">{de ? 'Mit dem Absenden gelten die Hinweise der ' : 'Inviando si applicano le indicazioni dell’'}<a href={path('privacy', lang)}>{de ? 'Datenschutzerklärung' : 'informativa privacy'}</a>.</p>
+      </div>
+    </div>
+  </section>
+</Base>
+<script>
+  if (new URLSearchParams(location.search).get('fehler')) {
+    const b = document.querySelector<HTMLElement>('[data-error-banner]');
+    if (b) b.hidden = false;
+  }
+</script>
+<style>
+  .head { padding-block: var(--space-xl); }
+  .grid-c { display: grid; gap: var(--space-l); align-items: start; }
+  @media (min-width: 62rem) { .grid-c { grid-template-columns: 1fr 1.2fr; gap: var(--space-xl); } }
+  .head h1 { font-size: var(--step-4); font-weight: 390; }
+  .direct { border-top: 2px solid var(--ink); padding-top: 1rem; display: grid; gap: .5rem; }
+  .h3 { font-size: var(--step-1); }
+  address { font-style: normal; color: var(--ink-2); }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: clamp(1.25rem, 3vw, 2.25rem); }
+  .err-banner { border: 1px solid var(--error); color: var(--error); padding: .75rem 1rem; border-radius: var(--radius); margin-bottom: 1rem; font-weight: 600; }
+  .pv { margin-top: 1rem; }
+</style>

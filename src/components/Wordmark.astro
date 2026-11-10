@@ -1,0 +1,17 @@
+---
+import Mark from './Mark.astro';
+import type { Locale } from '../content/packages';
+import { path } from '../lib/i18n';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+---
+<a class="wordmark" href={path('home', lang)} aria-label={lang === 'de' ? 'Studio Breve – Startseite' : 'Studio Breve – home'}>
+  <Mark size={30} />
+  <span class="wm-text">Studio <em>Breve</em></span>
+</a>
+<style>
+  .wordmark { display: inline-flex; align-items: center; gap: 0.65rem; text-decoration: none; color: var(--ink); }
+  .wm-text { font-family: var(--serif); font-size: 1.32rem; letter-spacing: -0.01em; font-weight: 460; line-height: 1; }
+  .wm-text em { font-style: italic; color: var(--petrol); font-weight: 420; }
+  .wordmark:hover { color: var(--ink); }
+</style>

@@ -1,0 +1,32 @@
+---
+import type { Locale, Price } from '../content/packages';
+import { formatPrice, ui } from '../lib/i18n';
+interface Props { prices: Price[]; lang: Locale; compact?: boolean; showListLabel?: boolean }
+const { prices, lang, compact = false, showListLabel = false } = Astro.props;
+const t = ui[lang];
+---
+<div class:list={['price-block', { compact }]}>
+  {showListLabel && <p class="eyebrow pl">{t.listPrice}</p>}
+  {prices.length === 0 && <p class="muted small">{t.priceOnRequest}</p>}
+  {prices.map((p) => {
+    const f = formatPrice(p, lang);
+    return (
+      <div class="row">
+        {f.label && <span class="price-label">{f.label}</span>}
+        <p class="price">
+          <span class="amount">{f.main}</span>
+          {f.period && <span class="period">{f.period}</span>}
+        </p>
+        {(f.unit || f.vat) && <p class="sub">{[f.unit, f.vat].filter(Boolean).join(' · ')}</p>}
+      </div>
+    );
+  })}
+</div>
+<style>
+  .price-block { display: grid; gap: 0.55rem; }
+  .row { display: grid; gap: 0.1rem; }
+  .pl { margin-bottom: 0.1rem; }
+  .sub { color: var(--muted); font-size: var(--step--1); line-height: 1.35; }
+  .compact :global(.amount) { font-size: var(--step-1); }
+  .compact .row + .row { border-top: 1px solid var(--line); padding-top: .45rem; }
+</style>

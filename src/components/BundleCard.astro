@@ -1,0 +1,33 @@
+---
+import PriceBlock from './PriceBlock.astro';
+import { getPackage, type Bundle, type Locale } from '../content/packages';
+import { path, ui } from '../lib/i18n';
+interface Props { bundle: Bundle; lang: Locale }
+const { bundle, lang } = Astro.props;
+const t = ui[lang];
+const items = bundle.includes.map((s) => getPackage(s)).filter((p) => !!p);
+const contact = `${path('contact', lang)}?paket=bundle:${bundle.slug}#formular`;
+---
+<article class="bundle">
+  <p class="eyebrow">{t.bundle}</p>
+  <h3>{bundle.title[lang]}</h3>
+  <p class="text">{bundle.text[lang]}</p>
+  <p class="inc"><span class="muted small">{t.includes}:</span>
+    {items.map((p, i) => (<>{i > 0 && <span class="plus" aria-hidden="true"> + </span>}<a href={path('package', lang, p!.slug)}>{p!.brand}</a></>))}
+  </p>
+  <div class="foot">
+    <PriceBlock prices={bundle.price ? [bundle.price] : []} lang={lang} compact />
+    <span class="status" data-status={bundle.status}>{t.status[bundle.status]}</span>
+  </div>
+  <a class="text-link more" href={contact}>{bundle.status === 'inquiry' ? t.cta.inquiry : bundle.status === 'soon' ? t.cta.notify : t.cta.interest}</a>
+</article>
+<style>
+  .bundle { display: flex; flex-direction: column; gap: .6rem; padding: 1.5rem; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); }
+  h3 { font-size: var(--step-2); font-weight: 440; }
+  .text { color: var(--ink-2); }
+  .inc { font-size: var(--step--1); }
+  .inc a { font-weight: 600; }
+  .plus { color: var(--muted); }
+  .foot { margin-top: auto; padding-top: .9rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: .75rem; }
+  .more { align-self: flex-start; margin-top: .4rem; }
+</style>

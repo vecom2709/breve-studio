@@ -1,0 +1,9 @@
+---
+import View from '../../views/PackageDetail.astro';
+import { packages, type Package } from '../../content/packages';
+export function getStaticPaths() {
+  return packages.map((pkg) => ({ params: { slug: pkg.slug }, props: { pkg } }));
+}
+const { pkg } = Astro.props as { pkg: Package };
+---
+<View lang="de" pkg={pkg} />

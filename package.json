@@ -1,0 +1,24 @@
+{
+  "name": "studio-breve",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1 --port 4321",
+    "build": "astro check && astro build",
+    "build:fast": "astro build",
+    "preview": "astro preview --host 127.0.0.1 --port 4173",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/node": "^11.1.11",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/source-sans-3": "^5.3.1",
+    "astro": "^7.4.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@types/node": "^24.19.2",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,84 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { site } from '../content/site';
+import type { Locale } from '../content/packages';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const op = site.operator;
+const de = lang === 'de';
+---
+{de ? (
+<Legal lang={lang} routeKey="privacy" title="Datenschutzerklärung" description="Datenschutzerklärung von Studio Breve (Entwurf) nach DSGVO: Kontaktformular, keine Cookies, kein Tracking.">
+  <h2>1. Verantwortlicher</h2>
+  <address>{op.name} · Studio Breve<br />{op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.de}<br />Telefon {op.phone} · E-Mail {op.email} [Platzhalter]</address>
+  <p>Ein Datenschutzbeauftragter ist nach derzeitigem Stand nicht bestellt, da keine Pflicht dazu besteht.</p>
+
+  <h2>2. Kurz gesagt</h2>
+  <ul>
+    <li>Diese Website setzt <strong>keine Cookies</strong> und verwendet <strong>keine Analyse-, Werbe- oder Tracking-Dienste</strong>. Deshalb gibt es kein Cookie-Banner.</li>
+    <li>Schriften, Bilder und Skripte werden vom eigenen Server geladen. Es werden keine Inhalte von Drittanbietern (z. B. Google Fonts, Karten, Videos, Social-Media-Plugins) eingebunden.</li>
+    <li>Personenbezogene Daten verarbeiten wir nur, wenn Sie uns über das Formular schreiben.</li>
+  </ul>
+
+  <h2>3. Aufruf der Website</h2>
+  <p>Beim Aufruf überträgt Ihr Browser technisch notwendige Daten (z. B. IP-Adresse, Zeitpunkt, aufgerufene Seite, Browsertyp) an den Server, damit die Seite ausgeliefert werden kann. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und funktionsfähigen Angebot). In der aktuellen Vorschau läuft die Seite nur lokal; die Anwendung legt keine Zugriffsprotokolle an. Angaben zum künftigen Hosting-Anbieter, zu dessen Server-Logs und zur Speicherdauer werden vor dem Start ergänzt: [wird ergänzt].</p>
+
+  <h2>4. Kontakt- und Interessenformular</h2>
+  <p><strong>Daten:</strong> Name, E-Mail-Adresse, bevorzugte Sprache, optional gewähltes Paket, Ihre Nachricht, Zeitpunkt sowie Ihre Einwilligungsangaben. IP-Adressen werden dabei nicht gespeichert.</p>
+  <p><strong>Zweck:</strong> Beantwortung Ihrer Anfrage bzw. einmalige Information, sobald das gewählte Paket startet.</p>
+  <p><strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen auf Ihre Anfrage) und Art. 6 Abs. 1 lit. a DSGVO (Ihre Einwilligung). Die optionale Einwilligung in gelegentliche Informationen über neue Pakete beruht auf Art. 6 Abs. 1 lit. a DSGVO und kann jederzeit widerrufen werden.</p>
+  <p><strong>Speicherort:</strong> In der Vorschau werden die Angaben ausschließlich in einer Datei auf dem Rechner des Betreibers gespeichert. Es wird keine E-Mail versendet und nichts an Dritte übermittelt.</p>
+  <p><strong>Speicherdauer:</strong> bis Ihre Anfrage erledigt ist und höchstens 12 Monate nach dem letzten Kontakt, sofern keine gesetzlichen Aufbewahrungspflichten bestehen oder Sie früher widerrufen. [Vor dem Start zu bestätigen.]</p>
+  <p><strong>Empfänger:</strong> keine. Eine Übermittlung in Drittländer außerhalb der EU findet nicht statt.</p>
+
+  <h2>5. Keine Cookies, kein Tracking</h2>
+  <p>Es werden weder Cookies noch vergleichbare Technologien (Local Storage, Pixel, Fingerprinting) eingesetzt. Sollte sich das ändern, wird diese Erklärung vorher angepasst und, wo erforderlich, Ihre Einwilligung eingeholt.</p>
+
+  <h2>6. Ihre Rechte</h2>
+  <p>Sie haben das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO). Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO). Eine formlose Nachricht an die oben genannten Kontaktdaten genügt.</p>
+  <p>Sie können sich bei einer Aufsichtsbehörde beschweren. Zuständig für den Verantwortlichen ist der Garante per la protezione dei dati personali, Piazza Venezia 11, 00187 Roma, www.garanteprivacy.it. Sie können sich auch an die Aufsichtsbehörde Ihres Wohnorts wenden.</p>
+
+  <h2>7. Automatisierte Entscheidungen</h2>
+  <p>Eine automatisierte Entscheidungsfindung einschließlich Profiling nach Art. 22 DSGVO findet nicht statt.</p>
+
+  <h2>8. Pakete und spätere Dienste</h2>
+  <p>Für die einzelnen Pakete (z. B. Verarbeitung von Gästedaten oder Website-Wartung) gelten beim Start eigene Datenschutzhinweise und, wo nötig, ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO.</p>
+</Legal>
+) : (
+<Legal lang={lang} routeKey="privacy" title="Informativa privacy" description="Informativa privacy di Studio Breve (bozza) ai sensi del GDPR: modulo di contatto, nessun cookie, nessun tracciamento.">
+  <h2>1. Titolare del trattamento</h2>
+  <address>{op.name} · Studio Breve<br />{op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.it}<br />Telefono {op.phone} · Email {op.email} [provvisoria]</address>
+  <p>Allo stato attuale non è stato nominato un responsabile della protezione dei dati (DPO), non essendo obbligatorio.</p>
+
+  <h2>2. In breve</h2>
+  <ul>
+    <li>Questo sito <strong>non usa cookie</strong> e <strong>nessun servizio di analisi, pubblicità o tracciamento</strong>. Per questo non c’è un banner dei cookie.</li>
+    <li>Caratteri, immagini e script sono caricati dal nostro server. Non sono incorporati contenuti di terzi (per esempio Google Fonts, mappe, video, plugin social).</li>
+    <li>Trattiamo dati personali solo se ci scrivi tramite il modulo.</li>
+  </ul>
+
+  <h2>3. Navigazione</h2>
+  <p>Quando visiti il sito, il browser trasmette al server dati tecnicamente necessari (ad esempio indirizzo IP, ora, pagina richiesta, tipo di browser) per poter mostrare la pagina. La base giuridica è l’art. 6, par. 1, lett. f GDPR (legittimo interesse a un servizio sicuro e funzionante). Nell’anteprima attuale il sito funziona solo in locale e l’applicazione non registra log di accesso. Le informazioni sul futuro fornitore di hosting, sui relativi log e sui tempi di conservazione saranno aggiunte prima del lancio: [da inserire].</p>
+
+  <h2>4. Modulo di contatto e di interesse</h2>
+  <p><strong>Dati:</strong> nome, indirizzo email, lingua preferita, eventuale pacchetto scelto, il tuo messaggio, data e ora e le indicazioni sul consenso. L’indirizzo IP non viene salvato.</p>
+  <p><strong>Finalità:</strong> rispondere alla tua richiesta o informarti una volta al lancio del pacchetto scelto.</p>
+  <p><strong>Base giuridica:</strong> art. 6, par. 1, lett. b GDPR (misure precontrattuali su tua richiesta) e art. 6, par. 1, lett. a GDPR (consenso). Il consenso facoltativo a ricevere occasionalmente notizie su nuovi pacchetti si basa sull’art. 6, par. 1, lett. a GDPR ed è revocabile in qualsiasi momento.</p>
+  <p><strong>Luogo di conservazione:</strong> nell’anteprima i dati vengono salvati esclusivamente in un file sul computer del titolare. Non viene inviata alcuna email e nulla viene trasmesso a terzi.</p>
+  <p><strong>Durata:</strong> fino alla gestione della richiesta e al massimo 12 mesi dall’ultimo contatto, salvo obblighi di legge o revoca anticipata. [Da confermare prima del lancio.]</p>
+  <p><strong>Destinatari:</strong> nessuno. Non avviene alcun trasferimento verso Paesi fuori dall’UE.</p>
+
+  <h2>5. Nessun cookie, nessun tracciamento</h2>
+  <p>Non utilizziamo cookie né tecnologie simili (local storage, pixel, fingerprinting). Se ciò dovesse cambiare, questa informativa sarà aggiornata prima e, se necessario, ti sarà chiesto il consenso.</p>
+
+  <h2>6. I tuoi diritti</h2>
+  <p>Hai diritto di accesso (art. 15), rettifica (art. 16), cancellazione (art. 17), limitazione (art. 18), portabilità (art. 20) e opposizione (art. 21 GDPR). Puoi revocare in ogni momento il consenso prestato, senza pregiudicare la liceità del trattamento precedente (art. 7, par. 3 GDPR). Basta un messaggio ai contatti indicati sopra.</p>
+  <p>Puoi proporre reclamo al Garante per la protezione dei dati personali, Piazza Venezia 11, 00187 Roma, www.garanteprivacy.it, oppure all’autorità di controllo del tuo Paese di residenza.</p>
+
+  <h2>7. Decisioni automatizzate</h2>
+  <p>Non vengono prese decisioni basate unicamente su trattamenti automatizzati, compresa la profilazione (art. 22 GDPR).</p>
+
+  <h2>8. Pacchetti e servizi futuri</h2>
+  <p>Per i singoli pacchetti (per esempio il trattamento dei dati degli ospiti o la manutenzione di siti) al lancio saranno fornite informative specifiche e, dove necessario, un accordo per il trattamento dei dati ai sensi dell’art. 28 GDPR.</p>
+</Legal>
+)}
