@@ -58,6 +58,15 @@ const meta = localeConfig[lang];
 <html lang={meta.htmlLang}>
   <head>
     <meta charset="utf-8" />
+    <script is:inline>
+      (function () {
+        try {
+          if (/(?:^|[?&])(?:capture|aufnahme)=1(?:&|$)/.test(location.search)) {
+            document.documentElement.setAttribute('data-capture', '1');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={desc} />

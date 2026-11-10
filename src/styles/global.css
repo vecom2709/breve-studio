@@ -179,3 +179,7 @@ em.accent, .accent { font-style: italic; font-weight: 560; color: var(--forest-m
 
 hr.rule { border: 0; border-top: 1px solid var(--line); margin: 0; }
 main:focus, main:focus-visible { box-shadow: none; }
+
+/* Capture-Modus (?capture=1): Hero ohne Geräterahmen, für die Live-Aufnahmen im Laptop/Handy. */
+html[data-capture] .hero-devices { display: none !important; }
+html[data-capture] .hero-still { display: block !important; }

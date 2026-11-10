@@ -51,8 +51,8 @@ const actionHref = (slug: string) => `${path('package', lang, slug)}#formular`;
                   <img
                     class="live-scroll"
                     src={de ? '/images/home/live-desktop-de.webp' : '/images/home/live-desktop-it.webp'}
-                    width="900"
-                    height={de ? 2638 : 2742}
+                    width="1440"
+                    height={de ? 4254 : 4387}
                     alt={de ? 'Die deutsche Startseite, langsam von oben nach unten rollend' : 'La pagina iniziale in italiano, che scorre lentamente'}
                     decoding="async"
                     fetchpriority="high"
@@ -62,14 +62,6 @@ const actionHref = (slug: string) => `${path('package', lang, slug)}#formular`;
             </div>
             <div class="base"><span class="hinge" aria-hidden="true"></span></div>
           </div>
-          <img
-            class="hero-mug"
-            src="/images/home/hero-mug.webp"
-            width="200"
-            height="161"
-            alt={de ? 'Weiße Tasse neben dem Laptop' : 'Tazza bianca accanto al portatile'}
-            decoding="async"
-          />
           <div class="phone-col">
             <div class="phone">
               <span class="notch" aria-hidden="true"></span>
@@ -77,8 +69,8 @@ const actionHref = (slug: string) => `${path('package', lang, slug)}#formular`;
                 <img
                   class="live-scroll"
                   src={de ? '/images/home/live-mobile-de.webp' : '/images/home/live-mobile-it.webp'}
-                  width="420"
-                  height={de ? 7196 : 7428}
+                  width="390"
+                  height={de ? 8670 : 8727}
                   alt={de ? 'Die Startseite auf dem Handy, langsam rollend' : 'La pagina iniziale sul telefono, che scorre lentamente'}
                   decoding="async"
                 />
@@ -210,28 +202,29 @@ const actionHref = (slug: string) => `${path('package', lang, slug)}#formular`;
 <style>
   .hero { padding-block: clamp(2rem, 4vw, 4.5rem); background: #fff; }
   .hero-grid { display: grid; gap: 2rem; align-items: center; }
-  @media (min-width: 60rem) { .hero-grid { grid-template-columns: 1fr 1fr; gap: 3.5rem; } }
+  @media (min-width: 60rem) { .hero-grid { grid-template-columns: 1fr 1.2fr; gap: 2.5rem; align-items: center; } }
   .hero h1 { font-size: clamp(2.15rem, 1.2rem + 3.2vw, 3.8rem); max-width: 16ch; color: var(--ink); }
   .hero .lead { margin-top: 1.2rem; color: var(--ink-2); }
   .cta-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
   .hero-stage { position: relative; margin: 0; }
   .hero-still { display: none; margin: 0; }
   .hero-still img { width: 100%; height: auto; border-radius: 18px; }
+  :global(html[data-capture]) .hero-still,
   :global(html[data-aufnahme]) .hero-still { display: block; }
+  :global(html[data-capture]) .hero-devices,
   :global(html[data-aufnahme]) .hero-devices { display: none !important; }
-  .hero-devices { position: relative; min-height: 18rem; }
-  .laptop { width: 86%; }
+  .hero-devices { position: relative; min-height: 18rem; display: flex; align-items: flex-end; gap: 0.9rem; }
+  .laptop { flex: 1 1 auto; min-width: 0; width: auto; }
   .laptop .lid { background: linear-gradient(180deg, #d8ddd9, #b9c1bc); border-radius: 12px 12px 4px 4px; padding: 0.55rem 0.55rem 0.4rem; box-shadow: 0 18px 40px rgba(20, 34, 31, 0.16); }
   .laptop .bezel { background: #111; border-radius: 8px; padding: 0.7rem 0.45rem 0.45rem; position: relative; }
   .laptop .cam { position: absolute; top: 0.28rem; left: 50%; width: 0.35rem; height: 0.35rem; border-radius: 50%; background: #3a3a3a; transform: translateX(-50%); }
-  .laptop .screen { overflow: hidden; height: clamp(12.5rem, 28vw, 20.5rem); border-radius: 2px; background: #F7F8F6; }
+  .laptop .screen { overflow: hidden; height: clamp(13rem, 30vw, 22rem); border-radius: 2px; background: #F7F8F6; }
   .laptop .base { height: 0.85rem; background: linear-gradient(180deg, #cfd5d1, #aeb6b1); border-radius: 0 0 10px 10px; margin: 0 -3%; position: relative; }
   .laptop .hinge { position: absolute; left: 50%; top: -0.15rem; width: 18%; height: 0.35rem; background: #9aa29d; border-radius: 2px; transform: translateX(-50%); }
-  .hero-mug { position: absolute; right: 26%; bottom: 0.15rem; width: 22%; height: auto; z-index: 3; pointer-events: none; filter: drop-shadow(0 10px 14px rgba(20, 34, 31, 0.22)); }
-  .phone-col { position: absolute; right: 0; bottom: 1.1rem; width: 34%; display: grid; justify-items: center; gap: 0.65rem; z-index: 2; }
+  .phone-col { flex: 0 0 auto; width: min(8.8rem, 27%); display: grid; justify-items: center; gap: 0.65rem; }
   .phone { width: 100%; background: #1a1d1c; border-radius: 1.35rem; padding: 0.55rem 0.32rem; box-shadow: 0 16px 32px rgba(20, 34, 31, 0.22); }
   .phone .notch { display: block; width: 38%; height: 0.42rem; margin: 0 auto 0.28rem; background: #0b0d0c; border-radius: 999px; }
-  .phone .screen { overflow: hidden; height: clamp(11rem, 24vw, 17.5rem); border-radius: 0.7rem; background: #F7F8F6; }
+  .phone .screen { overflow: hidden; height: clamp(14rem, 32vw, 20rem); border-radius: 0.7rem; background: #F7F8F6; }
   .live-scroll { display: block; width: 100%; height: auto; transform: translateY(0); animation: live-pan 48s ease-in-out infinite alternate; animation-play-state: running; }
   .laptop .screen:hover .live-scroll,
   .phone .screen:hover .live-scroll,
@@ -254,9 +247,9 @@ const actionHref = (slug: string) => `${path('package', lang, slug)}#formular`;
   .app-cta { font-weight: 700; font-size: 0.82rem; color: var(--forest); text-decoration: none; text-align: center; background: #E7F0EC; border-radius: 999px; padding: 0.45rem 0.7rem; line-height: 1.2; }
   .app-cta:hover { background: #d5e6df; }
   @media (max-width: 59.99rem) {
+    .hero-devices { flex-direction: column; align-items: center; }
     .laptop { width: 100%; }
-    .hero-mug { width: 26%; right: 40%; bottom: auto; top: 58%; }
-    .phone-col { position: relative; width: min(11.5rem, 48%); margin: -4.5rem 0 0 auto; bottom: auto; right: auto; }
+    .phone-col { width: min(11rem, 46%); }
   }
   .trust { background: #fff; border-block: 1px solid #E6E8E4; padding-block: 1.35rem; }
   .trust-grid { display: grid; gap: 1rem 1.5rem; }

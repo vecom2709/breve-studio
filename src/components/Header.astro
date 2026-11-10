@@ -33,11 +33,11 @@ const isCurrent = (k: RouteKey) =>
         ))}
       </ul>
     </nav>
+    <p class="visit-pill" data-visit-pill>
+      <svg class="eye" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 6.5 12 6.5 21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.6"/></svg>
+      <span data-visit-phrase>{t.visitsSince}</span>
+    </p>
     <div class="tools">
-      <p class="visit-pill" data-visit-pill>
-        <svg class="eye" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 6.5 12 6.5 21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.6"/></svg>
-        <span data-visit-phrase>{t.visitsSince}</span>
-      </p>
       <button type="button" class="icon-btn" data-open-search aria-controls="suche" aria-expanded="false" aria-label={t.search}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg>
       </button>
@@ -80,8 +80,8 @@ const isCurrent = (k: RouteKey) =>
   .nav-link { text-decoration: none; color: var(--ink-2); font-weight: 600; font-size: 0.95rem; padding: 0.35rem 0; border-bottom: 2px solid transparent; }
   .nav-link:hover { color: var(--forest); }
   .nav-link.on, .nav-link[aria-current='page'] { color: var(--forest); border-bottom-color: var(--forest); }
-  .tools { display: flex; align-items: center; gap: 0.35rem; margin-left: auto; }
-  .visit-pill { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0; padding: 0.35rem 0.7rem; border-radius: 999px; background: #E7F0EC; color: var(--forest); font-weight: 650; font-size: 0.8rem; line-height: 1.2; letter-spacing: 0; font-variant-numeric: tabular-nums; white-space: nowrap; max-width: 16rem; }
+  .tools { display: flex; align-items: center; gap: 0.35rem; }
+  .visit-pill { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0 0 0 auto; padding: 0.35rem 0.7rem; border-radius: 999px; background: #E7F0EC; color: var(--forest); font-weight: 650; font-size: 0.8rem; line-height: 1.2; letter-spacing: 0; font-variant-numeric: tabular-nums; white-space: nowrap; max-width: 16rem; min-width: 0; }
   .visit-pill .eye { flex-shrink: 0; }
   .visit-pill [data-visit-phrase] { overflow: hidden; text-overflow: ellipsis; }
   .icon-btn { appearance: none; background: none; border: 0; color: var(--ink); width: 2.5rem; height: 2.5rem; display: inline-grid; place-items: center; cursor: pointer; border-radius: 999px; text-decoration: none; position: relative; }
@@ -108,7 +108,8 @@ const isCurrent = (k: RouteKey) =>
   .lang-m { display: inline-block; margin-top: 1rem; font-weight: 600; color: var(--forest); }
   @media (max-width: 63.99rem) {
     .bar { flex-wrap: wrap; }
-    .visit-pill { flex: 1 0 100%; order: 5; justify-content: center; max-width: none; margin: 0 0 0.65rem; }
+    .tools { margin-left: auto; }
+    .visit-pill { flex: 1 0 100%; order: 5; justify-content: center; max-width: none; margin: 0 0 0.55rem; }
   }
   @media (min-width: 64rem) {
     .nav-desktop { display: flex; }
