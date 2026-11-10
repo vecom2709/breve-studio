@@ -34,7 +34,9 @@ for n in ('website', 'dienst', 'produkt', 'alarm'):
     speichern(im, os.path.join(Z, f'karte-{n}'))
 
 # ---------- Hero ----------
-roh = np.asarray(Image.open(os.path.join(Q, 'hero-roh.png')).convert('RGB')).astype(np.float32)
+SZENE = os.environ.get('SZENE', 'nacht')  # nacht = Lampe an (Abend), tag = Tageslicht, Lampe aus
+NACHSATZ = '-tag' if SZENE == 'tag' else ''
+roh = np.asarray(Image.open(os.path.join(Q, 'hero-tag-roh.png' if SZENE == 'tag' else 'hero-roh.png')).convert('RGB')).astype(np.float32)
 H, W, _ = roh.shape
 
 # 1) Bildschirmecken aus der Grünmaske, Kanten per Ausgleichsgerade
@@ -104,9 +106,9 @@ roh[y0:y1, x0:x1] = tasse * (1 - alpha) + farbe * alpha
 
 # Farbgradierung an die Vorlage angeglichen (gemessen: Szene war ~25 % zu dunkel, Schatten zu neutral)
 x = np.clip(roh / 255.0, 0, 1)
-x = x ** 0.84
+x = x ** (0.84 if SZENE == 'nacht' else 0.97)
 lum = (0.2126 * x[..., 0] + 0.7152 * x[..., 1] + 0.0722 * x[..., 2])[..., None]
-x = x + (1 - lum) ** 2.2 * np.array([-0.012, 0.05, 0.042])
+x = x + (1 - lum) ** 2.2 * np.array([-0.012, 0.05, 0.042]) * (1.0 if SZENE == 'nacht' else 0.4)
 grau = (0.2126 * x[..., 0] + 0.7152 * x[..., 1] + 0.0722 * x[..., 2])[..., None]
 x = grau + (x - grau) * 1.1
 roh = np.clip(x, 0, 1) * 255.0
@@ -157,11 +159,11 @@ def hero_bauen(screen_png, lang):
     img = Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))
     for bw in (1600, 2560, 3600):
         bh = round(img.height * bw / img.width)
-        speichern(img.resize((bw, bh), Image.LANCZOS), os.path.join(Z, f'hero-{lang}-{bw}'), jpg=(bw == 2560))
+        speichern(img.resize((bw, bh), Image.LANCZOS), os.path.join(Z, f'hero-{lang}{NACHSATZ}-{bw}'), jpg=(bw == 2560))
     # Handy-Ausschnitt: Tasse + Laptop, 5:4
     mx0 = LINKS + 1380
     mob = img.crop((mx0, 128, mx0 + 1520, 128 + 1216)).resize((1000, 800), Image.LANCZOS)
-    speichern(mob, os.path.join(Z, f'hero-{lang}-mobil'), jpg=False)
+    speichern(mob, os.path.join(Z, f'hero-{lang}{NACHSATZ}-mobil'), jpg=False)
     print('Hero', lang, img.size)
 
 
