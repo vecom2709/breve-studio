@@ -51,6 +51,19 @@ export const categories = [
 
 export type CategoryId = (typeof categories)[number]['id'];
 
+/** product = digitales Produkt (Software, Vorlage, Abo-Werkzeug); service = persönlich erbrachte Dienstleistung */
+export type OfferKind = 'product' | 'service';
+
+/** Filterchips auf der Startseite – ehrlich den Paketen zugeordnet, keine erfundenen Warengruppen. */
+export const shopCategories = [
+  { id: 'web-business', label: { de: 'Web & Business', it: 'Web e business' } },
+  { id: 'design-media', label: { de: 'Design & Medien', it: 'Design e media' } },
+  { id: 'marketing', label: { de: 'Marketing', it: 'Marketing' } },
+  { id: 'ki-tools', label: { de: 'KI & Tools', it: 'AI e strumenti' } },
+] as const satisfies ReadonlyArray<{ id: string; label: L10n }>;
+
+export type ShopCategoryId = (typeof shopCategories)[number]['id'];
+
 /* ---------- Status & Handlungsaufforderung ---------- */
 
 /**
@@ -106,6 +119,10 @@ export interface Package {
   slug: string;
   brand: string;
   category: CategoryId;
+  /** ehrliche Einordnung: Produkt oder Dienstleistung */
+  kind: OfferKind;
+  /** Zuordnung zu den Filterchips auf der Startseite */
+  shopCategory: ShopCategoryId;
   status: PackageStatus;
   cta: CtaType;
   prices: Price[];
@@ -140,6 +157,8 @@ export const packages: Package[] = [
     slug: 'gareinbreve',
     brand: 'GareInBreve',
     category: 'ausschreibungen-foerderung',
+    kind: 'product',
+    shopCategory: 'web-business',
     status: 'waitlist',
     cta: 'interest',
     prices: [{ amount: 29, interval: 'month', vat: 'excl' }],
@@ -213,6 +232,8 @@ export const packages: Package[] = [
     slug: 'immotesto',
     brand: 'ImmoTesto',
     category: 'immobilien-gastgewerbe',
+    kind: 'product',
+    shopCategory: 'web-business',
     status: 'waitlist',
     cta: 'interest',
     prices: [{ amount: 29, interval: 'month', vat: 'excl', unit: { de: 'je Büro', it: 'per agenzia' } }],
@@ -286,6 +307,8 @@ export const packages: Package[] = [
     slug: 'replicapro',
     brand: 'ReplicaPro',
     category: 'website-sichtbarkeit',
+    kind: 'product',
+    shopCategory: 'marketing',
     status: 'waitlist',
     cta: 'interest',
     prices: [{ amount: 24, interval: 'month', vat: 'excl', unit: { de: 'je Standort', it: 'per sede' } }],
@@ -359,6 +382,8 @@ export const packages: Package[] = [
     slug: 'betriebsautopilot',
     brand: 'Betriebsautopilot',
     category: 'wissen-vorlagen',
+    kind: 'product',
+    shopCategory: 'ki-tools',
     status: 'soon',
     cta: 'notify',
     prices: [{ amount: 199, interval: 'once', vat: 'tbd' }],
@@ -432,6 +457,8 @@ export const packages: Package[] = [
     slug: 'vermieterkiste',
     brand: 'VermieterKiste',
     category: 'wissen-vorlagen',
+    kind: 'product',
+    shopCategory: 'web-business',
     status: 'soon',
     cta: 'notify',
     prices: [
@@ -508,6 +535,8 @@ export const packages: Package[] = [
     slug: 'sitotranquillo',
     brand: 'SitoTranquillo',
     category: 'website-sichtbarkeit',
+    kind: 'service',
+    shopCategory: 'web-business',
     status: 'inquiry',
     cta: 'inquiry',
     prices: [{ amount: 69, interval: 'month', vat: 'excl' }],
@@ -581,6 +610,8 @@ export const packages: Package[] = [
     slug: 'sitocura',
     brand: 'SitoCura',
     category: 'website-sichtbarkeit',
+    kind: 'service',
+    shopCategory: 'web-business',
     status: 'inquiry',
     cta: 'inquiry',
     prices: [{ amount: 39, interval: 'month', vat: 'excl', unit: { de: 'je Website', it: 'per sito' } }],
@@ -654,6 +685,8 @@ export const packages: Package[] = [
     slug: 'bandiinbreve',
     brand: 'BandiInBreve',
     category: 'ausschreibungen-foerderung',
+    kind: 'product',
+    shopCategory: 'web-business',
     status: 'waitlist',
     cta: 'interest',
     prices: [
@@ -730,6 +763,8 @@ export const packages: Package[] = [
     slug: 'ospiteinregola',
     brand: 'OspiteInRegola',
     category: 'immobilien-gastgewerbe',
+    kind: 'product',
+    shopCategory: 'web-business',
     status: 'waitlist',
     cta: 'interest',
     prices: [{ amount: 19, interval: 'month', vat: 'excl', unit: { de: 'je Unterkunft', it: 'per alloggio' } }],
@@ -803,6 +838,8 @@ export const packages: Package[] = [
     slug: 'ospiteguida',
     brand: 'OspiteGuida',
     category: 'immobilien-gastgewerbe',
+    kind: 'product',
+    shopCategory: 'web-business',
     status: 'waitlist',
     cta: 'interest',
     prices: [{ amount: 39, interval: 'month', vat: 'excl', unit: { de: 'je Unterkunft', it: 'per alloggio' } }],
@@ -950,6 +987,18 @@ export const bundles: Bundle[] = [
 export const getPackage = (slug: string) => packages.find((p) => p.slug === slug);
 export const packagesSorted = () => [...packages].sort((a, b) => a.number - b.number);
 export const categoryById = (id: CategoryId) => categories.find((c) => c.id === id)!;
+export const packagesOfKind = (kind: OfferKind) => packagesSorted().filter((p) => p.kind === kind);
+
+/** Zählwerte für die Startseite – immer aus den echten Paketdaten, nie fest eingetragen. */
+export function catalogStats() {
+  const all = packages;
+  return {
+    total: all.length,
+    servicesInquiry: all.filter((p) => p.kind === 'service' && p.status === 'inquiry').length,
+    productsWaitlist: all.filter((p) => p.kind === 'product' && p.status === 'waitlist').length,
+    planned: all.filter((p) => p.status === 'soon').length,
+  };
+}
 
 /** true nur, wenn wirklich ein Kauf-Link existiert */
 export const isPurchasable = (p: Package) =>

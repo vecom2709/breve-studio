@@ -1,0 +1,36 @@
+---
+export const prerender = false;
+import { isAuthed } from '../../../lib/admin-auth';
+if (isAuthed(Astro.request)) return Astro.redirect('/verwaltung/');
+const err = Astro.url.searchParams.get('fehler') === '1';
+---
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Anmeldung — Verwaltung</title>
+  <style>
+    :root { color-scheme: light; font-family: "Source Sans 3", system-ui, sans-serif; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #F7F8F6; color: #14221f; }
+    form { width: min(24rem, calc(100% - 2rem)); background: #fff; border: 1px solid #d7ddd9; border-radius: 16px; padding: 2rem; display: grid; gap: 1rem; }
+    h1 { font: 650 1.4rem/1.2 Outfit, system-ui, sans-serif; margin: 0; }
+    p { margin: 0; color: #4a5b56; }
+    label { font-weight: 600; font-size: .95rem; }
+    input { font: inherit; padding: .7rem .8rem; border: 1px solid #c5cdc8; border-radius: 8px; }
+    button { font: 650 1rem/1 inherit; background: #0f3b33; color: #fff; border: 0; border-radius: 999px; padding: .85rem 1.2rem; cursor: pointer; }
+    .err { color: #8a1f1f; background: #fdecec; border-radius: 8px; padding: .7rem .85rem; }
+  </style>
+</head>
+<body>
+  <form method="post" action="/api/verwaltung/login/">
+    <h1>Verwaltung</h1>
+    <p>Geschützter Bereich. Nicht öffentlich verlinkt.</p>
+    {err && <p class="err" role="alert">Das Kennwort stimmt nicht. Bitte erneut versuchen.</p>}
+    <label for="password">Kennwort</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" required />
+    <button type="submit">Anmelden</button>
+  </form>
+</body>
+</html>

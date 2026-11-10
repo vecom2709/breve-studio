@@ -5,3 +5,7 @@ data/inquiries.json
 data/*.lock
 PREVIEW.txt
 preview.log
+data/analytics/
+data/geoip/
+*.mmdb
+__pycache__/

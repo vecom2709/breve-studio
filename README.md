@@ -21,8 +21,8 @@ Die laufende Vorschau (URL und Prozess-ID) steht in `PREVIEW.txt`. Beenden: `kil
 ## Technik
 
 - [Astro](https://astro.build) 7 + TypeScript, statisch vorgerendert. Nur der Formular-Endpunkt `/api/inquiry/` und die Danke-Seiten laufen serverseitig (Adapter `@astrojs/node`, standalone).
-- Schriften lokal eingebunden über `@fontsource-variable`: **Fraunces** (Überschriften) und **Source Sans 3** (Text), beide SIL Open Font License 1.1. Keine Google Fonts, keine CDN.
-- Keine Cookies, kein Tracking, keine externen Skripte, keine bezahlten APIs.
+- Schriften lokal eingebunden über `@fontsource-variable`: **Outfit** (Überschriften), **Fraunces** (Wortmarke) und **Source Sans 3** (Text), alle SIL Open Font License 1.1. Keine Google Fonts, keine CDN.
+- Keine Tracking- oder Werbe-Cookies, keine Analyse- oder Werbedienste Dritter, keine externen Skripte, keine bezahlten APIs. Eine eigene Reichweitenmessung (ohne volle IP, ohne Tracking-Cookies) zählt einmalige Besuche; siehe Datenschutz und Abschnitt „Verwaltung“ unten.
 
 ## Sprachen und Seiten
 
@@ -44,6 +44,9 @@ Die Wurzel `/` ist eine kleine Sprachwahl. Ein kurzes Skript darf nur dann autom
 | `/de/kontakt/danke/?ref=…` (serverseitig) | `/it/contatti/grazie/?ref=…` |
 | `/de/impressum/` | `/it/note-legali/` |
 | `/de/datenschutz/` | `/it/privacy/` |
+| `/de/produkte/` | `/it/prodotti/` |
+| `/de/dienstleistungen/` | `/it/servizi/` |
+| `/de/warenkorb/` (noch ohne Kauf, nur Erklärung) | `/it/carrello/` |
 | `/de/agb/` | `/it/condizioni/` |
 | `404` (zweisprachig) | |
 
@@ -103,7 +106,26 @@ Es ist **kein** Zahlungsanbieter angebunden. Das Feld `checkout` im Pakettyp ist
 - Es wird **keine E-Mail** versendet und nichts an Dritte übertragen. IP-Adressen werden nicht gespeichert.
 - Funktioniert mit und ohne JavaScript. Die Danke-Seite liest den gespeicherten Eintrag über die Vorgangsnummer (`SB-JJJJMMTT-XXXXXX`) aus der Datei – sie zeigt nur Erfolg, wenn wirklich gespeichert wurde.
 - Schutz: Same-Origin-Prüfung von Astro, Honeypot-Feld, Längenbegrenzungen, serverseitige Validierung.
-- `data/inquiries.json` ist in `.gitignore`.
+- `data/inquiries.json` und `data/analytics/` sind in `.gitignore`.
+
+
+## Reichweitenmessung und Verwaltung
+
+- Ein kleines Erste-Partei-Skript (`src/components/Tracker.astro`) sendet Seitenaufrufe an `POST /api/track/`. Der öffentliche Zähler (`GET /api/track/`) zeigt die Summe einmaliger Besuche seit Start und beginnt bei 0.
+- Einmalig heißt: derselbe Sitzungskennzeichner in `sessionStorage` zählt pro Kalendertag (Europe/Rome) höchstens einmal. Do Not Track und Global Privacy Control werden beachtet; dann wird nichts gespeichert.
+- Die volle IP-Adresse wird nie gespeichert. Aufzeichnungen liegen als JSONL unter `data/analytics/` (gitignored). Einzelbesuche werden nach 12 Monaten gelöscht; die Tagessummen für den öffentlichen Zähler bleiben.
+- Der Verwaltungsbereich liegt unter **`/verwaltung/`** (nur Deutsch, `noindex, nofollow`, nicht in Navigation, Sprachwahl oder hreflang). Anmeldung: `POST /api/verwaltung/login/` mit dem Kennwort aus der Umgebung.
+- Kennwort: Umgebungsvariable **`ADMIN_PASSWORD`**. Vergleich per scrypt und zeitkonstantem Vergleich. Die Sitzung ist ein HttpOnly-Cookie mit SameSite=Strict (ohne `Secure` auf reinem HTTP, z. B. localhost). Anmeldeversuche sind je gekürzter Adresse auf 5 in 15 Minuten begrenzt.
+- **Lokale Vorschau:** Wenn `ADMIN_PASSWORD` nicht gesetzt ist, gilt das voreingestellte Kennwort `vorschau-lokal`. Es wird beim Start der portablen Vorschau ausgegeben. Vor einem späteren öffentlichen Betrieb unbedingt durch ein eigenes Kennwort ersetzen.
+- Der Betreiber kann im Dashboard eigene Aufrufe von der Zählung ausnehmen, nach Datum filtern und eine CSV-Datei exportieren.
+
+## Logo und Bilder
+
+Das Zeichen ist ein eigenes SB-Monogramm (Goldverlauf, typografisches Breve über S und B), Dateien `public/mark-studio-breve.svg`, `public/logo-studio-breve.svg`, Favicons. Es gehört nicht zu einer anderen Marke und verwendet kein fremdes Firmenzeichen.
+
+Das helle Hero-Foto liegt unter `public/images/home/hero-light.webp` (und `.jpg`). Die Paketbilder unter `public/images/packages/` sind Entwurfsvisualisierungen.
+
+Kundenstimmen stehen in `src/content/testimonials.ts` und werden nur mit Einwilligung der genannten Person veröffentlicht. Solange kein Foto vorliegt, erscheint ein Avatar mit Initialen.
 
 ## Domain
 

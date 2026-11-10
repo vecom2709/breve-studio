@@ -2,25 +2,25 @@
 import Base from '../layouts/Base.astro';
 import PackageCard from '../components/PackageCard.astro';
 import BundleCard from '../components/BundleCard.astro';
-import { categories, packagesSorted, bundles, type Locale } from '../content/packages';
+import { categories, packagesSorted, packagesOfKind, bundles, type Locale, type OfferKind } from '../content/packages';
 import { ui } from '../lib/i18n';
-interface Props { lang: Locale }
-const { lang } = Astro.props;
+interface Props { lang: Locale; kind?: OfferKind }
+const { lang, kind } = Astro.props;
 const t = ui[lang];
 const de = lang === 'de';
-const all = packagesSorted();
+const all = kind ? packagesOfKind(kind) : packagesSorted();
 const used = categories.filter((c) => all.some((p) => p.category === c.id));
 ---
-<Base lang={lang} routeKey="packages"
-  title={de ? 'Pakete' : 'Pacchetti'}
-  description={de ? 'Alle digitalen Pakete von Studio Breve mit Listenpreis und aktuellem Stand: Ausschreibungen, Immobilien und Gastgewerbe, Website und Sichtbarkeit, Wissen und Vorlagen.' : 'Tutti i pacchetti digitali di Studio Breve con prezzo di listino e stato attuale: gare e incentivi, immobiliare e ospitalità, sito web e visibilità, formazione e modelli.'}>
+<Base lang={lang} routeKey={kind === 'product' ? 'products' : kind === 'service' ? 'services' : 'packages'}
+  title={kind === 'product' ? t.catalogKind.productsTitle : kind === 'service' ? t.catalogKind.servicesTitle : (de ? 'Pakete' : 'Pacchetti')}
+  description={kind === 'product' ? t.catalogKind.productsLead : kind === 'service' ? t.catalogKind.servicesLead : (de ? 'Alle digitalen Pakete von Studio Breve mit Listenpreis und aktuellem Stand: Ausschreibungen, Immobilien und Gastgewerbe, Website und Sichtbarkeit, Wissen und Vorlagen.' : 'Tutti i pacchetti digitali di Studio Breve con prezzo di listino e stato attuale: gare e incentivi, immobiliare e ospitalità, sito web e visibilità, formazione e modelli.')}>
   <section class="head">
     <div class="wrap">
-      <p class="eyebrow">{de ? 'Katalog' : 'Catalogo'}</p>
-      <h1>{de ? <>Pakete mit klarem Umfang <em class="accent">und offenem Preis.</em></> : <>Pacchetti con un perimetro chiaro <em class="accent">e un prezzo in vista.</em></>}</h1>
-      <p class="lead">{de
+      <p class="eyebrow">{kind === 'product' ? t.nav.products : kind === 'service' ? t.nav.services : (de ? 'Katalog' : 'Catalogo')}</p>
+      <h1>{kind === 'product' ? t.catalogKind.productsTitle : kind === 'service' ? t.catalogKind.servicesTitle : (de ? <>Pakete mit klarem Umfang <em class="accent">und offenem Preis.</em></> : <>Pacchetti con un perimetro chiaro <em class="accent">e un prezzo in vista.</em></>)}</h1>
+      <p class="lead">{kind === 'product' ? t.catalogKind.productsLead : kind === 'service' ? t.catalogKind.servicesLead : (de
         ? 'Jedes Paket zeigt Listenpreis und ehrlichen Stand. Produkte in Entwicklung können Sie vormerken, persönliche Leistungen unverbindlich anfragen. Der Katalog wächst.'
-        : 'Ogni pacchetto indica prezzo di listino e stato reale. I prodotti in sviluppo puoi segnarli, i servizi personali puoi richiederli senza impegno. Il catalogo crescerà.'}</p>
+        : 'Ogni pacchetto indica prezzo di listino e stato reale. I prodotti in sviluppo puoi segnarli, i servizi personali puoi richiederli senza impegno. Il catalogo crescerà.')}</p>
       <ul class="legend" aria-label={de ? 'Bedeutung der Status' : 'Significato degli stati'}>
         {(['inquiry', 'waitlist', 'soon'] as const).map((s) => <li><span class="status" data-status={s}>{t.status[s]}</span><span class="small muted">{t.statusExplain[s].split('. ')[0]}.</span></li>)}
       </ul>
@@ -44,7 +44,7 @@ const used = categories.filter((c) => all.some((p) => p.category === c.id));
     </div>
   </section>
 
-  <section class="section bundles" aria-labelledby="bu-h">
+  {!kind && <section class="section bundles" aria-labelledby="bu-h">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">{t.bundles}</p>
@@ -55,7 +55,7 @@ const used = categories.filter((c) => all.some((p) => p.category === c.id));
         {bundles.map((b) => <BundleCard bundle={b} lang={lang} />)}
       </div>
     </div>
-  </section>
+  </section>}
 </Base>
 
 <script>

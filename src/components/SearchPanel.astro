@@ -1,0 +1,69 @@
+---
+import { packagesSorted, type Locale } from '../content/packages';
+import { path, ui } from '../lib/i18n';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = ui[lang];
+const items = packagesSorted().map((p) => ({
+  href: path('package', lang, p.slug),
+  brand: p.brand,
+  text: `${p.brand} ${p.tagline[lang]} ${p.benefit[lang]} ${p.headline[lang]}`.toLowerCase(),
+  tagline: p.tagline[lang],
+}));
+---
+<dialog id="suche" class="search-dialog" aria-labelledby="suche-h">
+  <form method="dialog" class="search-box">
+    <div class="search-head">
+      <h2 id="suche-h">{t.search}</h2>
+      <button type="submit" class="icon-x" aria-label={t.searchClose}>×</button>
+    </div>
+    <label class="visually-hidden" for="suche-q">{t.search}</label>
+    <input id="suche-q" type="search" placeholder={t.searchPlaceholder} autocomplete="off" data-search-input />
+    <ul class="search-list" data-search-list>
+      {items.map((it) => (
+        <li data-haystack={it.text}><a href={it.href}><strong>{it.brand}</strong><span>{it.tagline}</span></a></li>
+      ))}
+    </ul>
+    <p class="search-empty" data-search-empty hidden>{t.searchEmpty}</p>
+  </form>
+</dialog>
+<script>
+  const dialog = document.getElementById('suche') as HTMLDialogElement | null;
+  const input = document.querySelector<HTMLInputElement>('[data-search-input]');
+  const items = [...document.querySelectorAll<HTMLElement>('[data-search-list] li')];
+  const empty = document.querySelector<HTMLElement>('[data-search-empty]');
+  const openers = document.querySelectorAll<HTMLButtonElement>('[data-open-search]');
+  const filter = () => {
+    const q = (input?.value || '').trim().toLowerCase();
+    let n = 0;
+    items.forEach((li) => {
+      const show = !q || (li.dataset.haystack || '').includes(q);
+      li.hidden = !show;
+      if (show) n++;
+    });
+    if (empty) empty.hidden = n !== 0;
+  };
+  openers.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      dialog?.showModal();
+      btn.setAttribute('aria-expanded', 'true');
+      input?.focus();
+    });
+  });
+  dialog?.addEventListener('close', () => openers.forEach((b) => b.setAttribute('aria-expanded', 'false')));
+  input?.addEventListener('input', filter);
+</script>
+<style>
+  .search-dialog { border: 0; padding: 0; width: min(40rem, 100% - 2rem); border-radius: 14px; box-shadow: 0 20px 50px rgba(15,59,51,.18); }
+  .search-dialog::backdrop { background: rgba(15, 36, 31, .45); }
+  .search-box { padding: 1.1rem 1.2rem 1.3rem; }
+  .search-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: .7rem; }
+  .search-head h2 { font-size: 1.1rem; }
+  .icon-x { appearance: none; border: 0; background: none; font-size: 1.6rem; line-height: 1; cursor: pointer; color: var(--ink-2); }
+  #suche-q { width: 100%; font: inherit; border: 1px solid var(--line-strong); border-radius: 10px; padding: .7rem .85rem; min-height: 2.8rem; }
+  .search-list { list-style: none; margin: .7rem 0 0; padding: 0; max-height: 18rem; overflow: auto; }
+  .search-list a { display: grid; gap: .15rem; padding: .65rem .2rem; text-decoration: none; border-bottom: 1px solid var(--line); color: var(--ink); }
+  .search-list a:hover { color: var(--forest); }
+  .search-list span { font-size: var(--step--1); color: var(--ink-2); }
+  .search-empty { margin-top: .8rem; color: var(--ink-2); }
+</style>

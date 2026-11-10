@@ -1,23 +1,33 @@
 /* Studio Breve – Grundstil. Keine externen Ressourcen; Schriften lokal (OFL). */
 
 :root {
+  --forest: #0f3b33;
+  --forest-deep: #0a2c27;
+  --forest-mid: #164940;
+  --forest-soft: #21564e;
+  --mint: #7ED9C0;
+  --mint-dim: #B7D4CB;
+  --gold: #D4A84A;
+  --gold-deep: #B8862E;
+  --gold-ink: #1A1408;
   --paper: #F6F1E8;
-  --paper-2: #EFE8DB;
+  --paper-2: #EEE8DC;
   --paper-3: #E7DECD;
   --card: #FBF8F2;
-  --ink: #14202B;
-  --ink-2: #3A4651;
-  --muted: #4E5965;      /* 6.5:1 auf --paper */
-  --petrol: #2F6F6A;     /* 5.2:1 auf --paper */
-  --petrol-dark: #24585A;
+  --ink: #14241F;
+  --ink-2: #3A4A45;
+  --muted: #4A5753;
+  --petrol: #1a5c52;
+  --petrol-dark: #0f3b33;
   --petrol-tint: #DCE7E2;
-  --line: #D9CFBD;       /* warme Haarlinie */
+  --line: #D9CFBD;
   --line-strong: #BFB29B;
   --sand: #C9A877;
   --error: #9B2C1F;
 
   --serif: 'Fraunces Variable', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
   --sans: 'Source Sans 3 Variable', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --geo: 'Outfit Variable', 'Source Sans 3 Variable', 'Segoe UI', system-ui, sans-serif;
 
   --step--1: clamp(0.84rem, 0.82rem + 0.1vw, 0.9rem);
   --step-0: clamp(1.02rem, 0.98rem + 0.2vw, 1.12rem);
@@ -36,7 +46,7 @@
 
   --wrap: 76rem;
   --radius: 6px;
-  --focus: 0 0 0 3px var(--paper), 0 0 0 5px var(--petrol);
+  --focus: 0 0 0 3px var(--paper), 0 0 0 5px var(--forest);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -45,7 +55,7 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-to
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: #F7F8F6;
   color: var(--ink);
   font-family: var(--sans);
   font-size: var(--step-0);
@@ -62,20 +72,18 @@ a:hover { color: var(--petrol); }
 ::selection { background: var(--petrol-tint); }
 
 h1, h2, h3, h4 {
-  font-family: var(--serif);
-  font-weight: 420;
-  line-height: 1.1;
-  letter-spacing: -0.012em;
+  font-family: var(--geo);
+  font-weight: 650;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
   margin: 0;
-  font-variation-settings: 'SOFT' 30, 'WONK' 0;
   text-wrap: balance;
 }
-h1 { font-size: var(--step-4); font-variation-settings: 'opsz' 72, 'SOFT' 30, 'WONK' 0; }
-h2 { font-variation-settings: 'opsz' 48, 'SOFT' 30, 'WONK' 0; }
+h1 { font-size: var(--step-4); font-weight: 680; }
 h2 { font-size: var(--step-3); }
-h3 { font-size: var(--step-1); font-weight: 520; letter-spacing: -0.005em; }
+h3 { font-size: var(--step-1); font-weight: 650; letter-spacing: -0.02em; }
 p { margin: 0; text-wrap: pretty; }
-em.accent, .accent { font-style: italic; color: var(--petrol); }
+em.accent, .accent { font-style: italic; font-weight: 560; color: var(--forest-mid); letter-spacing: -0.03em; }
 
 .wrap { width: min(100% - 2.5rem, var(--wrap)); margin-inline: auto; }
 .narrow { max-width: 42rem; }
@@ -108,12 +116,18 @@ em.accent, .accent { font-style: italic; color: var(--petrol); }
   display: inline-flex; align-items: center; justify-content: center; gap: 0.55em;
   min-height: 3rem; padding: 0.7rem 1.35rem;
   font: 600 var(--step-0)/1.2 var(--sans);
-  border-radius: var(--radius); border: 1px solid transparent;
+  border-radius: 999px; border: 1px solid transparent;
   text-decoration: none; cursor: pointer;
   transition: background-color .15s ease, color .15s ease, border-color .15s ease;
 }
-.btn-primary { background: var(--petrol); color: #fff; }
-.btn-primary:hover { background: var(--petrol-dark); color: #fff; }
+.btn-primary { background: var(--forest); color: #fff; }
+.btn-primary:hover { background: var(--forest-deep); color: #fff; }
+.btn-gold { background: var(--gold); color: var(--gold-ink); border-color: var(--gold); }
+.btn-gold:hover { background: #e0b85a; color: var(--gold-ink); }
+.btn-outline-light { background: transparent; color: #fff; border-color: rgba(255,255,255,.55); }
+.btn-outline-light:hover { background: rgba(255,255,255,.08); color: #fff; border-color: #fff; }
+.btn-outline { background: transparent; color: var(--forest); border-color: var(--forest); }
+.btn-outline:hover { background: var(--forest); color: #fff; }
 .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
 .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
 .btn .arrow { transition: transform .15s ease; }

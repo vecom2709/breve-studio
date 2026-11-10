@@ -1,0 +1,56 @@
+---
+import type { Locale } from '../content/packages';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+---
+<script is:inline define:vars={{ lang }}>
+  (function () {
+    var dnt = (navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true);
+    var fill = function () {
+      fetch('/api/track/', { headers: { Accept: 'application/json' } })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (!d || typeof d.n !== 'number') return;
+          document.querySelectorAll('[data-visit-count]').forEach(function (el) { el.textContent = String(d.n); });
+        })
+        .catch(function () {});
+    };
+    fill();
+    if (dnt) return;
+    var KEY = 'sb-sid';
+    var sid = null;
+    try { sid = sessionStorage.getItem(KEY); if (!sid) { sid = (crypto.randomUUID && crypto.randomUUID()) || String(Date.now()) + Math.random().toString(16).slice(2); sessionStorage.setItem(KEY, sid); } } catch (e) { sid = 'anon'; }
+    var started = Date.now();
+    var path = location.pathname + (location.search || '');
+    var utm = {};
+    try {
+      var sp = new URLSearchParams(location.search);
+      ['source','medium','campaign','term','content'].forEach(function (k) { var v = sp.get('utm_' + k); if (v) utm[k] = v.slice(0, 80); });
+    } catch (e) {}
+    var payload = function (t, extra) {
+      var body = {
+        t: t,
+        sid: sid,
+        path: location.pathname,
+        referrer: document.referrer || '',
+        lang: lang,
+        screen: (screen && screen.width ? screen.width + 'x' + screen.height : ''),
+        utm: Object.keys(utm).length ? utm : null
+      };
+      if (extra) Object.assign(body, extra);
+      return body;
+    };
+    fetch('/api/track/', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload('view')), keepalive: true })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { if (d && typeof d.n === 'number') document.querySelectorAll('[data-visit-count]').forEach(function (el) { el.textContent = String(d.n); }); })
+      .catch(function () {});
+    var sent = false;
+    var goodbye = function () {
+      if (sent) return;
+      sent = true;
+      var data = JSON.stringify(payload('timing', { ms: Date.now() - started, path: path.split('?')[0] }));
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track/', new Blob([data], { type: 'application/json' }));
+    };
+    window.addEventListener('pagehide', goodbye);
+  })();
+</script>

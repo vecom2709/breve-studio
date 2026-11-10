@@ -10,68 +10,96 @@ interface Props {
 const { lang, routeKey, alternates } = Astro.props;
 const t = ui[lang];
 const items: { key: RouteKey; label: string }[] = [
+  { key: 'home', label: t.nav.home },
+  { key: 'products', label: t.nav.products },
   { key: 'packages', label: t.nav.packages },
   { key: 'about', label: t.nav.about },
   { key: 'contact', label: t.nav.contact },
 ];
-const isCurrent = (k: RouteKey) => k === routeKey || (k === 'packages' && routeKey === 'package') || (k === 'contact' && routeKey === 'thanks');
+const isCurrent = (k: RouteKey) =>
+  k === routeKey ||
+  (k === 'packages' && routeKey === 'package') ||
+  (k === 'contact' && routeKey === 'thanks');
 ---
 <header class="site-header">
   <div class="wrap bar">
-    <Wordmark lang={lang} />
+    <Wordmark lang={lang} theme="light" />
     <nav class="nav-desktop" aria-label={lang === 'de' ? 'Hauptnavigation' : 'Navigazione principale'}>
       <ul>
         {items.map((i) => (
-          <li><a href={path(i.key, lang)} aria-current={isCurrent(i.key) ? 'page' : undefined}>{i.label}</a></li>
+          <li>
+            <a class:list={['nav-link', { on: isCurrent(i.key) }]} href={path(i.key, lang)} aria-current={isCurrent(i.key) ? 'page' : undefined}>{i.label}</a>
+          </li>
         ))}
       </ul>
-      <div class="lang" role="group" aria-label={lang === 'de' ? 'Sprache' : 'Lingua'}>
-        <span class="lang-cur" aria-current="true" aria-label={t.langName} title={t.langName}>{t.langShort}</span>
-        {alternates.map((a) => (
-          <a href={a.href} hreflang={a.lang} lang={a.lang} aria-label={switchToLabel(lang, a.lang)} title={switchToLabel(lang, a.lang)}>{ui[a.lang].langShort}</a>
-        ))}
-      </div>
     </nav>
-    <details class="nav-mobile">
-      <summary><span class="sum-open">{t.menu}</span><span class="sum-close">{t.close}</span></summary>
-      <div class="sheet">
-        <ul>
-          <li><a href={path('home', lang)} aria-current={routeKey === 'home' ? 'page' : undefined}>{t.nav.home}</a></li>
-          {items.map((i) => (
-            <li><a href={path(i.key, lang)} aria-current={isCurrent(i.key) ? 'page' : undefined}>{i.label}</a></li>
-          ))}
-        </ul>
-        {alternates.map((a) => (
-          <a class="lang-m" href={a.href} hreflang={a.lang} lang={a.lang} aria-label={switchToLabel(lang, a.lang)}>{ui[a.lang].langName}</a>
-        ))}
+    <div class="tools">
+      <button type="button" class="icon-btn" data-open-search aria-controls="suche" aria-expanded="false" aria-label={t.search}>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg>
+      </button>
+      <div class="lang" role="group" aria-label={lang === 'de' ? 'Sprache' : 'Lingua'}>
+        <details>
+          <summary><span>{t.langShort}</span></summary>
+          <ul>
+            <li><span aria-current="true">{t.langName}</span></li>
+            {alternates.map((a) => (
+              <li><a href={a.href} hreflang={a.lang} lang={a.lang}>{ui[a.lang].langName}</a></li>
+            ))}
+          </ul>
+        </details>
       </div>
-    </details>
+      <a class="icon-btn cart" href={path('cart', lang)} aria-label={t.cartEmptyBadge}>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h2l2.2 11h9.6L20 8H7"/><circle cx="10" cy="19" r="1.3"/><circle cx="17" cy="19" r="1.3"/></svg>
+        <span class="badge" aria-hidden="true">0</span>
+      </a>
+      <details class="nav-mobile">
+        <summary><span class="sum-open">{t.menu}</span><span class="sum-close">{t.close}</span></summary>
+        <div class="sheet">
+          <ul>
+            {items.map((i) => (
+              <li><a href={path(i.key, lang)} aria-current={isCurrent(i.key) ? 'page' : undefined}>{i.label}</a></li>
+            ))}
+          </ul>
+          {alternates.map((a) => (
+            <a class="lang-m" href={a.href} hreflang={a.lang} lang={a.lang} aria-label={switchToLabel(lang, a.lang)}>{ui[a.lang].langName}</a>
+          ))}
+        </div>
+      </details>
+    </div>
   </div>
 </header>
 <style>
-  .site-header { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--paper) 94%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
-  .bar { display: flex; align-items: center; justify-content: space-between; min-height: 4.5rem; gap: 1rem; }
-  .nav-desktop { display: none; align-items: center; gap: 2.25rem; }
-  .nav-desktop ul { display: flex; gap: 1.9rem; list-style: none; margin: 0; padding: 0; }
-  .nav-desktop a { text-decoration: none; font-weight: 500; color: var(--ink-2); padding-block: 0.4rem; border-bottom: 1px solid transparent; }
-  .nav-desktop a:hover { color: var(--ink); border-bottom-color: var(--line-strong); }
-  .nav-desktop a[aria-current='page'] { color: var(--ink); border-bottom-color: var(--petrol); }
-  .lang { display: flex; align-items: center; border: 1px solid var(--line-strong); border-radius: 999px; padding: 2px; font-size: var(--step--1); font-weight: 600; letter-spacing: 0.04em; }
-  .lang > * { padding: 0.25rem 0.65rem; border-radius: 999px; line-height: 1.2; border: 0 !important; }
-  .lang-cur { background: var(--ink); color: var(--paper); }
-  .lang a { color: var(--ink-2); text-decoration: none; }
-  .lang a:hover { color: var(--petrol); }
-  .nav-mobile summary { list-style: none; cursor: pointer; font-weight: 600; padding: 0.55rem 0.95rem; border: 1px solid var(--line-strong); border-radius: 999px; font-size: var(--step--1); letter-spacing: .03em; }
+  .site-header { position: sticky; top: 0; z-index: 30; background: #fff; color: var(--ink); border-bottom: 1px solid #E6E8E4; }
+  .bar { display: flex; align-items: center; gap: 1rem; min-height: 4.4rem; }
+  .nav-desktop { display: none; flex: 1; justify-content: center; }
+  .nav-desktop ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.15rem 1.5rem; list-style: none; margin: 0; padding: 0; }
+  .nav-link { text-decoration: none; color: var(--ink-2); font-weight: 600; font-size: 0.95rem; padding: 0.35rem 0; border-bottom: 2px solid transparent; }
+  .nav-link:hover { color: var(--forest); }
+  .nav-link.on, .nav-link[aria-current='page'] { color: var(--forest); border-bottom-color: var(--forest); }
+  .tools { display: flex; align-items: center; gap: 0.35rem; margin-left: auto; }
+  .icon-btn { appearance: none; background: none; border: 0; color: var(--ink); width: 2.5rem; height: 2.5rem; display: inline-grid; place-items: center; cursor: pointer; border-radius: 999px; text-decoration: none; position: relative; }
+  .icon-btn:hover { color: var(--forest); background: #F2F5F3; }
+  .cart .badge { position: absolute; top: 0.2rem; right: 0.15rem; min-width: 1.05rem; height: 1.05rem; padding: 0 0.22rem; border-radius: 999px; background: var(--forest); color: #fff; font-size: 0.65rem; font-weight: 700; display: grid; place-items: center; }
+  .lang details { position: relative; }
+  .lang summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 0.8rem; letter-spacing: .04em; padding: 0.4rem 0.75rem; border: 1px solid #D5DAD6; border-radius: 999px; }
+  .lang summary::-webkit-details-marker { display: none; }
+  .lang summary span::after { content: ' ▾'; font-weight: 500; }
+  .lang ul { position: absolute; right: 0; top: calc(100% + 0.4rem); background: #fff; border: 1px solid #E6E8E4; border-radius: 10px; list-style: none; margin: 0; padding: .4rem; min-width: 10rem; box-shadow: 0 8px 24px rgba(15,59,51,.08); }
+  .lang li { margin: 0; }
+  .lang a, .lang li span { display: block; padding: .45rem .7rem; border-radius: 8px; text-decoration: none; color: var(--ink); font-weight: 600; }
+  .lang a:hover { background: #F2F5F3; }
+  .lang [aria-current='true'] { color: var(--forest); }
+  .nav-mobile summary { list-style: none; cursor: pointer; font-weight: 600; padding: 0.45rem 0.85rem; border: 1px solid #D5DAD6; border-radius: 999px; font-size: var(--step--1); }
   .nav-mobile summary::-webkit-details-marker { display: none; }
   .nav-mobile .sum-close { display: none; }
   .nav-mobile[open] .sum-open { display: none; }
   .nav-mobile[open] .sum-close { display: inline; }
-  .sheet { position: absolute; left: 0; right: 0; top: 100%; background: var(--paper); border-bottom: 1px solid var(--line); padding: 1rem 1.25rem 1.5rem; }
+  .sheet { position: absolute; left: 0; right: 0; top: 100%; background: #fff; border-bottom: 1px solid #E6E8E4; padding: 1rem 1.25rem 1.5rem; }
   .sheet ul { list-style: none; margin: 0; padding: 0; }
-  .sheet li a { display: block; padding: 0.85rem 0; border-bottom: 1px solid var(--line); text-decoration: none; font-family: var(--serif); font-size: var(--step-2); }
-  .sheet a[aria-current='page'] { color: var(--petrol); }
-  .lang-m { display: inline-block; margin-top: 1rem; margin-right: 1rem; font-weight: 600; color: var(--petrol); }
-  @media (min-width: 52rem) {
+  .sheet li a { display: block; padding: 0.8rem 0; border-bottom: 1px solid #E6E8E4; text-decoration: none; font-family: var(--geo); font-size: var(--step-2); color: var(--ink); }
+  .sheet a[aria-current='page'] { color: var(--forest); }
+  .lang-m { display: inline-block; margin-top: 1rem; font-weight: 600; color: var(--forest); }
+  @media (min-width: 64rem) {
     .nav-desktop { display: flex; }
     .nav-mobile { display: none; }
   }

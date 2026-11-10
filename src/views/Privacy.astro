@@ -8,16 +8,17 @@ const op = site.operator;
 const de = lang === 'de';
 ---
 {de ? (
-<Legal lang={lang} routeKey="privacy" title="Datenschutzerklärung" description="Datenschutzerklärung von Studio Breve (Entwurf) nach DSGVO: Kontaktformular, keine Cookies, kein Tracking.">
+<Legal lang={lang} routeKey="privacy" title="Datenschutzerklärung" description="Datenschutzerklärung von Studio Breve (Entwurf) nach DSGVO: Kontaktformular, Reichweitenmessung ohne Tracking-Cookies, keine Weitergabe an Dritte.">
   <h2>1. Verantwortlicher</h2>
   <address>{op.name} · Studio Breve<br />{op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.de}<br />Telefon {op.phone} · E-Mail {op.email} [Platzhalter]</address>
   <p>Ein Datenschutzbeauftragter ist nach derzeitigem Stand nicht bestellt, da keine Pflicht dazu besteht.</p>
 
   <h2>2. Kurz gesagt</h2>
   <ul>
-    <li>Diese Website setzt <strong>keine Cookies</strong> und verwendet <strong>keine Analyse-, Werbe- oder Tracking-Dienste</strong>. Deshalb gibt es kein Cookie-Banner.</li>
+    <li>Diese Website setzt <strong>keine Tracking- oder Werbe-Cookies</strong> und bindet <strong>keine Analyse- oder Werbedienste Dritter</strong> ein. Deshalb gibt es kein Cookie-Banner.</li>
     <li>Schriften, Bilder und Skripte werden vom eigenen Server geladen. Es werden keine Inhalte von Drittanbietern (z. B. Google Fonts, Karten, Videos, Social-Media-Plugins) eingebunden.</li>
-    <li>Personenbezogene Daten verarbeiten wir nur, wenn Sie uns über das Formular schreiben.</li>
+    <li>Wir zählen einmalige Besuche selbst, ohne die volle IP-Adresse zu speichern. Personenbezogene Angaben aus dem Formular verarbeiten wir nur, wenn Sie uns schreiben.</li>
+    <li>Ein Sitzungs-Cookie wird ausschließlich gesetzt, wenn sich der Betreiber im internen Verwaltungsbereich anmeldet. Es ist für diesen Bereich unbedingt erforderlich.</li>
   </ul>
 
   <h2>3. Aufruf der Website</h2>
@@ -31,8 +32,15 @@ const de = lang === 'de';
   <p><strong>Speicherdauer:</strong> bis Ihre Anfrage erledigt ist und höchstens 12 Monate nach dem letzten Kontakt, sofern keine gesetzlichen Aufbewahrungspflichten bestehen oder Sie früher widerrufen. [Vor dem Start zu bestätigen.]</p>
   <p><strong>Empfänger:</strong> keine. Eine Übermittlung in Drittländer außerhalb der EU findet nicht statt.</p>
 
-  <h2>5. Keine Cookies, kein Tracking</h2>
-  <p>Es werden weder Cookies noch vergleichbare Technologien (Local Storage, Pixel, Fingerprinting) eingesetzt. Sollte sich das ändern, wird diese Erklärung vorher angepasst und, wo erforderlich, Ihre Einwilligung eingeholt.</p>
+  <h2>5. Reichweitenmessung und Speicher</h2>
+  <p>Um zu verstehen, welche Seiten aufgerufen werden, führt Studio Breve eine eigene, erste-Partei-Reichweitenmessung durch. Es werden keine Tracking-Cookies gesetzt und keine Daten an Analyse- oder Werbenetzwerke übermittelt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Verbesserung eines noch nicht veröffentlichten Angebots und an einer ehrlichen Angabe der Besuchszahl).</p>
+  <p><strong>Welche Angaben entstehen:</strong> ein zufälliger Sitzungskennzeichner nur im sessionStorage des Browsers (kein Cookie, endet mit der Browsersitzung), aufgerufene Pfade und ungefähre Verweildauer, Zeitpunkt, Verweis-URL und optionale utm-Parameter, Sprache, grobes Gerät/Betriebssystem/Browser und Bildschirmgröße, sowie – wenn verfügbar – Land, Region und Ort. Die volle IP-Adresse wird niemals gespeichert. Vor einer etwaigen groben Ortsbestimmung wird IPv4 auf das letzte Oktett und IPv6 auf ein /48-Netz gekürzt; dieser gekürzte Wert wird nicht dauerhaft abgelegt.</p>
+  <p><strong>Einmalige Besuche:</strong> Derselbe Sitzungskennzeichner zählt an einem Kalendertag (Zeitzone Europe/Rome) höchstens einmal. Die öffentliche Angabe „Besuche seit Start“ beruht auf dieser Zählung und beginnt bei 0.</p>
+  <p><strong>Do Not Track / Global Privacy Control:</strong> Ist im Browser DNT oder GPC aktiv, wird der Aufruf nicht in die Reichweitenmessung aufgenommen. Die öffentliche Zählung wird dann nicht erhöht.</p>
+  <p><strong>Ort:</strong> Eine lokale, quelloffene GeoIP-Datenbank (DB-IP Lite, Lizenz CC-BY 4.0, <a href="https://db-ip.com">db-ip.com</a>) kann auf dem Server des Betreibers liegen, um aus der gekürzten Adresse Land und Ort abzuleiten. Ist keine solche Datei vorhanden, wird höchstens ein Ländercode aus der Sprachangabe des Browsers notiert. Die Datenbank selbst wird nicht ausgeliefert.</p>
+  <p><strong>Speicherdauer:</strong> Einzelaufzeichnungen werden nach 12 Monaten automatisch gelöscht. Tageszähler für die Angabe „Besuche seit Start“ bleiben als Summe erhalten, ohne die zugrunde liegenden Einzelbesuche.</p>
+  <p><strong>Verwaltungsbereich:</strong> Unter einer nicht öffentlich verlinkten Adresse kann der Betreiber Auswertungen einsehen. Nach der Anmeldung mit einem nur dem Betreiber bekannten Kennwort wird ein HttpOnly-Cookie mit SameSite=Strict gesetzt (Sitzung, typischerweise 12 Stunden). Dieses Cookie ist für den geschützten Bereich unbedingt erforderlich (Art. 6 Abs. 1 lit. f DSGVO) und dient nicht der Reichweitenmessung. Eigene Aufrufe des Betreibers können von der Zählung ausgenommen werden.</p>
+  <p>Ein Widerspruch gegen die Reichweitenmessung ist über die Kontaktdaten in Abschnitt 1 oder durch Aktivieren von DNT/GPC möglich.</p>
 
   <h2>6. Ihre Rechte</h2>
   <p>Sie haben das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch (Art. 21 DSGVO). Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO). Eine formlose Nachricht an die oben genannten Kontaktdaten genügt.</p>
@@ -45,16 +53,17 @@ const de = lang === 'de';
   <p>Für die einzelnen Pakete (z. B. Verarbeitung von Gästedaten oder Website-Wartung) gelten beim Start eigene Datenschutzhinweise und, wo nötig, ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO.</p>
 </Legal>
 ) : (
-<Legal lang={lang} routeKey="privacy" title="Informativa privacy" description="Informativa privacy di Studio Breve (bozza) ai sensi del GDPR: modulo di contatto, nessun cookie, nessun tracciamento.">
+<Legal lang={lang} routeKey="privacy" title="Informativa privacy" description="Informativa privacy di Studio Breve (bozza) ai sensi del GDPR: modulo di contatto, misurazione delle visite senza cookie di tracciamento, nessun trasferimento a terzi.">
   <h2>1. Titolare del trattamento</h2>
   <address>{op.name} · Studio Breve<br />{op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.it}<br />Telefono {op.phone} · Email {op.email} [provvisoria]</address>
   <p>Allo stato attuale non è stato nominato un responsabile della protezione dei dati (DPO), non essendo obbligatorio.</p>
 
   <h2>2. In breve</h2>
   <ul>
-    <li>Questo sito <strong>non usa cookie</strong> e <strong>nessun servizio di analisi, pubblicità o tracciamento</strong>. Per questo non c’è un banner dei cookie.</li>
+    <li>Questo sito <strong>non usa cookie di tracciamento o pubblicitari</strong> e <strong>nessun servizio di analisi o pubblicità di terzi</strong>. Per questo non c’è un banner dei cookie.</li>
     <li>Caratteri, immagini e script sono caricati dal nostro server. Non sono incorporati contenuti di terzi (per esempio Google Fonts, mappe, video, plugin social).</li>
-    <li>Trattiamo dati personali solo se ci scrivi tramite il modulo.</li>
+    <li>Contiamo le visite uniche in proprio, senza salvare l’indirizzo IP completo. I dati del modulo vengono trattati solo se ci scrivi.</li>
+    <li>Un cookie di sessione viene impostato soltanto quando il titolare accede all’area di amministrazione interna. È strettamente necessario per quell’area.</li>
   </ul>
 
   <h2>3. Navigazione</h2>
@@ -68,8 +77,15 @@ const de = lang === 'de';
   <p><strong>Durata:</strong> fino alla gestione della richiesta e al massimo 12 mesi dall’ultimo contatto, salvo obblighi di legge o revoca anticipata. [Da confermare prima del lancio.]</p>
   <p><strong>Destinatari:</strong> nessuno. Non avviene alcun trasferimento verso Paesi fuori dall’UE.</p>
 
-  <h2>5. Nessun cookie, nessun tracciamento</h2>
-  <p>Non utilizziamo cookie né tecnologie simili (local storage, pixel, fingerprinting). Se ciò dovesse cambiare, questa informativa sarà aggiornata prima e, se necessario, ti sarà chiesto il consenso.</p>
+  <h2>5. Misurazione delle visite e conservazione</h2>
+  <p>Per capire quali pagine vengono consultate, Studio Breve effettua una misurazione di prima parte. Non vengono impostati cookie di tracciamento e nessun dato viene trasmesso a reti di analisi o pubblicità. La base giuridica è l’art. 6, par. 1, lett. f GDPR (legittimo interesse a migliorare un’offerta non ancora pubblicata e a indicare in modo corretto il numero di visite).</p>
+  <p><strong>Quali dati sorgono:</strong> un identificativo casuale di sessione solo nel sessionStorage del browser (non è un cookie e termina con la sessione), i percorsi visitati e la durata approssimativa, data e ora, URL di provenienza ed eventuali parametri utm, lingua, tipologia indicativa di dispositivo/sistema/browser e dimensione dello schermo e, se disponibile, Paese, regione e città. L’indirizzo IP completo non viene mai salvato. Prima di un’eventuale geolocalizzazione approssimativa, IPv4 viene troncato all’ultimo ottetto e IPv6 a una rete /48; questo valore troncato non viene conservato in modo permanente.</p>
+  <p><strong>Visite uniche:</strong> lo stesso identificativo di sessione conta al massimo una volta per giorno di calendario (fuso orario Europe/Rome). L’indicazione pubblica «Visite dall’avvio» si basa su questo conteggio e parte da 0.</p>
+  <p><strong>Do Not Track / Global Privacy Control:</strong> se nel browser è attivo DNT o GPC, la visita non entra nella misurazione e il conteggio pubblico non aumenta.</p>
+  <p><strong>Luogo:</strong> sul server del titolare può essere presente un database GeoIP locale e open source (DB-IP Lite, licenza CC-BY 4.0, <a href="https://db-ip.com">db-ip.com</a>) per ricavare Paese e località dall’indirizzo troncato. Se il file non è presente, viene al massimo annotato un codice Paese ricavato dall’impostazione linguistica del browser. Il database non viene inviato ai visitatori.</p>
+  <p><strong>Durata:</strong> i dettagli delle visite vengono eliminati automaticamente dopo 12 mesi. I totali giornalieri per l’indicazione «Visite dall’avvio» restano come somma, senza i singoli percorsi.</p>
+  <p><strong>Area di amministrazione:</strong> a un indirizzo non collegato pubblicamente il titolare può consultare le statistiche. Dopo l’accesso con una password nota solo al titolare viene impostato un cookie HttpOnly con SameSite=Strict (sessione, di norma 12 ore). Questo cookie è strettamente necessario per l’area riservata (art. 6, par. 1, lett. f GDPR) e non serve alla misurazione delle visite. Le visite del titolare possono essere escluse dal conteggio.</p>
+  <p>Puoi opporti alla misurazione tramite i contatti del punto 1 oppure attivando DNT/GPC.</p>
 
   <h2>6. I tuoi diritti</h2>
   <p>Hai diritto di accesso (art. 15), rettifica (art. 16), cancellazione (art. 17), limitazione (art. 18), portabilità (art. 20) e opposizione (art. 21 GDPR). Puoi revocare in ogni momento il consenso prestato, senza pregiudicare la liceità del trattamento precedente (art. 7, par. 3 GDPR). Basta un messaggio ai contatti indicati sopra.</p>

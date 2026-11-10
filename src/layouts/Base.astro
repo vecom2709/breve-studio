@@ -2,9 +2,12 @@
 import '@fontsource-variable/fraunces/opsz.css';
 import '@fontsource-variable/fraunces/opsz-italic.css';
 import '@fontsource-variable/source-sans-3/wght.css';
+import '@fontsource-variable/outfit';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Tracker from '../components/Tracker.astro';
+import SearchPanel from '../components/SearchPanel.astro';
 import { site } from '../content/site';
 import type { Locale } from '../content/packages';
 import {
@@ -66,7 +69,9 @@ const meta = localeConfig[lang];
     ))}
     {!altOverride && <link rel="alternate" hreflang="x-default" href={xDefault} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta name="theme-color" content="#F6F1E8" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0f3b33" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={fullTitle} />
@@ -87,9 +92,11 @@ const meta = localeConfig[lang];
   <body>
     <a class="skip-link" href="#inhalt">{ui[lang].skip}</a>
     <Header lang={lang} routeKey={routeKey} alternates={alternates} />
+    <SearchPanel lang={lang} />
     <main id="inhalt" tabindex="-1">
       <slot />
     </main>
     <Footer lang={lang} alternates={alternates} />
+    <Tracker lang={lang} />
   </body>
 </html>
