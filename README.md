@@ -22,7 +22,8 @@ Die laufende Vorschau (URL und Prozess-ID) steht in `PREVIEW.txt`. Beenden: `kil
 
 - [Astro](https://astro.build) 7 + TypeScript, statisch vorgerendert. Nur der Formular-Endpunkt `/api/inquiry/` und die Danke-Seiten laufen serverseitig (Adapter `@astrojs/node`, standalone).
 - Schriften lokal eingebunden über `@fontsource-variable`: **Outfit** (Überschriften), **Fraunces** (Wortmarke) und **Source Sans 3** (Text), alle SIL Open Font License 1.1. Keine Google Fonts, keine CDN.
-- Keine Tracking- oder Werbe-Cookies, keine Analyse- oder Werbedienste Dritter, keine externen Skripte, keine bezahlten APIs. Eine eigene Reichweitenmessung (ohne volle IP, ohne Tracking-Cookies) zählt einmalige Besuche; siehe Datenschutz und Abschnitt „Verwaltung“ unten.
+- Keine Tracking- oder Werbe-Cookies, keine Analyse- oder Werbedienste Dritter, keine externen Skripte, keine bezahlten APIs.
+- Installierbare Web-App (PWA): Manifest je Sprache, eigenes SB-Symbol, minimales Service Worker nur für die Seitenhülle (kein Tracking). Anleitung unter `/de/app/` und `/it/app/`. Eine eigene Reichweitenmessung (ohne volle IP, ohne Tracking-Cookies) zählt einmalige Besuche; siehe Datenschutz und Abschnitt „Verwaltung“ unten.
 
 ## Sprachen und Seiten
 
@@ -47,6 +48,7 @@ Die Wurzel `/` ist eine kleine Sprachwahl. Ein kurzes Skript darf nur dann autom
 | `/de/produkte/` | `/it/prodotti/` |
 | `/de/dienstleistungen/` | `/it/servizi/` |
 | `/de/warenkorb/` (noch ohne Kauf, nur Erklärung) | `/it/carrello/` |
+| `/de/app/` (Installation auf dem Handy) | `/it/app/` |
 | `/de/agb/` | `/it/condizioni/` |
 | `404` (zweisprachig) | |
 

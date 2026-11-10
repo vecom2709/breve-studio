@@ -1,21 +1,33 @@
 ---
 import type { Locale } from '../content/packages';
+import { ui } from '../lib/i18n';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
+const t = ui[lang];
 ---
-<script is:inline define:vars={{ lang }}>
+<script is:inline define:vars={{ lang, one: t.visitPhraseOne, many: t.visitPhraseMany }}>
   (function () {
-    var dnt = (navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true);
+    var phrase = function (n) {
+      if (n === 1) return one;
+      return String(many).replace('{n}', String(n));
+    };
+    var applyCount = function (n) {
+      if (typeof n !== 'number' || !isFinite(n) || n < 0) return;
+      document.querySelectorAll('[data-visit-count]').forEach(function (el) { el.textContent = String(n); });
+      document.querySelectorAll('[data-visit-phrase]').forEach(function (el) { el.textContent = phrase(n); });
+      document.querySelectorAll('[data-visit-pill]').forEach(function (el) {
+        el.setAttribute('aria-label', phrase(n));
+        el.classList.add('is-ready');
+      });
+    };
     var fill = function () {
-      fetch('/api/track/', { headers: { Accept: 'application/json' } })
-        .then(function (r) { return r.json(); })
-        .then(function (d) {
-          if (!d || typeof d.n !== 'number') return;
-          document.querySelectorAll('[data-visit-count]').forEach(function (el) { el.textContent = String(d.n); });
-        })
+      var pending = window.__sbVisits || fetch('/api/track/', { headers: { Accept: 'application/json' }, cache: 'no-store' }).then(function (r) { return r.json(); });
+      pending
+        .then(function (d) { if (d && typeof d.n === 'number') applyCount(d.n); })
         .catch(function () {});
     };
     fill();
+    var dnt = (navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true);
     if (dnt) return;
     var KEY = 'sb-sid';
     var sid = null;
@@ -40,9 +52,9 @@ const { lang } = Astro.props;
       if (extra) Object.assign(body, extra);
       return body;
     };
-    fetch('/api/track/', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload('view')), keepalive: true })
+    fetch('/api/track/', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload('view')), keepalive: true, cache: 'no-store' })
       .then(function (r) { return r.json(); })
-      .then(function (d) { if (d && typeof d.n === 'number') document.querySelectorAll('[data-visit-count]').forEach(function (el) { el.textContent = String(d.n); }); })
+      .then(function (d) { if (d && typeof d.n === 'number') applyCount(d.n); })
       .catch(function () {});
     var sent = false;
     var goodbye = function () {

@@ -34,6 +34,10 @@ const isCurrent = (k: RouteKey) =>
       </ul>
     </nav>
     <div class="tools">
+      <p class="visit-pill" data-visit-pill>
+        <svg class="eye" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 6.5 12 6.5 21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.6"/></svg>
+        <span data-visit-phrase>{t.visitsSince}</span>
+      </p>
       <button type="button" class="icon-btn" data-open-search aria-controls="suche" aria-expanded="false" aria-label={t.search}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg>
       </button>
@@ -77,6 +81,9 @@ const isCurrent = (k: RouteKey) =>
   .nav-link:hover { color: var(--forest); }
   .nav-link.on, .nav-link[aria-current='page'] { color: var(--forest); border-bottom-color: var(--forest); }
   .tools { display: flex; align-items: center; gap: 0.35rem; margin-left: auto; }
+  .visit-pill { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0; padding: 0.35rem 0.7rem; border-radius: 999px; background: #E7F0EC; color: var(--forest); font-weight: 650; font-size: 0.8rem; line-height: 1.2; letter-spacing: 0; font-variant-numeric: tabular-nums; white-space: nowrap; max-width: 16rem; }
+  .visit-pill .eye { flex-shrink: 0; }
+  .visit-pill [data-visit-phrase] { overflow: hidden; text-overflow: ellipsis; }
   .icon-btn { appearance: none; background: none; border: 0; color: var(--ink); width: 2.5rem; height: 2.5rem; display: inline-grid; place-items: center; cursor: pointer; border-radius: 999px; text-decoration: none; position: relative; }
   .icon-btn:hover { color: var(--forest); background: #F2F5F3; }
   .cart .badge { position: absolute; top: 0.2rem; right: 0.15rem; min-width: 1.05rem; height: 1.05rem; padding: 0 0.22rem; border-radius: 999px; background: var(--forest); color: #fff; font-size: 0.65rem; font-weight: 700; display: grid; place-items: center; }
@@ -99,6 +106,10 @@ const isCurrent = (k: RouteKey) =>
   .sheet li a { display: block; padding: 0.8rem 0; border-bottom: 1px solid #E6E8E4; text-decoration: none; font-family: var(--geo); font-size: var(--step-2); color: var(--ink); }
   .sheet a[aria-current='page'] { color: var(--forest); }
   .lang-m { display: inline-block; margin-top: 1rem; font-weight: 600; color: var(--forest); }
+  @media (max-width: 63.99rem) {
+    .bar { flex-wrap: wrap; }
+    .visit-pill { flex: 1 0 100%; order: 5; justify-content: center; max-width: none; margin: 0 0 0.65rem; }
+  }
   @media (min-width: 64rem) {
     .nav-desktop { display: flex; }
     .nav-mobile { display: none; }

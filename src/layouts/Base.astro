@@ -71,7 +71,14 @@ const meta = localeConfig[lang];
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href={lang === 'de' ? '/de/manifest.webmanifest' : '/it/manifest.webmanifest'} />
     <meta name="theme-color" content="#0f3b33" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Studio Breve" />
+    <script is:inline>
+      window.__sbVisits = fetch('/api/track/', { headers: { Accept: 'application/json' }, cache: 'no-store' }).then(function (r) { return r.json(); });
+    </script>
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={fullTitle} />
@@ -98,5 +105,12 @@ const meta = localeConfig[lang];
     </main>
     <Footer lang={lang} alternates={alternates} />
     <Tracker lang={lang} />
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('/sw.js').catch(function () {});
+        });
+      }
+    </script>
   </body>
 </html>

@@ -268,12 +268,16 @@ def _esc(v) -> str:
 
 
 def login_page(err: bool) -> str:
-    err_html = '<p role="alert" style="color:#8a1f1f;background:#fdecec;padding:.7rem;border-radius:8px">Das Kennwort stimmt nicht. Bitte erneut versuchen.</p>' if err else ""
-    return f"""<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Anmeldung — Verwaltung</title>
-    <style>body{{margin:0;min-height:100vh;display:grid;place-items:center;background:#F7F8F6;font-family:system-ui;color:#14221f}}form{{width:min(24rem,calc(100% - 2rem));background:#fff;border:1px solid #d7ddd9;border-radius:16px;padding:2rem;display:grid;gap:1rem}}button{{background:#0f3b33;color:#fff;border:0;border-radius:999px;padding:.85rem 1.2rem}}input{{padding:.7rem;border:1px solid #c5cdc8;border-radius:8px}}</style></head>
-    <body><form method="post" action="/api/verwaltung/login/"><h1>Verwaltung</h1><p>Geschützter Bereich. Nicht öffentlich verlinkt.</p>{err_html}
-    <label for="password">Kennwort</label><input id="password" name="password" type="password" autocomplete="current-password" required>
-    <button type="submit">Anmelden</button></form></body></html>"""
+    err_html = """<p class="err" role="alert"><strong>Anmeldung fehlgeschlagen.</strong> Das Kennwort ist nicht richtig. Bitte prüfen Sie die Eingabe und versuchen Sie es erneut.</p>""" if err else ""
+    return """<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Anmeldung — Verwaltung</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F7F8F6;font-family:system-ui,sans-serif;color:#14221f;padding:1.5rem}.card{width:min(26rem,100%);background:#fff;border:1px solid #d7ddd9;border-radius:18px;padding:2rem 1.8rem 1.6rem;display:grid;gap:1rem}.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:inherit}.brand img{width:44px;height:44px}.brand strong{display:block;font-weight:700}.brand small{color:#4a5b56}h1{font-size:1.45rem;margin:.2rem 0 0}p{margin:0;color:#4a5b56}form{display:grid;gap:.85rem}input{font:inherit;padding:.75rem .85rem;border:1px solid #c5cdc8;border-radius:10px}button{font:650 1rem/1 system-ui;background:#0f3b33;color:#fff;border:0;border-radius:999px;padding:.9rem 1.2rem;cursor:pointer}.err{color:#7a1515;background:#fdecec;border:1px solid #f0c4c4;border-radius:10px;padding:.8rem .9rem}.back{color:#0f3b33;font-weight:600;text-decoration:none}</style></head>
+  <body><div class="card"><a class="brand" href="/de/"><img src="/logo-studio-breve.svg" width="44" height="44" alt=""><span><strong>Studio Breve</strong><small>Digitalstudio · Aragona, Sizilien</small></span></a>
+  <h1>Anmeldung zur Verwaltung</h1>
+  <p>Geschützter Bereich für den Betreiber. Der Link steht dezent im Fußbereich der Website.</p>
+  __ERR__
+  <form method="post" action="/api/verwaltung/login/"><label for="password">Kennwort</label><input id="password" name="password" type="password" autocomplete="current-password" required><button type="submit">Anmelden</button></form>
+  <a class="back" href="/de/">← Zurück zur Website</a></div></body></html>""".replace("__ERR__", err_html)
 
 
 def dashboard_page(query: str) -> str:

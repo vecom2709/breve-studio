@@ -35,12 +35,59 @@ const actionHref = (slug: string) => `${path('package', lang, slug)}#formular`;
           <a class="btn btn-outline" href={path('packages', lang)}>{t.seeShowcase}</a>
         </div>
       </div>
-      <figure class="hero-photo">
-        <picture>
-          <source type="image/webp" srcset="/images/home/hero-light.webp" />
-          <img src="/images/home/hero-light.jpg" width="1280" height="720" alt={de ? 'Heller Schreibtisch mit Laptop, Pflanze und Tasse' : 'Scrivania chiara con portatile, pianta e tazza'} decoding="async" />
-        </picture>
-      </figure>
+      <div class="hero-stage">
+        <figure class="hero-still">
+          <picture>
+            <source type="image/webp" srcset="/images/home/hero-light.webp" />
+            <img src="/images/home/hero-light.jpg" width="1280" height="720" alt="" decoding="async" />
+          </picture>
+        </figure>
+        <div class="hero-devices">
+          <div class="laptop">
+            <div class="lid">
+              <div class="bezel">
+                <span class="cam" aria-hidden="true"></span>
+                <div class="screen">
+                  <img
+                    class="live-scroll"
+                    src={de ? '/images/home/live-desktop-de.webp' : '/images/home/live-desktop-it.webp'}
+                    width="900"
+                    height={de ? 2638 : 2742}
+                    alt={de ? 'Die deutsche Startseite, langsam von oben nach unten rollend' : 'La pagina iniziale in italiano, che scorre lentamente'}
+                    decoding="async"
+                    fetchpriority="high"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="base"><span class="hinge" aria-hidden="true"></span></div>
+          </div>
+          <img
+            class="hero-mug"
+            src="/images/home/hero-mug.webp"
+            width="200"
+            height="161"
+            alt={de ? 'Weiße Tasse neben dem Laptop' : 'Tazza bianca accanto al portatile'}
+            decoding="async"
+          />
+          <div class="phone-col">
+            <div class="phone">
+              <span class="notch" aria-hidden="true"></span>
+              <div class="screen">
+                <img
+                  class="live-scroll"
+                  src={de ? '/images/home/live-mobile-de.webp' : '/images/home/live-mobile-it.webp'}
+                  width="420"
+                  height={de ? 7196 : 7428}
+                  alt={de ? 'Die Startseite auf dem Handy, langsam rollend' : 'La pagina iniziale sul telefono, che scorre lentamente'}
+                  decoding="async"
+                />
+              </div>
+            </div>
+            <a class="app-cta" href={path('app', lang)}>{t.installApp}</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -167,8 +214,50 @@ const actionHref = (slug: string) => `${path('package', lang, slug)}#formular`;
   .hero h1 { font-size: clamp(2.15rem, 1.2rem + 3.2vw, 3.8rem); max-width: 16ch; color: var(--ink); }
   .hero .lead { margin-top: 1.2rem; color: var(--ink-2); }
   .cta-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
-  .hero-photo { margin: 0; }
-  .hero-photo img { width: 100%; height: auto; border-radius: 18px; object-fit: cover; aspect-ratio: 4 / 3; background: #EEF1EE; }
+  .hero-stage { position: relative; margin: 0; }
+  .hero-still { display: none; margin: 0; }
+  .hero-still img { width: 100%; height: auto; border-radius: 18px; }
+  :global(html[data-aufnahme]) .hero-still { display: block; }
+  :global(html[data-aufnahme]) .hero-devices { display: none !important; }
+  .hero-devices { position: relative; min-height: 18rem; }
+  .laptop { width: 86%; }
+  .laptop .lid { background: linear-gradient(180deg, #d8ddd9, #b9c1bc); border-radius: 12px 12px 4px 4px; padding: 0.55rem 0.55rem 0.4rem; box-shadow: 0 18px 40px rgba(20, 34, 31, 0.16); }
+  .laptop .bezel { background: #111; border-radius: 8px; padding: 0.7rem 0.45rem 0.45rem; position: relative; }
+  .laptop .cam { position: absolute; top: 0.28rem; left: 50%; width: 0.35rem; height: 0.35rem; border-radius: 50%; background: #3a3a3a; transform: translateX(-50%); }
+  .laptop .screen { overflow: hidden; height: clamp(12.5rem, 28vw, 20.5rem); border-radius: 2px; background: #F7F8F6; }
+  .laptop .base { height: 0.85rem; background: linear-gradient(180deg, #cfd5d1, #aeb6b1); border-radius: 0 0 10px 10px; margin: 0 -3%; position: relative; }
+  .laptop .hinge { position: absolute; left: 50%; top: -0.15rem; width: 18%; height: 0.35rem; background: #9aa29d; border-radius: 2px; transform: translateX(-50%); }
+  .hero-mug { position: absolute; right: 26%; bottom: 0.15rem; width: 22%; height: auto; z-index: 3; pointer-events: none; filter: drop-shadow(0 10px 14px rgba(20, 34, 31, 0.22)); }
+  .phone-col { position: absolute; right: 0; bottom: 1.1rem; width: 34%; display: grid; justify-items: center; gap: 0.65rem; z-index: 2; }
+  .phone { width: 100%; background: #1a1d1c; border-radius: 1.35rem; padding: 0.55rem 0.32rem; box-shadow: 0 16px 32px rgba(20, 34, 31, 0.22); }
+  .phone .notch { display: block; width: 38%; height: 0.42rem; margin: 0 auto 0.28rem; background: #0b0d0c; border-radius: 999px; }
+  .phone .screen { overflow: hidden; height: clamp(11rem, 24vw, 17.5rem); border-radius: 0.7rem; background: #F7F8F6; }
+  .live-scroll { display: block; width: 100%; height: auto; transform: translateY(0); animation: live-pan 48s ease-in-out infinite alternate; animation-play-state: running; }
+  .laptop .screen:hover .live-scroll,
+  .phone .screen:hover .live-scroll,
+  .laptop .screen:focus-within .live-scroll,
+  .phone .screen:focus-within .live-scroll { animation-play-state: paused; }
+  @keyframes live-pan {
+    0%, 8% { transform: translateY(0); }
+    92%, 100% { transform: translateY(-80%); }
+  }
+  @supports (height: 1cqh) {
+    @keyframes live-pan {
+      0%, 8% { transform: translateY(0); }
+      92%, 100% { transform: translateY(calc(-100% + 100cqh)); }
+    }
+  }
+  .laptop .screen, .phone .screen { container-type: size; }
+  @media (prefers-reduced-motion: reduce) {
+    .live-scroll { animation: none; transform: translateY(0); }
+  }
+  .app-cta { font-weight: 700; font-size: 0.82rem; color: var(--forest); text-decoration: none; text-align: center; background: #E7F0EC; border-radius: 999px; padding: 0.45rem 0.7rem; line-height: 1.2; }
+  .app-cta:hover { background: #d5e6df; }
+  @media (max-width: 59.99rem) {
+    .laptop { width: 100%; }
+    .hero-mug { width: 26%; right: 40%; bottom: auto; top: 58%; }
+    .phone-col { position: relative; width: min(11.5rem, 48%); margin: -4.5rem 0 0 auto; bottom: auto; right: auto; }
+  }
   .trust { background: #fff; border-block: 1px solid #E6E8E4; padding-block: 1.35rem; }
   .trust-grid { display: grid; gap: 1rem 1.5rem; }
   @media (min-width: 48rem) { .trust-grid { grid-template-columns: repeat(4, 1fr); } }

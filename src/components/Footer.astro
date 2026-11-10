@@ -56,7 +56,7 @@ const op = site.operator;
           <li><a href={chooserHref}>{t.chooseLanguage}</a></li>
         </ul>
         <p class="visits small" data-visit-count-wrap>
-          {t.visitsSince}: <span data-visit-count>0</span>
+          <span data-visit-phrase>{t.visitsSince}</span>
         </p>
         <p class="small muted note">{lang === 'de'
           ? 'Kein Cookie-Banner: diese Website setzt keine Tracking-Cookies. Mehr in der Datenschutzerklärung.'
@@ -65,6 +65,7 @@ const op = site.operator;
     </div>
     <div class="base small">
       <span>© 2026 Studio Breve · {op.name} · P.IVA {op.vatId[lang]}</span>
+      <a class="admin-link" href="/verwaltung/" rel="nofollow">{t.adminArea}</a>
       <span>{lang === 'de' ? 'Preise sind Listenpreise; ein Vertrag kommt über diese Seite nicht zustande.' : 'I prezzi sono di listino; tramite questo sito non si conclude alcun contratto.'}</span>
     </div>
   </div>
@@ -85,5 +86,7 @@ const op = site.operator;
   .cur { font-weight: 600; }
   .note { margin-top: 0.8rem; }
   .visits { margin-top: 1.1rem; color: var(--ink-2); font-variant-numeric: tabular-nums; }
-  .base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 2rem; border-top: 1px solid var(--line); padding-top: 1rem; color: var(--muted); }
+  .base { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .5rem 2rem; border-top: 1px solid var(--line); padding-top: 1rem; color: var(--muted); }
+  .admin-link { color: var(--forest); font-weight: 600; text-decoration: underline; text-underline-offset: 0.18em; }
+  .admin-link:hover { color: var(--forest-mid); }
 </style>

@@ -11,26 +11,49 @@ const err = Astro.url.searchParams.get('fehler') === '1';
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Anmeldung — Verwaltung</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <style>
-    :root { color-scheme: light; font-family: "Source Sans 3", system-ui, sans-serif; }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #F7F8F6; color: #14221f; }
-    form { width: min(24rem, calc(100% - 2rem)); background: #fff; border: 1px solid #d7ddd9; border-radius: 16px; padding: 2rem; display: grid; gap: 1rem; }
-    h1 { font: 650 1.4rem/1.2 Outfit, system-ui, sans-serif; margin: 0; }
+    :root { color-scheme: light; font-family: "Source Sans 3", system-ui, sans-serif; --forest:#0f3b33; --ink:#14221f; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #F7F8F6; color: var(--ink); padding: 1.5rem; }
+    .card { width: min(26rem, 100%); background: #fff; border: 1px solid #d7ddd9; border-radius: 18px; padding: 2rem 1.8rem 1.6rem; display: grid; gap: 1rem; box-shadow: 0 10px 30px rgba(15,59,51,.06); }
+    .brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: inherit; }
+    .brand img { width: 44px; height: 44px; }
+    .brand strong { font: 650 1.15rem/1.2 Outfit, "Source Sans 3", system-ui, sans-serif; }
+    .brand span { display: block; font-size: .8rem; color: #4a5b56; font-weight: 500; margin-top: .15rem; }
+    h1 { font: 650 1.45rem/1.2 Outfit, system-ui, sans-serif; margin: .4rem 0 0; }
     p { margin: 0; color: #4a5b56; }
     label { font-weight: 600; font-size: .95rem; }
-    input { font: inherit; padding: .7rem .8rem; border: 1px solid #c5cdc8; border-radius: 8px; }
-    button { font: 650 1rem/1 inherit; background: #0f3b33; color: #fff; border: 0; border-radius: 999px; padding: .85rem 1.2rem; cursor: pointer; }
-    .err { color: #8a1f1f; background: #fdecec; border-radius: 8px; padding: .7rem .85rem; }
+    input { font: inherit; padding: .75rem .85rem; border: 1px solid #c5cdc8; border-radius: 10px; width: 100%; box-sizing: border-box; }
+    input:focus { outline: 2px solid var(--forest); outline-offset: 1px; }
+    button { font: 650 1rem/1 inherit; background: var(--forest); color: #fff; border: 0; border-radius: 999px; padding: .9rem 1.2rem; cursor: pointer; }
+    button:hover { background: #164a40; }
+    .err { color: #7a1515; background: #fdecec; border: 1px solid #f0c4c4; border-radius: 10px; padding: .8rem .9rem; }
+    .err strong { display: block; margin-bottom: .2rem; }
+    .back { justify-self: start; color: var(--forest); font-weight: 600; text-decoration: none; font-size: .95rem; }
+    .back:hover { text-decoration: underline; }
+    form { display: grid; gap: .85rem; margin: 0; }
   </style>
 </head>
 <body>
-  <form method="post" action="/api/verwaltung/login/">
-    <h1>Verwaltung</h1>
-    <p>Geschützter Bereich. Nicht öffentlich verlinkt.</p>
-    {err && <p class="err" role="alert">Das Kennwort stimmt nicht. Bitte erneut versuchen.</p>}
-    <label for="password">Kennwort</label>
-    <input id="password" name="password" type="password" autocomplete="current-password" required />
-    <button type="submit">Anmelden</button>
-  </form>
+  <div class="card">
+    <a class="brand" href="/de/">
+      <img src="/logo-studio-breve.svg" width="44" height="44" alt="" />
+      <span><strong>Studio Breve</strong><span>Digitalstudio · Aragona, Sizilien</span></span>
+    </a>
+    <h1>Anmeldung zur Verwaltung</h1>
+    <p>Geschützter Bereich für den Betreiber. Der Link steht dezent im Fußbereich der Website.</p>
+    {err && (
+      <p class="err" role="alert">
+        <strong>Anmeldung fehlgeschlagen.</strong>
+        Das Kennwort ist nicht richtig. Bitte prüfen Sie die Eingabe und versuchen Sie es erneut.
+      </p>
+    )}
+    <form method="post" action="/api/verwaltung/login/">
+      <label for="password">Kennwort</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required autofocus />
+      <button type="submit">Anmelden</button>
+    </form>
+    <a class="back" href="/de/">← Zurück zur Website</a>
+  </div>
 </body>
 </html>

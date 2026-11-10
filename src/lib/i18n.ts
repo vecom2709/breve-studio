@@ -29,7 +29,7 @@ export const localeConfig: Record<Locale, {
 
 export type RouteKey =
   | 'home' | 'packages' | 'package' | 'products' | 'services' | 'about'
-  | 'contact' | 'thanks' | 'cart' | 'imprint' | 'privacy' | 'terms';
+  | 'contact' | 'thanks' | 'cart' | 'app' | 'imprint' | 'privacy' | 'terms';
 
 /** Pfade relativ zum Sprachpräfix, jeweils mit führendem und abschließendem Slash. */
 const routeStems: Record<RouteKey, L10n> = {
@@ -42,6 +42,7 @@ const routeStems: Record<RouteKey, L10n> = {
   contact: { de: '/kontakt/', it: '/contatti/' },
   thanks: { de: '/kontakt/danke/', it: '/contatti/grazie/' },
   cart: { de: '/warenkorb/', it: '/carrello/' },
+  app: { de: '/app/', it: '/app/' },
   imprint: { de: '/impressum/', it: '/note-legali/' },
   privacy: { de: '/datenschutz/', it: '/privacy/' },
   terms: { de: '/agb/', it: '/condizioni/' },
@@ -79,6 +80,26 @@ export const ui = {
     cart: 'Warenkorb',
     cartEmptyBadge: 'Warenkorb, leer',
     visitsSince: 'Besuche seit Start',
+    visitPhraseOne: '1 Besuch seit Start',
+    visitPhraseMany: '{n} Besuche seit Start',
+    adminArea: 'Verwaltung',
+    installApp: 'Als App aufs Handy',
+    appPage: {
+      title: 'Studio Breve als App',
+      description: 'So legen Sie Studio Breve auf den Home-Bildschirm Ihres Telefons.',
+      lead: 'Sie können diese Website wie eine kleine App auf dem Handy nutzen – ohne Shop und ohne Tracking-Cookies. Die Installation läuft über den Browser, nicht über einen App-Store.',
+      androidTitle: 'Android',
+      androidBody: 'Wenn Ihr Browser die Installation anbietet, erscheint unten die Schaltfläche. Sonst öffnen Sie das Menü des Browsers und wählen „App installieren“ oder „Zum Startbildschirm hinzufügen“.',
+      iosTitle: 'iPhone und iPad',
+      iosBody: 'Öffnen Sie diese Seite in Safari, tippen Sie auf die Teilen-Taste und wählen Sie „Zum Home-Bildschirm“. Danach erscheint Studio Breve wie eine App auf dem Bildschirm.',
+      installButton: 'App jetzt installieren',
+      installUnavailable: 'Ihr Browser bietet die automatische Installation gerade nicht an. Bitte nutzen Sie die Schritte oben.',
+      installed: 'Studio Breve ist auf diesem Gerät bereits als App verfügbar.',
+      qrTitle: 'QR-Code zur Website',
+      qrCaption: 'Mit der Kamera zur Startseite scannen.',
+      qrNote: 'Der Code führt zur veröffentlichten Adresse (studiobreve.it). Solange die Domain noch nicht online ist, öffnet er die Seite nicht. In der lokalen Vorschau nutzen Sie bitte die Adresse in der Adresszeile.',
+      back: 'Zur Startseite',
+    },
     search: 'Pakete durchsuchen',
     searchPlaceholder: 'Paket oder Stichwort suchen …',
     searchEmpty: 'Kein Paket passt zu dieser Suche.',
@@ -262,6 +283,26 @@ export const ui = {
     cart: 'Carrello',
     cartEmptyBadge: 'Carrello, vuoto',
     visitsSince: 'Visite dall’avvio',
+    visitPhraseOne: '1 visita dall’avvio',
+    visitPhraseMany: '{n} visite dall’avvio',
+    adminArea: 'Area riservata',
+    installApp: 'Installa come app',
+    appPage: {
+      title: 'Studio Breve come app',
+      description: 'Come aggiungere Studio Breve alla schermata Home del telefono.',
+      lead: 'Puoi usare questo sito come una piccola app sul telefono – senza negozio e senza cookie di tracciamento. L’installazione avviene dal browser, non da un app store.',
+      androidTitle: 'Android',
+      androidBody: 'Se il browser propone l’installazione, compare il pulsante qui sotto. Altrimenti apri il menu del browser e scegli «Installa app» o «Aggiungi a schermata Home».',
+      iosTitle: 'iPhone e iPad',
+      iosBody: 'Apri questa pagina in Safari, tocca il pulsante Condividi e scegli «Aggiungi alla schermata Home». Studio Breve comparirà come un’app.',
+      installButton: 'Installa l’app ora',
+      installUnavailable: 'In questo momento il browser non propone l’installazione automatica. Segui i passaggi indicati sopra.',
+      installed: 'Studio Breve è già disponibile come app su questo dispositivo.',
+      qrTitle: 'Codice QR del sito',
+      qrCaption: 'Inquadra il codice per aprire la pagina iniziale.',
+      qrNote: 'Il codice porta all’indirizzo pubblico (studiobreve.it). Finché il dominio non è online, non aprirà il sito. Nell’anteprima locale usa l’indirizzo nella barra del browser.',
+      back: 'Torna alla pagina iniziale',
+    },
     search: 'Cerca pacchetti',
     searchPlaceholder: 'Cerca un pacchetto o una parola chiave …',
     searchEmpty: 'Nessun pacchetto corrisponde a questa ricerca.',
