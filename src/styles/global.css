@@ -86,6 +86,9 @@ p { margin: 0; text-wrap: pretty; }
 em.accent, .accent { font-style: italic; font-weight: 560; color: var(--forest-mid); letter-spacing: -0.03em; }
 
 .wrap { width: min(100% - 2.5rem, var(--wrap)); margin-inline: auto; }
+/* Breite Bühne für Kopfzeile, Hero und Startseiten-Sektionen */
+.wrap-wide { width: min(100% - 2.5rem, 94rem); margin-inline: auto; }
+@media (min-width: 64rem) { .wrap-wide { width: min(100% - 4rem, 94rem); } }
 .narrow { max-width: 42rem; }
 .stack > * + * { margin-top: var(--flow, 1em); }
 .section { padding-block: var(--space-xl); }

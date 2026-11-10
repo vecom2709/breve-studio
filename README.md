@@ -131,6 +131,14 @@ Das helle Hero-Foto liegt unter `public/images/home/hero-light.webp` (und `.jpg`
 
 Kundenstimmen stehen in `src/content/testimonials.ts` und werden nur mit Einwilligung der genannten Person veröffentlicht. Solange kein Foto vorliegt, erscheint ein Avatar mit Initialen.
 
+## Startseite (Stand 11.11.2026)
+
+- Kopfzeile dunkel (Petrol) mit dem Logo `public/logo-studio-breve-gold*.{webp,png}` (freigestellt aus der Vorlage), Navigation mit Symbolen, DE/IT-Umschalter, Warenkorb.
+- Hero: Szene `public/images/home/hero-<sprache>-<breite>.{avif,webp,jpg}` mit dem Original-Vecom-V auf der Tasse und der echten Startseite auf dem Laptop. Zahlen im Panel „Stand heute“ kommen live aus `catalogStats()`.
+- Texte der Startseite: `src/content/home.ts`. Symbole: `src/components/Icon.astro` (Pfade nach Lucide, ISC-Lizenz).
+- Bildstrecke neu erzeugen: `python3 tools/bilder/aufnahme.py http://127.0.0.1:4173 <ordner>` (Seitenaufnahmen) und danach `python3 tools/bilder/startseite_bilder.py <quellen> public/images/home <ordner>/screen-de.png <ordner>/screen-it.png`. Quellen: KI-Szene (Kie.ai, nano-banana-pro), `v-emblem.png` von vecom-design.it, Kartenbilder.
+- Das 3D-Handy im Abschnitt „App-Version“ wird in Blender (Cycles) auf dem eigenen Rechner gerendert: `tools/bilder/handy.py`.
+
 ## Domain
 
 Platzhalter im Text: **studiobreve.it** (nicht registriert). Laut DNS-Abfrage über Google Public DNS am 9.11.2026 hatten folgende Namen keinen Eintrag – das ist **nur ein Hinweis**, kein Nachweis, dass sie frei sind: studiobreve.it, studiobreve.de, studiobreve.eu, studio-breve.it, inbreve.de, in-breve.it. Vergeben (DNS vorhanden): inbreve.it, inbreve.com, inbreve.eu, breve.it, breve.de, studiobreve.com. Eine Markenrecherche (UIBM, DPMA, EUIPO) steht aus.

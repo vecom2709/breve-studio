@@ -1,29 +1,38 @@
 ---
-import Mark from './Mark.astro';
 import type { Locale } from '../content/packages';
 import { path, ui } from '../lib/i18n';
 interface Props { lang: Locale; theme?: 'dark' | 'light' }
 const { lang, theme = 'light' } = Astro.props;
 ---
 <a class:list={['wordmark', theme]} href={path('home', lang)} aria-label={lang === 'de' ? 'Studio Breve – Startseite' : 'Studio Breve – home'}>
-  <Mark size={40} />
+  <span class="tile" aria-hidden="true">
+    <!-- Zeichen: das typografische Breve (˘) als Monogramm -->
+    <svg viewBox="0 0 48 48" width="30" height="30" focusable="false">
+      <path d="M13.5 12.5v11.2a10.5 10.5 0 0 0 21 0V12.5" fill="none" stroke="currentColor" stroke-width="6.4" stroke-linecap="round" />
+    </svg>
+  </span>
   <span class="wm-col">
     <span class="wm-text">Studio <em>Breve</em></span>
     <span class="wm-tag">{ui[lang].taglineSmall}</span>
   </span>
 </a>
 <style>
-  .wordmark { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; color: var(--ink); }
-  .wm-col { display: grid; gap: 0.15rem; line-height: 1; }
-  .wm-text { font-family: var(--serif); font-size: 1.28rem; letter-spacing: -0.01em; font-weight: 460; }
-  .wm-text em { font-style: italic; font-weight: 420; }
-  .wm-tag { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .wordmark { display: inline-flex; align-items: center; gap: 0.85rem; text-decoration: none; color: var(--ink); flex: none; }
+  .tile { width: 3.1rem; height: 3.1rem; flex: none; display: grid; place-items: center; border-radius: 0.85rem; background: #fff; color: #10201d; box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 6px 18px rgba(0,0,0,.18); }
+  .light .tile { background: var(--forest); color: #fff; box-shadow: none; }
+  .wm-col { display: grid; gap: 0.32rem; line-height: 1; }
+  .wm-text { font-family: var(--serif); font-size: 1.62rem; letter-spacing: -0.01em; font-weight: 420; }
+  .wm-text em { font-style: italic; font-weight: 400; }
+  .wm-tag { font-family: var(--geo); font-size: 0.64rem; font-weight: 640; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
   .wordmark.light .wm-text em { color: var(--forest-mid); }
-  .wordmark.dark { color: #F6F1E8; }
-  .wordmark.dark .wm-tag { color: var(--mint-dim); }
+  .wordmark.dark { color: #fff; }
+  .wordmark.dark .wm-tag { color: rgba(255,255,255,.86); }
   .wordmark.dark:hover, .wordmark.light:hover { color: inherit; }
+  .wordmark.dark:hover { color: #fff; }
   @media (max-width: 32rem) {
     .wm-tag { display: none; }
-    .wm-text { font-size: 1.15rem; }
+    .wm-text { font-size: 1.3rem; }
+    .tile { width: 2.6rem; height: 2.6rem; border-radius: 0.7rem; }
+    .tile svg { width: 25px; height: 25px; }
   }
 </style>

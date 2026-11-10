@@ -1,5 +1,5 @@
 ---
-import Wordmark from './Wordmark.astro';
+import Icon, { type IconName } from './Icon.astro';
 import type { Locale } from '../content/packages';
 import { path, ui, switchToLabel, type RouteKey } from '../lib/i18n';
 interface Props {
@@ -9,110 +9,155 @@ interface Props {
 }
 const { lang, routeKey, alternates } = Astro.props;
 const t = ui[lang];
-const items: { key: RouteKey; label: string }[] = [
-  { key: 'home', label: t.nav.home },
-  { key: 'products', label: t.nav.products },
-  { key: 'packages', label: t.nav.packages },
-  { key: 'about', label: t.nav.about },
-  { key: 'contact', label: t.nav.contact },
+const items: { key: RouteKey; label: string; icon: IconName }[] = [
+  { key: 'home', label: t.nav.home, icon: 'home' },
+  { key: 'packages', label: t.nav.packages, icon: 'package' },
+  { key: 'products', label: t.nav.products, icon: 'grid' },
+  { key: 'services', label: t.nav.services, icon: 'rosette' },
+  { key: 'about', label: t.nav.about, icon: 'info' },
+  { key: 'contact', label: t.nav.contact, icon: 'mail' },
 ];
 const isCurrent = (k: RouteKey) =>
   k === routeKey ||
   (k === 'packages' && routeKey === 'package') ||
   (k === 'contact' && routeKey === 'thanks');
+const langLabel = lang === 'de' ? 'Sprache' : 'Lingua';
 ---
 <header class="site-header">
-  <div class="wrap bar">
-    <Wordmark lang={lang} theme="light" />
+  <div class="wrap-wide bar">
+    <a class="brand" href={path('home', lang)} aria-label={lang === 'de' ? 'Studio Breve – Startseite' : 'Studio Breve – home'}>
+      <picture>
+        <source type="image/webp" srcset="/logo-studio-breve-gold-240.webp 240w, /logo-studio-breve-gold-480.webp 480w, /logo-studio-breve-gold-720.webp 720w" sizes="(max-width: 40rem) 132px, 180px" />
+        <img src="/logo-studio-breve-gold-480.png" width="180" height="55" alt="Studio Breve" decoding="async" fetchpriority="high" />
+      </picture>
+    </a>
     <nav class="nav-desktop" aria-label={lang === 'de' ? 'Hauptnavigation' : 'Navigazione principale'}>
       <ul>
         {items.map((i) => (
           <li>
-            <a class:list={['nav-link', { on: isCurrent(i.key) }]} href={path(i.key, lang)} aria-current={isCurrent(i.key) ? 'page' : undefined}>{i.label}</a>
+            <a class:list={['nav-link', { on: isCurrent(i.key) }]} href={path(i.key, lang)} aria-current={isCurrent(i.key) ? 'page' : undefined}>
+              <Icon name={i.icon} size={19} />
+              <span>{i.label}</span>
+            </a>
           </li>
         ))}
       </ul>
     </nav>
-    <p class="visit-pill" data-visit-pill>
-      <svg class="eye" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 6.5 12 6.5 21.5 12 21.5 12 18 17.5 12 17.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.6"/></svg>
-      <span data-visit-phrase>{t.visitsSince}</span>
-    </p>
     <div class="tools">
-      <button type="button" class="icon-btn" data-open-search aria-controls="suche" aria-expanded="false" aria-label={t.search}>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg>
-      </button>
-      <div class="lang" role="group" aria-label={lang === 'de' ? 'Sprache' : 'Lingua'}>
-        <details>
-          <summary><span>{t.langShort}</span></summary>
-          <ul>
-            <li><span aria-current="true">{t.langName}</span></li>
-            {alternates.map((a) => (
-              <li><a href={a.href} hreflang={a.lang} lang={a.lang}>{ui[a.lang].langName}</a></li>
-            ))}
-          </ul>
-        </details>
+      <div class="lang-toggle" role="group" aria-label={langLabel}>
+        <span class="lt on" aria-current="true" lang={lang}>{t.langShort}</span>
+        {alternates.map((a) => (
+          <a class="lt" href={a.href} hreflang={a.lang} lang={a.lang} aria-label={switchToLabel(lang, a.lang)}>{ui[a.lang].langShort}</a>
+        ))}
       </div>
-      <a class="icon-btn cart" href={path('cart', lang)} aria-label={t.cartEmptyBadge}>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h2l2.2 11h9.6L20 8H7"/><circle cx="10" cy="19" r="1.3"/><circle cx="17" cy="19" r="1.3"/></svg>
+      <span class="divider" aria-hidden="true"></span>
+      <a class="cart" href={path('cart', lang)} aria-label={t.cartEmptyBadge}>
+        <Icon name="cart" size={30} stroke={1.7} />
         <span class="badge" aria-hidden="true">0</span>
       </a>
       <details class="nav-mobile">
-        <summary><span class="sum-open">{t.menu}</span><span class="sum-close">{t.close}</span></summary>
+        <summary aria-label={t.menu}>
+          <span class="sum-open"><Icon name="menu" size={22} /></span>
+          <span class="sum-close" aria-hidden="true">✕</span>
+          <span class="visually-hidden">{t.menu}</span>
+        </summary>
         <div class="sheet">
           <ul>
             {items.map((i) => (
-              <li><a href={path(i.key, lang)} aria-current={isCurrent(i.key) ? 'page' : undefined}>{i.label}</a></li>
+              <li>
+                <a href={path(i.key, lang)} aria-current={isCurrent(i.key) ? 'page' : undefined}>
+                  <Icon name={i.icon} size={20} />
+                  {i.label}
+                </a>
+              </li>
             ))}
+            <li>
+              <a href={path('app', lang)}>
+                <Icon name="phone" size={20} />
+                {t.installApp}
+              </a>
+            </li>
           </ul>
-          {alternates.map((a) => (
-            <a class="lang-m" href={a.href} hreflang={a.lang} lang={a.lang} aria-label={switchToLabel(lang, a.lang)}>{ui[a.lang].langName}</a>
-          ))}
+          <div class="sheet-lang" role="group" aria-label={langLabel}>
+            <span class="lt on" aria-current="true" lang={lang}>{t.langShort}</span>
+            {alternates.map((a) => (
+              <a class="lt" href={a.href} hreflang={a.lang} lang={a.lang} aria-label={switchToLabel(lang, a.lang)}>{ui[a.lang].langName}</a>
+            ))}
+          </div>
         </div>
       </details>
     </div>
   </div>
 </header>
 <style>
-  .site-header { position: sticky; top: 0; z-index: 30; background: #fff; color: var(--ink); border-bottom: 1px solid #E6E8E4; }
-  .bar { display: flex; align-items: center; gap: 1rem; min-height: 4.4rem; }
+  .site-header {
+    position: sticky; top: 0; z-index: 30; color: #fff;
+    background: linear-gradient(180deg, #0d3734 0%, #0a2d2b 100%);
+    border-bottom: 1px solid rgba(126, 217, 192, 0.14);
+  }
+  .bar { display: flex; align-items: center; gap: 1.25rem; min-height: 4.6rem; padding-block: 0.55rem; }
+  .brand { display: block; flex: none; line-height: 0; border-radius: 6px; }
+  .brand img { width: 180px; height: auto; }
+  .brand:focus-visible { box-shadow: 0 0 0 3px var(--gold); }
   .nav-desktop { display: none; flex: 1; justify-content: center; }
-  .nav-desktop ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.15rem 1.5rem; list-style: none; margin: 0; padding: 0; }
-  .nav-link { text-decoration: none; color: var(--ink-2); font-weight: 600; font-size: 0.95rem; padding: 0.35rem 0; border-bottom: 2px solid transparent; }
-  .nav-link:hover { color: var(--forest); }
-  .nav-link.on, .nav-link[aria-current='page'] { color: var(--forest); border-bottom-color: var(--forest); }
-  .tools { display: flex; align-items: center; gap: 0.35rem; }
-  .visit-pill { display: inline-flex; align-items: center; gap: 0.4rem; margin: 0 0 0 auto; padding: 0.35rem 0.7rem; border-radius: 999px; background: #E7F0EC; color: var(--forest); font-weight: 650; font-size: 0.8rem; line-height: 1.2; letter-spacing: 0; font-variant-numeric: tabular-nums; white-space: nowrap; max-width: 16rem; min-width: 0; }
-  .visit-pill .eye { flex-shrink: 0; }
-  .visit-pill [data-visit-phrase] { overflow: hidden; text-overflow: ellipsis; }
-  .icon-btn { appearance: none; background: none; border: 0; color: var(--ink); width: 2.5rem; height: 2.5rem; display: inline-grid; place-items: center; cursor: pointer; border-radius: 999px; text-decoration: none; position: relative; }
-  .icon-btn:hover { color: var(--forest); background: #F2F5F3; }
-  .cart .badge { position: absolute; top: 0.2rem; right: 0.15rem; min-width: 1.05rem; height: 1.05rem; padding: 0 0.22rem; border-radius: 999px; background: var(--forest); color: #fff; font-size: 0.65rem; font-weight: 700; display: grid; place-items: center; }
-  .lang details { position: relative; }
-  .lang summary { list-style: none; cursor: pointer; font-weight: 700; font-size: 0.8rem; letter-spacing: .04em; padding: 0.4rem 0.75rem; border: 1px solid #D5DAD6; border-radius: 999px; }
-  .lang summary::-webkit-details-marker { display: none; }
-  .lang summary span::after { content: ' ▾'; font-weight: 500; }
-  .lang ul { position: absolute; right: 0; top: calc(100% + 0.4rem); background: #fff; border: 1px solid #E6E8E4; border-radius: 10px; list-style: none; margin: 0; padding: .4rem; min-width: 10rem; box-shadow: 0 8px 24px rgba(15,59,51,.08); }
-  .lang li { margin: 0; }
-  .lang a, .lang li span { display: block; padding: .45rem .7rem; border-radius: 8px; text-decoration: none; color: var(--ink); font-weight: 600; }
-  .lang a:hover { background: #F2F5F3; }
-  .lang [aria-current='true'] { color: var(--forest); }
-  .nav-mobile summary { list-style: none; cursor: pointer; font-weight: 600; padding: 0.45rem 0.85rem; border: 1px solid #D5DAD6; border-radius: 999px; font-size: var(--step--1); }
+  .nav-desktop ul { display: flex; align-items: center; gap: 0.35rem; list-style: none; margin: 0; padding: 0; }
+  .nav-link {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    padding: 0.62rem 1.05rem; border-radius: 999px;
+    color: #fff; text-decoration: none; font: 640 0.98rem/1 var(--geo); letter-spacing: 0;
+    transition: background-color .18s ease, color .18s ease;
+  }
+  .nav-link :global(.ico) { opacity: 0.92; flex: none; }
+  .nav-link:hover { background: rgba(255, 255, 255, 0.07); color: #fff; }
+  .nav-link.on, .nav-link[aria-current='page'] { background: #1b6a5c; color: #fff; box-shadow: 0 0 0 1px rgba(126,217,192,.18) inset; }
+  .nav-link:focus-visible { box-shadow: 0 0 0 2px #0a2d2b, 0 0 0 4px var(--gold); }
+  .tools { display: flex; align-items: center; gap: 1.1rem; margin-left: auto; }
+  .lang-toggle { display: inline-flex; align-items: center; padding: 3px; border: 1px solid rgba(255, 255, 255, 0.32); border-radius: 999px; }
+  .lt { display: inline-grid; place-items: center; min-width: 3.3rem; height: 2.3rem; padding: 0 0.9rem; border-radius: 999px; font: 700 0.92rem/1 var(--geo); letter-spacing: 0.04em; color: #fff; text-decoration: none; }
+  .lt.on { background: linear-gradient(180deg, #f6cf7c, #e9b55a); color: #1d1606; box-shadow: 0 2px 8px rgba(233,181,90,.25); }
+  a.lt:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+  a.lt:focus-visible { box-shadow: 0 0 0 2px var(--gold); }
+  .divider { width: 1px; height: 2.4rem; background: rgba(255, 255, 255, 0.24); }
+  .cart { position: relative; display: inline-grid; place-items: center; width: 3rem; height: 3rem; color: #fff; border-radius: 999px; }
+  .cart:hover { color: #fff; background: rgba(255, 255, 255, 0.07); }
+  .cart .badge {
+    position: absolute; top: -0.15rem; right: -0.2rem; min-width: 1.45rem; height: 1.45rem; padding: 0 0.3rem;
+    border-radius: 999px; background: linear-gradient(180deg, #f6cf7c, #e9b55a); color: #1d1606;
+    font: 700 0.74rem/1 var(--geo); display: grid; place-items: center; box-shadow: 0 0 0 2px #0b302e;
+  }
+  .nav-mobile { position: static; }
+  .nav-mobile summary { list-style: none; cursor: pointer; display: grid; place-items: center; width: 2.9rem; height: 2.9rem; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.32); color: #fff; font-size: 1.1rem; }
   .nav-mobile summary::-webkit-details-marker { display: none; }
   .nav-mobile .sum-close { display: none; }
   .nav-mobile[open] .sum-open { display: none; }
   .nav-mobile[open] .sum-close { display: inline; }
-  .sheet { position: absolute; left: 0; right: 0; top: 100%; background: #fff; border-bottom: 1px solid #E6E8E4; padding: 1rem 1.25rem 1.5rem; }
+  .sheet { position: absolute; left: 0; right: 0; top: 100%; background: #0a2d2b; border-bottom: 1px solid rgba(126, 217, 192, 0.18); padding: 0.6rem 1.25rem 1.4rem; box-shadow: 0 18px 40px rgba(0,0,0,.28); }
   .sheet ul { list-style: none; margin: 0; padding: 0; }
-  .sheet li a { display: block; padding: 0.8rem 0; border-bottom: 1px solid #E6E8E4; text-decoration: none; font-family: var(--geo); font-size: var(--step-2); color: var(--ink); }
-  .sheet a[aria-current='page'] { color: var(--forest); }
-  .lang-m { display: inline-block; margin-top: 1rem; font-weight: 600; color: var(--forest); }
-  @media (max-width: 63.99rem) {
-    .bar { flex-wrap: wrap; }
-    .tools { margin-left: auto; }
-    .visit-pill { flex: 1 0 100%; order: 5; justify-content: center; max-width: none; margin: 0 0 0.55rem; }
+  .sheet li a { display: flex; align-items: center; gap: 0.8rem; padding: 0.95rem 0.2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none; font: 600 1.12rem/1.2 var(--geo); color: #fff; }
+  .sheet a[aria-current='page'] { color: #f6cf7c; }
+  @media (max-width: 40rem) {
+    .brand img { width: 132px; }
+    .bar { gap: 0.6rem; min-height: 4rem; }
+    .tools { gap: 0.55rem; }
+    .divider { display: none; }
+    .lt { min-width: 2.5rem; height: 2.05rem; padding: 0 0.6rem; font-size: 0.82rem; }
+    .cart { width: 2.6rem; height: 2.6rem; }
+    .cart :global(.ico) { width: 25px; height: 25px; }
   }
-  @media (min-width: 64rem) {
+  .sheet-lang { display: none; gap: 0.5rem; margin-top: 1rem; }
+  .sheet-lang .lt { border: 1px solid rgba(255,255,255,.3); }
+  @media (max-width: 26rem) {
+    .tools > .lang-toggle { display: none; }
+    .sheet-lang { display: flex; }
+  }
+  @media (min-width: 78rem) {
     .nav-desktop { display: flex; }
     .nav-mobile { display: none; }
+  }
+  @media (min-width: 78rem) and (max-width: 90rem) {
+    .brand img { width: 160px; }
+    .nav-link { padding-inline: 0.75rem; gap: 0.45rem; font-size: 0.93rem; }
+    .bar { gap: 0.9rem; }
+    .tools { gap: 0.8rem; }
   }
 </style>

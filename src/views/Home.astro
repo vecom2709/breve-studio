@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
 import {
   catalogStats,
   packagesSorted,
@@ -8,6 +9,7 @@ import {
   type PackageStatus,
 } from '../content/packages';
 import { testimonials } from '../content/testimonials';
+import { homeHero, statusPanel, trustBar, solutionsHead, solutionCards, appTeaser } from '../content/home';
 import { path, ui, formatPrice, locales } from '../lib/i18n';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
@@ -16,88 +18,147 @@ const de = lang === 'de';
 const stats = catalogStats();
 const all = packagesSorted();
 const voice = testimonials[0];
+const hero = homeHero[lang];
+const panel = statusPanel[lang];
+const sol = solutionsHead[lang];
+const app = appTeaser[lang];
 const actionLabel = (status: PackageStatus) => (status === 'inquiry' ? t.inquire : t.reserve);
 const actionHref = (slug: string) => `${path('package', lang, slug)}#formular`;
+const panelRows = [
+  { icon: 'layers', value: stats.total, label: panel.total },
+  { icon: 'cog', value: stats.servicesInquiry, label: panel.services },
+  { icon: 'flask', value: stats.productsWaitlist, label: panel.products },
+  { icon: 'calendar', value: stats.planned, label: panel.planned },
+] as const;
+const heroImg = `/images/home/hero-${lang}`;
 ---
 <Base lang={lang} routeKey="home">
-  <section class="hero">
-    <div class="wrap hero-grid">
+  <section class="hero" aria-labelledby="hero-h">
+    <picture class="hero-bg">
+      <source media="(max-width: 59.99rem)" type="image/avif" srcset={`${heroImg}-mobil.avif`} />
+      <source media="(max-width: 59.99rem)" type="image/webp" srcset={`${heroImg}-mobil.webp`} />
+      <source type="image/avif" srcset={`${heroImg}-1600.avif 1600w, ${heroImg}-2560.avif 2560w, ${heroImg}-3600.avif 3600w`} sizes="100vw" />
+      <source type="image/webp" srcset={`${heroImg}-1600.webp 1600w, ${heroImg}-2560.webp 2560w, ${heroImg}-3600.webp 3600w`} sizes="100vw" />
+      <img
+        src={`${heroImg}-2560.jpg`}
+        width="2560"
+        height="693"
+        alt={de
+          ? 'Arbeitsplatz am Abend: Laptop mit der Studio-Breve-Startseite, daneben eine Tasse mit dem goldenen Vecom-V, Schreibtischlampe und Pflanzen'
+          : 'Postazione di lavoro la sera: portatile con la home di Studio Breve, accanto una tazza con la V dorata di Vecom, lampada e piante'}
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="wrap-wide hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">{t.taglineSmall}</p>
-        <h1>
-          {de
-            ? <>Klare digitale Pakete für Betriebe – <em class="accent">ohne Ballast.</em></>
-            : <>Pacchetti digitali chiari per la tua attività – <em class="accent">senza zavorra.</em></>}
-        </h1>
-        <p class="lead">{t.home.lead}</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href={path('products', lang)}>{t.discoverProducts} <span class="arrow" aria-hidden="true">→</span></a>
-          <a class="btn btn-outline" href={path('packages', lang)}>{t.seeShowcase}</a>
+        <p class="hero-eyebrow">{hero.eyebrow}</p>
+        <h1 id="hero-h">{hero.h1a.map((z) => <span class="h1-z">{z} </span>)}<em class="h1-z">{hero.h1b}</em></h1>
+        <p class="hero-lead">{t.home.lead}</p>
+        <div class="hero-cta">
+          <a class="hbtn hbtn-gold" href={path('packages', lang)}>
+            <Icon name="cart" size={22} />
+            <span>{hero.ctaPrimary}</span>
+            <Icon name="arrow" size={20} class="arrow" />
+          </a>
+          <a class="hbtn hbtn-line" href={path('contact', lang)}>
+            <Icon name="chat" size={21} />
+            <span>{hero.ctaSecondary}</span>
+          </a>
         </div>
       </div>
-      <div class="hero-stage">
-        <figure class="hero-still">
-          <picture>
-            <source type="image/webp" srcset="/images/home/hero-light.webp" />
-            <img src="/images/home/hero-light.jpg" width="1280" height="720" alt="" decoding="async" />
-          </picture>
-        </figure>
-        <div class="hero-devices">
-          <div class="laptop">
-            <div class="lid">
-              <div class="bezel">
-                <span class="cam" aria-hidden="true"></span>
-                <div class="screen">
-                  <img
-                    class="live-scroll"
-                    src={de ? '/images/home/live-desktop-de.webp' : '/images/home/live-desktop-it.webp'}
-                    width="1440"
-                    height={de ? 4254 : 4387}
-                    alt={de ? 'Die deutsche Startseite, langsam von oben nach unten rollend' : 'La pagina iniziale in italiano, che scorre lentamente'}
-                    decoding="async"
-                    fetchpriority="high"
-                  />
-                </div>
+      <aside class="status-panel" aria-labelledby="status-h">
+        <p class="sp-title" id="status-h"><span class="sp-bars"><Icon name="bars" size={22} stroke={3.2} /></span>{panel.title}</p>
+        <ul class="sp-list">
+          {panelRows.map((r) => (
+            <li>
+              <Icon name={r.icon} size={26} stroke={1.9} />
+              <span class="sp-num">{r.value}</span>
+              <span class="sp-lab">{r.label}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="sp-note"><Icon name="info" size={24} stroke={1.7} /><span>{panel.note}</span></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="trustbar" aria-label={de ? 'Grundsätze' : 'Principi'}>
+    <ul class="wrap-wide tb-grid">
+      {trustBar[lang].map((item) => (
+        <li class="tb-item">
+          <Icon name={item.icon} size={40} stroke={1.7} />
+          <span class="tb-text"><strong>{item.title}</strong><span>{item.text}</span></span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="solutions" aria-labelledby="sol-h">
+    <div class="wrap-wide">
+      <header class="sol-head">
+        <p class="sol-eyebrow">{sol.eyebrow}</p>
+        <h2 id="sol-h">{sol.title}</h2>
+        <p class="sol-lead">{sol.lead}</p>
+      </header>
+      <div class="sol-grid">
+        {solutionCards.map((c) => {
+          const tx = c.text[lang];
+          const href = c.route === 'package' ? path('package', lang, c.slug) : path(c.route, lang);
+          return (
+            <article class="sol-card">
+              <div class="sol-top">
+                <a class="sol-media" href={href} tabindex="-1" aria-hidden="true">
+                  <picture>
+                    <source type="image/avif" srcset={`${c.image}.avif`} />
+                    <source type="image/webp" srcset={`${c.image}.webp`} />
+                    <img src={`${c.image}.jpg`} width="960" height="536" alt="" loading="lazy" decoding="async" />
+                  </picture>
+                </a>
+                <span class="sol-icon"><Icon name={c.icon} size={30} stroke={1.9} /></span>
               </div>
-            </div>
-            <div class="base"><span class="hinge" aria-hidden="true"></span></div>
-          </div>
-          <div class="phone-col">
-            <div class="phone">
-              <span class="notch" aria-hidden="true"></span>
-              <div class="screen">
-                <img
-                  class="live-scroll"
-                  src={de ? '/images/home/live-mobile-de.webp' : '/images/home/live-mobile-it.webp'}
-                  width="390"
-                  height={de ? 8670 : 8727}
-                  alt={de ? 'Die Startseite auf dem Handy, langsam rollend' : 'La pagina iniziale sul telefono, che scorre lentamente'}
-                  decoding="async"
-                />
+              <div class="sol-body">
+                <h3><a href={href}>{tx.title}</a></h3>
+                <p>{tx.body}</p>
+                <a class="sol-btn" href={href} aria-label={`${tx.cta}: ${tx.title}`}>{tx.cta} <Icon name="arrow" size={18} stroke={2} class="arrow" /></a>
               </div>
-            </div>
-            <a class="app-cta" href={path('app', lang)}>{t.installApp}</a>
-          </div>
-        </div>
+            </article>
+          );
+        })}
       </div>
     </div>
   </section>
 
-  <section class="trust" aria-label={de ? 'Grundsätze' : 'Principi'}>
-    <div class="wrap trust-grid">
-      {t.trustHome.map((item) => (
-        <div class="trust-item">
-          <p class="tt">{item.title}</p>
-          <p class="tx">{item.text}</p>
-        </div>
-      ))}
+  <section class="app-teaser" aria-labelledby="app-h">
+    <div class="wrap-wide app-grid">
+      <figure class="app-phone">
+        <picture>
+          <source type="image/avif" srcset={`/images/home/app-handy-${lang}.avif`} />
+          <source type="image/webp" srcset={`/images/home/app-handy-${lang}.webp`} />
+          <img src={`/images/home/app-handy-${lang}.png`} width="1100" height="1300" alt={app.alt} loading="lazy" decoding="async" />
+        </picture>
+      </figure>
+      <div class="app-copy">
+        <p class="app-eyebrow"><Icon name="phone" size={18} />{app.eyebrow}</p>
+        <h2 id="app-h">{app.title}</h2>
+        <p class="app-body">{app.body}</p>
+        <ul class="app-points">
+          {app.points.map((p) => <li><Icon name="check" size={18} stroke={2.4} />{p}</li>)}
+        </ul>
+        <a class="hbtn hbtn-gold" href={path('app', lang)}>
+          <Icon name="download" size={21} />
+          <span>{app.cta}</span>
+          <Icon name="arrow" size={20} class="arrow" />
+        </a>
+      </div>
     </div>
   </section>
 
   <section class="shop" aria-labelledby="shop-h" data-shop>
     <div class="wrap">
       <div class="sec-head">
-        <h2 id="shop-h">{t.productsHeading}</h2>
+        <h2 id="shop-h">{de ? 'Alle Pakete im Überblick' : 'Tutti i pacchetti in sintesi'}</h2>
         <p class="muted">{t.productsLead}</p>
       </div>
       <div class="chips" role="group" aria-label={t.filterLabel}>
@@ -200,64 +261,169 @@ const actionHref = (slug: string) => `${path('package', lang, slug)}#formular`;
 </script>
 
 <style>
-  .hero { padding-block: clamp(2rem, 4vw, 4.5rem); background: #fff; }
-  .hero-grid { display: grid; gap: 2rem; align-items: center; }
-  @media (min-width: 60rem) { .hero-grid { grid-template-columns: 1fr 1.2fr; gap: 2.5rem; align-items: center; } }
-  .hero h1 { font-size: clamp(2.15rem, 1.2rem + 3.2vw, 3.8rem); max-width: 16ch; color: var(--ink); }
-  .hero .lead { margin-top: 1.2rem; color: var(--ink-2); }
-  .cta-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
-  .hero-stage { position: relative; margin: 0; }
-  .hero-still { display: none; margin: 0; }
-  .hero-still img { width: 100%; height: auto; border-radius: 18px; }
-  :global(html[data-capture]) .hero-still,
-  :global(html[data-aufnahme]) .hero-still { display: block; }
-  :global(html[data-capture]) .hero-devices,
-  :global(html[data-aufnahme]) .hero-devices { display: none !important; }
-  .hero-devices { position: relative; min-height: 18rem; display: flex; align-items: flex-end; gap: 0.9rem; }
-  .laptop { flex: 1 1 auto; min-width: 0; width: auto; }
-  .laptop .lid { background: linear-gradient(180deg, #d8ddd9, #b9c1bc); border-radius: 12px 12px 4px 4px; padding: 0.55rem 0.55rem 0.4rem; box-shadow: 0 18px 40px rgba(20, 34, 31, 0.16); }
-  .laptop .bezel { background: #111; border-radius: 8px; padding: 0.7rem 0.45rem 0.45rem; position: relative; }
-  .laptop .cam { position: absolute; top: 0.28rem; left: 50%; width: 0.35rem; height: 0.35rem; border-radius: 50%; background: #3a3a3a; transform: translateX(-50%); }
-  .laptop .screen { overflow: hidden; height: clamp(13rem, 30vw, 22rem); border-radius: 2px; background: #F7F8F6; }
-  .laptop .base { height: 0.85rem; background: linear-gradient(180deg, #cfd5d1, #aeb6b1); border-radius: 0 0 10px 10px; margin: 0 -3%; position: relative; }
-  .laptop .hinge { position: absolute; left: 50%; top: -0.15rem; width: 18%; height: 0.35rem; background: #9aa29d; border-radius: 2px; transform: translateX(-50%); }
-  .phone-col { flex: 0 0 auto; width: min(8.8rem, 27%); display: grid; justify-items: center; gap: 0.65rem; }
-  .phone { width: 100%; background: #1a1d1c; border-radius: 1.35rem; padding: 0.55rem 0.32rem; box-shadow: 0 16px 32px rgba(20, 34, 31, 0.22); }
-  .phone .notch { display: block; width: 38%; height: 0.42rem; margin: 0 auto 0.28rem; background: #0b0d0c; border-radius: 999px; }
-  .phone .screen { overflow: hidden; height: clamp(14rem, 32vw, 20rem); border-radius: 0.7rem; background: #F7F8F6; }
-  .live-scroll { display: block; width: 100%; height: auto; transform: translateY(0); animation: live-pan 48s ease-in-out infinite alternate; animation-play-state: running; }
-  .laptop .screen:hover .live-scroll,
-  .phone .screen:hover .live-scroll,
-  .laptop .screen:focus-within .live-scroll,
-  .phone .screen:focus-within .live-scroll { animation-play-state: paused; }
-  @keyframes live-pan {
-    0%, 8% { transform: translateY(0); }
-    92%, 100% { transform: translateY(-80%); }
+  /* ---------- Hero ---------- */
+  .hero { position: relative; isolation: isolate; overflow: hidden; color: #fff; background: #0a2624; }
+  .hero-bg, .hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero-bg img { object-fit: cover; object-position: 42% 46%; }
+  .hero-shade {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      linear-gradient(90deg, rgba(7, 30, 29, 0.6) 0%, rgba(7, 30, 29, 0.38) 26%, rgba(7, 30, 29, 0) 42%),
+      linear-gradient(180deg, rgba(5, 22, 21, 0.18) 0%, rgba(5, 22, 21, 0) 30%, rgba(5, 22, 21, 0) 80%, rgba(5, 22, 21, 0.25) 100%);
   }
-  @supports (height: 1cqh) {
-    @keyframes live-pan {
-      0%, 8% { transform: translateY(0); }
-      92%, 100% { transform: translateY(calc(-100% + 100cqh)); }
-    }
+  .hero-grid {
+    position: relative; z-index: 1; display: grid; align-items: center;
+    grid-template-columns: minmax(0, 37rem) minmax(0, 1fr) minmax(19rem, 23.5rem);
+    min-height: clamp(25rem, 25vw, 32rem); padding-block: clamp(1.3rem, 1.9vw, 2.2rem);
   }
-  .laptop .screen, .phone .screen { container-type: size; }
-  @media (prefers-reduced-motion: reduce) {
-    .live-scroll { animation: none; transform: translateY(0); }
+  .hero-copy { grid-column: 1; }
+  .status-panel { grid-column: 3; }
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 1rem; margin: 0 0 0.9rem;
+    font: 700 0.86rem/1 var(--geo); letter-spacing: 0.16em; text-transform: uppercase; color: #fff;
   }
-  .app-cta { font-weight: 700; font-size: 0.82rem; color: var(--forest); text-decoration: none; text-align: center; background: #E7F0EC; border-radius: 999px; padding: 0.45rem 0.7rem; line-height: 1.2; }
-  .app-cta:hover { background: #d5e6df; }
+  .hero-eyebrow::after { content: ''; width: 5.8rem; height: 2px; background: #3ed3a8; border-radius: 2px; }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 520; font-optical-sizing: auto;
+    font-size: clamp(2.45rem, 0.9rem + 3.05vw, 3.85rem); line-height: 1.04; letter-spacing: -0.022em;
+    color: #fff; max-width: 17ch; text-wrap: balance; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
+  }
+  @media (min-width: 60rem) { .h1-z { display: block; } }
+  .hero h1 em { font-style: italic; font-weight: 520; color: #3ed3a8; letter-spacing: -0.02em; }
+  .hero-lead { margin-top: 1rem; max-width: 34rem; font-size: clamp(1.02rem, 0.9rem + 0.3vw, 1.18rem); line-height: 1.48; color: rgba(255, 255, 255, 0.94); }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 1.1rem; margin-top: 1.25rem; }
+  .hbtn {
+    display: inline-flex; align-items: center; gap: 0.7rem; min-height: 3.15rem; padding: 0.75rem 1.45rem;
+    border-radius: 0.55rem; font: 700 1.06rem/1.1 var(--geo); text-decoration: none; letter-spacing: 0;
+    transition: transform .18s cubic-bezier(.16,1,.3,1), box-shadow .18s ease, background-color .18s ease;
+  }
+  .hbtn :global(.arrow) { transition: transform .18s cubic-bezier(.16,1,.3,1); }
+  .hbtn:hover :global(.arrow) { transform: translateX(3px); }
+  .hbtn-gold { background: linear-gradient(180deg, #f8d58b 0%, #ecb85d 100%); color: #1b1405; box-shadow: 0 8px 22px rgba(236, 184, 93, 0.22), 0 1px 0 rgba(255,255,255,.55) inset; }
+  .hbtn-gold:hover { color: #1b1405; transform: translateY(-1px); box-shadow: 0 12px 28px rgba(236, 184, 93, 0.3), 0 1px 0 rgba(255,255,255,.55) inset; }
+  .hbtn-line { color: #fff; border: 1.5px solid rgba(255, 255, 255, 0.85); background: rgba(6, 26, 25, 0.25); }
+  .hbtn-line:hover { color: #fff; background: rgba(255, 255, 255, 0.1); }
+  .hbtn:focus-visible { box-shadow: 0 0 0 3px #0a2624, 0 0 0 5px #f8d58b; }
+
+  .status-panel {
+    justify-self: end; width: 100%; padding: 1.15rem 1.5rem 1.05rem;
+    border: 1px solid rgba(62, 211, 168, 0.55); border-radius: 0.9rem;
+    background: linear-gradient(180deg, rgba(9, 44, 42, 0.86), rgba(7, 34, 33, 0.9));
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255,255,255,.03) inset;
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  }
+  .sp-title { display: flex; align-items: center; gap: 1.1rem; margin: 0 0 0.35rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,.16); font: 700 0.98rem/1 var(--geo); letter-spacing: 0.14em; text-transform: uppercase; }
+  .sp-bars { color: #3ed3a8; display: inline-grid; }
+  .sp-list { list-style: none; margin: 0; padding: 0; }
+  .sp-list li { display: grid; grid-template-columns: 1.7rem 2.6rem 1fr; align-items: center; gap: 0.75rem; min-height: 3.15rem; padding-block: 0.3rem; border-bottom: 1px solid rgba(255,255,255,.14); }
+  .sp-list li :global(.ico) { color: #fff; }
+  .sp-num { font: 600 2.05rem/1 var(--geo); color: #3ed3a8; text-align: left; font-variant-numeric: tabular-nums; }
+  .sp-lab { font: 500 1rem/1.25 var(--geo); color: #fff; }
+  .sp-note { display: grid; grid-template-columns: 1.7rem 1fr; gap: 0.75rem; align-items: center; margin-top: 0.85rem; font-size: 0.86rem; line-height: 1.45; color: rgba(255, 255, 255, 0.9); }
+
+  @media (max-width: 77.99rem) {
+    .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(17.5rem, 21rem); column-gap: 2rem; }
+    .status-panel { grid-column: 2; }
+    .hero-shade { background: linear-gradient(90deg, rgba(7,30,29,.84) 0%, rgba(7,30,29,.62) 45%, rgba(7,30,29,.25) 70%, rgba(7,30,29,.45) 100%); }
+  }
   @media (max-width: 59.99rem) {
-    .hero-devices { flex-direction: column; align-items: center; }
-    .laptop { width: 100%; }
-    .phone-col { width: min(11rem, 46%); }
+    .hero { display: flex; flex-direction: column; }
+    .hero-bg { position: relative; inset: auto; order: 2; aspect-ratio: 5 / 4; height: auto; }
+    .hero-bg img { position: absolute; }
+    .hero-shade { display: none; }
+    .hero-grid { display: contents; }
+    .hero-copy { order: 1; padding: 2rem 1.25rem 1.6rem; background: linear-gradient(180deg, #0b302e, #0a2826); }
+    .status-panel { order: 3; margin: -2.8rem 1.25rem 1.6rem; width: auto; position: relative; z-index: 2; justify-self: stretch; }
+    .hero h1 { max-width: 18ch; }
   }
-  .trust { background: #fff; border-block: 1px solid #E6E8E4; padding-block: 1.35rem; }
-  .trust-grid { display: grid; gap: 1rem 1.5rem; }
-  @media (min-width: 48rem) { .trust-grid { grid-template-columns: repeat(4, 1fr); } }
-  .tt { font-family: var(--geo); font-weight: 680; color: var(--forest); }
-  .tx { font-size: var(--step--1); color: var(--ink-2); }
-  .shop { padding-block: var(--space-xl); }
+
+  /* ---------- Vorteilsleiste ---------- */
+  .trustbar { background: #f6efe4; border-bottom: 1px solid #ebe1d0; }
+  .tb-grid { list-style: none; margin-block: 0; padding: 1.15rem 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .tb-item { display: flex; align-items: center; justify-content: center; gap: 1.1rem; padding: 0.35rem 1.2rem; }
+  .tb-item + .tb-item { border-left: 1px solid #ddd2bf; }
+  .tb-item :global(.ico) { color: #1a7a68; flex: none; }
+  .tb-text { display: grid; gap: 0.2rem; line-height: 1.25; }
+  .tb-text strong { font: 700 1.05rem/1.25 var(--geo); color: #14241f; letter-spacing: -0.005em; }
+  .tb-text span { font-size: 0.95rem; color: #33433e; }
+  @media (max-width: 69.99rem) {
+    .tb-grid { grid-template-columns: repeat(2, 1fr); row-gap: 0.4rem; }
+    .tb-item { justify-content: flex-start; }
+    .tb-item:nth-child(3) { border-left: 0; }
+  }
+  @media (max-width: 36rem) {
+    .tb-grid { grid-template-columns: 1fr; padding-block: 0.6rem; }
+    .tb-item { border-left: 0 !important; padding: 0.7rem 0.2rem; }
+    .tb-item + .tb-item { border-top: 1px solid #e3d8c6; }
+    .tb-item :global(.ico) { width: 34px; height: 34px; }
+  }
+
+  /* ---------- Lösungen ---------- */
+  .solutions { background: #fbf8f2; padding-block: clamp(2rem, 2.6vw, 2.75rem) clamp(3rem, 4vw, 4.5rem); }
+  .sol-head { text-align: center; max-width: 46rem; margin: 0 auto clamp(1.3rem, 1.6vw, 1.7rem); display: grid; gap: 0.55rem; }
+  .sol-eyebrow { display: flex; align-items: center; justify-content: center; gap: 1.1rem; font: 700 0.84rem/1 var(--geo); letter-spacing: 0.18em; text-transform: uppercase; color: #1a6b5c; }
+  .sol-eyebrow::before, .sol-eyebrow::after { content: ''; width: 2.6rem; height: 2px; background: #1a7a68; border-radius: 2px; }
+  .sol-head h2 { font-family: var(--serif); font-weight: 540; font-size: clamp(1.9rem, 1.2rem + 1.9vw, 2.6rem); letter-spacing: -0.02em; color: #12211d; line-height: 1.1; }
+  .sol-lead { font-size: clamp(1rem, 0.94rem + 0.2vw, 1.1rem); color: #2f3f3a; }
+  .sol-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem, 1.6vw, 1.6rem); }
+  .sol-card {
+    position: relative; display: flex; flex-direction: column; background: #fff; border-radius: 1rem; overflow: hidden;
+    box-shadow: 0 1px 0 rgba(20, 40, 35, 0.04), 0 10px 30px rgba(20, 40, 35, 0.09);
+    transition: transform .24s cubic-bezier(.16,1,.3,1), box-shadow .24s cubic-bezier(.16,1,.3,1);
+  }
+  .sol-card:hover { transform: translateY(-3px); box-shadow: 0 1px 0 rgba(20, 40, 35, 0.04), 0 18px 40px rgba(20, 40, 35, 0.14); }
+  .sol-media { display: block; aspect-ratio: 32 / 10; overflow: hidden; background: #0d3532; }
+  .sol-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .52s cubic-bezier(.16,1,.3,1); }
+  .sol-card:hover .sol-media img { transform: scale(1.04); }
+  .sol-top { position: relative; }
+  .sol-icon {
+    position: absolute; left: 1.4rem; bottom: -2.05rem; z-index: 1; width: 4.1rem; height: 4.1rem; display: grid; place-items: center;
+    border-radius: 0.95rem; background: linear-gradient(180deg, #146157, #0d4a42); color: #fff;
+    border: 4px solid #fff; box-shadow: 0 8px 18px rgba(13, 74, 66, 0.28);
+  }
+  .sol-body { display: grid; gap: 0.55rem; align-content: start; padding: 2.5rem 1.6rem 1.5rem; flex: 1; }
+  .sol-body h3 { font-family: var(--serif); font-weight: 560; font-size: clamp(1.45rem, 1.2rem + 0.6vw, 1.72rem); letter-spacing: -0.015em; line-height: 1.12; }
+  .sol-body h3 a { color: #12211d; text-decoration: none; }
+  .sol-body h3 a:hover { color: #0f4a43; }
+  .sol-body p { font-size: 0.97rem; line-height: 1.5; color: #33433e; }
+  .sol-btn {
+    justify-self: start; align-self: end; margin-top: 0.6rem; display: inline-flex; align-items: center; gap: 0.75rem;
+    min-height: 2.85rem; padding: 0.6rem 1.5rem; border-radius: 0.45rem; background: #0f4a43; color: #fff;
+    font: 700 1rem/1 var(--geo); text-decoration: none; transition: background-color .18s ease;
+  }
+  .sol-btn:hover { background: #0a3a34; color: #fff; }
+  .sol-btn:hover :global(.arrow) { transform: translateX(3px); }
+  .sol-btn :global(.arrow) { transition: transform .18s cubic-bezier(.16,1,.3,1); }
+  .sol-btn:focus-visible { box-shadow: 0 0 0 3px #fff, 0 0 0 5px #0f4a43; }
+  @media (max-width: 77.99rem) { .sol-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 40rem) {
+    .hero-eyebrow::after, .sol-eyebrow::before, .sol-eyebrow::after { display: none; }
+    .hero-eyebrow, .sol-eyebrow { letter-spacing: 0.12em; line-height: 1.35; }
+  }
+  @media (max-width: 40rem) { .sol-grid { grid-template-columns: 1fr; } .sol-body { padding-inline: 1.3rem; } }
+
+  /* ---------- App-Hinweis ---------- */
+  .app-teaser { position: relative; overflow: hidden; color: #fff; background: radial-gradient(120% 140% at 15% 50%, #145247 0%, #0c3532 45%, #082624 100%); }
+  .app-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: center; gap: clamp(1.5rem, 4vw, 4.5rem); padding-block: clamp(2.5rem, 4vw, 4rem); }
+  .app-phone { margin: 0; display: grid; place-items: center; }
+  .app-phone img { width: min(100%, 30rem); height: auto; filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.35)); }
+  .app-copy { display: grid; gap: 1rem; justify-items: start; max-width: 36rem; }
+  .app-eyebrow { display: inline-flex; align-items: center; gap: 0.55rem; font: 700 0.84rem/1 var(--geo); letter-spacing: 0.16em; text-transform: uppercase; color: #3ed3a8; }
+  .app-copy h2 { font-family: var(--serif); font-weight: 540; font-size: clamp(1.9rem, 1.2rem + 2vw, 2.8rem); line-height: 1.08; letter-spacing: -0.02em; color: #fff; }
+  .app-body { font-size: clamp(1.02rem, 0.95rem + 0.25vw, 1.15rem); line-height: 1.55; color: rgba(255,255,255,.9); }
+  .app-points { list-style: none; margin: 0.2rem 0 0.6rem; padding: 0; display: grid; gap: 0.55rem; }
+  .app-points li { display: flex; align-items: center; gap: 0.65rem; font: 600 1rem/1.3 var(--geo); }
+  .app-points :global(.ico) { color: #3ed3a8; flex: none; }
+  @media (max-width: 52rem) {
+    .app-grid { grid-template-columns: 1fr; }
+    .app-phone { order: 2; }
+    .app-phone img { width: min(100%, 22rem); }
+  }
+
+  /* ---------- Katalog (Bestand) ---------- */
+  .shop { padding-block: var(--space-xl); background: #fff; }
   .sec-head { text-align: center; max-width: 40rem; margin: 0 auto 1.5rem; display: grid; gap: .6rem; }
+  .sec-head h2 { font-family: var(--serif); font-weight: 540; letter-spacing: -0.02em; }
   .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: .45rem; margin-bottom: 1.6rem; }
   .chip { appearance: none; font: 600 var(--step--1)/1.2 var(--sans); color: var(--ink); background: #fff; border: 1px solid #D5DAD6; border-radius: 999px; padding: .5rem 1rem; min-height: 2.4rem; cursor: pointer; }
   .chip:hover { border-color: var(--forest); color: var(--forest); }
@@ -267,7 +433,6 @@ const actionHref = (slug: string) => `${path('package', lang, slug)}#formular`;
   @media (min-width: 72rem) { .cards { grid-template-columns: repeat(3, 1fr); } }
   .pcard { position: relative; background: #fff; border: 1px solid #E6E8E4; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
   .pcard .badge { position: absolute; top: .8rem; left: .8rem; z-index: 1; margin: 0; background: #fff; color: var(--forest); border: 1px solid #D5DAD6; border-radius: 999px; font-size: .72rem; font-weight: 700; letter-spacing: .02em; padding: .25rem .6rem; }
-  .pcard .badge[data-status='waitlist'] { color: var(--forest); }
   .pcard .badge[data-status='inquiry'] { background: var(--forest); color: #fff; border-color: var(--forest); }
   .pcard .badge[data-status='soon'] { color: #6B5530; border-color: #D3C4A4; }
   .media img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #EEF1EE; }
@@ -288,17 +453,23 @@ const actionHref = (slug: string) => `${path('package', lang, slug)}#formular`;
   @media (min-width: 48rem) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
   .num { font-family: var(--geo); font-size: clamp(1.8rem, 1.3rem + 1.5vw, 2.5rem); font-weight: 700; color: var(--forest); line-height: 1; }
   .lab { margin-top: .35rem; color: var(--ink-2); font-size: var(--step--1); }
-  .voice { padding-block: var(--space-xl); background: #fff; }
+  .voice { padding-block: var(--space-xl); background: #fbf8f2; }
   .voice-grid { display: grid; gap: 2rem; align-items: center; }
   @media (min-width: 58rem) { .voice-grid { grid-template-columns: 1.1fr .9fr; gap: 3rem; } }
   blockquote { margin: .8rem 0 1.2rem; }
-  blockquote p { font-family: var(--geo); font-size: var(--step-2); font-style: italic; font-weight: 500; letter-spacing: -0.02em; color: var(--ink); }
+  blockquote p { font-family: var(--serif); font-size: var(--step-2); font-style: italic; font-weight: 460; letter-spacing: -0.015em; color: var(--ink); }
   figcaption { display: flex; gap: .85rem; align-items: center; }
   .avatar { width: 3rem; height: 3rem; border-radius: 999px; background: var(--forest); color: #fff; display: grid; place-items: center; font-family: var(--geo); font-weight: 700; letter-spacing: .04em; }
   .who { display: grid; gap: .15rem; }
   .verified { display: inline-flex; align-items: center; gap: .3rem; color: var(--forest); font-weight: 650; font-size: var(--step--1); }
   .tr { display: block; font-size: var(--step--1); color: var(--muted); }
-  .cta-band { background: #F3F7F5; border-radius: 16px; padding: 1.5rem 1.4rem; display: grid; gap: .7rem; }
+  .cta-band { background: #fff; border-radius: 16px; padding: 1.5rem 1.4rem; display: grid; gap: .7rem; box-shadow: 0 10px 30px rgba(20,40,35,.07); }
   .cta-band h2 { font-size: var(--step-2); }
-  .cta-band .cta-row { margin-top: .4rem; }
+  .cta-band .cta-row { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: .4rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hbtn, .sol-card, .sol-media img, .hbtn :global(.arrow), .sol-btn :global(.arrow) { transition: none; }
+    .sol-card:hover { transform: none; }
+    .sol-card:hover .sol-media img { transform: none; }
+  }
 </style>
