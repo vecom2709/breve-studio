@@ -2,10 +2,10 @@
 
   website  – die echte Startseite scrollt auf dem Laptop-Bildschirm
   alarm    – die Glocke auf dem Bildschirm läutet (Pendel um den Aufhängepunkt), Leuchten pulsiert
-  produkt  – die Schachtel glüht im Atemrhythmus, Leiterbahnen pulsieren, sanfte Kamerafahrt
+  produkt  – Goldpaket aus Blender (pk_0001.png …) dreht sich um 90° und schwebt, dazu Lichtschein
   dienst   – Zahnräder aus Blender (Bildfolge zr_0001.png …), jedes Rad dreht genau eine Zahnteilung
 
-Aufruf: python3 tools/bilder/karten_animation.py <quellordner> <zielordner> [zahnrad-bildordner]
+Aufruf: python3 tools/bilder/karten_animation.py <quellordner> <zielordner> [zahnrad-bildordner] [paket-bildordner]
 Quellordner: karte-website.png, karte-alarm.png, karte-produkt.png, seite-voll-de.png
 """
 import os, subprocess, sys
@@ -58,14 +58,20 @@ def sanft(x):  # weich ein- und ausschwingen
 def website():
     basis = laden('karte-website.png')
     seite = laden('seite-voll-de.png')
-    ecken = np.float32([[684, 281], [1052, 282], [1033, 560], [664, 528]])
+    # Ecken der Anzeigefläche, an 4-fach vergrößerten Ausschnitten nachgemessen (links unten liegt die Kante bei x≈656)
+    ecken = np.float32([[683.5, 284.0], [1050.5, 282.5], [1031.5, 559.5], [655.5, 526.5]])
+    mitte_q = ecken.mean(0)
+    ecken = mitte_q + (ecken - mitte_q) * 1.006   # minimal größer: alter Bildschirminhalt darf nirgends durchblitzen
     H, W = basis.shape[:2]
     maske = np.zeros((H * 4, W * 4), np.uint8)
     cv2.fillPoly(maske, [np.int32(ecken * 4)], 255)
     maske = cv2.resize(maske, (W, H), interpolation=cv2.INTER_AREA)[..., None] / 255.0
     sw, sh = 1280, 800
     M = cv2.getPerspectiveTransform(np.float32([[0, 0], [sw, 0], [sw, sh], [0, sh]]), ecken)
-    tief = min(2700, seite.shape[0] - 900)
+    yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+    # dezenter Glanz von links oben (Fenster) statt des alten Bildes
+    glanz = (np.clip(1 - ((xx - 700) / 420 + (yy - 290) / 300) * 0.8, 0, 1) ** 2 * 14)[..., None]
+    tief = min(2400, seite.shape[0] - 800)
     n = FPS * 8
     for i in range(n):
         t = i / n * 8
@@ -75,9 +81,9 @@ def website():
         elif t < 7.6: y = (1 - sanft((t - 4.6) / 3.0)) * tief
         else: y = 0
         y0 = int(y)
-        fenster = cv2.resize(seite[y0:y0 + 900], (sw, sh), interpolation=cv2.INTER_AREA) * 0.94
+        fenster = cv2.resize(seite[y0:y0 + 800], (sw, sh), interpolation=cv2.INTER_AREA) * 0.95
         w = cv2.warpPerspective(fenster, M, (W, H), flags=cv2.INTER_LINEAR)
-        bild = basis * (1 - maske) + (w * 0.9 + basis * 0.1) * maske   # leichter Rest der Spiegelung bleibt
+        bild = basis * (1 - maske) + (w + glanz) * maske
         yield band(bild, 0.8)
 
 
@@ -87,16 +93,17 @@ def alarm():
     H, W = basis.shape[:2]
     r, g, b = basis[..., 0], basis[..., 1], basis[..., 2]
     gold = ((r > 150) & (g > 95) & (r > b + 70)).astype(np.uint8)
-    gold[:150] = 0; gold[600:] = 0; gold[:, :500] = 0; gold[:, 1100:] = 0
+    bereich = np.zeros_like(gold); bereich[300:445, 735:845] = 1   # Glocke auf dem Bildschirm, am Raster vermessen
+    gold = gold * bereich
     n_, lab, st, _ = cv2.connectedComponentsWithStats(gold)
     k = 1 + int(np.argmax(st[1:, cv2.CC_STAT_AREA]))
     x, y, w, h = st[k, :4]
     print('Glocke', x, y, w, h)
     kern = (lab == k).astype(np.uint8)
-    hof = cv2.dilate(kern, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (41, 41)))
+    hof = cv2.dilate(kern, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (31, 31)))
     weich = cv2.GaussianBlur(hof.astype(np.float32), (0, 0), 6)[..., None]
     grund = cv2.inpaint(np.clip(basis, 0, 255).astype(np.uint8), cv2.dilate(hof, np.ones((7, 7), np.uint8)) * 255, 9, cv2.INPAINT_TELEA).astype(np.float32)
-    drehpunkt = (float(x + w / 2), float(y + h * 0.04))
+    drehpunkt = (797.0, float(y + 3))   # Öse oben an der Glocke
     n = FPS * 4
     for i in range(n):
         t = i / FPS
@@ -112,27 +119,18 @@ def alarm():
         yield band(bild, 0.5)
 
 
-# ---------- Digitales Produkt: Glühen, Leiterbahnen, Kamerafahrt ----------
+# ---------- Digitales Produkt: Goldpaket dreht sich (Blender-Bildfolge) + Lichtschein ----------
+PK = sys.argv[4] if len(sys.argv) > 4 else None
+
+
 def produkt():
-    basis = laden('karte-produkt.png')
-    H, W = basis.shape[:2]
-    r, g, b = basis[..., 0] / 255, basis[..., 1] / 255, basis[..., 2] / 255
-    L = 0.2126 * r + 0.7152 * g + 0.0722 * b
-    warm = np.clip((L - 0.42) / 0.4, 0, 1) * np.clip((r - b) * 3, 0, 1)
-    warm = cv2.GaussianBlur(warm, (0, 0), 3)[..., None]
-    cyan = (np.clip((b - r) * 4, 0, 1) * np.clip((L - 0.18) / 0.3, 0, 1))[..., None]
-    X = np.arange(W, dtype=np.float32)[None, :, None] / W
-    mitte = (688.0, 358.0)
-    n = FPS * 4
-    for i in range(n):
-        p = i / n
-        atem = 0.5 - 0.5 * np.cos(2 * np.pi * p)
-        welle = 0.5 + 0.5 * np.sin(2 * np.pi * (X * 2.2 - p))
-        bild = basis * (1 + 0.24 * atem * warm) + basis * cyan * 0.55 * welle
-        s = 1 + 0.022 * atem
-        A = cv2.getRotationMatrix2D(mitte, 0, s)
-        bild = cv2.warpAffine(bild, A, (W, H), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
-        yield band(bild, 0.5)
+    dateien = sorted(f for f in os.listdir(PK) if f.startswith('pk_') and f.endswith('.png'))
+    for f in dateien:
+        b = np.asarray(Image.open(os.path.join(PK, f)).convert('RGB')).astype(np.float32)
+        hell = np.clip((b.max(2, keepdims=True) - 238) / 17, 0, 1) * b   # nur Nähte und Glanzlichter, nicht die ganze Fläche
+        schein = cv2.GaussianBlur(hell, (0, 0), 8) * 0.45 + cv2.GaussianBlur(hell, (0, 0), 26) * 0.4
+        strahl = cv2.GaussianBlur(hell, (0, 0), sigmaX=60, sigmaY=2.5) * 0.3     # waagerechte Lichtstrahlen
+        yield b + schein + strahl
 
 
 # ---------- Dienstleistung: Zahnräder aus Blender ----------
@@ -146,6 +144,7 @@ def dienst():
 
 kodieren('website', website())
 kodieren('alarm', alarm())
-kodieren('produkt', produkt())
 if ZR and os.path.isdir(ZR):
     kodieren('dienst', dienst())
+if PK and os.path.isdir(PK):
+    kodieren('produkt', produkt())
