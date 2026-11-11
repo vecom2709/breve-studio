@@ -459,16 +459,16 @@
   },
   "features": {
    "de": [
-    "20 bearbeitete Fotos pro Monat.",
-    "Freigestellt auf Weiß oder in Ihrer Hausfarbe.",
-    "Formate für Shop, Website, Instagram und Facebook.",
-    "Foto-Anleitung für das Handy als PDF."
+    "20 bearbeitete Fotos pro Monat, Lieferung in 3 Werktagen.",
+    "Freigestellt auf Weiß oder in Ihrer Hausfarbe, auf Wunsch mit dezentem Schatten.",
+    "Fünf Formate: Shop, Website, Instagram, Story, Facebook – plus transparente PNGs.",
+    "Foto-Anleitung fürs Handy als PDF und Vorher-nachher-Bogen zur Freigabe."
    ],
    "it": [
-    "20 foto ritoccate al mese.",
-    "Scontornate su bianco o nel tuo colore aziendale.",
-    "Formati per negozio online, sito, Instagram e Facebook.",
-    "Guida per fotografare col telefono in PDF."
+    "20 foto ritoccate al mese, consegna in 3 giorni lavorativi.",
+    "Scontornate su bianco o nel tuo colore aziendale, se vuoi con ombra leggera.",
+    "Cinque formati: negozio, sito, Instagram, storia, Facebook – più PNG trasparenti.",
+    "Guida per fotografare col telefono in PDF e foglio prima/dopo da approvare."
    ]
   },
   "plannedOffer": {
@@ -484,6 +484,10 @@
     {
      "q": "Was, wenn ich mehr als 20 Fotos brauche?",
      "a": "Weitere Fotos sind einzeln buchbar."
+    },
+    {
+     "q": "Wie bekomme ich FotoBottega?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie bekommen die Foto-Anleitung, fotografieren am Fenster und schicken uns die Originale. Nach Ihrer Freigabe per Link erhalten Sie alle Formate als Download."
     }
    ],
    "it": [
@@ -494,6 +498,10 @@
     {
      "q": "E se mi servono più di 20 foto?",
      "a": "Le foto in più si possono aggiungere singolarmente."
+    },
+    {
+     "q": "Come ricevo FotoBottega?",
+     "a": "Dall’avvio ufficiale di Studio Breve: ricevi la guida, fotografi vicino alla finestra e ci mandi gli originali. Dopo la tua approvazione tramite link ricevi tutti i formati da scaricare."
     }
    ]
   },
@@ -585,11 +593,11 @@
    }
   },
   "number": 18,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Bearbeitet werden nur Licht, Farbe, Hintergrund und Ausschnitt.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Si ritoccano solo luce, colore, sfondo e inquadratura."
   },
   "erstellt": "2026-11-11T12:06:06.658Z"
  },
