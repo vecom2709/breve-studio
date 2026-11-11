@@ -24,22 +24,24 @@ export const homeHero: L<{ eyebrow: string; h1a: string[]; h1b: string; ctaPrima
   },
 };
 
-export const statusPanel: L<{ title: string; total: string; services: string; products: string; planned: string; note: string }> = {
+export const statusPanel: L<{ title: string; total: string; available: string; services: string; products: string; planned: string; note: string }> = {
   de: {
     title: 'Stand heute',
     total: 'Pakete im Katalog',
+    available: 'fertig entwickelt, Verkauf ab Start',
     services: 'Dienstleistungen auf Anfrage',
     products: 'Produkte in Entwicklung, mit Warteliste',
     planned: 'Pakete in Planung',
-    note: 'Studio Breve befindet sich im Aufbau. Noch ist kein Paket kaufbar; Sie können sich unverbindlich vormerken oder anfragen.',
+    note: 'Studio Breve befindet sich im Aufbau. Verkauft wird ab dem offiziellen Start; bis dahin können Sie sich unverbindlich vormerken oder anfragen – auch für Pakete, die schon fertig entwickelt sind.',
   },
   it: {
     title: 'Stato attuale',
     total: 'Pacchetti in catalogo',
+    available: 'pronti, in vendita dall’avvio',
     services: 'Servizi su richiesta',
     products: 'Prodotti in sviluppo, con lista d’attesa',
     planned: 'Pacchetti in programma',
-    note: 'Studio Breve è in fase di avvio. Al momento nessun pacchetto è acquistabile; puoi prenotarti o chiedere informazioni senza impegno.',
+    note: 'Studio Breve è in fase di avvio. La vendita parte con l’avvio ufficiale; fino ad allora puoi prenotarti o chiedere informazioni senza impegno – anche per i pacchetti già pronti.',
   },
 };
 

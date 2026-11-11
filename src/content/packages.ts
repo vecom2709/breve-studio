@@ -73,7 +73,7 @@ export type ShopCategoryId = (typeof shopCategories)[number]['id'];
  * waitlist  = Produkt in Entwicklung, Interessenten können sich vormerken
  * inquiry   = Dienstleistung, unverbindliche Anfrage möglich
  * soon      = geplant, Benachrichtigung zum Start
- * available = kaufbar (erst setzen, wenn Produkt, Rechtliches und Zahlung fertig sind)
+ * available = Produkt fertig entwickelt. Wirklich kaufbar erst mit Kauf-Link (isPurchasable) – dafür müssen Rechtliches und Zahlung fertig sein.
  */
 export type PackageStatus = 'waitlist' | 'inquiry' | 'soon' | 'available';
 
@@ -1021,6 +1021,7 @@ export function catalogStats() {
   const all = packages;
   return {
     total: all.length,
+    available: all.filter((p) => p.status === 'available').length,
     servicesInquiry: all.filter((p) => p.kind === 'service' && p.status === 'inquiry').length,
     productsWaitlist: all.filter((p) => p.kind === 'product' && p.status === 'waitlist').length,
     planned: all.filter((p) => p.status === 'soon').length,

@@ -845,7 +845,7 @@
     },
     {
      "q": "Wie bekomme ich die Dateien?",
-     "a": "Sie fragen über diese Seite an und erhalten eine Rechnung. Nach der Zahlung schicken wir Ihnen die Dateien per E-Mail."
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, erhalten eine Rechnung und nach der Zahlung die Dateien per E-Mail."
     }
    ],
    "it": [
@@ -859,7 +859,7 @@
     },
     {
      "q": "Come ricevo i file?",
-     "a": "Fai richiesta da questa pagina e ricevi la fattura. Dopo il pagamento ti inviamo i file via e-mail."
+     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, ricevi la fattura e dopo il pagamento i file via e-mail."
     }
    ]
   },
@@ -969,8 +969,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertiges Produkt. Eine Übersicht für Sie – keine Buchhaltung und keine Steuerberatung.",
-   "it": "Prodotto pronto. Un riepilogo per te – non è contabilità né consulenza fiscale."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Eine Übersicht für Sie – keine Buchhaltung und keine Steuerberatung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Un riepilogo per te – non è contabilità né consulenza fiscale."
   },
   "erstellt": "2026-11-11T12:06:06.658Z"
  },

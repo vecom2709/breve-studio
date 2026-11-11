@@ -25,14 +25,15 @@ const hero = homeHero[lang];
 const panel = statusPanel[lang];
 const sol = solutionsHead[lang];
 const app = appTeaser[lang];
-const actionLabel = (status: PackageStatus) => (status === 'inquiry' ? t.inquire : t.reserve);
+const actionLabel = (status: PackageStatus) => (status === 'inquiry' || status === 'available' ? t.inquire : t.reserve);
 const actionHref = (slug: string) => `${path('package', lang, slug)}#formular`;
 const panelRows = [
-  { icon: 'layers', value: stats.total, label: panel.total },
-  { icon: 'cog', value: stats.servicesInquiry, label: panel.services },
-  { icon: 'flask', value: stats.productsWaitlist, label: panel.products },
-  { icon: 'calendar', value: stats.planned, label: panel.planned },
-] as const;
+  { icon: 'layers' as const, value: stats.total, label: panel.total },
+  ...(stats.available ? [{ icon: 'check' as const, value: stats.available, label: panel.available }] : []),
+  { icon: 'cog' as const, value: stats.servicesInquiry, label: panel.services },
+  { icon: 'flask' as const, value: stats.productsWaitlist, label: panel.products },
+  { icon: 'calendar' as const, value: stats.planned, label: panel.planned },
+];
 const heroImg = `/images/home/hero-${lang}`;
 ---
 <Base lang={lang} routeKey="home">

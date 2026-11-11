@@ -49,7 +49,7 @@ const art = produktart(pkg)?.[lang];
         <h2 id="panel-h" class="visually-hidden">{de ? 'Preis und Stand' : 'Prezzo e stato'}</h2>
         <span class="status" data-status={pkg.status}>{t.status[pkg.status]}</span>
         <PriceBlock prices={pkg.prices} lang={lang} showListLabel />
-        <p class="small expl">{pkg.status === 'available' && !buy ? t.availableOnRequest : t.statusExplain[pkg.status]}</p>
+        <p class="small expl">{t.statusExplain[pkg.status]}</p>
         {buy
           ? <a class="btn btn-primary full" href={pkg.checkout!.url} rel="noopener">{ctaLabel} <span class="arrow" aria-hidden="true">→</span></a>
           : <a class="btn btn-primary full" href="#formular">{ctaLabel} <span class="arrow" aria-hidden="true">→</span></a>}
