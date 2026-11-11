@@ -2,6 +2,10 @@
  {
   "slug": "preventivolampo",
   "brand": "PreventivoLampo",
+  "produktart": {
+   "de": "Anfrage-Rechner für Handwerker",
+   "it": "Calcolatore di preventivi per artigiani"
+  },
   "category": "website-sichtbarkeit",
   "kind": "product",
   "shopCategory": "web-business",
@@ -202,6 +206,10 @@
  {
   "slug": "newsletterbreve",
   "brand": "NewsletterBreve",
+  "produktart": {
+   "de": "Monats-Newsletter",
+   "it": "Newsletter mensile"
+  },
   "category": "website-sichtbarkeit",
   "kind": "service",
   "shopCategory": "marketing",
@@ -383,6 +391,10 @@
  {
   "slug": "fotobottega",
   "brand": "FotoBottega",
+  "produktart": {
+   "de": "Bearbeitung von Produktfotos",
+   "it": "Ritocco delle foto prodotto"
+  },
   "category": "website-sichtbarkeit",
   "kind": "service",
   "shopCategory": "design-media",
@@ -568,6 +580,10 @@
  {
   "slug": "testoponte",
   "brand": "TestoPonte",
+  "produktart": {
+   "de": "Website-Übersetzung DE ↔ IT",
+   "it": "Traduzione di siti IT ↔ DE"
+  },
   "category": "website-sichtbarkeit",
   "kind": "service",
   "shopCategory": "web-business",
@@ -753,6 +769,10 @@
  {
   "slug": "cassachiara",
   "brand": "CassaChiara",
+  "produktart": {
+   "de": "Einnahmen-Ausgaben-Tabelle",
+   "it": "Foglio entrate e uscite"
+  },
   "category": "wissen-vorlagen",
   "kind": "product",
   "shopCategory": "web-business",
@@ -792,26 +812,26 @@
    "it": "Sapere sempre cosa entra, cosa esce e cosa è ancora da incassare."
   },
   "why": {
-   "de": "Einmal kaufen, kein Abo, funktioniert mit dem kostenlosen Google-Konto, deutsche und italienische Fassung, kurze Videoanleitung.",
-   "it": "Acquisto unico, nessun abbonamento, funziona con l’account Google gratuito, versione italiana e tedesca, breve video guida."
+   "de": "Einmal kaufen, kein Abo. Läuft mit dem kostenlosen Google-Konto, mit Excel und LibreOffice. Deutsche und italienische Fassung, Beispieldatei zum Ausprobieren und Anleitung als PDF.",
+   "it": "Acquisto unico, nessun abbonamento. Funziona con l’account Google gratuito, con Excel e LibreOffice. Versione italiana e tedesca, file di esempio per provare e guida in PDF."
   },
   "features": {
    "de": [
     "Einnahmen und Ausgaben nach Kategorien.",
     "Offene Rechnungen mit Fälligkeit.",
     "Monatsgrafik und Jahresübersicht.",
-    "Export als Tabelle für die Steuerkanzlei."
+    "Übersicht für die Steuerkanzlei nach Quartalen, als PDF speicherbar."
    ],
    "it": [
     "Entrate e uscite per categoria.",
     "Fatture aperte con scadenza.",
     "Grafico mensile e riepilogo annuale.",
-    "Esportazione in tabella per il commercialista."
+    "Riepilogo per il commercialista per trimestre, salvabile in PDF."
    ]
   },
   "plannedOffer": {
-   "de": "Zum Start: Beispieldaten und 15-Minuten-Einführung per Video.",
-   "it": "Al lancio: dati di esempio e introduzione video di 15 minuti."
+   "de": "Leere Vorlage, Beispieldatei mit erfundenen Daten und Anleitung (PDF) – jeweils auf Deutsch und Italienisch.",
+   "it": "Modello vuoto, file di esempio con dati inventati e guida (PDF) – in italiano e in tedesco."
   },
   "faq": {
    "de": [
@@ -822,6 +842,10 @@
     {
      "q": "Brauche ich Excel?",
      "a": "Nein, ein kostenloses Google-Konto genügt."
+    },
+    {
+     "q": "Wie bekomme ich die Dateien?",
+     "a": "Sie fragen über diese Seite an und erhalten eine Rechnung. Nach der Zahlung schicken wir Ihnen die Dateien per E-Mail."
     }
    ],
    "it": [
@@ -832,6 +856,10 @@
     {
      "q": "Serve Excel?",
      "a": "No, basta un account Google gratuito."
+    },
+    {
+     "q": "Come ricevo i file?",
+     "a": "Fai richiesta da questa pagina e ricevi la fattura. Dopo il pagamento ti inviamo i file via e-mail."
     }
    ]
   },
@@ -841,14 +869,14 @@
   },
   "ablauf": {
    "de": [
-    "Sie kopieren die Vorlage in Ihr Google-Konto.",
-    "Sie tragen Einnahmen und Ausgaben ein – auch vom Handy.",
-    "Monatsübersicht und Export entstehen automatisch."
+    "Sie fragen an und erhalten eine Rechnung; nach der Zahlung kommen die Dateien per E-Mail.",
+    "Sie öffnen die Vorlage in Google Sheets oder Excel und tragen Name und Jahr ein.",
+    "Sie erfassen Einnahmen, Ausgaben und Rechnungen – Übersicht und Kanzlei-Blatt rechnen von selbst."
    ],
    "it": [
-    "Copi il modello nel tuo account Google.",
-    "Inserisci entrate e uscite – anche dal telefono.",
-    "Riepilogo mensile ed esportazione si creano da soli."
+    "Fai richiesta e ricevi la fattura; dopo il pagamento ti inviamo i file via e-mail.",
+    "Apri il modello con Google Fogli o Excel e inserisci nome e anno.",
+    "Registri entrate, uscite e fatture – riepilogo e foglio per il commercialista si calcolano da soli."
    ]
   },
   "vorschau": {
@@ -938,17 +966,21 @@
    }
   },
   "number": 20,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertiges Produkt. Eine Übersicht für Sie – keine Buchhaltung und keine Steuerberatung.",
+   "it": "Prodotto pronto. Un riepilogo per te – non è contabilità né consulenza fiscale."
   },
   "erstellt": "2026-11-11T12:06:06.658Z"
  },
  {
   "slug": "socialscuola",
   "brand": "SocialScuola",
+  "produktart": {
+   "de": "Online-Kurs Social Media",
+   "it": "Corso online sui social"
+  },
   "category": "wissen-vorlagen",
   "kind": "product",
   "shopCategory": "marketing",
@@ -1133,6 +1165,10 @@
  {
   "slug": "bottegaonline",
   "brand": "BottegaOnline",
+  "produktart": {
+   "de": "Mini-Shop mit Abholung",
+   "it": "Mini negozio online con ritiro"
+  },
   "category": "website-sichtbarkeit",
   "kind": "product",
   "shopCategory": "web-business",
@@ -1333,6 +1369,10 @@
  {
   "slug": "arrivofacile",
   "brand": "ArrivoFacile",
+  "produktart": {
+   "de": "Digitale Anreise-Anleitung",
+   "it": "Istruzioni di arrivo digitali"
+  },
   "category": "immobilien-gastgewerbe",
   "kind": "product",
   "shopCategory": "web-business",
@@ -1525,6 +1565,10 @@
  {
   "slug": "piantinafacile",
   "brand": "PiantinaFacile",
+  "produktart": {
+   "de": "Grundrisse für Inserate",
+   "it": "Planimetrie per annunci"
+  },
   "category": "immobilien-gastgewerbe",
   "kind": "service",
   "shopCategory": "design-media",
@@ -1725,6 +1769,10 @@
  {
   "slug": "scadenzechiare",
   "brand": "ScadenzeChiare",
+  "produktart": {
+   "de": "Fristen- und Vertragskalender",
+   "it": "Scadenzario per contratti"
+  },
   "category": "wissen-vorlagen",
   "kind": "product",
   "shopCategory": "ki-tools",

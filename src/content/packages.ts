@@ -130,6 +130,8 @@ export interface Package {
   /** URL-Teil, gleich in DE und IT: /pakete/<slug>/ und /it/pacchetti/<slug>/ */
   slug: string;
   brand: string;
+  /** kurze Produktbezeichnung je Sprache neben dem Markennamen (sonst aus produktart.ts) */
+  produktart?: L10n;
   category: CategoryId;
   /** ehrliche Einordnung: Produkt oder Dienstleistung */
   kind: OfferKind;

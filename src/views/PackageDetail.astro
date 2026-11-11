@@ -1,4 +1,5 @@
 ---
+import { produktart } from '../content/produktart';
 import Base from '../layouts/Base.astro';
 import PriceBlock from '../components/PriceBlock.astro';
 import PackageCard from '../components/PackageCard.astro';
@@ -25,8 +26,9 @@ const formTitle = pkg.status === 'inquiry'
     : (de ? `Interesse an ${pkg.brand} vormerken` : `Segnala interesse per ${pkg.brand}`);
 const selfPath = path('package', lang, pkg.slug);
 const schritte = (pkg.ablauf ?? ablauf[pkg.slug])?.[lang] ?? [];
+const art = produktart(pkg)?.[lang];
 ---
-<Base lang={lang} routeKey="package" slug={pkg.slug} title={`${pkg.brand} – ${pkg.tagline[lang]}`} description={pkg.benefit[lang]} image={pkg.image}>
+<Base lang={lang} routeKey="package" slug={pkg.slug} title={`${pkg.brand} · ${art ?? pkg.tagline[lang]}`} description={pkg.benefit[lang]} image={pkg.image}>
   <nav class="wrap crumbs small" aria-label={de ? 'Brotkrumen' : 'Percorso'}>
     <ol>
       <li><a href={path('home', lang)}>{t.nav.home}</a></li>
@@ -39,7 +41,7 @@ const schritte = (pkg.ablauf ?? ablauf[pkg.slug])?.[lang] ?? [];
   <section class="top">
     <div class="wrap top-grid">
       <div class="intro">
-        <p class="eyebrow">{t.number} {String(pkg.number).padStart(2, '0')} · {pkg.brand}</p>
+        <p class="eyebrow">{t.number} {String(pkg.number).padStart(2, '0')} · {pkg.brand}{art && <> · <span class="art">{art}</span></>}</p>
         <h1>{pkg.headline[lang]}</h1>
         <p class="lead">{pkg.intro[lang]}</p>
       </div>
@@ -47,7 +49,7 @@ const schritte = (pkg.ablauf ?? ablauf[pkg.slug])?.[lang] ?? [];
         <h2 id="panel-h" class="visually-hidden">{de ? 'Preis und Stand' : 'Prezzo e stato'}</h2>
         <span class="status" data-status={pkg.status}>{t.status[pkg.status]}</span>
         <PriceBlock prices={pkg.prices} lang={lang} showListLabel />
-        <p class="small expl">{t.statusExplain[pkg.status]}</p>
+        <p class="small expl">{pkg.status === 'available' && !buy ? t.availableOnRequest : t.statusExplain[pkg.status]}</p>
         {buy
           ? <a class="btn btn-primary full" href={pkg.checkout!.url} rel="noopener">{ctaLabel} <span class="arrow" aria-hidden="true">→</span></a>
           : <a class="btn btn-primary full" href="#formular">{ctaLabel} <span class="arrow" aria-hidden="true">→</span></a>}
@@ -107,7 +109,7 @@ const schritte = (pkg.ablauf ?? ablauf[pkg.slug])?.[lang] ?? [];
           {pkg.features[lang].map((f, i) => <li><span class="fn">{String(i + 1).padStart(2, '0')}</span><p>{f}</p></li>)}
         </ol>
         <div class="planned">
-          <p class="eyebrow">{t.planned}</p>
+          <p class="eyebrow">{pkg.status === 'available' ? t.included : t.planned}</p>
           <p>{pkg.plannedOffer[lang]}</p>
         </div>
       </div>

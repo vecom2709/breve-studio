@@ -13,6 +13,7 @@ Ziel: Bei jedem Lauf **genau 10 neue, sinnvolle Pakete** für Studio Breve entwe
 - Kleine, klar umrissene digitale Pakete (Produkt oder Dienstleistung) für kleine Betriebe in **Italien (v. a. Sizilien) und im deutschsprachigen Raum**: Handel, Handwerk, Gastronomie, Gastgewerbe, Immobilien, Praxen, Vereine, Freiberufler.
 - Ausgewogen über die vier Kategorien verteilen: `ausschreibungen-foerderung`, `immobilien-gastgewerbe`, `website-sichtbarkeit`, `wissen-vorlagen`. Shop-Kategorie passend: `web-business`, `design-media`, `marketing`, `ki-tools`.
 - Markennamen im Stil des Katalogs: italienisch, kurz, zusammengeschrieben (z. B. „PreventivoLampo“), nur Buchstaben; slug = Name in Kleinbuchstaben.
+- Pflichtfeld `produktart`: kurze, sachliche Bezeichnung je Sprache (höchstens 40 Zeichen), die neben dem Markennamen steht, damit Kunden sofort sehen, was sie bekommen (z. B. „Anfrage-Rechner für Handwerker“).
 - Deutsch in der Sie-Form, Italienisch natürlich (du-Form wie im Bestand). Ehrlich und konkret: keine Ergebnisversprechen, keine Superlative, keine erfundenen Kundenstimmen oder Zahlen.
 - Keine Rechts-, Steuer-, Medizin- oder Anlageberatung – höchstens organisatorische Werkzeuge mit dem Hinweis, dass keine Beratung ersetzt wird.
 - Fremde Marken nur, wenn nötig, und neutral. Datenschutz mitdenken (DSGVO, Daten in der EU, Löschfristen).
@@ -23,6 +24,7 @@ Ziel: Bei jedem Lauf **genau 10 neue, sinnvolle Pakete** für Studio Breve entwe
 ```json
 {
   "slug": "preventivolampo", "brand": "PreventivoLampo",
+  "produktart": { "de": "Anfrage-Rechner für Handwerker", "it": "Calcolatore di preventivi per artigiani" },
   "category": "website-sichtbarkeit", "kind": "product", "shopCategory": "web-business",
   "prices": [{ "amount": 19, "interval": "month", "unit": { "de": "je Betrieb", "it": "per attività" } }],
   "imageAlt": {}, "tagline": {}, "benefit": {}, "headline": {}, "intro": {}, "audience": {}, "job": {}, "why": {},

@@ -44,7 +44,7 @@ for (const p of neu) {
   if (!SHOP.includes(p.shopCategory)) fehler.push(`${n}: shopCategory ungültig`);
   if (!['product', 'service'].includes(p.kind)) fehler.push(`${n}: kind ungültig`);
   if (!Array.isArray(p.prices) || !p.prices.length || p.prices.some((x) => !(x.amount >= 0) || !['month', 'once'].includes(x.interval))) fehler.push(`${n}: prices ungültig`);
-  l10n(p.tagline, 'tagline', n, 60); l10n(p.benefit, 'benefit', n, 220); l10n(p.headline, 'headline', n, 110);
+  l10n(p.produktart, 'produktart', n, 40); l10n(p.tagline, 'tagline', n, 60); l10n(p.benefit, 'benefit', n, 220); l10n(p.headline, 'headline', n, 110);
   for (const f of ['intro', 'audience', 'job', 'why', 'plannedOffer', 'market']) l10n(p[f], f, n, 420);
   liste(p.features, 'features', n, 3, 5); liste(p.ablauf, 'ablauf', n, 3, 3);
   for (const s of ['de', 'it']) if (!Array.isArray(p.faq?.[s]) || p.faq[s].length < 2 || p.faq[s].some((x) => !x.q || !x.a)) fehler.push(`${n}: faq.${s} braucht ≥ 2 Fragen mit Antwort`);
