@@ -1220,26 +1220,26 @@
    "it": "Ricevere prenotazioni senza foglietti e senza un costoso e-commerce."
   },
   "why": {
-   "de": "Feste Monatsgebühr ohne Provision, Rechtstexte-Bausteine für den Shop, Daten in der EU, einfache Pflege vom Handy.",
-   "it": "Canone fisso senza commissioni, testi legali di base per il negozio, dati nell’UE, gestione semplice dal telefono."
+   "de": "Feste Monatsgebühr ohne Provision. Bestellungen kommen per E-Mail und als Push-Hinweis aufs Handy, die Tagesliste zeigt, was vorzubereiten ist. Bausteine für AGB, Widerruf, Datenschutz und Impressum, Allergene und Grundpreise je Produkt. Nur ein technisch nötiges Cookie, kein Tracking, Daten in der EU.",
+   "it": "Canone fisso senza commissioni. Gli ordini arrivano via e-mail e come notifica sul telefono, la lista del giorno mostra cosa preparare. Modelli per condizioni di vendita, recesso, privacy e note legali, allergeni e prezzi al kg per ogni prodotto. Un solo cookie tecnico, niente tracciamento, dati nell’UE."
   },
   "features": {
    "de": [
-    "Bis 50 Produkte mit Foto, Preis und Varianten.",
-    "Abholzeit wählen, Lieferung im Ort zuschaltbar.",
-    "Bestellung per E-Mail und Push-Hinweis.",
-    "Bezahlung bei Abholung oder online."
+    "Bis 50 Produkte mit Foto, Preis, Varianten und Allergenen.",
+    "Abholzeit wählen, Lieferung im Ort mit Gebühr und PLZ zuschaltbar.",
+    "Bestellung per E-Mail und Push-Hinweis, Tagesliste zum Drucken.",
+    "Bezahlung bei Abholung oder online per PayPal oder Zahlungslink."
    ],
    "it": [
-    "Fino a 50 prodotti con foto, prezzo e varianti.",
-    "Scelta dell’orario di ritiro, consegna in zona attivabile.",
-    "Ordine via e-mail e notifica.",
-    "Pagamento al ritiro oppure online."
+    "Fino a 50 prodotti con foto, prezzo, varianti e allergeni.",
+    "Scelta dell’orario di ritiro, consegna in zona con costo e CAP attivabile.",
+    "Ordine via e-mail e notifica, lista del giorno da stampare.",
+    "Pagamento al ritiro oppure online con PayPal o link di pagamento."
    ]
   },
   "plannedOffer": {
-   "de": "Zum Start: Wir legen Ihre ersten 20 Produkte an.",
-   "it": "Al lancio: inseriamo noi i tuoi primi 20 prodotti."
+   "de": "Inklusive: Wir legen Ihre ersten 20 Produkte mit Fotos, Preisen und Allergenen an und richten Zeiten und Lieferung ein.",
+   "it": "Incluso: inseriamo i tuoi primi 20 prodotti con foto, prezzi e allergeni e configuriamo orari e consegna."
   },
   "faq": {
    "de": [
@@ -1250,6 +1250,10 @@
     {
      "q": "Brauche ich AGB?",
      "a": "Ja, für Onlinebestellungen sind Rechtstexte nötig. Wir liefern Bausteine; prüfen lassen sollten Sie sie von einer Fachkanzlei."
+    },
+    {
+     "q": "Wie bekomme ich BottegaOnline?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten den Shop mit Ihren Produkten ein und senden Ihnen Link, Zugang und Anleitung."
     }
    ],
    "it": [
@@ -1260,6 +1264,10 @@
     {
      "q": "Servono le condizioni di vendita?",
      "a": "Sì, per gli ordini online servono testi legali. Forniamo una base; è bene farla verificare da uno studio legale."
+    },
+    {
+     "q": "Come ricevo BottegaOnline?",
+     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, configuriamo il negozio con i tuoi prodotti e ti inviamo link, accesso e guida."
     }
    ]
   },
@@ -1366,11 +1374,11 @@
    }
   },
   "number": 22,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Die Rechtstext-Bausteine sind eine Vorlage und ersetzen keine rechtliche Prüfung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. I modelli di testi legali sono una base e non sostituiscono una verifica legale."
   },
   "erstellt": "2026-11-11T12:06:06.658Z"
  },
