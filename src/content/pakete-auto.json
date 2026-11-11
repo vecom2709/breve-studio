@@ -1424,26 +1424,26 @@
    "it": "Gestire arrivi in tarda serata senza telefonate e attese."
   },
   "why": {
-   "de": "Code nur im gebuchten Zeitraum sichtbar, Anleitung in fünf Sprachen, passt zu OspiteGuida und OspiteInRegola.",
-   "it": "Codice visibile solo nel periodo prenotato, istruzioni in cinque lingue, si abbina a OspiteGuida e OspiteInRegola."
+   "de": "Code und WLAN sind nur vom Check-in bis zum Check-out sichtbar, danach läuft der Link ab. Jeder Gast hat einen eigenen Link, Gäste brauchen keine App und bekommen keine Cookies. Fünf Sprachen, Daten auf Servern in der EU, alte Buchungen werden automatisch gelöscht. Passt zu OspiteGuida und OspiteInRegola.",
+   "it": "Codice e Wi-Fi sono visibili solo dal check-in al check-out, poi il link scade. Ogni ospite ha il suo link, senza app e senza cookie. Cinque lingue, dati su server nell’UE, le prenotazioni vecchie vengono eliminate in automatico. Si abbina a OspiteGuida e OspiteInRegola."
   },
   "features": {
    "de": [
-    "Anleitung mit Fotos und Karte.",
-    "Schlüsselbox-Code nur am Anreisetag sichtbar.",
-    "Versand per E-Mail oder Link zur festen Uhrzeit.",
-    "Deutsch, Italienisch, Englisch, Französisch, Spanisch."
+    "Anleitung mit Fotos und Route zu Google Maps oder Apple Karten.",
+    "Schlüsselbox-Code und WLAN nur während des Aufenthalts sichtbar.",
+    "Versand automatisch am Anreisetag per E-Mail – oder Link per WhatsApp.",
+    "Italienisch, Englisch, Deutsch, Französisch, Spanisch."
    ],
    "it": [
-    "Istruzioni con foto e mappa.",
-    "Codice della cassetta visibile solo il giorno dell’arrivo.",
-    "Invio via e-mail o link all’orario stabilito.",
-    "Italiano, tedesco, inglese, francese, spagnolo."
+    "Istruzioni con foto e percorso su Google Maps o Mappe Apple.",
+    "Codice della cassetta e Wi-Fi visibili solo durante il soggiorno.",
+    "Invio automatico via e-mail il giorno di arrivo – oppure link su WhatsApp.",
+    "Italiano, inglese, tedesco, francese, spagnolo."
    ]
   },
   "plannedOffer": {
-   "de": "Zum Start: Wir erstellen die Anleitung mit Ihren Fotos.",
-   "it": "Al lancio: prepariamo noi le istruzioni con le tue foto."
+   "de": "Inklusive: Wir richten Ihre erste Unterkunft komplett ein – mit Ihren Fotos und den Texten auf Italienisch und Englisch.",
+   "it": "Incluso: configuriamo per intero il tuo primo alloggio – con le tue foto e i testi in italiano e inglese."
   },
   "faq": {
    "de": [
@@ -1454,6 +1454,10 @@
     {
      "q": "Ersetzt das die Gästemeldung?",
      "a": "Nein. Die gesetzliche Meldung bleibt Pflicht; dafür gibt es OspiteInRegola."
+    },
+    {
+     "q": "Wie bekomme ich ArrivoFacile?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten Ihre Unterkunft mit Ihren Fotos ein und senden Ihnen Zugang und Anleitung."
     }
    ],
    "it": [
@@ -1464,6 +1468,10 @@
     {
      "q": "Sostituisce la comunicazione degli ospiti?",
      "a": "No. La comunicazione prevista dalla legge resta obbligatoria; per quella c’è OspiteInRegola."
+    },
+    {
+     "q": "Come ricevo ArrivoFacile?",
+     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, configuriamo il tuo alloggio con le tue foto e ti inviamo accesso e guida."
     }
    ]
   },
@@ -1562,11 +1570,11 @@
    }
   },
   "number": 23,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Den Code der Schlüsselbox legen Sie fest – wir empfehlen, ihn regelmäßig zu ändern.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Il codice della cassetta chiavi lo decidi tu – consigliamo di cambiarlo regolarmente."
   },
   "erstellt": "2026-11-11T12:06:06.658Z"
  },
