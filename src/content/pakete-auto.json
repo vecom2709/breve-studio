@@ -49,8 +49,8 @@
    "it": "Meno domande di chiarimento e richieste subito confrontabili."
   },
   "why": {
-   "de": "Preisregeln legen Sie selbst fest, der Richtpreis ist klar als unverbindlich gekennzeichnet, Fotos und Daten liegen auf Servern in der EU.",
-   "it": "Le regole di prezzo le decidi tu, il prezzo è indicato chiaramente come non vincolante, foto e dati restano su server nell’UE."
+   "de": "Preisregeln legen Sie selbst fest, der Richtpreis ist klar als unverbindlich gekennzeichnet. Jede Anfrage kommt als E-Mail mit PDF und Fotos, antworten geht mit einem Klick. Fotos und Daten liegen auf Servern in der EU, alte Anfragen werden automatisch gelöscht.",
+   "it": "Le regole di prezzo le decidi tu, il prezzo è indicato chiaramente come non vincolante. Ogni richiesta arriva via e-mail con PDF e foto, si risponde con un clic. Foto e dati restano su server nell’UE, le richieste vecchie vengono eliminate in automatico."
   },
   "features": {
    "de": [
@@ -67,8 +67,8 @@
    ]
   },
   "plannedOffer": {
-   "de": "Zum Start: Einrichtung Ihrer ersten drei Leistungen durch uns.",
-   "it": "Al lancio: configuriamo noi i tuoi primi tre servizi."
+   "de": "Inklusive: Wir richten Ihre ersten drei Leistungen mit Ihren Preisregeln ein. Beispielwerte für Maler, Fliesenleger, Elektro und Klima, Garten sowie Reinigung sind schon dabei.",
+   "it": "Incluso: configuriamo i tuoi primi tre servizi con le tue regole di prezzo. Già presenti esempi per imbianchini, piastrellisti, elettricisti e climatizzazione, giardinieri e imprese di pulizia."
   },
   "faq": {
    "de": [
@@ -79,6 +79,10 @@
     {
      "q": "Brauche ich eine eigene Website?",
      "a": "Nein, der Rechner funktioniert auch als eigener Link, etwa für WhatsApp oder Social Media."
+    },
+    {
+     "q": "Wie bekomme ich PreventivoLampo?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten den Rechner für Ihren Betrieb ein und senden Ihnen Link, Zugang und Anleitung."
     }
    ],
    "it": [
@@ -89,6 +93,10 @@
     {
      "q": "Serve un sito web?",
      "a": "No, il calcolatore funziona anche come link a sé, per esempio per WhatsApp o i social."
+    },
+    {
+     "q": "Come ricevo PreventivoLampo?",
+     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, configuriamo il calcolatore per la tua impresa e ti inviamo link, accesso e guida."
     }
    ]
   },
@@ -195,11 +203,11 @@
    }
   },
   "number": 16,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Der Richtpreis ist immer als unverbindlich gekennzeichnet – das Angebot machen Sie.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Il prezzo indicativo è sempre segnalato come non vincolante – il preventivo lo fai tu."
   },
   "erstellt": "2026-11-11T12:06:06.657Z"
  },
@@ -1816,8 +1824,8 @@
    "it": "Non perdere più termini di disdetta e verifiche periodiche."
   },
   "why": {
-   "de": "Einfach statt Software-Monster, Erinnerung mit Vorlauf nach Wahl, Daten in der EU, keine Beratung – nur Ordnung und Erinnerung.",
-   "it": "Semplice invece di un software complicato, promemoria con anticipo a scelta, dati nell’UE, nessuna consulenza – solo ordine e promemoria."
+   "de": "Einfach statt Software-Monster: Erinnerung mit Vorlauf nach Wahl, Kündigungsfrist wird ausgerechnet, Fristen auch im Handy-Kalender. Deutsch und Italienisch, Daten auf Servern in der EU, keine Werbung, kein Tracking.",
+   "it": "Semplice invece di un software enorme: promemoria con il preavviso che scegli, data di disdetta calcolata, scadenze anche nel calendario del telefono. Italiano e tedesco, dati su server nell’UE, niente pubblicità, niente tracciamento."
   },
   "features": {
    "de": [
@@ -1834,8 +1842,8 @@
    ]
   },
   "plannedOffer": {
-   "de": "Zum Start: Liste typischer Fristen je Branche zum Übernehmen.",
-   "it": "Al lancio: elenco delle scadenze tipiche per settore da importare."
+   "de": "Inklusive: Vorlagen mit typischen Fristen für fünf Branchen (Gastronomie, Praxis, Vermietung, Verein, Büro und Handel) zum Übernehmen mit einem Klick.",
+   "it": "Incluso: modelli con le scadenze tipiche di cinque settori (ristorazione, studi, affitti, associazioni, uffici e negozi) da importare con un clic."
   },
   "faq": {
    "de": [
@@ -1846,6 +1854,10 @@
     {
      "q": "Können mehrere Personen mitlesen?",
      "a": "Ja, bis zu drei Personen pro Betrieb."
+    },
+    {
+     "q": "Wie bekomme ich ScadenzeChiare?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten es für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
     }
    ],
    "it": [
@@ -1856,6 +1868,10 @@
     {
      "q": "Possono usarlo più persone?",
      "a": "Sì, fino a tre persone per attività."
+    },
+    {
+     "q": "Come ricevo ScadenzeChiare?",
+     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo configuriamo per la tua attività e ti inviamo accesso e guida."
     }
    ]
   },
@@ -1865,14 +1881,14 @@
   },
   "ablauf": {
    "de": [
-    "Sie tragen Verträge und Termine ein oder fotografieren sie.",
-    "Sie wählen, wie früh Sie erinnert werden möchten.",
-    "Sie erhalten rechtzeitig eine E-Mail mit allem Nötigen."
+    "Sie fragen an; wir richten Ihr ScadenzeChiare ein und übernehmen mit Ihnen die Vorlagen Ihrer Branche.",
+    "Sie tragen Verträge und Termine ein oder fotografieren die Dokumente und wählen den Vorlauf.",
+    "Sie erhalten rechtzeitig eine E-Mail – und am Monatsanfang eine Übersicht."
    ],
    "it": [
-    "Inserisci contratti e scadenze o li fotografi.",
-    "Scegli con quanto anticipo vuoi il promemoria.",
-    "Ricevi in tempo un’e-mail con tutto il necessario."
+    "Fai richiesta; configuriamo il tuo ScadenzeChiare e importiamo insieme i modelli del tuo settore.",
+    "Inserisci contratti e appuntamenti o fotografa i documenti e scegli il preavviso.",
+    "Ricevi un’e-mail per tempo – e a inizio mese un riepilogo."
    ]
   },
   "vorschau": {
@@ -1962,11 +1978,11 @@
    }
   },
   "number": 25,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. ScadenzeChiare erinnert nur – es prüft keine Verträge und ersetzt keine Beratung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. ScadenzeChiare ricorda soltanto – non verifica contratti e non sostituisce una consulenza."
   },
   "erstellt": "2026-11-11T12:06:06.658Z"
  }
