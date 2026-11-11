@@ -4,7 +4,7 @@ import Icon from '../components/Icon.astro';
 import { bildFuer } from '../components/vorschau/liste';
 import {
   catalogStats,
-  packagesSorted,
+  packagesGeordnet,
   shopCategories,
   type Locale,
   type PackageStatus,
@@ -17,7 +17,7 @@ const { lang } = Astro.props;
 const t = ui[lang];
 const de = lang === 'de';
 const stats = catalogStats();
-const all = packagesSorted();
+const all = packagesGeordnet();
 const voice = testimonials[0];
 const hero = homeHero[lang];
 const panel = statusPanel[lang];

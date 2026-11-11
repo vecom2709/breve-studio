@@ -2,13 +2,13 @@
 import Base from '../layouts/Base.astro';
 import PackageCard from '../components/PackageCard.astro';
 import BundleCard from '../components/BundleCard.astro';
-import { categories, packagesSorted, packagesOfKind, bundles, type Locale, type OfferKind } from '../content/packages';
+import { categories, packagesGeordnet, bundles, type Locale, type OfferKind } from '../content/packages';
 import { ui } from '../lib/i18n';
 interface Props { lang: Locale; kind?: OfferKind }
 const { lang, kind } = Astro.props;
 const t = ui[lang];
 const de = lang === 'de';
-const all = kind ? packagesOfKind(kind) : packagesSorted();
+const all = packagesGeordnet().filter((p) => !kind || p.kind === kind);
 const used = categories.filter((c) => all.some((p) => p.category === c.id));
 ---
 <Base lang={lang} routeKey={kind === 'product' ? 'products' : kind === 'service' ? 'services' : 'packages'}
@@ -38,8 +38,21 @@ const used = categories.filter((c) => all.some((p) => p.category === c.id));
         </div>
         <p class="count small muted" aria-live="polite" data-count data-one={t.resultCount(1)} data-many={t.resultCount(2)}>{t.resultCount(all.length)}</p>
       </div>
-      <div class="grid grid-2 grid-3 cards" data-cards>
-        {all.map((p) => <PackageCard pkg={p} lang={lang} />)}
+      <div class="gruppen" data-cards>
+        {used.map((c) => {
+          const liste = all.filter((p) => p.category === c.id);
+          return (
+            <section class="gruppe" data-gruppe={c.id} aria-labelledby={`g-${c.id}`}>
+              <div class="gruppe-kopf">
+                <h2 class="h3" id={`g-${c.id}`}>{c.label[lang]} <span class="anzahl">{liste.length}</span></h2>
+                <p class="small muted">{c.text[lang]}</p>
+              </div>
+              <div class="grid grid-2 grid-3 cards">
+                {liste.map((p) => <PackageCard pkg={p} lang={lang} />)}
+              </div>
+            </section>
+          );
+        })}
       </div>
     </div>
   </section>
@@ -63,7 +76,8 @@ const used = categories.filter((c) => all.some((p) => p.category === c.id));
   if (wrap) {
     wrap.hidden = false;
     const chips = [...wrap.querySelectorAll<HTMLButtonElement>('[data-filter]')];
-    const cards = [...document.querySelectorAll<HTMLElement>('[data-cards] > [data-category]')];
+    const cards = [...document.querySelectorAll<HTMLElement>('[data-cards] [data-category]')];
+    const gruppen = [...document.querySelectorAll<HTMLElement>('[data-gruppe]')];
     const count = wrap.querySelector<HTMLElement>('[data-count]')!;
     const fmt = (n: number) => (n === 1 ? count.dataset.one! : count.dataset.many!.replace(/^\d+/, String(n)));
     const apply = (cat: string, push = true) => {
@@ -71,6 +85,7 @@ const used = categories.filter((c) => all.some((p) => p.category === c.id));
       chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.filter === cat)));
       let n = 0;
       cards.forEach((el) => { const show = !cat || el.dataset.category === cat; el.hidden = !show; if (show) n++; });
+      gruppen.forEach((g) => { g.hidden = !!cat && g.dataset.gruppe !== cat; });
       count.textContent = fmt(n);
       if (push) { const u = new URL(location.href); cat ? u.searchParams.set('k', cat) : u.searchParams.delete('k'); history.replaceState(null, '', u); }
     };
@@ -80,6 +95,11 @@ const used = categories.filter((c) => all.some((p) => p.category === c.id));
 </script>
 
 <style>
+  .gruppen { display: grid; gap: var(--space-l); }
+  .gruppe[hidden] { display: none; }
+  .gruppe-kopf { display: grid; gap: .3rem; margin-bottom: 1.1rem; padding-bottom: .7rem; border-bottom: 1px solid var(--line); }
+  .gruppe-kopf h2 { display: flex; align-items: center; gap: .6rem; }
+  .anzahl { display: inline-grid; place-items: center; min-width: 1.8rem; height: 1.8rem; padding: 0 .5rem; border-radius: 999px; background: #e3f3ec; color: #0f4a43; font: 700 .85rem/1 var(--geo); }
   .head { padding-block: var(--space-xl) var(--space-l); }
   .head h1 { max-width: 16em; margin-top: 1rem; }
   .head .lead { margin-top: 1.4rem; }

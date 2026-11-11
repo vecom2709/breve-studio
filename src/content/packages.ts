@@ -989,6 +989,11 @@ export const bundles: Bundle[] = [
 
 export const getPackage = (slug: string) => packages.find((p) => p.slug === slug);
 export const packagesSorted = () => [...packages].sort((a, b) => a.number - b.number);
+const statusRang: Record<PackageStatus, number> = { available: 0, inquiry: 1, waitlist: 2, soon: 3 };
+/** Geordnete Liste für Übersichten: Kategorie in Katalogreihenfolge, darin Status, dann Nummer. */
+export const packagesGeordnet = () => [...packages].sort((a, b) =>
+  categories.findIndex((c) => c.id === a.category) - categories.findIndex((c) => c.id === b.category)
+  || statusRang[a.status] - statusRang[b.status] || a.number - b.number);
 export const categoryById = (id: CategoryId) => categories.find((c) => c.id === id)!;
 export const packagesOfKind = (kind: OfferKind) => packagesSorted().filter((p) => p.kind === kind);
 

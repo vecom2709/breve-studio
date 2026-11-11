@@ -182,6 +182,226 @@ const belegt = new Set(['09:45', '11:15', '15:30']);
       </div>
     </div>
   )}
+
+  {slug === 'gareinbreve' && (
+    <div class="vs-buehne">
+      <div class="fenster gross">
+        <div class="fenster-leiste"><i></i><i></i><i></i><span>{de ? 'Posteingang' : 'Posta in arrivo'}</span></div>
+        <div class="mail">
+          <p class="mail-betreff">{de ? '3 neue Ausschreibungen für Sie · Mi, 12. Nov.' : '3 nuove gare per te · mer 12 nov.'}</p>
+          {[
+            ['Manutenzione sito web e hosting', 'Comune di Esempio (AG)', '48.000 €', de ? 'Frist 21.11.' : 'Scade 21/11', true, 'CPV 72'],
+            ['Fornitura arredi scolastici', 'Istituto Esempio (CL)', '126.500 €', de ? 'Frist 04.12.' : 'Scade 04/12', false, 'CPV 39'],
+            ['Servizi di pulizia uffici', 'Ente Esempio (PA)', '92.000 €', de ? 'Frist 15.12.' : 'Scade 15/12', false, 'CPV 90'],
+          ].map(([t, e, w, f, eilig, c]) => (
+            <div class="gara">
+              <div><b>{t}</b><small>{e}</small></div>
+              <span class="gara-cpv">{c}</span>
+              <span class="gara-wert">{w}</span>
+              <span class:list={['gara-frist', { eilig }]}>{f}</span>
+            </div>
+          ))}
+          <p class="mail-fuss">{de ? 'Je Ausschreibung: Kurzfassung und Link zur offiziellen Bekanntmachung.' : 'Per ogni gara: sintesi e link al bando ufficiale.'}</p>
+        </div>
+      </div>
+      <div class="filterkarte">
+        <p>{de ? 'Ihr Filter' : 'Il tuo filtro'}</p>
+        <span>CPV 72 · 39 · 90</span><span>AG · CL · PA</span><span>40.000–250.000 €</span>
+      </div>
+    </div>
+  )}
+
+  {slug === 'immotesto' && (
+    <div class="vs-buehne">
+      <div class="daten">
+        <p class="daten-titel">{de ? 'Ihre Objektdaten' : 'I tuoi dati'}</p>
+        <dl>
+          <div><dt>{de ? 'Objekt' : 'Immobile'}</dt><dd>{de ? 'Wohnung, 2. OG' : 'Appartamento, 2° piano'}</dd></div>
+          <div><dt>{de ? 'Fläche' : 'Superficie'}</dt><dd>85 m² · 3 {de ? 'Zimmer' : 'vani'}</dd></div>
+          <div><dt>{de ? 'Besonders' : 'Punti forti'}</dt><dd>{de ? 'Meerblick, Terrasse 20 m²' : 'Vista mare, terrazzo 20 m²'}</dd></div>
+          <div><dt>{de ? 'Ort' : 'Zona'}</dt><dd>San Leone (AG)</dd></div>
+          <div><dt>{de ? 'Preis' : 'Prezzo'}</dt><dd>189.000 €</dd></div>
+        </dl>
+        <span class="warnung">{de ? 'Fehlt: Energieklasse (Pflichtangabe)' : 'Manca: classe energetica (obbligatoria)'}</span>
+      </div>
+      <div class="expose">
+        {(['de', 'it', 'en'] as const).map((s, i) => <input type="radio" name={`${id}-sprache`} id={`${id}-${s}`} class="mv-r" checked={(lang === 'it' ? 1 : 0) === i} />)}
+        <div class="ex-tabs">{(['de', 'it', 'en'] as const).map((s) => <label for={`${id}-${s}`} class={`mv-t ex-t-${s}`}>{s.toUpperCase()}</label>)}</div>
+        <div class="ex-text ex-de"><b>Wohnung mit Meerblick in San Leone</b><p>Helle 3-Zimmer-Wohnung mit 85 m² im zweiten Stock. Die 20 m² große Terrasse bietet freien Blick aufs Meer – ideal für Frühstück und Sonnenuntergang. Strand und Promenade sind zu Fuß erreichbar.</p></div>
+        <div class="ex-text ex-it"><b>Appartamento vista mare a San Leone</b><p>Luminoso trivani di 85 m² al secondo piano. Il terrazzo di 20 m² regala una vista aperta sul mare – perfetto per la colazione e il tramonto. Spiaggia e lungomare raggiungibili a piedi.</p></div>
+        <div class="ex-text ex-en"><b>Sea-view apartment in San Leone</b><p>Bright three-room apartment of 85 m² on the second floor. The 20 m² terrace offers an open view of the sea – perfect for breakfast and sunsets. Beach and promenade within walking distance.</p></div>
+        <span class="ex-knopf">{de ? 'Text freigeben' : 'Approva il testo'}</span>
+      </div>
+    </div>
+  )}
+
+  {slug === 'replicapro' && (
+    <div class="vs-buehne rp">
+      <div class="bewertung">
+        <p class="bw-kopf"><b>Marco R.</b><span class="sterne">★★★★<em>★</em></span><small>{de ? 'vor 2 Std.' : '2 ore fa'}</small></p>
+        <p class="bw-text">„Ottima cena, il pesce freschissimo. Servizio un po’ lento il sabato sera.“</p>
+        <div class="entwurf">
+          <small>{de ? 'Antwortentwurf · Italienisch (Sprache des Gastes)' : 'Bozza di risposta · in italiano (lingua dell’ospite)'}</small>
+          <p>Gentile Marco, grazie per le belle parole sul nostro pesce! Ha ragione sul sabato: abbiamo aggiunto una persona in sala per servirvi più velocemente. A presto!</p>
+          <div class="entwurf-knoepfe"><span class="an">{de ? 'Freigeben' : 'Approva'}</span><span>{de ? 'Bearbeiten' : 'Modifica'}</span></div>
+        </div>
+      </div>
+      <div class="hinweis-negativ">
+        <b>{de ? 'Neue 2-Sterne-Bewertung' : 'Nuova recensione a 2 stelle'}</b>
+        <span>{de ? 'Ruhiger, sachlicher Entwurf liegt bereit.' : 'Una bozza calma e cortese è pronta.'}</span>
+      </div>
+    </div>
+  )}
+
+  {slug === 'betriebsautopilot' && (
+    <div class="vs-buehne">
+      <div class="kurs">
+        <div class="kurs-video"><span class="play"></span><b>{de ? 'Modul 3: Angebote in 10 Minuten' : 'Modulo 3: preventivi in 10 minuti'}</b><small>12:40</small></div>
+        <div class="kurs-fortschritt"><span style="width:40%"></span></div>
+        <ol class="kurs-liste">
+          <li class="fertig">{de ? 'KI-Grundlagen für den Betrieb' : 'Basi di IA per l’azienda'}</li>
+          <li class="fertig">{de ? 'E-Mails und Anfragen sortieren' : 'Ordinare e-mail e richieste'}</li>
+          <li class="jetzt">{de ? 'Angebote schneller schreiben' : 'Scrivere preventivi più in fretta'}</li>
+          <li>{de ? 'Baustellenberichte diktieren' : 'Dettare i rapporti di cantiere'}</li>
+          <li>{de ? 'Datenschutz-Check' : 'Controllo privacy'}</li>
+        </ol>
+      </div>
+      <div class="vs-seite">
+        <div class="datei"><b>Angebotsvorlage.docx</b><small>{de ? 'Vorlage zum Mitnehmen' : 'Modello da scaricare'}</small></div>
+        <div class="ampel">
+          <p>{de ? 'Darf das in die KI?' : 'Si può dare all’IA?'}</p>
+          <span class="gruen">{de ? 'Leistungsbeschreibung' : 'Descrizione lavori'}</span>
+          <span class="gelb">{de ? 'Preise ohne Kundennamen' : 'Prezzi senza nome cliente'}</span>
+          <span class="rot">{de ? 'Kundendaten, Steuernummer' : 'Dati cliente, codice fiscale'}</span>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {slug === 'vermieterkiste' && (
+    <div class="vs-buehne">
+      <div class="tabelle">
+        <div class="tb-reiter"><span class="an">{de ? 'Belegung' : 'Occupazione'}</span><span>{de ? 'Kurtaxe' : 'Tassa soggiorno'}</span><span>{de ? 'Rechnung' : 'Fattura'}</span></div>
+        <div class="tb-raster">
+          <span></span>{Array.from({ length: 10 }, (_, i) => <span class="tb-tag">{10 + i}</span>)}
+          {[[de ? 'Apt. Mare' : 'App. Mare', [[1, 4, 'a'], [6, 9, 'b']]], [de ? 'Apt. Sole' : 'App. Sole', [[0, 2, 'c'], [3, 8, 'a']]], ['Casa Ulivo', [[2, 6, 'b']]]].map(([n, b]) => (
+            <>
+              <span class="tb-name">{n as string}</span>
+              <div class="tb-zeile">{(b as [number, number, string][]).map(([s, e, k]) => <i class={`tb-b ${k}`} style={`grid-column:${s + 1}/${e + 2}`}></i>)}</div>
+            </>
+          ))}
+        </div>
+      </div>
+      <div class="rechner">
+        <p>{de ? 'Kurtaxe-Rechner' : 'Calcolo tassa di soggiorno'}</p>
+        <div><span>{de ? 'Nächte' : 'Notti'}</span><b>4</b></div>
+        <div><span>{de ? 'Personen ab 12 J.' : 'Ospiti oltre 12 anni'}</span><b>2</b></div>
+        <div><span>{de ? 'Satz je Nacht' : 'Tariffa a notte'}</span><b>2,00 €</b></div>
+        <div class="summe"><span>{de ? 'Kurtaxe' : 'Totale'}</span><b>16,00 €</b></div>
+      </div>
+    </div>
+  )}
+
+  {slug === 'sitotranquillo' && (
+    <div class="vs-buehne">
+      <div class="fenster gross">
+        <div class="fenster-leiste"><i></i><i></i><i></i><span>panificio-esempio.it</span></div>
+        <div class="seite-mini">
+          <div class="sm-hero"><b>Panificio Esempio</b><span>{de ? 'Brot aus dem Holzofen seit 1968' : 'Pane cotto a legna dal 1968'}</span><em>{de ? 'Heute geöffnet bis 13:30' : 'Oggi aperto fino alle 13:30'}</em></div>
+          <div class="sm-karten"><span>{de ? 'Unser Brot' : 'Il nostro pane'}</span><span>{de ? 'Öffnungszeiten' : 'Orari'}</span><span>{de ? 'So finden Sie uns' : 'Dove siamo'}</span></div>
+        </div>
+      </div>
+      <div class="chat">
+        <p class="chat-a">{de ? 'Bitte über Weihnachten: 24.12. nur bis 12 Uhr.' : 'Per Natale: il 24/12 solo fino alle 12.'}</p>
+        <p class="chat-b">{de ? 'Erledigt – ist online.' : 'Fatto – è online.'}<small>{de ? 'nach 2 Std.' : 'dopo 2 ore'}</small></p>
+        <span class="chat-hinweis">{de ? 'Änderungen inklusive' : 'Modifiche incluse'}</span>
+      </div>
+    </div>
+  )}
+
+  {slug === 'sitocura' && (
+    <div class="vs-buehne">
+      <div class="bericht-gross">
+        <p class="bg-kopf"><b>{de ? 'Monatsbericht Oktober' : 'Report di ottobre'}</b><span>www.esempio.it</span></p>
+        <div class="bg-werte">
+          <div><b>14</b><span>{de ? 'Updates' : 'Aggiornamenti'}</span></div>
+          <div><b>31</b><span>Backup</span></div>
+          <div><b>99,9 %</b><span>{de ? 'erreichbar' : 'online'}</span></div>
+          <div><b>0</b><span>{de ? 'Störungen offen' : 'Problemi aperti'}</span></div>
+        </div>
+        <ul class="bg-liste">
+          <li class="ok">{de ? 'Backup vor jedem Update erstellt' : 'Backup prima di ogni aggiornamento'}</li>
+          <li class="ok">{de ? 'Sicherheitsprüfung ohne Befund' : 'Controllo sicurezza senza problemi'}</li>
+          <li class="pruefen">{de ? 'Zu prüfen: ein Plugin wird nicht mehr gepflegt' : 'Da valutare: un plugin non è più aggiornato'}</li>
+        </ul>
+      </div>
+    </div>
+  )}
+
+  {slug === 'bandiinbreve' && (
+    <div class="vs-buehne">
+      <div class="fenster gross">
+        <div class="fenster-leiste"><i></i><i></i><i></i><span>Newsletter · BandiInBreve</span></div>
+        <div class="mail">
+          <p class="mail-betreff">{de ? 'Diese Woche: 3 neue Förderprogramme für Sizilien' : 'Questa settimana: 3 nuovi bandi per la Sicilia'}</p>
+          {[
+            [de ? 'Zuschuss Digitalisierung kleiner Betriebe' : 'Contributi per la digitalizzazione delle micro imprese', '50 %', de ? 'Frist 30.01.' : 'Scade 30/01', de ? 'Handel · Handwerk' : 'Commercio · Artigianato'],
+            [de ? 'Förderung Tourismus-Unterkünfte' : 'Incentivi strutture ricettive', '40 %', de ? 'Frist 14.02.' : 'Scade 14/02', de ? 'Gastgewerbe' : 'Ricettivo'],
+            [de ? 'Gründungszuschuss unter 35' : 'Contributi nuove imprese under 35', '60 %', de ? 'Frist 31.03.' : 'Scade 31/03', de ? 'alle Branchen' : 'tutti i settori'],
+          ].map(([t, q, f, b]) => (
+            <div class="gara">
+              <div><b>{t}</b><small>{b}</small></div>
+              <span class="gara-cpv">{de ? 'bis' : 'fino al'} {q}</span>
+              <span class="gara-frist">{f}</span>
+            </div>
+          ))}
+          <p class="mail-fuss">{de ? 'Beispiele mit erfundenen Angaben – im Dienst immer mit Link zur offiziellen Quelle.' : 'Esempi con dati inventati – nel servizio sempre con link alla fonte ufficiale.'}</p>
+        </div>
+      </div>
+      <div class="filterkarte">
+        <p>{de ? 'Erinnerung (Pro)' : 'Promemoria (Pro)'}</p>
+        <span>{de ? '7 Tage vor Fristende' : '7 giorni prima della scadenza'}</span>
+      </div>
+    </div>
+  )}
+
+  {slug === 'ospiteinregola' && (
+    <div class="vs-buehne">
+      <div class="checkliste">
+        <p class="cl-kopf"><b>{de ? 'Buchung #2481' : 'Prenotazione #2481'}</b><span>{de ? 'Ankunft 14.11. · 2 Gäste · 3 Nächte' : 'Arrivo 14/11 · 2 ospiti · 3 notti'}</span></p>
+        <ul>
+          <li class="ok"><b>CIN</b>{de ? 'im Inserat sichtbar' : 'visibile nell’annuncio'}</li>
+          <li class="faellig"><b>{de ? 'Gästemeldung' : 'Comunicazione ospiti'}</b>{de ? 'fällig bis 15.11., 14:00' : 'entro il 15/11, ore 14:00'}<em>{de ? 'Datei bereit' : 'File pronto'}</em></li>
+          <li class="ok"><b>{de ? 'Kurtaxe' : 'Tassa di soggiorno'}</b>2 × 3 × 1,50 € = 9,00 €</li>
+          <li class="spaeter"><b>{de ? 'Löschung Gästedaten' : 'Cancellazione dati'}</b>{de ? 'geplant nach Fristablauf' : 'programmata alla scadenza'}</li>
+        </ul>
+      </div>
+      <div class="filterkarte">
+        <p>{de ? 'Fristenkalender' : 'Calendario scadenze'}</p>
+        <span>{de ? 'Heute: 1 Meldung' : 'Oggi: 1 comunicazione'}</span><span>{de ? 'Diese Woche: 3' : 'Questa settimana: 3'}</span>
+      </div>
+    </div>
+  )}
+
+  {slug === 'ospiteguida' && (
+    <div class="vs-buehne">
+      <div class="handy">
+        <div class="handy-insel"></div>
+        <div class="og">
+          <div class="og-kopf"><b>Casa Esempio</b><span>{de ? 'Assistent · KI' : 'Assistente · IA'}</span></div>
+          <p class="og-bot">{de ? 'Hallo! Ich bin der KI-Assistent von Casa Esempio. Wie kann ich helfen?' : 'Ciao! Sono l’assistente IA di Casa Esempio. Come posso aiutarti?'}</p>
+          <p class="og-gast">Where can I park the car?</p>
+          <p class="og-bot">Free parking is 50 m away in Via Esempio. The street in front is a no-parking zone after 8 pm.</p>
+          <p class="og-gast">Wann ist Check-out?</p>
+          <p class="og-bot">Check-out ist bis 10:30 Uhr. Schlüssel bitte in die Box neben der Tür.</p>
+        </div>
+      </div>
+      <div class="vs-seite">
+        <div class="uebergabe"><b>{de ? 'An Sie übergeben' : 'Passato a te'}</b><span>{de ? 'Gast fragt nach spätem Check-in um 23 Uhr.' : 'L’ospite chiede un check-in alle 23.'}</span></div>
+        <p class="teilen-hinweis">{de ? 'Antwortet in der Sprache des Gastes und gibt sich als KI zu erkennen.' : 'Risponde nella lingua dell’ospite e dichiara di essere un’IA.'}</p>
+      </div>
+    </div>
+  )}
 </div>
 </div>
 
@@ -194,8 +414,8 @@ const belegt = new Set(['09:45', '11:15', '15:30']);
     font-family: var(--geo); color: var(--tinte); container-type: inline-size;
   }
   .vs-marke { position: absolute; top: 3cqw; right: 3cqw; z-index: 3; font: 700 1.3cqw/1 var(--geo); letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: .7cqw 1.4cqw; }
-  .vs-buehne { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 5cqw; padding: 4cqw 6cqw; }
-  .handy { position: relative; width: 27cqw; aspect-ratio: 9 / 18.5; border-radius: 4cqw; background: #111; padding: 1cqw; box-shadow: 0 0 0 .35cqw #2b2f31, 0 3cqw 6cqw -2cqw rgba(0,0,0,.6); flex: none; }
+  .vs-buehne { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 5cqw; padding: 2.5cqw 6cqw; }
+  .handy { position: relative; width: 24cqw; aspect-ratio: 9 / 18.5; border-radius: 4cqw; background: #111; padding: 1cqw; box-shadow: 0 0 0 .35cqw #2b2f31, 0 3cqw 6cqw -2cqw rgba(0,0,0,.6); flex: none; }
   .handy-insel { position: absolute; top: 1.8cqw; left: 50%; translate: -50% 0; width: 7cqw; height: 2cqw; border-radius: 99px; background: #000; z-index: 2; }
   .vs-seite { display: grid; gap: 2.4cqw; justify-items: start; max-width: 34cqw; }
 
@@ -301,6 +521,105 @@ const belegt = new Set(['09:45', '11:15', '15:30']);
   .teilen-bild strong { font: 600 2.4cqw/1 var(--serif); } .teilen-bild span { font-size: 1.2cqw; }
   .teilen p { display: grid; gap: .3cqw; padding: 1.2cqw 1.6cqw; font-size: 1.15cqw; color: #55635e; } .teilen p b { color: var(--tinte); }
   .teilen-hinweis { color: rgba(255,255,255,.8); font-size: 1.3cqw; }
+
+
+  /* Gemeinsam: Fenster groß, Mail-Liste, Filterkarte */
+  .fenster.gross { width: 60cqw; }
+  .mail { padding: 2cqw 2.4cqw; display: grid; gap: 1.2cqw; }
+  .mail-betreff { font: 600 2cqw/1.15 var(--serif); }
+  .gara { display: grid; grid-template-columns: 1fr auto auto auto; align-items: center; gap: 1.2cqw; padding: 1.1cqw 1.2cqw; border: 1px solid #e3e9e6; border-radius: .9cqw; font-size: 1.2cqw; }
+  .gara > div { display: grid; gap: .3cqw; } .gara b { font-size: 1.3cqw; } .gara small { color: #66726e; }
+  .gara-cpv { font: 700 1cqw/1 var(--geo); color: #1a6b5c; background: #e3f3ec; border-radius: 99px; padding: .5cqw .9cqw; }
+  .gara-wert { font: 700 1.3cqw/1 var(--geo); }
+  .gara-frist { font: 700 1.1cqw/1 var(--geo); color: #55635e; } .gara-frist.eilig { color: #b4441d; }
+  .mail-fuss { font-size: 1.05cqw; color: #66726e; }
+  .filterkarte { align-self: flex-end; margin-bottom: 5cqw; display: grid; gap: .8cqw; background: rgba(7,34,33,.9); color: #fff; border: 1px solid rgba(62,211,168,.5); border-radius: 1.4cqw; padding: 1.8cqw 2cqw; max-width: 22cqw; }
+  .filterkarte p { font: 700 1.05cqw/1 var(--geo); letter-spacing: .14em; text-transform: uppercase; color: var(--mint); }
+  .filterkarte span { font: 600 1.25cqw/1.25 var(--geo); }
+
+  /* ImmoTesto */
+  .daten { width: 28cqw; background: #fff; border-radius: 1.4cqw; padding: 2cqw; display: grid; gap: 1.2cqw; box-shadow: 0 2.4cqw 4cqw -1.6cqw rgba(0,0,0,.5); }
+  .daten-titel { font: 700 1.1cqw/1 var(--geo); letter-spacing: .14em; text-transform: uppercase; color: #1a6b5c; }
+  .daten dl { margin: 0; display: grid; gap: .8cqw; } .daten dl div { display: grid; grid-template-columns: 9cqw 1fr; font-size: 1.25cqw; }
+  .daten dt { color: #66726e; } .daten dd { margin: 0; font-weight: 600; }
+  .warnung { font: 700 1.05cqw/1.2 var(--geo); color: #8a4a12; background: #fdf0d8; border-radius: .7cqw; padding: .8cqw 1cqw; }
+  .expose { width: 34cqw; background: var(--creme); border-radius: 1.4cqw; padding: 2cqw; display: grid; gap: 1.2cqw; box-shadow: 0 2.4cqw 4cqw -1.6cqw rgba(0,0,0,.5); }
+  .ex-tabs { display: flex; gap: .8cqw; } .ex-tabs .mv-t { color: var(--tinte); border-color: #cdd9d4; }
+  .ex-text { display: none; gap: .8cqw; } .ex-text b { font: 600 1.9cqw/1.15 var(--serif); } .ex-text p { font-size: 1.3cqw; line-height: 1.45; color: #2f3f3a; }
+  #vs-immotesto-de:checked ~ .ex-de, #vs-immotesto-it:checked ~ .ex-it, #vs-immotesto-en:checked ~ .ex-en { display: grid; }
+  #vs-immotesto-de:checked ~ .ex-tabs .ex-t-de, #vs-immotesto-it:checked ~ .ex-tabs .ex-t-it, #vs-immotesto-en:checked ~ .ex-tabs .ex-t-en { background: var(--gold); border-color: var(--gold); color: #1d1606; }
+  .ex-knopf { justify-self: start; background: #0f4a43; color: #fff; font: 700 1.25cqw/1 var(--geo); border-radius: .7cqw; padding: 1.1cqw 1.8cqw; }
+
+  /* ReplicaPro */
+  .rp { align-items: center; }
+  .bewertung { width: 44cqw; background: #fff; border-radius: 1.4cqw; padding: 2.2cqw; display: grid; gap: 1.2cqw; box-shadow: 0 2.8cqw 5cqw -2cqw rgba(0,0,0,.55); }
+  .bw-kopf { display: flex; align-items: center; gap: 1.2cqw; font-size: 1.35cqw; } .bw-kopf small { color: #66726e; margin-left: auto; }
+  .sterne { color: var(--gold); letter-spacing: .1em; } .sterne em { font-style: normal; color: #d6dcd9; }
+  .bw-text { font: 500 1.5cqw/1.4 var(--serif); font-style: italic; }
+  .entwurf { display: grid; gap: .9cqw; background: #f2f8f5; border-left: .5cqw solid var(--mint); border-radius: .9cqw; padding: 1.4cqw 1.6cqw; }
+  .entwurf small { font: 700 1cqw/1 var(--geo); color: #1a6b5c; } .entwurf p { font-size: 1.3cqw; line-height: 1.45; }
+  .entwurf-knoepfe { display: flex; gap: .8cqw; } .entwurf-knoepfe span { font: 700 1.15cqw/1 var(--geo); border: 1px solid #cfe1da; border-radius: .6cqw; padding: .9cqw 1.4cqw; color: #0f4a43; }
+  .entwurf-knoepfe .an { background: var(--gold); border-color: var(--gold); color: #1d1606; }
+  .hinweis-negativ { align-self: flex-start; margin-top: 6cqw; display: grid; gap: .5cqw; max-width: 20cqw; background: #fff; border-left: .5cqw solid #d0612f; border-radius: 1.2cqw; padding: 1.6cqw 1.8cqw; font-size: 1.25cqw; box-shadow: 0 2.4cqw 4cqw -1.6cqw rgba(0,0,0,.5); }
+  .hinweis-negativ b { color: #b4441d; }
+
+  /* Betriebsautopilot */
+  .kurs { width: 46cqw; background: #fff; border-radius: 1.4cqw; overflow: hidden; box-shadow: 0 2.8cqw 5cqw -2cqw rgba(0,0,0,.55); }
+  .kurs-video { position: relative; aspect-ratio: 16/7; display: grid; align-content: end; gap: .4cqw; padding: 1.6cqw 2cqw; color: #fff; background: linear-gradient(135deg, #146157, #0b302e 70%); }
+  .kurs-video b { font: 600 1.9cqw/1.1 var(--serif); } .kurs-video small { font-size: 1.05cqw; opacity: .8; }
+  .play { position: absolute; left: 50%; top: 38%; translate: -50% -50%; width: 5cqw; height: 5cqw; border-radius: 50%; background: rgba(255,255,255,.92); }
+  .play::after { content: ''; position: absolute; left: 2cqw; top: 1.4cqw; border-left: 1.6cqw solid var(--petrol); border-block: 1.1cqw solid transparent; }
+  .kurs-fortschritt { height: .6cqw; background: #e3e9e6; } .kurs-fortschritt span { display: block; height: 100%; background: var(--mint); }
+  .kurs-liste { margin: 0; padding: 1.6cqw 2cqw 1.8cqw 4.2cqw; display: grid; gap: .8cqw; font-size: 1.25cqw; }
+  .kurs-liste .fertig { color: #66726e; text-decoration: line-through; } .kurs-liste .jetzt { font-weight: 700; color: #0f4a43; }
+  .datei { display: grid; gap: .4cqw; background: #fff; border-radius: 1.2cqw; padding: 1.6cqw 2cqw; font-size: 1.3cqw; box-shadow: 0 2cqw 3.6cqw -1.6cqw rgba(0,0,0,.5); } .datei small { color: #66726e; }
+  .ampel { display: grid; gap: .7cqw; background: rgba(7,34,33,.9); border: 1px solid rgba(62,211,168,.5); border-radius: 1.2cqw; padding: 1.6cqw 1.8cqw; color: #fff; font-size: 1.2cqw; }
+  .ampel p { font: 700 1.05cqw/1 var(--geo); letter-spacing: .12em; text-transform: uppercase; color: var(--mint); }
+  .ampel span { display: flex; align-items: center; gap: .8cqw; } .ampel span::before { content: ''; width: 1.2cqw; height: 1.2cqw; border-radius: 50%; }
+  .ampel .gruen::before { background: #3ed3a8; } .ampel .gelb::before { background: #e9b55a; } .ampel .rot::before { background: #e0623a; }
+
+  /* VermieterKiste */
+  .tabelle { width: 48cqw; background: #fff; border-radius: 1.4cqw; overflow: hidden; box-shadow: 0 2.8cqw 5cqw -2cqw rgba(0,0,0,.55); }
+  .tb-reiter { display: flex; gap: .4cqw; background: #eef1ef; padding: .8cqw 1cqw 0; } .tb-reiter span { font: 700 1.1cqw/1 var(--geo); padding: .9cqw 1.4cqw; border-radius: .6cqw .6cqw 0 0; color: #55635e; } .tb-reiter .an { background: #fff; color: #0f4a43; }
+  .tb-raster { display: grid; grid-template-columns: 9cqw repeat(10, 1fr); gap: .4cqw; padding: 1.6cqw; align-items: center; }
+  .tb-tag { text-align: center; font: 700 1cqw/1 var(--geo); color: #66726e; } .tb-name { font: 600 1.15cqw/1 var(--geo); }
+  .tb-zeile { grid-column: 2 / -1; display: grid; grid-template-columns: repeat(10, 1fr); gap: .4cqw; height: 2.6cqw; background: repeating-linear-gradient(90deg, #f3f6f4 0 calc(10% - .4cqw), transparent 0 10%); border-radius: .4cqw; }
+  .tb-b { border-radius: .5cqw; } .tb-b.a { background: #3ed3a8; } .tb-b.b { background: #e9b55a; } .tb-b.c { background: #7fb6e8; }
+  .rechner { align-self: flex-end; margin-bottom: 5cqw; width: 22cqw; display: grid; gap: .8cqw; background: #fff; border-radius: 1.4cqw; padding: 1.8cqw 2cqw; font-size: 1.25cqw; box-shadow: 0 2.4cqw 4cqw -1.6cqw rgba(0,0,0,.5); }
+  .rechner p { font: 700 1.05cqw/1 var(--geo); letter-spacing: .12em; text-transform: uppercase; color: #1a6b5c; }
+  .rechner div { display: flex; justify-content: space-between; } .rechner .summe { border-top: 1px solid #e3e9e6; padding-top: .8cqw; } .rechner .summe b { color: #0f4a43; font-size: 1.6cqw; }
+
+  /* SitoTranquillo */
+  .seite-mini { display: grid; } .sm-hero { display: grid; gap: .6cqw; padding: 3cqw 2.6cqw; color: #fff; background: linear-gradient(120deg, #6b3d1d, #b8783a); }
+  .sm-hero b { font: 600 3cqw/1 var(--serif); } .sm-hero span { font-size: 1.4cqw; } .sm-hero em { justify-self: start; font: 700 1.1cqw/1 var(--geo); font-style: normal; background: #fff; color: #138a5e; border-radius: 99px; padding: .6cqw 1cqw; }
+  .sm-karten { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1cqw; padding: 1.6cqw 2cqw 2.2cqw; } .sm-karten span { background: #f5efe6; border-radius: .8cqw; padding: 2.4cqw 1cqw; text-align: center; font: 600 1.2cqw/1.2 var(--geo); }
+  .chat { align-self: flex-end; margin-bottom: 4cqw; display: grid; gap: 1cqw; width: 22cqw; }
+  .chat p { font-size: 1.25cqw; line-height: 1.35; border-radius: 1.2cqw; padding: 1.2cqw 1.4cqw; box-shadow: 0 1.6cqw 3cqw -1.4cqw rgba(0,0,0,.5); }
+  .chat-a { background: #fff; border-bottom-left-radius: .2cqw; } .chat-b { background: #dff5ea; justify-self: end; display: grid; gap: .3cqw; border-bottom-right-radius: .2cqw; } .chat-b small { color: #3b6b5c; font-size: 1cqw; }
+  .chat-hinweis { justify-self: start; font: 700 1.05cqw/1 var(--geo); color: #1d1606; background: var(--gold); border-radius: 99px; padding: .6cqw 1.1cqw; }
+
+  /* SitoCura */
+  .bericht-gross { width: 56cqw; background: #fff; border-radius: 1.4cqw; padding: 2.4cqw 2.8cqw; display: grid; gap: 1.8cqw; box-shadow: 0 2.8cqw 5cqw -2cqw rgba(0,0,0,.55); }
+  .bg-kopf { display: flex; justify-content: space-between; align-items: baseline; } .bg-kopf b { font: 600 2.4cqw/1 var(--serif); } .bg-kopf span { font-size: 1.2cqw; color: #66726e; }
+  .bg-werte { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1cqw; } .bg-werte div { display: grid; gap: .4cqw; background: #f2f8f5; border-radius: 1cqw; padding: 1.4cqw; }
+  .bg-werte b { font: 600 2.6cqw/1 var(--geo); color: #0f4a43; } .bg-werte span { font-size: 1.1cqw; color: #55635e; }
+  .bg-liste { list-style: none; margin: 0; padding: 0; display: grid; gap: .8cqw; font-size: 1.3cqw; } .bg-liste li { display: flex; align-items: center; gap: 1cqw; }
+  .bg-liste li::before { content: ''; flex: none; width: 1.4cqw; height: 1.4cqw; border-radius: 50%; } .bg-liste .ok::before { background: #3ed3a8; } .bg-liste .pruefen::before { background: #e9b55a; }
+
+  /* OspiteInRegola */
+  .checkliste { width: 44cqw; background: #fff; border-radius: 1.4cqw; padding: 2.2cqw; display: grid; gap: 1.4cqw; box-shadow: 0 2.8cqw 5cqw -2cqw rgba(0,0,0,.55); }
+  .cl-kopf { display: grid; gap: .4cqw; } .cl-kopf b { font: 600 2.2cqw/1 var(--serif); } .cl-kopf span { font-size: 1.25cqw; color: #55635e; }
+  .checkliste ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .9cqw; }
+  .checkliste li { display: grid; grid-template-columns: 2cqw 15cqw 1fr auto; align-items: center; gap: .8cqw; font-size: 1.25cqw; padding: 1cqw 1.2cqw; border-radius: .9cqw; background: #f6f8f7; }
+  .checkliste li::before { content: ''; width: 1.5cqw; height: 1.5cqw; border-radius: 50%; } .checkliste .ok::before { background: #3ed3a8; } .checkliste .faellig { background: #fdf3dd; } .checkliste .faellig::before { background: #e9b55a; } .checkliste .spaeter::before { background: #c9d1cd; }
+  .checkliste em { font: 700 1cqw/1 var(--geo); font-style: normal; background: #0f4a43; color: #fff; border-radius: 99px; padding: .5cqw .9cqw; }
+
+  /* OspiteGuida */
+  .og { height: 100%; border-radius: 3.2cqw; background: #eef3f1; overflow: hidden; display: flex; flex-direction: column; gap: 1cqw; padding-bottom: 1.6cqw; }
+  .og-kopf { display: grid; gap: .3cqw; padding: 5cqw 2.2cqw 1.6cqw; background: var(--petrol); color: #fff; } .og-kopf b { font: 600 2cqw/1 var(--serif); } .og-kopf span { font-size: 1.05cqw; color: var(--mint); }
+  .og p { margin: 0 1.6cqw; max-width: 80%; font-size: 1.12cqw; line-height: 1.35; padding: 1cqw 1.2cqw; border-radius: 1.2cqw; }
+  .og-bot { background: #fff; border-bottom-left-radius: .2cqw; } .og-gast { align-self: flex-end; background: #0f4a43; color: #fff; border-bottom-right-radius: .2cqw; }
+  .uebergabe { display: grid; gap: .5cqw; background: #fff; border-left: .5cqw solid var(--gold); border-radius: 1.2cqw; padding: 1.6cqw 1.8cqw; font-size: 1.25cqw; box-shadow: 0 2.4cqw 4cqw -1.6cqw rgba(0,0,0,.5); } .uebergabe b { color: #8a5a12; }
 
   /* Auf dem Handy bleibt die Vorschau im Querformat lesbar und lässt sich seitlich wischen */
   .vs-huelle { border-radius: 18px; }

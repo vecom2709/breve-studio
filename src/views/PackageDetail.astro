@@ -5,6 +5,7 @@ import PackageCard from '../components/PackageCard.astro';
 import InquiryForm from '../components/InquiryForm.astro';
 import Vorschau from '../components/vorschau/Vorschau.astro';
 import { vorschauSlugs } from '../components/vorschau/liste';
+import { ablauf } from '../content/ablauf';
 import { categoryById, packagesSorted, bundles, isPurchasable, type Locale, type Package } from '../content/packages';
 import { path, ui } from '../lib/i18n';
 interface Props { lang: Locale; pkg: Package }
@@ -23,6 +24,7 @@ const formTitle = pkg.status === 'inquiry'
     ? (de ? `Zum Start von ${pkg.brand} benachrichtigen` : `Avvisami al lancio di ${pkg.brand}`)
     : (de ? `Interesse an ${pkg.brand} vormerken` : `Segnala interesse per ${pkg.brand}`);
 const selfPath = path('package', lang, pkg.slug);
+const schritte = ablauf[pkg.slug]?.[lang] ?? [];
 ---
 <Base lang={lang} routeKey="package" slug={pkg.slug} title={`${pkg.brand} – ${pkg.tagline[lang]}`} description={pkg.benefit[lang]} image={pkg.image}>
   <nav class="wrap crumbs small" aria-label={de ? 'Brotkrumen' : 'Percorso'}>
@@ -61,7 +63,9 @@ const selfPath = path('package', lang, pkg.slug);
     <section class="wrap visual vorschau" aria-labelledby="vorschau-h">
       <h2 class="h3" id="vorschau-h">{de ? 'So sieht es aus' : 'Ecco come appare'}</h2>
       <Vorschau slug={pkg.slug} lang={lang} />
-      <p class="small muted">{de ? 'Beispielansicht mit erfundenen Daten – zum Ausprobieren anklicken.' : 'Anteprima con dati inventati – prova a cliccare.'}</p>
+      <p class="small muted">{['menuvivo', 'immotesto', 'agendabreve'].includes(pkg.slug)
+        ? (de ? 'Beispielansicht mit erfundenen Daten – zum Ausprobieren anklicken.' : 'Anteprima con dati inventati – prova a cliccare.')
+        : (de ? 'Beispielansicht mit erfundenen Daten.' : 'Anteprima con dati inventati.')}</p>
     </section>
   ) : pkg.image && (
     <section class="wrap visual">
@@ -70,6 +74,17 @@ const selfPath = path('package', lang, pkg.slug);
         </div>
         <figcaption class="small muted">{t.conceptImage}</figcaption>
       </figure>
+    </section>
+  )}
+
+  {schritte.length > 0 && (
+    <section class="section ablauf" aria-labelledby="ablauf-h">
+      <div class="wrap">
+        <h2 class="h3" id="ablauf-h">{de ? 'So läuft es ab' : 'Come funziona'}</h2>
+        <ol class="schritte">
+          {schritte.map((x, i) => <li><span class="nr" aria-hidden="true">{i + 1}</span><p>{x}</p></li>)}
+        </ol>
+      </div>
     </section>
   )}
 
@@ -148,6 +163,13 @@ const selfPath = path('package', lang, pkg.slug);
 
 <style>
   .vorschau { display: grid; gap: .9rem; }
+  .ablauf { padding-block: var(--space-l) 0; }
+  .schritte { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 1rem; counter-reset: s; }
+  @media (min-width: 52rem) { .schritte { grid-template-columns: repeat(3, 1fr); gap: 1.4rem; } }
+  .schritte li { display: grid; grid-template-columns: auto 1fr; gap: .9rem; align-items: start; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.2rem;
+    box-shadow: inset 0 1px 0 #fff, 0 2px 4px rgba(30,40,30,.05), 0 14px 28px -14px rgba(30,40,30,.22); }
+  .schritte .nr { display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 999px; background: #0f4a43; color: #fff; font: 700 1rem/1 var(--geo); box-shadow: 0 4px 10px rgba(15,74,67,.3); }
+  .schritte p { margin: 0; }
   .crumbs { padding-top: 1.5rem; }
   .crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .3rem; color: var(--muted); }
   .crumbs li + li::before { content: '/'; margin-right: .3rem; color: var(--line-strong); }
