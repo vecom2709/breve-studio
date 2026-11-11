@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import { bildFuer } from '../components/vorschau/liste';
 import {
   catalogStats,
   packagesSorted,
@@ -191,7 +192,7 @@ const heroImg = `/images/home/hero-${lang}`;
               <p class="badge" data-status={p.status}>{(p.status === 'waitlist' || p.status === 'inquiry' || p.status === 'soon') ? t.badge[p.status] : t.status[p.status]}</p>
               {p.image && (
                 <a class="media" href={path('package', lang, p.slug)} tabindex="-1">
-                  <img src={p.image} alt={p.imageAlt?.[lang] ?? ''} width="640" height="360" loading="lazy" decoding="async" />
+                  <img src={bildFuer(p, lang)} alt={p.imageAlt?.[lang] ?? ''} width="640" height="360" loading="lazy" decoding="async" />
                 </a>
               )}
               <div class="body">

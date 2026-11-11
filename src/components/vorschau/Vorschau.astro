@@ -1,0 +1,311 @@
+---
+/**
+ * Kleine, klickbare Vorschau je Paket: zeigt dem Kunden mit erfundenen Beispieldaten, worum es geht.
+ * Ohne JavaScript – Sprachwahl und Zeitwahl laufen über beschriftete Radio-Felder.
+ */
+import type { Locale } from '../../content/packages';
+interface Props { slug: string; lang: Locale }
+const { slug, lang } = Astro.props;
+const de = lang === 'de';
+const id = `vs-${slug}`;
+
+// MenuVivo: dieselben Gerichte in drei Sprachen
+const karte = {
+  de: { titel: 'Speisekarte', tag: 'Tagesgericht', gerichte: [
+    ['Arancini al ragù', 'Reisbällchen mit Ragù, frittiert', '6,50', ['1', '3', '7']],
+    ['Pasta alla Norma', 'Aubergine, Tomate, gesalzener Ricotta', '11,00', ['1', '7']],
+    ['Cannolo siciliano', 'Ricotta, Pistazie, kandierte Orange', '4,50', ['1', '7', '8']],
+  ] },
+  it: { titel: 'Menù', tag: 'Piatto del giorno', gerichte: [
+    ['Arancini al ragù', 'Riso, ragù di carne, fritti', '6,50', ['1', '3', '7']],
+    ['Pasta alla Norma', 'Melanzane, pomodoro, ricotta salata', '11,00', ['1', '7']],
+    ['Cannolo siciliano', 'Ricotta, pistacchio, arancia candita', '4,50', ['1', '7', '8']],
+  ] },
+  en: { titel: 'Menu', tag: 'Dish of the day', gerichte: [
+    ['Arancini al ragù', 'Fried rice balls with meat ragù', '6.50', ['1', '3', '7']],
+    ['Pasta alla Norma', 'Aubergine, tomato, salted ricotta', '11.00', ['1', '7']],
+    ['Cannolo siciliano', 'Ricotta, pistachio, candied orange', '4.50', ['1', '7', '8']],
+  ] },
+} as const;
+const allergene: Record<string, string> = de
+  ? { '1': 'Gluten', '3': 'Ei', '7': 'Milch', '8': 'Schalenfrüchte' }
+  : { '1': 'Glutine', '3': 'Uova', '7': 'Latte', '8': 'Frutta a guscio' };
+
+const tage = de ? ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'] : ['Lu', 'Ma', 'Me', 'Gi', 'Ve', 'Sa'];
+const zeiten = ['09:00', '09:45', '10:30', '11:15', '14:00', '14:45', '15:30', '16:15'];
+const belegt = new Set(['09:45', '11:15', '15:30']);
+---
+<div class="vs-huelle">
+<div class:list={['vs', `vs-${slug}`]} role="group" aria-label={de ? 'Beispielansicht mit erfundenen Daten' : 'Anteprima con dati di esempio'}>
+  <span class="vs-marke">{de ? 'Beispielansicht' : 'Anteprima'}</span>
+
+  {slug === 'menuvivo' && (
+    <div class="vs-buehne">
+      <div class="handy">
+        <div class="handy-insel"></div>
+        <div class="mv">
+          {(['de', 'it', 'en'] as const).map((s, i) => (
+            <input type="radio" name={`${id}-sprache`} id={`${id}-${s}`} class="mv-r" checked={(lang === 'it' ? 1 : 0) === i} />
+          ))}
+          <div class="mv-kopf">
+            <strong>Trattoria Esempio</strong>
+            <div class="mv-tabs">
+              {(['de', 'it', 'en'] as const).map((s) => <label for={`${id}-${s}`} class={`mv-t mv-t-${s}`}>{s.toUpperCase()}</label>)}
+            </div>
+          </div>
+          {(['de', 'it', 'en'] as const).map((s) => (
+            <div class={`mv-liste mv-l-${s}`}>
+              <p class="mv-h">{karte[s].titel}</p>
+              {karte[s].gerichte.map(([n, b, p, a], i) => (
+                <div class="mv-g">
+                  <div><span class="mv-n">{n}</span>{i === 1 && <em class="mv-tag">{karte[s].tag}</em>}<span class="mv-b">{b}</span>
+                    <span class="mv-a">{a.map((x) => <i title={allergene[x]}>{x}</i>)}</span></div>
+                  <span class="mv-p">{p} €</span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="vs-seite">
+        <div class="aufsteller">
+          <img class="qr-deko" src="/images/vorschau/qr-beispiel.svg" alt="" width="120" height="120" />
+          <strong>{de ? 'Speisekarte scannen' : 'Inquadra il menù'}</strong>
+          <span>DE · IT · EN</span>
+        </div>
+        <ul class="legende">
+          {Object.entries(allergene).map(([k, v]) => <li><i>{k}</i>{v}</li>)}
+        </ul>
+      </div>
+    </div>
+  )}
+
+  {slug === 'mappaviva' && (
+    <div class="vs-buehne mp">
+      <div class="karte" aria-hidden="true"><span class="pin"></span></div>
+      <div class="profil">
+        <p class="pr-name">Bar Esempio</p>
+        <p class="pr-ort">{de ? 'Café · Agrigento' : 'Bar · Agrigento'}</p>
+        <p class="pr-sterne"><b>4,7</b> <span>★★★★★</span> <small>(128)</small></p>
+        <p class="pr-offen"><b>{de ? 'Geöffnet' : 'Aperto'}</b> · {de ? 'schließt um 20:00' : 'chiude alle 20:00'}</p>
+        <ul class="pr-zeiten">
+          <li><span>{de ? 'Mo–Sa' : 'Lun–Sab'}</span><span>07:00–20:00</span></li>
+          <li><span>{de ? 'So' : 'Dom'}</span><span>08:00–13:00</span></li>
+          <li class="neu"><span>{de ? '8. Dez. (Feiertag)' : '8 dic. (festivo)'}</span><span>08:00–13:00</span><em>{de ? 'aktualisiert' : 'aggiornato'}</em></li>
+        </ul>
+        <div class="pr-knoepfe"><span>{de ? 'Route' : 'Indicazioni'}</span><span>{de ? 'Anrufen' : 'Chiama'}</span><span>Website</span></div>
+        <div class="pr-beitrag"><small>{de ? 'Beitrag · vor 2 Tagen' : 'Post · 2 giorni fa'}</small>{de ? 'Neu: Granita al pistacchio – jeden Morgen frisch.' : 'Novità: granita al pistacchio – fresca ogni mattina.'}</div>
+      </div>
+      <div class="bericht">
+        <p>{de ? 'Monatsbericht' : 'Report mensile'}</p>
+        <ul>
+          <li><b>1.240</b>{de ? 'Aufrufe' : 'Visualizzazioni'}</li>
+          <li><b>36</b>{de ? 'Anrufe' : 'Chiamate'}</li>
+          <li><b>88</b>{de ? 'Routen' : 'Indicazioni'}</li>
+        </ul>
+      </div>
+    </div>
+  )}
+
+  {slug === 'agendabreve' && (
+    <div class="vs-buehne ag">
+      <div class="fenster">
+        <div class="fenster-leiste"><i></i><i></i><i></i><span>salone-esempio.it/{de ? 'termin' : 'prenota'}</span></div>
+        <div class="ag-inhalt">
+          <p class="ag-titel">{de ? 'Termin buchen' : 'Prenota un appuntamento'}</p>
+          <div class="ag-leistung"><b>{de ? 'Haarschnitt & Föhnen' : 'Taglio e piega'}</b><span>45 Min · 35 €</span></div>
+          <div class="ag-tage">{tage.map((t, i) => <span class:list={{ an: i === 2 }}><small>{t}</small>{12 + i}</span>)}</div>
+          <div class="ag-zeiten">
+            {zeiten.map((z, i) => belegt.has(z)
+              ? <span class="ag-z belegt">{z}</span>
+              : <><input type="radio" name={`${id}-zeit`} id={`${id}-z${i}`} class="ag-r" checked={z === '10:30'} /><label for={`${id}-z${i}`} class="ag-z">{z}</label></>)}
+          </div>
+          <span class="ag-knopf">{de ? 'Termin buchen' : 'Prenota'}</span>
+        </div>
+      </div>
+      <div class="ag-bestaetigung">
+        <b>{de ? 'Bestätigt' : 'Confermato'}</b>
+        <span>{de ? 'Mi, 14. · 10:30 Uhr' : 'Mer 14 · ore 10:30'}</span>
+        <small>{de ? 'Erinnerung kommt am Vortag per E-Mail.' : 'Promemoria il giorno prima via e-mail.'}</small>
+      </div>
+    </div>
+  )}
+
+  {slug === 'socialsettimana' && (
+    <div class="vs-buehne so">
+      {[
+        { tag: de ? 'Montag' : 'Lunedì', bild: '/images/vorschau/post-1.webp', text: de ? 'Neue Woche, frische Ideen – der Kaffee steht schon bereit.' : 'Nuova settimana, idee fresche – il caffè è già pronto.', status: 'ok' },
+        { tag: de ? 'Mittwoch' : 'Mercoledì', bild: '/images/vorschau/post-2.webp', text: de ? 'Kaffee, Licht und ein ruhiger Platz zum Arbeiten – bis 20 Uhr.' : 'Caffè, luce e un posto tranquillo per lavorare – fino alle 20.', status: 'ok' },
+        { tag: de ? 'Freitag' : 'Venerdì', bild: '/images/vorschau/post-3.webp', text: de ? 'Freitagabend: Wir bleiben länger offen. Wer kommt vorbei?' : 'Venerdì sera restiamo aperti più a lungo. Chi passa a trovarci?', status: 'frei' },
+      ].map((p) => (
+        <div class="post">
+          <p class="post-tag">{p.tag}</p>
+          <div class="post-bild" style={`background-image:url(${p.bild})`}></div>
+          <p class="post-text">{p.text}</p>
+          <p class="post-hash">#agrigento #sicilia #caffè</p>
+          {p.status === 'ok'
+            ? <span class="post-status ok">{de ? 'Freigegeben' : 'Approvato'}</span>
+            : <span class="post-status frei">{de ? 'Zur Freigabe' : 'Da approvare'} <b>{de ? 'Freigeben' : 'Approva'}</b></span>}
+        </div>
+      ))}
+    </div>
+  )}
+
+  {slug === 'eventolampo' && (
+    <div class="vs-buehne ev">
+      <div class="handy">
+        <div class="handy-insel"></div>
+        <div class="ev-seite">
+          <div class="ev-kopf">
+            <small>{de ? 'Sa, 12. Juni · 19 Uhr' : 'Sab 12 giugno · ore 19'}</small>
+            <strong>{de ? 'Sommerfest im Hof' : 'Festa d’estate in cortile'}</strong>
+            <span>Aragona · Via Esempio 1</span>
+          </div>
+          <div class="ev-countdown">
+            <span><b>12</b>{de ? 'Tage' : 'giorni'}</span><span><b>06</b>{de ? 'Std' : 'ore'}</span><span><b>45</b>Min</span>
+          </div>
+          <ul class="ev-programm">
+            <li><b>19:00</b>{de ? 'Aperitivo & Live-Musik' : 'Aperitivo e musica dal vivo'}</li>
+            <li><b>20:30</b>{de ? 'Buffet mit Spezialitäten' : 'Buffet di specialità'}</li>
+            <li><b>22:00</b>{de ? 'Dolci & Tanz' : 'Dolci e balli'}</li>
+          </ul>
+          <div class="ev-karte" aria-hidden="true"><span></span><b>{de ? 'Anfahrt öffnen' : 'Apri indicazioni'}</b></div>
+          <div class="ev-anmeldung"><span>{de ? 'Personen' : 'Persone'} <b>− 2 +</b></span><span class="ev-knopf">{de ? 'Jetzt anmelden' : 'Iscriviti ora'}</span></div>
+        </div>
+      </div>
+      <div class="vs-seite">
+        <div class="teilen">
+          <div class="teilen-bild"><strong>{de ? 'Sommerfest im Hof' : 'Festa d’estate'}</strong><span>{de ? '12. Juni · Aragona' : '12 giugno · Aragona'}</span></div>
+          <p><b>sommerfest-esempio.it</b>{de ? 'Programm, Anfahrt und Anmeldung' : 'Programma, indicazioni e iscrizione'}</p>
+        </div>
+        <p class="teilen-hinweis">{de ? 'So sieht der Link im Chat aus.' : 'Così appare il link in chat.'}</p>
+      </div>
+    </div>
+  )}
+</div>
+</div>
+
+<style>
+  .vs {
+    --petrol: #0b302e; --mint: #3ed3a8; --gold: #e9b55a; --creme: #f7f2e9; --tinte: #12211d;
+    position: relative; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; isolation: isolate;
+    background: radial-gradient(120% 120% at 20% 0%, #155a51 0%, #0c3633 45%, #072321 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 2px 4px rgba(0,0,0,.12), 0 24px 50px -16px rgba(0,0,0,.4);
+    font-family: var(--geo); color: var(--tinte); container-type: inline-size;
+  }
+  .vs-marke { position: absolute; top: 3cqw; right: 3cqw; z-index: 3; font: 700 1.3cqw/1 var(--geo); letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: .7cqw 1.4cqw; }
+  .vs-buehne { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 5cqw; padding: 4cqw 6cqw; }
+  .handy { position: relative; width: 27cqw; aspect-ratio: 9 / 18.5; border-radius: 4cqw; background: #111; padding: 1cqw; box-shadow: 0 0 0 .35cqw #2b2f31, 0 3cqw 6cqw -2cqw rgba(0,0,0,.6); flex: none; }
+  .handy-insel { position: absolute; top: 1.8cqw; left: 50%; translate: -50% 0; width: 7cqw; height: 2cqw; border-radius: 99px; background: #000; z-index: 2; }
+  .vs-seite { display: grid; gap: 2.4cqw; justify-items: start; max-width: 34cqw; }
+
+  /* MenuVivo */
+  .mv { height: 100%; border-radius: 3.2cqw; background: var(--creme); overflow: hidden; display: flex; flex-direction: column; }
+  .mv-r { position: absolute; opacity: 0; pointer-events: none; }
+  .mv-kopf { background: var(--petrol); color: #fff; padding: 5cqw 2.4cqw 1.8cqw; display: grid; gap: 1.4cqw; }
+  .mv-kopf strong { font: 600 2.3cqw/1 var(--serif); }
+  .mv-tabs { display: flex; gap: .8cqw; }
+  .mv-t { flex: 1; text-align: center; padding: .8cqw 0; border-radius: 99px; border: 1px solid rgba(255,255,255,.35); font: 700 1.25cqw/1 var(--geo); cursor: pointer; }
+  .mv-liste { display: none; padding: 1.8cqw 2.2cqw; gap: 1.6cqw; }
+  .mv-h { font: 700 1.2cqw/1 var(--geo); letter-spacing: .14em; text-transform: uppercase; color: #1a6b5c; }
+  .mv-g { display: flex; justify-content: space-between; gap: 1cqw; padding-bottom: 1.4cqw; border-bottom: 1px dashed #d8cdb9; }
+  .mv-g > div { display: grid; gap: .4cqw; }
+  .mv-n { font: 600 1.65cqw/1.15 var(--serif); }
+  .mv-b { font-size: 1.15cqw; color: #4b5a55; line-height: 1.3; }
+  .mv-p { font: 700 1.5cqw/1 var(--geo); color: var(--petrol); white-space: nowrap; }
+  .mv-tag { justify-self: start; font: 700 .95cqw/1 var(--geo); font-style: normal; color: #6b4d12; background: #f6dfae; border-radius: 99px; padding: .35cqw .8cqw; }
+  .mv-a { display: flex; gap: .4cqw; }
+  .mv-a i, .legende i { display: inline-grid; place-items: center; width: 1.9cqw; height: 1.9cqw; border-radius: 50%; background: #e8efe9; color: #1a6b5c; font: 700 1cqw/1 var(--geo); font-style: normal; }
+  #vs-menuvivo-de:checked ~ .mv-l-de, #vs-menuvivo-it:checked ~ .mv-l-it, #vs-menuvivo-en:checked ~ .mv-l-en { display: grid; }
+  #vs-menuvivo-de:checked ~ .mv-kopf .mv-t-de, #vs-menuvivo-it:checked ~ .mv-kopf .mv-t-it, #vs-menuvivo-en:checked ~ .mv-kopf .mv-t-en { background: var(--gold); border-color: var(--gold); color: #1d1606; }
+  .mv-r:focus-visible ~ .mv-kopf .mv-tabs { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 99px; }
+  .aufsteller { background: #fff; border-radius: 1.6cqw; padding: 2.2cqw; display: grid; justify-items: center; gap: 1cqw; box-shadow: 0 2.4cqw 4cqw -1.6cqw rgba(0,0,0,.5); rotate: -3deg; }
+  .aufsteller strong { font: 600 1.9cqw/1.1 var(--serif); color: var(--tinte); }
+  .aufsteller span { font: 700 1.1cqw/1 var(--geo); letter-spacing: .12em; color: #1a6b5c; }
+  .qr-deko { width: 12cqw; height: 12cqw; image-rendering: pixelated; }
+  .legende { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1cqw 2cqw; color: #fff; font: 600 1.3cqw/1.2 var(--geo); }
+  .legende li { display: flex; align-items: center; gap: .8cqw; }
+
+  /* MappaViva */
+  .mp { justify-content: flex-start; padding-left: 4cqw; }
+  .karte { position: absolute; inset: 0; z-index: -1; background:
+    linear-gradient(28deg, transparent 47%, rgba(255,255,255,.14) 47% 49%, transparent 49%) 0 0 / 22cqw 16cqw,
+    linear-gradient(-62deg, transparent 46%, rgba(255,255,255,.1) 46% 48%, transparent 48%) 0 0 / 18cqw 20cqw,
+    linear-gradient(90deg, transparent 58%, rgba(62,211,168,.15) 58% 61%, transparent 61%),
+    #0e3b37; }
+  .pin { position: absolute; right: 24cqw; top: 22cqw; width: 4cqw; height: 4cqw; background: var(--gold); border-radius: 50% 50% 50% 0; rotate: -45deg; box-shadow: 0 0 0 1.4cqw rgba(233,181,90,.25); }
+  .profil { width: 40cqw; background: #fff; border-radius: 1.6cqw; padding: 2.4cqw 2.6cqw; display: grid; gap: .9cqw; box-shadow: 0 3cqw 5cqw -2cqw rgba(0,0,0,.55); }
+  .pr-name { font: 600 2.6cqw/1 var(--serif); }
+  .pr-ort { font-size: 1.3cqw; color: #55635e; }
+  .pr-sterne { font-size: 1.35cqw; } .pr-sterne span { color: var(--gold); letter-spacing: .1em; } .pr-sterne small { color: #6b7672; }
+  .pr-offen { font-size: 1.35cqw; } .pr-offen b { color: #138a5e; }
+  .pr-zeiten { list-style: none; margin: 0; padding: .8cqw 0; display: grid; gap: .6cqw; border-block: 1px solid #ece6da; font-size: 1.25cqw; }
+  .pr-zeiten li { display: grid; grid-template-columns: 1fr auto auto; gap: 1cqw; align-items: center; }
+  .pr-zeiten .neu { background: #fdf3dd; margin: 0 -1cqw; padding: .5cqw 1cqw; border-radius: .6cqw; }
+  .pr-zeiten em { font: 700 .95cqw/1 var(--geo); font-style: normal; color: #6b4d12; background: #f6dfae; border-radius: 99px; padding: .35cqw .7cqw; }
+  .pr-knoepfe { display: flex; gap: .8cqw; } .pr-knoepfe span { flex: 1; text-align: center; font: 700 1.15cqw/1 var(--geo); color: #0f4a43; border: 1px solid #cfe1da; border-radius: 99px; padding: .9cqw 0; }
+  .pr-beitrag { display: grid; gap: .3cqw; font-size: 1.25cqw; background: #f4f8f6; border-radius: .8cqw; padding: 1cqw 1.2cqw; } .pr-beitrag small { color: #6b7672; }
+  .bericht { position: absolute; right: 6cqw; bottom: 7cqw; background: rgba(7,34,33,.88); color: #fff; border: 1px solid rgba(62,211,168,.5); border-radius: 1.4cqw; padding: 1.8cqw 2.2cqw; display: grid; gap: 1.2cqw; }
+  .bericht p { font: 700 1.1cqw/1 var(--geo); letter-spacing: .14em; text-transform: uppercase; color: var(--mint); }
+  .bericht ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2.4cqw; }
+  .bericht li { display: grid; gap: .4cqw; font-size: 1.15cqw; } .bericht b { font: 600 2.6cqw/1 var(--geo); }
+
+  /* AgendaBreve */
+  .fenster { width: 52cqw; background: #fff; border-radius: 1.4cqw; overflow: hidden; box-shadow: 0 3cqw 6cqw -2cqw rgba(0,0,0,.55); }
+  .fenster-leiste { display: flex; align-items: center; gap: .7cqw; padding: 1cqw 1.4cqw; background: #eef1ef; font-size: 1.1cqw; color: #66726e; }
+  .fenster-leiste i { width: 1cqw; height: 1cqw; border-radius: 50%; background: #c9d1cd; } .fenster-leiste span { margin-left: 1cqw; }
+  .ag-inhalt { padding: 2.2cqw 2.6cqw; display: grid; gap: 1.6cqw; }
+  .ag-titel { font: 600 2.4cqw/1 var(--serif); }
+  .ag-leistung { display: flex; justify-content: space-between; align-items: center; border: 1px solid #dde5e1; border-radius: .9cqw; padding: 1.1cqw 1.4cqw; font-size: 1.35cqw; } .ag-leistung span { color: #55635e; }
+  .ag-tage { display: grid; grid-template-columns: repeat(6, 1fr); gap: .8cqw; }
+  .ag-tage span { display: grid; justify-items: center; gap: .3cqw; padding: .8cqw 0; border-radius: .9cqw; font: 700 1.6cqw/1 var(--geo); color: var(--tinte); background: #f3f6f4; }
+  .ag-tage small { font: 600 1cqw/1 var(--geo); color: #6b7672; } .ag-tage .an { background: var(--petrol); color: #fff; } .ag-tage .an small { color: var(--mint); }
+  .ag-zeiten { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8cqw; }
+  .ag-r { position: absolute; opacity: 0; pointer-events: none; }
+  .ag-z { text-align: center; padding: 1cqw 0; border-radius: .8cqw; border: 1px solid #cfe1da; font: 700 1.3cqw/1 var(--geo); color: #0f4a43; cursor: pointer; }
+  .ag-z.belegt { color: #a8b2ae; border-style: dashed; text-decoration: line-through; cursor: default; }
+  .ag-r:checked + .ag-z { background: var(--gold); border-color: var(--gold); color: #1d1606; }
+  .ag-r:focus-visible + .ag-z { outline: 2px solid var(--petrol); outline-offset: 2px; }
+  .ag-knopf { justify-self: start; background: #0f4a43; color: #fff; font: 700 1.35cqw/1 var(--geo); border-radius: .7cqw; padding: 1.2cqw 2.2cqw; }
+  .ag-bestaetigung { align-self: flex-end; margin-bottom: 4cqw; display: grid; gap: .6cqw; background: #fff; border-left: .6cqw solid var(--mint); border-radius: 1.2cqw; padding: 1.8cqw 2.2cqw; font-size: 1.35cqw; box-shadow: 0 2.4cqw 4cqw -1.6cqw rgba(0,0,0,.5); max-width: 24cqw; }
+  .ag-bestaetigung b { color: #138a5e; font-size: 1.6cqw; } .ag-bestaetigung small { color: #55635e; }
+
+  /* SocialSettimana */
+  .so { gap: 3cqw; }
+  .post { width: 25cqw; background: #fff; border-radius: 1.4cqw; padding: 1.4cqw; display: grid; gap: .9cqw; box-shadow: 0 2.6cqw 5cqw -2cqw rgba(0,0,0,.55); }
+  .post:nth-child(3) { translate: 0 -2cqw; } .post:nth-child(4) { translate: 0 1.5cqw; }
+  .post-tag { font: 700 1.1cqw/1 var(--geo); letter-spacing: .14em; text-transform: uppercase; color: #1a6b5c; }
+  .post-bild { aspect-ratio: 1; border-radius: .9cqw; background: #ccc center / cover; }
+  .post-text { font-size: 1.3cqw; line-height: 1.35; } .post-hash { font-size: 1.1cqw; color: #1a6b5c; }
+  .post-status { display: flex; justify-content: space-between; align-items: center; font: 700 1.1cqw/1 var(--geo); border-radius: 99px; padding: .8cqw 1.1cqw; }
+  .post-status.ok { background: #e3f3ec; color: #138a5e; } .post-status.frei { background: #fdf3dd; color: #6b4d12; }
+  .post-status b { background: var(--gold); color: #1d1606; border-radius: 99px; padding: .5cqw .9cqw; }
+
+  /* EventoLampo */
+  .ev-seite { height: 100%; border-radius: 3.2cqw; background: #fffaf2; overflow: hidden; display: flex; flex-direction: column; }
+  .ev-kopf { padding: 5.4cqw 2.4cqw 2.2cqw; display: grid; gap: .8cqw; color: #fff; background: linear-gradient(160deg, #e9b55a 0%, #c6762f 60%, #8a3f22 100%); }
+  .ev-kopf small { font: 700 1.1cqw/1 var(--geo); letter-spacing: .08em; }
+  .ev-kopf strong { font: 600 2.6cqw/1.05 var(--serif); } .ev-kopf span { font-size: 1.15cqw; opacity: .9; }
+  .ev-countdown { display: flex; gap: .8cqw; padding: 1.6cqw 2.2cqw 0; }
+  .ev-countdown span { flex: 1; display: grid; justify-items: center; gap: .3cqw; background: var(--petrol); color: #fff; border-radius: .9cqw; padding: .9cqw 0; font-size: 1cqw; }
+  .ev-countdown b { font: 700 2cqw/1 var(--geo); color: var(--mint); }
+  .ev-programm { list-style: none; margin: 0; padding: 1.6cqw 2.2cqw; display: grid; gap: 1cqw; font-size: 1.2cqw; }
+  .ev-programm li { display: grid; grid-template-columns: 4.6cqw 1fr; gap: .8cqw; } .ev-programm b { color: #8a3f22; }
+  .ev-karte { margin: 0 2.2cqw; height: 6.5cqw; border-radius: .9cqw; position: relative; display: flex; align-items: flex-end; padding: .8cqw 1cqw; font-size: 1.05cqw; color: #0f4a43;
+    background: linear-gradient(28deg, transparent 46%, #fff 46% 50%, transparent 50%) 0 0 / 6cqw 4cqw, linear-gradient(-60deg, transparent 47%, #fff 47% 51%, transparent 51%) 0 0 / 5cqw 5cqw, #dfe9e4; }
+  .ev-karte span { position: absolute; left: 55%; top: 1.2cqw; width: 2cqw; height: 2cqw; background: #c6762f; border-radius: 50% 50% 50% 0; rotate: -45deg; }
+  .ev-anmeldung { margin-top: auto; padding: 1.6cqw 2.2cqw 2.6cqw; display: grid; gap: 1cqw; font-size: 1.2cqw; }
+  .ev-knopf { text-align: center; background: var(--petrol); color: #fff; font: 700 1.4cqw/1 var(--geo); border-radius: .9cqw; padding: 1.3cqw 0; }
+  .teilen { width: 30cqw; background: #fff; border-radius: 1.4cqw; overflow: hidden; box-shadow: 0 2.4cqw 4cqw -1.6cqw rgba(0,0,0,.5); }
+  .teilen-bild { aspect-ratio: 1.91; display: grid; align-content: end; gap: .5cqw; padding: 2cqw; color: #fff; background: linear-gradient(160deg, #e9b55a, #8a3f22); }
+  .teilen-bild strong { font: 600 2.4cqw/1 var(--serif); } .teilen-bild span { font-size: 1.2cqw; }
+  .teilen p { display: grid; gap: .3cqw; padding: 1.2cqw 1.6cqw; font-size: 1.15cqw; color: #55635e; } .teilen p b { color: var(--tinte); }
+  .teilen-hinweis { color: rgba(255,255,255,.8); font-size: 1.3cqw; }
+
+  /* Auf dem Handy bleibt die Vorschau im Querformat lesbar und lässt sich seitlich wischen */
+  .vs-huelle { border-radius: 18px; }
+  @media (max-width: 48rem) {
+    .vs-huelle { overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; padding-bottom: .4rem; }
+    .vs { width: 760px; }
+  }
+</style>

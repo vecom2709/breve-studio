@@ -3,6 +3,8 @@ import Base from '../layouts/Base.astro';
 import PriceBlock from '../components/PriceBlock.astro';
 import PackageCard from '../components/PackageCard.astro';
 import InquiryForm from '../components/InquiryForm.astro';
+import Vorschau from '../components/vorschau/Vorschau.astro';
+import { vorschauSlugs } from '../components/vorschau/liste';
 import { categoryById, packagesSorted, bundles, isPurchasable, type Locale, type Package } from '../content/packages';
 import { path, ui } from '../lib/i18n';
 interface Props { lang: Locale; pkg: Package }
@@ -55,7 +57,13 @@ const selfPath = path('package', lang, pkg.slug);
     </div>
   </section>
 
-  {pkg.image && (
+  {vorschauSlugs.has(pkg.slug) ? (
+    <section class="wrap visual vorschau" aria-labelledby="vorschau-h">
+      <h2 class="h3" id="vorschau-h">{de ? 'So sieht es aus' : 'Ecco come appare'}</h2>
+      <Vorschau slug={pkg.slug} lang={lang} />
+      <p class="small muted">{de ? 'Beispielansicht mit erfundenen Daten – zum Ausprobieren anklicken.' : 'Anteprima con dati inventati – prova a cliccare.'}</p>
+    </section>
+  ) : pkg.image && (
     <section class="wrap visual">
       <figure>
         <div class="frame">          <img src={pkg.image} alt={pkg.imageAlt?.[lang] ?? ''} width="1024" height="576" />
@@ -139,6 +147,7 @@ const selfPath = path('package', lang, pkg.slug);
 </Base>
 
 <style>
+  .vorschau { display: grid; gap: .9rem; }
   .crumbs { padding-top: 1.5rem; }
   .crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .3rem; color: var(--muted); }
   .crumbs li + li::before { content: '/'; margin-right: .3rem; color: var(--line-strong); }

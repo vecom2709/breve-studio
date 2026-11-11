@@ -139,6 +139,12 @@ Kundenstimmen stehen in `src/content/testimonials.ts` und werden nur mit Einwill
 - Bildstrecke neu erzeugen: `python3 tools/bilder/aufnahme.py http://127.0.0.1:4173 <ordner>` (Seitenaufnahmen) und danach `python3 tools/bilder/startseite_bilder.py <quellen> public/images/home <ordner>/screen-de.png <ordner>/screen-it.png`. Quellen: KI-Szene (Kie.ai, nano-banana-pro), `v-emblem.png` von vecom-design.it, Kartenbilder.
 - Das 3D-Handy im Abschnitt „App-Version“ wird in Blender (Cycles) auf dem eigenen Rechner gerendert: `tools/bilder/handy.py`.
 
+## Neue Pakete 11–15 (Stand 11.11.2026)
+
+- Daten: `src/content/packages-neu.ts` (MenuVivo, MappaViva, AgendaBreve, SocialSettimana, EventoLampo), eingehängt in `packages.ts`.
+- Klickbare Vorschau je Paket mit erfundenen Beispieldaten: `src/components/vorschau/Vorschau.astro` (Liste in `liste.ts`), erscheint auf der Paketseite unter „So sieht es aus“.
+- Kartenbilder sind Aufnahmen dieser Vorschauen (DE und IT): `python3 tools/bilder/vorschau_bilder.py http://127.0.0.1:4173`.
+
 ## Online-Vorschau (GitHub Pages)
 
 - Adresse: https://vecom2709.github.io/breve-studio/ (Zweig `gh-pages`, nur die fertigen Seiten; `noindex` bleibt).

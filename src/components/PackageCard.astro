@@ -1,4 +1,5 @@
 ---
+import { bildFuer } from './vorschau/liste';
 import PriceBlock from './PriceBlock.astro';
 import { categoryById, type Locale, type Package } from '../content/packages';
 import { path, ui } from '../lib/i18n';
@@ -11,7 +12,7 @@ const href = path('package', lang, pkg.slug);
 <article class="card" data-category={pkg.category}>
   {showImage && pkg.image && (
     <div class="media" aria-hidden="true">
-      <img src={pkg.image} alt="" width="1024" height="576" loading="lazy" decoding="async" />
+      <img src={bildFuer(pkg, lang)} alt="" width="1024" height="576" loading="lazy" decoding="async" />
     </div>
   )}
   <div class="body">

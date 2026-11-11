@@ -9,6 +9,8 @@
  * kaufbar. Der Status muss ehrlich bleiben.
  */
 
+import { neuePakete } from './packages-neu';
+
 export type Locale = 'de' | 'it';
 export type L10n<T = string> = Record<Locale, T>;
 
@@ -908,6 +910,7 @@ export const packages: Package[] = [
     market: { de: 'Italien · für Gäste mehrsprachig', it: 'Italia · multilingue per gli ospiti' },
     checkout: { provider: 'none' },
   },
+  ...neuePakete,
 ];
 
 /* ---------- Bündel ---------- */
