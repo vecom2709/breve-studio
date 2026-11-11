@@ -1028,21 +1028,21 @@
    "it": "Pubblicare con regolarità in autonomia, senza agenzia."
   },
   "why": {
-   "de": "Praxis statt Theorie, auf Deutsch und Italienisch, mit Datenschutz-Kapitel (Fotos von Gästen, Gewinnspiele) und lebenslangem Zugang.",
-   "it": "Pratica invece di teoria, in italiano e tedesco, con capitolo privacy (foto dei clienti, concorsi) e accesso a vita."
+   "de": "Praxis statt Theorie am Beispiel eines Cafés, auf Deutsch und Italienisch, mit Kapitel zu Fotos von Gästen, Werbekennzeichnung und Gewinnspielen. Eigener Kursraum mit Fortschritt, Kursbuch und Folien zum Ausdrucken, dauerhafter Zugang.",
+   "it": "Pratica invece di teoria con l’esempio di un bar, in italiano e tedesco, con un capitolo su foto dei clienti, pubblicità e concorsi. Aula del corso con avanzamento, manuale e slide da stampare, accesso per sempre."
   },
   "features": {
    "de": [
-    "12 Lektionen à 5–12 Minuten.",
-    "Vorlage Redaktionsplan und 60 Beitragsideen.",
-    "Handy-Fotografie mit Tageslicht.",
-    "Kapitel Recht und Datenschutz im Überblick."
+    "12 Lektionen à 6–12 Minuten Lesezeit, mit Grafiken und Aufgaben.",
+    "Redaktionsplan als Tabelle und 60 Beitragsideen.",
+    "Handy-Fotografie mit Tageslicht, kurze Videos, Texte.",
+    "Recht und Datenschutz für Deutschland und Italien im Überblick."
    ],
    "it": [
-    "12 lezioni da 5–12 minuti.",
-    "Modello di piano editoriale e 60 idee per i post.",
-    "Fotografia col telefono e luce naturale.",
-    "Capitolo su regole e privacy in sintesi."
+    "12 lezioni da 6–12 minuti di lettura, con grafiche e compiti.",
+    "Piano editoriale in tabella e 60 idee per i post.",
+    "Foto col telefono e luce naturale, video brevi, testi.",
+    "Regole e privacy per Italia e Germania in sintesi."
    ]
   },
   "plannedOffer": {
@@ -1058,6 +1058,10 @@
     {
      "q": "Wie lange habe ich Zugang?",
      "a": "Dauerhaft, inklusive späterer Aktualisierungen."
+    },
+    {
+     "q": "Wie bekomme ich SocialScuola?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Nach dem Kauf erhalten Sie per E-Mail Ihren persönlichen Zugang zum Kursraum – am Handy oder am Computer."
     }
    ],
    "it": [
@@ -1068,6 +1072,10 @@
     {
      "q": "Per quanto tempo ho accesso?",
      "a": "Per sempre, aggiornamenti futuri inclusi."
+    },
+    {
+     "q": "Come ricevo SocialScuola?",
+     "a": "Dall’avvio ufficiale di Studio Breve: dopo l’acquisto ricevi via e-mail il tuo accesso personale all’aula del corso – dal telefono o dal computer."
     }
    ]
   },
@@ -1162,11 +1170,11 @@
    }
   },
   "number": 21,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Die Lektionen sind Lesetexte mit Grafiken und Aufgaben; das Kapitel Recht ist ein Überblick, keine Rechtsberatung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Le lezioni sono testi da leggere con grafiche e compiti; il capitolo sulle regole è una sintesi, non una consulenza legale."
   },
   "erstellt": "2026-11-11T12:06:06.658Z"
  },
