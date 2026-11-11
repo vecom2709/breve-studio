@@ -10,6 +10,7 @@
  */
 
 import { neuePakete } from './packages-neu';
+import autoPakete from './pakete-auto.json';
 
 export type Locale = 'de' | 'it';
 export type L10n<T = string> = Record<Locale, T>;
@@ -109,6 +110,15 @@ export interface CheckoutHook {
   reference?: string;
 }
 
+export interface VorschauZeile { text: L10n; neben?: L10n; chip?: L10n; ton?: 'gruen' | 'gold' | 'grau' | 'rot' }
+export interface VorschauDaten {
+  art: 'fenster' | 'handy';
+  adresse?: string;
+  titel: L10n;
+  zeilen: VorschauZeile[];
+  seite?: { titel: L10n; punkte: L10n[] };
+}
+
 export interface FaqItem {
   q: string;
   a: string;
@@ -149,6 +159,12 @@ export interface Package {
   /** Zielmarkt / Sprache des Produkts */
   market: L10n;
   checkout?: CheckoutHook;
+  /** „So läuft es ab“ – drei Schritte (sonst aus ablauf.ts) */
+  ablauf?: L10n<string[]>;
+  /** Datengetriebene Vorschau (Vorlage „fenster“ oder „handy“) für automatisch ergänzte Pakete */
+  vorschau?: VorschauDaten;
+  /** Zeitpunkt der Aufnahme in den Katalog (ISO), nur bei automatisch ergänzten Paketen */
+  erstellt?: string;
 }
 
 /* ---------- Pakete ---------- */
@@ -911,6 +927,7 @@ export const packages: Package[] = [
     checkout: { provider: 'none' },
   },
   ...neuePakete,
+  ...(autoPakete as unknown as Package[]).map((p) => ({ ...p, image: `/images/packages/${String(p.number).padStart(2, '0')}-${p.slug}-vorschau.jpg`, checkout: { provider: 'none' as const } })),
 ];
 
 /* ---------- Bündel ---------- */

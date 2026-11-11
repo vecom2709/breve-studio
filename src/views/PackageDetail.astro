@@ -4,7 +4,7 @@ import PriceBlock from '../components/PriceBlock.astro';
 import PackageCard from '../components/PackageCard.astro';
 import InquiryForm from '../components/InquiryForm.astro';
 import Vorschau from '../components/vorschau/Vorschau.astro';
-import { vorschauSlugs } from '../components/vorschau/liste';
+import { hatVorschau } from '../components/vorschau/liste';
 import { ablauf } from '../content/ablauf';
 import { categoryById, packagesSorted, bundles, isPurchasable, type Locale, type Package } from '../content/packages';
 import { path, ui } from '../lib/i18n';
@@ -24,7 +24,7 @@ const formTitle = pkg.status === 'inquiry'
     ? (de ? `Zum Start von ${pkg.brand} benachrichtigen` : `Avvisami al lancio di ${pkg.brand}`)
     : (de ? `Interesse an ${pkg.brand} vormerken` : `Segnala interesse per ${pkg.brand}`);
 const selfPath = path('package', lang, pkg.slug);
-const schritte = ablauf[pkg.slug]?.[lang] ?? [];
+const schritte = (pkg.ablauf ?? ablauf[pkg.slug])?.[lang] ?? [];
 ---
 <Base lang={lang} routeKey="package" slug={pkg.slug} title={`${pkg.brand} – ${pkg.tagline[lang]}`} description={pkg.benefit[lang]} image={pkg.image}>
   <nav class="wrap crumbs small" aria-label={de ? 'Brotkrumen' : 'Percorso'}>
@@ -59,10 +59,10 @@ const schritte = ablauf[pkg.slug]?.[lang] ?? [];
     </div>
   </section>
 
-  {vorschauSlugs.has(pkg.slug) ? (
+  {hatVorschau(pkg) ? (
     <section class="wrap visual vorschau" aria-labelledby="vorschau-h">
       <h2 class="h3" id="vorschau-h">{de ? 'So sieht es aus' : 'Ecco come appare'}</h2>
-      <Vorschau slug={pkg.slug} lang={lang} />
+      <Vorschau slug={pkg.slug} lang={lang} daten={pkg.vorschau} />
       <p class="small muted">{['menuvivo', 'immotesto', 'agendabreve'].includes(pkg.slug)
         ? (de ? 'Beispielansicht mit erfundenen Daten – zum Ausprobieren anklicken.' : 'Anteprima con dati inventati – prova a cliccare.')
         : (de ? 'Beispielansicht mit erfundenen Daten.' : 'Anteprima con dati inventati.')}</p>

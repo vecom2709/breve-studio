@@ -3,9 +3,11 @@
  * Kleine, klickbare Vorschau je Paket: zeigt dem Kunden mit erfundenen Beispieldaten, worum es geht.
  * Ohne JavaScript – Sprachwahl und Zeitwahl laufen über beschriftete Radio-Felder.
  */
-import type { Locale } from '../../content/packages';
-interface Props { slug: string; lang: Locale }
-const { slug, lang } = Astro.props;
+import type { Locale, VorschauDaten } from '../../content/packages';
+import { vorschauSlugs } from './liste';
+interface Props { slug: string; lang: Locale; daten?: VorschauDaten }
+const { slug, lang, daten } = Astro.props;
+const generisch = !vorschauSlugs.has(slug) && daten;
 const de = lang === 'de';
 const id = `vs-${slug}`;
 
@@ -402,6 +404,38 @@ const belegt = new Set(['09:45', '11:15', '15:30']);
       </div>
     </div>
   )}
+
+  {generisch && daten && (
+    <div class="vs-buehne">
+      {daten.art === 'handy' ? (
+        <div class="handy">
+          <div class="handy-insel"></div>
+          <div class="gn-handy">
+            <div class="gn-kopf"><b>{daten.titel[lang]}</b>{daten.adresse && <span>{daten.adresse}</span>}</div>
+            {daten.zeilen.map((z) => (
+              <div class="gn-zeile"><div><b>{z.text[lang]}</b>{z.neben && <small>{z.neben[lang]}</small>}</div>{z.chip && <em class={`gn-chip ${z.ton ?? 'gruen'}`}>{z.chip[lang]}</em>}</div>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div class="fenster gross">
+          <div class="fenster-leiste"><i></i><i></i><i></i><span>{daten.adresse ?? 'esempio.it'}</span></div>
+          <div class="mail">
+            <p class="mail-betreff">{daten.titel[lang]}</p>
+            {daten.zeilen.map((z) => (
+              <div class="gn-zeile breit"><div><b>{z.text[lang]}</b>{z.neben && <small>{z.neben[lang]}</small>}</div>{z.chip && <em class={`gn-chip ${z.ton ?? 'gruen'}`}>{z.chip[lang]}</em>}</div>
+            ))}
+          </div>
+        </div>
+      )}
+      {daten.seite && (
+        <div class="filterkarte gn-seite">
+          <p>{daten.seite.titel[lang]}</p>
+          {daten.seite.punkte.map((x) => <span>{x[lang]}</span>)}
+        </div>
+      )}
+    </div>
+  )}
 </div>
 </div>
 
@@ -620,6 +654,17 @@ const belegt = new Set(['09:45', '11:15', '15:30']);
   .og p { margin: 0 1.6cqw; max-width: 80%; font-size: 1.12cqw; line-height: 1.35; padding: 1cqw 1.2cqw; border-radius: 1.2cqw; }
   .og-bot { background: #fff; border-bottom-left-radius: .2cqw; } .og-gast { align-self: flex-end; background: #0f4a43; color: #fff; border-bottom-right-radius: .2cqw; }
   .uebergabe { display: grid; gap: .5cqw; background: #fff; border-left: .5cqw solid var(--gold); border-radius: 1.2cqw; padding: 1.6cqw 1.8cqw; font-size: 1.25cqw; box-shadow: 0 2.4cqw 4cqw -1.6cqw rgba(0,0,0,.5); } .uebergabe b { color: #8a5a12; }
+
+
+  /* Vorlage für automatisch ergänzte Pakete */
+  .gn-handy { height: 100%; border-radius: 3.2cqw; background: var(--creme); overflow: hidden; display: flex; flex-direction: column; gap: 1cqw; }
+  .gn-kopf { display: grid; gap: .4cqw; padding: 5cqw 2.2cqw 1.6cqw; background: var(--petrol); color: #fff; } .gn-kopf b { font: 600 2cqw/1.1 var(--serif); } .gn-kopf span { font-size: 1.05cqw; color: var(--mint); }
+  .gn-zeile { display: flex; justify-content: space-between; align-items: center; gap: 1cqw; margin: 0 1.6cqw; padding: 1.1cqw 1.2cqw; background: #fff; border-radius: 1cqw; font-size: 1.15cqw; box-shadow: 0 .4cqw 1cqw rgba(0,0,0,.06); }
+  .gn-zeile.breit { margin: 0; border: 1px solid #e3e9e6; box-shadow: none; font-size: 1.25cqw; }
+  .gn-zeile > div { display: grid; gap: .3cqw; } .gn-zeile small { color: #66726e; }
+  .gn-chip { flex: none; font: 700 1cqw/1 var(--geo); font-style: normal; border-radius: 99px; padding: .55cqw 1cqw; }
+  .gn-chip.gruen { background: #e3f3ec; color: #138a5e; } .gn-chip.gold { background: #fdf0d8; color: #8a5a12; } .gn-chip.grau { background: #eef1ef; color: #55635e; } .gn-chip.rot { background: #fde6dc; color: #b4441d; }
+  .gn-seite { max-width: 24cqw; }
 
   /* Auf dem Handy bleibt die Vorschau im Querformat lesbar und lässt sich seitlich wischen */
   .vs-huelle { border-radius: 18px; }

@@ -17,7 +17,9 @@ const { lang } = Astro.props;
 const t = ui[lang];
 const de = lang === 'de';
 const stats = catalogStats();
-const all = packagesGeordnet();
+const alle = packagesGeordnet();
+/** Startseite: die 12 neuesten Pakete, der ganze Katalog liegt unter „Pakete“. */
+const all = [...alle].sort((a, b) => b.number - a.number).slice(0, 12);
 const voice = testimonials[0];
 const hero = homeHero[lang];
 const panel = statusPanel[lang];
@@ -175,7 +177,7 @@ const heroImg = `/images/home/hero-${lang}`;
   <section class="shop" aria-labelledby="shop-h" data-shop>
     <div class="wrap">
       <div class="sec-head">
-        <h2 id="shop-h">{de ? 'Alle Pakete im Überblick' : 'Tutti i pacchetti in sintesi'}</h2>
+        <h2 id="shop-h">{de ? 'Neu im Katalog' : 'Novità in catalogo'}</h2>
         <p class="muted">{t.productsLead}</p>
       </div>
       <div class="chips" role="group" aria-label={t.filterLabel}>
@@ -210,6 +212,7 @@ const heroImg = `/images/home/hero-${lang}`;
         })}
       </div>
       <p class="shop-empty" data-shop-empty hidden>{t.shopEmpty}</p>
+      <p class="shop-alle"><a class="btn btn-primary" href={path('packages', lang)}>{de ? `Alle ${alle.length} Pakete ansehen` : `Vedi tutti i ${alle.length} pacchetti`} <span class="arrow" aria-hidden="true">→</span></a></p>
     </div>
   </section>
 
@@ -549,6 +552,7 @@ const heroImg = `/images/home/hero-${lang}`;
   .pvat { color: var(--muted); }
   .body .btn { justify-self: start; margin-top: .35rem; min-height: 2.5rem; padding-inline: 1.05rem; font-size: var(--step--1); }
   .shop-empty { text-align: center; margin-top: 1rem; color: var(--ink-2); }
+  .shop-alle { text-align: center; margin-top: 1.8rem; }
   .cards > :global([hidden]) { display: none !important; }
   .stats { background: #E4EFE9; padding-block: 1.8rem; }
   .stats-grid { display: grid; gap: 1.2rem; text-align: center; }

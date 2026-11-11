@@ -145,6 +145,16 @@ Kundenstimmen stehen in `src/content/testimonials.ts` und werden nur mit Einwill
 - Klickbare Vorschau je Paket mit erfundenen Beispieldaten: `src/components/vorschau/Vorschau.astro` (Liste in `liste.ts`), erscheint auf der Paketseite unter „So sieht es aus“.
 - Kartenbilder sind Aufnahmen dieser Vorschauen (DE und IT): `python3 tools/bilder/vorschau_bilder.py http://127.0.0.1:4173`.
 
+## Automatisch ergänzte Pakete (ab Nr. 16)
+
+- Ein geplanter Lauf ergänzt stündlich 10 neue Pakete. Anleitung und Regeln: `tools/pakete-auto/ANLEITUNG.md`.
+- Daten: `src/content/pakete-auto.json` (wird in `packages.ts` eingelesen). Neue Pakete starten mit Status „Demnächst“ und Benachrichtigung zum Start.
+- Aufnehmen: `node tools/pakete-auto/hinzufuegen.mjs <neue.json>` prüft Pflichtfelder, Längen, Werbeversprechen und Doppelungen; bei einem Fehler wird nichts geschrieben.
+- Vorschau: Pakete mit `vorschau`-Daten nutzen die allgemeine Vorlage in `Vorschau.astro` (Browserfenster oder Handy).
+- Veröffentlichen: `bash tools/pakete-auto/veroeffentlichen.sh "<Commit-Text>"` (Build, fehlende Vorschaubilder, Push, Online-Vorschau).
+- Katalog: nach Kategorie, Status und Nummer sortiert; pro Kategorie sind die ersten 6 sichtbar, der Rest aufklappbar. Die Startseite zeigt „Neu im Katalog“ (die 12 neuesten).
+- Ein Paket entfernen: Eintrag aus `pakete-auto.json` löschen und die beiden Bilder `NN-slug-vorschau(-it).jpg` entfernen.
+
 ## Online-Vorschau (GitHub Pages)
 
 - Adresse: https://vecom2709.github.io/breve-studio/ (Zweig `gh-pages`, nur die fertigen Seiten; `noindex` bleibt).

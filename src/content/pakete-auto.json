@@ -1,0 +1,1925 @@
+[
+ {
+  "slug": "preventivolampo",
+  "brand": "PreventivoLampo",
+  "category": "website-sichtbarkeit",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "month",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von PreventivoLampo: Anfrage mit Richtpreis",
+   "it": "Anteprima di PreventivoLampo: richiesta con prezzo indicativo"
+  },
+  "tagline": {
+   "de": "Anfragen mit Richtpreis statt Rätselraten.",
+   "it": "Richieste con prezzo indicativo, senza giri di parole."
+  },
+  "benefit": {
+   "de": "Anfrage-Rechner für Ihre Website: Kunden wählen Leistung, Maße und Fotos und sehen sofort einen Richtpreis – Sie bekommen eine vollständige Anfrage.",
+   "it": "Calcolatore di richieste per il tuo sito: il cliente sceglie lavoro, misure e foto e vede subito un prezzo indicativo – tu ricevi una richiesta completa."
+  },
+  "headline": {
+   "de": "Vollständige Anfragen mit Fotos und Richtpreis – direkt von Ihrer Website.",
+   "it": "Richieste complete, con foto e prezzo indicativo – direttamente dal tuo sito."
+  },
+  "intro": {
+   "de": "Statt „Was kostet das?“ per Telefon füllen Kunden ein kurzes Formular aus: Leistung, Fläche, Zustand, Fotos. Ihre Preisregeln rechnen einen unverbindlichen Richtpreis, Sie erhalten alles gesammelt per E-Mail.",
+   "it": "Invece di “Quanto costa?” al telefono, il cliente compila un breve modulo: lavoro, superficie, stato, foto. Le tue regole di prezzo calcolano un prezzo indicativo non vincolante e tu ricevi tutto via e-mail."
+  },
+  "audience": {
+   "de": "Maler, Elektriker, Fliesenleger, Reinigungsfirmen und andere Handwerksbetriebe.",
+   "it": "Imbianchini, elettricisti, piastrellisti, imprese di pulizia e altri artigiani."
+  },
+  "job": {
+   "de": "Weniger Rückfragen und schneller vergleichbare Anfragen bekommen.",
+   "it": "Meno domande di chiarimento e richieste subito confrontabili."
+  },
+  "why": {
+   "de": "Preisregeln legen Sie selbst fest, der Richtpreis ist klar als unverbindlich gekennzeichnet, Fotos und Daten liegen auf Servern in der EU.",
+   "it": "Le regole di prezzo le decidi tu, il prezzo è indicato chiaramente come non vincolante, foto e dati restano su server nell’UE."
+  },
+  "features": {
+   "de": [
+    "Formular mit Leistung, Maßen und Foto-Upload.",
+    "Richtpreis nach Ihren eigenen Regeln.",
+    "Anfrage gesammelt per E-Mail, auf Wunsch als PDF.",
+    "Einbindung als Knopf auf Ihrer Website."
+   ],
+   "it": [
+    "Modulo con lavoro, misure e caricamento foto.",
+    "Prezzo indicativo secondo le tue regole.",
+    "Richiesta completa via e-mail, anche in PDF.",
+    "Integrazione come pulsante sul tuo sito."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Zum Start: Einrichtung Ihrer ersten drei Leistungen durch uns.",
+   "it": "Al lancio: configuriamo noi i tuoi primi tre servizi."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Ist der Richtpreis verbindlich?",
+     "a": "Nein. Er ist als unverbindliche Schätzung gekennzeichnet; das Angebot machen weiterhin Sie."
+    },
+    {
+     "q": "Brauche ich eine eigene Website?",
+     "a": "Nein, der Rechner funktioniert auch als eigener Link, etwa für WhatsApp oder Social Media."
+    }
+   ],
+   "it": [
+    {
+     "q": "Il prezzo indicativo è vincolante?",
+     "a": "No. È indicato come stima non vincolante; il preventivo lo fai sempre tu."
+    },
+    {
+     "q": "Serve un sito web?",
+     "a": "No, il calcolatore funziona anche come link a sé, per esempio per WhatsApp o i social."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie nennen Ihre Leistungen und Preisregeln.",
+    "Kunden füllen den Rechner aus und laden Fotos hoch.",
+    "Sie erhalten eine vollständige Anfrage und melden sich mit Ihrem Angebot."
+   ],
+   "it": [
+    "Indichi servizi e regole di prezzo.",
+    "Il cliente compila il calcolatore e carica le foto.",
+    "Ricevi una richiesta completa e rispondi con il tuo preventivo."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "pittore-esempio.it/preventivo",
+   "titel": {
+    "de": "Ihr Richtpreis: Wohnung streichen",
+    "it": "Il tuo prezzo indicativo: tinteggiatura"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Wohnfläche",
+      "it": "Superficie"
+     },
+     "neben": {
+      "de": "3 Zimmer, Decken inklusive",
+      "it": "3 vani, soffitti inclusi"
+     },
+     "chip": {
+      "de": "85 m²",
+      "it": "85 m²"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Zustand der Wände",
+      "it": "Stato delle pareti"
+     },
+     "neben": {
+      "de": "kleine Risse ausbessern",
+      "it": "piccole crepe da stuccare"
+     },
+     "chip": {
+      "de": "mittel",
+      "it": "medio"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Fotos",
+      "it": "Foto"
+     },
+     "neben": {
+      "de": "4 Bilder hochgeladen",
+      "it": "4 immagini caricate"
+     },
+     "chip": {
+      "de": "erledigt",
+      "it": "fatto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Richtpreis (unverbindlich)",
+      "it": "Prezzo indicativo (non vincolante)"
+     },
+     "neben": {
+      "de": "inkl. Material, zzgl. MwSt.",
+      "it": "materiale incluso, IVA esclusa"
+     },
+     "chip": {
+      "de": "1.450–1.750 €",
+      "it": "1.450–1.750 €"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Neue Anfrage",
+     "it": "Nuova richiesta"
+    },
+    "punkte": [
+     {
+      "de": "Familie Esempio, Agrigento",
+      "it": "Famiglia Esempio, Agrigento"
+     },
+     {
+      "de": "Wunschtermin: März",
+      "it": "Periodo: marzo"
+     }
+    ]
+   }
+  },
+  "number": 16,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-11T12:06:06.657Z"
+ },
+ {
+  "slug": "newsletterbreve",
+  "brand": "NewsletterBreve",
+  "category": "website-sichtbarkeit",
+  "kind": "service",
+  "shopCategory": "marketing",
+  "prices": [
+   {
+    "amount": 79,
+    "interval": "month",
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von NewsletterBreve: Monatsnewsletter zur Freigabe",
+   "it": "Anteprima di NewsletterBreve: newsletter mensile da approvare"
+  },
+  "tagline": {
+   "de": "Einmal im Monat in Erinnerung bleiben.",
+   "it": "Una volta al mese, nei pensieri dei clienti."
+  },
+  "benefit": {
+   "de": "Monatlicher Kunden-Newsletter auf Deutsch und Italienisch – geschrieben, gestaltet und versendet, mit sauberer Einwilligung.",
+   "it": "Newsletter mensile ai clienti in italiano e tedesco – scritta, impaginata e inviata, con consenso in regola."
+  },
+  "headline": {
+   "de": "Ihr Newsletter, jeden Monat – ohne dass Sie schreiben müssen.",
+   "it": "La tua newsletter, ogni mese – senza dover scrivere."
+  },
+  "intro": {
+   "de": "Wir sammeln mit Ihnen Neuigkeiten, Angebote und Termine, schreiben daraus einen kurzen Newsletter in zwei Sprachen und versenden ihn nach Ihrer Freigabe. Anmeldung mit Bestätigungs-Mail, Abmeldung mit einem Klick.",
+   "it": "Raccogliamo con te novità, offerte e date, scriviamo una newsletter breve in due lingue e la inviamo dopo la tua approvazione. Iscrizione con e-mail di conferma, cancellazione con un clic."
+  },
+  "audience": {
+   "de": "Läden, Weingüter, Gastronomie und Unterkünfte mit Stammkunden im In- und Ausland.",
+   "it": "Negozi, cantine, ristoranti e strutture con clienti abituali in Italia e all’estero."
+  },
+  "job": {
+   "de": "Stammkunden regelmäßig erreichen, ohne Zeit für Texte und Technik.",
+   "it": "Raggiungere i clienti abituali con regolarità, senza tempo per testi e tecnica."
+  },
+  "why": {
+   "de": "Double-Opt-in, Versanddienst mit Servern in der EU, Freigabe vor jedem Versand und ein kurzer Bericht zu Öffnungen und Klicks.",
+   "it": "Doppio consenso, invio con server nell’UE, approvazione prima di ogni invio e un breve report su aperture e clic."
+  },
+  "features": {
+   "de": [
+    "Ein Newsletter pro Monat, Deutsch und Italienisch.",
+    "Anmeldeformular für Website und Laden (QR).",
+    "Freigabe per Link vor dem Versand.",
+    "Kurzer Bericht nach jedem Versand."
+   ],
+   "it": [
+    "Una newsletter al mese, in italiano e tedesco.",
+    "Modulo di iscrizione per sito e negozio (QR).",
+    "Approvazione tramite link prima dell’invio.",
+    "Breve report dopo ogni invio."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Zum Start: Anmeldeformular und QR-Aufsteller inklusive.",
+   "it": "Al lancio: modulo di iscrizione ed espositore QR inclusi."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Darf ich meine bestehenden Kontakte anschreiben?",
+     "a": "Nur, wenn eine Einwilligung vorliegt. Wir helfen beim sauberen Neuaufbau der Liste."
+    },
+    {
+     "q": "Wer schreibt die Texte?",
+     "a": "Wir – aus Ihren Stichworten. Sie geben vor dem Versand frei."
+    }
+   ],
+   "it": [
+    {
+     "q": "Posso scrivere ai contatti che ho già?",
+     "a": "Solo se hai il loro consenso. Ti aiutiamo a ricostruire la lista in modo corretto."
+    },
+    {
+     "q": "Chi scrive i testi?",
+     "a": "Noi, partendo dai tuoi spunti. Tu approvi prima dell’invio."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Kurzes Gespräch: Was gibt es diesen Monat Neues?",
+    "Wir schreiben und gestalten den Newsletter in zwei Sprachen.",
+    "Sie geben frei, wir versenden und berichten."
+   ],
+   "it": [
+    "Breve chiamata: cosa c’è di nuovo questo mese?",
+    "Scriviamo e impaginiamo la newsletter in due lingue.",
+    "Tu approvi, noi inviamo e ti mandiamo il report."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "Newsletter · Cantina Esempio",
+   "titel": {
+    "de": "Neu im November: Olivenöl der Ernte 2026",
+    "it": "Novità di novembre: olio della raccolta 2026"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Ernte abgeschlossen",
+      "it": "Raccolta conclusa"
+     },
+     "neben": {
+      "de": "Das neue Öl ist ab 20.11. im Laden",
+      "it": "L’olio nuovo è in negozio dal 20/11"
+     },
+     "chip": {
+      "de": "Neu",
+      "it": "Novità"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Verkostung am Samstag",
+      "it": "Degustazione sabato"
+     },
+     "neben": {
+      "de": "16–19 Uhr, Anmeldung per Antwort",
+      "it": "16–19, iscrizione rispondendo"
+     },
+     "chip": {
+      "de": "Termin",
+      "it": "Evento"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Versand nach Deutschland",
+      "it": "Spedizione in Germania"
+     },
+     "neben": {
+      "de": "ab 6 Flaschen versandkostenfrei",
+      "it": "spedizione gratuita da 6 bottiglie"
+     },
+     "chip": {
+      "de": "Angebot",
+      "it": "Offerta"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Zur Freigabe",
+     "it": "Da approvare"
+    },
+    "punkte": [
+     {
+      "de": "DE und IT fertig",
+      "it": "IT e DE pronte"
+     },
+     {
+      "de": "Versand: Do 9 Uhr",
+      "it": "Invio: gio ore 9"
+     }
+    ]
+   }
+  },
+  "number": 17,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-11T12:06:06.658Z"
+ },
+ {
+  "slug": "fotobottega",
+  "brand": "FotoBottega",
+  "category": "website-sichtbarkeit",
+  "kind": "service",
+  "shopCategory": "design-media",
+  "prices": [
+   {
+    "amount": 59,
+    "interval": "month",
+    "unit": {
+     "de": "für 20 Fotos",
+     "it": "per 20 foto"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von FotoBottega: Produktfotos vorher und nachher",
+   "it": "Anteprima di FotoBottega: foto prodotto prima e dopo"
+  },
+  "tagline": {
+   "de": "Handyfotos, die nach Studio aussehen.",
+   "it": "Foto col telefono che sembrano da studio."
+  },
+  "benefit": {
+   "de": "Sie fotografieren Ihre Produkte mit dem Handy, wir machen daraus saubere Bilder für Shop, Website und Social Media – 20 Fotos pro Monat.",
+   "it": "Fotografi i prodotti col telefono, noi li trasformiamo in immagini pulite per negozio online, sito e social – 20 foto al mese."
+  },
+  "headline": {
+   "de": "Bessere Produktbilder, ohne Fotostudio.",
+   "it": "Foto prodotto migliori, senza studio fotografico."
+  },
+  "intro": {
+   "de": "Mit einer kurzen Anleitung fotografieren Sie Ihre Produkte am Fenster. Wir stellen frei, korrigieren Licht und Farben und liefern einheitliche Bilder in allen nötigen Formaten – ohne Ihre Produkte zu verfälschen.",
+   "it": "Con una breve guida fotografi i prodotti vicino alla finestra. Noi scontorniamo, correggiamo luce e colori e consegniamo immagini uniformi in tutti i formati necessari – senza alterare i prodotti."
+  },
+  "audience": {
+   "de": "Läden, Manufakturen, Weingüter und Onlineshops mit eigenen Produkten.",
+   "it": "Negozi, laboratori, cantine e shop online con prodotti propri."
+  },
+  "job": {
+   "de": "Einheitliche, ehrliche Produktbilder für alle Kanäle bekommen.",
+   "it": "Avere foto prodotto uniformi e oneste per tutti i canali."
+  },
+  "why": {
+   "de": "Echte Bearbeitung statt erfundener KI-Bilder, einheitlicher Look für Ihren Auftritt, Lieferung in 3 Werktagen.",
+   "it": "Vero ritocco invece di immagini inventate dall’IA, stile uniforme per la tua immagine, consegna in 3 giorni lavorativi."
+  },
+  "features": {
+   "de": [
+    "20 bearbeitete Fotos pro Monat.",
+    "Freigestellt auf Weiß oder in Ihrer Hausfarbe.",
+    "Formate für Shop, Website, Instagram und Facebook.",
+    "Foto-Anleitung für das Handy als PDF."
+   ],
+   "it": [
+    "20 foto ritoccate al mese.",
+    "Scontornate su bianco o nel tuo colore aziendale.",
+    "Formati per negozio online, sito, Instagram e Facebook.",
+    "Guida per fotografare col telefono in PDF."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Zum Start: kostenloser Probedurchgang mit 3 Fotos.",
+   "it": "Al lancio: prova gratuita con 3 foto."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Verändern Sie meine Produkte?",
+     "a": "Nein. Wir korrigieren Licht, Farbe und Hintergrund, die Produkte bleiben, wie sie sind."
+    },
+    {
+     "q": "Was, wenn ich mehr als 20 Fotos brauche?",
+     "a": "Weitere Fotos sind einzeln buchbar."
+    }
+   ],
+   "it": [
+    {
+     "q": "Modificate i miei prodotti?",
+     "a": "No. Correggiamo luce, colore e sfondo, i prodotti restano come sono."
+    },
+    {
+     "q": "E se mi servono più di 20 foto?",
+     "a": "Le foto in più si possono aggiungere singolarmente."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie fotografieren nach unserer Anleitung mit dem Handy.",
+    "Sie laden die Bilder per Link hoch.",
+    "Nach 3 Werktagen erhalten Sie die fertigen Bilder in allen Formaten."
+   ],
+   "it": [
+    "Fotografi col telefono seguendo la nostra guida.",
+    "Carichi le immagini tramite un link.",
+    "Dopo 3 giorni lavorativi ricevi le foto pronte in tutti i formati."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "fotobottega · Auftrag 11/2026",
+   "titel": {
+    "de": "Ihre Fotos dieses Monats",
+    "it": "Le tue foto di questo mese"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Olivenöl 0,5 l",
+      "it": "Olio 0,5 l"
+     },
+     "neben": {
+      "de": "freigestellt · Licht korrigiert",
+      "it": "scontornata · luce corretta"
+     },
+     "chip": {
+      "de": "fertig",
+      "it": "pronta"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Keramikteller blau",
+      "it": "Piatto in ceramica blu"
+     },
+     "neben": {
+      "de": "Farbe an Original angepasst",
+      "it": "colore fedele all’originale"
+     },
+     "chip": {
+      "de": "fertig",
+      "it": "pronta"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Geschenkkorb klein",
+      "it": "Cesto regalo piccolo"
+     },
+     "neben": {
+      "de": "in Bearbeitung",
+      "it": "in lavorazione"
+     },
+     "chip": {
+      "de": "morgen",
+      "it": "domani"
+     },
+     "ton": "gold"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Kontingent",
+     "it": "Pacchetto"
+    },
+    "punkte": [
+     {
+      "de": "14 von 20 Fotos genutzt",
+      "it": "14 di 20 foto usate"
+     },
+     {
+      "de": "Formate: Shop, Instagram",
+      "it": "Formati: shop, Instagram"
+     }
+    ]
+   }
+  },
+  "number": 18,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-11T12:06:06.658Z"
+ },
+ {
+  "slug": "testoponte",
+  "brand": "TestoPonte",
+  "category": "website-sichtbarkeit",
+  "kind": "service",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 39,
+    "interval": "once",
+    "unit": {
+     "de": "je Seite",
+     "it": "per pagina"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von TestoPonte: Website-Text auf Deutsch und Italienisch",
+   "it": "Anteprima di TestoPonte: testo del sito in italiano e tedesco"
+  },
+  "tagline": {
+   "de": "Ihre Website, verständlich in zwei Sprachen.",
+   "it": "Il tuo sito, chiaro in due lingue."
+  },
+  "benefit": {
+   "de": "Übersetzung Ihrer Website-Texte zwischen Deutsch und Italienisch – maschinell vorbereitet, von Menschen geprüft und für Suchmaschinen angepasst.",
+   "it": "Traduzione dei testi del sito tra italiano e tedesco – preparata con strumenti automatici, controllata da persone e adattata ai motori di ricerca."
+  },
+  "headline": {
+   "de": "Texte, die auf Deutsch und Italienisch natürlich klingen.",
+   "it": "Testi che suonano naturali in italiano e in tedesco."
+  },
+  "intro": {
+   "de": "Wir übertragen Ihre Seiten so, dass sie in der anderen Sprache wie selbst geschrieben wirken: mit passenden Begriffen, Seitentiteln und Beschreibungen für Suchmaschinen. Fachbegriffe stimmen wir mit Ihnen ab.",
+   "it": "Traduciamo le tue pagine in modo che nell’altra lingua sembrino scritte da te: termini adatti, titoli e descrizioni per i motori di ricerca. I termini tecnici li concordiamo con te."
+  },
+  "audience": {
+   "de": "Betriebe in Italien mit deutschsprachigen Gästen oder Kunden – und umgekehrt.",
+   "it": "Attività in Italia con clienti o ospiti di lingua tedesca – e viceversa."
+  },
+  "job": {
+   "de": "Kunden in ihrer Sprache erreichen, ohne holprige Übersetzungen.",
+   "it": "Raggiungere i clienti nella loro lingua, senza traduzioni zoppicanti."
+  },
+  "why": {
+   "de": "Zweisprachiges Team zwischen Sizilien und Deutschland, Festpreis je Seite, Glossar für Ihre Begriffe.",
+   "it": "Team bilingue tra Sicilia e Germania, prezzo fisso per pagina, glossario per i tuoi termini."
+  },
+  "features": {
+   "de": [
+    "Übersetzung DE ↔ IT, menschlich geprüft.",
+    "Seitentitel und Beschreibung für Suchmaschinen.",
+    "Glossar mit Ihren Fachbegriffen.",
+    "Eine Korrekturrunde inklusive."
+   ],
+   "it": [
+    "Traduzione IT ↔ DE, controllata da persone.",
+    "Titolo e descrizione per i motori di ricerca.",
+    "Glossario con i tuoi termini tecnici.",
+    "Un giro di correzioni incluso."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Zum Start: Startseite zum halben Preis bei 5 Seiten.",
+   "it": "Al lancio: home page a metà prezzo con 5 pagine."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Was gilt als eine Seite?",
+     "a": "Eine Website-Seite bis etwa 600 Wörter; längere Seiten zählen anteilig."
+    },
+    {
+     "q": "Übersetzen Sie auch Rechtstexte?",
+     "a": "Nein. Impressum, AGB und Datenschutz gehören in die Hände einer Fachkanzlei."
+    }
+   ],
+   "it": [
+    {
+     "q": "Cosa vale come una pagina?",
+     "a": "Una pagina del sito fino a circa 600 parole; le pagine più lunghe contano in proporzione."
+    },
+    {
+     "q": "Traducete anche testi legali?",
+     "a": "No. Note legali, condizioni e privacy vanno affidate a uno studio specializzato."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie schicken die Links zu den Seiten.",
+    "Wir übersetzen, prüfen und passen die Suchmaschinen-Angaben an.",
+    "Sie erhalten die Texte zum Einfügen oder wir setzen sie direkt ein."
+   ],
+   "it": [
+    "Ci mandi i link alle pagine.",
+    "Traduciamo, controlliamo e adattiamo i dati per i motori di ricerca.",
+    "Ricevi i testi da inserire, oppure li inseriamo noi."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "agriturismo-esempio.it/de/",
+   "titel": {
+    "de": "Seite „Unser Hof“ – zweisprachig",
+    "it": "Pagina “La nostra masseria” – in due lingue"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "IT: „Un angolo di Sicilia tra ulivi e mare“",
+      "it": "IT: “Un angolo di Sicilia tra ulivi e mare”"
+     },
+     "neben": {
+      "de": "Original",
+      "it": "originale"
+     },
+     "chip": {
+      "de": "Quelle",
+      "it": "fonte"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "DE: „Ein Stück Sizilien zwischen Olivenhainen und Meer“",
+      "it": "DE: “Ein Stück Sizilien zwischen Olivenhainen und Meer”"
+     },
+     "neben": {
+      "de": "menschlich geprüft",
+      "it": "controllato da persone"
+     },
+     "chip": {
+      "de": "fertig",
+      "it": "pronto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Seitentitel für Google",
+      "it": "Titolo per Google"
+     },
+     "neben": {
+      "de": "Agriturismo am Meer in Sizilien",
+      "it": "Agriturismo am Meer in Sizilien"
+     },
+     "chip": {
+      "de": "SEO",
+      "it": "SEO"
+     },
+     "ton": "gold"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Glossar",
+     "it": "Glossario"
+    },
+    "punkte": [
+     {
+      "de": "masseria → Gutshof",
+      "it": "masseria → Gutshof"
+     },
+     {
+      "de": "baglio → Baglio (bleibt)",
+      "it": "baglio → Baglio (invariato)"
+     }
+    ]
+   }
+  },
+  "number": 19,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-11T12:06:06.658Z"
+ },
+ {
+  "slug": "cassachiara",
+  "brand": "CassaChiara",
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von CassaChiara: Monatsübersicht Einnahmen und Ausgaben",
+   "it": "Anteprima di CassaChiara: riepilogo mensile entrate e uscite"
+  },
+  "tagline": {
+   "de": "Einnahmen und Ausgaben auf einen Blick.",
+   "it": "Entrate e uscite a colpo d’occhio."
+  },
+  "benefit": {
+   "de": "Vorlage für Google Sheets: Einnahmen, Ausgaben und offene Rechnungen übersichtlich führen – mit Monatsgrafik und Export für Ihre Steuerkanzlei.",
+   "it": "Modello per Google Fogli: entrate, uscite e fatture aperte in ordine – con grafico mensile ed esportazione per il commercialista."
+  },
+  "headline": {
+   "de": "Ordnung in den Zahlen – in zehn Minuten pro Woche.",
+   "it": "Ordine nei numeri – in dieci minuti a settimana."
+  },
+  "intro": {
+   "de": "Sie tragen Einnahmen und Ausgaben ein, die Vorlage sortiert nach Monaten und Kategorien, zeigt offene Rechnungen und erstellt eine Übersicht für die Kanzlei. Kein Buchhaltungsprogramm, sondern eine klare Hilfe für den Alltag.",
+   "it": "Inserisci entrate e uscite, il modello ordina per mesi e categorie, mostra le fatture aperte e prepara un riepilogo per il commercialista. Non è un gestionale contabile, ma un aiuto chiaro per ogni giorno."
+  },
+  "audience": {
+   "de": "Kleinbetriebe, Freiberufler und Vereine, die ihre Zahlen selbst im Blick behalten wollen.",
+   "it": "Piccole attività, professionisti e associazioni che vogliono tenere d’occhio i propri numeri."
+  },
+  "job": {
+   "de": "Jederzeit wissen, was hereinkommt, was rausgeht und was noch offen ist.",
+   "it": "Sapere sempre cosa entra, cosa esce e cosa è ancora da incassare."
+  },
+  "why": {
+   "de": "Einmal kaufen, kein Abo, funktioniert mit dem kostenlosen Google-Konto, deutsche und italienische Fassung, kurze Videoanleitung.",
+   "it": "Acquisto unico, nessun abbonamento, funziona con l’account Google gratuito, versione italiana e tedesca, breve video guida."
+  },
+  "features": {
+   "de": [
+    "Einnahmen und Ausgaben nach Kategorien.",
+    "Offene Rechnungen mit Fälligkeit.",
+    "Monatsgrafik und Jahresübersicht.",
+    "Export als Tabelle für die Steuerkanzlei."
+   ],
+   "it": [
+    "Entrate e uscite per categoria.",
+    "Fatture aperte con scadenza.",
+    "Grafico mensile e riepilogo annuale.",
+    "Esportazione in tabella per il commercialista."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Zum Start: Beispieldaten und 15-Minuten-Einführung per Video.",
+   "it": "Al lancio: dati di esempio e introduzione video di 15 minuti."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Ersetzt das meine Buchhaltung?",
+     "a": "Nein. Es ist eine Übersicht für Sie; Buchhaltung und Steuern bleiben Sache Ihrer Kanzlei."
+    },
+    {
+     "q": "Brauche ich Excel?",
+     "a": "Nein, ein kostenloses Google-Konto genügt."
+    }
+   ],
+   "it": [
+    {
+     "q": "Sostituisce la contabilità?",
+     "a": "No. È un riepilogo per te; contabilità e tasse restano compito del commercialista."
+    },
+    {
+     "q": "Serve Excel?",
+     "a": "No, basta un account Google gratuito."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie kopieren die Vorlage in Ihr Google-Konto.",
+    "Sie tragen Einnahmen und Ausgaben ein – auch vom Handy.",
+    "Monatsübersicht und Export entstehen automatisch."
+   ],
+   "it": [
+    "Copi il modello nel tuo account Google.",
+    "Inserisci entrate e uscite – anche dal telefono.",
+    "Riepilogo mensile ed esportazione si creano da soli."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "Google Sheets · CassaChiara",
+   "titel": {
+    "de": "Oktober auf einen Blick",
+    "it": "Ottobre a colpo d’occhio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Einnahmen",
+      "it": "Entrate"
+     },
+     "neben": {
+      "de": "42 Belege",
+      "it": "42 movimenti"
+     },
+     "chip": {
+      "de": "8.420 €",
+      "it": "8.420 €"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Ausgaben",
+      "it": "Uscite"
+     },
+     "neben": {
+      "de": "Ware, Miete, Strom",
+      "it": "merce, affitto, luce"
+     },
+     "chip": {
+      "de": "5.910 €",
+      "it": "5.910 €"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Offene Rechnungen",
+      "it": "Fatture da incassare"
+     },
+     "neben": {
+      "de": "2 überfällig",
+      "it": "2 scadute"
+     },
+     "chip": {
+      "de": "1.180 €",
+      "it": "1.180 €"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Saldo Oktober",
+      "it": "Saldo di ottobre"
+     },
+     "neben": {
+      "de": "Beispielwerte",
+      "it": "valori di esempio"
+     },
+     "chip": {
+      "de": "+2.510 €",
+      "it": "+2.510 €"
+     },
+     "ton": "gold"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Export",
+     "it": "Esportazione"
+    },
+    "punkte": [
+     {
+      "de": "Tabelle für die Kanzlei",
+      "it": "Tabella per il commercialista"
+     },
+     {
+      "de": "Stand: 31.10.",
+      "it": "Aggiornato al 31/10"
+     }
+    ]
+   }
+  },
+  "number": 20,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-11T12:06:06.658Z"
+ },
+ {
+  "slug": "socialscuola",
+  "brand": "SocialScuola",
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "marketing",
+  "prices": [
+   {
+    "amount": 79,
+    "interval": "once",
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von SocialScuola: Kursmodule auf dem Handy",
+   "it": "Anteprima di SocialScuola: moduli del corso sul telefono"
+  },
+  "tagline": {
+   "de": "Social Media selbst machen – mit Plan.",
+   "it": "I social fatti da te – con un metodo."
+  },
+  "benefit": {
+   "de": "Online-Kurs in kurzen Lektionen: Instagram und Facebook für den eigenen Betrieb – Fotos, Texte, Planung und Datenschutz.",
+   "it": "Corso online in brevi lezioni: Instagram e Facebook per la tua attività – foto, testi, pianificazione e privacy."
+  },
+  "headline": {
+   "de": "In zwei Stunden zum eigenen Social-Media-Plan.",
+   "it": "In due ore al tuo piano per i social."
+  },
+  "intro": {
+   "de": "Zwölf kurze Lektionen zeigen am Beispiel eines Cafés, wie Sie mit dem Handy gute Bilder machen, passende Texte schreiben und mit 30 Minuten pro Woche planen. Mit Vorlagen für Redaktionsplan und Beitragsideen.",
+   "it": "Dodici brevi lezioni mostrano, sull’esempio di un bar, come fare buone foto col telefono, scrivere testi adatti e pianificare con 30 minuti a settimana. Con modelli per il piano editoriale e idee per i post."
+  },
+  "audience": {
+   "de": "Inhaberinnen und Inhaber kleiner Betriebe, die ihre Kanäle selbst betreuen möchten.",
+   "it": "Titolari di piccole attività che vogliono gestire da sé i propri canali."
+  },
+  "job": {
+   "de": "Selbstständig und regelmäßig posten, ohne Agentur.",
+   "it": "Pubblicare con regolarità in autonomia, senza agenzia."
+  },
+  "why": {
+   "de": "Praxis statt Theorie, auf Deutsch und Italienisch, mit Datenschutz-Kapitel (Fotos von Gästen, Gewinnspiele) und lebenslangem Zugang.",
+   "it": "Pratica invece di teoria, in italiano e tedesco, con capitolo privacy (foto dei clienti, concorsi) e accesso a vita."
+  },
+  "features": {
+   "de": [
+    "12 Lektionen à 5–12 Minuten.",
+    "Vorlage Redaktionsplan und 60 Beitragsideen.",
+    "Handy-Fotografie mit Tageslicht.",
+    "Kapitel Recht und Datenschutz im Überblick."
+   ],
+   "it": [
+    "12 lezioni da 5–12 minuti.",
+    "Modello di piano editoriale e 60 idee per i post.",
+    "Fotografia col telefono e luce naturale.",
+    "Capitolo su regole e privacy in sintesi."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Zum Start: Live-Fragestunde für alle Teilnehmenden.",
+   "it": "Al lancio: sessione di domande dal vivo per tutti i partecipanti."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Brauche ich Vorkenntnisse?",
+     "a": "Nein. Ein Smartphone und ein Konto bei Instagram oder Facebook genügen."
+    },
+    {
+     "q": "Wie lange habe ich Zugang?",
+     "a": "Dauerhaft, inklusive späterer Aktualisierungen."
+    }
+   ],
+   "it": [
+    {
+     "q": "Servono conoscenze?",
+     "a": "No. Bastano uno smartphone e un account Instagram o Facebook."
+    },
+    {
+     "q": "Per quanto tempo ho accesso?",
+     "a": "Per sempre, aggiornamenti futuri inclusi."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie melden sich an und starten sofort mit Lektion 1.",
+    "Sie arbeiten mit Ihrem eigenen Betrieb mit – Schritt für Schritt.",
+    "Am Ende steht Ihr Redaktionsplan für die nächsten vier Wochen."
+   ],
+   "it": [
+    "Ti iscrivi e inizi subito dalla lezione 1.",
+    "Lavori sulla tua attività – passo dopo passo.",
+    "Alla fine hai il piano editoriale per le prossime quattro settimane."
+   ]
+  },
+  "vorschau": {
+   "art": "handy",
+   "adresse": "Kurs · 4 von 12 erledigt",
+   "titel": {
+    "de": "SocialScuola",
+    "it": "SocialScuola"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "1 · Ziel und Zielgruppe",
+      "it": "1 · Obiettivo e pubblico"
+     },
+     "chip": {
+      "de": "erledigt",
+      "it": "fatto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "4 · Fotos mit Tageslicht",
+      "it": "4 · Foto con luce naturale"
+     },
+     "chip": {
+      "de": "erledigt",
+      "it": "fatto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "5 · Texte, die man liest",
+      "it": "5 · Testi che si leggono"
+     },
+     "neben": {
+      "de": "8 Min.",
+      "it": "8 min"
+     },
+     "chip": {
+      "de": "jetzt",
+      "it": "ora"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "6 · Wochenplan in 30 Minuten",
+      "it": "6 · Piano settimanale in 30 minuti"
+     },
+     "chip": {
+      "de": "offen",
+      "it": "da fare"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Zum Mitnehmen",
+     "it": "Da scaricare"
+    },
+    "punkte": [
+     {
+      "de": "Redaktionsplan.xlsx",
+      "it": "Piano-editoriale.xlsx"
+     },
+     {
+      "de": "60 Beitragsideen",
+      "it": "60 idee per i post"
+     }
+    ]
+   }
+  },
+  "number": 21,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-11T12:06:06.658Z"
+ },
+ {
+  "slug": "bottegaonline",
+  "brand": "BottegaOnline",
+  "category": "website-sichtbarkeit",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "month",
+    "unit": {
+     "de": "bis 50 Produkte",
+     "it": "fino a 50 prodotti"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von BottegaOnline: kleiner Shop mit Abholung",
+   "it": "Anteprima di BottegaOnline: piccolo negozio online con ritiro"
+  },
+  "tagline": {
+   "de": "Bestellen online, abholen im Laden.",
+   "it": "Ordini online, ritiri in negozio."
+  },
+  "benefit": {
+   "de": "Kleiner Onlineshop für bis zu 50 Produkte: Kunden bestellen online und holen ab oder lassen liefern – bezahlt wird bei Abholung oder online.",
+   "it": "Piccolo negozio online fino a 50 prodotti: i clienti ordinano online e ritirano o ricevono a casa – pagamento al ritiro o online."
+  },
+  "headline": {
+   "de": "Ihr Laden, auch nach Ladenschluss geöffnet.",
+   "it": "Il tuo negozio, aperto anche dopo la chiusura."
+  },
+  "intro": {
+   "de": "Ohne großes Shopsystem: Produkte mit Foto und Preis, Abholzeit wählen, Bestellung kommt per E-Mail und Benachrichtigung. Lieferung im Ort und Online-Zahlung lassen sich zuschalten.",
+   "it": "Senza un grande e-commerce: prodotti con foto e prezzo, scelta dell’orario di ritiro, l’ordine arriva via e-mail e notifica. Consegna in zona e pagamento online si possono attivare."
+  },
+  "audience": {
+   "de": "Bäckereien, Feinkost, Weinhandlungen, Blumenläden und Hofläden.",
+   "it": "Panifici, gastronomie, enoteche, fiorai e spacci aziendali."
+  },
+  "job": {
+   "de": "Vorbestellungen annehmen, ohne Telefonzettel und ohne teures Shopsystem.",
+   "it": "Ricevere prenotazioni senza foglietti e senza un costoso e-commerce."
+  },
+  "why": {
+   "de": "Feste Monatsgebühr ohne Provision, Rechtstexte-Bausteine für den Shop, Daten in der EU, einfache Pflege vom Handy.",
+   "it": "Canone fisso senza commissioni, testi legali di base per il negozio, dati nell’UE, gestione semplice dal telefono."
+  },
+  "features": {
+   "de": [
+    "Bis 50 Produkte mit Foto, Preis und Varianten.",
+    "Abholzeit wählen, Lieferung im Ort zuschaltbar.",
+    "Bestellung per E-Mail und Push-Hinweis.",
+    "Bezahlung bei Abholung oder online."
+   ],
+   "it": [
+    "Fino a 50 prodotti con foto, prezzo e varianti.",
+    "Scelta dell’orario di ritiro, consegna in zona attivabile.",
+    "Ordine via e-mail e notifica.",
+    "Pagamento al ritiro oppure online."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Zum Start: Wir legen Ihre ersten 20 Produkte an.",
+   "it": "Al lancio: inseriamo noi i tuoi primi 20 prodotti."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Kostet jede Bestellung extra?",
+     "a": "Nein. Bei Online-Zahlung fallen nur die Gebühren des Zahlungsdienstes an."
+    },
+    {
+     "q": "Brauche ich AGB?",
+     "a": "Ja, für Onlinebestellungen sind Rechtstexte nötig. Wir liefern Bausteine; prüfen lassen sollten Sie sie von einer Fachkanzlei."
+    }
+   ],
+   "it": [
+    {
+     "q": "Ogni ordine costa di più?",
+     "a": "No. Con il pagamento online ci sono solo le commissioni del servizio di pagamento."
+    },
+    {
+     "q": "Servono le condizioni di vendita?",
+     "a": "Sì, per gli ordini online servono testi legali. Forniamo una base; è bene farla verificare da uno studio legale."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie schicken Produktliste und Fotos.",
+    "Wir richten den Shop ein, Sie legen Abholzeiten fest.",
+    "Bestellungen kommen per E-Mail – Sie packen und übergeben."
+   ],
+   "it": [
+    "Ci mandi elenco prodotti e foto.",
+    "Configuriamo il negozio, tu imposti gli orari di ritiro.",
+    "Gli ordini arrivano via e-mail – tu prepari e consegni."
+   ]
+  },
+  "vorschau": {
+   "art": "handy",
+   "adresse": "panificio-esempio.it/ordina",
+   "titel": {
+    "de": "Vorbestellen",
+    "it": "Prenota"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Pane di Castelvetrano",
+      "it": "Pane di Castelvetrano"
+     },
+     "neben": {
+      "de": "1 kg · 4,20 €",
+      "it": "1 kg · 4,20 €"
+     },
+     "chip": {
+      "de": "× 2",
+      "it": "× 2"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Biscotti alle mandorle",
+      "it": "Biscotti alle mandorle"
+     },
+     "neben": {
+      "de": "250 g · 6,50 €",
+      "it": "250 g · 6,50 €"
+     },
+     "chip": {
+      "de": "× 1",
+      "it": "× 1"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Abholung",
+      "it": "Ritiro"
+     },
+     "neben": {
+      "de": "Samstag, 9:30 Uhr",
+      "it": "sabato, ore 9:30"
+     },
+     "chip": {
+      "de": "gewählt",
+      "it": "scelto"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Summe",
+      "it": "Totale"
+     },
+     "neben": {
+      "de": "Bezahlung im Laden",
+      "it": "pagamento in negozio"
+     },
+     "chip": {
+      "de": "14,90 €",
+      "it": "14,90 €"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Neue Bestellung",
+     "it": "Nuovo ordine"
+    },
+    "punkte": [
+     {
+      "de": "Abholung Sa 9:30",
+      "it": "Ritiro sab 9:30"
+     },
+     {
+      "de": "3 Artikel · 14,90 €",
+      "it": "3 articoli · 14,90 €"
+     }
+    ]
+   }
+  },
+  "number": 22,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-11T12:06:06.658Z"
+ },
+ {
+  "slug": "arrivofacile",
+  "brand": "ArrivoFacile",
+  "category": "immobilien-gastgewerbe",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 12,
+    "interval": "month",
+    "unit": {
+     "de": "je Unterkunft",
+     "it": "per alloggio"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von ArrivoFacile: Anreiseanleitung mit Fotos",
+   "it": "Anteprima di ArrivoFacile: istruzioni di arrivo con foto"
+  },
+  "tagline": {
+   "de": "Ankommen ohne Anruf.",
+   "it": "Arrivare senza telefonare."
+  },
+  "benefit": {
+   "de": "Digitale Anreiseanleitung mit Fotos, Karte und Schlüsselbox-Code – automatisch am Anreisetag an Ihre Gäste geschickt.",
+   "it": "Istruzioni di arrivo digitali con foto, mappa e codice della cassetta chiavi – inviate in automatico agli ospiti il giorno dell’arrivo."
+  },
+  "headline": {
+   "de": "Gäste finden selbst hinein – auch spät am Abend.",
+   "it": "Gli ospiti entrano da soli – anche a tarda sera."
+  },
+  "intro": {
+   "de": "Schritt für Schritt mit Fotos: Parkplatz, Hauseingang, Schlüsselbox, Wohnungstür. Der Code wird erst am Anreisetag sichtbar und nach der Abreise ungültig. Gäste lesen alles in ihrer Sprache.",
+   "it": "Passo dopo passo con foto: parcheggio, portone, cassetta chiavi, porta dell’appartamento. Il codice diventa visibile solo il giorno dell’arrivo e scade dopo la partenza. Gli ospiti leggono tutto nella loro lingua."
+  },
+  "audience": {
+   "de": "Ferienwohnungen, B&B und kleine Unterkünfte mit Self-Check-in.",
+   "it": "Case vacanza, B&B e piccole strutture con self check-in."
+  },
+  "job": {
+   "de": "Späte Anreisen ohne Telefonate und Wartezeiten ermöglichen.",
+   "it": "Gestire arrivi in tarda serata senza telefonate e attese."
+  },
+  "why": {
+   "de": "Code nur im gebuchten Zeitraum sichtbar, Anleitung in fünf Sprachen, passt zu OspiteGuida und OspiteInRegola.",
+   "it": "Codice visibile solo nel periodo prenotato, istruzioni in cinque lingue, si abbina a OspiteGuida e OspiteInRegola."
+  },
+  "features": {
+   "de": [
+    "Anleitung mit Fotos und Karte.",
+    "Schlüsselbox-Code nur am Anreisetag sichtbar.",
+    "Versand per E-Mail oder Link zur festen Uhrzeit.",
+    "Deutsch, Italienisch, Englisch, Französisch, Spanisch."
+   ],
+   "it": [
+    "Istruzioni con foto e mappa.",
+    "Codice della cassetta visibile solo il giorno dell’arrivo.",
+    "Invio via e-mail o link all’orario stabilito.",
+    "Italiano, tedesco, inglese, francese, spagnolo."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Zum Start: Wir erstellen die Anleitung mit Ihren Fotos.",
+   "it": "Al lancio: prepariamo noi le istruzioni con le tue foto."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Brauche ich ein elektronisches Schloss?",
+     "a": "Nein. Eine einfache Schlüsselbox mit Zahlencode genügt."
+    },
+    {
+     "q": "Ersetzt das die Gästemeldung?",
+     "a": "Nein. Die gesetzliche Meldung bleibt Pflicht; dafür gibt es OspiteInRegola."
+    }
+   ],
+   "it": [
+    {
+     "q": "Serve una serratura elettronica?",
+     "a": "No. Basta una cassetta chiavi con codice."
+    },
+    {
+     "q": "Sostituisce la comunicazione degli ospiti?",
+     "a": "No. La comunicazione prevista dalla legge resta obbligatoria; per quella c’è OspiteInRegola."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien · Gäste mehrsprachig",
+   "it": "Italia · ospiti multilingue"
+  },
+  "ablauf": {
+   "de": [
+    "Sie fotografieren den Weg vom Parkplatz bis zur Tür.",
+    "Wir bauen daraus die Anleitung in fünf Sprachen.",
+    "Am Anreisetag erhalten Gäste den Link mit dem Code."
+   ],
+   "it": [
+    "Fotografi il percorso dal parcheggio alla porta.",
+    "Prepariamo le istruzioni in cinque lingue.",
+    "Il giorno dell’arrivo gli ospiti ricevono il link con il codice."
+   ]
+  },
+  "vorschau": {
+   "art": "handy",
+   "adresse": "Casa Esempio · Ankunft heute",
+   "titel": {
+    "de": "Willkommen, Anna!",
+    "it": "Benvenuta, Anna!"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "1 · Parken in der Via Esempio",
+      "it": "1 · Parcheggio in via Esempio"
+     },
+     "neben": {
+      "de": "kostenlos, 50 m",
+      "it": "gratuito, a 50 m"
+     },
+     "chip": {
+      "de": "Foto",
+      "it": "foto"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "2 · Grünes Tor, Hausnummer 12",
+      "it": "2 · Portone verde, civico 12"
+     },
+     "chip": {
+      "de": "Foto",
+      "it": "foto"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "3 · Schlüsselbox rechts neben der Tür",
+      "it": "3 · Cassetta chiavi a destra della porta"
+     },
+     "neben": {
+      "de": "Code ab 15 Uhr sichtbar",
+      "it": "codice visibile dalle 15"
+     },
+     "chip": {
+      "de": "4 8 2 7",
+      "it": "4 8 2 7"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "4 · Wohnung im 1. Stock links",
+      "it": "4 · Appartamento al 1° piano a sinistra"
+     },
+     "chip": {
+      "de": "Foto",
+      "it": "foto"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Versand",
+     "it": "Invio"
+    },
+    "punkte": [
+     {
+      "de": "Heute 12:00 an Anna",
+      "it": "Oggi alle 12:00 ad Anna"
+     },
+     {
+      "de": "Code gültig bis 17.11.",
+      "it": "Codice valido fino al 17/11"
+     }
+    ]
+   }
+  },
+  "number": 23,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-11T12:06:06.658Z"
+ },
+ {
+  "slug": "piantinafacile",
+  "brand": "PiantinaFacile",
+  "category": "immobilien-gastgewerbe",
+  "kind": "service",
+  "shopCategory": "design-media",
+  "prices": [
+   {
+    "amount": 35,
+    "interval": "once",
+    "unit": {
+     "de": "je Grundriss",
+     "it": "per planimetria"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von PiantinaFacile: Skizze wird zum sauberen Grundriss",
+   "it": "Anteprima di PiantinaFacile: dallo schizzo alla planimetria pulita"
+  },
+  "tagline": {
+   "de": "Aus der Skizze wird ein klarer Grundriss.",
+   "it": "Dallo schizzo a una planimetria chiara."
+  },
+  "benefit": {
+   "de": "Wir zeichnen aus Ihrer Handskizze oder einem alten Plan einen sauberen Grundriss für Inserate – mit Maßen, Möblierung und in Ihren Farben.",
+   "it": "Dal tuo schizzo a mano o da una vecchia planimetria disegniamo una pianta pulita per gli annunci – con misure, arredi e nei tuoi colori."
+  },
+  "headline": {
+   "de": "Grundrisse, die Interessenten sofort verstehen.",
+   "it": "Planimetrie che chi cerca casa capisce subito."
+  },
+  "intro": {
+   "de": "Sie schicken ein Foto der Skizze oder des alten Plans und die wichtigsten Maße. Wir zeichnen den Grundriss neu, beschriften die Räume auf Deutsch, Italienisch oder Englisch und liefern Bild und PDF für Ihre Inserate.",
+   "it": "Ci mandi una foto dello schizzo o della vecchia pianta e le misure principali. Ridisegniamo la planimetria, indichiamo i locali in italiano, tedesco o inglese e consegniamo immagine e PDF per i tuoi annunci."
+  },
+  "audience": {
+   "de": "Immobilienbüros, private Verkäufer und Vermieter von Ferienwohnungen.",
+   "it": "Agenzie immobiliari, privati che vendono e proprietari di case vacanza."
+  },
+  "job": {
+   "de": "Ansprechende Grundrisse für Inserate, ohne teure Vermessung.",
+   "it": "Planimetrie curate per gli annunci, senza costosi rilievi."
+  },
+  "why": {
+   "de": "Festpreis, Lieferung in 2 Werktagen, Raumnamen in drei Sprachen, klar gekennzeichnet als Darstellung ohne amtliche Gültigkeit.",
+   "it": "Prezzo fisso, consegna in 2 giorni lavorativi, nomi dei locali in tre lingue, indicata chiaramente come rappresentazione senza valore catastale."
+  },
+  "features": {
+   "de": [
+    "Neu gezeichneter Grundriss mit Maßen.",
+    "Möblierung als Orientierung, wahlweise.",
+    "Raumnamen auf Deutsch, Italienisch oder Englisch.",
+    "PNG für Portale und PDF zum Drucken."
+   ],
+   "it": [
+    "Planimetria ridisegnata con misure.",
+    "Arredi indicativi, a scelta.",
+    "Nomi dei locali in italiano, tedesco o inglese.",
+    "PNG per i portali e PDF da stampare."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Zum Start: dritter Grundriss gratis bei drei Aufträgen.",
+   "it": "Al lancio: la terza planimetria è gratuita ordinandone tre."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Ist das ein amtlicher Plan?",
+     "a": "Nein. Es ist eine Darstellung für Inserate, kein Ersatz für Katasterplan oder Vermessung."
+    },
+    {
+     "q": "Was brauchen Sie von mir?",
+     "a": "Ein lesbares Foto der Skizze oder des Plans und die Hauptmaße der Räume."
+    }
+   ],
+   "it": [
+    {
+     "q": "È una planimetria catastale?",
+     "a": "No. È una rappresentazione per gli annunci, non sostituisce la planimetria catastale né un rilievo."
+    },
+    {
+     "q": "Cosa vi serve?",
+     "a": "Una foto leggibile dello schizzo o della pianta e le misure principali dei locali."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie schicken Foto der Skizze und die Hauptmaße.",
+    "Wir zeichnen den Grundriss und beschriften die Räume.",
+    "Nach 2 Werktagen erhalten Sie Bild und PDF."
+   ],
+   "it": [
+    "Ci mandi la foto dello schizzo e le misure principali.",
+    "Disegniamo la planimetria e indichiamo i locali.",
+    "Dopo 2 giorni lavorativi ricevi immagine e PDF."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "piantinafacile · Auftrag 2026-118",
+   "titel": {
+    "de": "Wohnung San Leone, 85 m²",
+    "it": "Appartamento San Leone, 85 m²"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Wohnen/Essen",
+      "it": "Soggiorno/pranzo"
+     },
+     "neben": {
+      "de": "5,20 × 4,80 m",
+      "it": "5,20 × 4,80 m"
+     },
+     "chip": {
+      "de": "25 m²",
+      "it": "25 m²"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Schlafzimmer 1",
+      "it": "Camera 1"
+     },
+     "neben": {
+      "de": "4,10 × 3,60 m",
+      "it": "4,10 × 3,60 m"
+     },
+     "chip": {
+      "de": "15 m²",
+      "it": "15 m²"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Terrasse",
+      "it": "Terrazzo"
+     },
+     "neben": {
+      "de": "Meerseite",
+      "it": "lato mare"
+     },
+     "chip": {
+      "de": "20 m²",
+      "it": "20 m²"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Grundriss fertig",
+      "it": "Planimetria pronta"
+     },
+     "neben": {
+      "de": "PNG + PDF",
+      "it": "PNG + PDF"
+     },
+     "chip": {
+      "de": "geliefert",
+      "it": "consegnata"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Sprache",
+     "it": "Lingua"
+    },
+    "punkte": [
+     {
+      "de": "Räume auf Deutsch",
+      "it": "Locali in italiano"
+     },
+     {
+      "de": "Möblierung: ja",
+      "it": "Arredi: sì"
+     }
+    ]
+   }
+  },
+  "number": 24,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-11T12:06:06.658Z"
+ },
+ {
+  "slug": "scadenzechiare",
+  "brand": "ScadenzeChiare",
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "ki-tools",
+  "prices": [
+   {
+    "amount": 9,
+    "interval": "month",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von ScadenzeChiare: Fristenliste mit Erinnerungen",
+   "it": "Anteprima di ScadenzeChiare: elenco scadenze con promemoria"
+  },
+  "tagline": {
+   "de": "Keine Frist mehr verschwitzen.",
+   "it": "Nessuna scadenza dimenticata."
+  },
+  "benefit": {
+   "de": "Fristen- und Vertragskalender für Ihren Betrieb: Versicherungen, Wartungen, Zertifikate und Verträge – mit Erinnerung rechtzeitig vorher.",
+   "it": "Calendario di scadenze e contratti per la tua attività: assicurazioni, manutenzioni, certificati e contratti – con promemoria in tempo."
+  },
+  "headline": {
+   "de": "Alle Fristen an einem Ort – und rechtzeitig erinnert.",
+   "it": "Tutte le scadenze in un posto – con promemoria in tempo."
+  },
+  "intro": {
+   "de": "Sie tragen Verträge und wiederkehrende Pflichten einmal ein oder fotografieren das Dokument. ScadenzeChiare erinnert per E-Mail, wann gekündigt, verlängert oder gewartet werden muss – und an wen Sie sich wenden.",
+   "it": "Inserisci una volta contratti e adempimenti ricorrenti o fotografi il documento. ScadenzeChiare ti ricorda via e-mail quando disdire, rinnovare o fare manutenzione – e a chi rivolgerti."
+  },
+  "audience": {
+   "de": "Kleine Betriebe, Praxen, Vereine und Vermieter mit vielen Verträgen und Prüfterminen.",
+   "it": "Piccole attività, studi, associazioni e proprietari con molti contratti e verifiche periodiche."
+  },
+  "job": {
+   "de": "Kündigungsfristen und Prüftermine nicht mehr verpassen.",
+   "it": "Non perdere più termini di disdetta e verifiche periodiche."
+  },
+  "why": {
+   "de": "Einfach statt Software-Monster, Erinnerung mit Vorlauf nach Wahl, Daten in der EU, keine Beratung – nur Ordnung und Erinnerung.",
+   "it": "Semplice invece di un software complicato, promemoria con anticipo a scelta, dati nell’UE, nessuna consulenza – solo ordine e promemoria."
+  },
+  "features": {
+   "de": [
+    "Fristen mit Vorlauf nach Wahl (z. B. 30 Tage).",
+    "Dokument per Foto anhängen.",
+    "Wiederkehrende Termine wie Wartung und Prüfung.",
+    "Monatsübersicht per E-Mail."
+   ],
+   "it": [
+    "Scadenze con anticipo a scelta (es. 30 giorni).",
+    "Documento allegato tramite foto.",
+    "Appuntamenti ricorrenti come manutenzioni e verifiche.",
+    "Riepilogo mensile via e-mail."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Zum Start: Liste typischer Fristen je Branche zum Übernehmen.",
+   "it": "Al lancio: elenco delle scadenze tipiche per settore da importare."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Prüfen Sie meine Verträge?",
+     "a": "Nein. ScadenzeChiare erinnert nur; die rechtliche Prüfung bleibt bei Fachleuten."
+    },
+    {
+     "q": "Können mehrere Personen mitlesen?",
+     "a": "Ja, bis zu drei Personen pro Betrieb."
+    }
+   ],
+   "it": [
+    {
+     "q": "Controllate i miei contratti?",
+     "a": "No. ScadenzeChiare ricorda soltanto; la verifica legale resta ai professionisti."
+    },
+    {
+     "q": "Possono usarlo più persone?",
+     "a": "Sì, fino a tre persone per attività."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie tragen Verträge und Termine ein oder fotografieren sie.",
+    "Sie wählen, wie früh Sie erinnert werden möchten.",
+    "Sie erhalten rechtzeitig eine E-Mail mit allem Nötigen."
+   ],
+   "it": [
+    "Inserisci contratti e scadenze o li fotografi.",
+    "Scegli con quanto anticipo vuoi il promemoria.",
+    "Ricevi in tempo un’e-mail con tutto il necessario."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "scadenzechiare · Bar Esempio",
+   "titel": {
+    "de": "Ihre nächsten Fristen",
+    "it": "Le tue prossime scadenze"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Wartung Kaffeemaschine",
+      "it": "Manutenzione macchina caffè"
+     },
+     "neben": {
+      "de": "Service Esempio · alle 6 Monate",
+      "it": "Assistenza Esempio · ogni 6 mesi"
+     },
+     "chip": {
+      "de": "in 5 Tagen",
+      "it": "tra 5 giorni"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Kündigungsfrist Stromvertrag",
+      "it": "Disdetta contratto luce"
+     },
+     "neben": {
+      "de": "3 Monate vor Ende",
+      "it": "3 mesi prima della scadenza"
+     },
+     "chip": {
+      "de": "in 24 Tagen",
+      "it": "tra 24 giorni"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Feuerlöscher-Prüfung",
+      "it": "Verifica estintori"
+     },
+     "neben": {
+      "de": "jährlich",
+      "it": "annuale"
+     },
+     "chip": {
+      "de": "März",
+      "it": "marzo"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Betriebshaftpflicht",
+      "it": "RC aziendale"
+     },
+     "neben": {
+      "de": "verlängert bis 2027",
+      "it": "rinnovata fino al 2027"
+     },
+     "chip": {
+      "de": "erledigt",
+      "it": "fatto"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Erinnerung",
+     "it": "Promemoria"
+    },
+    "punkte": [
+     {
+      "de": "30 Tage vorher",
+      "it": "30 giorni prima"
+     },
+     {
+      "de": "an Inhaber und Büro",
+      "it": "a titolare e ufficio"
+     }
+    ]
+   }
+  },
+  "number": 25,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-11T12:06:06.658Z"
+ }
+]
