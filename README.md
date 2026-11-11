@@ -163,7 +163,7 @@ Kundenstimmen stehen in `src/content/testimonials.ts` und werden nur mit Einwill
 
 ## Domain
 
-Platzhalter im Text: **studiobreve.it** (nicht registriert). Laut DNS-Abfrage über Google Public DNS am 9.11.2026 hatten folgende Namen keinen Eintrag – das ist **nur ein Hinweis**, kein Nachweis, dass sie frei sind: studiobreve.it, studiobreve.de, studiobreve.eu, studio-breve.it, inbreve.de, in-breve.it. Vergeben (DNS vorhanden): inbreve.it, inbreve.com, inbreve.eu, breve.it, breve.de, studiobreve.com. Eine Markenrecherche (UIBM, DPMA, EUIPO) steht aus.
+Adresse laut Uwe Vetter (11.11.2026): **www.studio-breve.it** (in `site.ts` und `astro.config.mjs` eingetragen; die Seite ist dort noch nicht veröffentlicht). Frühere Notiz: Laut DNS-Abfrage über Google Public DNS am 9.11.2026 hatten folgende Namen keinen Eintrag – das ist **nur ein Hinweis**, kein Nachweis, dass sie frei sind: studiobreve.it, studiobreve.de, studiobreve.eu, studio-breve.it, inbreve.de, in-breve.it. Vergeben (DNS vorhanden): inbreve.it, inbreve.com, inbreve.eu, breve.it, breve.de, studiobreve.com. Eine Markenrecherche (UIBM, DPMA, EUIPO) steht aus.
 
 ## Vor dem Start (nicht erledigt)
 

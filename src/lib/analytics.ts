@@ -128,7 +128,7 @@ export function classifySource(referrer: string, utm: Record<string, string> | n
   if (!referrer) return 'direct';
   try {
     const host = new URL(referrer).hostname.replace(/^www\./, '');
-    if (!host || host === '127.0.0.1' || host === 'localhost' || host.endsWith('studiobreve.it')) return 'direct';
+    if (!host || host === '127.0.0.1' || host === 'localhost' || host.endsWith('studio-breve.it')) return 'direct';
     return host;
   } catch {
     return 'direct';

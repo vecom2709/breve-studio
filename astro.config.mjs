@@ -4,7 +4,7 @@ import node from '@astrojs/node';
 
 // Platzhalter-Host: Die Domain ist NICHT registriert (Stand 9.11.2026).
 export default defineConfig({
-  site: 'https://studiobreve.it',
+  site: 'https://www.studio-breve.it',
   trailingSlash: 'always',
   output: 'static', // statisch zuerst; nur /api/* und Danke-Seiten laufen serverseitig
   adapter: node({ mode: 'standalone' }),

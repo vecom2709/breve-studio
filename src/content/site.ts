@@ -1,14 +1,14 @@
 /**
  * Marken- und Betreiberangaben für Studio Breve.
- * Alles hier ist ENTWURF: Die Seite ist nicht veröffentlicht, die Domain ist nicht registriert.
+ * Alles hier ist ENTWURF: Die Seite ist noch nicht unter der eigenen Adresse veröffentlicht.
  */
 import type { L10n } from './packages';
 
 export const site = {
   name: 'Studio Breve',
-  /** Platzhalter-Host. Kein Nachweis, dass die Domain frei ist; nicht registriert. */
-  host: 'studiobreve.it',
-  url: 'https://studiobreve.it',
+  /** Adresse laut Uwe Vetter (11.11.2026). */
+  host: 'www.studio-breve.it',
+  url: 'https://www.studio-breve.it',
   tagline: {
     de: 'Klare digitale Pakete für Betriebe – ohne Ballast.',
     it: 'Pacchetti digitali chiari per la tua attività.',
@@ -27,12 +27,12 @@ export const site = {
     phone: '+39 380 190 7017',
     phoneHref: 'tel:+393801907017',
     /** Platzhalter, Postfach existiert noch nicht. */
-    email: 'info@studiobreve.it',
+    email: 'info@studio-breve.it',
     vatId: { de: '[wird ergänzt]', it: '[da inserire]' } satisfies L10n,
   },
   draftNote: {
-    de: 'Entwurf, nicht veröffentlicht. Die Domain studiobreve.it ist noch nicht registriert; die E-Mail-Adresse ist ein Platzhalter. Über diese Seite wird derzeit nichts verkauft.',
-    it: 'Bozza, non pubblicata. Il dominio studiobreve.it non è ancora registrato; l’indirizzo email è provvisorio. Al momento tramite questo sito non si vende nulla.',
+    de: 'Entwurf, noch nicht unter www.studio-breve.it veröffentlicht; die E-Mail-Adresse ist ein Platzhalter. Über diese Seite wird derzeit nichts verkauft.',
+    it: 'Bozza, non ancora pubblicata su www.studio-breve.it; l’indirizzo email è provvisorio. Al momento tramite questo sito non si vende nulla.',
   } satisfies L10n,
   /** Stand der Rechtstexte */
   legalUpdated: '9.11.2026',
