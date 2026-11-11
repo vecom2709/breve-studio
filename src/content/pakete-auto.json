@@ -257,21 +257,21 @@
    "it": "Raggiungere i clienti abituali con regolarità, senza tempo per testi e tecnica."
   },
   "why": {
-   "de": "Double-Opt-in, Versanddienst mit Servern in der EU, Freigabe vor jedem Versand und ein kurzer Bericht zu Öffnungen und Klicks.",
-   "it": "Doppio consenso, invio con server nell’UE, approvazione prima di ogni invio e un breve report su aperture e clic."
+   "de": "Double-Opt-in, Versanddienst mit Servern in der EU auf Ihren Namen, Freigabe per Link vor jedem Versand und ein Kurzbericht, der vor allem auf Klicks schaut – denn Öffnungsraten sind seit 2021 durch Apple-Geräte geschönt.",
+   "it": "Doppio opt-in, servizio di invio con server nell’UE a tuo nome, approvazione tramite link prima di ogni invio e un breve report che guarda soprattutto ai clic – perché dal 2021 i tassi di apertura sono gonfiati dai dispositivi Apple."
   },
   "features": {
    "de": [
-    "Ein Newsletter pro Monat, Deutsch und Italienisch.",
-    "Anmeldeformular für Website und Laden (QR).",
-    "Freigabe per Link vor dem Versand.",
-    "Kurzer Bericht nach jedem Versand."
+    "Ein Newsletter pro Monat, Deutsch und Italienisch, am Handy gut lesbar.",
+    "Anmeldeformular mit Bestätigungs-Mail und QR-Tischaufsteller für den Laden.",
+    "Freigabe per Link vor dem Versand – mit Korrekturrunde.",
+    "Kurzbericht nach jedem Versand: Empfänger, Klicks, Abmeldungen."
    ],
    "it": [
-    "Una newsletter al mese, in italiano e tedesco.",
-    "Modulo di iscrizione per sito e negozio (QR).",
-    "Approvazione tramite link prima dell’invio.",
-    "Breve report dopo ogni invio."
+    "Una newsletter al mese, in italiano e tedesco, leggibile sul telefono.",
+    "Modulo di iscrizione con e-mail di conferma ed espositore QR per il negozio.",
+    "Approvazione tramite link prima dell’invio – con giro di correzioni.",
+    "Breve report dopo ogni invio: destinatari, clic, disiscrizioni."
    ]
   },
   "plannedOffer": {
@@ -287,6 +287,10 @@
     {
      "q": "Wer schreibt die Texte?",
      "a": "Wir – aus Ihren Stichworten. Sie geben vor dem Versand frei."
+    },
+    {
+     "q": "Wie bekomme ich NewsletterBreve?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Nach einem kurzen Startgespräch richten wir Anmeldung und Versand auf Ihren Namen ein. Danach schicken Sie jeden Monat bis zum 10. Ihre Stichworte – den Rest machen wir."
     }
    ],
    "it": [
@@ -297,6 +301,10 @@
     {
      "q": "Chi scrive i testi?",
      "a": "Noi, partendo dai tuoi spunti. Tu approvi prima dell’invio."
+    },
+    {
+     "q": "Come ricevo NewsletterBreve?",
+     "a": "Dall’avvio ufficiale di Studio Breve: dopo un breve colloquio iniziale impostiamo iscrizioni e invio a tuo nome. Poi ogni mese ci mandi i tuoi spunti entro il 10 – al resto pensiamo noi."
     }
    ]
   },
@@ -388,11 +396,11 @@
    }
   },
   "number": 17,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Texte zu Einwilligung und Datenschutz sind Muster, keine Rechtsberatung.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. I testi su consenso e privacy sono modelli, non una consulenza legale."
   },
   "erstellt": "2026-11-11T12:06:06.658Z"
  },
