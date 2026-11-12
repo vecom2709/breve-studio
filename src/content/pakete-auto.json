@@ -656,16 +656,16 @@
   },
   "features": {
    "de": [
-    "Übersetzung DE ↔ IT, menschlich geprüft.",
-    "Seitentitel und Beschreibung für Suchmaschinen.",
-    "Glossar mit Ihren Fachbegriffen.",
-    "Eine Korrekturrunde inklusive."
+    "Übersetzung DE ↔ IT, von Menschen übersetzt und geprüft.",
+    "Seitentitel und Beschreibung für Suchmaschinen, mit Begriffen der Zielsprache.",
+    "Glossar mit Ihren Fachbegriffen, auch für spätere Texte.",
+    "Freigabe mit Original und Übersetzung nebeneinander – eine Korrekturrunde inklusive."
    ],
    "it": [
-    "Traduzione IT ↔ DE, controllata da persone.",
-    "Titolo e descrizione per i motori di ricerca.",
-    "Glossario con i tuoi termini tecnici.",
-    "Un giro di correzioni incluso."
+    "Traduzione IT ↔ DE, tradotta e controllata da persone.",
+    "Titolo e descrizione per i motori di ricerca, con le parole della lingua di arrivo.",
+    "Glossario con i tuoi termini tecnici, anche per i testi futuri.",
+    "Approvazione con originale e traduzione affiancati – un giro di correzioni incluso."
    ]
   },
   "plannedOffer": {
@@ -681,6 +681,10 @@
     {
      "q": "Übersetzen Sie auch Rechtstexte?",
      "a": "Nein. Impressum, AGB und Datenschutz gehören in die Hände einer Fachkanzlei."
+    },
+    {
+     "q": "Wie bekomme ich TestoPonte?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie nennen uns die Seiten, wir zählen sie und nennen den Festpreis. Nach der Übersetzung sehen Sie Original und Übersetzung nebeneinander und geben per Link frei."
     }
    ],
    "it": [
@@ -691,6 +695,10 @@
     {
      "q": "Traducete anche testi legali?",
      "a": "No. Note legali, condizioni e privacy vanno affidate a uno studio specializzato."
+    },
+    {
+     "q": "Come ricevo TestoPonte?",
+     "a": "Dall’avvio ufficiale di Studio Breve: ci indichi le pagine, le contiamo e ti diamo il prezzo fisso. Dopo la traduzione vedi originale e traduzione affiancati e approvi tramite link."
     }
    ]
   },
@@ -782,11 +790,11 @@
    }
   },
   "number": 19,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Rechtstexte und beglaubigte Übersetzungen sind ausgenommen.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Esclusi testi legali e traduzioni giurate."
   },
   "erstellt": "2026-11-11T12:06:06.658Z"
  },
