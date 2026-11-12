@@ -1673,16 +1673,16 @@
   },
   "features": {
    "de": [
-    "Neu gezeichneter Grundriss mit Maßen.",
-    "Möblierung als Orientierung, wahlweise.",
-    "Raumnamen auf Deutsch, Italienisch oder Englisch.",
-    "PNG für Portale und PDF zum Drucken."
+    "Neu gezeichneter Grundriss mit Außenmaßen und Flächen je Raum.",
+    "Möblierung als Orientierung, wahlweise – auch beide Fassungen.",
+    "Raumnamen auf Deutsch, Italienisch oder Englisch, in Ihren Farben.",
+    "PNG für Portale und PDF A4 im Maßstab mit Nordpfeil."
    ],
    "it": [
-    "Planimetria ridisegnata con misure.",
-    "Arredi indicativi, a scelta.",
-    "Nomi dei locali in italiano, tedesco o inglese.",
-    "PNG per i portali e PDF da stampare."
+    "Planimetria ridisegnata con misure esterne e superficie di ogni vano.",
+    "Arredi indicativi, a scelta – anche entrambe le versioni.",
+    "Nomi dei vani in italiano, tedesco o inglese, nei tuoi colori.",
+    "PNG per i portali e PDF A4 in scala con indicazione del nord."
    ]
   },
   "plannedOffer": {
@@ -1698,6 +1698,10 @@
     {
      "q": "Was brauchen Sie von mir?",
      "a": "Ein lesbares Foto der Skizze oder des Plans und die Hauptmaße der Räume."
+    },
+    {
+     "q": "Wie bekomme ich PiantinaFacile?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie schicken ein Foto der Skizze oder des alten Plans und die Hauptmaße – gern mit unserem Aufmaßblatt. Nach Ihrer Freigabe per Link erhalten Sie PNG und PDF."
     }
    ],
    "it": [
@@ -1708,6 +1712,10 @@
     {
      "q": "Cosa vi serve?",
      "a": "Una foto leggibile dello schizzo o della pianta e le misure principali dei locali."
+    },
+    {
+     "q": "Come ricevo PiantinaFacile?",
+     "a": "Dall’avvio ufficiale di Studio Breve: ci mandi una foto dello schizzo o della vecchia pianta e le misure principali – anche con il nostro foglio misure. Dopo la tua approvazione tramite link ricevi PNG e PDF."
     }
    ]
   },
@@ -1814,11 +1822,11 @@
    }
   },
   "number": 24,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Darstellung für Inserate ohne amtliche Gültigkeit, Flächen netto ca.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Rappresentazione per annunci senza valore legale, superfici nette indicative."
   },
   "erstellt": "2026-11-11T12:06:06.658Z"
  },
