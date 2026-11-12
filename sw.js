@@ -2,14 +2,14 @@
 const CACHE = 'studio-breve-shell-v1';
 const SHELL = [
   '/',
-  '/breve-studio/de/',
-  '/breve-studio/it/',
-  '/breve-studio/favicon.svg',
-  '/breve-studio/apple-touch-icon.png',
-  '/breve-studio/logo-studio-breve.svg',
-  '/breve-studio/mark-studio-breve.svg',
-  '/breve-studio/de/manifest.webmanifest',
-  '/breve-studio/it/manifest.webmanifest',
+  '/de/',
+  '/it/',
+  '/favicon.svg',
+  '/apple-touch-icon.png',
+  '/logo-studio-breve.svg',
+  '/mark-studio-breve.svg',
+  '/de/manifest.webmanifest',
+  '/it/manifest.webmanifest',
 ];
 
 self.addEventListener('install', (event) => {
@@ -27,16 +27,16 @@ self.addEventListener('fetch', (event) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
-  if (url.pathname.startsWith('/breve-studio/api/') || url.pathname.startsWith('/breve-studio/verwaltung')) return;
+  if (url.pathname.startsWith('/api/') || url.pathname.startsWith('/verwaltung')) return;
   event.respondWith(
     fetch(req)
       .then((res) => {
         const copy = res.clone();
-        if (res.ok && (url.pathname.startsWith('/breve-studio/images/') || url.pathname.startsWith('/breve-studio/icons/') || url.pathname.endsWith('.css') || url.pathname.endsWith('.js') || url.pathname.endsWith('.woff2') || url.pathname.endsWith('.svg') || url.pathname.endsWith('.webp') || url.pathname.endsWith('.png'))) {
+        if (res.ok && (url.pathname.startsWith('/images/') || url.pathname.startsWith('/icons/') || url.pathname.endsWith('.css') || url.pathname.endsWith('.js') || url.pathname.endsWith('.woff2') || url.pathname.endsWith('.svg') || url.pathname.endsWith('.webp') || url.pathname.endsWith('.png'))) {
           caches.open(CACHE).then((cache) => cache.put(req, copy)).catch(() => {});
         }
         return res;
       })
-      .catch(() => caches.match(req).then((cached) => cached || caches.match('/breve-studio/de/') || caches.match('/')))
+      .catch(() => caches.match(req).then((cached) => cached || caches.match('/de/') || caches.match('/')))
   );
 });
