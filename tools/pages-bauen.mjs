@@ -1,11 +1,13 @@
-// Baut die statische Online-Vorschau für GitHub Pages (https://vecom2709.github.io/breve-studio/).
+// Baut die statische Fassung für GitHub Pages.
 // Ablauf: PUBLIC_STATISCH=1 npm run build:fast  →  node tools/pages-bauen.mjs
-// Die Seite nutzt Wurzelpfade (/de/…, /images/…). GitHub Pages liefert ein Projekt unter /breve-studio/ aus,
-// deshalb werden alle Wurzelpfade im fertigen Build auf diesen Unterpfad umgeschrieben. Der Quelltext bleibt unverändert.
+// Standard: eigene Domain www.studio-breve.it – die Seite liegt im Wurzelpfad, eine CNAME-Datei wird angelegt.
+// Ohne eigene Domain (PAGES_DOMAIN= leer) liefert Pages das Projekt unter /breve-studio/ aus; dann werden alle
+// Wurzelpfade im fertigen Build auf diesen Unterpfad umgeschrieben. Der Quelltext bleibt unverändert.
 import { cp, mkdir, readdir, readFile, rm, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
-const BASIS = '/breve-studio';
+const DOMAIN = process.env.PAGES_DOMAIN ?? 'www.studio-breve.it';
+const BASIS = process.env.PAGES_BASIS ?? (DOMAIN ? '' : '/breve-studio');
 const QUELLE = 'dist/client';
 const ZIEL = 'dist-pages';
 
@@ -13,6 +15,7 @@ await rm(ZIEL, { recursive: true, force: true });
 await mkdir(ZIEL, { recursive: true });
 await cp(QUELLE, ZIEL, { recursive: true });
 await writeFile(path.join(ZIEL, '.nojekyll'), ''); // sonst blendet Pages den Ordner _astro aus
+if (DOMAIN) await writeFile(path.join(ZIEL, 'CNAME'), `${DOMAIN}\n`); // eigene Domain für GitHub Pages
 
 const textarten = new Set(['.html', '.css', '.js', '.mjs', '.webmanifest', '.json', '.xml', '.txt', '.svg']);
 let dateien = 0;
@@ -46,7 +49,7 @@ async function gehe(ordner) {
     if (neu !== alt) { await writeFile(p, neu); dateien++; }
   }
 }
-await gehe(ZIEL);
+if (BASIS) await gehe(ZIEL);
 
 // Doppelte Basis vermeiden (falls etwas schon umgeschrieben war)
 async function bereinige(ordner) {
@@ -59,5 +62,7 @@ async function bereinige(ordner) {
     if (k !== t) await writeFile(p, k);
   }
 }
-await bereinige(ZIEL);
-console.log(`Pages-Build: ${dateien} Dateien angepasst, ${stellen} Stellen auf ${BASIS}/ umgeschrieben → ${ZIEL}/`);
+if (BASIS) await bereinige(ZIEL);
+console.log(BASIS
+  ? `Pages-Build: ${dateien} Dateien angepasst, ${stellen} Stellen auf ${BASIS}/ umgeschrieben → ${ZIEL}/`
+  : `Pages-Build: Wurzelpfad, Domain ${DOMAIN} (CNAME) → ${ZIEL}/`);

@@ -157,9 +157,9 @@ Kundenstimmen stehen in `src/content/testimonials.ts` und werden nur mit Einwill
 
 ## Online-Vorschau (GitHub Pages)
 
-- Adresse: https://vecom2709.github.io/breve-studio/ (Zweig `gh-pages`, nur die fertigen Seiten; `noindex` bleibt).
+- Adresse: https://www.studio-breve.it/ (GitHub Pages, Zweig `gh-pages`, nur die fertigen Seiten; `noindex` bleibt bis zum Start).
 - Bauen: `PUBLIC_STATISCH=1 npm run build:fast && node tools/pages-bauen.mjs` → `dist-pages/`. Im statischen Modus sind Besuchszähler und Formularversand abgeschaltet (kein Server); das Formular zeigt dann einen Hinweis.
-- `tools/pages-bauen.mjs` schreibt die Wurzelpfade auf `/breve-studio/` um und legt `.nojekyll` an.
+- `tools/pages-bauen.mjs` legt `.nojekyll` und die `CNAME`-Datei (www.studio-breve.it) an; ohne eigene Domain (`PAGES_DOMAIN=`) schreibt es die Wurzelpfade auf `/breve-studio/` um.
 
 ## Domain
 

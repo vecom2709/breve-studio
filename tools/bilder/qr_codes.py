@@ -8,7 +8,7 @@ import numpy as np
 import cv2
 from PIL import Image
 
-ZIEL = 'https://vecom2709.github.io/breve-studio/{lang}/app/'
+ZIEL = 'https://www.studio-breve.it/{lang}/app/'
 logo = Image.open('public/logo-studio-breve-gold.png').convert('RGBA')
 a = np.asarray(logo).astype(np.float32)
 mx, mn = a[..., :3].max(2), a[..., :3].min(2)

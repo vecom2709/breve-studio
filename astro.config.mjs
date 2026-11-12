@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 import node from '@astrojs/node';
 
-// Platzhalter-Host: Die Domain ist NICHT registriert (Stand 9.11.2026).
+// Domain studio-breve.it registriert (12.11.2026), Auslieferung über GitHub Pages.
 export default defineConfig({
   site: 'https://www.studio-breve.it',
   trailingSlash: 'always',

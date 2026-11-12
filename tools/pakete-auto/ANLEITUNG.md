@@ -7,7 +7,7 @@ Ziel: Bei jedem Lauf **genau 10 neue, sinnvolle Pakete** für Studio Breve entwe
 2. 10 Pakete als JSON-Liste in eine Datei schreiben (z. B. `/tmp/neu.json`) – Aufbau wie unten.
 3. `node tools/pakete-auto/hinzufuegen.mjs /tmp/neu.json` – prüft streng (Pflichtfelder DE/IT, Längen, keine Werbeversprechen, eindeutige Namen). Bei „ABGELEHNT“ korrigieren und erneut aufrufen.
 4. `bash tools/pakete-auto/veroeffentlichen.sh "Neue Pakete Nr. X–Y: Name1, Name2, …"` – baut, erzeugt fehlende Vorschaubilder, sichert den Quelltext und veröffentlicht online.
-5. Ergebnis melden: die 10 Pakete mit Nummer, Name, Kategorie, Preis und Link `https://vecom2709.github.io/breve-studio/de/pakete/<slug>/`.
+5. Ergebnis melden: die 10 Pakete mit Nummer, Name, Kategorie, Preis und Link `https://www.studio-breve.it/de/pakete/<slug>/`.
 
 ## Inhaltliche Regeln
 - Kleine, klar umrissene digitale Pakete (Produkt oder Dienstleistung) für kleine Betriebe in **Italien (v. a. Sizilien) und im deutschsprachigen Raum**: Handel, Handwerk, Gastronomie, Gastgewerbe, Immobilien, Praxen, Vereine, Freiberufler.
