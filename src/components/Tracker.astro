@@ -1,11 +1,12 @@
 ---
 import type { Locale } from '../content/packages';
 import { ui } from '../lib/i18n';
+import { api } from '../lib/server-api';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = ui[lang];
 ---
-<script is:inline define:vars={{ lang, one: t.visitPhraseOne, many: t.visitPhraseMany }}>
+<script is:inline define:vars={{ lang, one: t.visitPhraseOne, many: t.visitPhraseMany, url: api('/api/track/') }}>
   (function () {
     var phrase = function (n) {
       if (n === 1) return one;
@@ -21,7 +22,7 @@ const t = ui[lang];
       });
     };
     var fill = function () {
-      var pending = window.__sbVisits || fetch('/api/track/', { headers: { Accept: 'application/json' }, cache: 'no-store' }).then(function (r) { return r.json(); });
+      var pending = window.__sbVisits || fetch(url, { headers: { Accept: 'application/json' }, cache: 'no-store' }).then(function (r) { return r.json(); });
       pending
         .then(function (d) { if (d && typeof d.n === 'number') applyCount(d.n); })
         .catch(function () {});
@@ -52,7 +53,8 @@ const t = ui[lang];
       if (extra) Object.assign(body, extra);
       return body;
     };
-    fetch('/api/track/', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload('view')), keepalive: true, cache: 'no-store' })
+    // text/plain vermeidet eine Vorab-Anfrage (CORS); die Verwaltung liest den Inhalt als JSON.
+    fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8', Accept: 'application/json' }, body: JSON.stringify(payload('view')), keepalive: true, cache: 'no-store', credentials: 'include' })
       .then(function (r) { return r.json(); })
       .then(function (d) { if (d && typeof d.n === 'number') applyCount(d.n); })
       .catch(function () {});
@@ -61,7 +63,7 @@ const t = ui[lang];
       if (sent) return;
       sent = true;
       var data = JSON.stringify(payload('timing', { ms: Date.now() - started, path: path.split('?')[0] }));
-      if (navigator.sendBeacon) navigator.sendBeacon('/api/track/', new Blob([data], { type: 'application/json' }));
+      if (navigator.sendBeacon) navigator.sendBeacon(url, new Blob([data], { type: 'text/plain;charset=UTF-8' }));
     };
     window.addEventListener('pagehide', goodbye);
   })();

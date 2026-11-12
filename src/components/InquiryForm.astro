@@ -1,6 +1,7 @@
 ---
 import { packagesSorted, bundles, type Locale, type CtaType } from '../content/packages';
 import { ui } from '../lib/i18n';
+import { mitApi, api, apiBasis } from '../lib/server-api';
 interface Props { lang: Locale; preselect?: string; intent?: CtaType | 'general'; source: string; title?: string; compact?: boolean }
 const { lang, preselect = '', intent = 'general', source, title, compact = false } = Astro.props;
 const t = ui[lang];
@@ -8,7 +9,7 @@ const f = t.form;
 const uid = 'f' + Math.random().toString(36).slice(2, 7);
 const id = (n: string) => `${uid}-${n}`;
 ---
-<form class:list={['inquiry', { compact }]} method="post" action="/api/inquiry/" novalidate data-inquiry
+<form class:list={['inquiry', { compact }]} method="post" action={api('/api/inquiry/')} novalidate data-inquiry
   data-msg-name={f.errors.name} data-msg-email={f.errors.email} data-msg-message={f.errors.message}
   data-msg-consent={f.errors.consent} data-msg-generic={f.errors.generic} data-msg-submitting={f.submitting}>
   {title && <h2 class="ftitle">{title}</h2>}
@@ -69,11 +70,11 @@ const id = (n: string) => `${uid}-${n}`;
   </div>
   <p class="req-note small muted"><span aria-hidden="true">*</span> {f.required}</p>
   <div class="actions">
-    {import.meta.env.PUBLIC_STATISCH === '1'
+    {!mitApi
       ? <p class="statisch-hinweis" role="note">{lang === 'de' ? 'In dieser Online-Vorschau ist der Versand abgeschaltet. Bitte nutzen Sie vorerst E-Mail oder Telefon aus dem Impressum.' : 'In questa anteprima online l’invio è disattivato. Per ora usa e-mail o telefono indicati nelle note legali.'}</p>
       : <button class="btn btn-primary" type="submit">{f.submit} <span class="arrow" aria-hidden="true">→</span></button>}
   </div>
-  <p class="local small">{f.localNote}</p>
+  <p class="local small">{apiBasis ? f.serverNote : f.localNote}</p>
 </form>
 
 <script>
@@ -119,7 +120,11 @@ const id = (n: string) => `${uid}-${n}`;
       try {
         const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
         const data = await res.json().catch(() => ({}));
-        if (res.ok && data.ok && data.redirect) { location.assign(data.redirect); return; }
+        if (res.ok && data.ok && data.redirect) {
+          // Für die Danke-Seite der statischen Fassung: nur Nummer, Zeit, Paket, Werbe-Einwilligung – nichts Persönliches
+          try { if (data.details) sessionStorage.setItem('sb-anfrage', JSON.stringify(data.details)); } catch {}
+          location.assign(data.redirect); return;
+        }
         if (data.errors) { Object.entries(data.errors as Record<string, string>).forEach(([k, m]) => setErr(k, m)); summary.hidden = false; summary.focus(); }
         else { summary.textContent = d.msgGeneric!; summary.hidden = false; summary.focus(); }
       } catch {

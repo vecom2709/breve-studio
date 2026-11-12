@@ -176,3 +176,14 @@ Adresse laut Uwe Vetter (11.11.2026): **www.studio-breve.it** (in `site.ts` und 
 ## Bilder
 
 `public/images/packages/*.jpg` sind Entwurfsvisualisierungen aus der Planungsphase (keine fertigen Produkte, keine Kundenprojekte) und werden auf der Seite so gekennzeichnet. `public/og-studio-breve.jpg` ist das Vorschaubild für Link-Vorschauen (erzeugt aus `tools/og.html`).
+
+## Verwaltung online (verwaltung.studio-breve.it)
+
+Die Website läuft statisch auf GitHub Pages. Anfrageformular, Besuchszähler und Verwaltung laufen als PHP + SQLite auf All-Inkl unter **https://verwaltung.studio-breve.it** (Ordner `verwaltung-php/`, KAS-Account w02265ed, Subdomain-Ordner `/verwaltung.studio-breve.it/`, PHP 8.4, Let's Encrypt).
+
+- Website-Build: `PUBLIC_STATISCH=1 PUBLIC_API_BASIS=https://verwaltung.studio-breve.it npm run build:fast` (steht so in `tools/pakete-auto/veroeffentlichen.sh`). Formular und Zähler senden dann an `…/api/inquiry/` und `…/api/track/`; CORS erlaubt nur www.studio-breve.it und studio-breve.it.
+- Hochladen: Ordner `verwaltung-php/` als `verwaltung\` neben `tools/verwaltung/hochladen.ps1` legen und das Skript ausführen (FTPS, eigener FTP-Zugang f0193216 nur für den Verwaltungsordner; Passwort tippt Uwe selbst). Beim ersten Mal erzeugt das Skript `app/config.local.php` mit einem Einrichtungscode und öffnet den Einrichtungslink. `rueckweg.ps1` entfernt die Programmdateien wieder (Daten bleiben).
+- Daten: `data/verwaltung.sqlite` (gesperrt per `.htaccess`). Besuchsdetails 365 Tage, danach automatisch gelöscht; Anfragen bleiben, bis sie in der Verwaltung gelöscht werden.
+- Neue Anfrage: kurze E-Mail an info@studio-breve.it nur mit Vorgangsnummer (keine Personendaten).
+- Sicherheit: Passwort-Hash (password_hash), Sitzungs-Cookie HttpOnly/Secure/SameSite=Strict, CSRF-Schutz, Sperre nach 10 Fehlversuchen in 15 Min., höchstens 5 Anfragen pro Stunde und Adresse, strenge CSP, keine Fremddienste.
+- Passwort vergessen: im KAS per FTP/WebFTP `data/verwaltung.sqlite` sichern, dann `app/config.local.php` mit neuem Code hochladen und den Zugang in der Datenbank löschen lassen – oder Claude fragen.

@@ -11,3 +11,8 @@ data/geoip/
 *.mmdb
 __pycache__/
 dist-pages/
+
+# Verwaltung (PHP): Einrichtungscode und Daten nie ins Repository
+verwaltung-php/app/config.local.php
+verwaltung-php/data/
+dist-test/

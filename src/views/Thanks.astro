@@ -1,14 +1,20 @@
 ---
 import Base from '../layouts/Base.astro';
 import { findInquiry } from '../lib/inquiries';
-import { getPackage, bundles, type Locale } from '../content/packages';
+import { getPackage, bundles, packagesSorted, type Locale } from '../content/packages';
 import { path, ui } from '../lib/i18n';
+import { statisch } from '../lib/server-api';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = ui[lang].thanks;
 const de = lang === 'de';
-const ref = Astro.url.searchParams.get('ref') ?? '';
+const ref = statisch ? '' : (Astro.url.searchParams.get('ref') ?? '');
 const entry = ref ? await findInquiry(ref) : undefined;
+// Statische Fassung: Paketnamen für die Anzeige im Browser
+const paketNamen = Object.fromEntries([
+  ...packagesSorted().map((p) => [p.slug, p.brand]),
+  ...bundles.map((b) => [`bundle:${b.slug}`, b.title[lang]]),
+]);
 const pkgName = entry?.package
   ? entry.package.startsWith('bundle:')
     ? bundles.find((b) => `bundle:${b.slug}` === entry.package)?.title[lang]
@@ -16,9 +22,50 @@ const pkgName = entry?.package
   : null;
 const date = entry ? new Intl.DateTimeFormat(de ? 'de-DE' : 'it-IT', { dateStyle: 'long', timeStyle: 'short', timeZone: 'Europe/Rome' }).format(new Date(entry.createdAt)) : '';
 ---
-<Base lang={lang} routeKey="thanks" title={entry ? t.title : t.notFound}>
+<Base lang={lang} routeKey="thanks" title={entry || statisch ? t.title : t.notFound}>
   <section class="wrap narrow box">
-    {entry ? (
+    {statisch ? (
+      <>
+        <div class="stack" style="--flow: 1.2rem" data-danke hidden>
+          <p class="eyebrow">{de ? 'Gespeichert' : 'Salvata'}</p>
+          <h1>{t.title}</h1>
+          <p class="lead">{t.body}</p>
+          <dl>
+            <div><dt>{t.ref}</dt><dd><code data-feld="id"></code></dd></div>
+            <div><dt>{t.saved}</dt><dd data-feld="datum"></dd></div>
+            <div data-zeile="paket" hidden><dt>{ui[lang].package}</dt><dd data-feld="paket"></dd></div>
+            <div><dt>{de ? 'Werbe-Einwilligung' : 'Consenso marketing'}</dt><dd data-feld="werbung"></dd></div>
+          </dl>
+          <p class="small muted">{ui[lang].form.serverNote}</p>
+          <p><a class="btn btn-ghost" href={path('home', lang)}>{t.back}</a></p>
+        </div>
+        <div class="stack" style="--flow: 1.2rem" data-unbekannt>
+          <h1>{t.notFound}</h1>
+          <p><a class="btn btn-ghost" href={path('contact', lang)}>{ui[lang].nav.contact}</a></p>
+        </div>
+        <script is:inline define:vars={{ lang, paketNamen, ja: de ? 'erteilt (jederzeit widerrufbar)' : 'concesso (revocabile in ogni momento)', nein: de ? 'nicht erteilt' : 'non concesso' }}>
+          (function () {
+            var ref = new URLSearchParams(location.search).get('ref') || '';
+            var d = null;
+            try { d = JSON.parse(sessionStorage.getItem('sb-anfrage') || 'null'); } catch (e) {}
+            if (!d || !ref || d.id !== ref) return;
+            var feld = function (n) { return document.querySelector('[data-feld="' + n + '"]'); };
+            feld('id').textContent = d.id;
+            try {
+              feld('datum').textContent = new Intl.DateTimeFormat(lang === 'de' ? 'de-DE' : 'it-IT', { dateStyle: 'long', timeStyle: 'short', timeZone: 'Europe/Rome' }).format(new Date(d.createdAt));
+            } catch (e) { feld('datum').textContent = d.createdAt; }
+            if (d.package && paketNamen[d.package]) {
+              feld('paket').textContent = paketNamen[d.package];
+              document.querySelector('[data-zeile="paket"]').hidden = false;
+            }
+            feld('werbung').textContent = d.marketing ? ja : nein;
+            document.querySelector('[data-danke]').hidden = false;
+            document.querySelector('[data-unbekannt]').hidden = true;
+            document.title = document.querySelector('[data-danke] h1').textContent + ' · Studio Breve';
+          })();
+        </script>
+      </>
+    ) : entry ? (
       <div class="stack" style="--flow: 1.2rem">
         <p class="eyebrow">{de ? 'Gespeichert' : 'Salvata'}</p>
         <h1>{t.title}</h1>
@@ -42,6 +89,7 @@ const date = entry ? new Intl.DateTimeFormat(de ? 'de-DE' : 'it-IT', { dateStyle
 </Base>
 <style>
   .box { padding-block: var(--space-xl); }
+  .box [hidden] { display: none !important; }
   h1 { font-size: var(--step-3); }
   dl { margin: 0; border-top: 1px solid var(--line); }
   dl div { display: grid; grid-template-columns: minmax(9rem, 14rem) 1fr; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid var(--line); }

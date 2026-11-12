@@ -256,6 +256,7 @@ export const ui = {
       submit: 'Absenden',
       submitting: 'Wird gesendet …',
       localNote: 'Vorschau-Modus: Ihre Angaben werden nur lokal auf diesem Rechner gespeichert. Es wird keine E-Mail versendet.',
+      serverNote: 'Ihre Angaben werden auf dem Server von Studio Breve in Deutschland (All-Inkl) gespeichert und nur zur Beantwortung Ihrer Anfrage verwendet. Wir erhalten lediglich einen Hinweis per E-Mail, ohne Ihre Angaben.',
       errors: {
         name: 'Bitte geben Sie Ihren Namen an.',
         email: 'Bitte geben Sie eine gültige E-Mail-Adresse an.',
@@ -460,6 +461,7 @@ export const ui = {
       submit: 'Invia',
       submitting: 'Invio in corso …',
       localNote: 'Modalità anteprima: i dati vengono salvati solo localmente su questo computer. Non viene inviata alcuna email.',
+      serverNote: 'I tuoi dati vengono salvati sul server di Studio Breve in Germania (All-Inkl) e usati solo per rispondere alla tua richiesta. Riceviamo solo un avviso via email, senza i tuoi dati.',
       errors: {
         name: 'Indica il tuo nome.',
         email: 'Indica un indirizzo email valido.',

@@ -1,7 +1,8 @@
 ---
 import View from '../../../views/Thanks.astro';
 import { findInquiry } from '../../../lib/inquiries';
-export const prerender = false;
-if (!(await findInquiry(Astro.url.searchParams.get('ref') ?? ''))) Astro.response.status = 404;
+// Statischer Pages-Build: Seite wird vorab erzeugt und im Browser befüllt (siehe Thanks.astro)
+export const prerender = import.meta.env.PUBLIC_STATISCH === '1';
+if (!prerender && !(await findInquiry(Astro.url.searchParams.get('ref') ?? ''))) Astro.response.status = 404;
 ---
 <View lang="de" />

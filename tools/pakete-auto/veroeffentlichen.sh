@@ -20,7 +20,7 @@ git -c user.name="vecom2709" -c user.email="noreply@vecom-design.it" commit -q -
 git push -q origin HEAD:redesign/startseite-foto
 
 # Statische Online-Fassung
-PUBLIC_STATISCH=1 npm run build:fast >/tmp/sb-pages.log 2>&1
+PUBLIC_STATISCH=1 PUBLIC_API_BASIS=https://verwaltung.studio-breve.it npm run build:fast >/tmp/sb-pages.log 2>&1
 node tools/pages-bauen.mjs
 rm -rf /tmp/sb-gh && git clone -q --depth 1 -b gh-pages "$(git remote get-url origin)" /tmp/sb-gh
 find /tmp/sb-gh -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
