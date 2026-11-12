@@ -32,4 +32,69 @@ const chooserQuery = "wahl=1";
           try { localStorage.setItem(langStorageKey, a.getAttribute('data-lang') || ''); } catch (e) {}
         });
       });
-    })();</script></body></html>
+    })();</script><script>(function(){const lang = "de";
+const one = "1 Besuch seit Start";
+const many = "{n} Besuche seit Start";
+const url = "https://verwaltung.studio-breve.it/api/track/";
+
+  (function () {
+    var phrase = function (n) {
+      if (n === 1) return one;
+      return String(many).replace('{n}', String(n));
+    };
+    var applyCount = function (n) {
+      if (typeof n !== 'number' || !isFinite(n) || n < 0) return;
+      document.querySelectorAll('[data-visit-count]').forEach(function (el) { el.textContent = String(n); });
+      document.querySelectorAll('[data-visit-phrase]').forEach(function (el) { el.textContent = phrase(n); });
+      document.querySelectorAll('[data-visit-pill]').forEach(function (el) {
+        el.setAttribute('aria-label', phrase(n));
+        el.classList.add('is-ready');
+      });
+    };
+    var fill = function () {
+      var pending = window.__sbVisits || fetch(url, { headers: { Accept: 'application/json' }, cache: 'no-store' }).then(function (r) { return r.json(); });
+      pending
+        .then(function (d) { if (d && typeof d.n === 'number') applyCount(d.n); })
+        .catch(function () {});
+    };
+    fill();
+    var dnt = (navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true);
+    if (dnt) return;
+    var KEY = 'sb-sid';
+    var sid = null;
+    try { sid = sessionStorage.getItem(KEY); if (!sid) { sid = (crypto.randomUUID && crypto.randomUUID()) || String(Date.now()) + Math.random().toString(16).slice(2); sessionStorage.setItem(KEY, sid); } } catch (e) { sid = 'anon'; }
+    var started = Date.now();
+    var path = location.pathname + (location.search || '');
+    var utm = {};
+    try {
+      var sp = new URLSearchParams(location.search);
+      ['source','medium','campaign','term','content'].forEach(function (k) { var v = sp.get('utm_' + k); if (v) utm[k] = v.slice(0, 80); });
+    } catch (e) {}
+    var payload = function (t, extra) {
+      var body = {
+        t: t,
+        sid: sid,
+        path: location.pathname,
+        referrer: document.referrer || '',
+        lang: lang,
+        screen: (screen && screen.width ? screen.width + 'x' + screen.height : ''),
+        utm: Object.keys(utm).length ? utm : null
+      };
+      if (extra) Object.assign(body, extra);
+      return body;
+    };
+    // text/plain vermeidet eine Vorab-Anfrage (CORS); die Verwaltung liest den Inhalt als JSON.
+    fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8', Accept: 'application/json' }, body: JSON.stringify(payload('view')), keepalive: true, cache: 'no-store', credentials: 'include' })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { if (d && typeof d.n === 'number') applyCount(d.n); })
+      .catch(function () {});
+    var sent = false;
+    var goodbye = function () {
+      if (sent) return;
+      sent = true;
+      var data = JSON.stringify(payload('timing', { ms: Date.now() - started, path: path.split('?')[0] }));
+      if (navigator.sendBeacon) navigator.sendBeacon(url, new Blob([data], { type: 'text/plain;charset=UTF-8' }));
+    };
+    window.addEventListener('pagehide', goodbye);
+  })();
+})();</script></body></html>
