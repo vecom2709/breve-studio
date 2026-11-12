@@ -16,6 +16,12 @@ await mkdir(ZIEL, { recursive: true });
 await cp(QUELLE, ZIEL, { recursive: true });
 await writeFile(path.join(ZIEL, '.nojekyll'), ''); // sonst blendet Pages den Ordner _astro aus
 if (DOMAIN) await writeFile(path.join(ZIEL, 'CNAME'), `${DOMAIN}\n`); // eigene Domain für GitHub Pages
+// Alte Adresse /verwaltung/ führt zur Verwaltung auf der eigenen Subdomain (PHP bei All-Inkl)
+const VERWALTUNG = process.env.PAGES_VERWALTUNG ?? (DOMAIN ? 'https://verwaltung.studio-breve.it/' : '');
+if (VERWALTUNG) {
+  await mkdir(path.join(ZIEL, 'verwaltung'), { recursive: true });
+  await writeFile(path.join(ZIEL, 'verwaltung', 'index.html'), `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><title>Verwaltung – Studio Breve</title><meta http-equiv="refresh" content="0;url=${VERWALTUNG}"><link rel="canonical" href="${VERWALTUNG}"></head><body><p><a href="${VERWALTUNG}">Zur Verwaltung</a></p></body></html>\n`);
+}
 
 const textarten = new Set(['.html', '.css', '.js', '.mjs', '.webmanifest', '.json', '.xml', '.txt', '.svg']);
 let dateien = 0;

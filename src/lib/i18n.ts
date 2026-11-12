@@ -149,7 +149,7 @@ export const ui = {
     vatIncl: 'Endpreis',
     vatTbd: 'Steuerausweis vor Start zu klären',
     status: {
-      waitlist: 'In Entwicklung · Warteliste',
+      waitlist: 'Warteliste',
       inquiry: 'Anfrage möglich',
       soon: 'Demnächst',
       available: 'Fertig entwickelt',
@@ -193,7 +193,7 @@ export const ui = {
       standToday: 'Stand heute',
       statCatalog: 'Pakete im Katalog',
       statServices: 'Dienstleistungen auf Anfrage',
-      statWaitlist: 'Produkte in Entwicklung, mit Warteliste',
+      statWaitlist: 'Produkte mit Warteliste',
       statPlanned: 'Pakete in Planung',
       standNote: 'Studio Breve befindet sich im Aufbau. Verkauft wird ab dem offiziellen Start; bis dahin können Sie sich unverbindlich vormerken oder anfragen – auch für Pakete, die schon fertig entwickelt sind.',
       trust: [
@@ -354,7 +354,7 @@ export const ui = {
     vatIncl: 'prezzo finale',
     vatTbd: 'trattamento IVA da definire prima del lancio',
     status: {
-      waitlist: 'In sviluppo · lista d’attesa',
+      waitlist: 'Lista d’attesa',
       inquiry: 'Su richiesta',
       soon: 'Prossimamente',
       available: 'Pronto',
@@ -398,7 +398,7 @@ export const ui = {
       standToday: 'Stato attuale',
       statCatalog: 'Pacchetti in catalogo',
       statServices: 'Servizi su richiesta',
-      statWaitlist: 'Prodotti in sviluppo, con lista d’attesa',
+      statWaitlist: 'Prodotti con lista d’attesa',
       statPlanned: 'Pacchetti in preparazione',
       standNote: 'Studio Breve è in fase di avvio. La vendita parte con l’avvio ufficiale; fino ad allora puoi prenotarti o chiedere informazioni senza impegno – anche per i pacchetti già pronti.',
       trust: [

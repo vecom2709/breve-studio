@@ -1,4 +1,5 @@
 ---
+import { apiBasis } from '../lib/server-api';
 import Wordmark from './Wordmark.astro';
 import { site } from '../content/site';
 import { categories, type Locale } from '../content/packages';
@@ -65,7 +66,7 @@ const op = site.operator;
     </div>
     <div class="base small">
       <span>© 2026 Studio Breve · {op.name} · P.IVA {op.vatId[lang]}</span>
-      <a class="admin-link" href="/verwaltung/" rel="nofollow">{t.adminArea}</a>
+      <a class="admin-link" href={apiBasis ? `${apiBasis}/` : '/verwaltung/'} rel="nofollow">{t.adminArea}</a>
       <span>{lang === 'de' ? 'Preise sind Listenpreise; ein Vertrag kommt über diese Seite nicht zustande.' : 'I prezzi sono di listino; tramite questo sito non si conclude alcun contratto.'}</span>
     </div>
   </div>

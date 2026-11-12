@@ -19,8 +19,8 @@ const used = categories.filter((c) => all.some((p) => p.category === c.id));
       <p class="eyebrow">{kind === 'product' ? t.nav.products : kind === 'service' ? t.nav.services : (de ? 'Katalog' : 'Catalogo')}</p>
       <h1>{kind === 'product' ? t.catalogKind.productsTitle : kind === 'service' ? t.catalogKind.servicesTitle : (de ? <>Pakete mit klarem Umfang <em class="accent">und offenem Preis.</em></> : <>Pacchetti con un perimetro chiaro <em class="accent">e un prezzo in vista.</em></>)}</h1>
       <p class="lead">{kind === 'product' ? t.catalogKind.productsLead : kind === 'service' ? t.catalogKind.servicesLead : (de
-        ? 'Jedes Paket zeigt Listenpreis und ehrlichen Stand. Produkte in Entwicklung können Sie vormerken, persönliche Leistungen unverbindlich anfragen. Der Katalog wächst.'
-        : 'Ogni pacchetto indica prezzo di listino e stato reale. I prodotti in sviluppo puoi segnarli, i servizi personali puoi richiederli senza impegno. Il catalogo crescerà.')}</p>
+        ? 'Jedes Paket zeigt Listenpreis und ehrlichen Stand. Produkte mit Warteliste können Sie vormerken, persönliche Leistungen unverbindlich anfragen. Der Katalog wächst.'
+        : 'Ogni pacchetto indica prezzo di listino e stato reale. I prodotti in lista d’attesa puoi segnarli, i servizi personali puoi richiederli senza impegno. Il catalogo crescerà.')}</p>
       <ul class="legend" aria-label={de ? 'Bedeutung der Status' : 'Significato degli stati'}>
         {(['inquiry', 'waitlist', 'soon'] as const).map((s) => <li><span class="status" data-status={s}>{t.status[s]}</span><span class="small muted">{t.statusExplain[s].split('. ')[0]}.</span></li>)}
       </ul>

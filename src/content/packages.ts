@@ -70,7 +70,7 @@ export type ShopCategoryId = (typeof shopCategories)[number]['id'];
 /* ---------- Status & Handlungsaufforderung ---------- */
 
 /**
- * waitlist  = Produkt in Entwicklung, Interessenten können sich vormerken
+ * waitlist  = Produkt noch nicht lieferbar, Interessenten können sich vormerken
  * inquiry   = Dienstleistung, unverbindliche Anfrage möglich
  * soon      = geplant, Benachrichtigung zum Start
  * available = Produkt fertig entwickelt. Wirklich kaufbar erst mit Kauf-Link (isPurchasable) – dafür müssen Rechtliches und Zahlung fertig sein.
