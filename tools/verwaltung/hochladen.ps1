@@ -56,20 +56,33 @@ function Ordner([string]$pfad) {
 }
 if ($Ziel) { Ordner $Ziel }
 $dateien = Get-ChildItem -Path $quelle -Recurse -File -Force
-$ordner = $dateien | ForEach-Object { Split-Path $_.FullName.Substring($quelle.Length) -Parent } | Where-Object { $_ } | Sort-Object -Unique
+# alle Ordner samt übergeordneten anlegen (Eltern zuerst)
+$ordner = New-Object 'System.Collections.Generic.SortedSet[string]'
+foreach ($d in $dateien) {
+    $p = Split-Path $d.FullName.Substring($quelle.Length) -Parent
+    while ($p -and $p -ne '\') { [void]$ordner.Add($p); $p = Split-Path $p -Parent }
+}
 foreach ($o in $ordner) { Ordner ($Ziel + ($o -replace '\\', '/')) }
-$n = 0
+$n = 0; $fehler = 0
 foreach ($d in $dateien) {
     $rel = $d.FullName.Substring($quelle.Length) -replace '\\', '/'
     if ($rel -like '/data/*') { continue }
-    $r = Anfrage ($Ziel + $rel) ([Net.WebRequestMethods+Ftp]::UploadFile)
-    $bytes = [IO.File]::ReadAllBytes($d.FullName)
-    $r.ContentLength = $bytes.Length
-    $s = $r.GetRequestStream(); $s.Write($bytes, 0, $bytes.Length); $s.Close()
-    $r.GetResponse().Close()
-    Log "hochgeladen: $rel ($($bytes.Length) Bytes)"; $n++
+    try {
+        $r = Anfrage ($Ziel + $rel) ([Net.WebRequestMethods+Ftp]::UploadFile)
+        $bytes = [IO.File]::ReadAllBytes($d.FullName)
+        $r.ContentLength = $bytes.Length
+        $s = $r.GetRequestStream(); $s.Write($bytes, 0, $bytes.Length); $s.Close()
+        $r.GetResponse().Close()
+        Log "hochgeladen: $rel ($($bytes.Length) Bytes)"; $n++
+    } catch {
+        Log "FEHLER bei ${rel}: $($_.Exception.Message)"; $fehler++
+    }
 }
-Log "$n Dateien hochgeladen."
+Log "$n Dateien hochgeladen, $fehler Fehler."
+if ($fehler -gt 0) {
+    Write-Host 'Es gab Fehler beim Hochladen – bitte Claude Bescheid geben. Der Einrichtungslink wird nicht geöffnet.' -ForegroundColor Red
+    Read-Host 'Enter zum Schließen'; exit 1
+}
 
 # 3. Einrichtungslink
 $link = "https://verwaltung.studio-breve.it/?einrichten=$code"
