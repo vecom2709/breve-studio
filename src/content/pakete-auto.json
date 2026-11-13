@@ -3616,16 +3616,18 @@
   },
   "features": {
    "de": [
-    "Checkliste je Unterkunft und Raum.",
-    "Fotos nach der Reinigung.",
-    "Meldung von Schäden und fehlenden Vorräten.",
-    "Nachricht an Sie, wenn die Wohnung bereit ist."
+    "Checkliste je Unterkunft und Raum, frei anpassbar.",
+    "Team-Link fürs Handy: ohne App und Konto, Italienisch, Deutsch oder Englisch; Häkchen werden sofort gespeichert.",
+    "Fotos je Raum nach der Reinigung – ohne Standortdaten, automatisch gelöscht nach 60 Tagen (einstellbar).",
+    "Meldung von Schäden und fehlenden Vorräten mit Foto – per E-Mail direkt an Sie.",
+    "E-Mail an Sie, wenn die Unterkunft bereit ist; Verlauf jeder Reinigung."
    ],
    "it": [
-    "Checklist per alloggio e stanza.",
-    "Foto dopo la pulizia.",
-    "Segnalazione di danni e scorte mancanti.",
-    "Avviso quando l’alloggio è pronto."
+    "Checklist per alloggio e stanza, personalizzabile.",
+    "Link per il team sul telefono: senza app né account, in italiano, tedesco o inglese; le spunte si salvano subito.",
+    "Foto per stanza dopo la pulizia – senza dati di posizione, eliminate automaticamente dopo 60 giorni (modificabile).",
+    "Segnalazione di danni e scorte mancanti con foto – via e-mail direttamente a te.",
+    "E-mail quando l’alloggio è pronto; storico di ogni pulizia."
    ]
   },
   "plannedOffer": {
@@ -3635,19 +3637,23 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich PuliziaCheck?",
+     "a": "Als Web-App für Ihren eigenen Webspace (PHP 8.1 und SQLite, z. B. bei All-Inkl). Wir richten sie für Sie ein – oder Sie laden sie selbst hoch und folgen dem Installations-Assistenten. Fotos und Meldungen bleiben auf Ihrem Webspace."
+    },
+    {
      "q": "Muss mein Reinigungsteam etwas installieren?",
      "a": "Nein, die Checkliste öffnet sich im Browser des Handys."
     },
     {
      "q": "Werden Gäste fotografiert?",
      "a": "Nein. Fotografiert werden nur Räume nach der Reinigung, wenn keine Gäste anwesend sind."
-    },
-    {
-     "q": "Wie bekomme ich PuliziaCheck?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten PuliziaCheck für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo PuliziaCheck?",
+     "a": "Come web app per il tuo spazio web (PHP 8.1 e SQLite, es. All-Inkl). La installiamo noi – oppure la carichi tu e segui la procedura guidata. Foto e segnalazioni restano sul tuo spazio web."
+    },
     {
      "q": "La squadra deve installare qualcosa?",
      "a": "No, la checklist si apre nel browser del telefono."
@@ -3655,10 +3661,6 @@
     {
      "q": "Si fotografano gli ospiti?",
      "a": "No. Si fotografano solo le stanze dopo la pulizia, senza ospiti presenti."
-    },
-    {
-     "q": "Come ricevo PuliziaCheck?",
-     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
     }
    ]
   },
@@ -3668,13 +3670,13 @@
   },
   "ablauf": {
    "de": [
-    "Sie fragen an; wir richten PuliziaCheck für Ihre Unterkünfte ein.",
+    "Sie fragen an; wir installieren PuliziaCheck auf Ihrem Webspace und legen Ihre Unterkünfte an.",
     "Sie passen die Checklisten an und senden Ihrem Team den Link.",
     "Nach jeder Reinigung erhalten Sie Häkchen, Fotos und eventuelle Meldungen."
    ],
    "it": [
-    "Fai richiesta; configuriamo PuliziaCheck per i tuoi alloggi.",
-    "Adatti le checklist e mandi il link alla squadra.",
+    "Fai richiesta; installiamo PuliziaCheck sul tuo spazio web e creiamo i tuoi alloggi.",
+    "Adatti le checklist e invii il link al tuo team.",
     "Dopo ogni pulizia ricevi spunte, foto ed eventuali segnalazioni."
    ]
   },
@@ -3757,11 +3759,11 @@
    }
   },
   "number": 33,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Web-App für Ihren Webspace (PHP, ohne Fremddienste) mit Installations-Assistent – wir richten sie ein oder Sie selbst in rund 15 Minuten.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Web app per il tuo spazio web (PHP, senza servizi esterni) con procedura di installazione guidata – la installiamo noi o tu stesso in circa 15 minuti."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
@@ -4051,16 +4053,16 @@
   },
   "features": {
    "de": [
-    "Gestaltetes Schild mit QR-Code in A4 und A5.",
-    "Handyseite mit Öffnungszeiten, Angeboten, Kontakt.",
-    "Angebote selbst ändern per Formular.",
-    "Zweisprachig DE/IT."
+    "Gestaltetes Schild mit QR-Code in A4 und A5 – als PDF für jeden Copyshop.",
+    "Handyseite mit Öffnungszeiten und „Jetzt geöffnet / Öffnet morgen um …“, Angeboten mit Foto und Preis, Kontakt-Knöpfen.",
+    "Angebote, Zeiten und Hinweis für Ferien oder Feiertage selbst ändern – abgelaufene Angebote verschwinden von selbst.",
+    "Zweisprachig IT/DE, keine Cookies, kein Tracking; nur anonyme Zählung der Aufrufe."
    ],
    "it": [
-    "Cartello grafico con QR in A4 e A5.",
-    "Pagina per telefono con orari, offerte, contatti.",
-    "Offerte aggiornabili da te con un modulo.",
-    "Bilingue IT/DE."
+    "Cartello con codice QR in A4 e A5 – in PDF per qualsiasi copisteria.",
+    "Pagina per telefono con orari e „Aperto ora / Apre domani alle …“, offerte con foto e prezzo, pulsanti di contatto.",
+    "Modifichi da solo offerte, orari e avviso per ferie o festivi – le offerte scadute spariscono da sole.",
+    "Bilingue IT/DE, senza cookie né tracciamento; solo conteggio anonimo delle visite."
    ]
   },
   "plannedOffer": {
@@ -4070,19 +4072,23 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich VetrinaNotte?",
+     "a": "Sie fragen an, wir richten die Handyseite auf Ihrem Webspace ein (PHP 8.1 und SQLite, z. B. bei All-Inkl) und liefern das Schild als PDF in A4 und A5. Die Seite läuft ohne Cookies und ohne fremde Dienste."
+    },
+    {
      "q": "Muss ich die monatliche Gebühr zahlen?",
      "a": "Nur, wenn Sie die Angebote selbst ändern möchten. Ohne Abo bleibt die Seite mit festen Inhalten online."
     },
     {
      "q": "Kann ich das Schild selbst drucken?",
      "a": "Ja, Sie erhalten druckfertige Dateien für jeden Copyshop."
-    },
-    {
-     "q": "Wie bekomme ich VetrinaNotte?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten VetrinaNotte für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo VetrinaNotte?",
+     "a": "Fai richiesta, installiamo la pagina per telefono sul tuo spazio web (PHP 8.1 e SQLite, es. All-Inkl) e consegniamo il cartello in PDF A4 e A5. La pagina funziona senza cookie e senza servizi esterni."
+    },
     {
      "q": "Devo pagare il canone mensile?",
      "a": "Solo se vuoi aggiornare tu le offerte. Senza abbonamento la pagina resta online con contenuti fissi."
@@ -4090,10 +4096,6 @@
     {
      "q": "Posso stampare il cartello da solo?",
      "a": "Sì, ricevi i file pronti per qualsiasi copisteria."
-    },
-    {
-     "q": "Come ricevo VetrinaNotte?",
-     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
     }
    ]
   },
@@ -4200,11 +4202,11 @@
    }
   },
   "number": 35,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung: Handyseite als Web-App für Ihren Webspace (mit Installations-Assistent) und druckfertiges Schild A4/A5 mit QR-Code.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna: pagina per telefono come web app per il tuo spazio web (con procedura di installazione) e cartello A4/A5 con codice QR pronto da stampare."
   },
   "erstellt": "2026-11-13T20:45:48.350Z"
  }
