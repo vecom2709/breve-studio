@@ -2748,24 +2748,34 @@
   },
   "features": {
    "de": [
-    "Vier Seiten: Vorstellung, Leistungen, Ausstattung, Referenzen.",
-    "PDF zum Versand und Druck.",
-    "Bearbeitbare Vorlage für spätere Änderungen.",
-    "Eine Korrekturrunde inklusive."
+    "Vier Seiten: Vorstellung mit Eckdaten, Leistungen, Ausstattung, Referenzen mit Fotos.",
+    "Kurzfassung auf einer Seite für E-Mails und Anfragen.",
+    "PDF zum Versand und Druck, Deutsch oder Italienisch.",
+    "Profil-Programm ohne Internet zum Mitnehmen: Referenzen und Fotos später selbst ergänzen und neu drucken.",
+    "Fragebogen mit Beispielen und eine Korrekturrunde inklusive."
    ],
    "it": [
-    "Quattro pagine: presentazione, servizi, dotazioni, referenze.",
-    "PDF per invio e stampa.",
-    "Modello modificabile per aggiornamenti.",
-    "Un giro di correzioni incluso."
+    "Quattro pagine: presentazione con dati principali, servizi, dotazioni, referenze con foto.",
+    "Versione breve di una pagina per e-mail e richieste.",
+    "PDF per invio e stampa, in italiano o tedesco.",
+    "Programma del profilo senza internet incluso: aggiungi referenze e foto in seguito e ristampi da solo.",
+    "Questionario con esempi e un giro di correzioni inclusi."
    ]
   },
   "plannedOffer": {
-   "de": "Inklusive: Fragebogen mit Beispielen und eine Kurzfassung auf einer Seite für E-Mails.",
-   "it": "Incluso: questionario con esempi e una versione breve di una pagina per le e-mail."
+   "de": "Inklusive: Fragebogen mit Beispielen, Kurzfassung auf einer Seite und das Profil-Programm für spätere Änderungen.",
+   "it": "Incluso: questionario con esempi, versione breve di una pagina e il programma del profilo per modifiche future."
   },
   "faq": {
    "de": [
+    {
+     "q": "Wie bekomme ich ProfiloGara?",
+     "a": "Sie fragen an, wir erstellen Ihr Profil und liefern PDF und Kurzfassung. Dazu erhalten Sie das Profil-Programm (Setup für Windows oder ZIP), mit dem Sie Ihr Profil später selbst ändern – es läuft im Browser ohne Internet und ohne Konto."
+    },
+    {
+     "q": "Kann ich Referenzen später selbst ergänzen?",
+     "a": "Ja. Sie öffnen Ihre Profildatei im Programm, fügen Projekte und Fotos hinzu und drucken das Profil neu als PDF."
+    },
     {
      "q": "Wie lange dauert es?",
      "a": "In der Regel rund eine Woche nach Eingang von Fragebogen und Fotos."
@@ -2773,13 +2783,17 @@
     {
      "q": "Ersetzt das Profil vorgeschriebene Erklärungen?",
      "a": "Nein. Vorgeschriebene Formulare und Erklärungen einer Ausschreibung bleiben separat."
-    },
-    {
-     "q": "Wie bekomme ich ProfiloGara?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten ProfiloGara für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo ProfiloGara?",
+     "a": "Fai richiesta, creiamo il tuo profilo e consegniamo PDF e versione breve. Ricevi anche il programma del profilo (setup per Windows o ZIP) per modificarlo da solo in seguito – funziona nel browser senza internet e senza account."
+    },
+    {
+     "q": "Posso aggiungere referenze da solo?",
+     "a": "Sì. Apri il file del profilo nel programma, aggiungi progetti e foto e ristampi il profilo in PDF."
+    },
     {
      "q": "Quanto tempo serve?",
      "a": "Di solito circa una settimana dal ricevimento di questionario e foto."
@@ -2787,10 +2801,6 @@
     {
      "q": "Il profilo sostituisce le dichiarazioni obbligatorie?",
      "a": "No. Moduli e dichiarazioni richiesti da una gara restano separati."
-    },
-    {
-     "q": "Come ricevo ProfiloGara?",
-     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
     }
    ]
   },
@@ -2800,14 +2810,14 @@
   },
   "ablauf": {
    "de": [
-    "Sie fragen an und erhalten den Fragebogen.",
+    "Sie fragen an und erhalten den Fragebogen mit Beispielen.",
     "Sie senden Angaben, Logo und Fotos Ihrer Arbeiten.",
-    "Wir senden den Entwurf, setzen Ihre Korrekturen um und liefern PDF und Vorlage."
+    "Wir senden den Entwurf, setzen Ihre Korrekturen um und liefern PDF, Kurzfassung und Profil-Programm."
    ],
    "it": [
-    "Fai richiesta e ricevi il questionario.",
+    "Fai richiesta e ricevi il questionario con esempi.",
     "Invii dati, logo e foto dei tuoi lavori.",
-    "Ti inviamo la bozza, applichiamo le correzioni e consegniamo PDF e modello."
+    "Ti inviamo la bozza, applichiamo le correzioni e consegniamo PDF, versione breve e programma del profilo."
    ]
   },
   "vorschau": {
@@ -2897,11 +2907,11 @@
    }
   },
   "number": 29,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung: PDF (4 Seiten), Kurzfassung (1 Seite) und das Profil-Programm als Windows-Installation (Setup.exe) oder ZIP.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna: PDF (4 pagine), versione breve (1 pagina) e il programma del profilo come installazione per Windows (Setup.exe) o ZIP."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
@@ -3806,24 +3816,34 @@
   },
   "features": {
    "de": [
-    "Bis zu vier Menüvorschläge mit Preis pro Person.",
-    "Raumübersicht mit Fotos und Platzanzahl.",
-    "PDF und Online-Seite per Link oder QR-Code.",
-    "Deutsch und Italienisch."
+    "Bis zu vier Menüvorschläge mit Preis pro Person und Mindestpersonen.",
+    "Räume mit Fotos und Platzanzahl, dazu Inklusivleistungen und Bedingungen.",
+    "Mappe als PDF (4 Seiten) in Italienisch und Deutsch.",
+    "Online-Seite in beiden Sprachen mit Anruf- und Anfrage-Knopf – eine Datei, ohne Cookies, plus QR-Code.",
+    "Programm ohne Internet inklusive: Preise später selbst ändern und alles neu ausgeben."
    ],
    "it": [
-    "Fino a quattro proposte di menù con prezzo a persona.",
-    "Panoramica sale con foto e numero di posti.",
-    "PDF e pagina online con link o QR.",
-    "Italiano e tedesco."
+    "Fino a quattro proposte di menù con prezzo a persona e numero minimo.",
+    "Sale con foto e numero di posti, più servizi inclusi e condizioni.",
+    "Proposta in PDF (4 pagine) in italiano e tedesco.",
+    "Pagina online in entrambe le lingue con pulsanti chiamata e richiesta – un unico file, senza cookie, più codice QR.",
+    "Programma senza internet incluso: cambi i prezzi da solo e rigeneri tutto."
    ]
   },
   "plannedOffer": {
-   "de": "Inklusive: eine Preisänderung pro Jahr ohne Aufpreis.",
-   "it": "Incluso: un aggiornamento prezzi all’anno senza costi aggiuntivi."
+   "de": "Inklusive: eine Preisänderung pro Jahr ohne Aufpreis – oder Sie ändern selbst mit dem Programm.",
+   "it": "Incluso: un aggiornamento prezzi all’anno senza costi – oppure li cambi da solo con il programma."
   },
   "faq": {
    "de": [
+    {
+     "q": "Wie bekomme ich FestaInSala?",
+     "a": "Sie fragen an, wir erstellen Ihre Mappe und liefern PDF, Online-Seite und QR-Code. Dazu erhalten Sie das Programm (Setup für Windows oder ZIP), mit dem Sie Preise später selbst ändern – es läuft im Browser ohne Internet und ohne Konto."
+    },
+    {
+     "q": "Wo liegt die Online-Seite?",
+     "a": "Die Online-Seite ist eine einzelne Datei, die auf Ihre eigene Website geladen wird (z. B. Ihre-Adresse/feste). Sie enthält keine Cookies und lädt nichts von fremden Diensten."
+    },
     {
      "q": "Kann ich die Preise später ändern?",
      "a": "Ja, eine Änderung pro Jahr ist inklusive, weitere zu einem kleinen Festpreis."
@@ -3831,13 +3851,17 @@
     {
      "q": "Brauche ich professionelle Fotos?",
      "a": "Nein, gute Handyfotos bei Tageslicht genügen; wir beraten Sie dazu."
-    },
-    {
-     "q": "Wie bekomme ich FestaInSala?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten FestaInSala für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo FestaInSala?",
+     "a": "Fai richiesta, creiamo la tua proposta e consegniamo PDF, pagina online e codice QR. Ricevi anche il programma (setup per Windows o ZIP) per cambiare i prezzi da solo – funziona nel browser senza internet e senza account."
+    },
+    {
+     "q": "Dove si trova la pagina online?",
+     "a": "La pagina online è un unico file da caricare sul tuo sito (es. tuo-indirizzo/feste). Non usa cookie e non carica nulla da servizi esterni."
+    },
     {
      "q": "Posso cambiare i prezzi dopo?",
      "a": "Sì, un aggiornamento all’anno è incluso, altri a un piccolo prezzo fisso."
@@ -3845,10 +3869,6 @@
     {
      "q": "Servono foto professionali?",
      "a": "No, bastano buone foto col telefono alla luce del giorno; ti diamo qualche consiglio."
-    },
-    {
-     "q": "Come ricevo FestaInSala?",
-     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
     }
    ]
   },
@@ -3858,14 +3878,14 @@
   },
   "ablauf": {
    "de": [
-    "Sie fragen an und senden Menüs, Bedingungen und Fotos der Räume.",
-    "Wir gestalten die Mappe und senden Ihnen einen Entwurf.",
-    "Nach Ihrer Freigabe erhalten Sie PDF, Link und QR-Code."
+    "Sie fragen an und senden Menüs, Bedingungen und Fotos der Räume (Fragebogen liegt bei).",
+    "Wir gestalten die Mappe in beiden Sprachen und senden Ihnen einen Entwurf.",
+    "Nach Ihrer Freigabe erhalten Sie PDF, Online-Seite, QR-Code und das Programm."
    ],
    "it": [
-    "Fai richiesta e invii menù, condizioni e foto delle sale.",
-    "Creiamo la cartella e ti inviamo una bozza.",
-    "Dopo la tua approvazione ricevi PDF, link e codice QR."
+    "Fai richiesta e invii menù, condizioni e foto delle sale (con questionario).",
+    "Creiamo la proposta nelle due lingue e ti inviamo una bozza.",
+    "Dopo la tua approvazione ricevi PDF, pagina online, codice QR e il programma."
    ]
   },
   "vorschau": {
@@ -3955,11 +3975,11 @@
    }
   },
   "number": 34,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung: Mappe als PDF (Italienisch und Deutsch), Online-Seite zum Hochladen, QR-Code und das Programm als Windows-Installation (Setup.exe) oder ZIP. Allergene und Zutaten nur wie von Ihnen angegeben.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna: proposta in PDF (italiano e tedesco), pagina online da caricare, codice QR e il programma come installazione per Windows (Setup.exe) o ZIP. Allergeni e ingredienti solo come indicati da te."
   },
   "erstellt": "2026-11-13T20:45:48.350Z"
  },
