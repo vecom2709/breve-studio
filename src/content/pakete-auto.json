@@ -2041,5 +2041,2099 @@
    "it": "Pronto; la vendita parte con l’avvio ufficiale. ScadenzeChiare ricorda soltanto – non verifica contratti e non sostituisce una consulenza."
   },
   "erstellt": "2026-11-11T12:06:06.658Z"
+ },
+ {
+  "slug": "cartellabando",
+  "brand": "CartellaBando",
+  "produktart": {
+   "de": "Unterlagen-Mappe für Förderanträge",
+   "it": "Cartella documenti per bandi"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "month",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von CartellaBando: Checkliste der Unterlagen für einen Antrag",
+   "it": "Anteprima di CartellaBando: checklist dei documenti per una domanda"
+  },
+  "tagline": {
+   "de": "Alle Unterlagen beisammen, bevor die Frist drängt.",
+   "it": "Tutti i documenti pronti, prima della scadenza."
+  },
+  "benefit": {
+   "de": "Eine Online-Mappe je Antrag: Checkliste der verlangten Dokumente, Ablage mit Gültigkeitsdatum und Hinweis, was noch fehlt.",
+   "it": "Una cartella online per ogni domanda: checklist dei documenti richiesti, archivio con data di validità e avviso di ciò che manca."
+  },
+  "headline": {
+   "de": "Förderantrag vorbereiten, ohne Zettelwirtschaft.",
+   "it": "Preparare un bando, senza fogli sparsi."
+  },
+  "intro": {
+   "de": "Sie legen pro Ausschreibung oder Förderprogramm eine Mappe an und tragen die verlangten Unterlagen als Checkliste ein. Dokumente laden Sie hoch oder fotografieren sie; CartellaBando zeigt, was vollständig, was abgelaufen und was noch offen ist.",
+   "it": "Per ogni bando crei una cartella e inserisci i documenti richiesti come checklist. Carichi o fotografi i file; CartellaBando mostra cosa è completo, cosa è scaduto e cosa manca ancora."
+  },
+  "audience": {
+   "de": "Kleine Betriebe, Vereine und Freiberufler, die sich auf Förderprogramme oder öffentliche Aufträge bewerben.",
+   "it": "Piccole imprese, associazioni e liberi professionisti che partecipano a bandi o gare pubbliche."
+  },
+  "job": {
+   "de": "Den Überblick behalten, welche Unterlagen für einen Antrag schon vorliegen und welche fehlen.",
+   "it": "Avere chiaro quali documenti per una domanda ci sono già e quali mancano."
+  },
+  "why": {
+   "de": "Wiederkehrende Dokumente wie Firmenregisterauszug oder Bescheinigungen werden einmal abgelegt und für jede neue Mappe übernommen; Ablaufdaten werden angezeigt. Daten auf Servern in der EU, Löschung auf Wunsch jederzeit.",
+   "it": "I documenti ricorrenti come visura camerale o certificazioni si archiviano una volta e si riusano in ogni nuova cartella; le date di scadenza sono in evidenza. Dati su server nell’UE, cancellazione su richiesta in qualsiasi momento."
+  },
+  "features": {
+   "de": [
+    "Checkliste je Antrag mit Status offen / vorhanden / abgelaufen.",
+    "Dokumente per Upload oder Handyfoto.",
+    "Wiederkehrende Unterlagen einmal ablegen, mehrfach nutzen.",
+    "Export der Mappe als ZIP für die Einreichung."
+   ],
+   "it": [
+    "Checklist per domanda con stato mancante / presente / scaduto.",
+    "Documenti tramite upload o foto dal telefono.",
+    "Documenti ricorrenti archiviati una volta, usati più volte.",
+    "Esportazione della cartella in ZIP per l’invio."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: Muster-Checklisten für typische Unterlagen kleiner Betriebe in Italien, die Sie an die jeweilige Ausschreibung anpassen.",
+   "it": "Incluso: checklist di esempio con i documenti tipici delle piccole imprese in Italia, da adattare al singolo bando."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Prüfen Sie, ob ich die Voraussetzungen erfülle?",
+     "a": "Nein. CartellaBando ordnet nur die Unterlagen; die Prüfung der Voraussetzungen bleibt bei Ihnen oder Ihren Fachleuten."
+    },
+    {
+     "q": "Kann mein Berater mitarbeiten?",
+     "a": "Ja, Sie können eine weitere Person zu einer Mappe einladen."
+    },
+    {
+     "q": "Wie bekomme ich CartellaBando?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten CartellaBando für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
+    }
+   ],
+   "it": [
+    {
+     "q": "Verificate se ho i requisiti?",
+     "a": "No. CartellaBando organizza solo i documenti; la verifica dei requisiti resta a te o ai tuoi consulenti."
+    },
+    {
+     "q": "Il mio consulente può collaborare?",
+     "a": "Sì, puoi invitare un’altra persona in una cartella."
+    },
+    {
+     "q": "Come ricevo CartellaBando?",
+     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien, v. a. Sizilien",
+   "it": "Italia, soprattutto Sicilia"
+  },
+  "ablauf": {
+   "de": [
+    "Sie fragen an; wir richten CartellaBando ein und legen mit Ihnen die erste Mappe an.",
+    "Sie hinterlegen Ihre wiederkehrenden Dokumente und haken je Antrag ab, was vorliegt.",
+    "Vor der Einreichung prüfen Sie die Übersicht und laden die Mappe als ZIP herunter."
+   ],
+   "it": [
+    "Fai richiesta; configuriamo CartellaBando e creiamo insieme la prima cartella.",
+    "Carichi i documenti ricorrenti e per ogni domanda spunti ciò che hai.",
+    "Prima dell’invio controlli il riepilogo e scarichi la cartella in ZIP."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "cartellabando · Officina Esempio",
+   "titel": {
+    "de": "Mappe: Förderprogramm Esempio 2027",
+    "it": "Cartella: Bando Esempio 2027"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Firmenregisterauszug",
+      "it": "Visura camerale"
+     },
+     "neben": {
+      "de": "Stand 02/2027",
+      "it": "aggiornata 02/2027"
+     },
+     "chip": {
+      "de": "vorhanden",
+      "it": "presente"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Kostenvoranschläge Lieferanten",
+      "it": "Preventivi fornitori"
+     },
+     "neben": {
+      "de": "2 von 3",
+      "it": "2 su 3"
+     },
+     "chip": {
+      "de": "offen",
+      "it": "manca"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Beitragsbescheinigung",
+      "it": "Certificato di regolarità contributiva"
+     },
+     "neben": {
+      "de": "gültig bis 10.01.",
+      "it": "valido fino al 10/01"
+     },
+     "chip": {
+      "de": "abgelaufen",
+      "it": "scaduto"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Projektbeschreibung",
+      "it": "Descrizione del progetto"
+     },
+     "neben": {
+      "de": "Entwurf",
+      "it": "bozza"
+     },
+     "chip": {
+      "de": "in Arbeit",
+      "it": "in corso"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Stand",
+     "it": "Stato"
+    },
+    "punkte": [
+     {
+      "de": "7 von 10 Unterlagen",
+      "it": "7 documenti su 10"
+     },
+     {
+      "de": "Frist: 28. Februar",
+      "it": "Scadenza: 28 febbraio"
+     }
+    ]
+   }
+  },
+  "number": 26,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-13T20:45:48.349Z"
+ },
+ {
+  "slug": "rendicontofacile",
+  "brand": "RendicontoFacile",
+  "produktart": {
+   "de": "Belegsammlung für Förder-Abrechnung",
+   "it": "Raccolta spese per rendicontazione"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 15,
+    "interval": "month",
+    "unit": {
+     "de": "je Projekt",
+     "it": "per progetto"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von RendicontoFacile: Belege einem Förderbudget zugeordnet",
+   "it": "Anteprima di RendicontoFacile: spese collegate al budget del progetto"
+  },
+  "tagline": {
+   "de": "Belege dem Förderbudget zuordnen – laufend.",
+   "it": "Spese collegate al budget del progetto, giorno per giorno."
+  },
+  "benefit": {
+   "de": "Sie fotografieren Rechnungen und Zahlungsnachweise und ordnen sie den Budgetposten Ihres geförderten Projekts zu – mit Übersicht, was schon belegt ist.",
+   "it": "Fotografi fatture e prove di pagamento e le colleghi alle voci di budget del progetto finanziato – con un riepilogo di ciò che è già documentato."
+  },
+  "headline": {
+   "de": "Die Abrechnung beginnt nicht am Ende, sondern mit dem ersten Beleg.",
+   "it": "La rendicontazione non inizia alla fine, ma con la prima fattura."
+  },
+  "intro": {
+   "de": "Nach einer Förderzusage tragen Sie die Budgetposten ein. Jeden Beleg ordnen Sie per Foto einem Posten zu und hängen den Zahlungsnachweis an. So sehen Sie jederzeit, wie viel je Posten belegt ist, und haben am Ende eine geordnete Liste für Ihre Abrechnung.",
+   "it": "Dopo l’ammissione al finanziamento inserisci le voci di budget. Ogni fattura la colleghi con una foto a una voce e alleghi la prova di pagamento. Così vedi sempre quanto è documentato per voce e alla fine hai un elenco ordinato per la rendicontazione."
+  },
+  "audience": {
+   "de": "Betriebe und Vereine mit einem laufenden geförderten Projekt.",
+   "it": "Imprese e associazioni con un progetto finanziato in corso."
+  },
+  "job": {
+   "de": "Belege während des Projekts geordnet sammeln statt am Ende alles zusammenzusuchen.",
+   "it": "Raccogliere le spese in ordine durante il progetto invece di cercare tutto alla fine."
+  },
+  "why": {
+   "de": "Kein Buchhaltungsprogramm, sondern eine schlanke Sammelstelle nur für das geförderte Projekt. Export als Tabelle und ZIP für Ihre Steuerberatung. Daten in der EU; nach Projektende legen Sie fest, wann gelöscht wird.",
+   "it": "Non un gestionale contabile, ma un punto di raccolta snello solo per il progetto finanziato. Esportazione in tabella e ZIP per il tuo commercialista. Dati nell’UE; a fine progetto decidi tu quando cancellarli."
+  },
+  "features": {
+   "de": [
+    "Budgetposten mit Soll und bisher belegtem Betrag.",
+    "Beleg und Zahlungsnachweis per Foto verknüpfen.",
+    "Hinweis bei fehlendem Zahlungsnachweis.",
+    "Export als Tabelle und ZIP."
+   ],
+   "it": [
+    "Voci di budget con importo previsto e già documentato.",
+    "Fattura e prova di pagamento collegate con una foto.",
+    "Avviso se manca la prova di pagamento.",
+    "Esportazione in tabella e ZIP."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: kurze Einrichtung Ihrer Budgetposten nach Ihrem Förderbescheid.",
+   "it": "Incluso: breve configurazione delle voci di budget secondo il tuo provvedimento di concessione."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Erstellt RendicontoFacile die offizielle Abrechnung?",
+     "a": "Nein. Es ordnet Ihre Belege; die offizielle Abrechnung erstellen Sie oder Ihre Fachleute nach den Vorgaben des Programms."
+    },
+    {
+     "q": "Kann meine Steuerberatung zugreifen?",
+     "a": "Ja, mit einem Lesezugang."
+    },
+    {
+     "q": "Wie bekomme ich RendicontoFacile?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten RendicontoFacile für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
+    }
+   ],
+   "it": [
+    {
+     "q": "RendicontoFacile prepara la rendicontazione ufficiale?",
+     "a": "No. Organizza le tue spese; la rendicontazione ufficiale la prepari tu o i tuoi consulenti secondo le regole del bando."
+    },
+    {
+     "q": "Il mio commercialista può accedere?",
+     "a": "Sì, con un accesso in sola lettura."
+    },
+    {
+     "q": "Come ricevo RendicontoFacile?",
+     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien, v. a. Sizilien",
+   "it": "Italia, soprattutto Sicilia"
+  },
+  "ablauf": {
+   "de": [
+    "Sie fragen an; wir legen Ihr Projekt mit den Budgetposten aus dem Bescheid an.",
+    "Sie fotografieren laufend Belege und Zahlungsnachweise und ordnen sie zu.",
+    "Zum Abrechnungstermin exportieren Sie Tabelle und Belege für Ihre Abrechnung."
+   ],
+   "it": [
+    "Fai richiesta; creiamo il progetto con le voci di budget del provvedimento.",
+    "Fotografi man mano fatture e pagamenti e li colleghi alle voci.",
+    "Alla scadenza esporti tabella e documenti per la rendicontazione."
+   ]
+  },
+  "vorschau": {
+   "art": "handy",
+   "adresse": "rendicontofacile · Progetto Esempio",
+   "titel": {
+    "de": "Budget Projekt Esempio",
+    "it": "Budget Progetto Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Maschinen und Geräte",
+      "it": "Macchinari e attrezzature"
+     },
+     "neben": {
+      "de": "8.400 von 12.000 €",
+      "it": "8.400 di 12.000 €"
+     },
+     "chip": {
+      "de": "70 %",
+      "it": "70%"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Website und Software",
+      "it": "Sito web e software"
+     },
+     "neben": {
+      "de": "1.200 von 3.000 €",
+      "it": "1.200 di 3.000 €"
+     },
+     "chip": {
+      "de": "40 %",
+      "it": "40%"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Rechnung Fornitore Esempio",
+      "it": "Fattura Fornitore Esempio"
+     },
+     "neben": {
+      "de": "980 € · 14.03.",
+      "it": "980 € · 14/03"
+     },
+     "chip": {
+      "de": "Zahlung fehlt",
+      "it": "manca pagamento"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Schulung Personal",
+      "it": "Formazione personale"
+     },
+     "neben": {
+      "de": "noch nichts belegt",
+      "it": "nessuna spesa ancora"
+     },
+     "chip": {
+      "de": "0 %",
+      "it": "0%"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Export",
+     "it": "Esportazione"
+    },
+    "punkte": [
+     {
+      "de": "Tabelle + Belege als ZIP",
+      "it": "Tabella + documenti in ZIP"
+     }
+    ]
+   }
+  },
+  "number": 27,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-13T20:45:48.349Z"
+ },
+ {
+  "slug": "progettochiaro",
+  "brand": "ProgettoChiaro",
+  "produktart": {
+   "de": "Vorlage für Projektbeschreibungen",
+   "it": "Modello per descrivere un progetto"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "ki-tools",
+  "prices": [
+   {
+    "amount": 49,
+    "interval": "once",
+    "unit": {
+     "de": "einmalig",
+     "it": "una tantum"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von ProgettoChiaro: Gliederung einer Projektbeschreibung mit Zeitplan",
+   "it": "Anteprima di ProgettoChiaro: schema di descrizione progetto con cronoprogramma"
+  },
+  "tagline": {
+   "de": "Ihre Projektidee klar gegliedert auf Papier.",
+   "it": "La tua idea di progetto, scritta con ordine."
+  },
+  "benefit": {
+   "de": "Arbeitsheft mit Leitfragen, Mustergliederung, Zeitplan- und Kostentabelle, damit Sie Ihre Projektidee für einen Antrag verständlich beschreiben.",
+   "it": "Quaderno di lavoro con domande guida, schema tipo, tabelle per cronoprogramma e costi, per descrivere in modo chiaro la tua idea di progetto in una domanda."
+  },
+  "headline": {
+   "de": "Vom Gedanken zur Projektbeschreibung – Schritt für Schritt.",
+   "it": "Dall’idea alla descrizione del progetto – passo dopo passo."
+  },
+  "intro": {
+   "de": "Viele Anträge verlangen eine Beschreibung von Ausgangslage, Zielen, Maßnahmen, Zeitplan und Kosten. ProgettoChiaro führt Sie mit Leitfragen durch diese Abschnitte. Optional formuliert ein KI-Assistent aus Ihren Stichworten einen ersten Entwurf, den Sie selbst prüfen und anpassen.",
+   "it": "Molti bandi chiedono di descrivere situazione di partenza, obiettivi, azioni, tempi e costi. ProgettoChiaro ti guida in queste sezioni con domande mirate. Se vuoi, un assistente IA trasforma i tuoi appunti in una prima bozza, che controlli e adatti tu."
+  },
+  "audience": {
+   "de": "Inhaber kleiner Betriebe, Vereinsvorstände und Freiberufler, die eine Projektbeschreibung selbst verfassen.",
+   "it": "Titolari di piccole imprese, direttivi di associazioni e liberi professionisti che scrivono da soli la descrizione del progetto."
+  },
+  "job": {
+   "de": "Eine Projektidee strukturiert und verständlich für einen Antrag beschreiben.",
+   "it": "Descrivere un’idea di progetto in modo strutturato e comprensibile per una domanda."
+  },
+  "why": {
+   "de": "Neutral statt programmgebunden: die Gliederung passen Sie an die Vorgaben des jeweiligen Aufrufs an. Deutsch und Italienisch, als bearbeitbare Dokument- und Tabellenvorlage. Der KI-Entwurf ist freiwillig; Ihre Stichworte werden nicht zum Training verwendet.",
+   "it": "Neutro invece che legato a un bando: lo schema lo adatti alle regole del singolo avviso. Italiano e tedesco, come modello modificabile di documento e tabella. La bozza IA è facoltativa; i tuoi appunti non vengono usati per l’addestramento."
+  },
+  "features": {
+   "de": [
+    "Leitfragen zu Ausgangslage, Zielen und Maßnahmen.",
+    "Zeitplan-Tabelle mit Meilensteinen.",
+    "Kostentabelle nach Posten.",
+    "Optionaler KI-Erstentwurf aus Ihren Stichworten."
+   ],
+   "it": [
+    "Domande guida su situazione, obiettivi e azioni.",
+    "Tabella del cronoprogramma con tappe.",
+    "Tabella dei costi per voce.",
+    "Prima bozza IA facoltativa dai tuoi appunti."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: ein ausgefülltes Beispiel für ein erfundenes Handwerksprojekt zur Orientierung.",
+   "it": "Incluso: un esempio compilato per un progetto artigiano inventato, come riferimento."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Schreiben Sie den Antrag für mich?",
+     "a": "Nein. ProgettoChiaro ist ein Werkzeug zum Selbstschreiben und ersetzt keine Förderberatung."
+    },
+    {
+     "q": "Passt die Vorlage zu jedem Programm?",
+     "a": "Sie ist allgemein gehalten; Abschnitte und Längen richten Sie nach dem jeweiligen Aufruf."
+    }
+   ],
+   "it": [
+    {
+     "q": "Scrivete voi la domanda?",
+     "a": "No. ProgettoChiaro è uno strumento per scrivere da sé e non sostituisce una consulenza sui bandi."
+    },
+    {
+     "q": "Il modello va bene per ogni bando?",
+     "a": "È generico; sezioni e lunghezze le adatti all’avviso specifico."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie bestellen ProgettoChiaro und erhalten Vorlagen und Zugang zum Assistenten.",
+    "Sie beantworten die Leitfragen und füllen Zeitplan und Kostentabelle aus.",
+    "Sie lassen optional einen Entwurf formulieren, prüfen ihn und übernehmen ihn in Ihren Antrag."
+   ],
+   "it": [
+    "Ordini ProgettoChiaro e ricevi modelli e accesso all’assistente.",
+    "Rispondi alle domande guida e compili cronoprogramma e tabella costi.",
+    "Se vuoi fai preparare una bozza, la controlli e la riporti nella domanda."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "progettochiaro · Bottega Esempio",
+   "titel": {
+    "de": "Projekt: Neue Werkstatt-Ausstattung",
+    "it": "Progetto: nuove attrezzature di bottega"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "1 · Ausgangslage",
+      "it": "1 · Situazione di partenza"
+     },
+     "neben": {
+      "de": "4 Leitfragen beantwortet",
+      "it": "4 domande completate"
+     },
+     "chip": {
+      "de": "fertig",
+      "it": "fatto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "2 · Ziele",
+      "it": "2 · Obiettivi"
+     },
+     "neben": {
+      "de": "messbar formulieren",
+      "it": "formulare in modo misurabile"
+     },
+     "chip": {
+      "de": "Entwurf",
+      "it": "bozza"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "3 · Zeitplan",
+      "it": "3 · Cronoprogramma"
+     },
+     "neben": {
+      "de": "3 Meilensteine",
+      "it": "3 tappe"
+     },
+     "chip": {
+      "de": "Tabelle",
+      "it": "tabella"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "4 · Kosten",
+      "it": "4 · Costi"
+     },
+     "neben": {
+      "de": "5 Posten",
+      "it": "5 voci"
+     },
+     "chip": {
+      "de": "offen",
+      "it": "da fare"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "KI-Entwurf",
+     "it": "Bozza IA"
+    },
+    "punkte": [
+     {
+      "de": "aus Ihren Stichworten",
+      "it": "dai tuoi appunti"
+     },
+     {
+      "de": "Sie prüfen und ändern",
+      "it": "tu controlli e modifichi"
+     }
+    ]
+   }
+  },
+  "number": 28,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-13T20:45:48.349Z"
+ },
+ {
+  "slug": "profilogara",
+  "brand": "ProfiloGara",
+  "produktart": {
+   "de": "Firmenprofil und Referenzmappe",
+   "it": "Profilo aziendale e referenze"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "service",
+  "shopCategory": "design-media",
+  "prices": [
+   {
+    "amount": 149,
+    "interval": "once",
+    "unit": {
+     "de": "einmalig, DE oder IT",
+     "it": "una tantum, IT o DE"
+    },
+    "vat": "tbd"
+   },
+   {
+    "amount": 49,
+    "interval": "once",
+    "unit": {
+     "de": "zweite Sprache",
+     "it": "seconda lingua"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von ProfiloGara: Firmenprofil mit Leistungen und Referenzprojekten",
+   "it": "Anteprima di ProfiloGara: profilo aziendale con servizi e progetti di riferimento"
+  },
+  "tagline": {
+   "de": "Ihr Betrieb auf vier Seiten – für jedes Angebot.",
+   "it": "La tua impresa in quattro pagine – per ogni offerta."
+  },
+  "benefit": {
+   "de": "Wir gestalten aus Ihren Angaben ein Firmenprofil mit Leistungen, Ausstattung und Referenzprojekten als PDF und bearbeitbare Vorlage zum Beilegen bei Angeboten.",
+   "it": "Dalle tue informazioni creiamo un profilo aziendale con servizi, dotazioni e progetti di riferimento in PDF e modello modificabile, da allegare alle offerte."
+  },
+  "headline": {
+   "de": "Ein sauberes Firmenprofil, das Sie jedem Angebot beilegen können.",
+   "it": "Un profilo aziendale ordinato da allegare a ogni offerta."
+  },
+  "intro": {
+   "de": "Bei öffentlichen und privaten Anfragen wird oft eine Vorstellung des Betriebs verlangt. Sie füllen einen Fragebogen aus und senden Fotos Ihrer Arbeiten. Wir gestalten daraus ein vierseitiges Profil: wer Sie sind, was Sie anbieten, womit Sie arbeiten und ausgewählte Projekte.",
+   "it": "In gare e richieste private spesso serve una presentazione dell’impresa. Compili un questionario e invii foto dei tuoi lavori. Noi ne ricaviamo un profilo di quattro pagine: chi sei, cosa offri, con quali mezzi lavori e alcuni progetti scelti."
+  },
+  "audience": {
+   "de": "Handwerks-, Bau- und Dienstleistungsbetriebe, die regelmäßig Angebote abgeben.",
+   "it": "Imprese artigiane, edili e di servizi che presentano spesso offerte."
+  },
+  "job": {
+   "de": "Den eigenen Betrieb in Angeboten ordentlich und einheitlich vorstellen.",
+   "it": "Presentare la propria impresa nelle offerte in modo ordinato e coerente."
+  },
+  "why": {
+   "de": "Nur echte Angaben: Wir verwenden ausschließlich Projekte und Fotos, die Sie liefern, und nur mit Zustimmung Ihrer Auftraggeber genannte Namen. Sie erhalten auch eine bearbeitbare Vorlage, um Referenzen später selbst zu ergänzen.",
+   "it": "Solo dati veri: usiamo esclusivamente progetti e foto che ci fornisci, e nomi di committenti solo con il loro consenso. Ricevi anche un modello modificabile per aggiungere referenze in seguito da solo."
+  },
+  "features": {
+   "de": [
+    "Vier Seiten: Vorstellung, Leistungen, Ausstattung, Referenzen.",
+    "PDF zum Versand und Druck.",
+    "Bearbeitbare Vorlage für spätere Änderungen.",
+    "Eine Korrekturrunde inklusive."
+   ],
+   "it": [
+    "Quattro pagine: presentazione, servizi, dotazioni, referenze.",
+    "PDF per invio e stampa.",
+    "Modello modificabile per aggiornamenti.",
+    "Un giro di correzioni incluso."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: Fragebogen mit Beispielen und eine Kurzfassung auf einer Seite für E-Mails.",
+   "it": "Incluso: questionario con esempi e una versione breve di una pagina per le e-mail."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie lange dauert es?",
+     "a": "In der Regel rund eine Woche nach Eingang von Fragebogen und Fotos."
+    },
+    {
+     "q": "Ersetzt das Profil vorgeschriebene Erklärungen?",
+     "a": "Nein. Vorgeschriebene Formulare und Erklärungen einer Ausschreibung bleiben separat."
+    },
+    {
+     "q": "Wie bekomme ich ProfiloGara?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten ProfiloGara für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
+    }
+   ],
+   "it": [
+    {
+     "q": "Quanto tempo serve?",
+     "a": "Di solito circa una settimana dal ricevimento di questionario e foto."
+    },
+    {
+     "q": "Il profilo sostituisce le dichiarazioni obbligatorie?",
+     "a": "No. Moduli e dichiarazioni richiesti da una gara restano separati."
+    },
+    {
+     "q": "Come ricevo ProfiloGara?",
+     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie fragen an und erhalten den Fragebogen.",
+    "Sie senden Angaben, Logo und Fotos Ihrer Arbeiten.",
+    "Wir senden den Entwurf, setzen Ihre Korrekturen um und liefern PDF und Vorlage."
+   ],
+   "it": [
+    "Fai richiesta e ricevi il questionario.",
+    "Invii dati, logo e foto dei tuoi lavori.",
+    "Ti inviamo la bozza, applichiamo le correzioni e consegniamo PDF e modello."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "Profilo · Impresa Edile Esempio",
+   "titel": {
+    "de": "Impresa Edile Esempio – Firmenprofil",
+    "it": "Impresa Edile Esempio – Profilo aziendale"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Seite 1 · Wer wir sind",
+      "it": "Pagina 1 · Chi siamo"
+     },
+     "neben": {
+      "de": "seit 1998 in Aragona",
+      "it": "dal 1998 ad Aragona"
+     },
+     "chip": {
+      "de": "fertig",
+      "it": "pronta"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Seite 2 · Leistungen",
+      "it": "Pagina 2 · Servizi"
+     },
+     "neben": {
+      "de": "Sanierung, Fassaden, Dächer",
+      "it": "ristrutturazioni, facciate, tetti"
+     },
+     "chip": {
+      "de": "fertig",
+      "it": "pronta"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Seite 3 · Ausstattung",
+      "it": "Pagina 3 · Dotazioni"
+     },
+     "neben": {
+      "de": "Gerüst, Kran, 2 Teams",
+      "it": "ponteggi, gru, 2 squadre"
+     },
+     "chip": {
+      "de": "Korrektur",
+      "it": "correzione"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Seite 4 · Referenzen",
+      "it": "Pagina 4 · Referenze"
+     },
+     "neben": {
+      "de": "Casa Esempio, Scuola Esempio",
+      "it": "Casa Esempio, Scuola Esempio"
+     },
+     "chip": {
+      "de": "Fotos fehlen",
+      "it": "mancano foto"
+     },
+     "ton": "rot"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Lieferung",
+     "it": "Consegna"
+    },
+    "punkte": [
+     {
+      "de": "PDF + Vorlage",
+      "it": "PDF + modello"
+     },
+     {
+      "de": "Kurzfassung 1 Seite",
+      "it": "Versione breve 1 pagina"
+     }
+    ]
+   }
+  },
+  "number": 29,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-13T20:45:48.349Z"
+ },
+ {
+  "slug": "procedurachiara",
+  "brand": "ProceduraChiara",
+  "produktart": {
+   "de": "Arbeitsanleitungen für Mitarbeitende",
+   "it": "Istruzioni operative per il personale"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "ki-tools",
+  "prices": [
+   {
+    "amount": 39,
+    "interval": "once",
+    "unit": {
+     "de": "Vorlagenpaket",
+     "it": "pacchetto modelli"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von ProceduraChiara: Checkliste zum Öffnen des Ladens",
+   "it": "Anteprima di ProceduraChiara: checklist di apertura del negozio"
+  },
+  "tagline": {
+   "de": "Abläufe aufschreiben, damit nicht alles an Ihnen hängt.",
+   "it": "Procedure scritte, così non dipende tutto da te."
+  },
+  "benefit": {
+   "de": "Vorlagen für kurze Arbeitsanleitungen und Checklisten – Öffnen, Schließen, Reinigung, Kasse –, die neue Mitarbeitende und Aushilfen schnell verstehen.",
+   "it": "Modelli per brevi istruzioni e checklist – apertura, chiusura, pulizie, cassa – che nuovi collaboratori e aiuti stagionali capiscono subito."
+  },
+  "headline": {
+   "de": "Was im Kopf ist, kommt aufs Papier – und ans Handy.",
+   "it": "Quello che sai, su carta – e sul telefono."
+  },
+  "intro": {
+   "de": "Sie wählen aus Vorlagen für typische Abläufe in Laden, Café, Werkstatt oder Ferienwohnung und passen sie an. Ein KI-Assistent hilft, aus gesprochenen Stichworten eine klare Schrittliste zu machen. Jede Anleitung gibt es als A4-Aushang und als Handy-Seite per QR-Code.",
+   "it": "Scegli tra modelli di procedure tipiche per negozio, bar, officina o casa vacanze e li adatti. Un assistente IA ti aiuta a trasformare appunti dettati in un elenco di passi chiaro. Ogni istruzione è disponibile come foglio A4 da appendere e come pagina per telefono con codice QR."
+  },
+  "audience": {
+   "de": "Inhaber kleiner Betriebe mit Mitarbeitenden, Aushilfen oder Saisonkräften.",
+   "it": "Titolari di piccole attività con dipendenti, aiuti o stagionali."
+  },
+  "job": {
+   "de": "Wiederkehrende Abläufe so festhalten, dass andere sie ohne Rückfragen erledigen können.",
+   "it": "Mettere per iscritto le procedure ricorrenti, così che altri le svolgano senza chiedere."
+  },
+  "why": {
+   "de": "Kurz statt Handbuch: höchstens eine Seite je Ablauf, mit Fotos und Häkchen. Deutsch und Italienisch nebeneinander, hilfreich für gemischte Teams. Sicherheits- und Hygienevorschriften ersetzt es nicht; diese ergänzen Sie mit Ihren Fachstellen.",
+   "it": "Breve invece di un manuale: al massimo una pagina per procedura, con foto e caselle da spuntare. Italiano e tedesco affiancati, utile per squadre miste. Non sostituisce le norme di sicurezza e igiene; quelle le integri con i tuoi enti di riferimento."
+  },
+  "features": {
+   "de": [
+    "20 Vorlagen für typische Abläufe.",
+    "KI-Hilfe: aus Stichworten wird eine Schrittliste.",
+    "A4-Aushang und Handy-Seite per QR-Code.",
+    "Zweisprachig DE/IT."
+   ],
+   "it": [
+    "20 modelli di procedure tipiche.",
+    "Aiuto IA: dagli appunti a un elenco di passi.",
+    "Foglio A4 e pagina per telefono con QR.",
+    "Bilingue IT/DE."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: Vorlage für eine Einarbeitungs-Checkliste am ersten Arbeitstag.",
+   "it": "Incluso: modello di checklist per il primo giorno di lavoro."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Brauche ich dafür eine Software?",
+     "a": "Nein. Die Vorlagen funktionieren als Dokumente; die Handy-Seiten erstellen wir auf Wunsch aus Ihren fertigen Anleitungen."
+    },
+    {
+     "q": "Deckt das Arbeitssicherheit ab?",
+     "a": "Nein. Es hilft beim Organisieren; vorgeschriebene Unterweisungen und Dokumente bleiben eigenständig."
+    },
+    {
+     "q": "Wie bekomme ich ProceduraChiara?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten ProceduraChiara für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
+    }
+   ],
+   "it": [
+    {
+     "q": "Serve un software?",
+     "a": "No. I modelli funzionano come documenti; le pagine per telefono le creiamo su richiesta dalle tue istruzioni finite."
+    },
+    {
+     "q": "Copre la sicurezza sul lavoro?",
+     "a": "No. Aiuta a organizzare; formazioni e documenti obbligatori restano a parte."
+    },
+    {
+     "q": "Come ricevo ProceduraChiara?",
+     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie bestellen und wählen die Vorlagen für Ihren Betrieb.",
+    "Sie passen die Schritte an oder diktieren Stichworte für den Assistenten.",
+    "Sie drucken die Aushänge und teilen die QR-Codes mit Ihrem Team."
+   ],
+   "it": [
+    "Ordini e scegli i modelli per la tua attività.",
+    "Adatti i passi o detti gli appunti all’assistente.",
+    "Stampi i fogli e condividi i codici QR con la squadra."
+   ]
+  },
+  "vorschau": {
+   "art": "handy",
+   "adresse": "Bar Esempio · Procedure",
+   "titel": {
+    "de": "Laden öffnen – 7:00",
+    "it": "Apertura locale – 7:00"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "1 · Alarm aus, Licht an",
+      "it": "1 · Allarme spento, luci accese"
+     },
+     "chip": {
+      "de": "✓",
+      "it": "✓"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "2 · Kaffeemaschine einschalten",
+      "it": "2 · Accendere la macchina del caffè"
+     },
+     "neben": {
+      "de": "20 Min. Aufheizen",
+      "it": "20 min per scaldarsi"
+     },
+     "chip": {
+      "de": "✓",
+      "it": "✓"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "3 · Kassenbestand zählen",
+      "it": "3 · Contare il fondo cassa"
+     },
+     "neben": {
+      "de": "Soll: 150 €",
+      "it": "previsto: 150 €"
+     },
+     "chip": {
+      "de": "jetzt",
+      "it": "ora"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "4 · Tische und Stühle raus",
+      "it": "4 · Tavoli e sedie fuori"
+     },
+     "chip": {
+      "de": "offen",
+      "it": "da fare"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Ablage",
+     "it": "Archivio"
+    },
+    "punkte": [
+     {
+      "de": "A4-Aushang",
+      "it": "Foglio A4"
+     },
+     {
+      "de": "QR für das Team",
+      "it": "QR per la squadra"
+     }
+    ]
+   }
+  },
+  "number": 30,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-13T20:45:48.349Z"
+ },
+ {
+  "slug": "costoorario",
+  "brand": "CostoOrario",
+  "produktart": {
+   "de": "Stundensatz-Rechner als Tabelle",
+   "it": "Calcolo della tariffa oraria"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 25,
+    "interval": "once",
+    "unit": {
+     "de": "Tabellenvorlage",
+     "it": "modello di foglio"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von CostoOrario: Kosten und produktive Stunden ergeben den Stundensatz",
+   "it": "Anteprima di CostoOrario: costi e ore produttive danno la tariffa oraria"
+  },
+  "tagline": {
+   "de": "Wissen, was eine Arbeitsstunde Sie kostet.",
+   "it": "Sapere quanto ti costa un’ora di lavoro."
+  },
+  "benefit": {
+   "de": "Tabellenvorlage, die aus Ihren Fixkosten, Fahrzeugen und produktiven Stunden den Kostensatz je Arbeitsstunde berechnet – als Grundlage für Ihre eigene Preisfindung.",
+   "it": "Modello di foglio che dai tuoi costi fissi, mezzi e ore produttive calcola il costo per ora di lavoro – come base per decidere i tuoi prezzi."
+  },
+  "headline": {
+   "de": "Ihr Stundensatz, nachvollziehbar berechnet.",
+   "it": "La tua tariffa oraria, calcolata in modo chiaro."
+  },
+  "intro": {
+   "de": "Sie tragen Miete, Fahrzeuge, Versicherungen, Werkzeug und Löhne ein und schätzen, wie viele Stunden tatsächlich abrechenbar sind. CostoOrario zeigt Ihnen, was eine Stunde kostet, und lässt Sie mit Aufschlag und Auslastung spielen.",
+   "it": "Inserisci affitto, mezzi, assicurazioni, attrezzi e stipendi e stimi quante ore sono davvero fatturabili. CostoOrario ti mostra quanto costa un’ora e ti permette di provare ricarico e grado di utilizzo."
+  },
+  "audience": {
+   "de": "Handwerker, Techniker und Dienstleister, die nach Stunden abrechnen.",
+   "it": "Artigiani, tecnici e fornitori di servizi che lavorano a ore."
+  },
+  "job": {
+   "de": "Den eigenen Kostensatz kennen, bevor man Preise festlegt.",
+   "it": "Conoscere il proprio costo orario prima di fissare i prezzi."
+  },
+  "why": {
+   "de": "Für Excel, LibreOffice und Google Tabellen, ohne Makros. Jede Formel ist sichtbar und kommentiert. Eine Rechenhilfe, keine Steuer- oder Unternehmensberatung; Ihre Zahlen bleiben auf Ihrem Gerät.",
+   "it": "Per Excel, LibreOffice e Fogli Google, senza macro. Ogni formula è visibile e commentata. Un aiuto di calcolo, non una consulenza fiscale o aziendale; i tuoi numeri restano sul tuo dispositivo."
+  },
+  "features": {
+   "de": [
+    "Kostenblätter für Betrieb, Fahrzeuge und Personal.",
+    "Berechnung der produktiven Stunden nach Urlaub und Ausfall.",
+    "Schieberegler für Aufschlag und Auslastung.",
+    "Kurzanleitung DE/IT mit Beispielwerten."
+   ],
+   "it": [
+    "Fogli costi per attività, mezzi e personale.",
+    "Calcolo delle ore produttive al netto di ferie e assenze.",
+    "Selettori per ricarico e grado di utilizzo.",
+    "Guida breve IT/DE con valori di esempio."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: Beispielbetrieb mit erfundenen Zahlen zum Nachvollziehen.",
+   "it": "Incluso: un’impresa di esempio con numeri inventati per capire i passaggi."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Sagen Sie mir, welchen Preis ich nehmen soll?",
+     "a": "Nein. Die Tabelle zeigt Ihre Kosten; den Preis legen Sie selbst fest."
+    },
+    {
+     "q": "Werden meine Daten übertragen?",
+     "a": "Nein, die Vorlage läuft lokal in Ihrem Tabellenprogramm."
+    }
+   ],
+   "it": [
+    {
+     "q": "Mi dite che prezzo applicare?",
+     "a": "No. Il foglio mostra i tuoi costi; il prezzo lo decidi tu."
+    },
+    {
+     "q": "I miei dati vengono inviati?",
+     "a": "No, il modello funziona in locale nel tuo programma di fogli di calcolo."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie bestellen und laden die Vorlage herunter.",
+    "Sie tragen Ihre Kosten und Arbeitszeiten ein.",
+    "Sie lesen den Kostensatz ab und testen Aufschlag und Auslastung."
+   ],
+   "it": [
+    "Ordini e scarichi il modello.",
+    "Inserisci costi e orari di lavoro.",
+    "Leggi il costo orario e provi ricarico e utilizzo."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "CostoOrario.xlsx · Idraulica Esempio",
+   "titel": {
+    "de": "Kostensatz je Arbeitsstunde",
+    "it": "Costo per ora di lavoro"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Fixkosten Betrieb",
+      "it": "Costi fissi attività"
+     },
+     "neben": {
+      "de": "Miete, Versicherung, Telefon",
+      "it": "affitto, assicurazione, telefono"
+     },
+     "chip": {
+      "de": "1.450 €/Monat",
+      "it": "1.450 €/mese"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Fahrzeug",
+      "it": "Furgone"
+     },
+     "neben": {
+      "de": "Leasing, Kraftstoff, Wartung",
+      "it": "leasing, carburante, manutenzione"
+     },
+     "chip": {
+      "de": "620 €/Monat",
+      "it": "620 €/mese"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Produktive Stunden",
+      "it": "Ore produttive"
+     },
+     "neben": {
+      "de": "nach Urlaub und Fahrzeit",
+      "it": "al netto di ferie e spostamenti"
+     },
+     "chip": {
+      "de": "118 h/Monat",
+      "it": "118 h/mese"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Kosten je Stunde",
+      "it": "Costo per ora"
+     },
+     "neben": {
+      "de": "ohne Aufschlag",
+      "it": "senza ricarico"
+     },
+     "chip": {
+      "de": "38,40 €",
+      "it": "38,40 €"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Ausprobieren",
+     "it": "Prova"
+    },
+    "punkte": [
+     {
+      "de": "Aufschlag 15 %",
+      "it": "Ricarico 15%"
+     },
+     {
+      "de": "Auslastung 75 %",
+      "it": "Utilizzo 75%"
+     }
+    ]
+   }
+  },
+  "number": 31,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-13T20:45:48.349Z"
+ },
+ {
+  "slug": "rispostepronte",
+  "brand": "RispostePronte",
+  "produktart": {
+   "de": "E-Mail-Vorlagen DE/IT für Kunden",
+   "it": "Modelli e-mail IT/DE per clienti"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "marketing",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "Vorlagenpaket",
+     "it": "pacchetto modelli"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von RispostePronte: Liste von E-Mail-Vorlagen auf Deutsch und Italienisch",
+   "it": "Anteprima di RispostePronte: elenco di modelli e-mail in italiano e tedesco"
+  },
+  "tagline": {
+   "de": "Freundlich antworten, ohne jedes Mal neu zu formulieren.",
+   "it": "Rispondere con garbo, senza riscrivere ogni volta."
+  },
+  "benefit": {
+   "de": "40 E-Mail- und Nachrichtenvorlagen auf Deutsch und Italienisch für Anfragen, Terminbestätigungen, Absagen, Zahlungserinnerungen und Dankesworte.",
+   "it": "40 modelli di e-mail e messaggi in italiano e tedesco per richieste, conferme di appuntamento, rifiuti, promemoria di pagamento e ringraziamenti."
+  },
+  "headline": {
+   "de": "Die zehn Mails, die Sie jede Woche schreiben – fertig formuliert.",
+   "it": "Le dieci e-mail che scrivi ogni settimana – già pronte."
+  },
+  "intro": {
+   "de": "Sie bekommen Vorlagen für typische Situationen im Kundenkontakt, jeweils in Deutsch und Italienisch, in zwei Tonlagen: förmlich und herzlich. Platzhalter für Namen und Daten sind markiert. Die Vorlagen lassen sich in Ihr Mailprogramm oder als Textbausteine am Handy übernehmen.",
+   "it": "Ricevi modelli per le situazioni tipiche con i clienti, in italiano e tedesco, con due toni: formale e cordiale. I segnaposto per nomi e date sono evidenziati. Puoi inserirli nel tuo programma di posta o come testi rapidi sul telefono."
+  },
+  "audience": {
+   "de": "Betriebe mit Kundschaft aus Italien und dem deutschsprachigen Raum: Handel, Handwerk, Gastgewerbe, Praxen.",
+   "it": "Attività con clienti italiani e di lingua tedesca: commercio, artigianato, ospitalità, studi."
+  },
+  "job": {
+   "de": "Wiederkehrende Kundenmails schnell und in der richtigen Sprache beantworten.",
+   "it": "Rispondere in fretta e nella lingua giusta alle e-mail ricorrenti dei clienti."
+  },
+  "why": {
+   "de": "Von Muttersprachlern geschrieben, kurz und ohne Floskeln. Zahlungserinnerungen sind höflich gehalten und ersetzen keine rechtliche Mahnung. Mit Hinweis, welche Kundendaten Sie in Mails besser nicht verschicken.",
+   "it": "Scritti da madrelingua, brevi e senza frasi fatte. I promemoria di pagamento sono cortesi e non sostituiscono un sollecito legale. Con indicazioni su quali dati dei clienti è meglio non inviare via e-mail."
+  },
+  "features": {
+   "de": [
+    "40 Vorlagen in DE und IT.",
+    "Zwei Tonlagen: förmlich und herzlich.",
+    "Markierte Platzhalter für Namen, Daten, Beträge.",
+    "Anleitung zum Einrichten als Textbausteine."
+   ],
+   "it": [
+    "40 modelli in IT e DE.",
+    "Due toni: formale e cordiale.",
+    "Segnaposto evidenziati per nomi, date, importi.",
+    "Guida per impostarli come testi rapidi."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: fünf Vorlagen für Antworten auf Bewerbungen und Lieferantenanfragen.",
+   "it": "Incluso: cinque modelli per rispondere a candidature e fornitori."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Kann ich die Texte ändern?",
+     "a": "Ja, alle Vorlagen sind frei bearbeitbar für Ihren eigenen Betrieb."
+    },
+    {
+     "q": "Gibt es die Vorlagen auch für WhatsApp?",
+     "a": "Ja, jede Vorlage hat eine kurze Fassung für Messenger."
+    }
+   ],
+   "it": [
+    {
+     "q": "Posso modificare i testi?",
+     "a": "Sì, tutti i modelli sono liberamente modificabili per la tua attività."
+    },
+    {
+     "q": "Ci sono anche per WhatsApp?",
+     "a": "Sì, ogni modello ha una versione breve per la messaggistica."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie bestellen und laden das Vorlagenpaket herunter.",
+    "Sie passen Unterschrift, Öffnungszeiten und Tonlage an.",
+    "Sie richten die Vorlagen im Mailprogramm oder am Handy ein."
+   ],
+   "it": [
+    "Ordini e scarichi il pacchetto.",
+    "Adatti firma, orari e tono.",
+    "Imposti i modelli nel programma di posta o sul telefono."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "Posta · Ottica Esempio",
+   "titel": {
+    "de": "Vorlagen",
+    "it": "Modelli"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Anfrage beantworten mit Terminvorschlag",
+      "it": "Risposta a richiesta con proposta"
+     },
+     "neben": {
+      "de": "DE · IT",
+      "it": "IT · DE"
+     },
+     "chip": {
+      "de": "herzlich",
+      "it": "cordiale"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Termin bestätigen",
+      "it": "Conferma appuntamento"
+     },
+     "neben": {
+      "de": "mit Anfahrt",
+      "it": "con indicazioni"
+     },
+     "chip": {
+      "de": "förmlich",
+      "it": "formale"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Freundliche Zahlungserinnerung",
+      "it": "Promemoria di pagamento cortese"
+     },
+     "neben": {
+      "de": "Rechnung Nr. …",
+      "it": "fattura n. …"
+     },
+     "chip": {
+      "de": "förmlich",
+      "it": "formale"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Absage einer Anfrage",
+      "it": "Rifiuto di una richiesta"
+     },
+     "neben": {
+      "de": "mit Empfehlung",
+      "it": "con consiglio"
+     },
+     "chip": {
+      "de": "herzlich",
+      "it": "cordiale"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Platzhalter",
+     "it": "Segnaposto"
+    },
+    "punkte": [
+     {
+      "de": "[Name] [Datum]",
+      "it": "[Nome] [Data]"
+     },
+     {
+      "de": "[Betrag]",
+      "it": "[Importo]"
+     }
+    ]
+   }
+  },
+  "number": 32,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-13T20:45:48.349Z"
+ },
+ {
+  "slug": "puliziacheck",
+  "brand": "PuliziaCheck",
+  "produktart": {
+   "de": "Reinigungsliste für Ferienwohnungen",
+   "it": "Checklist pulizie per case vacanza"
+  },
+  "category": "immobilien-gastgewerbe",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 9,
+    "interval": "month",
+    "unit": {
+     "de": "je Unterkunft",
+     "it": "per alloggio"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von PuliziaCheck: Reinigungsliste mit Fotos und Schadensmeldung",
+   "it": "Anteprima di PuliziaCheck: lista pulizie con foto e segnalazione danni"
+  },
+  "tagline": {
+   "de": "Jede Reinigung abgehakt – mit Foto.",
+   "it": "Ogni pulizia spuntata – con foto."
+  },
+  "benefit": {
+   "de": "Ihr Reinigungsteam hakt am Handy Zimmer für Zimmer ab, fotografiert das Ergebnis und meldet fehlende Dinge oder Schäden. Sie sehen alles, ohne vor Ort zu sein.",
+   "it": "La tua squadra pulizie spunta stanza per stanza dal telefono, fotografa il risultato e segnala cose mancanti o danni. Tu vedi tutto senza essere sul posto."
+  },
+  "headline": {
+   "de": "Wissen, dass die Wohnung bereit ist – bevor der Gast kommt.",
+   "it": "Sapere che l’alloggio è pronto – prima che arrivi l’ospite."
+  },
+  "intro": {
+   "de": "Sie legen je Unterkunft eine Checkliste an: Betten, Bad, Küche, Vorräte. Ihr Reinigungsteam öffnet sie per Link am Handy, ohne App-Installation, hakt ab und macht Fotos. Fehlt etwas oder ist etwas kaputt, landet die Meldung direkt bei Ihnen.",
+   "it": "Per ogni alloggio crei una checklist: letti, bagno, cucina, scorte. La squadra la apre con un link dal telefono, senza installare app, spunta e scatta foto. Se manca qualcosa o c’è un guasto, la segnalazione arriva subito a te."
+  },
+  "audience": {
+   "de": "Vermieter von Ferienwohnungen, B&Bs und kleinen Unterkünften mit externer Reinigung.",
+   "it": "Proprietari di case vacanza, B&B e piccole strutture con pulizie esterne."
+  },
+  "job": {
+   "de": "Reinigung und Zustand der Unterkunft aus der Ferne nachvollziehen.",
+   "it": "Controllare a distanza pulizia e stato dell’alloggio."
+  },
+  "why": {
+   "de": "Ein Link statt einer weiteren App für Ihr Team; Deutsch, Italienisch und Englisch. Fotos werden nach 60 Tagen automatisch gelöscht, wenn Sie nichts anderes festlegen. Daten auf Servern in der EU.",
+   "it": "Un link invece di un’altra app per la squadra; italiano, tedesco e inglese. Le foto si cancellano in automatico dopo 60 giorni, se non decidi diversamente. Dati su server nell’UE."
+  },
+  "features": {
+   "de": [
+    "Checkliste je Unterkunft und Raum.",
+    "Fotos nach der Reinigung.",
+    "Meldung von Schäden und fehlenden Vorräten.",
+    "Nachricht an Sie, wenn die Wohnung bereit ist."
+   ],
+   "it": [
+    "Checklist per alloggio e stanza.",
+    "Foto dopo la pulizia.",
+    "Segnalazione di danni e scorte mancanti.",
+    "Avviso quando l’alloggio è pronto."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: Muster-Checklisten für Wohnung, Zimmer mit Bad und Haus mit Garten.",
+   "it": "Incluso: checklist di esempio per appartamento, camera con bagno e casa con giardino."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Muss mein Reinigungsteam etwas installieren?",
+     "a": "Nein, die Checkliste öffnet sich im Browser des Handys."
+    },
+    {
+     "q": "Werden Gäste fotografiert?",
+     "a": "Nein. Fotografiert werden nur Räume nach der Reinigung, wenn keine Gäste anwesend sind."
+    },
+    {
+     "q": "Wie bekomme ich PuliziaCheck?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten PuliziaCheck für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
+    }
+   ],
+   "it": [
+    {
+     "q": "La squadra deve installare qualcosa?",
+     "a": "No, la checklist si apre nel browser del telefono."
+    },
+    {
+     "q": "Si fotografano gli ospiti?",
+     "a": "No. Si fotografano solo le stanze dopo la pulizia, senza ospiti presenti."
+    },
+    {
+     "q": "Come ricevo PuliziaCheck?",
+     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie fragen an; wir richten PuliziaCheck für Ihre Unterkünfte ein.",
+    "Sie passen die Checklisten an und senden Ihrem Team den Link.",
+    "Nach jeder Reinigung erhalten Sie Häkchen, Fotos und eventuelle Meldungen."
+   ],
+   "it": [
+    "Fai richiesta; configuriamo PuliziaCheck per i tuoi alloggi.",
+    "Adatti le checklist e mandi il link alla squadra.",
+    "Dopo ogni pulizia ricevi spunte, foto ed eventuali segnalazioni."
+   ]
+  },
+  "vorschau": {
+   "art": "handy",
+   "adresse": "puliziacheck · Casa Esempio",
+   "titel": {
+    "de": "Casa Esempio – Reinigung heute",
+    "it": "Casa Esempio – pulizia di oggi"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Schlafzimmer · Betten frisch",
+      "it": "Camera · letti rifatti"
+     },
+     "chip": {
+      "de": "✓ Foto",
+      "it": "✓ foto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Bad · Handtücher, Seife",
+      "it": "Bagno · asciugamani, sapone"
+     },
+     "chip": {
+      "de": "✓ Foto",
+      "it": "✓ foto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Küche · Kaffee nachfüllen",
+      "it": "Cucina · rifornire caffè"
+     },
+     "neben": {
+      "de": "nur noch 2 Kapseln",
+      "it": "solo 2 capsule"
+     },
+     "chip": {
+      "de": "fehlt",
+      "it": "manca"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Balkon · Liegestuhl beschädigt",
+      "it": "Balcone · sdraio rotta"
+     },
+     "neben": {
+      "de": "Foto angehängt",
+      "it": "foto allegata"
+     },
+     "chip": {
+      "de": "Schaden",
+      "it": "danno"
+     },
+     "ton": "rot"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Status",
+     "it": "Stato"
+    },
+    "punkte": [
+     {
+      "de": "Fertig um 13:40",
+      "it": "Finito alle 13:40"
+     },
+     {
+      "de": "Check-in 15:00",
+      "it": "Check-in 15:00"
+     }
+    ]
+   }
+  },
+  "number": 33,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-13T20:45:48.349Z"
+ },
+ {
+  "slug": "festainsala",
+  "brand": "FestaInSala",
+  "produktart": {
+   "de": "Angebotsmappe für Feiern und Gruppen",
+   "it": "Proposte per feste e gruppi"
+  },
+  "category": "immobilien-gastgewerbe",
+  "kind": "service",
+  "shopCategory": "design-media",
+  "prices": [
+   {
+    "amount": 89,
+    "interval": "once",
+    "unit": {
+     "de": "einmalig, zweisprachig",
+     "it": "una tantum, bilingue"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von FestaInSala: Menüvorschläge für Feiern mit Preisen pro Person",
+   "it": "Anteprima di FestaInSala: proposte di menù per feste con prezzi a persona"
+  },
+  "tagline": {
+   "de": "Feier-Anfragen mit einer Mappe beantworten.",
+   "it": "Rispondere alle richieste per feste con un’unica proposta."
+  },
+  "benefit": {
+   "de": "Wir gestalten Ihre Angebote für Geburtstage, Kommunionen, Firmenessen und Gruppen als übersichtliche Mappe – als PDF und als Seite per Link.",
+   "it": "Creiamo le tue proposte per compleanni, comunioni, cene aziendali e gruppi come una cartella chiara – in PDF e come pagina con link."
+  },
+  "headline": {
+   "de": "Menüs, Räume und Bedingungen für Feiern – auf einen Blick.",
+   "it": "Menù, sale e condizioni per le feste – tutto in un colpo d’occhio."
+  },
+  "intro": {
+   "de": "Wer anfragt, will wissen: Welche Menüs gibt es, für wie viele Personen, was kostet es und was ist inklusive? Sie senden uns Ihre Angebote und Fotos der Räume; wir gestalten daraus eine zweisprachige Mappe, die Sie bei jeder Anfrage verschicken.",
+   "it": "Chi chiede vuole sapere: quali menù ci sono, per quante persone, quanto costa e cosa è incluso? Ci invii le tue proposte e le foto delle sale; ne ricaviamo una cartella bilingue da inviare a ogni richiesta."
+  },
+  "audience": {
+   "de": "Restaurants, Agriturismi, Pizzerien und kleine Hotels mit Räumen für Feiern.",
+   "it": "Ristoranti, agriturismi, pizzerie e piccoli hotel con sale per eventi."
+  },
+  "job": {
+   "de": "Anfragen für Feiern schnell und vollständig beantworten.",
+   "it": "Rispondere in modo rapido e completo alle richieste per feste."
+  },
+  "why": {
+   "de": "Eine Mappe statt vieler einzelner Nachrichten; Bedingungen wie Anzahlung oder Mindestpersonen stehen klar drin. Allergene und Zutaten übernehmen wir nur wie von Ihnen angegeben; die Verantwortung für die Angaben bleibt bei Ihnen.",
+   "it": "Una proposta invece di tanti messaggi; condizioni come acconto o numero minimo di persone sono scritte chiaramente. Allergeni e ingredienti li riportiamo solo come indicati da te; la responsabilità delle informazioni resta tua."
+  },
+  "features": {
+   "de": [
+    "Bis zu vier Menüvorschläge mit Preis pro Person.",
+    "Raumübersicht mit Fotos und Platzanzahl.",
+    "PDF und Online-Seite per Link oder QR-Code.",
+    "Deutsch und Italienisch."
+   ],
+   "it": [
+    "Fino a quattro proposte di menù con prezzo a persona.",
+    "Panoramica sale con foto e numero di posti.",
+    "PDF e pagina online con link o QR.",
+    "Italiano e tedesco."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: eine Preisänderung pro Jahr ohne Aufpreis.",
+   "it": "Incluso: un aggiornamento prezzi all’anno senza costi aggiuntivi."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Kann ich die Preise später ändern?",
+     "a": "Ja, eine Änderung pro Jahr ist inklusive, weitere zu einem kleinen Festpreis."
+    },
+    {
+     "q": "Brauche ich professionelle Fotos?",
+     "a": "Nein, gute Handyfotos bei Tageslicht genügen; wir beraten Sie dazu."
+    },
+    {
+     "q": "Wie bekomme ich FestaInSala?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten FestaInSala für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
+    }
+   ],
+   "it": [
+    {
+     "q": "Posso cambiare i prezzi dopo?",
+     "a": "Sì, un aggiornamento all’anno è incluso, altri a un piccolo prezzo fisso."
+    },
+    {
+     "q": "Servono foto professionali?",
+     "a": "No, bastano buone foto col telefono alla luce del giorno; ti diamo qualche consiglio."
+    },
+    {
+     "q": "Come ricevo FestaInSala?",
+     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien, v. a. Sizilien",
+   "it": "Italia, soprattutto Sicilia"
+  },
+  "ablauf": {
+   "de": [
+    "Sie fragen an und senden Menüs, Bedingungen und Fotos der Räume.",
+    "Wir gestalten die Mappe und senden Ihnen einen Entwurf.",
+    "Nach Ihrer Freigabe erhalten Sie PDF, Link und QR-Code."
+   ],
+   "it": [
+    "Fai richiesta e invii menù, condizioni e foto delle sale.",
+    "Creiamo la cartella e ti inviamo una bozza.",
+    "Dopo la tua approvazione ricevi PDF, link e codice QR."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "esempio.it/feste",
+   "titel": {
+    "de": "Trattoria Esempio – Feiern bei uns",
+    "it": "Trattoria Esempio – Le tue feste da noi"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Menü Classico",
+      "it": "Menù Classico"
+     },
+     "neben": {
+      "de": "Antipasto, Primo, Secondo, Dolce",
+      "it": "antipasto, primo, secondo, dolce"
+     },
+     "chip": {
+      "de": "35 € p. P.",
+      "it": "35 € a pers."
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Menü Pesce",
+      "it": "Menù Pesce"
+     },
+     "neben": {
+      "de": "ab 20 Personen",
+      "it": "da 20 persone"
+     },
+     "chip": {
+      "de": "48 € p. P.",
+      "it": "48 € a pers."
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Saal Ulivo",
+      "it": "Sala Ulivo"
+     },
+     "neben": {
+      "de": "bis 60 Plätze, Terrasse",
+      "it": "fino a 60 posti, terrazza"
+     },
+     "chip": {
+      "de": "Foto",
+      "it": "foto"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Anzahlung",
+      "it": "Acconto"
+     },
+     "neben": {
+      "de": "bei Reservierung",
+      "it": "alla prenotazione"
+     },
+     "chip": {
+      "de": "20 %",
+      "it": "20%"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Versand",
+     "it": "Invio"
+    },
+    "punkte": [
+     {
+      "de": "PDF + Link",
+      "it": "PDF + link"
+     },
+     {
+      "de": "QR-Code am Tisch",
+      "it": "QR al tavolo"
+     }
+    ]
+   }
+  },
+  "number": 34,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-13T20:45:48.350Z"
+ },
+ {
+  "slug": "vetrinanotte",
+  "brand": "VetrinaNotte",
+  "produktart": {
+   "de": "QR-Schaufensterschild mit Angebotsseite",
+   "it": "Cartello QR per vetrina e pagina offerte"
+  },
+  "category": "website-sichtbarkeit",
+  "kind": "service",
+  "shopCategory": "marketing",
+  "prices": [
+   {
+    "amount": 59,
+    "interval": "once",
+    "unit": {
+     "de": "Schild und Seite",
+     "it": "cartello e pagina"
+    },
+    "vat": "tbd"
+   },
+   {
+    "amount": 5,
+    "interval": "month",
+    "unit": {
+     "de": "Seite selbst aktualisieren",
+     "it": "aggiornamento pagina"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von VetrinaNotte: Handyseite mit Angeboten nach Ladenschluss",
+   "it": "Anteprima di VetrinaNotte: pagina per telefono con offerte a negozio chiuso"
+  },
+  "tagline": {
+   "de": "Ihr Schaufenster informiert auch nach Ladenschluss.",
+   "it": "La tua vetrina informa anche a negozio chiuso."
+  },
+  "benefit": {
+   "de": "Ein gestaltetes Schild mit QR-Code fürs Schaufenster, das auf eine Handyseite mit Öffnungszeiten, aktuellen Angeboten und Kontakt führt.",
+   "it": "Un cartello grafico con codice QR per la vetrina che porta a una pagina per telefono con orari, offerte attuali e contatti."
+  },
+  "headline": {
+   "de": "Wer abends vorbeigeht, sieht, was Sie morgen anbieten.",
+   "it": "Chi passa la sera vede cosa offri domani."
+  },
+  "intro": {
+   "de": "Viele Menschen gehen am Laden vorbei, wenn er geschlossen ist. VetrinaNotte gibt ihnen eine Möglichkeit, mehr zu erfahren: Sie scannen den Code und sehen Öffnungszeiten, aktuelle Angebote und wie sie Sie erreichen. Sie ändern die Angebote selbst über ein einfaches Formular.",
+   "it": "Molte persone passano davanti al negozio quando è chiuso. VetrinaNotte offre loro un modo per saperne di più: inquadrano il codice e vedono orari, offerte attuali e come contattarti. Le offerte le aggiorni tu con un modulo semplice."
+  },
+  "audience": {
+   "de": "Läden, Boutiquen, Bäckereien, Optiker und Handwerksbetriebe mit Schaufenster.",
+   "it": "Negozi, boutique, panifici, ottici e botteghe artigiane con vetrina."
+  },
+  "job": {
+   "de": "Passanten außerhalb der Öffnungszeiten informieren und zum Wiederkommen einladen.",
+   "it": "Informare i passanti fuori orario e invitarli a tornare."
+  },
+  "why": {
+   "de": "Kein Konto bei einer Plattform nötig, keine Cookies, kein Tracking auf der Seite – nur eine einfache Zählung der Aufrufe ohne personenbezogene Daten. Das Schild liefern wir druckfertig in A4 und A5.",
+   "it": "Nessun account su piattaforme, niente cookie, niente tracciamento sulla pagina – solo un semplice conteggio delle visite senza dati personali. Il cartello lo consegniamo pronto per la stampa in A4 e A5."
+  },
+  "features": {
+   "de": [
+    "Gestaltetes Schild mit QR-Code in A4 und A5.",
+    "Handyseite mit Öffnungszeiten, Angeboten, Kontakt.",
+    "Angebote selbst ändern per Formular.",
+    "Zweisprachig DE/IT."
+   ],
+   "it": [
+    "Cartello grafico con QR in A4 e A5.",
+    "Pagina per telefono con orari, offerte, contatti.",
+    "Offerte aggiornabili da te con un modulo.",
+    "Bilingue IT/DE."
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: Hinweisfeld für Betriebsferien und Feiertage.",
+   "it": "Incluso: spazio avvisi per ferie e festività."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Muss ich die monatliche Gebühr zahlen?",
+     "a": "Nur, wenn Sie die Angebote selbst ändern möchten. Ohne Abo bleibt die Seite mit festen Inhalten online."
+    },
+    {
+     "q": "Kann ich das Schild selbst drucken?",
+     "a": "Ja, Sie erhalten druckfertige Dateien für jeden Copyshop."
+    },
+    {
+     "q": "Wie bekomme ich VetrinaNotte?",
+     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten VetrinaNotte für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
+    }
+   ],
+   "it": [
+    {
+     "q": "Devo pagare il canone mensile?",
+     "a": "Solo se vuoi aggiornare tu le offerte. Senza abbonamento la pagina resta online con contenuti fissi."
+    },
+    {
+     "q": "Posso stampare il cartello da solo?",
+     "a": "Sì, ricevi i file pronti per qualsiasi copisteria."
+    },
+    {
+     "q": "Come ricevo VetrinaNotte?",
+     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie fragen an und senden Logo, Öffnungszeiten und erste Angebote.",
+    "Wir gestalten Schild und Seite und senden Ihnen einen Entwurf.",
+    "Sie hängen das Schild ins Fenster und ändern die Angebote bei Bedarf selbst."
+   ],
+   "it": [
+    "Fai richiesta e invii logo, orari e prime offerte.",
+    "Creiamo cartello e pagina e ti inviamo una bozza.",
+    "Appendi il cartello in vetrina e aggiorni le offerte quando serve."
+   ]
+  },
+  "vorschau": {
+   "art": "handy",
+   "adresse": "esempio.it/vetrina",
+   "titel": {
+    "de": "Panificio Esempio – morgen ab 6:30",
+    "it": "Panificio Esempio – domani dalle 6:30"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Brot vom Holzofen",
+      "it": "Pane al forno a legna"
+     },
+     "neben": {
+      "de": "Sesam, Hartweizen",
+      "it": "sesamo, semola"
+     },
+     "chip": {
+      "de": "täglich",
+      "it": "ogni giorno"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Cannoli am Wochenende",
+      "it": "Cannoli nel weekend"
+     },
+     "neben": {
+      "de": "auf Vorbestellung",
+      "it": "su prenotazione"
+     },
+     "chip": {
+      "de": "Sa–So",
+      "it": "sab–dom"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Betriebsferien",
+      "it": "Chiusura per ferie"
+     },
+     "neben": {
+      "de": "1.–7. Februar",
+      "it": "1–7 febbraio"
+     },
+     "chip": {
+      "de": "Hinweis",
+      "it": "avviso"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Anrufen oder schreiben",
+      "it": "Chiama o scrivi"
+     },
+     "neben": {
+      "de": "0922 000000",
+      "it": "0922 000000"
+     },
+     "chip": {
+      "de": "Kontakt",
+      "it": "contatto"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Schild",
+     "it": "Cartello"
+    },
+    "punkte": [
+     {
+      "de": "A4 und A5",
+      "it": "A4 e A5"
+     },
+     {
+      "de": "QR-Code",
+      "it": "Codice QR"
+     }
+    ]
+   }
+  },
+  "number": 35,
+  "status": "soon",
+  "cta": "notify",
+  "notes": {
+   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
+   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+  },
+  "erstellt": "2026-11-13T20:45:48.350Z"
  }
 ]
