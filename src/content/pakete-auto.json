@@ -2097,24 +2097,30 @@
   },
   "features": {
    "de": [
-    "Checkliste je Antrag mit Status offen / vorhanden / abgelaufen.",
-    "Dokumente per Upload oder Handyfoto.",
-    "Wiederkehrende Unterlagen einmal ablegen, mehrfach nutzen.",
-    "Export der Mappe als ZIP für die Einreichung."
+    "Mappe je Antrag mit Checkliste und Status: fehlt, vorhanden, abgelaufen oder läuft vor der Frist ab.",
+    "Dokumente per Upload oder Handyfoto – Fotos werden ohne Standortdaten gespeichert.",
+    "Ablage für wiederkehrende Unterlagen mit Gültigkeitsdatum, automatisch mit neuen Mappen verknüpft.",
+    "Zugang für Ihren Berater, nur für die Mappen, die Sie freigeben.",
+    "Export der Mappe als ZIP mit nummerierten Dateien und Übersichtstabelle."
    ],
    "it": [
-    "Checklist per domanda con stato mancante / presente / scaduto.",
-    "Documenti tramite upload o foto dal telefono.",
-    "Documenti ricorrenti archiviati una volta, usati più volte.",
-    "Esportazione della cartella in ZIP per l’invio."
+    "Una cartella per domanda con checklist e stato: mancante, presente, scaduto o in scadenza prima del termine.",
+    "Documenti tramite upload o foto dal telefono – le foto vengono salvate senza dati di posizione.",
+    "Archivio per i documenti ricorrenti con data di validità, collegato automaticamente alle nuove cartelle.",
+    "Accesso per il tuo consulente, solo alle cartelle che abiliti.",
+    "Esportazione della cartella in ZIP con file numerati e tabella riepilogativa."
    ]
   },
   "plannedOffer": {
-   "de": "Inklusive: Muster-Checklisten für typische Unterlagen kleiner Betriebe in Italien, die Sie an die jeweilige Ausschreibung anpassen.",
-   "it": "Incluso: checklist di esempio con i documenti tipici delle piccole imprese in Italia, da adattare al singolo bando."
+   "de": "Inklusive: drei Muster-Checklisten (allgemeine Unterlagen, Förderantrag, öffentliche Ausschreibung), die Sie an die jeweilige Ausschreibung anpassen.",
+   "it": "Incluso: tre checklist di esempio (documenti generali, domanda di contributo, gara d’appalto) da adattare al singolo bando."
   },
   "faq": {
    "de": [
+    {
+     "q": "Wie bekomme ich CartellaBando?",
+     "a": "Als Web-App für Ihren eigenen Webspace (PHP 8.1 und SQLite, z. B. bei All-Inkl). Wir richten sie für Sie ein – oder Sie laden sie selbst hoch und folgen dem Installations-Assistenten. Ihre Unterlagen bleiben auf Ihrem Webspace."
+    },
     {
      "q": "Prüfen Sie, ob ich die Voraussetzungen erfülle?",
      "a": "Nein. CartellaBando ordnet nur die Unterlagen; die Prüfung der Voraussetzungen bleibt bei Ihnen oder Ihren Fachleuten."
@@ -2122,13 +2128,13 @@
     {
      "q": "Kann mein Berater mitarbeiten?",
      "a": "Ja, Sie können eine weitere Person zu einer Mappe einladen."
-    },
-    {
-     "q": "Wie bekomme ich CartellaBando?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten CartellaBando für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo CartellaBando?",
+     "a": "Come web app per il tuo spazio web (PHP 8.1 e SQLite, es. All-Inkl). La installiamo noi – oppure la carichi tu e segui la procedura guidata. I tuoi documenti restano sul tuo spazio web."
+    },
     {
      "q": "Verificate se ho i requisiti?",
      "a": "No. CartellaBando organizza solo i documenti; la verifica dei requisiti resta a te o ai tuoi consulenti."
@@ -2136,10 +2142,6 @@
     {
      "q": "Il mio consulente può collaborare?",
      "a": "Sì, puoi invitare un’altra persona in una cartella."
-    },
-    {
-     "q": "Come ricevo CartellaBando?",
-     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
     }
    ]
   },
@@ -2149,13 +2151,13 @@
   },
   "ablauf": {
    "de": [
-    "Sie fragen an; wir richten CartellaBando ein und legen mit Ihnen die erste Mappe an.",
+    "Sie fragen an; wir installieren CartellaBando auf Ihrem Webspace und legen mit Ihnen die erste Mappe an.",
     "Sie hinterlegen Ihre wiederkehrenden Dokumente und haken je Antrag ab, was vorliegt.",
     "Vor der Einreichung prüfen Sie die Übersicht und laden die Mappe als ZIP herunter."
    ],
    "it": [
-    "Fai richiesta; configuriamo CartellaBando e creiamo insieme la prima cartella.",
-    "Carichi i documenti ricorrenti e per ogni domanda spunti ciò che hai.",
+    "Fai richiesta; installiamo CartellaBando sul tuo spazio web e creiamo con te la prima cartella.",
+    "Carichi i documenti ricorrenti e spunti per ogni domanda ciò che è presente.",
     "Prima dell’invio controlli il riepilogo e scarichi la cartella in ZIP."
    ]
   },
@@ -2246,11 +2248,11 @@
    }
   },
   "number": 26,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Web-App für Ihren Webspace (PHP, ohne Fremddienste) mit Installations-Assistent – wir richten sie ein oder Sie selbst in rund 15 Minuten.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Web app per il tuo spazio web (PHP, senza servizi esterni) con procedura di installazione guidata – la installiamo noi o tu stesso in circa 15 minuti."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
@@ -2309,16 +2311,18 @@
   },
   "features": {
    "de": [
-    "Budgetposten mit Soll und bisher belegtem Betrag.",
-    "Beleg und Zahlungsnachweis per Foto verknüpfen.",
-    "Hinweis bei fehlendem Zahlungsnachweis.",
-    "Export als Tabelle und ZIP."
+    "Budgetposten mit Soll, belegtem Betrag und Rest – mit Warnung bei Überschreitung.",
+    "Rechnung und Zahlungsnachweis per Handyfoto oder PDF verknüpfen; Fotos ohne Standortdaten.",
+    "Hinweis und Filter für Belege ohne Zahlungsnachweis.",
+    "Export als Tabelle (CSV) und als ZIP mit allen Belegen, nach Posten geordnet.",
+    "Lesezugang für Ihre Steuerberatung; Löschdatum je Projekt mit Erinnerung."
    ],
    "it": [
-    "Voci di budget con importo previsto e già documentato.",
-    "Fattura e prova di pagamento collegate con una foto.",
-    "Avviso se manca la prova di pagamento.",
-    "Esportazione in tabella e ZIP."
+    "Voci di spesa con budget, importo documentato e residuo – con avviso se si supera il budget.",
+    "Collega fattura e prova di pagamento con foto o PDF; foto senza dati di posizione.",
+    "Avviso e filtro per le spese senza prova di pagamento.",
+    "Esportazione in tabella (CSV) e in ZIP con tutti i documenti ordinati per voce.",
+    "Accesso in sola lettura per il commercialista; data di eliminazione per progetto con promemoria."
    ]
   },
   "plannedOffer": {
@@ -2328,19 +2332,23 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich RendicontoFacile?",
+     "a": "Als Web-App für Ihren eigenen Webspace (PHP 8.1 und SQLite, z. B. bei All-Inkl). Wir richten sie für Sie ein – oder Sie laden sie selbst hoch und folgen dem Installations-Assistenten. Ihre Belege bleiben auf Ihrem Webspace."
+    },
+    {
      "q": "Erstellt RendicontoFacile die offizielle Abrechnung?",
      "a": "Nein. Es ordnet Ihre Belege; die offizielle Abrechnung erstellen Sie oder Ihre Fachleute nach den Vorgaben des Programms."
     },
     {
      "q": "Kann meine Steuerberatung zugreifen?",
      "a": "Ja, mit einem Lesezugang."
-    },
-    {
-     "q": "Wie bekomme ich RendicontoFacile?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten RendicontoFacile für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo RendicontoFacile?",
+     "a": "Come web app per il tuo spazio web (PHP 8.1 e SQLite, es. All-Inkl). La installiamo noi – oppure la carichi tu e segui la procedura guidata. I tuoi documenti restano sul tuo spazio web."
+    },
     {
      "q": "RendicontoFacile prepara la rendicontazione ufficiale?",
      "a": "No. Organizza le tue spese; la rendicontazione ufficiale la prepari tu o i tuoi consulenti secondo le regole del bando."
@@ -2348,10 +2356,6 @@
     {
      "q": "Il mio commercialista può accedere?",
      "a": "Sì, con un accesso in sola lettura."
-    },
-    {
-     "q": "Come ricevo RendicontoFacile?",
-     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
     }
    ]
   },
@@ -2361,14 +2365,14 @@
   },
   "ablauf": {
    "de": [
-    "Sie fragen an; wir legen Ihr Projekt mit den Budgetposten aus dem Bescheid an.",
+    "Sie fragen an; wir installieren RendicontoFacile auf Ihrem Webspace und legen Ihr Projekt mit den Posten aus dem Bescheid an.",
     "Sie fotografieren laufend Belege und Zahlungsnachweise und ordnen sie zu.",
     "Zum Abrechnungstermin exportieren Sie Tabelle und Belege für Ihre Abrechnung."
    ],
    "it": [
-    "Fai richiesta; creiamo il progetto con le voci di budget del provvedimento.",
-    "Fotografi man mano fatture e pagamenti e li colleghi alle voci.",
-    "Alla scadenza esporti tabella e documenti per la rendicontazione."
+    "Fai richiesta; installiamo RendicontoFacile sul tuo spazio web e creiamo il progetto con le voci del decreto.",
+    "Fotografi via via fatture e prove di pagamento e le assegni alle voci.",
+    "Alla scadenza della rendicontazione esporti tabella e documenti."
    ]
   },
   "vorschau": {
@@ -2454,11 +2458,11 @@
    }
   },
   "number": 27,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Web-App für Ihren Webspace (PHP, ohne Fremddienste) mit Installations-Assistent – wir richten sie ein oder Sie selbst in rund 15 Minuten.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Web app per il tuo spazio web (PHP, senza servizi esterni) con procedura di installazione guidata – la installiamo noi o tu stesso in circa 15 minuti."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
