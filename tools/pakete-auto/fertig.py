@@ -3,7 +3,8 @@
 # änderung.json: {"slug": "...", "lieferung": {"de": "...", "it": "..."},
 #                  "features": {"de": [...], "it": [...]}   (optional, ersetzt die Liste),
 #                  "faq": {"de": [{"q": "...", "a": "..."}], "it": [...]}   (optional, wird vorne eingefügt),
-#                  "hinweis": {"de": "...", "it": "..."}   (optional, Zusatz zur Statuszeile)}
+#                  "hinweis": {"de": "...", "it": "..."}   (optional, Zusatz zur Statuszeile),
+#                  "ablauf" / "plannedOffer" / "tagline" / "benefit"   (optional, ersetzen den jeweiligen Text)}
 import json
 import sys
 from pathlib import Path
@@ -32,6 +33,9 @@ def main(pfad):
             if not (3 <= len(a['features'][l]) <= 6):
                 sys.exit(f'ABGELEHNT: features.{l} braucht 3–6 Punkte')
         p['features'] = a['features']
+    for feld in ('ablauf', 'plannedOffer', 'tagline', 'benefit'):
+        if a.get(feld):
+            p[feld] = a[feld]
     if a.get('faq'):
         for l in ('de', 'it'):
             neu = a['faq'][l]

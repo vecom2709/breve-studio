@@ -2517,16 +2517,18 @@
   },
   "features": {
    "de": [
-    "Leitfragen zu Ausgangslage, Zielen und Maßnahmen.",
-    "Zeitplan-Tabelle mit Meilensteinen.",
-    "Kostentabelle nach Posten.",
-    "Optionaler KI-Erstentwurf aus Ihren Stichworten."
+    "Projekt-Assistent mit Leitfragen zu Ausgangslage, Zielen, Maßnahmen, Wirkung und Risiken – mit Live-Vorschau.",
+    "Zeitplan als Balkenplan über 18 Monate und Kostenplan mit Förderquote und Eigenanteil (Excel/LibreOffice).",
+    "Fertige Anweisung für einen KI-Assistenten Ihrer Wahl: aus Ihren Stichworten wird ein Erstentwurf.",
+    "Export als PDF und Word, Projekt speichern und später weiterbearbeiten.",
+    "Ausgefülltes Beispiel für ein erfundenes Handwerksprojekt."
    ],
    "it": [
-    "Domande guida su situazione, obiettivi e azioni.",
-    "Tabella del cronoprogramma con tappe.",
-    "Tabella dei costi per voce.",
-    "Prima bozza IA facoltativa dai tuoi appunti."
+    "Assistente di progetto con domande guida su situazione, obiettivi, attività, impatto e rischi – con anteprima dal vivo.",
+    "Cronoprogramma a barre su 18 mesi e piano dei costi con percentuale di contributo e quota propria (Excel/LibreOffice).",
+    "Istruzioni pronte per un assistente IA a tua scelta: dai tuoi appunti nasce una prima bozza.",
+    "Esportazione in PDF e Word, salvataggio del progetto per riprenderlo dopo.",
+    "Esempio compilato per un progetto artigiano inventato."
    ]
   },
   "plannedOffer": {
@@ -2535,6 +2537,14 @@
   },
   "faq": {
    "de": [
+    {
+     "q": "Wie bekomme ich ProgettoChiaro?",
+     "a": "Nach der Bestellung erhalten Sie die Setup-Datei für Windows oder ein ZIP-Archiv. Der Projekt-Assistent läuft im Browser ohne Internet; Ihre Eingaben bleiben auf Ihrem Gerät."
+    },
+    {
+     "q": "Ist eine KI eingebaut?",
+     "a": "Nein. ProgettoChiaro erstellt eine fertige Anweisung mit Ihren Stichworten, die Sie in einen KI-Assistenten Ihrer Wahl einfügen. So entscheiden Sie selbst, wohin Ihre Daten gehen."
+    },
     {
      "q": "Schreiben Sie den Antrag für mich?",
      "a": "Nein. ProgettoChiaro ist ein Werkzeug zum Selbstschreiben und ersetzt keine Förderberatung."
@@ -2545,6 +2555,14 @@
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo ProgettoChiaro?",
+     "a": "Dopo l’ordine ricevi il file di installazione per Windows o un archivio ZIP. L’assistente funziona nel browser senza internet; i tuoi dati restano sul tuo dispositivo."
+    },
+    {
+     "q": "C’è un’intelligenza artificiale integrata?",
+     "a": "No. ProgettoChiaro prepara istruzioni pronte con i tuoi appunti da incollare in un assistente IA a tua scelta. Così decidi tu dove vanno i tuoi dati."
+    },
     {
      "q": "Scrivete voi la domanda?",
      "a": "No. ProgettoChiaro è uno strumento per scrivere da sé e non sostituisce una consulenza sui bandi."
@@ -2561,14 +2579,14 @@
   },
   "ablauf": {
    "de": [
-    "Sie bestellen ProgettoChiaro und erhalten Vorlagen und Zugang zum Assistenten.",
-    "Sie beantworten die Leitfragen und füllen Zeitplan und Kostentabelle aus.",
-    "Sie lassen optional einen Entwurf formulieren, prüfen ihn und übernehmen ihn in Ihren Antrag."
+    "Sie bestellen ProgettoChiaro und installieren es mit der Setup-Datei.",
+    "Sie beantworten die Leitfragen und füllen Zeitplan und Kosten aus.",
+    "Optional lassen Sie mit der KI-Anweisung einen Entwurf formulieren, prüfen ihn und übernehmen ihn in Ihren Antrag."
    ],
    "it": [
-    "Ordini ProgettoChiaro e ricevi modelli e accesso all’assistente.",
-    "Rispondi alle domande guida e compili cronoprogramma e tabella costi.",
-    "Se vuoi fai preparare una bozza, la controlli e la riporti nella domanda."
+    "Ordini ProgettoChiaro e lo installi con il file di setup.",
+    "Rispondi alle domande guida e compili cronoprogramma e costi.",
+    "Se vuoi, con le istruzioni per l’IA fai scrivere una bozza, la controlli e la riporti nella domanda."
    ]
   },
   "vorschau": {
@@ -2658,11 +2676,11 @@
    }
   },
   "number": 28,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Windows-Installation (Setup.exe) oder ZIP, Deutsch und Italienisch. Schreibhilfe, keine Fördermittelberatung.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come installazione per Windows (Setup.exe) o ZIP, in italiano e tedesco. Strumento di scrittura, non consulenza sui finanziamenti."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
@@ -2942,16 +2960,18 @@
   },
   "features": {
    "de": [
-    "20 Vorlagen für typische Abläufe.",
-    "KI-Hilfe: aus Stichworten wird eine Schrittliste.",
-    "A4-Aushang und Handy-Seite per QR-Code.",
-    "Zweisprachig DE/IT."
+    "20 Vorlagen für typische Abläufe – vom Öffnen bis zur Datensicherung – zum Anpassen.",
+    "Programm ohne Internet: eigene Anleitungen anlegen, Schritte ordnen, alles bleibt auf Ihrem Gerät.",
+    "A4-Aushang mit großer Schrift und QR-Code; Handy-Seite zum Weitergeben.",
+    "KI-Hilfe: aus Ihren Stichworten wird eine Anweisung für einen KI-Assistenten Ihrer Wahl.",
+    "Zweisprachig DE/IT, alle Vorlagen zusätzlich als Word-Datei und als druckfertige PDF-Aushänge."
    ],
    "it": [
-    "20 modelli di procedure tipiche.",
-    "Aiuto IA: dagli appunti a un elenco di passi.",
-    "Foglio A4 e pagina per telefono con QR.",
-    "Bilingue IT/DE."
+    "20 modelli per le attività più frequenti – dall’apertura al backup – da adattare.",
+    "Programma senza internet: crei procedure proprie, ordini i passi, tutto resta sul tuo dispositivo.",
+    "Cartello A4 a caratteri grandi con codice QR; pagina per telefono da condividere.",
+    "Aiuto IA: dai tuoi appunti nascono istruzioni per un assistente IA a tua scelta.",
+    "Bilingue IT/DE, tutti i modelli anche in Word e come cartelli PDF pronti da stampare."
    ]
   },
   "plannedOffer": {
@@ -2961,19 +2981,31 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich ProceduraChiara?",
+     "a": "Nach der Bestellung erhalten Sie die Setup-Datei für Windows oder ein ZIP-Archiv. Das Programm läuft im Browser ohne Internet und ohne Konto."
+    },
+    {
+     "q": "Wie kommt die Anleitung aufs Handy?",
+     "a": "Über den QR-Code am Aushang: entweder mit Link zur gespeicherten Handy-Seite (z. B. auf Ihrer Website) oder bei kurzen Anleitungen mit den Schritten direkt im Code."
+    },
+    {
      "q": "Brauche ich dafür eine Software?",
      "a": "Nein. Die Vorlagen funktionieren als Dokumente; die Handy-Seiten erstellen wir auf Wunsch aus Ihren fertigen Anleitungen."
     },
     {
      "q": "Deckt das Arbeitssicherheit ab?",
      "a": "Nein. Es hilft beim Organisieren; vorgeschriebene Unterweisungen und Dokumente bleiben eigenständig."
-    },
-    {
-     "q": "Wie bekomme ich ProceduraChiara?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten ProceduraChiara für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo ProceduraChiara?",
+     "a": "Dopo l’ordine ricevi il file di installazione per Windows o un archivio ZIP. Il programma funziona nel browser senza internet e senza account."
+    },
+    {
+     "q": "Come arriva la procedura sul telefono?",
+     "a": "Con il codice QR sul cartello: con un link alla pagina salvata (ad es. sul tuo sito) oppure, per procedure brevi, con i passi direttamente nel codice."
+    },
     {
      "q": "Serve un software?",
      "a": "No. I modelli funzionano come documenti; le pagine per telefono le creiamo su richiesta dalle tue istruzioni finite."
@@ -2981,10 +3013,6 @@
     {
      "q": "Copre la sicurezza sul lavoro?",
      "a": "No. Aiuta a organizzare; formazioni e documenti obbligatori restano a parte."
-    },
-    {
-     "q": "Come ricevo ProceduraChiara?",
-     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo prepariamo per la tua attività e ti inviamo accesso e guida."
     }
    ]
   },
@@ -2994,14 +3022,14 @@
   },
   "ablauf": {
    "de": [
-    "Sie bestellen und wählen die Vorlagen für Ihren Betrieb.",
-    "Sie passen die Schritte an oder diktieren Stichworte für den Assistenten.",
-    "Sie drucken die Aushänge und teilen die QR-Codes mit Ihrem Team."
+    "Sie bestellen ProceduraChiara und installieren es mit der Setup-Datei.",
+    "Sie passen die Vorlagen an oder schreiben Stichworte für die KI-Hilfe.",
+    "Sie drucken die Aushänge und teilen die Handy-Seiten per QR-Code mit Ihrem Team."
    ],
    "it": [
-    "Ordini e scegli i modelli per la tua attività.",
-    "Adatti i passi o detti gli appunti all’assistente.",
-    "Stampi i fogli e condividi i codici QR con la squadra."
+    "Ordini ProceduraChiara e lo installi con il file di setup.",
+    "Adatti i modelli o scrivi appunti per l’aiuto IA.",
+    "Stampi i cartelli e condividi le pagine per telefono con il team tramite codice QR."
    ]
   },
   "vorschau": {
@@ -3083,11 +3111,11 @@
    }
   },
   "number": 30,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Windows-Installation (Setup.exe) oder ZIP, Deutsch und Italienisch. Muster; ersetzt keine gesetzlich vorgeschriebenen Unterweisungen.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come installazione per Windows (Setup.exe) o ZIP, in italiano e tedesco. Modelli; non sostituiscono la formazione obbligatoria per legge."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
