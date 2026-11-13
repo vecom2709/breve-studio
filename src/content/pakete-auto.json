@@ -2119,7 +2119,7 @@
    "de": [
     {
      "q": "Wie bekomme ich CartellaBando?",
-     "a": "Als Web-App für Ihren eigenen Webspace (PHP 8.1 und SQLite, z. B. bei All-Inkl). Wir richten sie für Sie ein – oder Sie laden sie selbst hoch und folgen dem Installations-Assistenten. Ihre Unterlagen bleiben auf Ihrem Webspace."
+     "a": "Sie müssen nichts installieren. Wir richten CartellaBando für Sie ein und schicken Ihnen einen persönlichen Link per E-Mail. Sie öffnen ihn, legen Ihr Passwort fest – und sind sofort drin. CartellaBando läuft im Browser auf Handy, Tablet und Computer, ohne App. Auf Wunsch installieren wir es auch auf Ihrem eigenen Webspace."
     },
     {
      "q": "Prüfen Sie, ob ich die Voraussetzungen erfülle?",
@@ -2133,7 +2133,7 @@
    "it": [
     {
      "q": "Come ricevo CartellaBando?",
-     "a": "Come web app per il tuo spazio web (PHP 8.1 e SQLite, es. All-Inkl). La installiamo noi – oppure la carichi tu e segui la procedura guidata. I tuoi documenti restano sul tuo spazio web."
+     "a": "Non devi installare nulla. Prepariamo CartellaBando per te e ti inviamo un link personale via e-mail. Lo apri, scegli la password – e sei subito dentro. CartellaBando funziona nel browser su telefono, tablet e computer, senza app. Se preferisci, lo installiamo anche sul tuo spazio web."
     },
     {
      "q": "Verificate se ho i requisiti?",
@@ -2151,13 +2151,13 @@
   },
   "ablauf": {
    "de": [
-    "Sie fragen an; wir installieren CartellaBando auf Ihrem Webspace und legen mit Ihnen die erste Mappe an.",
-    "Sie hinterlegen Ihre wiederkehrenden Dokumente und haken je Antrag ab, was vorliegt.",
+    "Sie fragen an; wir richten CartellaBando für Sie ein und schicken Ihnen Ihren persönlichen Link.",
+    "Sie legen Ihr Passwort fest, hinterlegen wiederkehrende Dokumente und haken je Antrag ab, was vorliegt.",
     "Vor der Einreichung prüfen Sie die Übersicht und laden die Mappe als ZIP herunter."
    ],
    "it": [
-    "Fai richiesta; installiamo CartellaBando sul tuo spazio web e creiamo con te la prima cartella.",
-    "Carichi i documenti ricorrenti e spunti per ogni domanda ciò che è presente.",
+    "Fai richiesta; prepariamo CartellaBando per te e ti inviamo il tuo link personale.",
+    "Scegli la password, carichi i documenti ricorrenti e spunti per ogni domanda ciò che è presente.",
     "Prima dell’invio controlli il riepilogo e scarichi la cartella in ZIP."
    ]
   },
@@ -2251,8 +2251,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Web-App für Ihren Webspace (PHP, ohne Fremddienste) mit Installations-Assistent – wir richten sie ein oder Sie selbst in rund 15 Minuten.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Web app per il tuo spazio web (PHP, senza servizi esterni) con procedura di installazione guidata – la installiamo noi o tu stesso in circa 15 minuti."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Läuft im Browser auf Handy, Tablet und Computer.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Nessuna installazione: prepariamo tutto noi, ricevi un link personale e scegli solo la password. Funziona nel browser su telefono, tablet e computer."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
@@ -2333,7 +2333,7 @@
    "de": [
     {
      "q": "Wie bekomme ich RendicontoFacile?",
-     "a": "Als Web-App für Ihren eigenen Webspace (PHP 8.1 und SQLite, z. B. bei All-Inkl). Wir richten sie für Sie ein – oder Sie laden sie selbst hoch und folgen dem Installations-Assistenten. Ihre Belege bleiben auf Ihrem Webspace."
+     "a": "Sie müssen nichts installieren. Wir richten RendicontoFacile für Sie ein und schicken Ihnen einen persönlichen Link per E-Mail. Sie öffnen ihn, legen Ihr Passwort fest – und sind sofort drin. RendicontoFacile läuft im Browser auf Handy, Tablet und Computer, ohne App. Auf Wunsch installieren wir es auch auf Ihrem eigenen Webspace."
     },
     {
      "q": "Erstellt RendicontoFacile die offizielle Abrechnung?",
@@ -2347,7 +2347,7 @@
    "it": [
     {
      "q": "Come ricevo RendicontoFacile?",
-     "a": "Come web app per il tuo spazio web (PHP 8.1 e SQLite, es. All-Inkl). La installiamo noi – oppure la carichi tu e segui la procedura guidata. I tuoi documenti restano sul tuo spazio web."
+     "a": "Non devi installare nulla. Prepariamo RendicontoFacile per te e ti inviamo un link personale via e-mail. Lo apri, scegli la password – e sei subito dentro. RendicontoFacile funziona nel browser su telefono, tablet e computer, senza app. Se preferisci, lo installiamo anche sul tuo spazio web."
     },
     {
      "q": "RendicontoFacile prepara la rendicontazione ufficiale?",
@@ -2365,12 +2365,12 @@
   },
   "ablauf": {
    "de": [
-    "Sie fragen an; wir installieren RendicontoFacile auf Ihrem Webspace und legen Ihr Projekt mit den Posten aus dem Bescheid an.",
+    "Sie fragen an; wir richten RendicontoFacile ein, legen Ihr Projekt mit den Posten aus dem Bescheid an und schicken Ihnen Ihren persönlichen Link.",
     "Sie fotografieren laufend Belege und Zahlungsnachweise und ordnen sie zu.",
     "Zum Abrechnungstermin exportieren Sie Tabelle und Belege für Ihre Abrechnung."
    ],
    "it": [
-    "Fai richiesta; installiamo RendicontoFacile sul tuo spazio web e creiamo il progetto con le voci del decreto.",
+    "Fai richiesta; prepariamo RendicontoFacile, creiamo il progetto con le voci del decreto e ti inviamo il tuo link personale.",
     "Fotografi via via fatture e prove di pagamento e le assegni alle voci.",
     "Alla scadenza della rendicontazione esporti tabella e documenti."
    ]
@@ -2461,8 +2461,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Web-App für Ihren Webspace (PHP, ohne Fremddienste) mit Installations-Assistent – wir richten sie ein oder Sie selbst in rund 15 Minuten.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Web app per il tuo spazio web (PHP, senza servizi esterni) con procedura di installazione guidata – la installiamo noi o tu stesso in circa 15 minuti."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Läuft im Browser auf Handy, Tablet und Computer.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Nessuna installazione: prepariamo tutto noi, ricevi un link personale e scegli solo la password. Funziona nel browser su telefono, tablet e computer."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
@@ -2543,7 +2543,7 @@
    "de": [
     {
      "q": "Wie bekomme ich ProgettoChiaro?",
-     "a": "Nach der Bestellung erhalten Sie die Setup-Datei für Windows oder ein ZIP-Archiv. Der Projekt-Assistent läuft im Browser ohne Internet; Ihre Eingaben bleiben auf Ihrem Gerät."
+     "a": "Sie erhalten eine Setup-Datei: doppelklicken, Sprache wählen, fertig – ProgettoChiaro liegt danach als Symbol auf Ihrem Desktop und öffnet sich von selbst. Eine bebilderte Kurzanleitung auf einer Seite liegt bei, für Mac gibt es eine ZIP-Datei. Sie brauchen kein Konto und keine Vorkenntnisse; Ihre Daten bleiben auf Ihrem Computer."
     },
     {
      "q": "Ist eine KI eingebaut?",
@@ -2561,7 +2561,7 @@
    "it": [
     {
      "q": "Come ricevo ProgettoChiaro?",
-     "a": "Dopo l’ordine ricevi il file di installazione per Windows o un archivio ZIP. L’assistente funziona nel browser senza internet; i tuoi dati restano sul tuo dispositivo."
+     "a": "Ricevi un file di setup: doppio clic, scegli la lingua, fatto – ProgettoChiaro compare come icona sul desktop e si apre da solo. È inclusa una guida illustrata di una pagina; per Mac c’è un file ZIP. Non servono account né conoscenze tecniche; i tuoi dati restano sul tuo computer."
     },
     {
      "q": "C’è un’intelligenza artificiale integrata?",
@@ -2683,8 +2683,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Windows-Installation (Setup.exe) oder ZIP, Deutsch und Italienisch. Schreibhilfe, keine Fördermittelberatung.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come installazione per Windows (Setup.exe) o ZIP, in italiano e tedesco. Strumento di scrittura, non consulenza sui finanziamenti."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
@@ -2774,7 +2774,7 @@
    "de": [
     {
      "q": "Wie bekomme ich ProfiloGara?",
-     "a": "Sie fragen an, wir erstellen Ihr Profil und liefern PDF und Kurzfassung. Dazu erhalten Sie das Profil-Programm (Setup für Windows oder ZIP), mit dem Sie Ihr Profil später selbst ändern – es läuft im Browser ohne Internet und ohne Konto."
+     "a": "Sie erhalten eine Setup-Datei: doppelklicken, Sprache wählen, fertig – ProfiloGara liegt danach als Symbol auf Ihrem Desktop und öffnet sich von selbst. Eine bebilderte Kurzanleitung auf einer Seite liegt bei, für Mac gibt es eine ZIP-Datei. Sie brauchen kein Konto und keine Vorkenntnisse; Ihre Daten bleiben auf Ihrem Computer."
     },
     {
      "q": "Kann ich Referenzen später selbst ergänzen?",
@@ -2792,7 +2792,7 @@
    "it": [
     {
      "q": "Come ricevo ProfiloGara?",
-     "a": "Fai richiesta, creiamo il tuo profilo e consegniamo PDF e versione breve. Ricevi anche il programma del profilo (setup per Windows o ZIP) per modificarlo da solo in seguito – funziona nel browser senza internet e senza account."
+     "a": "Ricevi un file di setup: doppio clic, scegli la lingua, fatto – ProfiloGara compare come icona sul desktop e si apre da solo. È inclusa una guida illustrata di una pagina; per Mac c’è un file ZIP. Non servono account né conoscenze tecniche; i tuoi dati restano sul tuo computer."
     },
     {
      "q": "Posso aggiungere referenze da solo?",
@@ -2914,8 +2914,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung: PDF (4 Seiten), Kurzfassung (1 Seite) und das Profil-Programm als Windows-Installation (Setup.exe) oder ZIP.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna: PDF (4 pagine), versione breve (1 pagina) e il programma del profilo come installazione per Windows (Setup.exe) o ZIP."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung: Ihr Firmenprofil als PDF (4 Seiten) und Kurzfassung – dazu das Profil-Programm als Setup-Datei: Doppelklick, fertig.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna: il profilo aziendale in PDF (4 pagine) e versione breve – più il programma del profilo come file di setup: doppio clic, fatto."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
@@ -2996,7 +2996,7 @@
    "de": [
     {
      "q": "Wie bekomme ich ProceduraChiara?",
-     "a": "Nach der Bestellung erhalten Sie die Setup-Datei für Windows oder ein ZIP-Archiv. Das Programm läuft im Browser ohne Internet und ohne Konto."
+     "a": "Sie erhalten eine Setup-Datei: doppelklicken, Sprache wählen, fertig – ProceduraChiara liegt danach als Symbol auf Ihrem Desktop und öffnet sich von selbst. Eine bebilderte Kurzanleitung auf einer Seite liegt bei, für Mac gibt es eine ZIP-Datei. Sie brauchen kein Konto und keine Vorkenntnisse; Ihre Daten bleiben auf Ihrem Computer."
     },
     {
      "q": "Wie kommt die Anleitung aufs Handy?",
@@ -3014,7 +3014,7 @@
    "it": [
     {
      "q": "Come ricevo ProceduraChiara?",
-     "a": "Dopo l’ordine ricevi il file di installazione per Windows o un archivio ZIP. Il programma funziona nel browser senza internet e senza account."
+     "a": "Ricevi un file di setup: doppio clic, scegli la lingua, fatto – ProceduraChiara compare come icona sul desktop e si apre da solo. È inclusa una guida illustrata di una pagina; per Mac c’è un file ZIP. Non servono account né conoscenze tecniche; i tuoi dati restano sul tuo computer."
     },
     {
      "q": "Come arriva la procedura sul telefono?",
@@ -3128,8 +3128,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Windows-Installation (Setup.exe) oder ZIP, Deutsch und Italienisch. Muster; ersetzt keine gesetzlich vorgeschriebenen Unterweisungen.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come installazione per Windows (Setup.exe) o ZIP, in italiano e tedesco. Modelli; non sostituiscono la formazione obbligatoria per legge."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
@@ -3210,7 +3210,7 @@
    "de": [
     {
      "q": "Wie bekomme ich CostoOrario?",
-     "a": "Nach der Bestellung erhalten Sie die Setup-Datei für Windows oder ein ZIP-Archiv. Die Installation braucht keine Administratorrechte und legt die Tabelle unter Dokumente\\Studio Breve ab."
+     "a": "Sie erhalten eine Setup-Datei: doppelklicken, Sprache wählen, fertig – CostoOrario liegt danach als Symbol auf Ihrem Desktop und öffnet sich von selbst. Eine bebilderte Kurzanleitung auf einer Seite liegt bei, für Mac gibt es eine ZIP-Datei. Sie brauchen kein Konto und keine Vorkenntnisse; Ihre Daten bleiben auf Ihrem Computer."
     },
     {
      "q": "Sagen Sie mir, welchen Preis ich nehmen soll?",
@@ -3224,7 +3224,7 @@
    "it": [
     {
      "q": "Come ricevo CostoOrario?",
-     "a": "Dopo l’ordine ricevi il file di installazione per Windows o un archivio ZIP. L’installazione non richiede diritti di amministratore e salva il foglio in Documenti\\Studio Breve."
+     "a": "Ricevi un file di setup: doppio clic, scegli la lingua, fatto – CostoOrario compare come icona sul desktop e si apre da solo. È inclusa una guida illustrata di una pagina; per Mac c’è un file ZIP. Non servono account né conoscenze tecniche; i tuoi dati restano sul tuo computer."
     },
     {
      "q": "Mi dite che prezzo applicare?",
@@ -3342,8 +3342,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Windows-Installation (Setup.exe) oder ZIP für Mac und andere Systeme, Deutsch und Italienisch. Rechenhilfsmittel, ersetzt keine Steuer- oder Unternehmensberatung.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come installazione per Windows (Setup.exe) o ZIP per Mac e altri sistemi, in italiano e tedesco. Strumento di calcolo, non sostituisce la consulenza fiscale o aziendale."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
@@ -3424,7 +3424,7 @@
    "de": [
     {
      "q": "Wie bekomme ich RispostePronte?",
-     "a": "Nach der Bestellung erhalten Sie die Setup-Datei für Windows oder ein ZIP-Archiv. Das Vorlagen-Programm öffnet sich im Browser und funktioniert ohne Internet; Ihre Angaben bleiben auf Ihrem Gerät."
+     "a": "Sie erhalten eine Setup-Datei: doppelklicken, Sprache wählen, fertig – RispostePronte liegt danach als Symbol auf Ihrem Desktop und öffnet sich von selbst. Eine bebilderte Kurzanleitung auf einer Seite liegt bei, für Mac gibt es eine ZIP-Datei. Sie brauchen kein Konto und keine Vorkenntnisse; Ihre Daten bleiben auf Ihrem Computer."
     },
     {
      "q": "Kann ich die Texte ändern?",
@@ -3438,7 +3438,7 @@
    "it": [
     {
      "q": "Come ricevo RispostePronte?",
-     "a": "Dopo l’ordine ricevi il file di installazione per Windows o un archivio ZIP. Il programma dei modelli si apre nel browser e funziona senza internet; i tuoi dati restano sul tuo dispositivo."
+     "a": "Ricevi un file di setup: doppio clic, scegli la lingua, fatto – RispostePronte compare come icona sul desktop e si apre da solo. È inclusa una guida illustrata di una pagina; per Mac c’è un file ZIP. Non servono account né conoscenze tecniche; i tuoi dati restano sul tuo computer."
     },
     {
      "q": "Posso modificare i testi?",
@@ -3556,8 +3556,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Windows-Installation (Setup.exe) oder ZIP für Mac und andere Systeme. Die Vorlagen sind Muster und werden vor dem Versand an den Einzelfall angepasst.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come installazione per Windows (Setup.exe) o ZIP per Mac e altri sistemi. I modelli sono esempi da adattare al caso concreto prima dell’invio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
@@ -3638,7 +3638,7 @@
    "de": [
     {
      "q": "Wie bekomme ich PuliziaCheck?",
-     "a": "Als Web-App für Ihren eigenen Webspace (PHP 8.1 und SQLite, z. B. bei All-Inkl). Wir richten sie für Sie ein – oder Sie laden sie selbst hoch und folgen dem Installations-Assistenten. Fotos und Meldungen bleiben auf Ihrem Webspace."
+     "a": "Sie müssen nichts installieren. Wir richten PuliziaCheck für Sie ein und schicken Ihnen einen persönlichen Link per E-Mail. Sie öffnen ihn, legen Ihr Passwort fest – und sind sofort drin. PuliziaCheck läuft im Browser auf Handy, Tablet und Computer, ohne App. Auf Wunsch installieren wir es auch auf Ihrem eigenen Webspace."
     },
     {
      "q": "Muss mein Reinigungsteam etwas installieren?",
@@ -3652,7 +3652,7 @@
    "it": [
     {
      "q": "Come ricevo PuliziaCheck?",
-     "a": "Come web app per il tuo spazio web (PHP 8.1 e SQLite, es. All-Inkl). La installiamo noi – oppure la carichi tu e segui la procedura guidata. Foto e segnalazioni restano sul tuo spazio web."
+     "a": "Non devi installare nulla. Prepariamo PuliziaCheck per te e ti inviamo un link personale via e-mail. Lo apri, scegli la password – e sei subito dentro. PuliziaCheck funziona nel browser su telefono, tablet e computer, senza app. Se preferisci, lo installiamo anche sul tuo spazio web."
     },
     {
      "q": "La squadra deve installare qualcosa?",
@@ -3670,13 +3670,13 @@
   },
   "ablauf": {
    "de": [
-    "Sie fragen an; wir installieren PuliziaCheck auf Ihrem Webspace und legen Ihre Unterkünfte an.",
-    "Sie passen die Checklisten an und senden Ihrem Team den Link.",
+    "Sie fragen an; wir richten PuliziaCheck mit Ihren Unterkünften ein und schicken Ihnen Ihren persönlichen Link.",
+    "Sie passen die Checklisten an und senden Ihrem Team den Team-Link.",
     "Nach jeder Reinigung erhalten Sie Häkchen, Fotos und eventuelle Meldungen."
    ],
    "it": [
-    "Fai richiesta; installiamo PuliziaCheck sul tuo spazio web e creiamo i tuoi alloggi.",
-    "Adatti le checklist e invii il link al tuo team.",
+    "Fai richiesta; prepariamo PuliziaCheck con i tuoi alloggi e ti inviamo il tuo link personale.",
+    "Adatti le checklist e invii al team il link per il team.",
     "Dopo ogni pulizia ricevi spunte, foto ed eventuali segnalazioni."
    ]
   },
@@ -3762,8 +3762,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Web-App für Ihren Webspace (PHP, ohne Fremddienste) mit Installations-Assistent – wir richten sie ein oder Sie selbst in rund 15 Minuten.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Web app per il tuo spazio web (PHP, senza servizi esterni) con procedura di installazione guidata – la installiamo noi o tu stesso in circa 15 minuti."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Läuft im Browser auf Handy, Tablet und Computer.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Nessuna installazione: prepariamo tutto noi, ricevi un link personale e scegli solo la password. Funziona nel browser su telefono, tablet e computer."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
@@ -3844,7 +3844,7 @@
    "de": [
     {
      "q": "Wie bekomme ich FestaInSala?",
-     "a": "Sie fragen an, wir erstellen Ihre Mappe und liefern PDF, Online-Seite und QR-Code. Dazu erhalten Sie das Programm (Setup für Windows oder ZIP), mit dem Sie Preise später selbst ändern – es läuft im Browser ohne Internet und ohne Konto."
+     "a": "Sie erhalten eine Setup-Datei: doppelklicken, Sprache wählen, fertig – FestaInSala liegt danach als Symbol auf Ihrem Desktop und öffnet sich von selbst. Eine bebilderte Kurzanleitung auf einer Seite liegt bei, für Mac gibt es eine ZIP-Datei. Sie brauchen kein Konto und keine Vorkenntnisse; Ihre Daten bleiben auf Ihrem Computer."
     },
     {
      "q": "Wo liegt die Online-Seite?",
@@ -3862,7 +3862,7 @@
    "it": [
     {
      "q": "Come ricevo FestaInSala?",
-     "a": "Fai richiesta, creiamo la tua proposta e consegniamo PDF, pagina online e codice QR. Ricevi anche il programma (setup per Windows o ZIP) per cambiare i prezzi da solo – funziona nel browser senza internet e senza account."
+     "a": "Ricevi un file di setup: doppio clic, scegli la lingua, fatto – FestaInSala compare come icona sul desktop e si apre da solo. È inclusa una guida illustrata di una pagina; per Mac c’è un file ZIP. Non servono account né conoscenze tecniche; i tuoi dati restano sul tuo computer."
     },
     {
      "q": "Dove si trova la pagina online?",
@@ -3984,8 +3984,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung: Mappe als PDF (Italienisch und Deutsch), Online-Seite zum Hochladen, QR-Code und das Programm als Windows-Installation (Setup.exe) oder ZIP. Allergene und Zutaten nur wie von Ihnen angegeben.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna: proposta in PDF (italiano e tedesco), pagina online da caricare, codice QR e il programma come installazione per Windows (Setup.exe) o ZIP. Allergeni e ingredienti solo come indicati da te."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung: Mappe als PDF (IT/DE), Online-Seite und QR-Code – dazu das Programm als Setup-Datei: Doppelklick, fertig.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna: proposta in PDF (IT/DE), pagina online e codice QR – più il programma come file di setup: doppio clic, fatto."
   },
   "erstellt": "2026-11-13T20:45:48.350Z"
  },
@@ -4073,7 +4073,7 @@
    "de": [
     {
      "q": "Wie bekomme ich VetrinaNotte?",
-     "a": "Sie fragen an, wir richten die Handyseite auf Ihrem Webspace ein (PHP 8.1 und SQLite, z. B. bei All-Inkl) und liefern das Schild als PDF in A4 und A5. Die Seite läuft ohne Cookies und ohne fremde Dienste."
+     "a": "Sie müssen nichts installieren. Wir richten die Handyseite für Sie ein, liefern das Schild als PDF in A4 und A5 und schicken Ihnen einen persönlichen Link: öffnen, Passwort festlegen, fertig – danach ändern Sie Angebote und Zeiten selbst im Browser. Die Seite läuft ohne Cookies und ohne fremde Dienste."
     },
     {
      "q": "Muss ich die monatliche Gebühr zahlen?",
@@ -4087,7 +4087,7 @@
    "it": [
     {
      "q": "Come ricevo VetrinaNotte?",
-     "a": "Fai richiesta, installiamo la pagina per telefono sul tuo spazio web (PHP 8.1 e SQLite, es. All-Inkl) e consegniamo il cartello in PDF A4 e A5. La pagina funziona senza cookie e senza servizi esterni."
+     "a": "Non devi installare nulla. Prepariamo la pagina per telefono, consegniamo il cartello in PDF A4 e A5 e ti inviamo un link personale: lo apri, scegli la password, fatto – poi modifichi offerte e orari da solo nel browser. La pagina funziona senza cookie e senza servizi esterni."
     },
     {
      "q": "Devo pagare il canone mensile?",
@@ -4205,8 +4205,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung: Handyseite als Web-App für Ihren Webspace (mit Installations-Assistent) und druckfertiges Schild A4/A5 mit QR-Code.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna: pagina per telefono come web app per il tuo spazio web (con procedura di installazione) e cartello A4/A5 con codice QR pronto da stampare."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Keine Installation: Wir richten Ihre Handyseite ein und liefern das Schild als PDF (A4/A5). Für Änderungen erhalten Sie einen persönlichen Link und legen nur Ihr Passwort fest.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Nessuna installazione: prepariamo la tua pagina per telefono e consegniamo il cartello in PDF (A4/A5). Per le modifiche ricevi un link personale e scegli solo la password."
   },
   "erstellt": "2026-11-13T20:45:48.350Z"
  }
