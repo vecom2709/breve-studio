@@ -96,7 +96,7 @@ const heroImg = `/images/home/hero-${lang}`;
             </li>
           ))}
         </ul>
-        <p class="sp-note"><Icon name="info" size={24} stroke={1.7} /><span>{panel.note}</span></p>
+        {panel.note && <p class="sp-note"><Icon name="info" size={24} stroke={1.7} /><span>{panel.note}</span></p>}
       </aside>
     </div>
   </section>

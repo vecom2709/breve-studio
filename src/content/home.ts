@@ -32,7 +32,7 @@ export const statusPanel: L<{ title: string; total: string; available: string; s
     services: 'Dienstleistungen auf Anfrage',
     products: 'Produkte mit Warteliste',
     planned: 'Pakete in Planung',
-    note: 'Studio Breve befindet sich im Aufbau. Verkauft wird ab dem offiziellen Start; bis dahin können Sie sich unverbindlich vormerken oder anfragen – auch für Pakete, die schon fertig entwickelt sind.',
+    note: '',
   },
   it: {
     title: 'Stato attuale',
@@ -41,7 +41,7 @@ export const statusPanel: L<{ title: string; total: string; available: string; s
     services: 'Servizi su richiesta',
     products: 'Prodotti con lista d’attesa',
     planned: 'Pacchetti in programma',
-    note: 'Studio Breve è in fase di avvio. La vendita parte con l’avvio ufficiale; fino ad allora puoi prenotarti o chiedere informazioni senza impegno – anche per i pacchetti già pronti.',
+    note: '',
   },
 };
 

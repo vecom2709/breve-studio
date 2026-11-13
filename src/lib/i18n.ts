@@ -65,8 +65,8 @@ export const chooserCopy = {
   description: 'Studio Breve – klare digitale Pakete für Betriebe. Bitte Sprache wählen. / Pacchetti digitali chiari per la tua attività. Scegli la lingua.',
   leadDe: 'Bitte wählen Sie die Fassung für Ihre Region.',
   leadIt: 'Scegli la versione per il tuo Paese.',
-  draftDe: 'Entwurf, nicht veröffentlicht. Diese Seite setzt keine Tracking-Cookies und keine Tracker von Dritten.',
-  draftIt: 'Bozza, non pubblicata. Questo sito non usa cookie di tracciamento né tracker di terzi.',
+  draftDe: 'Diese Seite setzt keine Tracking-Cookies und keine Tracker von Dritten.',
+  draftIt: 'Questo sito non usa cookie di tracciamento né tracker di terzi.',
 } as const;
 
 export const ui = {
@@ -122,7 +122,7 @@ export const ui = {
     statsCatalog: 'Pakete im Katalog',
     statsLanguages: 'Sprachen',
     statsVisits: 'Besuche seit Start',
-    statsSince: 'Im Aufbau seit',
+    statsSince: 'Online seit',
     statsSinceValue: '2026',
     trustHome: [
       { title: 'DSGVO-konform', text: 'Ohne Tracking-Cookies' },
@@ -195,7 +195,7 @@ export const ui = {
       statServices: 'Dienstleistungen auf Anfrage',
       statWaitlist: 'Produkte mit Warteliste',
       statPlanned: 'Pakete in Planung',
-      standNote: 'Studio Breve befindet sich im Aufbau. Verkauft wird ab dem offiziellen Start; bis dahin können Sie sich unverbindlich vormerken oder anfragen – auch für Pakete, die schon fertig entwickelt sind.',
+      standNote: '',
       trust: [
         { title: 'Klar & transparent', text: 'Feste Preise, ehrlicher Stand' },
         { title: 'Kleine, wirksame Pakete', text: 'Schnell einsetzbar' },
@@ -327,7 +327,7 @@ export const ui = {
     statsCatalog: 'Pacchetti in catalogo',
     statsLanguages: 'Lingue',
     statsVisits: 'Visite dall’avvio',
-    statsSince: 'In avvio dal',
+    statsSince: 'Online dal',
     statsSinceValue: '2026',
     trustHome: [
       { title: 'Conforme al GDPR', text: 'Senza cookie di tracciamento' },
@@ -400,7 +400,7 @@ export const ui = {
       statServices: 'Servizi su richiesta',
       statWaitlist: 'Prodotti con lista d’attesa',
       statPlanned: 'Pacchetti in preparazione',
-      standNote: 'Studio Breve è in fase di avvio. La vendita parte con l’avvio ufficiale; fino ad allora puoi prenotarti o chiedere informazioni senza impegno – anche per i pacchetti già pronti.',
+      standNote: '',
       trust: [
         { title: 'Chiaro e trasparente', text: 'Prezzi fissi, stato dichiarato con onestà' },
         { title: 'Pacchetti piccoli e utili', text: 'Subito utilizzabili' },

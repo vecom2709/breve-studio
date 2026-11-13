@@ -13,8 +13,8 @@ const de = lang === 'de';
       <p class="eyebrow">{de ? 'Rechtliches' : 'Informazioni legali'}</p>
       <h1>{title}</h1>
       <p class="draftbox" role="note">{de
-        ? `Entwurf, Stand ${site.legalUpdated}. Die Website ist nicht veröffentlicht. Dieser Text wird vor dem Start vervollständigt und rechtlich geprüft; Platzhalter sind in eckigen Klammern markiert.`
-        : `Bozza aggiornata al ${site.legalUpdated}. Il sito non è pubblicato. Il testo sarà completato e verificato da un professionista prima del lancio; i dati mancanti sono indicati tra parentesi quadre.`}</p>
+        ? `Stand ${site.legalUpdated}. Noch fehlende Angaben sind in eckigen Klammern markiert und werden vor dem offiziellen Start ergänzt.`
+        : `Aggiornato al ${site.legalUpdated}. I dati ancora mancanti sono indicati tra parentesi quadre e saranno completati prima dell’avvio ufficiale.`}</p>
     </header>
     <div class="prose"><slot /></div>
   </article>
