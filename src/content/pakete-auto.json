@@ -3146,16 +3146,18 @@
   },
   "features": {
    "de": [
-    "Kostenblätter für Betrieb, Fahrzeuge und Personal.",
-    "Berechnung der produktiven Stunden nach Urlaub und Ausfall.",
-    "Schieberegler für Aufschlag und Auslastung.",
-    "Kurzanleitung DE/IT mit Beispielwerten."
+    "Kostenblätter für Betrieb, Fahrzeuge und Personal – inklusive Ihres Unternehmerlohns.",
+    "Produktive Stunden nach Urlaub, Feiertagen, Ausfall und nicht verrechenbarer Zeit.",
+    "Auswahlfelder für Auslastung und Aufschlag, dazu eine Vergleichstabelle.",
+    "Läuft in Excel und LibreOffice; Kurzanleitung DE/IT mit erfundenem Beispielbetrieb.",
+    "Windows-Installation mit Startmenü-Eintrag, alternativ als ZIP."
    ],
    "it": [
-    "Fogli costi per attività, mezzi e personale.",
-    "Calcolo delle ore produttive al netto di ferie e assenze.",
-    "Selettori per ricarico e grado di utilizzo.",
-    "Guida breve IT/DE con valori di esempio."
+    "Fogli costi per attività, veicoli e personale – incluso il compenso del titolare.",
+    "Ore produttive al netto di ferie, festività, assenze e tempo non fatturabile.",
+    "Menu a tendina per utilizzo e ricarico, con tabella di confronto.",
+    "Funziona con Excel e LibreOffice; guida rapida IT/DE con un’attività di esempio inventata.",
+    "Installazione per Windows con voce nel menu Start, oppure come ZIP."
    ]
   },
   "plannedOffer": {
@@ -3164,6 +3166,10 @@
   },
   "faq": {
    "de": [
+    {
+     "q": "Wie bekomme ich CostoOrario?",
+     "a": "Nach der Bestellung erhalten Sie die Setup-Datei für Windows oder ein ZIP-Archiv. Die Installation braucht keine Administratorrechte und legt die Tabelle unter Dokumente\\Studio Breve ab."
+    },
     {
      "q": "Sagen Sie mir, welchen Preis ich nehmen soll?",
      "a": "Nein. Die Tabelle zeigt Ihre Kosten; den Preis legen Sie selbst fest."
@@ -3174,6 +3180,10 @@
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo CostoOrario?",
+     "a": "Dopo l’ordine ricevi il file di installazione per Windows o un archivio ZIP. L’installazione non richiede diritti di amministratore e salva il foglio in Documenti\\Studio Breve."
+    },
     {
      "q": "Mi dite che prezzo applicare?",
      "a": "No. Il foglio mostra i tuoi costi; il prezzo lo decidi tu."
@@ -3287,11 +3297,11 @@
    }
   },
   "number": 31,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Windows-Installation (Setup.exe) oder ZIP für Mac und andere Systeme, Deutsch und Italienisch. Rechenhilfsmittel, ersetzt keine Steuer- oder Unternehmensberatung.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come installazione per Windows (Setup.exe) o ZIP per Mac e altri sistemi, in italiano e tedesco. Strumento di calcolo, non sostituisce la consulenza fiscale o aziendale."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
@@ -3350,16 +3360,18 @@
   },
   "features": {
    "de": [
-    "40 Vorlagen in DE und IT.",
-    "Zwei Tonlagen: förmlich und herzlich.",
-    "Markierte Platzhalter für Namen, Daten, Beträge.",
-    "Anleitung zum Einrichten als Textbausteine."
+    "46 Vorlagen für typische Kundenmails plus 5 für Bewerbungen und Lieferanten.",
+    "Jede Vorlage auf Deutsch und Italienisch, förmlich und herzlich.",
+    "Vorlagen-Programm ohne Internet: Suche, Themen, Kopierknopf, Ihre Unterschrift automatisch eingesetzt.",
+    "Platzhalter für Namen, Daten und Beträge farbig markiert.",
+    "Anleitung für Outlook, Gmail, Thunderbird, iPhone und Android; alle Texte zusätzlich als Word-Datei."
    ],
    "it": [
-    "40 modelli in IT e DE.",
-    "Due toni: formale e cordiale.",
-    "Segnaposto evidenziati per nomi, date, importi.",
-    "Guida per impostarli come testi rapidi."
+    "46 modelli per le email più frequenti ai clienti più 5 per candidature e fornitori.",
+    "Ogni modello in italiano e tedesco, formale e cordiale.",
+    "Programma dei modelli senza internet: ricerca, temi, tasto copia, la Sua firma inserita in automatico.",
+    "Segnaposti per nomi, date e importi evidenziati.",
+    "Guida per Outlook, Gmail, Thunderbird, iPhone e Android; tutti i testi anche in Word."
    ]
   },
   "plannedOffer": {
@@ -3368,6 +3380,10 @@
   },
   "faq": {
    "de": [
+    {
+     "q": "Wie bekomme ich RispostePronte?",
+     "a": "Nach der Bestellung erhalten Sie die Setup-Datei für Windows oder ein ZIP-Archiv. Das Vorlagen-Programm öffnet sich im Browser und funktioniert ohne Internet; Ihre Angaben bleiben auf Ihrem Gerät."
+    },
     {
      "q": "Kann ich die Texte ändern?",
      "a": "Ja, alle Vorlagen sind frei bearbeitbar für Ihren eigenen Betrieb."
@@ -3378,6 +3394,10 @@
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo RispostePronte?",
+     "a": "Dopo l’ordine ricevi il file di installazione per Windows o un archivio ZIP. Il programma dei modelli si apre nel browser e funziona senza internet; i tuoi dati restano sul tuo dispositivo."
+    },
     {
      "q": "Posso modificare i testi?",
      "a": "Sì, tutti i modelli sono liberamente modificabili per la tua attività."
@@ -3491,11 +3511,11 @@
    }
   },
   "number": 32,
-  "status": "soon",
-  "cta": "notify",
+  "status": "available",
+  "cta": "inquiry",
   "notes": {
-   "de": "Paket in Planung. Umfang und Preis können sich bis zum Start noch ändern.",
-   "it": "Pacchetto in fase di progettazione. Contenuti e prezzo possono ancora cambiare prima del lancio."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Windows-Installation (Setup.exe) oder ZIP für Mac und andere Systeme. Die Vorlagen sind Muster und werden vor dem Versand an den Einzelfall angepasst.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come installazione per Windows (Setup.exe) o ZIP per Mac e altri sistemi. I modelli sono esempi da adattare al caso concreto prima dell’invio."
   },
   "erstellt": "2026-11-13T20:45:48.349Z"
  },
