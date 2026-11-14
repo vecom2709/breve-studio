@@ -16,3 +16,6 @@ dist-pages/
 verwaltung-php/app/config.local.php
 verwaltung-php/data/
 dist-test/
+
+# Lauf-Schlüssel (nur auf dem Server, nie ins Repository)
+verwaltung-php/app/lauf-schluessel.php

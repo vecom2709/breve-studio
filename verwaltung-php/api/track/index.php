@@ -82,4 +82,5 @@ $neu = sb_aufruf_speichern([
     'browser' => $ua['browser'],
     'bildschirm' => mb_substr((string) ($body['screen'] ?? ''), 0, 20),
 ]);
+try { sb_wochenbericht_pruefen(); } catch (Throwable $e) { /* Bericht darf die Zählung nie stören */ }
 sb_json(['ok' => true, 'unique' => $neu, 'n' => sb_besuche_gesamt()]);

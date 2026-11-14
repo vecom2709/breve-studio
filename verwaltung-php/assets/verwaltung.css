@@ -86,3 +86,59 @@ select { font: inherit; padding: .55rem .7rem; border: 1px solid var(--line); bo
 .kontakt a { white-space: nowrap; }
 
 td.ip{font-family:ui-monospace,Consolas,monospace;white-space:nowrap}
+
+/* Kopfleiste: am Handy Menü statt drei Zeilen Knöpfe */
+.marke-text { font-weight: 500; }
+.menue { position: relative; }
+.menue summary { list-style: none; cursor: pointer; font-weight: 600; color: var(--forest); border: 1px solid var(--line); border-radius: 999px; padding: .6rem 1rem; min-height: 44px; display: inline-flex; align-items: center; }
+.menue summary::-webkit-details-marker { display: none; }
+.menue summary::before { content: "☰"; margin-right: .45rem; }
+.menue-inhalt { position: absolute; right: 0; top: calc(100% + .4rem); z-index: 5; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: .6rem; display: grid; gap: .4rem; min-width: 13rem; box-shadow: 0 8px 24px rgba(15,59,51,.14); }
+.menue-inhalt form, .menue-inhalt button, .menue-inhalt .knopf { width: 100%; margin: 0; }
+@media (max-width: 47.99rem) {
+  .nur-breit { display: none; }
+  .leiste { display: grid; grid-template-columns: 1fr auto; align-items: center; }
+  .leiste h1 { font-size: 1.1rem; }
+  .leiste .marke-text { display: none; }
+  .leiste .reiter { grid-column: 1 / -1; grid-row: 2; flex-wrap: wrap; }
+  .reiter a { white-space: nowrap; padding: .45rem .6rem; font-size: .95rem; }
+}
+@media (min-width: 48rem) { .nur-schmal { display: none; } }
+
+/* Kennzahlen mit Trend */
+.kennzahl small { display: block; color: var(--ink-2); font-size: .8rem; }
+.kennzahl a { font-size: .9rem; font-weight: 600; }
+.kennzahl.achtung { border-color: #e0b44a; background: #fdf6e3; }
+.trend { display: block; margin-top: .3rem; font-size: .85rem; font-weight: 700; color: var(--ink-2); }
+.trend.auf { color: var(--ok-ink); }
+.trend.ab { color: var(--err-ink); }
+th.zahl, td.zahl { text-align: right; white-space: nowrap; }
+.gross { font: 650 2rem/1.1 Outfit, "Segoe UI", system-ui, sans-serif; margin: 0 0 .3rem; }
+
+/* Anfragen */
+.filter { display: flex; flex-wrap: wrap; gap: .35rem; margin: 0 0 .6rem; }
+.filter a { text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: .35rem .75rem; font-weight: 600; font-size: .9rem; min-height: 36px; display: inline-flex; align-items: center; gap: .35rem; }
+.filter a span { background: var(--bg); border-radius: 999px; padding: 0 .45rem; font-size: .8rem; }
+.filter a[aria-current] { background: var(--forest); color: #fff; border-color: var(--forest); }
+.filter a[aria-current] span { background: rgba(255,255,255,.2); }
+.antworten { margin: .2rem 0; }
+.anfrage-form { display: flex; flex-wrap: wrap; gap: .6rem; align-items: flex-end; background: var(--bg); border-radius: 10px; padding: .6rem .7rem; }
+.anfrage-form label { font-size: .85rem; }
+.anfrage-form .notiz { flex: 1 1 18rem; }
+textarea { font: inherit; width: 100%; padding: .55rem .7rem; border: 1px solid #aeb9b4; border-radius: 8px; background: #fff; resize: vertical; }
+input[type=text] { font: inherit; width: 100%; padding: .6rem .75rem; border: 1px solid #aeb9b4; border-radius: 8px; background: #fff; min-height: 44px; }
+.chip.aus { background: #eceeed; color: #4a5753; }
+.chip.fehl { background: var(--err-bg); color: var(--err-ink); }
+details.mehr { margin-top: .6rem; }
+details.mehr summary { cursor: pointer; font-weight: 600; color: var(--forest); }
+code { background: var(--bg); padding: 0 .3rem; border-radius: 4px; font-size: .9em; }
+
+/* Diagramm */
+.diagramm { height: 190px; min-width: 100%; width: auto; }
+
+/* Links & QR */
+.baukasten { display: grid; gap: .9rem; max-width: 34rem; margin-top: .9rem; }
+.baukasten select { max-width: 100%; width: 100%; }
+.ergebnis { margin-top: 1rem; display: grid; gap: .7rem; max-width: 34rem; }
+.qr { width: min(100%, 15rem); border: 1px solid var(--line); border-radius: 8px; padding: .4rem; background: #fff; }
+.qr svg { display: block; width: 100%; height: auto; }

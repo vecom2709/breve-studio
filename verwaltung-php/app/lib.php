@@ -87,13 +87,15 @@ function sb_db(): PDO
         return array_column($db->query('PRAGMA table_info(' . $t . ')')->fetchAll(), 'name');
     };
     $b = $spalten('besuche');
-    foreach (['stadt', 'region', 'landname', 'ip_gekuerzt', 'ip_voll'] as $sp) {
+    foreach (['stadt', 'region', 'landname', 'ip_gekuerzt', 'ip_voll', 'einwilligung'] as $sp) {
         if (!in_array($sp, $b, true)) $db->exec('ALTER TABLE besuche ADD COLUMN ' . $sp . ' TEXT');
     }
     $a = $spalten('anfragen');
-    foreach (['telefon', 'ort'] as $sp) {
+    foreach (['telefon', 'ort', 'status', 'notiz', 'geaendert'] as $sp) {
         if (!in_array($sp, $a, true)) $db->exec('ALTER TABLE anfragen ADD COLUMN ' . $sp . ' TEXT');
     }
+    $db->exec('CREATE TABLE IF NOT EXISTS laeufe (id INTEGER PRIMARY KEY AUTOINCREMENT, zeit TEXT NOT NULL, status TEXT NOT NULL,
+        anzahl INTEGER NOT NULL DEFAULT 0, pakete TEXT, meldung TEXT)');
     return $db;
 }
 
@@ -468,10 +470,11 @@ function sb_ip_besuch(array $b): string
 /** Einwilligung zur vollen IP für den laufenden Besuch übernehmen ('ja' speichert, 'nein' löscht sofort). */
 function sb_ip_einwilligung(string $sid, ?string $einwilligung, ?string $ipVoll): void
 {
-    if ($einwilligung === 'ja' && $ipVoll) {
-        sb_db()->prepare('UPDATE besuche SET ip_voll = ? WHERE sid = ? AND datum = ?')->execute([$ipVoll, $sid, sb_heute()]);
+    if ($einwilligung === 'ja') {
+        sb_db()->prepare("UPDATE besuche SET ip_voll = COALESCE(?, ip_voll), einwilligung = 'ja' WHERE sid = ? AND datum = ?")->execute([$ipVoll, $sid, sb_heute()]);
     } elseif ($einwilligung === 'nein') {
         sb_db()->prepare('UPDATE besuche SET ip_voll = NULL WHERE sid = ? AND ip_voll IS NOT NULL')->execute([$sid]);
+        sb_db()->prepare("UPDATE besuche SET einwilligung = 'nein' WHERE sid = ? AND datum = ?")->execute([$sid, sb_heute()]);
     }
 }
 
@@ -650,3 +653,4 @@ function sb_naechster_lauf(array $plan): ?int
     return null;
 }
 
+require __DIR__ . '/auswertung.php';
