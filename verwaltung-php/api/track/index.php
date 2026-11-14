@@ -65,7 +65,7 @@ $neu = sb_aufruf_speichern([
     'utm' => $utm,
     'sprache' => mb_substr((string) ($body['lang'] ?? ''), 0, 8),
     'land' => sb_land_aus_sprache((string) ($_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? '')),
-    'ip' => sb_ip_kuerzen((string) ($_SERVER['REMOTE_ADDR'] ?? '')),   // nur gekürzt, nur für die Ortsabfrage, wird nicht gespeichert
+    'ip' => sb_ip_kuerzen((string) ($_SERVER['REMOTE_ADDR'] ?? '')),   // nur gekürzt (letzter Block = 0); die volle IP wird nie gespeichert
     'geraet' => $ua['geraet'],
     'system' => $ua['system'],
     'browser' => $ua['browser'],

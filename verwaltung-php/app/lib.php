@@ -8,6 +8,7 @@ declare(strict_types=1);
 
 const SB_ZEITZONE = 'Europe/Rome';
 const SB_AUFBEWAHRUNG_TAGE = 365;      // Besuchsdetails; Tageszahlen bleiben als reine Summen
+const SB_IP_TAGE = 90;                 // gekürzte IP-Adresse beim Besuch; danach wird sie geleert
 const SB_MIN_PASSWORT = 10;
 const SB_MAX_VERSUCHE = 10;            // Anmeldeversuche je gekürzter Adresse …
 const SB_SPERRFENSTER = 900;           // … in 15 Minuten
@@ -86,7 +87,7 @@ function sb_db(): PDO
         return array_column($db->query('PRAGMA table_info(' . $t . ')')->fetchAll(), 'name');
     };
     $b = $spalten('besuche');
-    foreach (['stadt', 'region', 'landname'] as $sp) {
+    foreach (['stadt', 'region', 'landname', 'ip_gekuerzt'] as $sp) {
         if (!in_array($sp, $b, true)) $db->exec('ALTER TABLE besuche ADD COLUMN ' . $sp . ' TEXT');
     }
     $a = $spalten('anfragen');
@@ -369,7 +370,8 @@ const SB_ORTSNAMEN = [
 
 /**
  * Ungefährer Ort zu einer IP-Adresse aus der lokalen Datenbank DB-IP City Lite (CC BY 4.0, https://db-ip.com).
- * Die Adresse wird VOR der Abfrage gekürzt (IPv4: letzter Block = 0, IPv6: nur die ersten 48 Bit) und nie gespeichert.
+ * Die Adresse wird VOR der Abfrage gekürzt (IPv4: letzter Block = 0, IPv6: nur die ersten 48 Bit); nur diese gekürzte Form
+ * wird beim Besuch abgelegt (SB_IP_TAGE Tage), die volle Adresse nie.
  * Rückgabe: ['stadt' => …, 'region' => …, 'land' => 'IT', 'landname' => 'Italien'] oder null.
  */
 function sb_ip_kuerzen(string $ip): ?string
@@ -446,6 +448,15 @@ function sb_alte_besuche_loeschen(): void
 {
     $grenze = sb_heute(time() - SB_AUFBEWAHRUNG_TAGE * 86400);
     sb_db()->prepare('DELETE FROM besuche WHERE datum < ?')->execute([$grenze]);
+    sb_db()->prepare('UPDATE besuche SET ip_gekuerzt = NULL WHERE datum < ? AND ip_gekuerzt IS NOT NULL')
+        ->execute([sb_heute(time() - SB_IP_TAGE * 86400)]);
+}
+
+/** Gekürzte IP für die Anzeige: 93.42.17.x bzw. 2a01:4f8:1c0c::/48 */
+function sb_ip_anzeige(?string $ip): string
+{
+    if (!$ip) return '—';
+    return str_contains($ip, ':') ? rtrim($ip, ':') . '::/48' : preg_replace('/\.0$/', '.x', $ip);
 }
 
 /** Speichert einen Seitenaufruf. Liefert true, wenn der Besuch an diesem Tag neu war. */
@@ -477,13 +488,13 @@ function sb_aufruf_speichern(array $d): bool
             return false;
         }
         $geo = sb_geo($d['ip'] ?? null);
-        $db->prepare('INSERT INTO besuche (sid, datum, beginn, seiten, referrer, quelle, utm, sprache, land, geraet, system, browser, bildschirm, stadt, region, landname)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')->execute([
+        $db->prepare('INSERT INTO besuche (sid, datum, beginn, seiten, referrer, quelle, utm, sprache, land, geraet, system, browser, bildschirm, stadt, region, landname, ip_gekuerzt)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')->execute([
             $d['sid'], $datum, $jetzt,
             json_encode([['path' => $d['path'], 'enteredAt' => $jetzt]], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
             $d['referrer'], sb_quelle($d['referrer'], $d['utm']), $d['utm'] ? json_encode($d['utm'], JSON_UNESCAPED_UNICODE) : null,
             $d['sprache'], ($geo['land'] ?? null) ?: $d['land'], $d['geraet'], $d['system'], $d['browser'], $d['bildschirm'],
-            $geo['stadt'] ?? null, $geo['region'] ?? null, $geo['landname'] ?? null,
+            $geo['stadt'] ?? null, $geo['region'] ?? null, $geo['landname'] ?? null, $d['ip'] ?? null,
         ]);
         $db->prepare('INSERT INTO tage (datum, n) VALUES (?, 1) ON CONFLICT(datum) DO UPDATE SET n = n + 1')->execute([$datum]);
         $db->exec('COMMIT');

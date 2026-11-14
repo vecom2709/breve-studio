@@ -84,3 +84,5 @@ fieldset.tage { border: 1px solid var(--line); border-radius: 10px; display: fle
 fieldset.tage legend { font-weight: 600; font-size: .95rem; padding: 0 .3rem; }
 select { font: inherit; padding: .55rem .7rem; border: 1px solid var(--line); border-radius: 8px; background: #fff; max-width: 12rem; }
 .kontakt a { white-space: nowrap; }
+
+td.ip{font-family:ui-monospace,Consolas,monospace;white-space:nowrap}

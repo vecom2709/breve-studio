@@ -210,9 +210,9 @@ if ($aktion === 'export') {
     $zeilen = [];
     foreach (besuche_laden($von, $bis) as $r) {
         $seiten = implode(' > ', array_map(static fn ($p) => ($p['path'] ?? '') . (isset($p['ms']) ? '(' . $p['ms'] . 'ms)' : ''), $r['seiten']));
-        $zeilen[] = [$r['sid'], $r['datum'], $r['beginn'], $r['sprache'], $r['land'] ?? '', $r['region'] ?? '', $r['stadt'] ?? '', $r['geraet'], $r['system'], $r['browser'], $r['bildschirm'], $r['quelle'], $r['referrer'], $seiten];
+        $zeilen[] = [$r['sid'], $r['datum'], $r['beginn'], $r['sprache'], $r['land'] ?? '', $r['region'] ?? '', $r['stadt'] ?? '', sb_ip_anzeige($r['ip_gekuerzt'] ?? null), $r['geraet'], $r['system'], $r['browser'], $r['bildschirm'], $r['quelle'], $r['referrer'], $seiten];
     }
-    csv_senden('studio-breve-besuche.csv', ['id', 'date', 'startedAt', 'lang', 'country', 'region', 'city', 'device', 'os', 'browser', 'screen', 'source', 'referrer', 'pages'], $zeilen);
+    csv_senden('studio-breve-besuche.csv', ['id', 'date', 'startedAt', 'lang', 'country', 'region', 'city', 'ip_shortened', 'device', 'os', 'browser', 'screen', 'source', 'referrer', 'pages'], $zeilen);
 }
 if ($aktion === 'export_anfragen') {
     $zeilen = [];
@@ -464,7 +464,7 @@ kopf('Verwaltung', 'breit');
   <div class="zwei">
     <section class="kasten"><h2>Häufigste Seiten</h2><?= tabelle('Pfad', 'Aufrufe', $topSeiten, true) ?></section>
     <section class="kasten"><h2>Quellen</h2><?= tabelle('Quelle', 'Besuche', $quellen) ?></section>
-    <section class="kasten"><h2>Städte</h2><p class="leise">Ungefährer Ort aus der gekürzten IP-Adresse (die IP wird nicht gespeichert). <a href="https://db-ip.com" target="_blank" rel="noopener">IP-Geolokalisierung von DB-IP</a></p><?= tabelle('Stadt (Region)', 'Besuche', $staedte, true) ?></section>
+    <section class="kasten"><h2>Städte</h2><p class="leise">Ungefährer Ort aus der gekürzten IP-Adresse (letzter Block entfernt – die volle IP wird nie gespeichert). <a href="https://db-ip.com" target="_blank" rel="noopener">IP-Geolokalisierung von DB-IP</a></p><?= tabelle('Stadt (Region)', 'Besuche', $staedte, true) ?></section>
     <section class="kasten"><h2>Regionen</h2><?= tabelle('Region', 'Besuche', $regionen, true) ?></section>
     <section class="kasten"><h2>Länder</h2><?= tabelle('Land', 'Besuche', $laender) ?></section>
     <section class="kasten"><h2>Geräte und Browser</h2><?= tabelle('Merkmal', 'Anzahl', $merkmale) ?></section>
@@ -472,16 +472,18 @@ kopf('Verwaltung', 'breit');
 
   <section class="kasten">
     <h2>Letzte Besuche</h2>
+    <p class="leise">Ort ungefähr (bei Handys oft der Sitz des Mobilfunkanbieters). IP ohne letzten Block – mehr ist ohne Einwilligung nicht erlaubt; sie wird nach <?= SB_IP_TAGE ?> Tagen geleert.</p>
     <?php if (!$besuche): ?>
       <p class="leise">Noch keine aufgezeichneten Besuche.</p>
     <?php else: ?>
       <table>
-        <thead><tr><th>Zeit</th><th>Ort</th><th>Sprache</th><th>Gerät</th><th>Quelle</th><th>Seiten</th></tr></thead>
+        <thead><tr><th>Zeit</th><th>Ort</th><th>IP (gekürzt)</th><th>Sprache</th><th>Gerät</th><th>Quelle</th><th>Seiten</th></tr></thead>
         <tbody>
         <?php foreach (array_slice($besuche, 0, 40) as $b): ?>
           <tr>
             <td><?= sb_e(date('d.m.Y H:i', strtotime($b['beginn']))) ?></td>
-            <td><?= sb_e(implode(', ', array_filter([$b['region'] ?? '', ($b['landname'] ?? '') ?: ($b['land'] ?? '')]))) ?: '—' ?></td>
+            <td><?= sb_e(implode(', ', array_filter([$b['stadt'] ?? '', $b['region'] ?? '', ($b['landname'] ?? '') ?: ($b['land'] ?? '')]))) ?: '—' ?></td>
+            <td class="ip"><?= sb_e(sb_ip_anzeige($b['ip_gekuerzt'] ?? null)) ?></td>
             <td><?= sb_e($b['sprache']) ?></td>
             <td><?= sb_e($b['geraet'] . ' · ' . $b['system'] . ' · ' . $b['browser']) ?></td>
             <td><?= sb_e($b['quelle']) ?></td>
@@ -500,7 +502,7 @@ kopf('Verwaltung', 'breit');
       <label class="haken"><input type="checkbox" name="eigene_ausnehmen" value="ja"<?= $eigeneAusnehmen ? ' checked' : '' ?>> Eigene Besuche nicht mitzählen, solange ich hier angemeldet bin</label>
       <p><button type="submit">Speichern</button></p>
     </form>
-    <p class="leise">Besuchsdetails werden nach <?= SB_AUFBEWAHRUNG_TAGE ?> Tagen automatisch gelöscht; die Tageszahlen bleiben als reine Summen.</p>
+    <p class="leise">Besuchsdetails werden nach <?= SB_AUFBEWAHRUNG_TAGE ?> Tagen automatisch gelöscht, die gekürzte IP schon nach <?= SB_IP_TAGE ?> Tagen; die Tageszahlen bleiben als reine Summen.</p>
   </section>
 </main>
 <?php fuss();
