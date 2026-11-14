@@ -33,6 +33,17 @@ const id = (n: string) => `${uid}-${n}`;
   </div>
   <div class="row two">
     <div class="field">
+      <label for={id('phone')}>{f.phone}</label>
+      <input id={id('phone')} name="phone" type="tel" autocomplete="tel" maxlength="40" inputmode="tel" aria-describedby={id('phone-err')} />
+      <p class="err" id={id('phone-err')} hidden></p>
+    </div>
+    <div class="field">
+      <label for={id('city')}>{f.city}</label>
+      <input id={id('city')} name="city" type="text" autocomplete="address-level2" maxlength="80" />
+    </div>
+  </div>
+  <div class="row two">
+    <div class="field">
       <label for={id('language')}>{f.language}</label>
       <select id={id('language')} name="language">
         <option value="de" selected={lang === 'de'}>Deutsch</option>

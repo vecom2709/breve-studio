@@ -116,6 +116,26 @@ if ($methode === 'POST') {
     } elseif ($aktion === 'einstellungen') {
         sb_einstellung_setzen('eigene_ausnehmen', ($_POST['eigene_ausnehmen'] ?? '') === 'ja' ? '1' : '0');
         weiter('./?ok=einstellung#einstellungen');
+    } elseif ($aktion === 'automatik') {
+        $tage = array_values(array_intersect(array_map('intval', (array) ($_POST['tage'] ?? [])), [1, 2, 3, 4, 5, 6, 7]));
+        $uhr = (string) ($_POST['uhrzeit'] ?? '21:40');
+        sb_einstellung_setzen('auto_aktiv', ($_POST['aktiv'] ?? '') === 'ja' ? '1' : '0');
+        sb_einstellung_setzen('auto_anzahl', (string) max(1, min(10, (int) ($_POST['anzahl'] ?? 3))));
+        sb_einstellung_setzen('auto_tage', implode(',', $tage));
+        $uhr = preg_match('/^([01]\d|2[0-3]):[0-5]\d$/', $uhr) ? $uhr : '21:40';
+        $vorher = sb_plan();
+        if ($uhr !== $vorher['uhrzeit']) {
+            // Die geplante Aufgabe übernimmt die neue Uhrzeit erst bei ihrem nächsten Start (zur bisherigen Uhrzeit).
+            $wechsel = sb_naechster_lauf(['aktiv' => true, 'tage' => [1, 2, 3, 4, 5, 6, 7], 'uhrzeit' => sb_einstellung('auto_uhrzeit_laeuft', $vorher['uhrzeit'])]);
+            sb_einstellung_setzen('auto_uhrzeit_laeuft', sb_einstellung('auto_uhrzeit_laeuft', $vorher['uhrzeit']));
+            sb_einstellung_setzen('auto_wechsel', (string) ($wechsel ?? 0));
+        }
+        sb_einstellung_setzen('auto_uhrzeit', $uhr);
+        sb_einstellung_setzen('auto_geaendert', date('c'));
+        weiter('./?seite=automatik&ok=einstellung');
+    } elseif ($aktion === 'katalog_neu') {
+        sb_katalog(true);
+        weiter('./?seite=produkte');
     } elseif ($aktion === 'anfrage_loeschen') {
         sb_db()->prepare('DELETE FROM anfragen WHERE id = ?')->execute([(string) ($_POST['id'] ?? '')]);
         weiter('./?ok=geloescht#anfragen');
@@ -190,16 +210,16 @@ if ($aktion === 'export') {
     $zeilen = [];
     foreach (besuche_laden($von, $bis) as $r) {
         $seiten = implode(' > ', array_map(static fn ($p) => ($p['path'] ?? '') . (isset($p['ms']) ? '(' . $p['ms'] . 'ms)' : ''), $r['seiten']));
-        $zeilen[] = [$r['sid'], $r['datum'], $r['beginn'], $r['sprache'], $r['land'] ?? '', $r['geraet'], $r['system'], $r['browser'], $r['bildschirm'], $r['quelle'], $r['referrer'], $seiten];
+        $zeilen[] = [$r['sid'], $r['datum'], $r['beginn'], $r['sprache'], $r['land'] ?? '', $r['region'] ?? '', $r['stadt'] ?? '', $r['geraet'], $r['system'], $r['browser'], $r['bildschirm'], $r['quelle'], $r['referrer'], $seiten];
     }
-    csv_senden('studio-breve-besuche.csv', ['id', 'date', 'startedAt', 'lang', 'country', 'device', 'os', 'browser', 'screen', 'source', 'referrer', 'pages'], $zeilen);
+    csv_senden('studio-breve-besuche.csv', ['id', 'date', 'startedAt', 'lang', 'country', 'region', 'city', 'device', 'os', 'browser', 'screen', 'source', 'referrer', 'pages'], $zeilen);
 }
 if ($aktion === 'export_anfragen') {
     $zeilen = [];
     foreach (sb_db()->query('SELECT * FROM anfragen ORDER BY erstellt DESC')->fetchAll() as $a) {
-        $zeilen[] = [$a['id'], $a['erstellt'], $a['seitensprache'], $a['wunschsprache'], $a['name'], $a['email'], $a['paket'] ?? '', $a['anliegen'], $a['nachricht'], $a['werbung'] ? 'ja' : 'nein', $a['einwilligung'], $a['quelle']];
+        $zeilen[] = [$a['id'], $a['erstellt'], $a['seitensprache'], $a['wunschsprache'], $a['name'], $a['email'], $a['telefon'] ?? '', $a['ort'] ?? '', $a['paket'] ?? '', $a['anliegen'], $a['nachricht'], $a['werbung'] ? 'ja' : 'nein', $a['einwilligung'], $a['quelle']];
     }
-    csv_senden('studio-breve-anfragen.csv', ['id', 'erstellt', 'seitensprache', 'wunschsprache', 'name', 'email', 'paket', 'anliegen', 'nachricht', 'werbung', 'einwilligung', 'quelle'], $zeilen);
+    csv_senden('studio-breve-anfragen.csv', ['id', 'erstellt', 'seitensprache', 'wunschsprache', 'name', 'email', 'telefon', 'ort', 'paket', 'anliegen', 'nachricht', 'werbung', 'einwilligung', 'quelle'], $zeilen);
 }
 
 /* ---------- Passwort ändern ---------- */
@@ -213,6 +233,101 @@ if (($_GET['seite'] ?? '') === 'passwort') {
         . '<label>Neues Passwort wiederholen <input type="password" name="wiederholung" autocomplete="new-password" minlength="' . SB_MIN_PASSWORT . '" required></label>'
         . '<button type="submit">Passwort ändern</button></form>',
         '<p class="zurueck"><a href="./">← Zurück zur Verwaltung</a></p>');
+}
+
+/* ---------- Reiter ---------- */
+function reiter(string $aktiv): string
+{
+    $h = '<nav class="reiter" aria-label="Bereiche">';
+    foreach (['' => 'Übersicht', 'produkte' => 'Produkte', 'automatik' => 'Automatik'] as $k => $t) {
+        $h .= '<a href="./' . ($k ? '?seite=' . $k : '') . '"' . ($k === $aktiv ? ' aria-current="page"' : '') . '>' . $t . '</a>';
+    }
+    return $h . '</nav>';
+}
+function leiste(string $aktiv): void
+{
+    global $WEBSITE;
+    echo '<header class="leiste"><h1>Verwaltung — Studio Breve</h1>' . reiter($aktiv) . '<nav class="werkzeuge"><a class="knopf hell" href="' . sb_e($WEBSITE) . '/de/">Website</a>'
+        . '<a class="knopf hell" href="./?seite=passwort">Passwort ändern</a><form method="post" action="./">' . csrf_feld()
+        . '<input type="hidden" name="aktion" value="abmelden"><button class="hell" type="submit">Abmelden</button></form></nav></header>';
+}
+function preis_text(array $preise): string
+{
+    if (!$preise) return '—';
+    return implode(' · ', array_map(static function ($x) {
+        $b = (float) $x['betrag'];
+        $t = $b == 0 ? 'kostenlos' : number_format($b, $b == floor($b) ? 0 : 2, ',', '.') . ' €' . ($x['intervall'] === 'month' ? '/Monat' : (str_contains((string) $x['einheit'], 'einmalig') ? '' : ' einmalig'));
+        return trim(($x['bezeichnung'] ? $x['bezeichnung'] . ': ' : '') . $t . ($x['einheit'] ? ' ' . $x['einheit'] : '') . ($x['mwst'] === 'excl' ? ' zzgl. MwSt.' : ''));
+    }, $preise));
+}
+const SB_STATUS = ['available' => ['fertig entwickelt', 'ok'], 'waitlist' => ['in Planung (Warteliste)', 'warn'], 'inquiry' => ['in Planung (Anfrage)', 'warn'], 'soon' => ['bald', 'warn']];
+const SB_ABLAGE = 'C:\\Users\\biker\\Studio-Breve-Vorschau\\Produkte\\';
+
+if (($_GET['seite'] ?? '') === 'produkte') {
+    $k = sb_katalog();
+    $alle = $k['pakete'] ?? [];
+    $filter = (string) ($_GET['status'] ?? '');
+    $liste = array_values(array_filter($alle, static fn ($x) => $filter === '' || ($filter === 'fertig' ? $x['status'] === 'available' : $x['status'] !== 'available')));
+    usort($liste, static fn ($a, $b) => [$b['status'] === 'available', $b['fertigAm'] ?? '', $b['nr']] <=> [$a['status'] === 'available', $a['fertigAm'] ?? '', $a['nr']]);
+    $fertig = count(array_filter($alle, static fn ($x) => $x['status'] === 'available'));
+    $mitSetup = count(array_filter($alle, static fn ($x) => $x['status'] === 'available' && $x['setup'] !== ''));
+    $proTag = [];
+    foreach ($alle as $x) if (!empty($x['fertigAm'])) $proTag[$x['fertigAm']][] = $x['name'];
+    krsort($proTag);
+    kopf('Produkte', 'breit');
+    leiste('produkte');
+    echo '<main class="inhalt">' . ($k['fehler'] ? '<p class="fehler">' . sb_e($k['fehler']) . '</p>' : '')
+        . '<section class="kennzahlen"><div class="kennzahl"><b>' . count($alle) . '</b><span>Pakete im Katalog</span></div><div class="kennzahl"><b>' . $fertig . '</b><span>fertig entwickelt</span></div>'
+        . '<div class="kennzahl"><b>' . $mitSetup . '</b><span>davon mit Setup</span></div><div class="kennzahl"><b>' . (count($alle) - $fertig) . '</b><span>in Planung</span></div></section>';
+    if ($proTag) {
+        echo '<section class="kasten"><h2>Zuletzt fertig gebaut</h2><table><thead><tr><th>Datum</th><th>Pakete</th></tr></thead><tbody>';
+        foreach (array_slice($proTag, 0, 10, true) as $d => $namen) echo '<tr><td>' . sb_e(date('d.m.Y', strtotime($d))) . '</td><td>' . count($namen) . ' – ' . sb_e(implode(', ', $namen)) . '</td></tr>';
+        echo '</tbody></table></section>';
+    }
+    echo '<section class="kasten"><div class="zeile"><h2>Alle Pakete</h2><div class="werkzeuge">';
+    foreach (['' => 'Alle', 'fertig' => 'Fertig', 'planung' => 'In Planung'] as $f => $t) echo '<a class="knopf' . ($filter === $f ? '' : ' hell') . '" href="./?seite=produkte' . ($f ? '&amp;status=' . $f : '') . '">' . $t . '</a>';
+    echo '<form method="post" action="./">' . csrf_feld() . '<input type="hidden" name="aktion" value="katalog_neu"><button class="hell" type="submit">Neu laden</button></form></div></div>'
+        . '<p class="leise">Stand der Website: ' . sb_e($k['stand'] ? date('d.m.Y H:i', strtotime($k['stand'])) : '—') . '. Ablage auf deinem PC: ' . sb_e(SB_ABLAGE) . '&lt;Name&gt;</p>'
+        . '<div class="scroll"><table class="produkte"><thead><tr><th>Nr.</th><th>Paket</th><th>Status</th><th>Preis</th><th>Lieferung / Setup</th><th>Ablage auf dem PC</th></tr></thead><tbody>';
+    foreach ($liste as $x) {
+        [$st, $klasse] = SB_STATUS[$x['status']] ?? [$x['status'], ''];
+        $istFertig = $x['status'] === 'available';
+        echo '<tr><td>' . (int) $x['nr'] . '</td><td><a href="' . sb_e($WEBSITE . $x['seite']) . '" target="_blank" rel="noopener"><b>' . sb_e($x['name']) . '</b></a><br><span class="leise">' . sb_e($x['kurz']) . '</span><br><span class="leise">'
+            . sb_e($x['kategorie'] . ' · ' . $x['art']) . '</span></td><td><span class="chip ' . $klasse . '">' . sb_e($st) . '</span>' . (!empty($x['fertigAm']) ? '<br><span class="leise">seit ' . sb_e(date('d.m.Y', strtotime($x['fertigAm']))) . '</span>' : '') . '</td>'
+            . '<td>' . sb_e(preis_text($x['preise'] ?? [])) . '</td><td>' . ($istFertig ? ($x['setup'] ? '<span class="chip ok">' . sb_e($x['setup']) . '</span>' : '<span class="chip warn">noch ohne Setup</span>') : '—') . '</td>'
+            . '<td class="pfad">' . ($istFertig ? sb_e(SB_ABLAGE . $x['name'] . '\\') : '—') . '</td></tr>';
+    }
+    echo '</tbody></table></div></section></main>';
+    fuss();
+    exit;
+}
+
+if (($_GET['seite'] ?? '') === 'automatik') {
+    $plan = sb_plan();
+    $naechster = sb_naechster_lauf($plan);
+    $k = sb_katalog();
+    $heuteNeu = count(array_filter($k['pakete'] ?? [], static fn ($x) => ($x['fertigAm'] ?? '') === date('Y-m-d')));
+    $uhrzeiten = [];
+    for ($h = 6; $h <= 23; $h++) foreach (['10', '40'] as $m) $uhrzeiten[] = sprintf('%02d:%s', $h, $m);
+    if (!in_array($plan['uhrzeit'], $uhrzeiten, true)) $uhrzeiten[] = $plan['uhrzeit'];
+    kopf('Automatik', 'breit');
+    leiste('automatik');
+    echo '<main class="inhalt">' . meldung(($_GET['ok'] ?? '') === 'einstellung' ? 'Gespeichert. Der nächste Lauf richtet sich danach.' : null, 'ok')
+        . '<section class="kennzahlen"><div class="kennzahl"><b>' . ($plan['aktiv'] ? 'an' : 'Pause') . '</b><span>Automatik</span></div><div class="kennzahl"><b>' . $plan['anzahl'] . '</b><span>Pakete pro Lauf</span></div>'
+        . '<div class="kennzahl"><b>' . ($naechster ? sb_e(date('d.m. H:i', $naechster)) : '—') . '</b><span>nächster Lauf</span></div><div class="kennzahl"><b>' . $heuteNeu . '</b><span>heute fertig gebaut</span></div></section>'
+        . '<section class="kasten"><h2>Wann und wie viele Pakete gebaut werden</h2><form method="post" action="./" class="stapel">' . csrf_feld() . '<input type="hidden" name="aktion" value="automatik">'
+        . '<label class="haken"><input type="checkbox" name="aktiv" value="ja"' . ($plan['aktiv'] ? ' checked' : '') . '> Automatik ist an (ohne Haken: Pause, es wird nichts gebaut)</label>'
+        . '<label>Pakete pro Lauf <select name="anzahl">';
+    for ($i = 1; $i <= 10; $i++) echo '<option' . ($i === $plan['anzahl'] ? ' selected' : '') . '>' . $i . '</option>';
+    echo '</select></label><fieldset class="tage"><legend>An diesen Tagen</legend>';
+    foreach (SB_TAGE as $n => $t) echo '<label class="haken"><input type="checkbox" name="tage[]" value="' . $n . '"' . (in_array($n, $plan['tage'], true) ? ' checked' : '') . '> ' . $t . '</label>';
+    echo '</fieldset><label>Uhrzeit (Italien) <select name="uhrzeit">';
+    foreach ($uhrzeiten as $u) echo '<option' . ($u === $plan['uhrzeit'] ? ' selected' : '') . '>' . $u . '</option>';
+    echo '</select></label><p><button type="submit">Speichern</button></p></form>'
+        . '<p class="leise">Jeder Lauf entwirft die eingestellte Zahl neuer Pakete, entwickelt sie komplett mit Setup-Datei, legt sie auf deinem PC unter ' . sb_e(SB_ABLAGE) . ' ab und veröffentlicht sie. Dein PC muss dafür an sein. '
+        . 'Mehr als 3–4 Pakete pro Lauf dauern entsprechend länger. Eine neue Uhrzeit übernimmt die Automatik bei ihrem nächsten Start; bis dahin läuft sie noch zur bisherigen Zeit.</p></section></main>';
+    fuss();
+    exit;
 }
 
 /* ---------- Übersicht ---------- */
@@ -257,7 +372,9 @@ foreach ($besuche as $b) {
 arsort($seitenZahl);
 $topSeiten = array_slice($seitenZahl, 0, 12, true);
 $quellen = array_slice($zaehle(static fn ($b) => $b['quelle']), 0, 12, true);
-$laender = array_slice($zaehle(static fn ($b) => $b['land'] ?: 'unbekannt'), 0, 12, true);
+$laender = array_slice($zaehle(static fn ($b) => ($b['landname'] ?? '') ?: ($b['land'] ?: 'unbekannt')), 0, 12, true);
+$staedte = array_slice($zaehle(static fn ($b) => ($b['stadt'] ?? '') ? $b['stadt'] . (($b['region'] ?? '') ? ' (' . $b['region'] . ')' : '') : 'unbekannt'), 0, 15, true);
+$regionen = array_slice($zaehle(static fn ($b) => ($b['region'] ?? '') ?: 'unbekannt'), 0, 12, true);
 $merkmale = [];
 foreach ($zaehle(static fn ($b) => $b['geraet']) as $k => $n) $merkmale["Gerät: $k"] = $n;
 foreach ($zaehle(static fn ($b) => $b['browser']) as $k => $n) $merkmale["Browser: $k"] = $n;
@@ -294,14 +411,7 @@ function tabelle(string $kopf1, string $kopf2, array $daten, bool $balken = fals
 
 kopf('Verwaltung', 'breit');
 ?>
-<header class="leiste">
-  <h1>Verwaltung — Studio Breve</h1>
-  <nav class="werkzeuge">
-    <a class="knopf hell" href="<?= sb_e($WEBSITE) ?>/de/">Website</a>
-    <a class="knopf hell" href="./?seite=passwort">Passwort ändern</a>
-    <form method="post" action="./"><?= csrf_feld() ?><input type="hidden" name="aktion" value="abmelden"><button class="hell" type="submit">Abmelden</button></form>
-  </nav>
-</header>
+<?php leiste(''); ?>
 <main class="inhalt">
   <?= meldung($okTexte[$_GET['ok'] ?? ''] ?? null, 'ok') ?>
   <section class="kennzahlen" aria-label="Kennzahlen">
@@ -322,7 +432,11 @@ kopf('Verwaltung', 'breit');
           <form method="post" action="./"><?= csrf_feld() ?><input type="hidden" name="aktion" value="anfrage_loeschen"><input type="hidden" name="id" value="<?= sb_e($a['id']) ?>"><button class="hell klein" type="submit">Löschen</button></form>
         </div>
         <p class="leise"><?= sb_e(date('d.m.Y H:i', strtotime($a['erstellt']))) ?> · Seite <?= sb_e(strtoupper($a['seitensprache'])) ?> · Antwort auf <?= sb_e(strtoupper($a['wunschsprache'])) ?><?= $a['paket'] ? ' · Paket ' . sb_e($a['paket']) : '' ?> · Werbung: <?= $a['werbung'] ? 'ja' : 'nein' ?></p>
-        <p><a href="mailto:<?= sb_e($a['email']) ?>?subject=<?= rawurlencode('Ihre Anfrage ' . $a['id']) ?>"><?= sb_e($a['email']) ?></a></p>
+        <p class="kontakt"><a href="mailto:<?= sb_e($a['email']) ?>?subject=<?= rawurlencode('Ihre Anfrage ' . $a['id']) ?>"><?= sb_e($a['email']) ?></a>
+          <?php if (!empty($a['telefon'])): $nr = preg_replace('/[^0-9+]/', '', $a['telefon']); $wa = ltrim(str_starts_with($nr, '00') ? substr($nr, 2) : (str_starts_with($nr, '+') ? $nr : (str_starts_with($nr, '3') ? '39' . $nr : $nr)), '+'); ?>
+            · <a href="tel:<?= sb_e($nr) ?>">☎ <?= sb_e($a['telefon']) ?></a> · <a href="https://wa.me/<?= sb_e($wa) ?>" target="_blank" rel="noopener">WhatsApp</a>
+          <?php endif; ?>
+          <?php if (!empty($a['ort'])): ?> · 📍 <?= sb_e($a['ort']) ?><?php endif; ?></p>
         <p class="nachricht"><?= nl2br(sb_e($a['nachricht'])) ?></p>
       </article>
     <?php endforeach; endif; ?>
@@ -350,7 +464,9 @@ kopf('Verwaltung', 'breit');
   <div class="zwei">
     <section class="kasten"><h2>Häufigste Seiten</h2><?= tabelle('Pfad', 'Aufrufe', $topSeiten, true) ?></section>
     <section class="kasten"><h2>Quellen</h2><?= tabelle('Quelle', 'Besuche', $quellen) ?></section>
-    <section class="kasten"><h2>Länder</h2><p class="leise">Ohne IP-Adresse – nur ein Hinweis aus der Spracheinstellung des Browsers.</p><?= tabelle('Land', 'Besuche', $laender) ?></section>
+    <section class="kasten"><h2>Städte</h2><p class="leise">Ungefährer Ort aus der gekürzten IP-Adresse (die IP wird nicht gespeichert). <a href="https://db-ip.com" target="_blank" rel="noopener">IP-Geolokalisierung von DB-IP</a></p><?= tabelle('Stadt (Region)', 'Besuche', $staedte, true) ?></section>
+    <section class="kasten"><h2>Regionen</h2><?= tabelle('Region', 'Besuche', $regionen, true) ?></section>
+    <section class="kasten"><h2>Länder</h2><?= tabelle('Land', 'Besuche', $laender) ?></section>
     <section class="kasten"><h2>Geräte und Browser</h2><?= tabelle('Merkmal', 'Anzahl', $merkmale) ?></section>
   </div>
 
@@ -360,11 +476,12 @@ kopf('Verwaltung', 'breit');
       <p class="leise">Noch keine aufgezeichneten Besuche.</p>
     <?php else: ?>
       <table>
-        <thead><tr><th>Zeit</th><th>Sprache</th><th>Gerät</th><th>Quelle</th><th>Seiten</th></tr></thead>
+        <thead><tr><th>Zeit</th><th>Ort</th><th>Sprache</th><th>Gerät</th><th>Quelle</th><th>Seiten</th></tr></thead>
         <tbody>
         <?php foreach (array_slice($besuche, 0, 40) as $b): ?>
           <tr>
             <td><?= sb_e(date('d.m.Y H:i', strtotime($b['beginn']))) ?></td>
+            <td><?= sb_e(implode(', ', array_filter([$b['region'] ?? '', ($b['landname'] ?? '') ?: ($b['land'] ?? '')]))) ?: '—' ?></td>
             <td><?= sb_e($b['sprache']) ?></td>
             <td><?= sb_e($b['geraet'] . ' · ' . $b['system'] . ' · ' . $b['browser']) ?></td>
             <td><?= sb_e($b['quelle']) ?></td>

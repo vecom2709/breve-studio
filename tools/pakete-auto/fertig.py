@@ -22,6 +22,7 @@ def main(pfad):
         if not a.get('lieferung', {}).get(l):
             sys.exit(f'ABGELEHNT: lieferung.{l} fehlt')
     p['status'] = 'available'
+    p.setdefault('fertigAm', __import__('datetime').date.today().isoformat())   # Datum der Fertigstellung (für die Verwaltung)
     p['cta'] = 'inquiry'
     hinweis = a.get('hinweis', {})
     p['notes'] = {

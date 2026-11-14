@@ -209,7 +209,8 @@
    "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Der Richtpreis ist immer als unverbindlich gekennzeichnet – das Angebot machen Sie.",
    "it": "Pronto; la vendita parte con l’avvio ufficiale. Il prezzo indicativo è sempre segnalato come non vincolante – il preventivo lo fai tu."
   },
-  "erstellt": "2026-11-11T12:06:06.657Z"
+  "erstellt": "2026-11-11T12:06:06.657Z",
+  "fertigAm": "2026-11-11"
  },
  {
   "slug": "newsletterbreve",
@@ -402,7 +403,8 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Texte zu Einwilligung und Datenschutz sind Muster, keine Rechtsberatung.",
    "it": "Pronto; si prenota dall’avvio ufficiale. I testi su consenso e privacy sono modelli, non una consulenza legale."
   },
-  "erstellt": "2026-11-11T12:06:06.658Z"
+  "erstellt": "2026-11-11T12:06:06.658Z",
+  "fertigAm": "2026-11-12"
  },
  {
   "slug": "fotobottega",
@@ -599,7 +601,8 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Bearbeitet werden nur Licht, Farbe, Hintergrund und Ausschnitt.",
    "it": "Pronto; si prenota dall’avvio ufficiale. Si ritoccano solo luce, colore, sfondo e inquadratura."
   },
-  "erstellt": "2026-11-11T12:06:06.658Z"
+  "erstellt": "2026-11-11T12:06:06.658Z",
+  "fertigAm": "2026-11-12"
  },
  {
   "slug": "testoponte",
@@ -796,7 +799,8 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Rechtstexte und beglaubigte Übersetzungen sind ausgenommen.",
    "it": "Pronto; si prenota dall’avvio ufficiale. Esclusi testi legali e traduzioni giurate."
   },
-  "erstellt": "2026-11-11T12:06:06.658Z"
+  "erstellt": "2026-11-11T12:06:06.658Z",
+  "fertigAm": "2026-11-12"
  },
  {
   "slug": "cassachiara",
@@ -1200,7 +1204,8 @@
    "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Die Lektionen sind Lesetexte mit Grafiken und Aufgaben; das Kapitel Recht ist ein Überblick, keine Rechtsberatung.",
    "it": "Pronto; la vendita parte con l’avvio ufficiale. Le lezioni sono testi da leggere con grafiche e compiti; il capitolo sulle regole è una sintesi, non una consulenza legale."
   },
-  "erstellt": "2026-11-11T12:06:06.658Z"
+  "erstellt": "2026-11-11T12:06:06.658Z",
+  "fertigAm": "2026-11-12"
  },
  {
   "slug": "bottegaonline",
@@ -1412,7 +1417,8 @@
    "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Die Rechtstext-Bausteine sind eine Vorlage und ersetzen keine rechtliche Prüfung.",
    "it": "Pronto; la vendita parte con l’avvio ufficiale. I modelli di testi legali sono una base e non sostituiscono una verifica legale."
   },
-  "erstellt": "2026-11-11T12:06:06.658Z"
+  "erstellt": "2026-11-11T12:06:06.658Z",
+  "fertigAm": "2026-11-11"
  },
  {
   "slug": "arrivofacile",
@@ -1616,7 +1622,8 @@
    "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Den Code der Schlüsselbox legen Sie fest – wir empfehlen, ihn regelmäßig zu ändern.",
    "it": "Pronto; la vendita parte con l’avvio ufficiale. Il codice della cassetta chiavi lo decidi tu – consigliamo di cambiarlo regolarmente."
   },
-  "erstellt": "2026-11-11T12:06:06.658Z"
+  "erstellt": "2026-11-11T12:06:06.658Z",
+  "fertigAm": "2026-11-11"
  },
  {
   "slug": "piantinafacile",
@@ -1828,7 +1835,8 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Darstellung für Inserate ohne amtliche Gültigkeit, Flächen netto ca.",
    "it": "Pronto; si prenota dall’avvio ufficiale. Rappresentazione per annunci senza valore legale, superfici nette indicative."
   },
-  "erstellt": "2026-11-11T12:06:06.658Z"
+  "erstellt": "2026-11-11T12:06:06.658Z",
+  "fertigAm": "2026-11-12"
  },
  {
   "slug": "scadenzechiare",
@@ -2040,7 +2048,8 @@
    "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. ScadenzeChiare erinnert nur – es prüft keine Verträge und ersetzt keine Beratung.",
    "it": "Pronto; la vendita parte con l’avvio ufficiale. ScadenzeChiare ricorda soltanto – non verifica contratti e non sostituisce una consulenza."
   },
-  "erstellt": "2026-11-11T12:06:06.658Z"
+  "erstellt": "2026-11-11T12:06:06.658Z",
+  "fertigAm": "2026-11-11"
  },
  {
   "slug": "cartellabando",
@@ -2254,7 +2263,8 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Läuft im Browser auf Handy, Tablet und Computer.",
    "it": "Pronto; si prenota dall’avvio ufficiale. Nessuna installazione: prepariamo tutto noi, ricevi un link personale e scegli solo la password. Funziona nel browser su telefono, tablet e computer."
   },
-  "erstellt": "2026-11-13T20:45:48.349Z"
+  "erstellt": "2026-11-13T20:45:48.349Z",
+  "fertigAm": "2026-11-13"
  },
  {
   "slug": "rendicontofacile",
@@ -2464,7 +2474,8 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Läuft im Browser auf Handy, Tablet und Computer.",
    "it": "Pronto; si prenota dall’avvio ufficiale. Nessuna installazione: prepariamo tutto noi, ricevi un link personale e scegli solo la password. Funziona nel browser su telefono, tablet e computer."
   },
-  "erstellt": "2026-11-13T20:45:48.349Z"
+  "erstellt": "2026-11-13T20:45:48.349Z",
+  "fertigAm": "2026-11-13"
  },
  {
   "slug": "progettochiaro",
@@ -2686,7 +2697,8 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
    "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
   },
-  "erstellt": "2026-11-13T20:45:48.349Z"
+  "erstellt": "2026-11-13T20:45:48.349Z",
+  "fertigAm": "2026-11-13"
  },
  {
   "slug": "profilogara",
@@ -2917,7 +2929,8 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung: Ihr Firmenprofil als PDF (4 Seiten) und Kurzfassung – dazu das Profil-Programm als Setup-Datei: Doppelklick, fertig.",
    "it": "Pronto; si prenota dall’avvio ufficiale. Consegna: il profilo aziendale in PDF (4 pagine) e versione breve – più il programma del profilo come file di setup: doppio clic, fatto."
   },
-  "erstellt": "2026-11-13T20:45:48.349Z"
+  "erstellt": "2026-11-13T20:45:48.349Z",
+  "fertigAm": "2026-11-13"
  },
  {
   "slug": "procedurachiara",
@@ -3131,7 +3144,8 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
    "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
   },
-  "erstellt": "2026-11-13T20:45:48.349Z"
+  "erstellt": "2026-11-13T20:45:48.349Z",
+  "fertigAm": "2026-11-13"
  },
  {
   "slug": "costoorario",
@@ -3345,7 +3359,8 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
    "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
   },
-  "erstellt": "2026-11-13T20:45:48.349Z"
+  "erstellt": "2026-11-13T20:45:48.349Z",
+  "fertigAm": "2026-11-13"
  },
  {
   "slug": "rispostepronte",
@@ -3559,7 +3574,8 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
    "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
   },
-  "erstellt": "2026-11-13T20:45:48.349Z"
+  "erstellt": "2026-11-13T20:45:48.349Z",
+  "fertigAm": "2026-11-13"
  },
  {
   "slug": "puliziacheck",
@@ -3765,7 +3781,8 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Läuft im Browser auf Handy, Tablet und Computer.",
    "it": "Pronto; si prenota dall’avvio ufficiale. Nessuna installazione: prepariamo tutto noi, ricevi un link personale e scegli solo la password. Funziona nel browser su telefono, tablet e computer."
   },
-  "erstellt": "2026-11-13T20:45:48.349Z"
+  "erstellt": "2026-11-13T20:45:48.349Z",
+  "fertigAm": "2026-11-13"
  },
  {
   "slug": "festainsala",
@@ -3987,7 +4004,8 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung: Mappe als PDF (IT/DE), Online-Seite und QR-Code – dazu das Programm als Setup-Datei: Doppelklick, fertig.",
    "it": "Pronto; si prenota dall’avvio ufficiale. Consegna: proposta in PDF (IT/DE), pagina online e codice QR – più il programma come file di setup: doppio clic, fatto."
   },
-  "erstellt": "2026-11-13T20:45:48.350Z"
+  "erstellt": "2026-11-13T20:45:48.350Z",
+  "fertigAm": "2026-11-13"
  },
  {
   "slug": "vetrinanotte",
@@ -4208,6 +4226,7 @@
    "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Keine Installation: Wir richten Ihre Handyseite ein und liefern das Schild als PDF (A4/A5). Für Änderungen erhalten Sie einen persönlichen Link und legen nur Ihr Passwort fest.",
    "it": "Pronto; si prenota dall’avvio ufficiale. Nessuna installazione: prepariamo la tua pagina per telefono e consegniamo il cartello in PDF (A4/A5). Per le modifiche ricevi un link personale e scegli solo la password."
   },
-  "erstellt": "2026-11-13T20:45:48.350Z"
+  "erstellt": "2026-11-13T20:45:48.350Z",
+  "fertigAm": "2026-11-13"
  }
 ]

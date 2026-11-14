@@ -81,6 +81,18 @@ function sb_db(): PDO
         seitensprache TEXT NOT NULL, wunschsprache TEXT NOT NULL, name TEXT NOT NULL, email TEXT NOT NULL,
         paket TEXT, anliegen TEXT NOT NULL, nachricht TEXT NOT NULL, werbung INTEGER NOT NULL DEFAULT 0,
         einwilligung TEXT NOT NULL, quelle TEXT NOT NULL)');
+    // spätere Ergänzungen (bestehende Datenbanken werden still erweitert)
+    $spalten = static function (string $t) use ($db): array {
+        return array_column($db->query('PRAGMA table_info(' . $t . ')')->fetchAll(), 'name');
+    };
+    $b = $spalten('besuche');
+    foreach (['stadt', 'region', 'landname'] as $sp) {
+        if (!in_array($sp, $b, true)) $db->exec('ALTER TABLE besuche ADD COLUMN ' . $sp . ' TEXT');
+    }
+    $a = $spalten('anfragen');
+    foreach (['telefon', 'ort'] as $sp) {
+        if (!in_array($sp, $a, true)) $db->exec('ALTER TABLE anfragen ADD COLUMN ' . $sp . ' TEXT');
+    }
     return $db;
 }
 
@@ -343,6 +355,66 @@ function sb_ua(string $ua): array
     return ['browser' => $browser, 'system' => $system, 'geraet' => $geraet];
 }
 
+/** Englische Namen aus DB-IP → gewohnte Schreibweise (Italien auf Italienisch, Deutschland auf Deutsch). */
+const SB_ORTSNAMEN = [
+    'Sicily' => 'Sicilia', 'Lombardy' => 'Lombardia', 'Piedmont' => 'Piemonte', 'Tuscany' => 'Toscana', 'Apulia' => 'Puglia', 'Sardinia' => 'Sardegna',
+    'Aosta Valley' => 'Valle d’Aosta', 'Trentino-Alto Adige' => 'Trentino-Alto Adige', 'Friuli Venezia Giulia' => 'Friuli-Venezia Giulia', 'Latium' => 'Lazio',
+    'Rome' => 'Roma', 'Milan' => 'Milano', 'Naples' => 'Napoli', 'Turin' => 'Torino', 'Florence' => 'Firenze', 'Venice' => 'Venezia', 'Genoa' => 'Genova',
+    'Syracuse' => 'Siracusa', 'Padua' => 'Padova', 'Mantua' => 'Mantova', 'Leghorn' => 'Livorno',
+    'Bavaria' => 'Bayern', 'Lower Saxony' => 'Niedersachsen', 'North Rhine-Westphalia' => 'Nordrhein-Westfalen', 'Rhineland-Palatinate' => 'Rheinland-Pfalz',
+    'Saxony' => 'Sachsen', 'Saxony-Anhalt' => 'Sachsen-Anhalt', 'Thuringia' => 'Thüringen', 'Hesse' => 'Hessen', 'Baden-Wurttemberg' => 'Baden-Württemberg',
+    'Baden-Württemberg' => 'Baden-Württemberg', 'Munich' => 'München', 'Cologne' => 'Köln', 'Nuremberg' => 'Nürnberg', 'Hanover' => 'Hannover',
+    'Brunswick' => 'Braunschweig', 'Vienna' => 'Wien', 'Zurich' => 'Zürich', 'Geneva' => 'Genf',
+];
+
+/**
+ * Ungefährer Ort zu einer IP-Adresse aus der lokalen Datenbank DB-IP City Lite (CC BY 4.0, https://db-ip.com).
+ * Die Adresse wird VOR der Abfrage gekürzt (IPv4: letzter Block = 0, IPv6: nur die ersten 48 Bit) und nie gespeichert.
+ * Rückgabe: ['stadt' => …, 'region' => …, 'land' => 'IT', 'landname' => 'Italien'] oder null.
+ */
+function sb_ip_kuerzen(string $ip): ?string
+{
+    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
+        return preg_replace('/\.\d+$/', '.0', $ip);
+    }
+    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)) {
+        $bin = inet_pton($ip);
+        return $bin === false ? null : inet_ntop(substr($bin, 0, 6) . str_repeat("\0", 10));
+    }
+    return null;
+}
+
+function sb_geo(?string $gekuerzt): ?array
+{
+    $datei = sb_config()['datenordner'] . '/geo/dbip-city-lite.mmdb';
+    if (!$gekuerzt || !is_file($datei)) {
+        return null;
+    }
+    spl_autoload_register(static function (string $klasse): void {
+        $pfad = __DIR__ . '/geo/' . str_replace('\\', '/', $klasse) . '.php';
+        if (str_starts_with($klasse, 'MaxMind\\Db\\') && is_file($pfad)) require $pfad;
+    });
+    try {
+        $leser = new \MaxMind\Db\Reader($datei);
+        $d = $leser->get($gekuerzt);
+        $leser->close();
+    } catch (Throwable $e) {
+        return null;
+    }
+    if (!is_array($d)) {
+        return null;
+    }
+    $iso = (string) ($d['country']['iso_code'] ?? '');
+    $stadt = (string) ($d['city']['names']['de'] ?? $d['city']['names']['en'] ?? '');
+    $region = (string) ($d['subdivisions'][0]['names']['de'] ?? $d['subdivisions'][0]['names']['en'] ?? '');
+    return [
+        'stadt' => mb_substr(SB_ORTSNAMEN[$stadt] ?? $stadt, 0, 80),
+        'region' => mb_substr(SB_ORTSNAMEN[$region] ?? $region, 0, 80),
+        'land' => preg_match('/^[A-Z]{2}$/', $iso) ? $iso : null,
+        'landname' => mb_substr((string) ($d['country']['names']['de'] ?? $d['country']['names']['en'] ?? ''), 0, 80),
+    ];
+}
+
 function sb_land_aus_sprache(string $kopf): ?string
 {
     $erste = trim(explode(',', $kopf)[0] ?? '');
@@ -404,12 +476,14 @@ function sb_aufruf_speichern(array $d): bool
             $db->exec('COMMIT');
             return false;
         }
-        $db->prepare('INSERT INTO besuche (sid, datum, beginn, seiten, referrer, quelle, utm, sprache, land, geraet, system, browser, bildschirm)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')->execute([
+        $geo = sb_geo($d['ip'] ?? null);
+        $db->prepare('INSERT INTO besuche (sid, datum, beginn, seiten, referrer, quelle, utm, sprache, land, geraet, system, browser, bildschirm, stadt, region, landname)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')->execute([
             $d['sid'], $datum, $jetzt,
             json_encode([['path' => $d['path'], 'enteredAt' => $jetzt]], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
             $d['referrer'], sb_quelle($d['referrer'], $d['utm']), $d['utm'] ? json_encode($d['utm'], JSON_UNESCAPED_UNICODE) : null,
-            $d['sprache'], $d['land'], $d['geraet'], $d['system'], $d['browser'], $d['bildschirm'],
+            $d['sprache'], ($geo['land'] ?? null) ?: $d['land'], $d['geraet'], $d['system'], $d['browser'], $d['bildschirm'],
+            $geo['stadt'] ?? null, $geo['region'] ?? null, $geo['landname'] ?? null,
         ]);
         $db->prepare('INSERT INTO tage (datum, n) VALUES (?, 1) ON CONFLICT(datum) DO UPDATE SET n = n + 1')->execute([$datum]);
         $db->exec('COMMIT');
@@ -451,10 +525,11 @@ function sb_anfrage_speichern(array $a): array
 {
     $id = 'SB-' . date('Ymd') . '-' . strtoupper(bin2hex(random_bytes(3)));
     $erstellt = date('c');
-    sb_db()->prepare('INSERT INTO anfragen (id, erstellt, seitensprache, wunschsprache, name, email, paket, anliegen, nachricht, werbung, einwilligung, quelle)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')->execute([
+    sb_db()->prepare('INSERT INTO anfragen (id, erstellt, seitensprache, wunschsprache, name, email, paket, anliegen, nachricht, werbung, einwilligung, quelle, telefon, ort)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)')->execute([
         $id, $erstellt, $a['seitensprache'], $a['wunschsprache'], $a['name'], $a['email'], $a['paket'],
         $a['anliegen'], $a['nachricht'], $a['werbung'] ? 1 : 0, SB_EINWILLIGUNG_VERSION, $a['quelle'],
+        ($a['telefon'] ?? '') ?: null, ($a['ort'] ?? '') ?: null,
     ]);
     return ['id' => $id, 'erstellt' => $erstellt];
 }
@@ -479,3 +554,70 @@ function sb_anfrage_melden(string $id, ?string $paket, string $wunschsprache): v
     ];
     @mail($c['benachrichtigung'], '=?UTF-8?B?' . base64_encode("Neue Anfrage $id") . '?=', $text, $kopf, '-f' . $c['absender']);
 }
+
+
+/* ---------- Produkt-Katalog (aus der öffentlichen Website) ---------- */
+
+/** Liest https://www.studio-breve.it/pakete.json (zwischengespeichert, 15 Minuten). Rückgabe: ['stand' => …, 'pakete' => […], 'fehler' => ?string] */
+function sb_katalog(bool $frisch = false): array
+{
+    $datei = sb_config()['datenordner'] . '/katalog.json';
+    $alt = is_file($datei) ? json_decode((string) file_get_contents($datei), true) : null;
+    if (!$frisch && is_array($alt) && filemtime($datei) > time() - 900) {
+        return $alt + ['fehler' => null];
+    }
+    $ctx = stream_context_create(['http' => ['timeout' => 8, 'header' => "Accept: application/json\r\nUser-Agent: StudioBreve-Verwaltung\r\n"]]);
+    $roh = @file_get_contents(sb_config()['website'] . '/pakete.json?t=' . time(), false, $ctx);
+    $neu = $roh ? json_decode($roh, true) : null;
+    if (is_array($neu) && isset($neu['pakete'])) {
+        file_put_contents($datei, $roh, LOCK_EX);
+        return $neu + ['fehler' => null];
+    }
+    return (is_array($alt) ? $alt : ['stand' => null, 'pakete' => []]) + ['fehler' => 'Der Katalog konnte gerade nicht von der Website geladen werden.'];
+}
+
+/* ---------- Automatik (täglicher Bau-Lauf) ---------- */
+
+const SB_TAGE = [1 => 'Mo', 2 => 'Di', 3 => 'Mi', 4 => 'Do', 5 => 'Fr', 6 => 'Sa', 7 => 'So'];
+
+/** Einstellungen für den automatischen Bau-Lauf (werden von der geplanten Aufgabe über /api/plan/ gelesen). */
+function sb_plan(): array
+{
+    $tage = array_values(array_filter(array_map('intval', explode(',', sb_einstellung('auto_tage', '1,2,3,4,5,6,7'))), static fn ($t) => $t >= 1 && $t <= 7));
+    $uhr = sb_einstellung('auto_uhrzeit', '21:40');
+    return [
+        'aktiv' => sb_einstellung('auto_aktiv', '1') === '1',
+        'anzahl' => max(1, min(10, (int) sb_einstellung('auto_anzahl', '3'))),
+        'tage' => $tage,
+        'uhrzeit' => preg_match('/^([01]\d|2[0-3]):[0-5]\d$/', $uhr) ? $uhr : '21:40',
+        'zeitzone' => 'Europe/Rome',
+        'geaendert' => sb_einstellung('auto_geaendert', ''),
+    ];
+}
+
+/** Nächster geplanter Lauf als Zeitstempel (oder null, wenn pausiert / keine Tage). */
+function sb_naechster_lauf(array $plan): ?int
+{
+    if (!$plan['aktiv'] || !$plan['tage']) {
+        return null;
+    }
+    // Uhrzeit gerade geändert? Dann startet der nächste Lauf noch zur bisherigen Zeit und übernimmt dabei die neue.
+    $wechsel = (int) sb_einstellung('auto_wechsel', '0');
+    if (($plan['geaendert'] ?? null) !== null && $wechsel > time()) {
+        return $wechsel;
+    }
+    if ($wechsel && $wechsel <= time()) {
+        sb_einstellung_setzen('auto_wechsel', '0');
+        sb_einstellung_setzen('auto_uhrzeit_laeuft', $plan['uhrzeit']);
+    }
+    $tz = new DateTimeZone('Europe/Rome');
+    $jetzt = new DateTimeImmutable('now', $tz);
+    for ($i = 0; $i < 8; $i++) {
+        $t = $jetzt->modify("+$i day")->setTime(...array_map('intval', explode(':', $plan['uhrzeit'])));
+        if ($t > $jetzt && in_array((int) $t->format('N'), $plan['tage'], true)) {
+            return $t->getTimestamp();
+        }
+    }
+    return null;
+}
+

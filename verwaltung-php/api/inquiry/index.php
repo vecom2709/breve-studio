@@ -49,18 +49,22 @@ $texte = [
         'email' => 'Bitte geben Sie eine gültige E-Mail-Adresse an.',
         'message' => 'Bitte schreiben Sie eine kurze Nachricht (mindestens 10 Zeichen).',
         'consent' => 'Bitte bestätigen Sie die Einwilligung zur Verarbeitung Ihrer Anfrage.',
+        'phone' => 'Bitte prüfen Sie die Telefonnummer (nur Ziffern, Leerzeichen, + - / ( )).',
     ],
     'it' => [
         'name' => 'Indica il tuo nome.',
         'email' => 'Indica un indirizzo email valido.',
         'message' => 'Scrivi un breve messaggio (almeno 10 caratteri).',
         'consent' => 'Conferma il consenso al trattamento della richiesta.',
+        'phone' => 'Controlla il numero di telefono (solo cifre, spazi, + - / ( )).',
     ],
 ][$lang];
 
 $name = $s('name', 120);
 $email = $s('email', 200);
 $nachricht = $s('message', 4000);
+$telefon = $s('phone', 40);   // freiwillig
+$ort = $s('city', 80);        // freiwillig
 $einwilligung = $s('consent') === 'yes';
 $werbung = $s('marketing') === 'yes';
 $wunsch = in_array($s('language'), ['it', 'en'], true) ? $s('language') : 'de';
@@ -73,6 +77,7 @@ if (mb_strlen($name) < 2) $fehler['name'] = $texte['name'];
 if (!preg_match('/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/u', $email)) $fehler['email'] = $texte['email'];
 if (mb_strlen($nachricht) < 10) $fehler['message'] = $texte['message'];
 if (!$einwilligung) $fehler['consent'] = $texte['consent'];
+if ($telefon !== '' && !preg_match('/^\+?[0-9 ()\/.\-]{6,30}$/', $telefon)) $fehler['phone'] = $texte['phone'];
 if ($fehler) {
     $fehlerAntwort(422, ['errors' => $fehler]);
 }
@@ -82,6 +87,7 @@ try {
     $gespeichert = sb_anfrage_speichern([
         'seitensprache' => $lang, 'wunschsprache' => $wunsch, 'name' => $name, 'email' => $email,
         'paket' => $paket, 'anliegen' => $anliegen, 'nachricht' => $nachricht, 'werbung' => $werbung, 'quelle' => $zurueck,
+        'telefon' => $telefon, 'ort' => $ort,
     ]);
 } catch (Throwable $e) {
     error_log('[anfrage] Speichern fehlgeschlagen: ' . $e->getMessage());
