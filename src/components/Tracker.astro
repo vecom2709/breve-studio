@@ -1,11 +1,40 @@
 ---
 import type { Locale } from '../content/packages';
-import { ui } from '../lib/i18n';
+import { ui, path as seite } from '../lib/i18n';
 import { api } from '../lib/server-api';
 interface Props { lang: Locale }
 const { lang } = Astro.props;
 const t = ui[lang];
+const de = lang === 'de';
+const datenschutz = seite('privacy', lang);
 ---
+<div id="sb-einwilligung" class="sb-ein" role="dialog" aria-labelledby="sb-ein-titel" aria-describedby="sb-ein-text" hidden>
+  <button type="button" class="sb-ein-zu" data-wahl="nein" aria-label={de ? 'Schließen (ablehnen)' : 'Chiudi (rifiuta)'}>×</button>
+  <p class="sb-ein-titel" id="sb-ein-titel">{de ? 'Volle IP-Adresse speichern?' : 'Salvare l’indirizzo IP completo?'}</p>
+  <p class="sb-ein-text" id="sb-ein-text">{de
+    ? 'Studio Breve zählt Besuche ohne Cookies und mit gekürzter IP-Adresse. Wenn Sie zustimmen, speichern wir für diese Statistik zusätzlich Ihre vollständige IP-Adresse – 90 Tage lang, ohne Weitergabe. Ändern können Sie das jederzeit unten unter „Datenschutz-Einstellungen“.'
+    : 'Studio Breve conta le visite senza cookie e con indirizzo IP troncato. Se acconsenti, per questa statistica salviamo anche il tuo indirizzo IP completo – per 90 giorni, senza cederlo a terzi. Puoi cambiare idea in qualsiasi momento in fondo alla pagina, in «Impostazioni privacy».'}
+    {' '}<a href={datenschutz}>{de ? 'Datenschutzerklärung' : 'Informativa privacy'}</a></p>
+  <div class="sb-ein-knoepfe">
+    <button type="button" class="sb-ein-knopf" data-wahl="nein">{de ? 'Ablehnen' : 'Rifiuta'}</button>
+    <button type="button" class="sb-ein-knopf" data-wahl="ja">{de ? 'Zustimmen' : 'Accetta'}</button>
+  </div>
+</div>
+<style>
+  .sb-ein { position: fixed; z-index: 60; left: 16px; right: 16px; bottom: 16px; max-width: 34rem; margin-inline: auto; background: var(--card); color: var(--ink);
+    border: 1px solid var(--line-strong); border-radius: 10px; box-shadow: 0 10px 32px rgba(10, 44, 39, .22); padding: 1.1rem 1.2rem 1rem; font-size: var(--step--1, .95rem); line-height: 1.5; }
+  .sb-ein[hidden] { display: none; }
+  .sb-ein-titel { margin: 0 2rem .4rem 0; font-family: var(--serif); font-weight: 600; font-size: 1.15rem; color: var(--forest); }
+  .sb-ein-text { margin: 0; color: var(--ink-2, var(--ink)); }
+  .sb-ein-text a { color: var(--forest); text-underline-offset: .18em; }
+  .sb-ein-knoepfe { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-top: .9rem; }
+  /* beide Knöpfe gleich gewichtet – Ablehnen ist so einfach wie Zustimmen */
+  .sb-ein-knopf { min-height: 44px; border: 1.5px solid var(--forest); border-radius: var(--radius); background: var(--forest); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+  .sb-ein-knopf:hover { background: var(--forest-mid); }
+  .sb-ein-zu { position: absolute; top: .35rem; right: .45rem; width: 44px; height: 44px; border: 0; background: transparent; color: var(--muted); font-size: 1.6rem; line-height: 1; cursor: pointer; border-radius: var(--radius); }
+  .sb-ein-zu:hover { color: var(--ink); }
+  .sb-ein button:focus-visible, .sb-ein a:focus-visible { outline: 3px solid var(--gold-deep); outline-offset: 2px; }
+</style>
 <script is:inline define:vars={{ lang, one: t.visitPhraseOne, many: t.visitPhraseMany, url: api('/api/track/') }}>
   (function () {
     var phrase = function (n) {
@@ -28,10 +57,53 @@ const t = ui[lang];
         .catch(function () {});
     };
     fill();
+
+    // Einwilligung zur vollen IP-Adresse (Wahl gilt 6 Monate, danach wird erneut gefragt)
+    var EK = 'sb-ip-einwilligung';
+    var lesen = function () {
+      try {
+        var v = JSON.parse(localStorage.getItem(EK) || 'null');
+        if (v && (v.w === 'ja' || v.w === 'nein') && Date.now() - v.t < 182 * 864e5) return v.w;
+      } catch (e) {}
+      return null;
+    };
+    var einw = lesen();
     var dnt = (navigator.doNotTrack === '1' || window.doNotTrack === '1' || navigator.globalPrivacyControl === true);
-    if (dnt) return;
-    var KEY = 'sb-sid';
+    var banner = document.getElementById('sb-einwilligung');
+    var zuvorFokus = null;
+    var zeigen = function (fokus) {
+      if (!banner) return;
+      zuvorFokus = document.activeElement;
+      banner.hidden = false;
+      if (fokus) { var k = banner.querySelector('.sb-ein-knopf'); if (k) k.focus(); }
+    };
     var sid = null;
+    var payload = null;
+    var senden = function (body) {
+      return fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8', Accept: 'application/json' }, body: JSON.stringify(body), keepalive: true, cache: 'no-store', credentials: 'include' });
+    };
+    var waehlen = function (w) {
+      try { localStorage.setItem(EK, JSON.stringify({ w: w, t: Date.now() })); } catch (e) {}
+      einw = w;
+      if (banner) banner.hidden = true;
+      if (zuvorFokus && zuvorFokus.focus) { try { zuvorFokus.focus(); } catch (e) {} }
+      if (payload) senden(payload('consent')).catch(function () {});
+    };
+    if (banner) {
+      banner.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-wahl]');
+        if (b) waehlen(b.getAttribute('data-wahl'));
+      });
+    }
+    document.addEventListener('click', function (e) {
+      var o = e.target.closest('[data-sb-einwilligung]');
+      if (o) { e.preventDefault(); zeigen(true); }
+    });
+
+    if (dnt) return;   // „Do Not Track“ / GPC: keine Messung, keine Nachfrage
+    if (einw === null) zeigen(false);
+
+    var KEY = 'sb-sid';
     try { sid = sessionStorage.getItem(KEY); if (!sid) { sid = (crypto.randomUUID && crypto.randomUUID()) || String(Date.now()) + Math.random().toString(16).slice(2); sessionStorage.setItem(KEY, sid); } } catch (e) { sid = 'anon'; }
     var started = Date.now();
     var path = location.pathname + (location.search || '');
@@ -40,7 +112,7 @@ const t = ui[lang];
       var sp = new URLSearchParams(location.search);
       ['source','medium','campaign','term','content'].forEach(function (k) { var v = sp.get('utm_' + k); if (v) utm[k] = v.slice(0, 80); });
     } catch (e) {}
-    var payload = function (t, extra) {
+    payload = function (t, extra) {
       var body = {
         t: t,
         sid: sid,
@@ -50,11 +122,12 @@ const t = ui[lang];
         screen: (screen && screen.width ? screen.width + 'x' + screen.height : ''),
         utm: Object.keys(utm).length ? utm : null
       };
+      if (einw) body.consent = einw;
       if (extra) Object.assign(body, extra);
       return body;
     };
     // text/plain vermeidet eine Vorab-Anfrage (CORS); die Verwaltung liest den Inhalt als JSON.
-    fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8', Accept: 'application/json' }, body: JSON.stringify(payload('view')), keepalive: true, cache: 'no-store', credentials: 'include' })
+    senden(payload('view'))
       .then(function (r) { return r.json(); })
       .then(function (d) { if (d && typeof d.n === 'number') applyCount(d.n); })
       .catch(function () {});

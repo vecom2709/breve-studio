@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 const SB_ZEITZONE = 'Europe/Rome';
 const SB_AUFBEWAHRUNG_TAGE = 365;      // Besuchsdetails; Tageszahlen bleiben als reine Summen
-const SB_IP_TAGE = 90;                 // gekürzte IP-Adresse beim Besuch; danach wird sie geleert
+const SB_IP_TAGE = 90;                 // IP-Adresse beim Besuch (gekürzt; voll nur mit Einwilligung); danach wird sie geleert
 const SB_MIN_PASSWORT = 10;
 const SB_MAX_VERSUCHE = 10;            // Anmeldeversuche je gekürzter Adresse …
 const SB_SPERRFENSTER = 900;           // … in 15 Minuten
@@ -87,7 +87,7 @@ function sb_db(): PDO
         return array_column($db->query('PRAGMA table_info(' . $t . ')')->fetchAll(), 'name');
     };
     $b = $spalten('besuche');
-    foreach (['stadt', 'region', 'landname', 'ip_gekuerzt'] as $sp) {
+    foreach (['stadt', 'region', 'landname', 'ip_gekuerzt', 'ip_voll'] as $sp) {
         if (!in_array($sp, $b, true)) $db->exec('ALTER TABLE besuche ADD COLUMN ' . $sp . ' TEXT');
     }
     $a = $spalten('anfragen');
@@ -370,8 +370,8 @@ const SB_ORTSNAMEN = [
 
 /**
  * Ungefährer Ort zu einer IP-Adresse aus der lokalen Datenbank DB-IP City Lite (CC BY 4.0, https://db-ip.com).
- * Die Adresse wird VOR der Abfrage gekürzt (IPv4: letzter Block = 0, IPv6: nur die ersten 48 Bit); nur diese gekürzte Form
- * wird beim Besuch abgelegt (SB_IP_TAGE Tage), die volle Adresse nie.
+ * Die Adresse wird VOR der Abfrage gekürzt (IPv4: letzter Block = 0, IPv6: nur die ersten 48 Bit); diese gekürzte Form wird
+ * beim Besuch abgelegt (SB_IP_TAGE Tage). Die volle Adresse nur, wenn der Besucher im Banner zugestimmt hat (sb_ip_einwilligung).
  * Rückgabe: ['stadt' => …, 'region' => …, 'land' => 'IT', 'landname' => 'Italien'] oder null.
  */
 function sb_ip_kuerzen(string $ip): ?string
@@ -448,7 +448,7 @@ function sb_alte_besuche_loeschen(): void
 {
     $grenze = sb_heute(time() - SB_AUFBEWAHRUNG_TAGE * 86400);
     sb_db()->prepare('DELETE FROM besuche WHERE datum < ?')->execute([$grenze]);
-    sb_db()->prepare('UPDATE besuche SET ip_gekuerzt = NULL WHERE datum < ? AND ip_gekuerzt IS NOT NULL')
+    sb_db()->prepare('UPDATE besuche SET ip_gekuerzt = NULL, ip_voll = NULL WHERE datum < ? AND (ip_gekuerzt IS NOT NULL OR ip_voll IS NOT NULL)')
         ->execute([sb_heute(time() - SB_IP_TAGE * 86400)]);
 }
 
@@ -457,6 +457,22 @@ function sb_ip_anzeige(?string $ip): string
 {
     if (!$ip) return '—';
     return str_contains($ip, ':') ? rtrim($ip, ':') . '::/48' : preg_replace('/\.0$/', '.x', $ip);
+}
+
+/** IP eines Besuchs für die Anzeige: voll, wenn der Besucher zugestimmt hat, sonst gekürzt */
+function sb_ip_besuch(array $b): string
+{
+    return !empty($b['ip_voll']) ? (string) $b['ip_voll'] : sb_ip_anzeige($b['ip_gekuerzt'] ?? null);
+}
+
+/** Einwilligung zur vollen IP für den laufenden Besuch übernehmen ('ja' speichert, 'nein' löscht sofort). */
+function sb_ip_einwilligung(string $sid, ?string $einwilligung, ?string $ipVoll): void
+{
+    if ($einwilligung === 'ja' && $ipVoll) {
+        sb_db()->prepare('UPDATE besuche SET ip_voll = ? WHERE sid = ? AND datum = ?')->execute([$ipVoll, $sid, sb_heute()]);
+    } elseif ($einwilligung === 'nein') {
+        sb_db()->prepare('UPDATE besuche SET ip_voll = NULL WHERE sid = ? AND ip_voll IS NOT NULL')->execute([$sid]);
+    }
 }
 
 /** Speichert einen Seitenaufruf. Liefert true, wenn der Besuch an diesem Tag neu war. */
@@ -484,6 +500,7 @@ function sb_aufruf_speichern(array $d): bool
                 $db->prepare('UPDATE besuche SET seiten = ? WHERE sid = ? AND datum = ?')
                     ->execute([json_encode($liste, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), $d['sid'], $datum]);
             }
+            sb_ip_einwilligung($d['sid'], $d['einwilligung'] ?? null, $d['ip_voll'] ?? null);
             $db->exec('COMMIT');
             return false;
         }
@@ -497,6 +514,7 @@ function sb_aufruf_speichern(array $d): bool
             $geo['stadt'] ?? null, $geo['region'] ?? null, $geo['landname'] ?? null, $d['ip'] ?? null,
         ]);
         $db->prepare('INSERT INTO tage (datum, n) VALUES (?, 1) ON CONFLICT(datum) DO UPDATE SET n = n + 1')->execute([$datum]);
+        sb_ip_einwilligung($d['sid'], $d['einwilligung'] ?? null, $d['ip_voll'] ?? null);
         $db->exec('COMMIT');
         return true;
     } catch (Throwable $e) {

@@ -42,6 +42,15 @@ if (str_starts_with($pfad, '/verwaltung') || str_starts_with($pfad, '/api/')) {
     sb_json(['ok' => true, 'ignored' => 'pfad', 'n' => sb_besuche_gesamt()]);
 }
 
+// Einwilligung zur vollen IP (Banner auf der Website): nur 'ja' oder 'nein' zählt
+$einwilligung = in_array($body['consent'] ?? '', ['ja', 'nein'], true) ? $body['consent'] : null;
+$ipRoh = (string) ($_SERVER['REMOTE_ADDR'] ?? '');
+$ipVoll = ($einwilligung === 'ja' && filter_var($ipRoh, FILTER_VALIDATE_IP)) ? $ipRoh : null;
+if (($body['t'] ?? '') === 'consent') {
+    sb_ip_einwilligung($sid, $einwilligung, $ipVoll);
+    sb_json(['ok' => true]);
+}
+
 if (($body['t'] ?? '') === 'timing') {
     sb_verweildauer_speichern($sid, $pfad, (float) ($body['ms'] ?? -1));
     sb_json(['ok' => true]);
@@ -65,7 +74,9 @@ $neu = sb_aufruf_speichern([
     'utm' => $utm,
     'sprache' => mb_substr((string) ($body['lang'] ?? ''), 0, 8),
     'land' => sb_land_aus_sprache((string) ($_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? '')),
-    'ip' => sb_ip_kuerzen((string) ($_SERVER['REMOTE_ADDR'] ?? '')),   // nur gekürzt (letzter Block = 0); die volle IP wird nie gespeichert
+    'ip' => sb_ip_kuerzen($ipRoh),   // gekürzt (letzter Block = 0) für Ort und Anzeige
+    'ip_voll' => $ipVoll,            // nur mit Einwilligung
+    'einwilligung' => $einwilligung,
     'geraet' => $ua['geraet'],
     'system' => $ua['system'],
     'browser' => $ua['browser'],
