@@ -26,7 +26,7 @@ function kopf(string $titel, string $klasse = ''): void
 {
     echo '<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
         . '<meta name="robots" content="noindex, nofollow"><title>' . sb_e($titel) . ' — Studio Breve</title>'
-        . '<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/verwaltung.css"></head>'
+        . '<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/verwaltung.css?v=' . (int) @filemtime(__DIR__ . '/assets/verwaltung.css') . '"></head>'
         . '<body class="' . sb_e($klasse) . '">';
 }
 
