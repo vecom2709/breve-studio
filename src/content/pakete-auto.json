@@ -4228,5 +4228,642 @@
   },
   "erstellt": "2026-11-13T20:45:48.350Z",
   "fertigAm": "2026-11-13"
+ },
+ {
+  "slug": "chiaviinmano",
+  "brand": "ChiaviInMano",
+  "produktart": {
+   "de": "Übergabeprotokoll für Wohnungen",
+   "it": "Verbale di consegna per immobili"
+  },
+  "category": "immobilien-gastgewerbe",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 39,
+    "interval": "once",
+    "unit": {
+     "de": "Programm, unbegrenzt nutzbar",
+     "it": "programma, uso illimitato"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von ChiaviInMano: Räume, Zählerstände und Schlüssel einer Wohnungsübergabe",
+   "it": "Anteprima di ChiaviInMano: stanze, letture dei contatori e chiavi di una consegna"
+  },
+  "tagline": {
+   "de": "Wohnungsübergabe sauber dokumentiert.",
+   "it": "La consegna dell’immobile, documentata con ordine."
+  },
+  "benefit": {
+   "de": "Offline-Programm für Ein- und Auszug: Räume mit Zustand und Mängeln, Zählerstände, Schlüssel und Inventar erfassen und als Protokoll mit Unterschriftsfeldern drucken.",
+   "it": "Programma offline per ingresso e uscita: stanze con stato e difetti, letture dei contatori, chiavi e inventario, stampati come verbale con spazi per le firme."
+  },
+  "headline": {
+   "de": "Ein Protokoll für jede Übergabe – Raum für Raum.",
+   "it": "Un verbale per ogni consegna – stanza per stanza."
+  },
+  "intro": {
+   "de": "Sie gehen mit Laptop oder Tablet durch die Wohnung und haken Raum für Raum ab: Zustand, Mängel, Zählerstände, Schlüssel und Inventar. Am Ende drucken Sie das Protokoll aus oder speichern es als PDF; beide Seiten unterschreiben.",
+   "it": "Giri l’immobile con portatile o tablet e compili stanza per stanza: stato, difetti, letture dei contatori, chiavi e inventario. Alla fine stampi il verbale o lo salvi in PDF; le due parti firmano."
+  },
+  "audience": {
+   "de": "Private Vermieter, kleine Hausverwaltungen, Maklerbüros und Ferienwohnungs-Betreiber.",
+   "it": "Locatori privati, piccole amministrazioni, agenzie immobiliari e gestori di case vacanza."
+  },
+  "job": {
+   "de": "Den Zustand bei Ein- und Auszug nachvollziehbar festhalten.",
+   "it": "Fissare in modo chiaro lo stato all’ingresso e all’uscita."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Daten bleiben auf Ihrem Gerät. Ein organisatorisches Hilfsmittel, keine Rechtsberatung – Vorgaben aus Ihrem Mietvertrag haben Vorrang.",
+   "it": "Funziona senza internet e senza account, i dati restano sul tuo dispositivo. Uno strumento organizzativo, non una consulenza legale – valgono le condizioni del tuo contratto."
+  },
+  "features": {
+   "de": [
+    "Räume mit Zustand (in Ordnung, Gebrauchsspuren, Mangel) und Bemerkung – mit Mängelzähler",
+    "Zählerstände mit Zählernummer, Schlüsselliste mit Summe und Inventar",
+    "Vereinbarungen festhalten, Protokoll mit Unterschriftsfeldern drucken oder als PDF speichern",
+    "Speichern und Laden als Datei, automatische Speicherung nur auf Ihrem Gerät",
+    "Dazu: Blanko-Protokoll zum Ausfüllen von Hand und ein ausgefülltes Beispiel (erfunden)"
+   ],
+   "it": [
+    "Stanze con stato (a posto, segni d’uso, difetto) e nota – con conteggio dei difetti",
+    "Letture con matricola dei contatori, elenco chiavi con totale e inventario",
+    "Accordi annotati, verbale con spazi per le firme da stampare o salvare in PDF",
+    "Salvataggio e apertura come file, salvataggio automatico solo sul tuo dispositivo",
+    "In più: verbale vuoto da compilare a mano e un esempio compilato (inventato)"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: ausgefülltes Beispielprotokoll mit erfundener Wohnung.",
+   "it": "Incluso: verbale di esempio compilato con un appartamento inventato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich ChiaviInMano?",
+     "a": "Sie erhalten eine Setup-Datei: doppelklicken, Sprache wählen, fertig – ChiaviInMano liegt danach als Symbol auf Ihrem Desktop und öffnet sich von selbst. Eine bebilderte Kurzanleitung auf einer Seite liegt bei, für Mac gibt es eine ZIP-Datei. Sie brauchen kein Konto und keine Vorkenntnisse; Ihre Daten bleiben auf Ihrem Computer. Die Setup-Datei ist nicht signiert, daher zeigt Windows beim ersten Start einen Hinweis („Weitere Informationen → Trotzdem ausführen“)."
+    },
+    {
+     "q": "Brauche ich Internet?",
+     "a": "Nein, das Programm läuft offline in Ihrem Browser."
+    },
+    {
+     "q": "Ist das Protokoll rechtlich geprüft?",
+     "a": "Nein. Es ist eine Vorlage zur Dokumentation; im Zweifel fragen Sie eine Fachperson."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo ChiaviInMano?",
+     "a": "Ricevi un file di setup: doppio clic, scegli la lingua, fatto – ChiaviInMano compare come icona sul desktop e si apre da solo. È inclusa una guida illustrata di una pagina; per Mac c’è un file ZIP. Non servono account né conoscenze tecniche; i tuoi dati restano sul tuo computer. Il file di setup non è firmato, quindi al primo avvio Windows mostra un avviso („Ulteriori informazioni → Esegui comunque“)."
+    },
+    {
+     "q": "Serve internet?",
+     "a": "No, il programma funziona offline nel browser."
+    },
+    {
+     "q": "Il verbale è verificato legalmente?",
+     "a": "No. È un modello per documentare; in caso di dubbi chiedi a un professionista."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie installieren das Programm per Doppelklick.",
+    "Sie erfassen bei der Übergabe Räume, Zähler und Schlüssel.",
+    "Sie drucken das Protokoll und lassen beide Seiten unterschreiben."
+   ],
+   "it": [
+    "Installi il programma con un doppio clic.",
+    "Alla consegna inserisci stanze, contatori e chiavi.",
+    "Stampi il verbale e lo fai firmare alle due parti."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "ChiaviInMano · Via Esempio 12",
+   "titel": {
+    "de": "Übergabe: Auszug Wohnung 3B",
+    "it": "Consegna: uscita appartamento 3B"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Küche",
+      "it": "Cucina"
+     },
+     "neben": {
+      "de": "Herd, Spüle, Schränke",
+      "it": "piano cottura, lavello, pensili"
+     },
+     "chip": {
+      "de": "in Ordnung",
+      "it": "a posto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Bad",
+      "it": "Bagno"
+     },
+     "neben": {
+      "de": "Fliese am Waschbecken gesprungen",
+      "it": "piastrella crepata al lavabo"
+     },
+     "chip": {
+      "de": "Mangel",
+      "it": "difetto"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Zähler Strom",
+      "it": "Contatore luce"
+     },
+     "neben": {
+      "de": "Nr. 0000-Esempio",
+      "it": "n. 0000-Esempio"
+     },
+     "chip": {
+      "de": "12.480 kWh",
+      "it": "12.480 kWh"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Schlüssel",
+      "it": "Chiavi"
+     },
+     "neben": {
+      "de": "Haustür, Wohnung, Briefkasten",
+      "it": "portone, appartamento, cassetta"
+     },
+     "chip": {
+      "de": "5 Stück",
+      "it": "5 pezzi"
+     },
+     "ton": "gold"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Protokoll drucken",
+     "it": "Stampa verbale"
+    },
+    "punkte": [
+     {
+      "de": "Unterschrift Vermieter",
+      "it": "Firma locatore"
+     },
+     {
+      "de": "Unterschrift Mieter",
+      "it": "Firma conduttore"
+     }
+    ]
+   }
+  },
+  "number": 36,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Vorlage zur Dokumentation, keine Rechtsberatung.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. File di setup per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Modello per documentare, non consulenza legale."
+  },
+  "erstellt": "2026-11-15T00:37:20.620Z",
+  "fertigAm": "2026-11-15"
+ },
+ {
+  "slug": "trepreventivi",
+  "brand": "TrePreventivi",
+  "produktart": {
+   "de": "Angebotsvergleich für Förderanträge",
+   "it": "Confronto preventivi per i bandi"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 35,
+    "interval": "once",
+    "unit": {
+     "de": "Programm, unbegrenzt nutzbar",
+     "it": "programma, uso illimitato"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von TrePreventivi: drei Angebote je Kostenposten nebeneinander verglichen",
+   "it": "Anteprima di TrePreventivi: tre preventivi per voce di costo messi a confronto"
+  },
+  "tagline": {
+   "de": "Drei Angebote, ein klarer Vergleich.",
+   "it": "Tre preventivi, un confronto chiaro."
+  },
+  "benefit": {
+   "de": "Offline-Programm, das je Kostenposten bis zu drei Angebote nebeneinanderstellt, das günstigste markiert, eine Begründung für Ihre Wahl festhält und eine Vergleichsübersicht druckt.",
+   "it": "Programma offline che per ogni voce di costo affianca fino a tre preventivi, evidenzia il più economico, registra la motivazione della scelta e stampa un prospetto comparativo."
+  },
+  "headline": {
+   "de": "Angebote vergleichen und die Wahl nachvollziehbar begründen.",
+   "it": "Confrontare i preventivi e motivare la scelta in modo chiaro."
+  },
+  "intro": {
+   "de": "Viele Ausschreibungen verlangen mehrere Vergleichsangebote je Anschaffung. Mit TrePreventivi tragen Sie Anbieter, Datum und Nettobetrag ein, sehen sofort Unterschiede und Summen und halten fest, warum Sie sich für ein Angebot entschieden haben.",
+   "it": "Molti bandi chiedono più preventivi comparativi per ogni acquisto. Con TrePreventivi inserisci fornitore, data e importo netto, vedi subito differenze e totali e annoti perché hai scelto un’offerta."
+  },
+  "audience": {
+   "de": "Kleine Betriebe, Vereine und Freiberufler, die Förderanträge oder Abrechnungen vorbereiten.",
+   "it": "Piccole imprese, associazioni e professionisti che preparano domande o rendiconti per bandi."
+  },
+  "job": {
+   "de": "Vergleichsangebote übersichtlich ordnen und die Auswahl dokumentieren.",
+   "it": "Ordinare i preventivi comparativi e documentare la scelta."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Daten bleiben auf Ihrem Gerät. Ein Ordnungswerkzeug, keine Fördermittelberatung – maßgeblich sind die Vorgaben der jeweiligen Ausschreibung.",
+   "it": "Funziona senza internet e senza account, i dati restano sul tuo dispositivo. Uno strumento per ordinare, non una consulenza sui bandi – valgono le regole del bando specifico."
+  },
+  "features": {
+   "de": [
+    "Je Kostenposten bis zu drei Angebote mit Anbieter, Datum und Nettobetrag",
+    "Günstigstes Angebot und Differenzen werden automatisch angezeigt",
+    "Hinweis bei zu wenigen Angeboten und bei fehlender Begründung, wenn nicht das günstigste gewählt wird",
+    "Zusammenfassung mit Summe der gewählten und der günstigsten Angebote",
+    "Druck oder PDF, Speichern und Laden als Datei; Beispiel mit erfundener Bäckerei"
+   ],
+   "it": [
+    "Per ogni voce di costo fino a tre preventivi con fornitore, data e importo netto",
+    "Offerta più economica e differenze mostrate in automatico",
+    "Avviso se i preventivi sono troppo pochi o se manca la motivazione quando non si sceglie il più economico",
+    "Riepilogo con totale delle offerte scelte e di quelle più economiche",
+    "Stampa o PDF, salvataggio e apertura come file; esempio con un panificio inventato"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: Beispielvergleich mit erfundenem Betrieb.",
+   "it": "Incluso: confronto di esempio con un’impresa inventata."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich TrePreventivi?",
+     "a": "Sie erhalten eine Setup-Datei: doppelklicken, Sprache wählen, fertig – TrePreventivi liegt danach als Symbol auf Ihrem Desktop und öffnet sich von selbst. Eine bebilderte Kurzanleitung auf einer Seite liegt bei, für Mac gibt es eine ZIP-Datei. Sie brauchen kein Konto und keine Vorkenntnisse; Ihre Daten bleiben auf Ihrem Computer. Die Setup-Datei ist nicht signiert, daher zeigt Windows beim ersten Start einen Hinweis („Weitere Informationen → Trotzdem ausführen“)."
+    },
+    {
+     "q": "Prüft das Programm, ob mein Antrag förderfähig ist?",
+     "a": "Nein. Es ordnet Ihre Angebote; die Regeln stehen in der jeweiligen Ausschreibung."
+    },
+    {
+     "q": "Brauche ich Internet?",
+     "a": "Nein, das Programm läuft offline in Ihrem Browser."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo TrePreventivi?",
+     "a": "Ricevi un file di setup: doppio clic, scegli la lingua, fatto – TrePreventivi compare come icona sul desktop e si apre da solo. È inclusa una guida illustrata di una pagina; per Mac c’è un file ZIP. Non servono account né conoscenze tecniche; i tuoi dati restano sul tuo computer. Il file di setup non è firmato, quindi al primo avvio Windows mostra un avviso („Ulteriori informazioni → Esegui comunque“)."
+    },
+    {
+     "q": "Il programma verifica se la domanda è ammissibile?",
+     "a": "No. Ordina i tuoi preventivi; le regole sono nel bando specifico."
+    },
+    {
+     "q": "Serve internet?",
+     "a": "No, il programma funziona offline nel browser."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie installieren das Programm per Doppelklick.",
+    "Sie tragen je Kostenposten bis zu drei Angebote ein.",
+    "Sie wählen, begründen und drucken die Übersicht."
+   ],
+   "it": [
+    "Installi il programma con un doppio clic.",
+    "Inserisci fino a tre preventivi per voce di costo.",
+    "Scegli, motivi e stampi il prospetto."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "TrePreventivi · Forno Esempio",
+   "titel": {
+    "de": "Vergleich: Backofen",
+    "it": "Confronto: forno"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Angebot A – Esempio Srl",
+      "it": "Preventivo A – Esempio Srl"
+     },
+     "neben": {
+      "de": "vom 03.02.",
+      "it": "del 03/02"
+     },
+     "chip": {
+      "de": "18.900 €",
+      "it": "18.900 €"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Angebot B – Forni Esempio",
+      "it": "Preventivo B – Forni Esempio"
+     },
+     "neben": {
+      "de": "günstigstes",
+      "it": "il più economico"
+     },
+     "chip": {
+      "de": "17.450 €",
+      "it": "17.450 €"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Angebot C – Demo Tecnica",
+      "it": "Preventivo C – Demo Tecnica"
+     },
+     "neben": {
+      "de": "vom 10.02.",
+      "it": "del 10/02"
+     },
+     "chip": {
+      "de": "19.300 €",
+      "it": "19.300 €"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Gewählt",
+      "it": "Scelto"
+     },
+     "neben": {
+      "de": "Angebot B",
+      "it": "Preventivo B"
+     },
+     "chip": {
+      "de": "begründet",
+      "it": "motivato"
+     },
+     "ton": "gold"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Übersicht drucken",
+     "it": "Stampa prospetto"
+    },
+    "punkte": [
+     {
+      "de": "Summe gewählter Angebote",
+      "it": "Totale offerte scelte"
+     }
+    ]
+   }
+  },
+  "number": 37,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Ordnungswerkzeug, keine Fördermittelberatung.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. File di setup per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Strumento per ordinare, non consulenza sui bandi."
+  },
+  "erstellt": "2026-11-15T00:37:20.620Z",
+  "fertigAm": "2026-11-15"
+ },
+ {
+  "slug": "turnochiaro",
+  "brand": "TurnoChiaro",
+  "produktart": {
+   "de": "Wochen-Dienstplan für Gastronomie",
+   "it": "Turni settimanali per la ristorazione"
+  },
+  "category": "immobilien-gastgewerbe",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "Programm, unbegrenzt nutzbar",
+     "it": "programma, uso illimitato"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von TurnoChiaro: Wochenplan mit Schichten und Stundensummen je Person",
+   "it": "Anteprima di TurnoChiaro: piano settimanale con turni e ore totali per persona"
+  },
+  "tagline": {
+   "de": "Der Wochenplan fürs Team, auf einen Blick.",
+   "it": "I turni della settimana, a colpo d’occhio."
+  },
+  "benefit": {
+   "de": "Offline-Programm für den Wochen-Dienstplan: Schichten je Person und Tag eintragen, Stunden automatisch zählen, Ruhetage sehen und den Plan als Aushang drucken.",
+   "it": "Programma offline per i turni settimanali: inserisci i turni per persona e giorno, conta le ore in automatico, vedi i riposi e stampa il piano da appendere."
+  },
+  "headline": {
+   "de": "Schichten planen, Stunden im Blick, Aushang fertig.",
+   "it": "Pianificare i turni, tenere d’occhio le ore, stampare il piano."
+  },
+  "intro": {
+   "de": "Sie legen Ihr Team und typische Schichten an, zum Beispiel Mittag und Abend. Dann klicken Sie die Woche zusammen: TurnoChiaro zählt die Stunden je Person, markiert Abweichungen von den vereinbarten Wochenstunden und druckt den Plan im Querformat.",
+   "it": "Inserisci il tuo team e i turni tipici, per esempio pranzo e cena. Poi componi la settimana: TurnoChiaro conta le ore per persona, segnala gli scostamenti dalle ore settimanali concordate e stampa il piano in orizzontale."
+  },
+  "audience": {
+   "de": "Bars, Restaurants, Pizzerien, kleine Hotels und B&B mit bis zu 15 Mitarbeitenden.",
+   "it": "Bar, ristoranti, pizzerie, piccoli hotel e B&B fino a 15 collaboratori."
+  },
+  "job": {
+   "de": "Den Wochenplan schnell erstellen und die Stunden je Person kennen.",
+   "it": "Creare velocemente i turni e conoscere le ore di ciascuno."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Daten bleiben auf Ihrem Gerät. Eine Planungshilfe, keine Arbeitsrechtsberatung – Arbeitszeitregeln und Verträge prüfen Sie selbst.",
+   "it": "Funziona senza internet e senza account, i dati restano sul tuo dispositivo. Un aiuto per pianificare, non una consulenza del lavoro – regole sugli orari e contratti li verifichi tu."
+  },
+  "features": {
+   "de": [
+    "Team mit vereinbarten Wochenstunden, Schichtvorlagen mit Uhrzeit und Pause (auch über Mitternacht)",
+    "Wochenraster je Person und Tag mit Ruhetag, Urlaub und Abwesenheit",
+    "Stundensumme je Person, Abweichung zum Soll und Besetzung je Tag",
+    "Plan mit einem Klick für die nächste Woche übernehmen",
+    "Aushang im Querformat drucken oder als PDF; Beispielwoche mit erfundenem Lokal"
+   ],
+   "it": [
+    "Team con ore settimanali concordate, modelli di turno con orario e pausa (anche oltre mezzanotte)",
+    "Piano per persona e giorno con riposo, ferie e assenza",
+    "Ore totali per persona, scostamento dalle ore concordate e presenti per giorno",
+    "Riporta il piano alla settimana successiva con un clic",
+    "Stampa in orizzontale o PDF da appendere; settimana di esempio con un locale inventato"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: Beispielwoche mit erfundenem Lokal.",
+   "it": "Incluso: settimana di esempio con un locale inventato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich TurnoChiaro?",
+     "a": "Sie erhalten eine Setup-Datei: doppelklicken, Sprache wählen, fertig – TurnoChiaro liegt danach als Symbol auf Ihrem Desktop und öffnet sich von selbst. Eine bebilderte Kurzanleitung auf einer Seite liegt bei, für Mac gibt es eine ZIP-Datei. Sie brauchen kein Konto und keine Vorkenntnisse; Ihre Daten bleiben auf Ihrem Computer. Die Setup-Datei ist nicht signiert, daher zeigt Windows beim ersten Start einen Hinweis („Weitere Informationen → Trotzdem ausführen“)."
+    },
+    {
+     "q": "Prüft das Programm gesetzliche Ruhezeiten?",
+     "a": "Nein. Es zählt Stunden und zeigt Ruhetage; die Regeln prüfen Sie selbst."
+    },
+    {
+     "q": "Brauche ich Internet?",
+     "a": "Nein, das Programm läuft offline in Ihrem Browser."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo TurnoChiaro?",
+     "a": "Ricevi un file di setup: doppio clic, scegli la lingua, fatto – TurnoChiaro compare come icona sul desktop e si apre da solo. È inclusa una guida illustrata di una pagina; per Mac c’è un file ZIP. Non servono account né conoscenze tecniche; i tuoi dati restano sul tuo computer. Il file di setup non è firmato, quindi al primo avvio Windows mostra un avviso („Ulteriori informazioni → Esegui comunque“)."
+    },
+    {
+     "q": "Il programma verifica i riposi di legge?",
+     "a": "No. Conta le ore e mostra i riposi; le regole le verifichi tu."
+    },
+    {
+     "q": "Serve internet?",
+     "a": "No, il programma funziona offline nel browser."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie installieren das Programm per Doppelklick.",
+    "Sie legen Team und Schichten an.",
+    "Sie planen die Woche und drucken den Aushang."
+   ],
+   "it": [
+    "Installi il programma con un doppio clic.",
+    "Inserisci team e turni.",
+    "Pianifichi la settimana e stampi il piano."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "TurnoChiaro · Trattoria Esempio",
+   "titel": {
+    "de": "Woche 47 – Service",
+    "it": "Settimana 47 – sala"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Giulia (Esempio)",
+      "it": "Giulia (Esempio)"
+     },
+     "neben": {
+      "de": "6 Abende, Mi frei",
+      "it": "6 sere, mer libero"
+     },
+     "chip": {
+      "de": "30 / 30 h",
+      "it": "30 / 30 h"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Marco (Esempio)",
+      "it": "Marco (Esempio)"
+     },
+     "neben": {
+      "de": "6 Schichten",
+      "it": "6 turni"
+     },
+     "chip": {
+      "de": "42 / 40 h",
+      "it": "42 / 40 h"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Sara (Esempio)",
+      "it": "Sara (Esempio)"
+     },
+     "neben": {
+      "de": "Mittag Mi bis So",
+      "it": "pranzo da mer a dom"
+     },
+     "chip": {
+      "de": "20 / 20 h",
+      "it": "20 / 20 h"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Ruhetag",
+      "it": "Riposo"
+     },
+     "neben": {
+      "de": "Montag Mittag geschlossen",
+      "it": "lunedì a pranzo chiuso"
+     },
+     "chip": {
+      "de": "Mo",
+      "it": "lun"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Aushang drucken",
+     "it": "Stampa il piano"
+    },
+    "punkte": [
+     {
+      "de": "Querformat A4",
+      "it": "A4 orizzontale"
+     }
+    ]
+   }
+  },
+  "number": 38,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Planungshilfe, keine Arbeitsrechtsberatung.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. File di setup per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Aiuto alla pianificazione, non consulenza del lavoro."
+  },
+  "erstellt": "2026-11-15T00:37:20.620Z",
+  "fertigAm": "2026-11-15"
  }
 ]
