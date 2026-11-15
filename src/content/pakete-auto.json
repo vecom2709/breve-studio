@@ -4865,5 +4865,646 @@
   },
   "erstellt": "2026-11-15T00:37:20.620Z",
   "fertigAm": "2026-11-15"
+ },
+ {
+  "slug": "oreprogetto",
+  "brand": "OreProgetto",
+  "produktart": {
+   "de": "Stundennachweis für Förderprojekte",
+   "it": "Timesheet per progetti finanziati"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "Programm, unbegrenzt nutzbar",
+     "it": "programma, uso illimitato"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von OreProgetto: Monatsnachweis mit Stunden je Arbeitspaket",
+   "it": "Anteprima di OreProgetto: timesheet mensile con ore per work package"
+  },
+  "tagline": {
+   "de": "Projektstunden sauber nachweisen, Monat für Monat.",
+   "it": "Le ore di progetto documentate, mese per mese."
+  },
+  "benefit": {
+   "de": "Offline-Programm für monatliche Stundennachweise: Stunden je Tag und Arbeitspaket eintragen, Summen und Projektanteil sehen und den Nachweis zum Unterschreiben drucken.",
+   "it": "Programma offline per i timesheet mensili: inserisci le ore per giorno e work package, vedi totali e quota di progetto e stampa il foglio da firmare."
+  },
+  "headline": {
+   "de": "Stunden je Arbeitspaket erfassen und den Monatsnachweis fertig drucken.",
+   "it": "Registrare le ore per work package e stampare il timesheet del mese."
+  },
+  "intro": {
+   "de": "Viele Förderprogramme verlangen für Personalkosten einen Stundennachweis je Person und Monat. Mit OreProgetto legen Sie die Arbeitspakete Ihres Projekts an, tragen je Tag die Stunden ein und erhalten einen übersichtlichen Nachweis mit Summen und Unterschriftsfeldern.",
+   "it": "Molti bandi chiedono per i costi del personale un timesheet per persona e mese. Con OreProgetto inserisci i work package del progetto, registri le ore giorno per giorno e ottieni un foglio chiaro con totali e spazi per le firme."
+  },
+  "audience": {
+   "de": "Kleine Betriebe, Vereine und Freiberufler mit einem geförderten Projekt und eigenem Personal.",
+   "it": "Piccole imprese, associazioni e professionisti con un progetto finanziato e personale proprio."
+  },
+  "job": {
+   "de": "Projektstunden je Person und Monat nachvollziehbar dokumentieren.",
+   "it": "Documentare in modo tracciabile le ore di progetto per persona e mese."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Daten bleiben auf Ihrem Gerät. Eine Vorlage zur Organisation – maßgeblich sind immer die Vorgaben Ihres Förderprogramms.",
+   "it": "Funziona senza internet e senza account, i dati restano sul tuo dispositivo. Un modello organizzativo – valgono sempre le regole del tuo bando."
+  },
+  "features": {
+   "de": [
+    "Projektangaben: Titel, Projektnummer, Förderprogramm, Organisation, Person, Funktion und Monat",
+    "Arbeitspakete mit Kürzel und Bezeichnung",
+    "Monatsraster je Tag mit Stunden je Arbeitspaket, anderen Tätigkeiten und Abwesenheit (Urlaub, Krankheit, Feiertag); Wochenenden markiert",
+    "Summen je Arbeitspaket und Tag, Projektstunden, Gesamtstunden und Projektanteil in Prozent",
+    "Nachweis mit Unterschriftsfeldern drucken oder als PDF; Speichern als Datei, „Nächsten Monat beginnen“, Beispielmonat"
+   ],
+   "it": [
+    "Dati del progetto: titolo, codice, bando, organizzazione, persona, ruolo e mese",
+    "Work package con sigla e descrizione",
+    "Griglia mensile per giorno con ore per work package, altre attività e assenze (ferie, malattia, festivo); weekend evidenziati",
+    "Totali per work package e giorno, ore di progetto, ore totali e quota di progetto in percentuale",
+    "Stampa o PDF con spazi per le firme; salvataggio su file, „Inizia il mese successivo“, mese di esempio"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: ausgefüllter Beispielmonat mit erfundenem Projekt (auch als PDF) und Kurzanleitung zur Installation.",
+   "it": "Incluso: mese di esempio compilato con un progetto inventato (anche in PDF) e guida rapida all’installazione."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich OreProgetto?",
+     "a": "Sie erhalten eine Setup-Datei: doppelklicken, Sprache wählen, fertig – OreProgetto liegt danach als Symbol auf Ihrem Desktop und öffnet sich von selbst. Eine bebilderte Kurzanleitung auf einer Seite liegt bei, für Mac gibt es eine ZIP-Datei. Sie brauchen kein Konto und keine Vorkenntnisse; Ihre Daten bleiben auf Ihrem Computer. Die Setup-Datei ist nicht signiert, daher zeigt Windows beim ersten Start einen Hinweis („Weitere Informationen → Trotzdem ausführen“)."
+    },
+    {
+     "q": "Kann ich mehrere Personen erfassen?",
+     "a": "Ja: je Person und Monat einen Nachweis anlegen und mit „Speichern (Datei)“ sichern."
+    },
+    {
+     "q": "Entspricht der Nachweis den Vorgaben meines Programms?",
+     "a": "Das prüfen Sie bitte anhand Ihrer Förderunterlagen. OreProgetto ist eine Vorlage zur Organisation, keine Beratung."
+    },
+    {
+     "q": "Brauche ich Internet?",
+     "a": "Nein, das Programm läuft offline in Ihrem Browser."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo OreProgetto?",
+     "a": "Ricevi un file di setup: doppio clic, scegli la lingua, fatto – OreProgetto compare come icona sul desktop e si apre da solo. È inclusa una guida illustrata di una pagina; per Mac c’è un file ZIP. Non servono account né conoscenze tecniche; i tuoi dati restano sul tuo computer. Il file di setup non è firmato, quindi al primo avvio Windows mostra un avviso („Ulteriori informazioni → Esegui comunque“)."
+    },
+    {
+     "q": "Posso gestire più persone?",
+     "a": "Sì: crea un timesheet per persona e mese e conservalo con „Salva (file)“."
+    },
+    {
+     "q": "Il timesheet rispetta le regole del mio bando?",
+     "a": "Verificalo con i documenti del bando. OreProgetto è un modello organizzativo, non una consulenza."
+    },
+    {
+     "q": "Serve internet?",
+     "a": "No, il programma funziona offline nel browser."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie installieren das Programm per Doppelklick.",
+    "Sie legen Projekt und Arbeitspakete an.",
+    "Sie tragen die Stunden ein und drucken den Monatsnachweis."
+   ],
+   "it": [
+    "Installi il programma con un doppio clic.",
+    "Inserisci progetto e work package.",
+    "Registri le ore e stampi il timesheet del mese."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "OreProgetto · Progetto Esempio",
+   "titel": {
+    "de": "November 2026 – Anna (Esempio)",
+    "it": "Novembre 2026 – Anna (Esempio)"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "AP1 Analyse",
+      "it": "WP1 Analisi"
+     },
+     "neben": {
+      "de": "Analyse und Planung",
+      "it": "Analisi e pianificazione"
+     },
+     "chip": {
+      "de": "29 h",
+      "it": "29 h"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "AP2 Prototyp",
+      "it": "WP2 Prototipo"
+     },
+     "neben": {
+      "de": "Prototyp",
+      "it": "Prototipo"
+     },
+     "chip": {
+      "de": "58 h",
+      "it": "58 h"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Andere Tätigkeiten",
+      "it": "Altre attività"
+     },
+     "neben": {
+      "de": "nicht im Projekt",
+      "it": "fuori progetto"
+     },
+     "chip": {
+      "de": "65 h",
+      "it": "65 h"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Projektanteil",
+      "it": "Quota di progetto"
+     },
+     "neben": {
+      "de": "87 von 152 h",
+      "it": "87 su 152 h"
+     },
+     "chip": {
+      "de": "57 %",
+      "it": "57 %"
+     },
+     "ton": "gold"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Zum Unterschreiben drucken",
+     "it": "Stampa da firmare"
+    },
+    "punkte": [
+     {
+      "de": "Mitarbeiterin und Projektleitung",
+      "it": "Collaboratrice e responsabile"
+     }
+    ]
+   }
+  },
+  "number": 39,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Windows-Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Vorlage zur Organisation, keine Beratung – maßgeblich sind die Vorgaben Ihres Förderprogramms.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Modello organizzativo, non una consulenza – valgono le regole del tuo bando."
+  },
+  "erstellt": "2026-11-15T20:44:37.545Z",
+  "fertigAm": "2026-11-15"
+ },
+ {
+  "slug": "verbalechiaro",
+  "brand": "VerbaleChiaro",
+  "produktart": {
+   "de": "Sitzungs- und Versammlungsprotokoll",
+   "it": "Verbale per riunioni e assemblee"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "Programm, unbegrenzt nutzbar",
+     "it": "programma, uso illimitato"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von VerbaleChiaro: Protokoll mit Tagesordnung, Beschlüssen und Aufgaben",
+   "it": "Anteprima di VerbaleChiaro: verbale con ordine del giorno, delibere e compiti"
+  },
+  "tagline": {
+   "de": "Das Protokoll ist fertig, wenn die Sitzung endet.",
+   "it": "Il verbale è pronto quando finisce la riunione."
+  },
+  "benefit": {
+   "de": "Offline-Programm für Protokolle: Anwesenheit, Tagesordnung, Beschlüsse mit Abstimmung und Aufgaben mit Termin erfassen und das Protokoll mit Unterschriftsfeldern drucken.",
+   "it": "Programma offline per i verbali: presenze, ordine del giorno, delibere con votazione e compiti con scadenza, poi stampa con spazi per le firme."
+  },
+  "headline": {
+   "de": "Anwesenheit, Beschlüsse und Aufgaben – sauber protokolliert.",
+   "it": "Presenze, delibere e compiti – messi a verbale in modo ordinato."
+  },
+  "intro": {
+   "de": "Ob Vorstandssitzung im Verein, Teambesprechung oder Versammlung: Sie tragen Teilnehmende, Tagesordnungspunkte und Beschlüsse ein, während die Sitzung läuft. VerbaleChiaro zählt Anwesende und Stimmen, sammelt die Aufgaben und erstellt daraus ein ordentliches Protokoll.",
+   "it": "Che sia il direttivo dell’associazione, una riunione di team o un’assemblea: inserisci partecipanti, punti all’ordine del giorno e delibere mentre la riunione è in corso. VerbaleChiaro conta presenti e voti, raccoglie i compiti e crea un verbale ordinato."
+  },
+  "audience": {
+   "de": "Vereine, kleine Betriebe, Genossenschaften und Arbeitsgruppen.",
+   "it": "Associazioni, piccole imprese, cooperative e gruppi di lavoro."
+  },
+  "job": {
+   "de": "Sitzungen schnell und vollständig protokollieren.",
+   "it": "Mettere a verbale le riunioni in modo rapido e completo."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Daten bleiben auf Ihrem Gerät. Eine Vorlage zur Organisation – Formvorschriften aus Satzung oder Gesetz prüfen Sie selbst.",
+   "it": "Funziona senza internet e senza account, i dati restano sul tuo dispositivo. Un modello organizzativo – i requisiti di statuto o di legge li verifichi tu."
+  },
+  "features": {
+   "de": [
+    "Kopf mit Organisation, Art der Sitzung, Datum, Ort, Beginn und Ende, Leitung und Protokoll",
+    "Teilnehmende mit Funktion und Status (anwesend, entschuldigt, abwesend) und automatischer Zählung",
+    "Tagesordnung mit Aussprache, Beschlusstext und Stimmen (Ja, Nein, Enthaltung) – Anzeige, ob mehr Ja- als Nein-Stimmen",
+    "Aufgabenliste mit Zuständigkeit und Termin",
+    "Protokoll mit Unterschriftsfeldern drucken oder als PDF; Speichern als Datei, Beispielprotokoll"
+   ],
+   "it": [
+    "Intestazione con organizzazione, tipo di riunione, data, luogo, inizio e fine, presidente e segretario",
+    "Partecipanti con ruolo e stato (presente, giustificato, assente) e conteggio automatico",
+    "Ordine del giorno con discussione, testo della delibera e voti (sì, no, astenuti) – indica se i sì superano i no",
+    "Elenco compiti con responsabile e scadenza",
+    "Stampa o PDF del verbale con spazi per le firme; salvataggio su file, verbale di esempio"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: Beispielprotokoll eines erfundenen Vereins (auch als PDF) und Kurzanleitung zur Installation.",
+   "it": "Incluso: verbale di esempio di un’associazione inventata (anche in PDF) e guida rapida all’installazione."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich VerbaleChiaro?",
+     "a": "Sie erhalten eine Setup-Datei: doppelklicken, Sprache wählen, fertig – VerbaleChiaro liegt danach als Symbol auf Ihrem Desktop und öffnet sich von selbst. Eine bebilderte Kurzanleitung auf einer Seite liegt bei, für Mac gibt es eine ZIP-Datei. Sie brauchen kein Konto und keine Vorkenntnisse; Ihre Daten bleiben auf Ihrem Computer. Die Setup-Datei ist nicht signiert, daher zeigt Windows beim ersten Start einen Hinweis („Weitere Informationen → Trotzdem ausführen“)."
+    },
+    {
+     "q": "Entscheidet das Programm, ob ein Beschluss gültig ist?",
+     "a": "Nein. Es zeigt das Stimmenverhältnis; maßgeblich sind Ihre Satzung und die geltenden Regeln."
+    },
+    {
+     "q": "Brauche ich Internet?",
+     "a": "Nein, das Programm läuft offline in Ihrem Browser."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo VerbaleChiaro?",
+     "a": "Ricevi un file di setup: doppio clic, scegli la lingua, fatto – VerbaleChiaro compare come icona sul desktop e si apre da solo. È inclusa una guida illustrata di una pagina; per Mac c’è un file ZIP. Non servono account né conoscenze tecniche; i tuoi dati restano sul tuo computer. Il file di setup non è firmato, quindi al primo avvio Windows mostra un avviso („Ulteriori informazioni → Esegui comunque“)."
+    },
+    {
+     "q": "Il programma decide se una delibera è valida?",
+     "a": "No. Mostra il rapporto dei voti; valgono il tuo statuto e le regole applicabili."
+    },
+    {
+     "q": "Serve internet?",
+     "a": "No, il programma funziona offline nel browser."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie installieren das Programm per Doppelklick.",
+    "Sie tragen während der Sitzung alles ein.",
+    "Sie drucken das Protokoll oder speichern es als PDF."
+   ],
+   "it": [
+    "Installi il programma con un doppio clic.",
+    "Durante la riunione inserisci tutto.",
+    "Stampi il verbale o lo salvi in PDF."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "VerbaleChiaro · Associazione Esempio",
+   "titel": {
+    "de": "Vorstandssitzung vom 12.11.2026",
+    "it": "Riunione del direttivo del 12/11/2026"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Anwesend",
+      "it": "Presenti"
+     },
+     "neben": {
+      "de": "1 entschuldigt",
+      "it": "1 giustificato"
+     },
+     "chip": {
+      "de": "5 von 6",
+      "it": "5 su 6"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "TOP 1 Sommerfest",
+      "it": "Punto 1 Festa d’estate"
+     },
+     "neben": {
+      "de": "5 Ja · 0 Nein",
+      "it": "5 sì · 0 no"
+     },
+     "chip": {
+      "de": "Mehrheit Ja",
+      "it": "Maggioranza sì"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "TOP 2 Mitgliedsbeitrag",
+      "it": "Punto 2 Quota sociale"
+     },
+     "neben": {
+      "de": "2 Ja · 3 Nein",
+      "it": "2 sì · 3 no"
+     },
+     "chip": {
+      "de": "keine Mehrheit",
+      "it": "nessuna maggioranza"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Aufgabe: Angebote einholen",
+      "it": "Compito: chiedere preventivi"
+     },
+     "neben": {
+      "de": "Marta (Esempio)",
+      "it": "Marta (Esempio)"
+     },
+     "chip": {
+      "de": "bis 30.11.",
+      "it": "entro 30/11"
+     },
+     "ton": "gold"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Protokoll drucken",
+     "it": "Stampa il verbale"
+    },
+    "punkte": [
+     {
+      "de": "mit Unterschriftsfeldern",
+      "it": "con spazi per le firme"
+     }
+    ]
+   }
+  },
+  "number": 40,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Windows-Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Vorlage zur Organisation, keine Rechtsberatung – die Gültigkeit von Beschlüssen richtet sich nach Satzung und Recht.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Modello organizzativo, non consulenza legale – la validità delle delibere dipende da statuto e norme."
+  },
+  "erstellt": "2026-11-15T20:44:37.547Z",
+  "fertigAm": "2026-11-15"
+ },
+ {
+  "slug": "magazzinobreve",
+  "brand": "MagazzinoBreve",
+  "produktart": {
+   "de": "Lagerliste mit Bestellvorschlag",
+   "it": "Lista di magazzino con ordine suggerito"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "Programm, unbegrenzt nutzbar",
+     "it": "programma, uso illimitato"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von MagazzinoBreve: Artikel mit Bestand, Mindestbestand und Bestellmenge",
+   "it": "Anteprima di MagazzinoBreve: articoli con giacenza, scorta minima e quantità da ordinare"
+  },
+  "tagline": {
+   "de": "Sehen, was fehlt – Bestellung fertig.",
+   "it": "Vedi cosa manca – e l’ordine è pronto."
+  },
+  "benefit": {
+   "de": "Offline-Programm für kleine Lager: Bestand eintragen, Artikel unter Mindestbestand erkennen und eine Bestellliste je Lieferant drucken oder als Text kopieren.",
+   "it": "Programma offline per piccoli magazzini: inserisci le giacenze, riconosci gli articoli sotto scorta e stampa o copia come testo l’ordine per fornitore."
+  },
+  "headline": {
+   "de": "Bestand zählen, Mindestmengen prüfen, Bestellung je Lieferant fertig.",
+   "it": "Contare le giacenze, controllare le scorte, ordine per fornitore pronto."
+  },
+  "intro": {
+   "de": "Sie legen Ihre Artikel einmal mit Lieferant, Einheit, Mindest- und Sollbestand an. Bei jeder Zählung tragen Sie nur den aktuellen Bestand ein: MagazzinoBreve markiert, was nachbestellt werden sollte, rechnet die Menge bis zum Sollbestand aus und ordnet alles nach Lieferanten.",
+   "it": "Inserisci una volta i tuoi articoli con fornitore, unità, scorta minima e giacenza ideale. A ogni conteggio scrivi solo la giacenza attuale: MagazzinoBreve segnala cosa riordinare, calcola la quantità fino alla giacenza ideale e divide l’ordine per fornitore."
+  },
+  "audience": {
+   "de": "Bars, Restaurants, kleine Läden, Handwerksbetriebe und B&B mit eigenem Vorrat.",
+   "it": "Bar, ristoranti, piccoli negozi, artigiani e B&B con scorte proprie."
+  },
+  "job": {
+   "de": "Rechtzeitig und vollständig nachbestellen, ohne Zettelwirtschaft.",
+   "it": "Riordinare in tempo e senza dimenticanze, senza foglietti sparsi."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Daten bleiben auf Ihrem Gerät. Kein Kassen- oder Warenwirtschaftssystem – eine einfache Liste, die Sie selbst pflegen.",
+   "it": "Funziona senza internet e senza account, i dati restano sul tuo dispositivo. Non è un gestionale né una cassa – è una lista semplice che aggiorni tu."
+  },
+  "features": {
+   "de": [
+    "Artikel mit Lieferant, Einheit, Bestand, Mindest- und Sollbestand sowie Einkaufspreis",
+    "Ampel je Artikel: unter, am oder über dem Mindestbestand",
+    "Bestellvorschlag je Lieferant: Menge bis zum Sollbestand und geschätzter Betrag",
+    "Bestelltext je Lieferant mit einem Klick kopieren, z. B. für E-Mail oder Messenger",
+    "Inventurliste mit Lagerwert; Ansicht wählbar, drucken oder als PDF, Speichern als Datei"
+   ],
+   "it": [
+    "Articoli con fornitore, unità, giacenza, scorta minima, giacenza ideale e prezzo d’acquisto",
+    "Semaforo per articolo: sotto, alla o sopra la scorta minima",
+    "Ordine suggerito per fornitore: quantità fino alla giacenza ideale e importo stimato",
+    "Testo dell’ordine per fornitore da copiare con un clic, ad es. per e-mail o messaggi",
+    "Inventario con valore di magazzino; vista a scelta, stampa o PDF, salvataggio su file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Inklusive: Beispiellager einer erfundenen Bar (auch als PDF) und Kurzanleitung zur Installation.",
+   "it": "Incluso: magazzino di esempio di un bar inventato (anche in PDF) e guida rapida all’installazione."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich MagazzinoBreve?",
+     "a": "Sie erhalten eine Setup-Datei: doppelklicken, Sprache wählen, fertig – MagazzinoBreve liegt danach als Symbol auf Ihrem Desktop und öffnet sich von selbst. Eine bebilderte Kurzanleitung auf einer Seite liegt bei, für Mac gibt es eine ZIP-Datei. Sie brauchen kein Konto und keine Vorkenntnisse; Ihre Daten bleiben auf Ihrem Computer. Die Setup-Datei ist nicht signiert, daher zeigt Windows beim ersten Start einen Hinweis („Weitere Informationen → Trotzdem ausführen“)."
+    },
+    {
+     "q": "Ist das eine Warenwirtschaft mit Kassenanbindung?",
+     "a": "Nein. MagazzinoBreve ist eine einfache Liste: Sie zählen und tragen den Bestand selbst ein."
+    },
+    {
+     "q": "Brauche ich Internet?",
+     "a": "Nein, das Programm läuft offline in Ihrem Browser."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo MagazzinoBreve?",
+     "a": "Ricevi un file di setup: doppio clic, scegli la lingua, fatto – MagazzinoBreve compare come icona sul desktop e si apre da solo. È inclusa una guida illustrata di una pagina; per Mac c’è un file ZIP. Non servono account né conoscenze tecniche; i tuoi dati restano sul tuo computer. Il file di setup non è firmato, quindi al primo avvio Windows mostra un avviso („Ulteriori informazioni → Esegui comunque“)."
+    },
+    {
+     "q": "È un gestionale collegato alla cassa?",
+     "a": "No. MagazzinoBreve è una lista semplice: conti tu e inserisci la giacenza."
+    },
+    {
+     "q": "Serve internet?",
+     "a": "No, il programma funziona offline nel browser."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Sie installieren das Programm per Doppelklick.",
+    "Sie legen Ihre Artikel einmal an.",
+    "Sie zählen, tragen den Bestand ein und bestellen."
+   ],
+   "it": [
+    "Installi il programma con un doppio clic.",
+    "Inserisci una volta i tuoi articoli.",
+    "Conti, aggiorni la giacenza e ordini."
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "MagazzinoBreve · Bar Esempio",
+   "titel": {
+    "de": "Bestellvorschlag",
+    "it": "Ordine suggerito"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Kaffeebohnen 1 kg",
+      "it": "Caffè in grani 1 kg"
+     },
+     "neben": {
+      "de": "Bestand 2 · Mindest 3",
+      "it": "Giacenza 2 · minimo 3"
+     },
+     "chip": {
+      "de": "+ 6",
+      "it": "+ 6"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Milch 1 l",
+      "it": "Latte 1 l"
+     },
+     "neben": {
+      "de": "Bestand 12 · Mindest 12",
+      "it": "Giacenza 12 · minimo 12"
+     },
+     "chip": {
+      "de": "+ 18",
+      "it": "+ 18"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Zucker-Sticks",
+      "it": "Bustine di zucchero"
+     },
+     "neben": {
+      "de": "Bestand 900",
+      "it": "Giacenza 900"
+     },
+     "chip": {
+      "de": "ok",
+      "it": "ok"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Lieferant Esempio Caffè",
+      "it": "Fornitore Esempio Caffè"
+     },
+     "neben": {
+      "de": "2 Artikel",
+      "it": "2 articoli"
+     },
+     "chip": {
+      "de": "ca. 107 €",
+      "it": "ca. 107 €"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Bestellung kopieren",
+     "it": "Copia l’ordine"
+    },
+    "punkte": [
+     {
+      "de": "je Lieferant als Text",
+      "it": "per fornitore come testo"
+     }
+    ]
+   }
+  },
+  "number": 41,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Windows-Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP."
+  },
+  "erstellt": "2026-11-15T20:44:37.547Z",
+  "fertigAm": "2026-11-15"
  }
 ]
