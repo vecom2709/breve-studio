@@ -5506,5 +5506,621 @@
   },
   "erstellt": "2026-11-15T20:44:37.547Z",
   "fertigAm": "2026-11-15"
+ },
+ {
+  "slug": "sceltagara",
+  "brand": "SceltaGara",
+  "produktart": {
+   "de": "Teilnahme-Check für Ausschreibungen",
+   "it": "Valutazione per partecipare a gare"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 49,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von SceltaGara: Bewertung einer Ausschreibung mit Kriterien, Punkten und Ampel",
+   "it": "Anteprima di SceltaGara: valutazione di una gara con criteri, punteggio e semaforo"
+  },
+  "tagline": {
+   "de": "Erst bewerten, dann entscheiden: mitmachen oder nicht.",
+   "it": "Prima valuti, poi decidi se partecipare."
+  },
+  "benefit": {
+   "de": "Gewichtete Kriterien, Pflichtanforderungen und Fristen auf einem Entscheidungsblatt – damit Sie Zeit nur in passende Ausschreibungen stecken.",
+   "it": "Criteri pesati, requisiti obbligatori e scadenze in un unico foglio decisionale – per investire tempo solo nelle gare adatte."
+  },
+  "headline": {
+   "de": "Lohnt sich diese Ausschreibung? Ein klarer Check vor dem Aufwand.",
+   "it": "Questa gara conviene? Una verifica chiara prima di iniziare."
+  },
+  "intro": {
+   "de": "SceltaGara ist ein Programm für Ihren Computer: Sie bewerten eine Ausschreibung nach eigenen, gewichteten Kriterien, haken Pflichtanforderungen ab und planen die Aufgaben bis zur Abgabefrist. Am Ende steht ein druckbares Entscheidungsblatt.",
+   "it": "SceltaGara è un programma per il tuo computer: valuti una gara con criteri tuoi e pesati, spunti i requisiti obbligatori e pianifichi le attività fino alla scadenza. Alla fine ottieni un foglio decisionale da stampare."
+  },
+  "audience": {
+   "de": "Handwerksbetriebe, kleine Dienstleister, Planungsbüros und Genossenschaften, die an öffentlichen oder privaten Ausschreibungen teilnehmen.",
+   "it": "Artigiani, piccole imprese di servizi, studi tecnici e cooperative che partecipano a gare pubbliche o private."
+  },
+  "job": {
+   "de": "Schnell und nachvollziehbar entscheiden, ob sich die Teilnahme lohnt – und nichts Wichtiges übersehen.",
+   "it": "Decidere in modo rapido e motivato se partecipare – senza dimenticare nulla di importante."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, Ihre Bewertungen bleiben auf Ihrem Gerät. Eine organisatorische Entscheidungshilfe – sie ersetzt nicht das Lesen der Unterlagen und keine rechtliche Prüfung.",
+   "it": "Funziona senza internet e senza account, le tue valutazioni restano sul tuo dispositivo. È un aiuto organizzativo – non sostituisce la lettura dei documenti né una verifica legale."
+  },
+  "features": {
+   "de": [
+    "Ausschreibung mit Auftraggeber, Aktenzeichen/CIG und Abgabefrist mit verbleibenden Tagen",
+    "Kriterien mit Gewicht 1–5 und Bewertung 0–5 (7 Vorschläge, frei änderbar), Ergebnis in Prozent mit Ampel",
+    "Pflichtanforderungen mit Ja/Nein/Offen und Nachweis – ein „Nein“ wird rot hervorgehoben",
+    "Aufgaben mit Verantwortlichen und Termin, überfällige werden markiert",
+    "Entscheidungsblatt mit Unterschriftszeilen: drucken, als PDF oder Datei speichern"
+   ],
+   "it": [
+    "Gara con stazione appaltante, CIG e scadenza con giorni rimanenti",
+    "Criteri con peso 1–5 e voto 0–5 (7 proposte modificabili), risultato in percentuale con semaforo",
+    "Requisiti obbligatori con Sì/No/Da verificare e prova – un „No“ viene evidenziato in rosso",
+    "Attività con responsabile e data, quelle in ritardo vengono segnalate",
+    "Foglio decisionale con spazio per le firme: stampa, PDF o salvataggio su file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich SceltaGara?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Sagt mir SceltaGara, ob ich teilnehmen darf?",
+     "a": "Nein. Es ordnet Ihre eigene Einschätzung. Ob Sie die Teilnahmebedingungen erfüllen, prüfen Sie anhand der Ausschreibungsunterlagen, im Zweifel mit Fachleuten."
+    },
+    {
+     "q": "Kann ich die Kriterien ändern?",
+     "a": "Ja. Die Vorschläge lassen sich umbenennen, löschen und ergänzen, die Gewichte legen Sie selbst fest."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo SceltaGara?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "SceltaGara mi dice se posso partecipare?",
+     "a": "No. Mette in ordine la tua valutazione. Se possiedi i requisiti lo verifichi nei documenti di gara, in caso di dubbio con un professionista."
+    },
+    {
+     "q": "Posso cambiare i criteri?",
+     "a": "Sì. I criteri proposti si possono rinominare, eliminare e aggiungere, i pesi li decidi tu."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren und Ausschreibung eintragen",
+    "Kriterien bewerten, Pflichtanforderungen abhaken",
+    "Entscheidungsblatt drucken und Aufgaben verteilen"
+   ],
+   "it": [
+    "Installi il programma e inserisci la gara",
+    "Valuti i criteri e spunti i requisiti",
+    "Stampi il foglio decisionale e assegni le attività"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "SceltaGara · Impresa Esempio",
+   "titel": {
+    "de": "Bewertung: Wartung Grünflächen",
+    "it": "Valutazione: manutenzione del verde"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Passt zu unserem Angebot",
+      "it": "Coerente con i nostri servizi"
+     },
+     "neben": {
+      "de": "Gewicht 5",
+      "it": "Peso 5"
+     },
+     "chip": {
+      "de": "4 / 5",
+      "it": "4 / 5"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Kapazität im Zeitraum",
+      "it": "Capacità nel periodo"
+     },
+     "neben": {
+      "de": "Gewicht 4",
+      "it": "Peso 4"
+     },
+     "chip": {
+      "de": "3 / 5",
+      "it": "3 / 5"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Referenz vergleichbarer Auftrag",
+      "it": "Referenza servizio analogo"
+     },
+     "neben": {
+      "de": "Pflicht",
+      "it": "Obbligatorio"
+     },
+     "chip": {
+      "de": "offen",
+      "it": "da verificare"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Ergebnis",
+      "it": "Risultato"
+     },
+     "neben": {
+      "de": "noch 12 Tage",
+      "it": "ancora 12 giorni"
+     },
+     "chip": {
+      "de": "72 %",
+      "it": "72 %"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Entscheidungsblatt",
+     "it": "Foglio decisionale"
+    },
+    "punkte": [
+     {
+      "de": "mit Aufgaben und Fristen",
+      "it": "con attività e scadenze"
+     }
+    ]
+   }
+  },
+  "number": 42,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung; für Mac als ZIP. Mit ausgefülltem Beispiel (DE/IT). Organisatorische Entscheidungshilfe, ersetzt keine Prüfung der Unterlagen.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata; per Mac come ZIP. Con esempio compilato (IT/DE). Aiuto organizzativo, non sostituisce la verifica dei documenti."
+  },
+  "erstellt": "2026-11-16T20:45:01.852Z",
+  "fertigAm": "2026-11-16"
+ },
+ {
+  "slug": "costopiatto",
+  "brand": "CostoPiatto",
+  "produktart": {
+   "de": "Rezept- und Wareneinsatz-Rechner",
+   "it": "Calcolo food cost per ricette"
+  },
+  "category": "immobilien-gastgewerbe",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 39,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von CostoPiatto: Zutaten mit Kosten, Wareneinsatz in Prozent und Verkaufspreis",
+   "it": "Anteprima di CostoPiatto: ingredienti con costi, food cost in percentuale e prezzo di vendita"
+  },
+  "tagline": {
+   "de": "Was kostet ein Teller wirklich?",
+   "it": "Quanto costa davvero un piatto?"
+  },
+  "benefit": {
+   "de": "Zutaten mit Preis und Abfall eintragen – CostoPiatto rechnet Kosten pro Portion, Wareneinsatz und einen Preisvorschlag zu Ihrem Zielwert.",
+   "it": "Inserisci gli ingredienti con prezzo e scarto – CostoPiatto calcola costo a porzione, food cost e un prezzo suggerito secondo il tuo obiettivo."
+  },
+  "headline": {
+   "de": "Rezepte kalkulieren, Preise begründen – ohne Tabellenbastelei.",
+   "it": "Calcolare le ricette e motivare i prezzi – senza fogli di calcolo improvvisati."
+  },
+  "intro": {
+   "de": "CostoPiatto ist ein Programm für Ihren Computer: je Gericht Zutaten, Einkaufspreise und Abfall eintragen, Ziel-Wareneinsatz und Mehrwertsteuersatz festlegen. Sie sehen Kosten pro Portion, den tatsächlichen Wareneinsatz Ihres jetzigen Preises und eine Rezeptkarte für die Küche.",
+   "it": "CostoPiatto è un programma per il tuo computer: per ogni piatto inserisci ingredienti, prezzi d’acquisto e scarto, l’obiettivo di food cost e l’aliquota IVA. Vedi il costo a porzione, il food cost del prezzo attuale e una scheda ricetta per la cucina."
+  },
+  "audience": {
+   "de": "Restaurants, Trattorien, Bars, Pizzerien, Konditoreien, Caterer und Agriturismi.",
+   "it": "Ristoranti, trattorie, bar, pizzerie, pasticcerie, catering e agriturismi."
+  },
+  "job": {
+   "de": "Für jedes Gericht wissen, was es kostet, und Verkaufspreise auf eine nachvollziehbare Grundlage stellen.",
+   "it": "Sapere quanto costa ogni piatto e fissare i prezzi di vendita su basi chiare."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, Ihre Rezepte bleiben auf Ihrem Gerät. Die Zahlen sind Rechenhilfen aus Ihren Eingaben – keine Steuerberatung; den Mehrwertsteuersatz tragen Sie selbst ein.",
+   "it": "Funziona senza internet e senza account, le tue ricette restano sul tuo dispositivo. I numeri sono calcoli basati sui tuoi dati – non è consulenza fiscale; l’aliquota IVA la inserisci tu."
+  },
+  "features": {
+   "de": [
+    "Zutaten mit Einheit, Preis je Einheit, Menge und Abfall in Prozent",
+    "Rezeptkosten, Kosten pro Portion und Anteil jeder Zutat",
+    "Preisvorschlag netto und brutto zu Ihrem Ziel-Wareneinsatz (MwSt-Satz tragen Sie selbst ein)",
+    "Wareneinsatz und Rohertrag Ihres aktuellen Preises mit Ampel",
+    "Rezeptkarte mit Zubereitung, umrechenbar auf jede Portionszahl; ein Gericht je Datei speichern"
+   ],
+   "it": [
+    "Ingredienti con unità, prezzo per unità, quantità e scarto in percentuale",
+    "Costo della ricetta, costo a porzione e incidenza di ogni ingrediente",
+    "Prezzo suggerito netto e IVA inclusa secondo il tuo obiettivo (l’aliquota la inserisci tu)",
+    "Food cost e margine del prezzo attuale con semaforo",
+    "Scheda ricetta con preparazione, ricalcolabile per qualsiasi numero di porzioni; un piatto per file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich CostoPiatto?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Kann ich mehrere Gerichte speichern?",
+     "a": "Ja. Jedes Gericht speichern Sie mit einem Klick als eigene Datei und öffnen es später wieder."
+    },
+    {
+     "q": "Welcher Wareneinsatz ist richtig?",
+     "a": "Das hängt von Ihrem Betrieb ab. Sie tragen Ihren Zielwert selbst ein; CostoPiatto rechnet damit."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo CostoPiatto?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Posso salvare più piatti?",
+     "a": "Sì. Ogni piatto lo salvi con un clic come file separato e lo riapri quando vuoi."
+    },
+    {
+     "q": "Qual è il food cost giusto?",
+     "a": "Dipende dalla tua attività. Inserisci tu l’obiettivo; CostoPiatto calcola di conseguenza."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren und Gericht anlegen",
+    "Zutaten, Preise und Abfall eintragen",
+    "Preis prüfen, Rezeptkarte drucken"
+   ],
+   "it": [
+    "Installi il programma e crei il piatto",
+    "Inserisci ingredienti, prezzi e scarti",
+    "Controlli il prezzo e stampi la scheda"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "CostoPiatto · Trattoria Esempio",
+   "titel": {
+    "de": "Pasta alla Norma",
+    "it": "Pasta alla Norma"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Auberginen",
+      "it": "Melanzane"
+     },
+     "neben": {
+      "de": "0,8 kg · Abfall 15 %",
+      "it": "0,8 kg · scarto 15%"
+     },
+     "chip": {
+      "de": "2,07 €",
+      "it": "2,07 €"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Ricotta salata",
+      "it": "Ricotta salata"
+     },
+     "neben": {
+      "de": "0,15 kg",
+      "it": "0,15 kg"
+     },
+     "chip": {
+      "de": "2,10 €",
+      "it": "2,10 €"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Kosten pro Portion",
+      "it": "Costo a porzione"
+     },
+     "neben": {
+      "de": "4 Portionen",
+      "it": "4 porzioni"
+     },
+     "chip": {
+      "de": "2,13 €",
+      "it": "2,13 €"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Wareneinsatz bei 12 €",
+      "it": "Food cost a 12 €"
+     },
+     "neben": {
+      "de": "Ziel 30 %",
+      "it": "obiettivo 30%"
+     },
+     "chip": {
+      "de": "19,6 %",
+      "it": "19,6%"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Rezeptkarte",
+     "it": "Scheda ricetta"
+    },
+    "punkte": [
+     {
+      "de": "für 4 oder 20 Portionen",
+      "it": "per 4 o 20 porzioni"
+     }
+    ]
+   }
+  },
+  "number": 43,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung; für Mac als ZIP. Mit ausgefülltem Beispiel (DE/IT). Rechenhilfe, keine Steuerberatung.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata; per Mac come ZIP. Con esempio compilato (IT/DE). Strumento di calcolo, non consulenza fiscale."
+  },
+  "erstellt": "2026-11-16T20:45:01.853Z",
+  "fertigAm": "2026-11-16"
+ },
+ {
+  "slug": "buonoregalo",
+  "brand": "BuonoRegalo",
+  "produktart": {
+   "de": "Gutscheine erstellen und verwalten",
+   "it": "Crea e gestisci buoni regalo"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "marketing",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von BuonoRegalo: Liste von Gutscheinen mit Nummer, Wert und Status",
+   "it": "Anteprima di BuonoRegalo: elenco di buoni con numero, valore e stato"
+  },
+  "tagline": {
+   "de": "Gutscheine drucken – und den Überblick behalten.",
+   "it": "Stampa i buoni regalo – e tieni tutto sotto controllo."
+  },
+  "benefit": {
+   "de": "Gestaltete Geschenkgutscheine mit fortlaufender Nummer drucken und in einer Liste festhalten, was ausgegeben, eingelöst oder noch offen ist.",
+   "it": "Stampa buoni regalo curati con numero progressivo e annota in un elenco cosa è stato emesso, usato o è ancora aperto."
+  },
+  "headline": {
+   "de": "Geschenkgutscheine für Ihren Betrieb – schön gedruckt, sauber nachverfolgt.",
+   "it": "Buoni regalo per la tua attività – stampati con cura, seguiti con ordine."
+  },
+  "intro": {
+   "de": "BuonoRegalo ist ein Programm für Ihren Computer: Sie legen Gutscheine mit Wert oder Leistung an, jeder bekommt eine fortlaufende Nummer und ein Gültigkeitsdatum. Gedruckt wird im Design Ihres Betriebs; die Liste zeigt Einlösungen, Restwerte und Abgelaufenes.",
+   "it": "BuonoRegalo è un programma per il tuo computer: crei buoni con un valore o un servizio, ognuno riceve un numero progressivo e una data di validità. Si stampano con il nome della tua attività; l’elenco mostra utilizzi, residui e buoni scaduti."
+  },
+  "audience": {
+   "de": "Restaurants, Bars, Läden, Friseursalons, Kosmetikstudios, B&B, Agriturismi und Weinkellereien.",
+   "it": "Ristoranti, bar, negozi, parrucchieri, centri estetici, B&B, agriturismi e cantine."
+  },
+  "job": {
+   "de": "Gutscheine verkaufen, ohne den Überblick über Nummern, Werte und Einlösungen zu verlieren.",
+   "it": "Vendere buoni regalo senza perdere il conto di numeri, importi e utilizzi."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Liste bleibt auf Ihrem Gerät. Bedingungen und Fristen legen Sie selbst fest – das Programm ersetzt keine Rechts- oder Steuerberatung.",
+   "it": "Funziona senza internet e senza account, l’elenco resta sul tuo dispositivo. Condizioni e scadenze le decidi tu – il programma non sostituisce una consulenza legale o fiscale."
+  },
+  "features": {
+   "de": [
+    "Neue Gutscheine per Klick mit fortlaufender Nummer (Kürzel-Jahr-Nummer), Datum und Gültigkeit",
+    "Wert in Euro oder Leistung, Empfänger und eigene Bedingungen",
+    "Einlösung mit Betrag und Datum: offen, teilweise, eingelöst, abgelaufen – mit Restwert und Summen",
+    "Druckvorlage in vier Farben, zwei Gutscheine je A4-Seite, auf Wunsch nur bestimmte Nummern"
+   ],
+   "it": [
+    "Nuovi buoni con un clic: numero progressivo (sigla-anno-numero), data e validità",
+    "Valore in euro o servizio, destinatario e condizioni tue",
+    "Utilizzo con importo e data: aperto, in parte, usato, scaduto – con residuo e totali",
+    "Modello di stampa in quattro colori, due buoni per pagina A4, anche solo numeri scelti"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich BuonoRegalo?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Kann ich Gutscheine teilweise einlösen?",
+     "a": "Ja. Sie tragen den eingelösten Betrag ein, BuonoRegalo zeigt den Restwert."
+    },
+    {
+     "q": "Welche Gültigkeit muss ich angeben?",
+     "a": "Das entscheiden Sie selbst; die geltenden Regeln in Ihrem Land prüfen Sie bitte, im Zweifel mit Fachleuten."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo BuonoRegalo?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Si può usare un buono solo in parte?",
+     "a": "Sì. Inserisci l’importo usato e BuonoRegalo mostra il residuo."
+    },
+    {
+     "q": "Che validità devo indicare?",
+     "a": "Lo decidi tu; verifica le regole valide nel tuo Paese, in caso di dubbio con un professionista."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren, Betrieb und Design wählen",
+    "Gutschein anlegen – die Nummer kommt automatisch",
+    "Drucken, verschenken lassen, Einlösung eintragen"
+   ],
+   "it": [
+    "Installi il programma, scegli attività e colore",
+    "Crei il buono – il numero arriva da solo",
+    "Stampi, lo vendi e annoti l’utilizzo"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "BuonoRegalo · Ristorante Esempio",
+   "titel": {
+    "de": "Gutscheine 2026",
+    "it": "Buoni regalo 2026"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "GS-2026-004 · Abendessen für zwei",
+      "it": "BR-2026-004 · Cena per due"
+     },
+     "neben": {
+      "de": "bis 31.12.2027",
+      "it": "fino al 31/12/2027"
+     },
+     "chip": {
+      "de": "offen",
+      "it": "aperto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "GS-2026-003 · 50,00 €",
+      "it": "BR-2026-003 · 50,00 €"
+     },
+     "neben": {
+      "de": "Rest 20,00 €",
+      "it": "residuo 20,00 €"
+     },
+     "chip": {
+      "de": "teilweise",
+      "it": "in parte"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "GS-2026-002 · 30,00 €",
+      "it": "BR-2026-002 · 30,00 €"
+     },
+     "neben": {
+      "de": "am 02.11.2026",
+      "it": "il 02/11/2026"
+     },
+     "chip": {
+      "de": "eingelöst",
+      "it": "usato"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Gutschein drucken",
+     "it": "Stampa il buono"
+    },
+    "punkte": [
+     {
+      "de": "in vier Farben",
+      "it": "in quattro colori"
+     }
+    ]
+   }
+  },
+  "number": 44,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung; für Mac als ZIP. Mit ausgefülltem Beispiel (DE/IT). Liste zur eigenen Übersicht, kein Kassensystem.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata; per Mac come ZIP. Con esempio compilato (IT/DE). Elenco per il tuo controllo, non è un registratore di cassa."
+  },
+  "erstellt": "2026-11-16T20:45:01.853Z",
+  "fertigAm": "2026-11-16"
  }
 ]
