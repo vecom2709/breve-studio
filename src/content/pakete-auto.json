@@ -73,19 +73,23 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich PreventivoLampo?",
+     "a": "Keine Installation: Wir richten PreventivoLampo für Sie ein. Sie erhalten einen persönlichen Link, legen nur Ihr Passwort fest und sind sofort angemeldet. Mit eigenem Webspace bekommen Sie das Webspace-Paket mit bebilderter Anleitung."
+    },
+    {
      "q": "Ist der Richtpreis verbindlich?",
      "a": "Nein. Er ist als unverbindliche Schätzung gekennzeichnet; das Angebot machen weiterhin Sie."
     },
     {
      "q": "Brauche ich eine eigene Website?",
      "a": "Nein, der Rechner funktioniert auch als eigener Link, etwa für WhatsApp oder Social Media."
-    },
-    {
-     "q": "Wie bekomme ich PreventivoLampo?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten den Rechner für Ihren Betrieb ein und senden Ihnen Link, Zugang und Anleitung."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo PreventivoLampo?",
+     "a": "Nessuna installazione: configuriamo noi PreventivoLampo. Ricevi un link personale, imposti solo la password e sei subito dentro. Con un tuo spazio web ricevi il pacchetto con guida illustrata."
+    },
     {
      "q": "Il prezzo indicativo è vincolante?",
      "a": "No. È indicato come stima non vincolante; il preventivo lo fai sempre tu."
@@ -93,10 +97,6 @@
     {
      "q": "Serve un sito web?",
      "a": "No, il calcolatore funziona anche come link a sé, per esempio per WhatsApp o i social."
-    },
-    {
-     "q": "Come ricevo PreventivoLampo?",
-     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, configuriamo il calcolatore per la tua impresa e ti inviamo link, accesso e guida."
     }
    ]
   },
@@ -206,8 +206,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Der Richtpreis ist immer als unverbindlich gekennzeichnet – das Angebot machen Sie.",
-   "it": "Pronto; la vendita parte con l’avvio ufficiale. Il prezzo indicativo è sempre segnalato come non vincolante – il preventivo lo fai tu."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Mit eigenem Webspace: Webspace-Paket mit bebilderter Installationsanleitung, die Einrichtung ist mit einem Code geschützt. Der Richtpreis ist immer als unverbindlich gekennzeichnet – das Angebot machen Sie.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Nessuna installazione: configuriamo tutto noi, ricevi un link personale e imposti solo la tua password. Con un tuo spazio web: pacchetto con guida illustrata, la configurazione è protetta da un codice. Il prezzo indicativo è sempre segnalato come non vincolante – il preventivo lo fai tu."
   },
   "erstellt": "2026-11-11T12:06:06.657Z",
   "fertigAm": "2026-11-11"
@@ -282,19 +282,23 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich NewsletterBreve?",
+     "a": "Per Setup-Datei: Doppelklick, Sprache wählen, fertig. Danach finden Sie Fragebogen und Anleitung über das Symbol NewsletterBreve auf dem Desktop. Für Mac gibt es alles als ZIP."
+    },
+    {
      "q": "Darf ich meine bestehenden Kontakte anschreiben?",
      "a": "Nur, wenn eine Einwilligung vorliegt. Wir helfen beim sauberen Neuaufbau der Liste."
     },
     {
      "q": "Wer schreibt die Texte?",
      "a": "Wir – aus Ihren Stichworten. Sie geben vor dem Versand frei."
-    },
-    {
-     "q": "Wie bekomme ich NewsletterBreve?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Nach einem kurzen Startgespräch richten wir Anmeldung und Versand auf Ihren Namen ein. Danach schicken Sie jeden Monat bis zum 10. Ihre Stichworte – den Rest machen wir."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo NewsletterBreve?",
+     "a": "Con il file di installazione: doppio clic, scegli la lingua, fatto. Poi trovi questionario e guida con l’icona NewsletterBreve sul desktop. Per Mac c’è tutto come ZIP."
+    },
     {
      "q": "Posso scrivere ai contatti che ho già?",
      "a": "Solo se hai il loro consenso. Ti aiutiamo a ricostruire la lista in modo corretto."
@@ -302,10 +306,6 @@
     {
      "q": "Chi scrive i testi?",
      "a": "Noi, partendo dai tuoi spunti. Tu approvi prima dell’invio."
-    },
-    {
-     "q": "Come ricevo NewsletterBreve?",
-     "a": "Dall’avvio ufficiale di Studio Breve: dopo un breve colloquio iniziale impostiamo iscrizioni e invio a tuo nome. Poi ogni mese ci mandi i tuoi spunti entro il 10 – al resto pensiamo noi."
     }
    ]
   },
@@ -400,8 +400,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Texte zu Einwilligung und Datenschutz sind Muster, keine Rechtsberatung.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. I testi su consenso e privacy sono modelli, non una consulenza legale."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Ihre Unterlagen (Fragebogen, Anleitung) kommen als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Texte zu Einwilligung und Datenschutz sind Muster, keine Rechtsberatung.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. I tuoi documenti (questionario, guida) arrivano come file di installazione: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. I testi su consenso e privacy sono modelli, non una consulenza legale."
   },
   "erstellt": "2026-11-11T12:06:06.658Z",
   "fertigAm": "2026-11-12"
@@ -480,19 +480,23 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich FotoBottega?",
+     "a": "Per Setup-Datei: Doppelklick, Sprache wählen, fertig. Danach finden Sie Fragebogen und Anleitung über das Symbol FotoBottega auf dem Desktop. Für Mac gibt es alles als ZIP."
+    },
+    {
      "q": "Verändern Sie meine Produkte?",
      "a": "Nein. Wir korrigieren Licht, Farbe und Hintergrund, die Produkte bleiben, wie sie sind."
     },
     {
      "q": "Was, wenn ich mehr als 20 Fotos brauche?",
      "a": "Weitere Fotos sind einzeln buchbar."
-    },
-    {
-     "q": "Wie bekomme ich FotoBottega?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie bekommen die Foto-Anleitung, fotografieren am Fenster und schicken uns die Originale. Nach Ihrer Freigabe per Link erhalten Sie alle Formate als Download."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo FotoBottega?",
+     "a": "Con il file di installazione: doppio clic, scegli la lingua, fatto. Poi trovi questionario e guida con l’icona FotoBottega sul desktop. Per Mac c’è tutto come ZIP."
+    },
     {
      "q": "Modificate i miei prodotti?",
      "a": "No. Correggiamo luce, colore e sfondo, i prodotti restano come sono."
@@ -500,10 +504,6 @@
     {
      "q": "E se mi servono più di 20 foto?",
      "a": "Le foto in più si possono aggiungere singolarmente."
-    },
-    {
-     "q": "Come ricevo FotoBottega?",
-     "a": "Dall’avvio ufficiale di Studio Breve: ricevi la guida, fotografi vicino alla finestra e ci mandi gli originali. Dopo la tua approvazione tramite link ricevi tutti i formati da scaricare."
     }
    ]
   },
@@ -598,8 +598,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Bearbeitet werden nur Licht, Farbe, Hintergrund und Ausschnitt.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Si ritoccano solo luce, colore, sfondo e inquadratura."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Ihre Unterlagen (Fragebogen, Anleitung) kommen als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Bearbeitet werden nur Licht, Farbe, Hintergrund und Ausschnitt.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. I tuoi documenti (questionario, guida) arrivano come file di installazione: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Si ritoccano solo luce, colore, sfondo e inquadratura."
   },
   "erstellt": "2026-11-11T12:06:06.658Z",
   "fertigAm": "2026-11-12"
@@ -678,19 +678,23 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich TestoPonte?",
+     "a": "Per Setup-Datei: Doppelklick, Sprache wählen, fertig. Danach finden Sie Fragebogen und Anleitung über das Symbol TestoPonte auf dem Desktop. Für Mac gibt es alles als ZIP."
+    },
+    {
      "q": "Was gilt als eine Seite?",
      "a": "Eine Website-Seite bis etwa 600 Wörter; längere Seiten zählen anteilig."
     },
     {
      "q": "Übersetzen Sie auch Rechtstexte?",
      "a": "Nein. Impressum, AGB und Datenschutz gehören in die Hände einer Fachkanzlei."
-    },
-    {
-     "q": "Wie bekomme ich TestoPonte?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie nennen uns die Seiten, wir zählen sie und nennen den Festpreis. Nach der Übersetzung sehen Sie Original und Übersetzung nebeneinander und geben per Link frei."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo TestoPonte?",
+     "a": "Con il file di installazione: doppio clic, scegli la lingua, fatto. Poi trovi questionario e guida con l’icona TestoPonte sul desktop. Per Mac c’è tutto come ZIP."
+    },
     {
      "q": "Cosa vale come una pagina?",
      "a": "Una pagina del sito fino a circa 600 parole; le pagine più lunghe contano in proporzione."
@@ -698,10 +702,6 @@
     {
      "q": "Traducete anche testi legali?",
      "a": "No. Note legali, condizioni e privacy vanno affidate a uno studio specializzato."
-    },
-    {
-     "q": "Come ricevo TestoPonte?",
-     "a": "Dall’avvio ufficiale di Studio Breve: ci indichi le pagine, le contiamo e ti diamo il prezzo fisso. Dopo la traduzione vedi originale e traduzione affiancati e approvi tramite link."
     }
    ]
   },
@@ -796,8 +796,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Rechtstexte und beglaubigte Übersetzungen sind ausgenommen.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Esclusi testi legali e traduzioni giurate."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Ihre Unterlagen (Fragebogen, Anleitung) kommen als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Rechtstexte und beglaubigte Übersetzungen sind ausgenommen.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. I tuoi documenti (questionario, guida) arrivano come file di installazione: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Esclusi testi legali e traduzioni giurate."
   },
   "erstellt": "2026-11-11T12:06:06.658Z",
   "fertigAm": "2026-11-12"
@@ -872,6 +872,10 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich CassaChiara?",
+     "a": "Per Setup-Datei: Doppelklick, Sprache wählen, fertig – die Tabelle öffnet sich von selbst. Später starten Sie CassaChiara mit dem Symbol auf dem Desktop. Für Mac als ZIP."
+    },
+    {
      "q": "Ersetzt das meine Buchhaltung?",
      "a": "Nein. Es ist eine Übersicht für Sie; Buchhaltung und Steuern bleiben Sache Ihrer Kanzlei."
     },
@@ -885,6 +889,10 @@
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo CassaChiara?",
+     "a": "Con il file di installazione: doppio clic, scegli la lingua, fatto – la tabella si apre da sola. In seguito avvii CassaChiara con l’icona sul desktop. Per Mac come ZIP."
+    },
     {
      "q": "Sostituisce la contabilità?",
      "a": "No. È un riepilogo per te; contabilità e tasse restano compito del commercialista."
@@ -1005,8 +1013,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Eine Übersicht für Sie – keine Buchhaltung und keine Steuerberatung.",
-   "it": "Pronto; la vendita parte con l’avvio ufficiale. Un riepilogo per te – non è contabilità né consulenza fiscale."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Die Tabelle öffnet sich in Excel oder LibreOffice (kostenlos). Eine Übersicht für Sie – keine Buchhaltung und keine Steuerberatung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. La tabella si apre in Excel o LibreOffice (gratuito). Un riepilogo per te – non è contabilità né consulenza fiscale."
   },
   "erstellt": "2026-11-11T12:06:06.658Z"
  },
@@ -1080,19 +1088,23 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich SocialScuola?",
+     "a": "Keine Installation: Wir richten SocialScuola für Sie ein. Sie erhalten einen persönlichen Link, legen nur Ihr Passwort fest und sind sofort angemeldet. Mit eigenem Webspace bekommen Sie das Webspace-Paket mit bebilderter Anleitung."
+    },
+    {
      "q": "Brauche ich Vorkenntnisse?",
      "a": "Nein. Ein Smartphone und ein Konto bei Instagram oder Facebook genügen."
     },
     {
      "q": "Wie lange habe ich Zugang?",
      "a": "Dauerhaft, inklusive späterer Aktualisierungen."
-    },
-    {
-     "q": "Wie bekomme ich SocialScuola?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Nach dem Kauf erhalten Sie per E-Mail Ihren persönlichen Zugang zum Kursraum – am Handy oder am Computer."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo SocialScuola?",
+     "a": "Nessuna installazione: configuriamo noi SocialScuola. Ricevi un link personale, imposti solo la password e sei subito dentro. Con un tuo spazio web ricevi il pacchetto con guida illustrata."
+    },
     {
      "q": "Servono conoscenze?",
      "a": "No. Bastano uno smartphone e un account Instagram o Facebook."
@@ -1100,10 +1112,6 @@
     {
      "q": "Per quanto tempo ho accesso?",
      "a": "Per sempre, aggiornamenti futuri inclusi."
-    },
-    {
-     "q": "Come ricevo SocialScuola?",
-     "a": "Dall’avvio ufficiale di Studio Breve: dopo l’acquisto ricevi via e-mail il tuo accesso personale all’aula del corso – dal telefono o dal computer."
     }
    ]
   },
@@ -1201,8 +1209,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Die Lektionen sind Lesetexte mit Grafiken und Aufgaben; das Kapitel Recht ist ein Überblick, keine Rechtsberatung.",
-   "it": "Pronto; la vendita parte con l’avvio ufficiale. Le lezioni sono testi da leggere con grafiche e compiti; il capitolo sulle regole è una sintesi, non una consulenza legale."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Mit eigenem Webspace: Webspace-Paket mit bebilderter Installationsanleitung, die Einrichtung ist mit einem Code geschützt. Die Lektionen sind Lesetexte mit Grafiken und Aufgaben; das Kapitel Recht ist ein Überblick, keine Rechtsberatung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Nessuna installazione: configuriamo tutto noi, ricevi un link personale e imposti solo la tua password. Con un tuo spazio web: pacchetto con guida illustrata, la configurazione è protetta da un codice. Le lezioni sono testi da leggere con grafiche e compiti; il capitolo sulle regole è una sintesi, non una consulenza legale."
   },
   "erstellt": "2026-11-11T12:06:06.658Z",
   "fertigAm": "2026-11-12"
@@ -1281,19 +1289,23 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich BottegaOnline?",
+     "a": "Keine Installation: Wir richten BottegaOnline für Sie ein. Sie erhalten einen persönlichen Link, legen nur Ihr Passwort fest und sind sofort angemeldet. Mit eigenem Webspace bekommen Sie das Webspace-Paket mit bebilderter Anleitung."
+    },
+    {
      "q": "Kostet jede Bestellung extra?",
      "a": "Nein. Bei Online-Zahlung fallen nur die Gebühren des Zahlungsdienstes an."
     },
     {
      "q": "Brauche ich AGB?",
      "a": "Ja, für Onlinebestellungen sind Rechtstexte nötig. Wir liefern Bausteine; prüfen lassen sollten Sie sie von einer Fachkanzlei."
-    },
-    {
-     "q": "Wie bekomme ich BottegaOnline?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten den Shop mit Ihren Produkten ein und senden Ihnen Link, Zugang und Anleitung."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo BottegaOnline?",
+     "a": "Nessuna installazione: configuriamo noi BottegaOnline. Ricevi un link personale, imposti solo la password e sei subito dentro. Con un tuo spazio web ricevi il pacchetto con guida illustrata."
+    },
     {
      "q": "Ogni ordine costa di più?",
      "a": "No. Con il pagamento online ci sono solo le commissioni del servizio di pagamento."
@@ -1301,10 +1313,6 @@
     {
      "q": "Servono le condizioni di vendita?",
      "a": "Sì, per gli ordini online servono testi legali. Forniamo una base; è bene farla verificare da uno studio legale."
-    },
-    {
-     "q": "Come ricevo BottegaOnline?",
-     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, configuriamo il negozio con i tuoi prodotti e ti inviamo link, accesso e guida."
     }
    ]
   },
@@ -1414,8 +1422,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Die Rechtstext-Bausteine sind eine Vorlage und ersetzen keine rechtliche Prüfung.",
-   "it": "Pronto; la vendita parte con l’avvio ufficiale. I modelli di testi legali sono una base e non sostituiscono una verifica legale."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Mit eigenem Webspace: Webspace-Paket mit bebilderter Installationsanleitung, die Einrichtung ist mit einem Code geschützt. Die Rechtstext-Bausteine sind eine Vorlage und ersetzen keine rechtliche Prüfung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Nessuna installazione: configuriamo tutto noi, ricevi un link personale e imposti solo la tua password. Con un tuo spazio web: pacchetto con guida illustrata, la configurazione è protetta da un codice. I modelli di testi legali sono una base e non sostituiscono una verifica legale."
   },
   "erstellt": "2026-11-11T12:06:06.658Z",
   "fertigAm": "2026-11-11"
@@ -1494,19 +1502,23 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich ArrivoFacile?",
+     "a": "Keine Installation: Wir richten ArrivoFacile für Sie ein. Sie erhalten einen persönlichen Link, legen nur Ihr Passwort fest und sind sofort angemeldet. Mit eigenem Webspace bekommen Sie das Webspace-Paket mit bebilderter Anleitung."
+    },
+    {
      "q": "Brauche ich ein elektronisches Schloss?",
      "a": "Nein. Eine einfache Schlüsselbox mit Zahlencode genügt."
     },
     {
      "q": "Ersetzt das die Gästemeldung?",
      "a": "Nein. Die gesetzliche Meldung bleibt Pflicht; dafür gibt es OspiteInRegola."
-    },
-    {
-     "q": "Wie bekomme ich ArrivoFacile?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten Ihre Unterkunft mit Ihren Fotos ein und senden Ihnen Zugang und Anleitung."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo ArrivoFacile?",
+     "a": "Nessuna installazione: configuriamo noi ArrivoFacile. Ricevi un link personale, imposti solo la password e sei subito dentro. Con un tuo spazio web ricevi il pacchetto con guida illustrata."
+    },
     {
      "q": "Serve una serratura elettronica?",
      "a": "No. Basta una cassetta chiavi con codice."
@@ -1514,10 +1526,6 @@
     {
      "q": "Sostituisce la comunicazione degli ospiti?",
      "a": "No. La comunicazione prevista dalla legge resta obbligatoria; per quella c’è OspiteInRegola."
-    },
-    {
-     "q": "Come ricevo ArrivoFacile?",
-     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, configuriamo il tuo alloggio con le tue foto e ti inviamo accesso e guida."
     }
    ]
   },
@@ -1619,8 +1627,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Den Code der Schlüsselbox legen Sie fest – wir empfehlen, ihn regelmäßig zu ändern.",
-   "it": "Pronto; la vendita parte con l’avvio ufficiale. Il codice della cassetta chiavi lo decidi tu – consigliamo di cambiarlo regolarmente."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Mit eigenem Webspace: Webspace-Paket mit bebilderter Installationsanleitung, die Einrichtung ist mit einem Code geschützt. Den Code der Schlüsselbox legen Sie fest – wir empfehlen, ihn regelmäßig zu ändern.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Nessuna installazione: configuriamo tutto noi, ricevi un link personale e imposti solo la tua password. Con un tuo spazio web: pacchetto con guida illustrata, la configurazione è protetta da un codice. Il codice della cassetta chiavi lo decidi tu – consigliamo di cambiarlo regolarmente."
   },
   "erstellt": "2026-11-11T12:06:06.658Z",
   "fertigAm": "2026-11-11"
@@ -1699,19 +1707,23 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich PiantinaFacile?",
+     "a": "Per Setup-Datei: Doppelklick, Sprache wählen, fertig. Danach finden Sie Fragebogen und Anleitung über das Symbol PiantinaFacile auf dem Desktop. Für Mac gibt es alles als ZIP."
+    },
+    {
      "q": "Ist das ein amtlicher Plan?",
      "a": "Nein. Es ist eine Darstellung für Inserate, kein Ersatz für Katasterplan oder Vermessung."
     },
     {
      "q": "Was brauchen Sie von mir?",
      "a": "Ein lesbares Foto der Skizze oder des Plans und die Hauptmaße der Räume."
-    },
-    {
-     "q": "Wie bekomme ich PiantinaFacile?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie schicken ein Foto der Skizze oder des alten Plans und die Hauptmaße – gern mit unserem Aufmaßblatt. Nach Ihrer Freigabe per Link erhalten Sie PNG und PDF."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo PiantinaFacile?",
+     "a": "Con il file di installazione: doppio clic, scegli la lingua, fatto. Poi trovi questionario e guida con l’icona PiantinaFacile sul desktop. Per Mac c’è tutto come ZIP."
+    },
     {
      "q": "È una planimetria catastale?",
      "a": "No. È una rappresentazione per gli annunci, non sostituisce la planimetria catastale né un rilievo."
@@ -1719,10 +1731,6 @@
     {
      "q": "Cosa vi serve?",
      "a": "Una foto leggibile dello schizzo o della pianta e le misure principali dei locali."
-    },
-    {
-     "q": "Come ricevo PiantinaFacile?",
-     "a": "Dall’avvio ufficiale di Studio Breve: ci mandi una foto dello schizzo o della vecchia pianta e le misure principali – anche con il nostro foglio misure. Dopo la tua approvazione tramite link ricevi PNG e PDF."
     }
    ]
   },
@@ -1832,8 +1840,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Darstellung für Inserate ohne amtliche Gültigkeit, Flächen netto ca.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Rappresentazione per annunci senza valore legale, superfici nette indicative."
+   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Ihre Unterlagen (Fragebogen, Anleitung) kommen als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Darstellung für Inserate ohne amtliche Gültigkeit, Flächen netto ca.",
+   "it": "Pronto; si prenota dall’avvio ufficiale. I tuoi documenti (questionario, guida) arrivano come file di installazione: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Rappresentazione per annunci senza valore legale, superfici nette indicative."
   },
   "erstellt": "2026-11-11T12:06:06.658Z",
   "fertigAm": "2026-11-12"
@@ -1912,19 +1920,23 @@
   "faq": {
    "de": [
     {
+     "q": "Wie bekomme ich ScadenzeChiare?",
+     "a": "Keine Installation: Wir richten ScadenzeChiare für Sie ein. Sie erhalten einen persönlichen Link, legen nur Ihr Passwort fest und sind sofort angemeldet. Mit eigenem Webspace bekommen Sie das Webspace-Paket mit bebilderter Anleitung."
+    },
+    {
      "q": "Prüfen Sie meine Verträge?",
      "a": "Nein. ScadenzeChiare erinnert nur; die rechtliche Prüfung bleibt bei Fachleuten."
     },
     {
      "q": "Können mehrere Personen mitlesen?",
      "a": "Ja, bis zu drei Personen pro Betrieb."
-    },
-    {
-     "q": "Wie bekomme ich ScadenzeChiare?",
-     "a": "Ab dem offiziellen Start von Studio Breve: Sie fragen an, wir richten es für Ihren Betrieb ein und senden Ihnen Zugang und Anleitung."
     }
    ],
    "it": [
+    {
+     "q": "Come ricevo ScadenzeChiare?",
+     "a": "Nessuna installazione: configuriamo noi ScadenzeChiare. Ricevi un link personale, imposti solo la password e sei subito dentro. Con un tuo spazio web ricevi il pacchetto con guida illustrata."
+    },
     {
      "q": "Controllate i miei contratti?",
      "a": "No. ScadenzeChiare ricorda soltanto; la verifica legale resta ai professionisti."
@@ -1932,10 +1944,6 @@
     {
      "q": "Possono usarlo più persone?",
      "a": "Sì, fino a tre persone per attività."
-    },
-    {
-     "q": "Come ricevo ScadenzeChiare?",
-     "a": "Dall’avvio ufficiale di Studio Breve: fai richiesta, lo configuriamo per la tua attività e ti inviamo accesso e guida."
     }
    ]
   },
@@ -2045,8 +2053,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. ScadenzeChiare erinnert nur – es prüft keine Verträge und ersetzt keine Beratung.",
-   "it": "Pronto; la vendita parte con l’avvio ufficiale. ScadenzeChiare ricorda soltanto – non verifica contratti e non sostituisce una consulenza."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Mit eigenem Webspace: Webspace-Paket mit bebilderter Installationsanleitung, die Einrichtung ist mit einem Code geschützt. ScadenzeChiare erinnert nur – es prüft keine Verträge und ersetzt keine Beratung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Nessuna installazione: configuriamo tutto noi, ricevi un link personale e imposti solo la tua password. Con un tuo spazio web: pacchetto con guida illustrata, la configurazione è protetta da un codice. ScadenzeChiare ricorda soltanto – non verifica contratti e non sostituisce una consulenza."
   },
   "erstellt": "2026-11-11T12:06:06.658Z",
   "fertigAm": "2026-11-11"
@@ -2260,8 +2268,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Läuft im Browser auf Handy, Tablet und Computer.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Nessuna installazione: prepariamo tutto noi, ricevi un link personale e scegli solo la password. Funziona nel browser su telefono, tablet e computer."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Läuft im Browser auf Handy, Tablet und Computer.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Nessuna installazione: prepariamo tutto noi, ricevi un link personale e scegli solo la password. Funziona nel browser su telefono, tablet e computer."
   },
   "erstellt": "2026-11-13T20:45:48.349Z",
   "fertigAm": "2026-11-13"
@@ -2471,8 +2479,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Läuft im Browser auf Handy, Tablet und Computer.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Nessuna installazione: prepariamo tutto noi, ricevi un link personale e scegli solo la password. Funziona nel browser su telefono, tablet e computer."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Läuft im Browser auf Handy, Tablet und Computer.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Nessuna installazione: prepariamo tutto noi, ricevi un link personale e scegli solo la password. Funziona nel browser su telefono, tablet e computer."
   },
   "erstellt": "2026-11-13T20:45:48.349Z",
   "fertigAm": "2026-11-13"
@@ -2694,8 +2702,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
   },
   "erstellt": "2026-11-13T20:45:48.349Z",
   "fertigAm": "2026-11-13"
@@ -3141,8 +3149,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
   },
   "erstellt": "2026-11-13T20:45:48.349Z",
   "fertigAm": "2026-11-13"
@@ -3356,8 +3364,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
   },
   "erstellt": "2026-11-13T20:45:48.349Z",
   "fertigAm": "2026-11-13"
@@ -3571,8 +3579,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung als Setup-Datei: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung. Für Mac als ZIP.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna come file di setup: doppio clic, scegli la lingua, fatto – con guida illustrata. Per Mac in ZIP."
   },
   "erstellt": "2026-11-13T20:45:48.349Z",
   "fertigAm": "2026-11-13"
@@ -3778,8 +3786,8 @@
   "status": "available",
   "cta": "inquiry",
   "notes": {
-   "de": "Fertig entwickelt; gebucht wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Läuft im Browser auf Handy, Tablet und Computer.",
-   "it": "Pronto; si prenota dall’avvio ufficiale. Nessuna installazione: prepariamo tutto noi, ricevi un link personale e scegli solo la password. Funziona nel browser su telefono, tablet e computer."
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Keine Installation: Wir richten alles ein, Sie erhalten einen persönlichen Link und legen nur Ihr Passwort fest. Läuft im Browser auf Handy, Tablet und Computer.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Nessuna installazione: prepariamo tutto noi, ricevi un link personale e scegli solo la password. Funziona nel browser su telefono, tablet e computer."
   },
   "erstellt": "2026-11-13T20:45:48.349Z",
   "fertigAm": "2026-11-13"

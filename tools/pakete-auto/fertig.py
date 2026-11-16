@@ -25,9 +25,12 @@ def main(pfad):
     p.setdefault('fertigAm', __import__('datetime').date.today().isoformat())   # Datum der Fertigstellung (für die Verwaltung)
     p['cta'] = 'inquiry'
     hinweis = a.get('hinweis', {})
+    produkt = p.get('kind') == 'product'
     p['notes'] = {
-        'de': ('Fertig entwickelt; gebucht wird ab dem offiziellen Start. ' + a['lieferung']['de'] + (' ' + hinweis['de'] if hinweis.get('de') else '')).strip(),
-        'it': ('Pronto; si prenota dall’avvio ufficiale. ' + a['lieferung']['it'] + (' ' + hinweis['it'] if hinweis.get('it') else '')).strip(),
+        'de': (('Fertig entwickelt; verkauft wird ab dem offiziellen Start. ' if produkt else 'Fertig entwickelt; gebucht wird ab dem offiziellen Start. ')
+               + a['lieferung']['de'] + (' ' + hinweis['de'] if hinweis.get('de') else '')).strip(),
+        'it': (('Pronto; la vendita parte con l’avvio ufficiale. ' if produkt else 'Pronto; si prenota dall’avvio ufficiale. ')
+               + a['lieferung']['it'] + (' ' + hinweis['it'] if hinweis.get('it') else '')).strip(),
     }
     if a.get('features'):
         for l in ('de', 'it'):
