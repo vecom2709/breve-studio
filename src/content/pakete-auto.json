@@ -6130,5 +6130,638 @@
   },
   "erstellt": "2026-11-16T20:45:01.853Z",
   "fertigAm": "2026-11-16"
+ },
+ {
+  "slug": "ribassochiaro",
+  "brand": "RibassoChiaro",
+  "produktart": {
+   "de": "Angebotskalkulation für Ausschreibungen",
+   "it": "Calcolo offerta per gare d’appalto"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 49,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von RibassoChiaro: Kostenpositionen, Angebotspreis und Abschlag in Prozent",
+   "it": "Anteprima di RibassoChiaro: voci di costo, prezzo offerto e ribasso percentuale"
+  },
+  "tagline": {
+   "de": "Welcher Abschlag ist für Sie noch tragbar?",
+   "it": "Quale ribasso puoi davvero permetterti?"
+  },
+  "benefit": {
+   "de": "Kosten, Gemeinkosten und Gewinn eintragen – RibassoChiaro zeigt Angebotspreis, Abschlag auf den Ausschreibungsbetrag und was bei höheren Abschlägen übrig bleibt.",
+   "it": "Inserisci costi, spese generali e utile – RibassoChiaro mostra prezzo offerto, ribasso sulla base d’asta e cosa resta con ribassi più alti."
+  },
+  "headline": {
+   "de": "Vor der Abgabe nachrechnen, statt den Abschlag zu schätzen.",
+   "it": "Fare i conti prima di presentare l’offerta, invece di indovinare il ribasso."
+  },
+  "intro": {
+   "de": "RibassoChiaro ist ein Programm für Ihren Computer: Ausschreibungsbetrag, nicht abschlagsfähige Sicherheitskosten und Ihre Kostenpositionen eintragen, Gemeinkosten und Gewinn in Prozent festlegen. Sie sehen Ihren Angebotspreis, den Abschlag in Prozent und eine Vergleichstabelle für verschiedene Abschläge.",
+   "it": "RibassoChiaro è un programma per il tuo computer: inserisci base d’asta, oneri della sicurezza non soggetti a ribasso e le tue voci di costo, poi spese generali e utile in percentuale. Vedi il prezzo offerto, il ribasso percentuale e una tabella di confronto per diversi ribassi."
+  },
+  "audience": {
+   "de": "Handwerksbetriebe, kleine Bau- und Dienstleistungsfirmen, Genossenschaften und Freiberufler, die an öffentlichen Ausschreibungen teilnehmen.",
+   "it": "Imprese artigiane, piccole imprese edili e di servizi, cooperative e professionisti che partecipano a gare pubbliche."
+  },
+  "job": {
+   "de": "Für jede Ausschreibung nachvollziehbar berechnen, welcher Preis und welcher Abschlag die eigenen Kosten noch decken.",
+   "it": "Calcolare in modo chiaro, per ogni gara, quale prezzo e quale ribasso coprono ancora i propri costi."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, Ihre Kalkulation bleibt auf Ihrem Gerät. Es ist eine Rechenhilfe aus Ihren Eingaben – keine Rechts- oder Steuerberatung; die Regeln der jeweiligen Ausschreibung prüfen Sie selbst.",
+   "it": "Funziona senza internet e senza account, il tuo calcolo resta sul tuo dispositivo. È uno strumento di calcolo basato sui tuoi dati – non è consulenza legale o fiscale; le regole della singola gara le verifichi tu."
+  },
+  "features": {
+   "de": [
+    "Ausschreibungsbetrag und nicht abschlagsfähige Beträge (z. B. Sicherheitskosten) getrennt erfassen",
+    "Kostenpositionen nach Art (Personal, Material, Geräte, Fremdleistung) mit Menge und Kosten je Einheit",
+    "Gemeinkosten und Gewinn in Prozent, daraus Angebotspreis, Abschlag in Prozent und Gesamtangebot",
+    "Vergleichstabelle: Preis und verbleibender Gewinn bei frei wählbaren Abschlägen",
+    "Abgabefrist mit Tagesanzeige, druckbare Kalkulation, eine Ausschreibung je Datei speichern"
+   ],
+   "it": [
+    "Base d’asta e importi non soggetti a ribasso (es. oneri della sicurezza) inseriti separatamente",
+    "Voci di costo per tipo (personale, materiali, attrezzature, subappalti) con quantità e costo unitario",
+    "Spese generali e utile in percentuale, da cui prezzo offerto, ribasso percentuale e offerta totale",
+    "Tabella di confronto: prezzo e utile residuo con ribassi a scelta",
+    "Scadenza con giorni mancanti, calcolo stampabile, una gara per file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich RibassoChiaro?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Sagt mir RibassoChiaro, welchen Abschlag ich anbieten soll?",
+     "a": "Nein. Das Programm rechnet aus Ihren Kosten und Ihren Prozentsätzen. Die Entscheidung und die Prüfung der Ausschreibungsregeln bleiben bei Ihnen."
+    },
+    {
+     "q": "Kann ich mehrere Ausschreibungen speichern?",
+     "a": "Ja. Jede Kalkulation speichern Sie als eigene Datei und öffnen sie später wieder."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo RibassoChiaro?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "RibassoChiaro mi dice quale ribasso offrire?",
+     "a": "No. Il programma calcola in base ai tuoi costi e alle tue percentuali. La decisione e la verifica delle regole di gara restano a te."
+    },
+    {
+     "q": "Posso salvare più gare?",
+     "a": "Sì. Ogni calcolo lo salvi come file separato e lo riapri quando vuoi."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren und Ausschreibung anlegen",
+    "Kosten, Gemeinkosten und Gewinn eintragen",
+    "Abschlag prüfen und Kalkulation drucken"
+   ],
+   "it": [
+    "Installi il programma e crei la gara",
+    "Inserisci costi, spese generali e utile",
+    "Controlli il ribasso e stampi il calcolo"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "RibassoChiaro · Impresa Esempio",
+   "titel": {
+    "de": "Pflasterarbeiten Piazza Esempio",
+    "it": "Ripavimentazione Piazza Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Ausschreibungsbetrag",
+      "it": "Base d’asta"
+     },
+     "neben": {
+      "de": "abschlagsfähig",
+      "it": "soggetta a ribasso"
+     },
+     "chip": {
+      "de": "48.000 €",
+      "it": "48.000 €"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Direkte Kosten",
+      "it": "Costi diretti"
+     },
+     "neben": {
+      "de": "5 Positionen",
+      "it": "5 voci"
+     },
+     "chip": {
+      "de": "35.530 €",
+      "it": "35.530 €"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Angebotspreis",
+      "it": "Prezzo offerto"
+     },
+     "neben": {
+      "de": "+12 % GK, +8 % Gewinn",
+      "it": "+12% SG, +8% utile"
+     },
+     "chip": {
+      "de": "42.977 €",
+      "it": "42.977 €"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Abschlag",
+      "it": "Ribasso"
+     },
+     "neben": {
+      "de": "auf 48.000 €",
+      "it": "su 48.000 €"
+     },
+     "chip": {
+      "de": "10,46 %",
+      "it": "10,46%"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Vergleich",
+     "it": "Confronto"
+    },
+    "punkte": [
+     {
+      "de": "Gewinn bei 5–25 % Abschlag",
+      "it": "Utile con ribasso 5–25%"
+     }
+    ]
+   }
+  },
+  "number": 45,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung; für Mac als ZIP. Mit ausgefülltem Beispiel (DE/IT). Rechenhilfe, keine Rechts- oder Steuerberatung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata; per Mac come ZIP. Con esempio compilato (IT/DE). Strumento di calcolo, non consulenza legale o fiscale."
+  },
+  "erstellt": "2026-11-17T20:44:43.858Z",
+  "fertigAm": "2026-11-17"
+ },
+ {
+  "slug": "prezzistagione",
+  "brand": "PrezziStagione",
+  "produktart": {
+   "de": "Saisonpreise für Ferienwohnungen",
+   "it": "Prezzi stagionali per case vacanza"
+  },
+  "category": "immobilien-gastgewerbe",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 39,
+    "interval": "once",
+    "unit": {
+     "de": "je Unterkunft",
+     "it": "per struttura"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von PrezziStagione: Saisons mit Preis pro Nacht und berechneter Aufenthalt",
+   "it": "Anteprima di PrezziStagione: stagioni con prezzo a notte e soggiorno calcolato"
+  },
+  "tagline": {
+   "de": "Saisonpreise festlegen, Aufenthalte in Sekunden berechnen.",
+   "it": "Prezzi di stagione chiari, soggiorni calcolati in un attimo."
+  },
+  "benefit": {
+   "de": "Saisons mit Preis pro Nacht und Mindestaufenthalt anlegen – PrezziStagione rechnet jeden Aufenthalt Nacht für Nacht samt Endreinigung und Aufpreisen und druckt Ihre Preisliste.",
+   "it": "Crea le stagioni con prezzo a notte e soggiorno minimo – PrezziStagione calcola ogni soggiorno notte per notte con pulizia finale e supplementi e stampa il tuo listino."
+  },
+  "headline": {
+   "de": "Eine Preisliste, ein Rechner – für jede Anfrage dieselbe Antwort.",
+   "it": "Un listino, un calcolatore – per ogni richiesta la stessa risposta."
+  },
+  "intro": {
+   "de": "PrezziStagione ist ein Programm für Ihren Computer: Saisons mit Zeitraum, Preis pro Nacht und Mindestnächten eintragen, dazu Endreinigung, Aufpreis für weitere Personen und eine Abgabe pro Person und Nacht, deren Betrag Sie selbst festlegen. Für jede Anfrage geben Sie An- und Abreise ein und sehen den Gesamtpreis.",
+   "it": "PrezziStagione è un programma per il tuo computer: inserisci le stagioni con periodo, prezzo a notte e notti minime, poi pulizia finale, supplemento per persone in più e un’imposta per persona e notte di cui stabilisci tu l’importo. Per ogni richiesta inserisci arrivo e partenza e vedi il prezzo totale."
+  },
+  "audience": {
+   "de": "Vermieter von Ferienwohnungen, B&Bs, Ferienhäusern und Agriturismi.",
+   "it": "Proprietari di case vacanza, B&B, ville e agriturismi."
+  },
+  "job": {
+   "de": "Anfragen schnell und einheitlich beantworten und die eigenen Preise übersichtlich festhalten.",
+   "it": "Rispondere alle richieste in modo rapido e coerente e tenere i propri prezzi in ordine."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, Ihre Preise bleiben auf Ihrem Gerät. Den Betrag der Kurtaxe bzw. Aufenthaltsabgabe tragen Sie selbst nach den Regeln Ihrer Gemeinde ein – keine Steuer- oder Rechtsberatung.",
+   "it": "Funziona senza internet e senza account, i tuoi prezzi restano sul tuo dispositivo. L’importo dell’imposta di soggiorno lo inserisci tu secondo le regole del tuo comune – non è consulenza fiscale o legale."
+  },
+  "features": {
+   "de": [
+    "Saisons mit Zeitraum, Preis pro Nacht und Mindestnächten; Warnung bei Lücken oder Überschneidungen",
+    "Aufenthaltsrechner: jede Nacht mit dem Preis ihrer Saison, Hinweis bei zu kurzem Aufenthalt oder zu vielen Personen",
+    "Endreinigung, Aufpreis je weitere Person und Kurtaxe je Person und Nacht mit Höchstnächten (Beträge selbst eintragen)",
+    "Druckbares Angebot und Preisliste mit Ihren Bedingungen",
+    "Speichern und Laden als Datei, Daten bleiben auf Ihrem Gerät"
+   ],
+   "it": [
+    "Stagioni con periodo, prezzo a notte e notti minime; avviso per periodi scoperti o sovrapposti",
+    "Calcolo soggiorno: ogni notte con il prezzo della sua stagione, avviso se il soggiorno è troppo breve o le persone sono troppe",
+    "Pulizia finale, supplemento per persona in più e imposta di soggiorno per persona e notte con limite di notti (importi inseriti da te)",
+    "Preventivo e listino stampabili con le tue condizioni",
+    "Salvataggio e apertura da file, i dati restano sul tuo dispositivo"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich PrezziStagione?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Ist PrezziStagione mit Buchungsportalen verbunden?",
+     "a": "Nein. Es ist ein eigenständiges Programm zum Festlegen und Berechnen Ihrer Preise. Ihre Daten verlassen Ihr Gerät nicht."
+    },
+    {
+     "q": "Wie hoch ist die Kurtaxe?",
+     "a": "Das legt Ihre Gemeinde fest. Sie tragen Betrag und Höchstzahl der Nächte selbst ein; PrezziStagione rechnet damit."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo PrezziStagione?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "PrezziStagione è collegato ai portali di prenotazione?",
+     "a": "No. È un programma autonomo per stabilire e calcolare i tuoi prezzi. I tuoi dati non lasciano il tuo dispositivo."
+    },
+    {
+     "q": "Quanto è l’imposta di soggiorno?",
+     "a": "La stabilisce il tuo comune. Inserisci tu importo e numero massimo di notti; PrezziStagione calcola di conseguenza."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren und Unterkunft anlegen",
+    "Saisons und Zusatzkosten eintragen",
+    "Aufenthalte berechnen, Preisliste drucken"
+   ],
+   "it": [
+    "Installi il programma e crei la struttura",
+    "Inserisci stagioni e costi extra",
+    "Calcoli i soggiorni e stampi il listino"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "PrezziStagione · Casa Esempio",
+   "titel": {
+    "de": "Saisons 2027",
+    "it": "Stagioni 2027"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Nebensaison",
+      "it": "Bassa stagione"
+     },
+     "neben": {
+      "de": "ab 2 Nächten",
+      "it": "min. 2 notti"
+     },
+     "chip": {
+      "de": "70 €",
+      "it": "70 €"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Mittelsaison",
+      "it": "Media stagione"
+     },
+     "neben": {
+      "de": "ab 3 Nächten",
+      "it": "min. 3 notti"
+     },
+     "chip": {
+      "de": "95 €",
+      "it": "95 €"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Hochsaison",
+      "it": "Alta stagione"
+     },
+     "neben": {
+      "de": "ab 7 Nächten",
+      "it": "min. 7 notti"
+     },
+     "chip": {
+      "de": "140 €",
+      "it": "140 €"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Aufenthalt 28.06.–05.07.",
+      "it": "Soggiorno 28/06–05/07"
+     },
+     "neben": {
+      "de": "7 Nächte, 4 Personen",
+      "it": "7 notti, 4 persone"
+     },
+     "chip": {
+      "de": "937 €",
+      "it": "937 €"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Preisliste",
+     "it": "Listino"
+    },
+    "punkte": [
+     {
+      "de": "druckfertig in DE und IT",
+      "it": "pronto da stampare in IT e DE"
+     }
+    ]
+   }
+  },
+  "number": 46,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung; für Mac als ZIP. Mit ausgefülltem Beispiel (DE/IT). Kurtaxe-Betrag tragen Sie selbst ein; keine Steuerberatung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata; per Mac come ZIP. Con esempio compilato (IT/DE). L’importo dell’imposta di soggiorno lo inserisci tu; non è consulenza fiscale."
+  },
+  "erstellt": "2026-11-17T20:44:43.859Z",
+  "fertigAm": "2026-11-17"
+ },
+ {
+  "slug": "clientichiari",
+  "brand": "ClientiChiari",
+  "produktart": {
+   "de": "Kundenkartei mit Wiedervorlage",
+   "it": "Schedario clienti con promemoria"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von ClientiChiari: fällige Wiedervorlagen und Kundenliste mit Status",
+   "it": "Anteprima di ClientiChiari: promemoria in scadenza ed elenco clienti con stato"
+  },
+  "tagline": {
+   "de": "Wer wartet auf Ihren Anruf?",
+   "it": "Chi aspetta la tua chiamata?"
+  },
+  "benefit": {
+   "de": "Kunden und Interessenten mit letztem Kontakt und Wiedervorlage-Datum eintragen – ClientiChiari zeigt, wer überfällig, heute oder diese Woche dran ist.",
+   "it": "Inserisci clienti e contatti con ultimo contatto e data di richiamo – ClientiChiari mostra chi è in ritardo, chi va sentito oggi o questa settimana."
+  },
+  "headline": {
+   "de": "Eine einfache Kartei statt Zettel, Notizbuch und Erinnerung im Kopf.",
+   "it": "Uno schedario semplice al posto di foglietti, agende e promemoria a memoria."
+  },
+  "intro": {
+   "de": "ClientiChiari ist ein Programm für Ihren Computer: Kunden und Interessenten mit Kontaktdaten, Status, letztem Kontakt, Wiedervorlage und Notiz eintragen. Die Übersicht sortiert nach Fälligkeit, filtert nach Status und exportiert die Liste als CSV für Excel oder LibreOffice.",
+   "it": "ClientiChiari è un programma per il tuo computer: inserisci clienti e contatti con recapiti, stato, ultimo contatto, data di richiamo e nota. La panoramica ordina per scadenza, filtra per stato ed esporta l’elenco in CSV per Excel o LibreOffice."
+  },
+  "audience": {
+   "de": "Handwerker, Freiberufler, Agenturen, Makler und kleine Händler, die ihre Kontakte ohne großes CRM pflegen möchten.",
+   "it": "Artigiani, professionisti, agenzie, agenti immobiliari e piccoli commercianti che vogliono gestire i contatti senza un grande CRM."
+  },
+  "job": {
+   "de": "Keinen Rückruf, kein Angebot und keine Nachfrage mehr vergessen.",
+   "it": "Non dimenticare più una richiamata, un preventivo o un follow-up."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Kundendaten bleiben auf Ihrem Gerät – keine Weitergabe an Dritte. Sie entscheiden, welche Daten Sie speichern, und löschen Einträge jederzeit.",
+   "it": "Funziona senza internet e senza account, i dati dei clienti restano sul tuo dispositivo – nessuna cessione a terzi. Decidi tu quali dati salvare e cancelli le schede quando vuoi."
+  },
+  "features": {
+   "de": [
+    "Kartei mit Name, Firma/Ort, Telefon, E-Mail, Status und nächstem Schritt",
+    "Letzter Kontakt und Wiedervorlage-Datum je Eintrag",
+    "Übersicht: überfällig, heute, nächste 7 Tage – mit Zählern je Status",
+    "Filter nach Status, Suche, Sortierung nach Fälligkeit, druckbare Liste",
+    "Export als CSV für Excel/LibreOffice, Sichern und Laden als Datei"
+   ],
+   "it": [
+    "Scheda con nome, azienda/località, telefono, e-mail, stato e prossimo passo",
+    "Ultimo contatto e data di richiamo per ogni scheda",
+    "Panoramica: in ritardo, oggi, prossimi 7 giorni – con conteggi per stato",
+    "Filtro per stato, ricerca, ordinamento per scadenza, elenco stampabile",
+    "Esportazione CSV per Excel/LibreOffice, salvataggio e apertura da file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich ClientiChiari?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Wo liegen die Kundendaten?",
+     "a": "Nur auf Ihrem Gerät. Es gibt keinen Server und kein Konto. Mit „Speichern (Datei)“ sichern Sie die Kartei zusätzlich als Datei."
+    },
+    {
+     "q": "Kann ich die Liste in Excel öffnen?",
+     "a": "Ja. Der CSV-Export lässt sich in Excel oder LibreOffice öffnen."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo ClientiChiari?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Dove sono i dati dei clienti?",
+     "a": "Solo sul tuo dispositivo. Non c’è server né account. Con „Salva (file)“ conservi lo schedario anche come file."
+    },
+    {
+     "q": "Posso aprire l’elenco in Excel?",
+     "a": "Sì. L’esportazione CSV si apre in Excel o LibreOffice."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Kunden und Wiedervorlagen eintragen",
+    "Täglich die fälligen Kontakte abarbeiten"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci clienti e promemoria",
+    "Ogni giorno sbrighi i contatti in scadenza"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "ClientiChiari · Studio Esempio",
+   "titel": {
+    "de": "Wiedervorlagen",
+    "it": "Promemoria"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Bar Esempio",
+      "it": "Bar Esempio"
+     },
+     "neben": {
+      "de": "Angebot nachfassen",
+      "it": "richiamare per preventivo"
+     },
+     "chip": {
+      "de": "überfällig",
+      "it": "in ritardo"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Hotel Esempio",
+      "it": "Hotel Esempio"
+     },
+     "neben": {
+      "de": "Termin bestätigen",
+      "it": "confermare appuntamento"
+     },
+     "chip": {
+      "de": "heute",
+      "it": "oggi"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Agriturismo Esempio",
+      "it": "Agriturismo Esempio"
+     },
+     "neben": {
+      "de": "Saisonstart besprechen",
+      "it": "parlare di inizio stagione"
+     },
+     "chip": {
+      "de": "in 5 Tagen",
+      "it": "tra 5 giorni"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Kunden gesamt",
+      "it": "Clienti totali"
+     },
+     "neben": {
+      "de": "Interessenten 3",
+      "it": "contatti 3"
+     },
+     "chip": {
+      "de": "8",
+      "it": "8"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Export",
+     "it": "Esportazione"
+    },
+    "punkte": [
+     {
+      "de": "CSV für Excel",
+      "it": "CSV per Excel"
+     }
+    ]
+   }
+  },
+  "number": 47,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung; für Mac als ZIP. Mit ausgefülltem Beispiel (DE/IT). Kundendaten bleiben auf Ihrem Gerät.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata; per Mac come ZIP. Con esempio compilato (IT/DE). I dati dei clienti restano sul tuo dispositivo."
+  },
+  "erstellt": "2026-11-17T20:44:43.859Z",
+  "fertigAm": "2026-11-17"
  }
 ]
