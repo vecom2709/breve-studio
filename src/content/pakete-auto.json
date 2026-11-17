@@ -6727,16 +6727,16 @@
     },
     {
      "text": {
-      "de": "Kunden gesamt",
-      "it": "Clienti totali"
+      "de": "Einträge gesamt",
+      "it": "Schede totali"
      },
      "neben": {
-      "de": "Interessenten 3",
-      "it": "contatti 3"
+      "de": "Interessenten 2",
+      "it": "contatti 2"
      },
      "chip": {
-      "de": "8",
-      "it": "8"
+      "de": "6",
+      "it": "6"
      },
      "ton": "gruen"
     }
