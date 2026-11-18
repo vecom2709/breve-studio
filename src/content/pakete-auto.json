@@ -6887,22 +6887,22 @@
    "art": "fenster",
    "adresse": "TraguardiBando · Progetto Esempio",
    "titel": {
-    "de": "Stand zum 30.06.",
-    "it": "Stato al 30/06"
+    "de": "Stand zum 30.09.",
+    "it": "Stato al 30/09"
    },
    "zeilen": [
     {
      "text": {
-      "de": "Neue Produkte online",
-      "it": "Nuovi prodotti online"
+      "de": "Produkte im Online-Shop",
+      "it": "Prodotti nel negozio online"
      },
      "neben": {
-      "de": "12 von 20",
-      "it": "12 su 20"
+      "de": "75 von 120",
+      "it": "75 su 120"
      },
      "chip": {
-      "de": "60 %",
-      "it": "60%"
+      "de": "62,5 %",
+      "it": "62,5%"
      },
      "ton": "gruen"
     },
@@ -6916,19 +6916,19 @@
       "it": "2 su 6"
      },
      "chip": {
-      "de": "33 %",
-      "it": "33%"
+      "de": "33,3 %",
+      "it": "33,3%"
      },
      "ton": "gold"
     },
     {
      "text": {
-      "de": "Meilenstein: Website live",
-      "it": "Traguardo: sito online"
+      "de": "Meilenstein: zweite Schulung",
+      "it": "Traguardo: seconda formazione"
      },
      "neben": {
-      "de": "geplant 31.05.",
-      "it": "previsto 31/05"
+      "de": "geplant 15.09.",
+      "it": "previsto 15/09"
      },
      "chip": {
       "de": "überfällig",
@@ -6946,8 +6946,8 @@
       "it": "mese 9 su 18"
      },
      "chip": {
-      "de": "50 %",
-      "it": "50%"
+      "de": "49,9 %",
+      "it": "49,9%"
      },
      "ton": "grau"
     }
@@ -7102,8 +7102,8 @@
    "art": "handy",
    "adresse": "ColazionePronta · B&B Esempio",
    "titel": {
-    "de": "Morgen: 7 Frühstücke",
-    "it": "Domani: 7 colazioni"
+    "de": "Mi 12.05.: 6 Frühstücke",
+    "it": "Mer 12/05: 6 colazioni"
    },
    "zeilen": [
     {
@@ -7142,12 +7142,12 @@
       "it": "Spesa settimana: latte"
      },
      "neben": {
-      "de": "9 Liter",
-      "it": "9 litri"
+      "de": "Bedarf 6,5 Liter",
+      "it": "fabbisogno 6,5 litri"
      },
      "chip": {
-      "de": "9 Pack.",
-      "it": "9 conf."
+      "de": "5 Pack.",
+      "it": "5 conf."
      },
      "ton": "gruen"
     }
@@ -7312,12 +7312,12 @@
       "it": "Anna Esempio"
      },
      "neben": {
-      "de": "genommen 12 von 26",
-      "it": "godute 12 su 26"
+      "de": "genehmigt 10 von 29",
+      "it": "approvate 10 su 29"
      },
      "chip": {
-      "de": "Rest 14",
-      "it": "residuo 14"
+      "de": "Rest 19",
+      "it": "residuo 19"
      },
      "ton": "gruen"
     },
@@ -7338,8 +7338,8 @@
     },
     {
      "text": {
-      "de": "11.–14. August",
-      "it": "11–14 agosto"
+      "de": "18.–20. August",
+      "it": "18–20 agosto"
      },
      "neben": {
       "de": "3 von 4 abwesend",
