@@ -6763,5 +6763,620 @@
   },
   "erstellt": "2026-11-17T20:44:43.859Z",
   "fertigAm": "2026-11-17"
+ },
+ {
+  "slug": "traguardibando",
+  "brand": "TraguardiBando",
+  "produktart": {
+   "de": "Indikatoren-Monitor für Förderprojekte",
+   "it": "Monitor indicatori progetti finanziati"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 39,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von TraguardiBando: Indikatoren mit Fortschrittsbalken und Meilensteine eines Förderprojekts",
+   "it": "Anteprima di TraguardiBando: indicatori con barre di avanzamento e traguardi di un progetto finanziato"
+  },
+  "tagline": {
+   "de": "Ziele im Blick bis zum Abschlussbericht.",
+   "it": "Obiettivi sotto controllo fino alla relazione finale."
+  },
+  "benefit": {
+   "de": "Indikatoren mit Ausgangs-, Ziel- und Ist-Wert sowie Meilensteine eintragen – TraguardiBando zeigt den Fortschritt im Vergleich zur verstrichenen Projektzeit und markiert überfällige Meilensteine.",
+   "it": "Inserisci indicatori con valore di partenza, obiettivo e attuale e i traguardi – TraguardiBando mostra l’avanzamento rispetto al tempo di progetto trascorso e segnala i traguardi in ritardo."
+  },
+  "headline": {
+   "de": "Wer einen Zuschuss erhält, muss zeigen, was erreicht wurde – am besten laufend statt erst am Ende.",
+   "it": "Chi riceve un contributo deve dimostrare cosa ha raggiunto – meglio strada facendo che solo alla fine."
+  },
+  "intro": {
+   "de": "TraguardiBando ist ein Programm für Ihren Computer: Sie tragen die Indikatoren Ihres Förderprojekts (z. B. neue Produkte, geschulte Personen, Besucher) und die Meilensteine mit Termin und Nachweis ein. Zum Stichtag sehen Sie, wo Sie stehen, und drucken einen Zwischenstand als PDF.",
+   "it": "TraguardiBando è un programma per il tuo computer: inserisci gli indicatori del progetto finanziato (es. nuovi prodotti, persone formate, visitatori) e i traguardi con data e documento di prova. Alla data di riferimento vedi a che punto sei e stampi uno stato di avanzamento in PDF."
+  },
+  "audience": {
+   "de": "Kleine Betriebe, Vereine und Freiberufler mit einem laufenden geförderten Projekt (Region, Staat oder EU).",
+   "it": "Piccole imprese, associazioni e professionisti con un progetto finanziato in corso (regione, Stato o UE)."
+  },
+  "job": {
+   "de": "Jederzeit wissen, ob die zugesagten Ziele und Termine erreichbar sind, und die Nachweise beisammen haben.",
+   "it": "Sapere in ogni momento se obiettivi e scadenze promessi sono raggiungibili e avere le prove a portata di mano."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Projektdaten bleiben auf Ihrem Gerät. Es ist ein Ordnungswerkzeug – die Regeln Ihres Förderprogramms und die Vorgaben der Förderstelle gelten weiterhin.",
+   "it": "Funziona senza internet e senza account, i dati del progetto restano sul tuo dispositivo. È uno strumento di organizzazione – valgono sempre le regole del bando e le indicazioni dell’ente finanziatore."
+  },
+  "features": {
+   "de": [
+    "Projektangaben mit Beginn, Ende und Stichtag des Zwischenstands",
+    "Indikatoren (Output/Ergebnis) mit Einheit, Ausgangs-, Ziel- und Ist-Wert und Nachweis",
+    "Fortschritt in Prozent mit Ampel im Vergleich zur verstrichenen Projektzeit",
+    "Meilensteine mit geplantem Termin und Erledigt-Datum; überfällige und in 30 Tagen fällige werden markiert",
+    "Zwischenstand drucken oder als PDF; Speichern als Datei, ausgefülltes Beispiel"
+   ],
+   "it": [
+    "Dati di progetto con inizio, fine e data di riferimento dello stato",
+    "Indicatori (realizzazione/risultato) con unità, valore di partenza, obiettivo, attuale e documento di prova",
+    "Avanzamento in percentuale con semaforo rispetto al tempo di progetto trascorso",
+    "Traguardi con data prevista e data di completamento; segnalati quelli in ritardo o in scadenza entro 30 giorni",
+    "Stato di avanzamento stampabile o in PDF; salvataggio su file, esempio compilato"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich TraguardiBando?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Wo liegen die Projektdaten?",
+     "a": "Nur auf Ihrem Gerät. Mit „Speichern (Datei)“ sichern Sie jeden Zwischenstand zusätzlich als Datei, z. B. im Projektordner."
+    },
+    {
+     "q": "Prüft das Programm, ob mein Projekt den Regeln entspricht?",
+     "a": "Nein. Es rechnet mit Ihren Eingaben und zeigt den Stand. Welche Indikatoren und Nachweise verlangt werden, steht in Ihrem Förderbescheid bzw. in der Ausschreibung."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo TraguardiBando?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Dove sono i dati del progetto?",
+     "a": "Solo sul tuo dispositivo. Con „Salva (file)“ conservi ogni stato di avanzamento anche come file, ad es. nella cartella del progetto."
+    },
+    {
+     "q": "Il programma verifica se il progetto rispetta le regole?",
+     "a": "No. Calcola con i tuoi dati e mostra lo stato. Quali indicatori e prove servono lo trovi nel decreto di concessione o nel bando."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Indikatoren und Meilensteine aus dem Antrag übernehmen",
+    "Regelmäßig Ist-Werte eintragen und Zwischenstand drucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Riporti indicatori e traguardi dalla domanda",
+    "Aggiorni i valori e stampi lo stato di avanzamento"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "TraguardiBando · Progetto Esempio",
+   "titel": {
+    "de": "Stand zum 30.06.",
+    "it": "Stato al 30/06"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Neue Produkte online",
+      "it": "Nuovi prodotti online"
+     },
+     "neben": {
+      "de": "12 von 20",
+      "it": "12 su 20"
+     },
+     "chip": {
+      "de": "60 %",
+      "it": "60%"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Geschulte Mitarbeitende",
+      "it": "Dipendenti formati"
+     },
+     "neben": {
+      "de": "2 von 6",
+      "it": "2 su 6"
+     },
+     "chip": {
+      "de": "33 %",
+      "it": "33%"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Meilenstein: Website live",
+      "it": "Traguardo: sito online"
+     },
+     "neben": {
+      "de": "geplant 31.05.",
+      "it": "previsto 31/05"
+     },
+     "chip": {
+      "de": "überfällig",
+      "it": "in ritardo"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Projektzeit verstrichen",
+      "it": "Tempo di progetto trascorso"
+     },
+     "neben": {
+      "de": "Monat 9 von 18",
+      "it": "mese 9 su 18"
+     },
+     "chip": {
+      "de": "50 %",
+      "it": "50%"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Zwischenstand",
+     "it": "Stato di avanzamento"
+    },
+    "punkte": [
+     {
+      "de": "Drucken als PDF",
+      "it": "Stampa in PDF"
+     },
+     {
+      "de": "Beispiel inklusive",
+      "it": "Esempio incluso"
+     }
+    ]
+   }
+  },
+  "number": 48,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung; für Mac als ZIP. Mit ausgefülltem Beispiel (DE/IT). Ordnungswerkzeug, keine Rechts- oder Förderberatung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata; per Mac come ZIP. Con esempio compilato (IT/DE). Strumento di organizzazione, non consulenza legale o sui finanziamenti."
+  },
+  "erstellt": "2026-11-18T22:35:13.146Z",
+  "fertigAm": "2026-11-18"
+ },
+ {
+  "slug": "colazionepronta",
+  "brand": "ColazionePronta",
+  "produktart": {
+   "de": "Frühstücksplaner für B&B",
+   "it": "Pianificatore colazioni per B&B"
+  },
+  "category": "immobilien-gastgewerbe",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Unterkunft",
+     "it": "per struttura"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von ColazionePronta: Frühstücke pro Tag und Einkaufsliste eines B&B",
+   "it": "Anteprima di ColazionePronta: colazioni per giorno e lista della spesa di un B&B"
+  },
+  "tagline": {
+   "de": "Wissen, wer morgen frühstückt.",
+   "it": "Sapere chi fa colazione domani."
+  },
+  "benefit": {
+   "de": "Zimmer mit Personen, Anreise und Abreise eintragen – ColazionePronta zählt die Frühstücke je Tag, listet die Wünsche der Gäste und rechnet die Einkaufsliste für die Woche aus.",
+   "it": "Inserisci camere con persone, arrivo e partenza – ColazionePronta conta le colazioni per giorno, elenca le richieste degli ospiti e calcola la lista della spesa della settimana."
+  },
+  "headline": {
+   "de": "Weniger Zettel in der Küche, weniger Reste, nichts vergessen.",
+   "it": "Meno foglietti in cucina, meno avanzi, niente dimenticato."
+  },
+  "intro": {
+   "de": "ColazionePronta ist ein Programm für Ihren Computer: Sie tragen die Belegung der Woche und Ihre Frühstücksprodukte mit Menge pro Person ein. Das Programm zeigt für jeden Morgen, welche Zimmer mit wie vielen Personen frühstücken, und welche Mengen Sie einkaufen müssen – abzüglich Ihres Vorrats, aufgerundet auf Packungen.",
+   "it": "ColazionePronta è un programma per il tuo computer: inserisci le presenze della settimana e i prodotti della colazione con la quantità per persona. Il programma mostra per ogni mattina quali camere fanno colazione e con quante persone, e quanto comprare – meno le scorte, arrotondato a confezioni."
+  },
+  "audience": {
+   "de": "B&B, Gästezimmer, Agriturismi und kleine Pensionen, die Frühstück anbieten.",
+   "it": "B&B, affittacamere, agriturismi e piccole pensioni che offrono la colazione."
+  },
+  "job": {
+   "de": "Frühstück und Einkauf passend zur Belegung planen.",
+   "it": "Pianificare colazione e spesa in base alle presenze."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Gästedaten bleiben auf Ihrem Gerät. Sie tragen nur ein, was Sie für das Frühstück brauchen.",
+   "it": "Funziona senza internet e senza account, i dati degli ospiti restano sul tuo dispositivo. Inserisci solo ciò che serve per la colazione."
+  },
+  "features": {
+   "de": [
+    "Zimmer mit Gast, Personen, Anreise, Abreise, Frühstück ja/nein und Wünschen",
+    "Frühstücke je Tag für sieben Tage – vom Morgen nach der Anreise bis zum Abreisetag",
+    "Tageslisten je Morgen mit Wünschen und Abreise-Hinweis",
+    "Produkte mit Menge pro Person, Vorrat und Packungsgröße → Einkaufsliste auf ganze Packungen gerundet",
+    "Drucken oder als PDF; Speichern als Datei, ausgefülltes Beispiel"
+   ],
+   "it": [
+    "Camere con ospite, persone, arrivo, partenza, colazione sì/no e richieste",
+    "Colazioni per giorno su sette giorni – dalla mattina dopo l’arrivo al giorno di partenza",
+    "Liste del giorno per ogni mattina con richieste e avviso di partenza",
+    "Prodotti con quantità per persona, scorta e confezione → lista della spesa arrotondata a confezioni intere",
+    "Stampa o PDF; salvataggio su file, esempio compilato"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich ColazionePronta?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Kann ich Gäste ohne Frühstück eintragen?",
+     "a": "Ja. Bei „Frühstück: nein“ zählt das Zimmer weder in den Tageslisten noch in der Einkaufsliste."
+    },
+    {
+     "q": "Ist ColazionePronta mit meinem Buchungsportal verbunden?",
+     "a": "Nein. Sie tragen Anreise und Abreise selbst ein. Dafür braucht das Programm kein Konto und keine Verbindung zu einem Portal."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo ColazionePronta?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Posso inserire ospiti senza colazione?",
+     "a": "Sì. Con „Colazione: no“ la camera non conta né nelle liste del giorno né nella lista della spesa."
+    },
+    {
+     "q": "ColazionePronta è collegato al mio portale di prenotazione?",
+     "a": "No. Arrivi e partenze li inserisci tu. In cambio il programma non richiede account né collegamenti a portali."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Produkte und Belegung der Woche eintragen",
+    "Tageslisten und Einkaufsliste drucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci prodotti e presenze della settimana",
+    "Stampi liste del giorno e lista della spesa"
+   ]
+  },
+  "vorschau": {
+   "art": "handy",
+   "adresse": "ColazionePronta · B&B Esempio",
+   "titel": {
+    "de": "Morgen: 7 Frühstücke",
+    "it": "Domani: 7 colazioni"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Zimmer 1 · Famiglia Esempio",
+      "it": "Camera 1 · Famiglia Esempio"
+     },
+     "neben": {
+      "de": "3 Personen",
+      "it": "3 persone"
+     },
+     "chip": {
+      "de": "ohne Laktose",
+      "it": "senza lattosio"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Zimmer 2 · Sig. Esempio",
+      "it": "Camera 2 · Sig. Esempio"
+     },
+     "neben": {
+      "de": "2 Personen",
+      "it": "2 persone"
+     },
+     "chip": {
+      "de": "Abreise",
+      "it": "partenza"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Einkauf Woche: Milch",
+      "it": "Spesa settimana: latte"
+     },
+     "neben": {
+      "de": "9 Liter",
+      "it": "9 litri"
+     },
+     "chip": {
+      "de": "9 Pack.",
+      "it": "9 conf."
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Einkaufsliste",
+     "it": "Lista della spesa"
+    },
+    "punkte": [
+     {
+      "de": "abzüglich Vorrat",
+      "it": "meno le scorte"
+     },
+     {
+      "de": "auf Packungen gerundet",
+      "it": "arrotondata a confezioni"
+     }
+    ]
+   }
+  },
+  "number": 49,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung; für Mac als ZIP. Mit ausgefülltem Beispiel (DE/IT). Gästedaten bleiben auf Ihrem Gerät.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata; per Mac come ZIP. Con esempio compilato (IT/DE). I dati degli ospiti restano sul tuo dispositivo."
+  },
+  "erstellt": "2026-11-18T22:35:13.146Z",
+  "fertigAm": "2026-11-18"
+ },
+ {
+  "slug": "ferieteam",
+  "brand": "FerieTeam",
+  "produktart": {
+   "de": "Urlaubsplaner fürs Team",
+   "it": "Planner ferie per il team"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von FerieTeam: Urlaubstage je Person mit Resturlaub und Überschneidungen im Team",
+   "it": "Anteprima di FerieTeam: giorni di ferie per persona con residuo e sovrapposizioni nel team"
+  },
+  "tagline": {
+   "de": "Urlaub planen, ohne dass der Laden leer ist.",
+   "it": "Ferie pianificate, negozio mai vuoto."
+  },
+  "benefit": {
+   "de": "Urlaubsanspruch und Abwesenheiten eintragen – FerieTeam zählt die Arbeitstage ohne Wochenenden und Feiertage, zeigt den Resturlaub je Person und warnt, wenn zu viele gleichzeitig fehlen.",
+   "it": "Inserisci giorni spettanti e assenze – FerieTeam conta i giorni lavorativi senza weekend e festivi, mostra le ferie residue per persona e avvisa se mancano troppe persone insieme."
+  },
+  "headline": {
+   "de": "Ein Jahresplan statt Wandkalender, Zettel und Rückfragen.",
+   "it": "Un piano annuale al posto di calendario a muro, foglietti e domande."
+  },
+  "intro": {
+   "de": "FerieTeam ist ein Programm für Ihren Computer: Sie tragen Ihr Team mit Urlaubsanspruch und Arbeitstagen ein und erfassen Urlaub, Fortbildung oder andere Abwesenheiten als beantragt oder genehmigt. Feiertage für Italien oder Deutschland (bundesweit) sind hinterlegt, eigene Feiertage wie den Ortsheiligen fügen Sie hinzu. Monatsübersicht drucken oder als PDF aushängen.",
+   "it": "FerieTeam è un programma per il tuo computer: inserisci il team con giorni di ferie spettanti e giorni lavorativi e registri ferie, formazione o altre assenze come richieste o approvate. Le festività per l’Italia o la Germania (nazionali) sono incluse, quelle locali come il Santo Patrono le aggiungi tu. Panoramica mensile stampabile o in PDF."
+  },
+  "audience": {
+   "de": "Läden, Restaurants, Handwerksbetriebe, Praxen und Büros mit 2 bis 30 Mitarbeitenden.",
+   "it": "Negozi, ristoranti, artigiani, studi e uffici con 2–30 dipendenti."
+  },
+  "job": {
+   "de": "Urlaub fair verteilen, den Resturlaub kennen und Engpässe früh sehen.",
+   "it": "Distribuire le ferie in modo equo, conoscere il residuo e vedere presto i periodi scoperti."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Daten Ihres Teams bleiben auf Ihrem Gerät. Den Urlaubsanspruch tragen Sie laut Vertrag bzw. Tarif- oder Kollektivvertrag selbst ein – keine Rechtsberatung.",
+   "it": "Funziona senza internet e senza account, i dati del team restano sul tuo dispositivo. I giorni spettanti li inserisci tu secondo contratto o CCNL – non è consulenza legale."
+  },
+  "features": {
+   "de": [
+    "Team mit Urlaubsanspruch, Übertrag aus dem Vorjahr und Arbeitstagen (Mo–Fr oder Mo–Sa)",
+    "Abwesenheiten (Urlaub, Sonderurlaub, Fortbildung, Sonstiges) als beantragt oder genehmigt",
+    "Arbeitstage ohne Wochenende und Feiertage – Italien oder Deutschland bundesweit hinterlegt, eigene ergänzbar",
+    "Resturlaub je Person und Warnung, wenn mehr Personen gleichzeitig fehlen als erlaubt",
+    "Monatsplan je Person und Tag im Querformat drucken oder als PDF; Speichern als Datei"
+   ],
+   "it": [
+    "Team con ferie spettanti, residuo dell’anno precedente e giorni lavorativi (lun–ven o lun–sab)",
+    "Assenze (ferie, permesso, formazione, altro) come richieste o approvate",
+    "Giorni lavorativi senza weekend e festivi – Italia o Germania (nazionali) inclusi, locali aggiungibili",
+    "Ferie residue per persona e avviso se troppe persone sono assenti insieme",
+    "Piano mensile per persona e giorno in orizzontale, stampabile o in PDF; salvataggio su file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich FerieTeam?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Sind regionale Feiertage enthalten?",
+     "a": "Hinterlegt sind die landesweiten Feiertage Italiens bzw. die bundesweiten Deutschlands. Regionale Feiertage oder den Ortsheiligen tragen Sie in einer Zeile selbst ein."
+    },
+    {
+     "q": "Kennt das Programm meinen Urlaubsanspruch?",
+     "a": "Nein. Den Anspruch tragen Sie je Person selbst ein, so wie er in Arbeitsvertrag, Tarif- oder Kollektivvertrag steht. Das Programm zählt und vergleicht nur."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo FerieTeam?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Ci sono le festività locali?",
+     "a": "Sono incluse le festività nazionali italiane o tedesche. Festività regionali o il Santo Patrono li aggiungi tu con una riga."
+    },
+    {
+     "q": "Il programma conosce i giorni di ferie spettanti?",
+     "a": "No. Li inserisci tu per ogni persona, come previsto da contratto individuale o CCNL. Il programma conta e confronta soltanto."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Team, Anspruch und Feiertage eintragen",
+    "Urlaubswünsche erfassen, genehmigen und aushängen"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci team, ferie spettanti e festività",
+    "Registri le richieste, le approvi e le appendi"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "FerieTeam · Bottega Esempio",
+   "titel": {
+    "de": "Urlaub 2027",
+    "it": "Ferie 2027"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Anna Esempio",
+      "it": "Anna Esempio"
+     },
+     "neben": {
+      "de": "genommen 12 von 26",
+      "it": "godute 12 su 26"
+     },
+     "chip": {
+      "de": "Rest 14",
+      "it": "residuo 14"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Marco Esempio",
+      "it": "Marco Esempio"
+     },
+     "neben": {
+      "de": "beantragt 10",
+      "it": "richieste 10"
+     },
+     "chip": {
+      "de": "offen",
+      "it": "da approvare"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "11.–14. August",
+      "it": "11–14 agosto"
+     },
+     "neben": {
+      "de": "3 von 4 abwesend",
+      "it": "3 su 4 assenti"
+     },
+     "chip": {
+      "de": "Engpass",
+      "it": "scoperto"
+     },
+     "ton": "rot"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Monatsübersicht",
+     "it": "Panoramica mensile"
+    },
+    "punkte": [
+     {
+      "de": "Feiertage IT / DE",
+      "it": "Festivi IT / DE"
+     },
+     {
+      "de": "Drucken als PDF",
+      "it": "Stampa in PDF"
+     }
+    ]
+   }
+  },
+  "number": 50,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung; für Mac als ZIP. Mit ausgefülltem Beispiel (DE/IT). Urlaubsanspruch tragen Sie selbst ein; keine Rechtsberatung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata; per Mac come ZIP. Con esempio compilato (IT/DE). I giorni spettanti li inserisci tu; non è consulenza legale."
+  },
+  "erstellt": "2026-11-18T22:35:13.146Z",
+  "fertigAm": "2026-11-18"
  }
 ]
