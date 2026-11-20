@@ -7969,5 +7969,610 @@
   },
   "erstellt": "2026-11-20T08:09:08.113Z",
   "fertigAm": "2026-11-20"
+ },
+ {
+  "slug": "orarichiari",
+  "brand": "OrariChiari",
+  "produktart": {
+   "de": "Öffnungszeiten-Planer mit Aushang",
+   "it": "Planner orari con cartello"
+  },
+  "category": "website-sichtbarkeit",
+  "kind": "product",
+  "shopCategory": "marketing",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von OrariChiari: Wochenzeiten, Sonderzeiten und Aushang für die Tür",
+   "it": "Anteprima di OrariChiari: orari settimanali, orari speciali e cartello per la porta"
+  },
+  "tagline": {
+   "de": "Öffnungszeiten einmal pflegen – für Tür, Website und Profil.",
+   "it": "Orari aggiornati una volta – per porta, sito e profilo."
+  },
+  "benefit": {
+   "de": "Wochenzeiten und Sonderzeiten an einem Ort: OrariChiari druckt den Aushang für die Tür und erstellt Text und Code für Ihre Website.",
+   "it": "Orari settimanali e speciali in un unico posto: OrariChiari stampa il cartello per la porta e prepara testo e codice per il tuo sito."
+  },
+  "headline": {
+   "de": "Damit Tür, Website und Profil dieselben Zeiten zeigen.",
+   "it": "Perché porta, sito e profilo mostrino gli stessi orari."
+  },
+  "intro": {
+   "de": "OrariChiari ist ein Programm für Ihren Computer: Sie tragen Ihre Öffnungszeiten je Wochentag ein – auch mit Mittagspause – und dazu Feiertage, Betriebsurlaub oder geänderte Zeiten. Das Programm prüft die Angaben, zeigt für jedes Datum, welche Zeiten gelten, druckt einen Aushang und erstellt Text und Website-Code zum Weitergeben.",
+   "it": "OrariChiari è un programma per il tuo computer: inserisci gli orari per ogni giorno – anche con pausa pranzo – e in più festivi, ferie o orari diversi. Il programma controlla i dati, mostra quali orari valgono in una data, stampa un cartello e prepara testo e codice per il sito."
+  },
+  "audience": {
+   "de": "Geschäfte, Bars, Restaurants, Praxen und Handwerksbetriebe mit festen Öffnungszeiten.",
+   "it": "Negozi, bar, ristoranti, studi e artigiani con orari di apertura fissi."
+  },
+  "job": {
+   "de": "Öffnungszeiten und Ausnahmen überall gleich und aktuell zeigen.",
+   "it": "Mostrare orari ed eccezioni ovunque uguali e aggiornati."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Den Text und den Code geben Sie selbst an Website oder Profil weiter – das Programm verbindet sich mit keinem Dienst.",
+   "it": "Funziona senza internet e senza account. Testo e codice li inserisci tu nel sito o nel profilo – il programma non si collega a nessun servizio."
+  },
+  "features": {
+   "de": [
+    "Wochenzeiten mit bis zu zwei Zeitfenstern je Tag, auch über Mitternacht",
+    "Sonderzeiten (geschlossen oder geänderte Zeiten) mit Zeitraum und Anlass; Anzeige, was an einem gewählten Datum gilt",
+    "Prüfung auf unvollständige oder überschneidende Zeitfenster, doppelte Tage und Sonderzeiten ohne Datum",
+    "Aushang (A4) in Italienisch, Deutsch oder Englisch – gleiche Tage zusammengefasst, kommende Sonderzeiten",
+    "Export als Text für Website oder Profil und als Website-Code (HTML-Tabelle und schema.org-Daten); Speichern als Datei"
+   ],
+   "it": [
+    "Orari settimanali con fino a due fasce per giorno, anche dopo mezzanotte",
+    "Orari speciali (chiuso o orari diversi) con periodo e motivo; mostra quali orari valgono in una data scelta",
+    "Controllo di fasce incomplete o sovrapposte, giorni doppi e orari speciali senza data",
+    "Cartello (A4) in italiano, tedesco o inglese – giorni uguali raggruppati, prossimi orari speciali",
+    "Esporta testo per sito o profilo e codice per il sito (tabella HTML e dati schema.org); salvataggio su file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich OrariChiari?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Ändert das Programm meine Zeiten bei Google automatisch?",
+     "a": "Nein. OrariChiari verbindet sich mit keinem Dienst. Es erstellt einen Text, den Sie selbst in Ihr Profil oder auf Ihre Website übernehmen."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo OrariChiari?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Il programma cambia da solo gli orari su Google?",
+     "a": "No. OrariChiari non si collega a nessun servizio. Prepara un testo che inserisci tu nel profilo o sul sito."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Wochenzeiten und Sonderzeiten eintragen",
+    "Aushang drucken, Text weitergeben"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci orari e orari speciali",
+    "Stampi il cartello e condividi il testo"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "OrariChiari · Bar Esempio",
+   "titel": {
+    "de": "Öffnungszeiten",
+    "it": "Orari di apertura"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Montag – Freitag",
+      "it": "Lunedì – venerdì"
+     },
+     "neben": {
+      "de": "7:00–13:00 · 16:00–20:00",
+      "it": "7:00–13:00 · 16:00–20:00"
+     },
+     "chip": {
+      "de": "geöffnet",
+      "it": "aperto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Sonntag",
+      "it": "Domenica"
+     },
+     "neben": {
+      "de": "ganztägig",
+      "it": "tutto il giorno"
+     },
+     "chip": {
+      "de": "geschlossen",
+      "it": "chiuso"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "15.08. Ferragosto",
+      "it": "15/08 Ferragosto"
+     },
+     "neben": {
+      "de": "Sonderzeit",
+      "it": "orario speciale"
+     },
+     "chip": {
+      "de": "geschlossen",
+      "it": "chiuso"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Mittwoch",
+      "it": "Mercoledì"
+     },
+     "neben": {
+      "de": "Zeiten überschneiden sich",
+      "it": "fasce sovrapposte"
+     },
+     "chip": {
+      "de": "prüfen",
+      "it": "controlla"
+     },
+     "ton": "rot"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Aushang und Website-Code",
+     "it": "Cartello e codice sito"
+    },
+    "punkte": [
+     {
+      "de": "Aushang IT/DE/EN",
+      "it": "Cartello IT/DE/EN"
+     },
+     {
+      "de": "Text für Profil",
+      "it": "Testo per profilo"
+     }
+    ]
+   }
+  },
+  "number": 54,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung: Setup-Datei für Windows (Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung), für Mac als ZIP; Deutsch und Italienisch, mit ausgefülltem Beispiel. Das Programm verbindet sich mit keinem Dienst; Text und Code übernehmen Sie selbst.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna: file di installazione per Windows (doppio clic, scegli la lingua, fatto – con guida illustrata), per Mac come ZIP; italiano e tedesco, con esempio compilato. Il programma non si collega a nessun servizio; testo e codice li inserisci tu."
+  },
+  "erstellt": "2026-11-20T20:44:47.323Z",
+  "fertigAm": "2026-11-20"
+ },
+ {
+  "slug": "linkvetrina",
+  "brand": "LinkVetrina",
+  "produktart": {
+   "de": "Link-Seite für Social-Profile",
+   "it": "Pagina link per profili social"
+  },
+  "category": "website-sichtbarkeit",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von LinkVetrina: Handy mit Link-Seite eines Beispiel-Betriebs und Knöpfen für WhatsApp, Anruf und Karte",
+   "it": "Anteprima di LinkVetrina: telefono con la pagina link di un’attività di esempio e pulsanti per WhatsApp, chiamata e mappa"
+  },
+  "tagline": {
+   "de": "Eine eigene Link-Seite für Ihr Profil – ohne Fremddienst.",
+   "it": "La tua pagina link per il profilo – senza servizi esterni."
+  },
+  "benefit": {
+   "de": "Mit LinkVetrina stellen Sie eine kleine Seite mit Ihren wichtigsten Knöpfen zusammen – WhatsApp, Anruf, Karte, Speisekarte – und erhalten eine einzelne HTML-Datei für Ihren Webspace.",
+   "it": "Con LinkVetrina componi una piccola pagina con i pulsanti più importanti – WhatsApp, chiamata, mappa, menu – e ottieni un unico file HTML per il tuo spazio web."
+  },
+  "headline": {
+   "de": "Der Link in Ihrem Profil führt auf Ihre eigene Seite.",
+   "it": "Il link nel tuo profilo porta a una pagina tutta tua."
+  },
+  "intro": {
+   "de": "LinkVetrina ist ein Programm für Ihren Computer: Sie tragen Name, kurzen Text und Ihre Links ein und wählen Farben. Das Programm baut daraus eine handytaugliche Seite als einzelne HTML-Datei – ohne Werbung, ohne Tracking, ohne Cookies. Die Datei laden Sie auf Ihren Webspace (oder lassen es uns machen) und verlinken sie in Instagram, Facebook oder WhatsApp Business.",
+   "it": "LinkVetrina è un programma per il tuo computer: inserisci nome, un breve testo e i tuoi link e scegli i colori. Il programma crea una pagina adatta al telefono come unico file HTML – senza pubblicità, senza tracciamento, senza cookie. Carichi il file sul tuo spazio web (o lo facciamo noi) e lo colleghi da Instagram, Facebook o WhatsApp Business."
+  },
+  "audience": {
+   "de": "Betriebe, Ferienvermieter und Freiberufler, die in sozialen Netzwerken aktiv sind.",
+   "it": "Attività, host e professionisti attivi sui social."
+  },
+  "job": {
+   "de": "Kunden aus dem Profil mit einem Tipp zu WhatsApp, Anruf, Karte oder Angebot bringen.",
+   "it": "Portare i clienti dal profilo a WhatsApp, chiamata, mappa o offerta con un tocco."
+  },
+  "why": {
+   "de": "Die Seite gehört Ihnen: eine Datei auf Ihrem eigenen Webspace, ohne Konto bei einem Link-Dienst. Für die Veröffentlichung brauchen Sie einen Webspace; Angaben wie Impressum oder P.IVA tragen Sie selbst ein.",
+   "it": "La pagina è tua: un file sul tuo spazio web, senza account presso un servizio di link. Per pubblicarla serve uno spazio web; dati come P.IVA o note legali li inserisci tu."
+  },
+  "features": {
+   "de": [
+    "Knöpfe für WhatsApp, Anruf, E-Mail, Karte, Website, Instagram und Facebook – Links werden im passenden Format erstellt",
+    "Name, kurzer Text, Zeile unten, vier Farbstimmungen; optionales Logo, das ohne Fotodaten neu gespeichert wird",
+    "Prüfung auf fehlende Ziele, zu kurze Nummern, fehlende Ländervorwahl, ungültige E-Mail und http-Adressen",
+    "Vorschau im Handy-Rahmen mit Link-Übersicht",
+    "Export als einzelne Datei index.html ohne Skripte, Tracking und Cookies; Speichern als Datei"
+   ],
+   "it": [
+    "Pulsanti per WhatsApp, chiamata, e-mail, mappa, sito, Instagram e Facebook – i link vengono creati nel formato giusto",
+    "Nome, breve testo, riga in fondo, quattro combinazioni di colori; logo facoltativo salvato di nuovo senza dati della foto",
+    "Controllo di destinazioni mancanti, numeri troppo corti, prefisso mancante, e-mail non valide e indirizzi http",
+    "Anteprima nel telefono con elenco dei link",
+    "Esporta un unico file index.html senza script, tracciamento né cookie; salvataggio su file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich LinkVetrina?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Brauche ich einen Webspace?",
+     "a": "Ja, um die Seite zu veröffentlichen. Die HTML-Datei läuft auf jedem üblichen Webspace. Wenn Sie keinen haben, beraten wir Sie gern."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo LinkVetrina?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Mi serve uno spazio web?",
+     "a": "Sì, per pubblicare la pagina. Il file HTML funziona su qualsiasi spazio web comune. Se non ne hai uno, ti consigliamo volentieri."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Name, Text und Links eintragen",
+    "HTML-Datei hochladen und im Profil verlinken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci nome, testo e link",
+    "Carichi il file HTML e lo colleghi dal profilo"
+   ]
+  },
+  "vorschau": {
+   "art": "handy",
+   "adresse": "esempio.it/link",
+   "titel": {
+    "de": "Gelateria Esempio",
+    "it": "Gelateria Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "WhatsApp schreiben",
+      "it": "Scrivici su WhatsApp"
+     },
+     "chip": {
+      "de": "WhatsApp",
+      "it": "WhatsApp"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Anrufen",
+      "it": "Chiama"
+     },
+     "chip": {
+      "de": "Telefon",
+      "it": "Telefono"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "So finden Sie uns",
+      "it": "Come arrivare"
+     },
+     "chip": {
+      "de": "Karte",
+      "it": "Mappa"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Unsere Sorten",
+      "it": "I nostri gusti"
+     },
+     "chip": {
+      "de": "Website",
+      "it": "Sito"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Eine HTML-Datei",
+     "it": "Un unico file HTML"
+    },
+    "punkte": [
+     {
+      "de": "ohne Tracking",
+      "it": "senza tracciamento"
+     },
+     {
+      "de": "ohne Cookies",
+      "it": "senza cookie"
+     }
+    ]
+   }
+  },
+  "number": 55,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung: Setup-Datei für Windows (Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung), für Mac als ZIP; Deutsch und Italienisch, mit ausgefülltem Beispiel. Für die Veröffentlichung brauchen Sie einen Webspace.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna: file di installazione per Windows (doppio clic, scegli la lingua, fatto – con guida illustrata), per Mac come ZIP; italiano e tedesco, con esempio compilato. Per pubblicare la pagina serve uno spazio web."
+  },
+  "erstellt": "2026-11-20T20:44:47.323Z",
+  "fertigAm": "2026-11-20"
+ },
+ {
+  "slug": "allergenichiari",
+  "brand": "AllergeniChiari",
+  "produktart": {
+   "de": "Allergen-Übersicht für Speisekarten",
+   "it": "Tabella allergeni per il menu"
+  },
+  "category": "immobilien-gastgewerbe",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 24,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von AllergeniChiari: Tabelle mit Gerichten und den 14 Allergenen",
+   "it": "Anteprima di AllergeniChiari: tabella con piatti e i 14 allergeni"
+  },
+  "tagline": {
+   "de": "Die 14 Allergene je Gericht – ordentlich als Tabelle.",
+   "it": "I 14 allergeni per piatto – in una tabella ordinata."
+  },
+  "benefit": {
+   "de": "Sie markieren für jedes Gericht die enthaltenen Allergene; AllergeniChiari druckt daraus eine Übersicht für Gäste und Personal in IT und DE.",
+   "it": "Segni per ogni piatto gli allergeni presenti; AllergeniChiari stampa una tabella per clienti e personale in italiano e tedesco."
+  },
+  "headline": {
+   "de": "Wenn ein Gast fragt, liegt die Antwort schon bereit.",
+   "it": "Quando un cliente chiede, la risposta è già pronta."
+  },
+  "intro": {
+   "de": "AllergeniChiari ist ein Programm für Ihren Computer: Sie tragen Ihre Gerichte ein und markieren mit einem Klick, welche der 14 Hauptallergene enthalten sind. Das Programm erstellt eine Tabelle zum Aushängen, eine Liste je Gericht und zeigt auf Wunsch alle Gerichte ohne ein bestimmtes Allergen. Die Angaben machen und verantworten Sie selbst.",
+   "it": "AllergeniChiari è un programma per il tuo computer: inserisci i tuoi piatti e segni con un clic quali dei 14 allergeni principali sono presenti. Il programma crea una tabella da esporre, un elenco per piatto e mostra, se vuoi, tutti i piatti senza un certo allergene. I dati li inserisci e ne rispondi tu."
+  },
+  "audience": {
+   "de": "Restaurants, Bars, Bäckereien, Eisdielen, B&B mit Frühstück und Caterer.",
+   "it": "Ristoranti, bar, panifici, gelaterie, B&B con colazione e catering."
+  },
+  "job": {
+   "de": "Allergene der eigenen Gerichte geordnet festhalten und für Gäste bereithalten.",
+   "it": "Annotare in modo ordinato gli allergeni dei propri piatti e tenerli pronti per i clienti."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Das Programm ist eine Ordnungshilfe: Es prüft keine Rezepte und ersetzt keine fachliche oder rechtliche Beratung.",
+   "it": "Funziona senza internet e senza account. Il programma è un aiuto per l’ordine: non controlla le ricette e non sostituisce una consulenza tecnica o legale."
+  },
+  "features": {
+   "de": [
+    "Gerichte mit Kategorie, Status („noch prüfen“/„geprüft“) und Hinweis, z. B. zu Spuren",
+    "Die 14 Hauptallergene per Klick-Knopf oder als Nummern",
+    "Tabelle Gerichte × Allergene im Querformat oder Liste je Gericht, mit Legende und Stand-Datum",
+    "Allergen-Namen auf Wunsch zusätzlich auf Italienisch bzw. Deutsch oder Englisch",
+    "Filter „ohne Allergen …“ (nur geprüfte Gerichte); Export als CSV, Speichern als Datei"
+   ],
+   "it": [
+    "Piatti con categoria, stato („da verificare“/„verificato“) e nota, ad es. sulle tracce",
+    "I 14 allergeni principali con un clic o come numeri",
+    "Tabella piatti × allergeni in orizzontale o elenco per piatto, con legenda e data di aggiornamento",
+    "Nomi degli allergeni, se vuoi, anche in tedesco o inglese",
+    "Filtro „senza allergene …“ (solo piatti verificati); esporta in CSV, salvataggio su file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich AllergeniChiari?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Prüft das Programm meine Rezepte?",
+     "a": "Nein. Sie tragen selbst ein, welche Allergene ein Gericht enthält, und bleiben für die Angaben verantwortlich. Das Programm hilft beim Ordnen und Drucken."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo AllergeniChiari?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Il programma controlla le mie ricette?",
+     "a": "No. Sei tu a indicare quali allergeni contiene un piatto e ne resti responsabile. Il programma aiuta a ordinare e stampare."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Gerichte eintragen und Allergene markieren",
+    "Tabelle drucken und aushängen"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci i piatti e segni gli allergeni",
+    "Stampi la tabella e la esponi"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "AllergeniChiari · Trattoria Esempio",
+   "titel": {
+    "de": "Gerichte und Allergene",
+    "it": "Piatti e allergeni"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Pasta alla Norma",
+      "it": "Pasta alla Norma"
+     },
+     "neben": {
+      "de": "Gluten · Milch",
+      "it": "glutine · latte"
+     },
+     "chip": {
+      "de": "geprüft",
+      "it": "verificato"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Insalata di mare",
+      "it": "Insalata di mare"
+     },
+     "neben": {
+      "de": "Krebstiere · Weichtiere",
+      "it": "crostacei · molluschi"
+     },
+     "chip": {
+      "de": "geprüft",
+      "it": "verificato"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Cannolo",
+      "it": "Cannolo"
+     },
+     "neben": {
+      "de": "Gluten · Milch · Nüsse",
+      "it": "glutine · latte · frutta a guscio"
+     },
+     "chip": {
+      "de": "prüfen",
+      "it": "da verificare"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Filter: ohne Gluten",
+      "it": "Filtro: senza glutine"
+     },
+     "neben": {
+      "de": "3 Gerichte",
+      "it": "3 piatti"
+     },
+     "chip": {
+      "de": "Filter",
+      "it": "filtro"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Tabelle zum Aushängen",
+     "it": "Tabella da esporre"
+    },
+    "punkte": [
+     {
+      "de": "14 Allergene",
+      "it": "14 allergeni"
+     },
+     {
+      "de": "IT und DE",
+      "it": "IT e DE"
+     }
+    ]
+   }
+  },
+  "number": 56,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung: Setup-Datei für Windows (Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung), für Mac als ZIP; Deutsch und Italienisch, mit ausgefülltem Beispiel. Ordnungshilfe: Die Angaben verantwortet der Betrieb; keine fachliche oder rechtliche Beratung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna: file di installazione per Windows (doppio clic, scegli la lingua, fatto – con guida illustrata), per Mac come ZIP; italiano e tedesco, con esempio compilato. Aiuto per l’ordine: i dati sono responsabilità dell’attività; nessuna consulenza tecnica o legale."
+  },
+  "erstellt": "2026-11-20T20:44:47.323Z",
+  "fertigAm": "2026-11-20"
  }
 ]
