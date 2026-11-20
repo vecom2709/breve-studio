@@ -7378,5 +7378,596 @@
   },
   "erstellt": "2026-11-18T22:35:13.146Z",
   "fertigAm": "2026-11-18"
+ },
+ {
+  "slug": "cronobando",
+  "brand": "CronoBando",
+  "produktart": {
+   "de": "Zeitplan für Förderprojekte",
+   "it": "Cronoprogramma per progetti finanziati"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 39,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von CronoBando: Aktivitäten eines Förderprojekts als Balken nach Projektmonaten mit Meilensteinen",
+   "it": "Anteprima di CronoBando: attività di un progetto finanziato come barre per mese con milestone"
+  },
+  "tagline": {
+   "de": "Der Zeitplan für Ihren Antrag – Monat für Monat.",
+   "it": "Il cronoprogramma della tua domanda, mese per mese."
+  },
+  "benefit": {
+   "de": "Aktivitäten mit Startmonat und Dauer eintragen – CronoBando zeichnet das Balkendiagramm nach Projektmonaten, setzt Meilensteine und warnt, wenn etwas über das Projektende hinausgeht.",
+   "it": "Inserisci le attività con mese di inizio e durata – CronoBando disegna il diagramma a barre per mese di progetto, segna le milestone e avvisa se qualcosa supera la fine del progetto."
+  },
+  "headline": {
+   "de": "Ein sauberer Zeitplan statt Kästchen-Malen in der Tabelle.",
+   "it": "Un cronoprogramma ordinato invece di colorare caselle nel foglio di calcolo."
+  },
+  "intro": {
+   "de": "CronoBando ist ein Programm für Ihren Computer: Sie geben Projektbeginn und Laufzeit ein, gliedern die Arbeit in Arbeitspakete und Aktivitäten mit Startmonat, Dauer und Zuständigkeit und legen Meilensteine fest. Das Programm zeigt den Zeitplan als Balkendiagramm mit Projekt- und Kalendermonaten – zum Drucken oder als PDF für den Antrag.",
+   "it": "CronoBando è un programma per il tuo computer: inserisci inizio e durata del progetto, suddividi il lavoro in work package e attività con mese di inizio, durata e responsabile e fissi le milestone. Il programma mostra il cronoprogramma come diagramma a barre con mesi di progetto e mesi di calendario – da stampare o in PDF per la domanda."
+  },
+  "audience": {
+   "de": "Kleine Betriebe, Vereine, Genossenschaften und Freiberufler, die einen Förderantrag vorbereiten.",
+   "it": "Piccole imprese, associazioni, cooperative e professionisti che preparano una domanda di finanziamento."
+  },
+  "job": {
+   "de": "Den Zeitplan eines Projekts übersichtlich darstellen und Widersprüche vor dem Einreichen finden.",
+   "it": "Rappresentare in modo chiaro il cronoprogramma e trovare incongruenze prima dell’invio."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, Ihre Projektdaten bleiben auf Ihrem Gerät. Die Vorgaben der jeweiligen Ausschreibung prüfen Sie selbst – das Programm ersetzt keine Beratung.",
+   "it": "Funziona senza internet e senza account, i dati del progetto restano sul tuo dispositivo. I requisiti del singolo bando li verifichi tu – il programma non sostituisce una consulenza."
+  },
+  "features": {
+   "de": [
+    "Projektbeginn und Laufzeit bis 60 Monate, Projektmonate (M1, M2 …) mit Kalendermonaten",
+    "Aktivitäten mit Arbeitspaket, Startmonat, Dauer und Zuständigkeit; Meilensteine mit Nachweis",
+    "Balkendiagramm nach Arbeitspaketen mit Meilenstein-Zeile und Zahl paralleler Aktivitäten je Monat",
+    "Warnung, wenn Aktivitäten oder Meilensteine außerhalb der Laufzeit liegen",
+    "Listen mit Datum von–bis; Drucken im Querformat oder als PDF, Speichern als Datei"
+   ],
+   "it": [
+    "Inizio e durata fino a 60 mesi, mesi di progetto (M1, M2 …) con mesi di calendario",
+    "Attività con work package, mese di inizio, durata e responsabile; milestone con verifica",
+    "Diagramma a barre per work package con riga milestone e numero di attività in parallelo per mese",
+    "Avviso se attività o milestone cadono fuori dalla durata",
+    "Elenchi con date dal–al; stampa in orizzontale o PDF, salvataggio su file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich CronoBando?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Passt der Zeitplan zu jeder Ausschreibung?",
+     "a": "Der Zeitplan folgt dem üblichen Aufbau nach Projektmonaten. Ob die Ausschreibung ein eigenes Formular verlangt, prüfen Sie im jeweiligen Bando; die Inhalte können Sie dorthin übernehmen."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo CronoBando?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Il cronoprogramma va bene per ogni bando?",
+     "a": "Il cronoprogramma segue la struttura abituale per mesi di progetto. Se il bando richiede un modulo proprio lo verifichi nel bando stesso; i contenuti li puoi riportare lì."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Laufzeit, Aktivitäten und Meilensteine eintragen",
+    "Zeitplan prüfen, drucken und dem Antrag beilegen"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci durata, attività e milestone",
+    "Controlli il cronoprogramma, lo stampi e lo alleghi alla domanda"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "CronoBando · Progetto Esempio",
+   "titel": {
+    "de": "Zeitplan 18 Monate",
+    "it": "Cronoprogramma 18 mesi"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "AP1 Analyse",
+      "it": "WP1 Analisi"
+     },
+     "neben": {
+      "de": "Monat 1–3",
+      "it": "mesi 1–3"
+     },
+     "chip": {
+      "de": "Studio Esempio",
+      "it": "Studio Esempio"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "AP2 Umsetzung",
+      "it": "WP2 Realizzazione"
+     },
+     "neben": {
+      "de": "Monat 4–14",
+      "it": "mesi 4–14"
+     },
+     "chip": {
+      "de": "11 Monate",
+      "it": "11 mesi"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "M2 Prototyp fertig",
+      "it": "M2 Prototipo pronto"
+     },
+     "neben": {
+      "de": "Monat 9",
+      "it": "mese 9"
+     },
+     "chip": {
+      "de": "Meilenstein",
+      "it": "milestone"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Schlussbericht",
+      "it": "Relazione finale"
+     },
+     "neben": {
+      "de": "Monat 17–19",
+      "it": "mesi 17–19"
+     },
+     "chip": {
+      "de": "nach Ende",
+      "it": "oltre la fine"
+     },
+     "ton": "rot"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Balkendiagramm",
+     "it": "Diagramma a barre"
+    },
+    "punkte": [
+     {
+      "de": "Projekt- und Kalendermonate",
+      "it": "Mesi di progetto e di calendario"
+     },
+     {
+      "de": "Drucken als PDF",
+      "it": "Stampa in PDF"
+     }
+    ]
+   }
+  },
+  "number": 51,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung; für Mac als ZIP. Mit ausgefülltem Beispiel (DE/IT). Vorgaben der Ausschreibung prüfen Sie selbst; keine Beratung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata; per Mac come ZIP. Con esempio compilato (IT/DE). I requisiti del bando li verifichi tu; non è consulenza."
+  },
+  "erstellt": "2026-11-20T08:09:08.113Z",
+  "fertigAm": "2026-11-20"
+ },
+ {
+  "slug": "snippetchiaro",
+  "brand": "SnippetChiaro",
+  "produktart": {
+   "de": "Seitentitel- und Beschreibungsplaner",
+   "it": "Planner titoli e descrizioni pagine"
+  },
+  "category": "website-sichtbarkeit",
+  "kind": "product",
+  "shopCategory": "marketing",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von SnippetChiaro: Seitentitel und Beschreibungen mit Zeichenzähler und Suchergebnis-Vorschau",
+   "it": "Anteprima di SnippetChiaro: titoli e descrizioni con contatore di caratteri e anteprima del risultato di ricerca"
+  },
+  "tagline": {
+   "de": "Titel und Beschreibung für jede Seite – in DE und IT.",
+   "it": "Titolo e descrizione per ogni pagina – in IT e DE."
+  },
+  "benefit": {
+   "de": "Für jede Seite Ihrer Website Titel und Beschreibung schreiben – SnippetChiaro zählt die Zeichen, zeigt eine Vorschau als Suchergebnis und meldet doppelte Texte.",
+   "it": "Scrivi titolo e descrizione per ogni pagina del sito – SnippetChiaro conta i caratteri, mostra un’anteprima come risultato di ricerca e segnala i testi doppi."
+  },
+  "headline": {
+   "de": "Alle Seitentitel an einem Ort, bevor sie auf die Website kommen.",
+   "it": "Tutti i titoli delle pagine in un posto, prima di metterli sul sito."
+  },
+  "intro": {
+   "de": "SnippetChiaro ist ein Programm für Ihren Computer: Sie tragen jede Seite Ihrer Website mit Adresse, Sprache, Suchbegriff, Seitentitel und Beschreibung ein. Das Programm zeigt die Zeichenzahl mit Richtwerten, eine Vorschau als Suchergebnis und Hinweise, z. B. wenn ein Titel doppelt vorkommt oder der Suchbegriff fehlt. Am Ende geben Sie die Liste als CSV-Datei oder fertige HTML-Zeilen an Ihre Webdesignerin weiter.",
+   "it": "SnippetChiaro è un programma per il tuo computer: inserisci ogni pagina del sito con indirizzo, lingua, parola chiave, titolo e descrizione. Il programma mostra il numero di caratteri con valori indicativi, un’anteprima come risultato di ricerca e avvisi, ad es. se un titolo è doppio o manca la parola chiave. Alla fine passi l’elenco come file CSV o righe HTML pronte a chi cura il sito."
+  },
+  "audience": {
+   "de": "Betriebe, Ferienvermieter, Praxen und Freiberufler mit eigener Website, die Texte selbst pflegen.",
+   "it": "Attività, host, studi e professionisti con un sito proprio che curano i testi da soli."
+  },
+  "job": {
+   "de": "Für jede Seite einen passenden Titel und eine Beschreibung festlegen und sauber weitergeben.",
+   "it": "Definire titolo e descrizione per ogni pagina e passarli in modo ordinato."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Die Zeichenzahlen sind Richtwerte: Wie Suchmaschinen eine Seite anzeigen, entscheiden sie selbst – eine bestimmte Platzierung kann niemand versprechen.",
+   "it": "Funziona senza internet e senza account. I numeri di caratteri sono indicativi: come i motori di ricerca mostrano una pagina lo decidono loro – nessuno può promettere un posizionamento."
+  },
+  "features": {
+   "de": [
+    "Seitenliste mit Adresse, Sprache, Suchbegriff, Seitentitel und Beschreibung",
+    "Zeichenzähler direkt am Feld mit Richtwerten (Titel ca. 30–60, Beschreibung ca. 70–155) und Ampel",
+    "Vorschau jeder Seite ähnlich einem Suchergebnis",
+    "Hinweise bei doppelten Titeln, Beschreibungen oder Adressen und fehlendem Suchbegriff; Filter „nur Seiten mit Hinweisen“",
+    "Export als CSV und als fertige HTML-Zeilen (title, meta description); Drucken, Speichern als Datei"
+   ],
+   "it": [
+    "Elenco pagine con indirizzo, lingua, parola chiave, titolo e descrizione",
+    "Contatore di caratteri accanto al campo con valori indicativi (titolo ca. 30–60, descrizione ca. 70–155) e semaforo",
+    "Anteprima di ogni pagina simile a un risultato di ricerca",
+    "Avvisi per titoli, descrizioni o indirizzi doppi e parola chiave mancante; filtro „solo pagine con avvisi“",
+    "Esporta in CSV e righe HTML pronte (title, meta description); stampa, salvataggio su file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich SnippetChiaro?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Verspricht das Programm bessere Platzierungen?",
+     "a": "Nein. Es hilft Ihnen, Titel und Beschreibungen ordentlich zu planen. Wie und ob Suchmaschinen sie anzeigen, entscheiden diese selbst."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo SnippetChiaro?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Il programma promette un posizionamento migliore?",
+     "a": "No. Ti aiuta a pianificare titoli e descrizioni in modo ordinato. Come e se i motori di ricerca li mostrano lo decidono loro."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Seiten, Titel und Beschreibungen eintragen",
+    "Hinweise prüfen und Liste weitergeben"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci pagine, titoli e descrizioni",
+    "Controlli gli avvisi e passi l’elenco"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "SnippetChiaro · Trattoria Esempio",
+   "titel": {
+    "de": "Seiten und Titel",
+    "it": "Pagine e titoli"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "/ Startseite",
+      "it": "/ Home"
+     },
+     "neben": {
+      "de": "Titel 49 Zeichen",
+      "it": "titolo 49 caratteri"
+     },
+     "chip": {
+      "de": "passt",
+      "it": "ok"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "/menu",
+      "it": "/menu"
+     },
+     "neben": {
+      "de": "Beschreibung 180 Zeichen",
+      "it": "descrizione 180 caratteri"
+     },
+     "chip": {
+      "de": "zu lang",
+      "it": "troppo lunga"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "/contatti",
+      "it": "/contatti"
+     },
+     "neben": {
+      "de": "gleicher Titel wie /",
+      "it": "stesso titolo di /"
+     },
+     "chip": {
+      "de": "doppelt",
+      "it": "doppio"
+     },
+     "ton": "rot"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Suchergebnis-Vorschau",
+     "it": "Anteprima risultato"
+    },
+    "punkte": [
+     {
+      "de": "Export CSV / HTML",
+      "it": "Esporta CSV / HTML"
+     },
+     {
+      "de": "DE und IT",
+      "it": "IT e DE"
+     }
+    ]
+   }
+  },
+  "number": 52,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung; für Mac als ZIP. Mit ausgefülltem Beispiel (DE/IT). Die Zeichenzahlen sind Richtwerte; kein Platzierungsversprechen.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata; per Mac come ZIP. Con esempio compilato (IT/DE). I numeri di caratteri sono indicativi; nessuna promessa di posizionamento."
+  },
+  "erstellt": "2026-11-20T08:09:08.113Z",
+  "fertigAm": "2026-11-20"
+ },
+ {
+  "slug": "manutenzionechiara",
+  "brand": "ManutenzioneChiara",
+  "produktart": {
+   "de": "Wartungsplan für Ferienwohnungen",
+   "it": "Piano manutenzioni per case vacanza"
+  },
+  "category": "immobilien-gastgewerbe",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Vermieter",
+     "it": "per host"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von ManutenzioneChiara: Geräte je Wohnung mit nächster Wartung, überfällig oder bald fällig",
+   "it": "Anteprima di ManutenzioneChiara: impianti per alloggio con prossima manutenzione, scaduta o in scadenza"
+  },
+  "tagline": {
+   "de": "Klimaanlage, Boiler, Rauchmelder: wann ist was dran?",
+   "it": "Climatizzatore, caldaia, rilevatori: quando tocca cosa?"
+  },
+  "benefit": {
+   "de": "Geräte und Anlagen je Wohnung mit Wartungsintervall eintragen – ManutenzioneChiara berechnet die nächste Fälligkeit, zeigt Überfälliges zuerst und sammelt erledigte Arbeiten mit Kosten.",
+   "it": "Inserisci impianti e apparecchi per alloggio con l’intervallo di manutenzione – ManutenzioneChiara calcola la prossima scadenza, mostra prima ciò che è scaduto e raccoglie gli interventi fatti con i costi."
+  },
+  "headline": {
+   "de": "Ein Wartungsplan für alle Wohnungen statt Zettel am Kühlschrank.",
+   "it": "Un piano manutenzioni per tutti gli alloggi invece di foglietti sul frigo."
+  },
+  "intro": {
+   "de": "ManutenzioneChiara ist ein Programm für Ihren Computer: Sie legen Ihre Wohnungen an und tragen je Wohnung Geräte und Anlagen ein – etwa Klimaanlage, Boiler, Rauchmelder oder Feuerlöscher – mit Intervall, letzter Wartung und zuständiger Firma. Das Programm berechnet die nächste Fälligkeit, markiert Überfälliges und bald Fälliges und führt ein Protokoll der erledigten Arbeiten mit Kosten je Wohnung.",
+   "it": "ManutenzioneChiara è un programma per il tuo computer: crei i tuoi alloggi e per ognuno inserisci impianti e apparecchi – ad es. climatizzatore, caldaia, rilevatori di fumo o estintore – con intervallo, ultima manutenzione e ditta incaricata. Il programma calcola la prossima scadenza, segnala ciò che è scaduto o in scadenza e tiene un registro degli interventi con i costi per alloggio."
+  },
+  "audience": {
+   "de": "Gastgeber mit einer oder mehreren Ferienwohnungen, B&B und kleine Hausverwaltungen.",
+   "it": "Host con uno o più alloggi, B&B e piccole amministrazioni di immobili."
+  },
+  "job": {
+   "de": "Wartungstermine im Blick behalten und belegen können, was wann erledigt wurde.",
+   "it": "Tenere d’occhio le manutenzioni e poter documentare cosa è stato fatto e quando."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Daten bleiben auf Ihrem Gerät. Welche Prüfungen für Ihre Anlagen vorgeschrieben sind, klären Sie mit Fachbetrieb oder Behörde – das Programm ersetzt keine Rechtsberatung.",
+   "it": "Funziona senza internet e senza account, i dati restano sul tuo dispositivo. Quali controlli sono obbligatori per i tuoi impianti lo verifichi con il tecnico o l’ente – il programma non sostituisce una consulenza legale."
+  },
+  "features": {
+   "de": [
+    "Wohnungen mit Geräten und Anlagen, Intervall in Monaten, letzter Wartung und zuständiger Firma",
+    "Nächste Fälligkeit automatisch – ein neuerer Protokolleintrag zählt als letzte Wartung",
+    "Überfällig und bald fällig zuerst, bezogen auf einen Stichtag und mit einstellbarem Vorlauf",
+    "Protokoll erledigter Arbeiten mit Kosten, nach Jahr gefiltert, Summe je Wohnung",
+    "Drucken oder als PDF, Speichern als Datei"
+   ],
+   "it": [
+    "Alloggi con impianti e apparecchi, intervallo in mesi, ultima manutenzione e ditta incaricata",
+    "Prossima scadenza calcolata – un intervento più recente nel registro vale come ultima manutenzione",
+    "Scaduti e in scadenza in alto, rispetto a una data di riferimento e con preavviso regolabile",
+    "Registro interventi con costi, filtrato per anno, totale per alloggio",
+    "Stampa o PDF, salvataggio su file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich ManutenzioneChiara?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Kennt das Programm die vorgeschriebenen Intervalle?",
+     "a": "Nein. Sie tragen die Intervalle selbst ein, so wie sie Hersteller, Fachbetrieb oder Vorschrift nennen. Das Programm rechnet und erinnert nur in der Übersicht."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo ManutenzioneChiara?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Il programma conosce gli intervalli obbligatori?",
+     "a": "No. Gli intervalli li inserisci tu, come indicati da produttore, tecnico o normativa. Il programma calcola e li mostra nel riepilogo."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Wohnungen, Geräte und Intervalle eintragen",
+    "Fälliges erledigen und im Protokoll festhalten"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci alloggi, impianti e intervalli",
+    "Sbrighi le scadenze e le registri"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "ManutenzioneChiara · Casa Esempio",
+   "titel": {
+    "de": "Wartungen",
+    "it": "Manutenzioni"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Klimaanlage Wohnung 1",
+      "it": "Climatizzatore alloggio 1"
+     },
+     "neben": {
+      "de": "fällig 15.04.2027",
+      "it": "scade 15/04/2027"
+     },
+     "chip": {
+      "de": "überfällig",
+      "it": "scaduta"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Boiler Wohnung 2",
+      "it": "Caldaia alloggio 2"
+     },
+     "neben": {
+      "de": "fällig in 20 Tagen",
+      "it": "tra 20 giorni"
+     },
+     "chip": {
+      "de": "bald",
+      "it": "a breve"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Rauchmelder Wohnung 1",
+      "it": "Rilevatori alloggio 1"
+     },
+     "neben": {
+      "de": "fällig 03.2028",
+      "it": "scade 03/2028"
+     },
+     "chip": {
+      "de": "ok",
+      "it": "ok"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Protokoll und Kosten",
+     "it": "Registro e costi"
+    },
+    "punkte": [
+     {
+      "de": "Kosten je Wohnung",
+      "it": "Costi per alloggio"
+     },
+     {
+      "de": "Drucken als PDF",
+      "it": "Stampa in PDF"
+     }
+    ]
+   }
+  },
+  "number": 53,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung; für Mac als ZIP. Mit ausgefülltem Beispiel (DE/IT). Intervalle und Prüfpflichten klären Sie mit Fachbetrieb oder Behörde; keine Rechtsberatung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata; per Mac come ZIP. Con esempio compilato (IT/DE). Intervalli e controlli obbligatori li verifichi con tecnico o ente; non è consulenza legale."
+  },
+  "erstellt": "2026-11-20T08:09:08.113Z",
+  "fertigAm": "2026-11-20"
  }
 ]
