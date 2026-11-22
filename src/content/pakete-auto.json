@@ -8745,12 +8745,12 @@
       "it": "Contributo 50 %"
      },
      "neben": {
-      "de": "15.000 €",
-      "it": "15.000 €"
+      "de": "15.000 € · Eigenanteil 15.000 €",
+      "it": "15.000 € · quota propria 15.000 €"
      },
      "chip": {
-      "de": "Eigenanteil",
-      "it": "quota propria"
+      "de": "Ergebnis",
+      "it": "risultato"
      },
      "ton": "gruen"
     }
