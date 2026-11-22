@@ -8574,5 +8574,626 @@
   },
   "erstellt": "2026-11-20T20:44:47.323Z",
   "fertigAm": "2026-11-20"
+ },
+ {
+  "slug": "budgetbando",
+  "brand": "BudgetBando",
+  "produktart": {
+   "de": "Kostenplan für Förderanträge",
+   "it": "Piano dei costi per bandi"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von BudgetBando: Kostenplan mit Kategorien, Förderquote und Eigenanteil",
+   "it": "Anteprima di BudgetBando: piano dei costi con voci, percentuale di contributo e quota propria"
+  },
+  "tagline": {
+   "de": "Kosten, Förderung und Eigenanteil auf einen Blick.",
+   "it": "Costi, contributo e quota propria a colpo d’occhio."
+  },
+  "benefit": {
+   "de": "Sie tragen die geplanten Kostenposten ein; BudgetBando rechnet Summen je Kategorie, Förderbetrag und Eigenanteil und warnt, wenn eine Grenze überschritten ist.",
+   "it": "Inserisci le voci di spesa previste; BudgetBando calcola i totali per categoria, il contributo e la quota propria e avvisa se superi un limite."
+  },
+  "headline": {
+   "de": "Der Kostenplan für Ihren Antrag – nachvollziehbar gerechnet.",
+   "it": "Il piano dei costi per la tua domanda – con calcoli chiari."
+  },
+  "intro": {
+   "de": "BudgetBando ist ein Programm für Ihren Computer: Sie übernehmen Förderquote, Höchstbetrag und Kategorie-Grenzen aus der Ausschreibung und tragen Ihre Kostenposten ein. Das Programm zeigt Summen je Kategorie, Anteile, Förderbetrag und Eigenanteil und druckt eine saubere Übersicht für den Antrag.",
+   "it": "BudgetBando è un programma per il tuo computer: riporti dal bando la percentuale di contributo, l’importo massimo e i limiti per categoria e inserisci le tue voci di spesa. Il programma mostra totali per categoria, percentuali, contributo e quota propria e stampa un riepilogo ordinato per la domanda."
+  },
+  "audience": {
+   "de": "Kleine Betriebe, Vereine, Freiberufler und Berater, die Förderanträge vorbereiten.",
+   "it": "Piccole imprese, associazioni, professionisti e consulenti che preparano domande di contributo."
+  },
+  "job": {
+   "de": "Die Kosten eines Förderprojekts planen und die Förderung grob durchrechnen.",
+   "it": "Pianificare i costi di un progetto finanziato e calcolare in modo indicativo il contributo."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Die Werte aus der Ausschreibung tragen Sie selbst ein; das Programm rechnet nach Ihren Angaben und ersetzt keine Prüfung durch Fachleute oder die Förderstelle.",
+   "it": "Funziona senza internet e senza account. I valori del bando li inserisci tu; il programma calcola secondo i tuoi dati e non sostituisce la verifica di un esperto o dell’ente."
+  },
+  "features": {
+   "de": [
+    "Kostenposten mit 8 Kategorien, Menge, Einzelpreis netto und MwSt.-Satz",
+    "Förderquote, Höchstbetrag und MwSt. förderfähig ja/nein einstellbar",
+    "Grenzen je Kategorie in % oder € mit Hinweis bei Überschreitung",
+    "Ergebnis: Summen je Kategorie mit Anteil, Förderbetrag, Eigenanteil und tatsächliche Quote",
+    "Drucken als PDF, Export als CSV, Speichern als Datei"
+   ],
+   "it": [
+    "Voci di spesa con 8 categorie, quantità, prezzo unitario netto e aliquota IVA",
+    "Percentuale di contributo, massimale e IVA ammissibile sì/no",
+    "Limiti per categoria in % o € con avviso se superati",
+    "Risultato: totali per categoria con quota, contributo, quota propria e percentuale effettiva",
+    "Stampa in PDF, esporta in CSV, salvataggio su file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich BudgetBando?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Kennt das Programm die Regeln meiner Ausschreibung?",
+     "a": "Nein. Quote, Höchstbetrag und Grenzen übernehmen Sie aus der Ausschreibung. BudgetBando rechnet damit und zeigt Abweichungen an."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo BudgetBando?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Il programma conosce le regole del mio bando?",
+     "a": "No. Percentuale, massimale e limiti li riporti tu dal bando. BudgetBando li usa per i calcoli e segnala le differenze."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Werte der Ausschreibung und Kostenposten eintragen",
+    "Übersicht prüfen und drucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci i valori del bando e le voci di spesa",
+    "Controlli il riepilogo e lo stampi"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "BudgetBando · Progetto Esempio",
+   "titel": {
+    "de": "Kostenplan Projekt Esempio",
+    "it": "Piano dei costi Progetto Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Anschaffungen",
+      "it": "Beni strumentali"
+     },
+     "neben": {
+      "de": "18.400 €",
+      "it": "18.400 €"
+     },
+     "chip": {
+      "de": "61 %",
+      "it": "61 %"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Dienstleistungen",
+      "it": "Servizi"
+     },
+     "neben": {
+      "de": "7.200 €",
+      "it": "7.200 €"
+     },
+     "chip": {
+      "de": "24 %",
+      "it": "24 %"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Personal",
+      "it": "Personale"
+     },
+     "neben": {
+      "de": "4.400 € · 14,7 %",
+      "it": "4.400 € · 14,7 %"
+     },
+     "chip": {
+      "de": "über Grenze 10 %",
+      "it": "oltre limite 10 %"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Förderung 50 %",
+      "it": "Contributo 50 %"
+     },
+     "neben": {
+      "de": "15.000 €",
+      "it": "15.000 €"
+     },
+     "chip": {
+      "de": "Eigenanteil",
+      "it": "quota propria"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Übersicht für den Antrag",
+     "it": "Riepilogo per la domanda"
+    },
+    "punkte": [
+     {
+      "de": "Summen je Kategorie",
+      "it": "Totali per categoria"
+     },
+     {
+      "de": "Förderung und Eigenanteil",
+      "it": "Contributo e quota propria"
+     }
+    ]
+   }
+  },
+  "number": 57,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung: Setup-Datei für Windows (Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung), für Mac als ZIP; Deutsch und Italienisch, mit ausgefülltem Beispiel. Planungshilfe: rechnet mit Ihren Werten aus der Ausschreibung; keine Prüfung der Förderfähigkeit.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna: file di installazione per Windows (doppio clic, scegli la lingua, fatto – con guida illustrata), per Mac come ZIP; italiano e tedesco, con esempio compilato. Aiuto alla pianificazione: calcola con i valori del bando che inserisci; nessuna verifica dell’ammissibilità."
+  },
+  "erstellt": "2026-11-22T06:43:20.884Z",
+  "fertigAm": "2026-11-22"
+ },
+ {
+  "slug": "socichiari",
+  "brand": "SociChiari",
+  "produktart": {
+   "de": "Mitglieder- und Beitragsliste (Vereine)",
+   "it": "Elenco soci e quote per associazioni"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Verein",
+     "it": "per associazione"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von SociChiari: Mitgliederliste mit Beitragsstatus bezahlt, teilweise und offen",
+   "it": "Anteprima di SociChiari: elenco soci con stato della quota pagata, parziale e da pagare"
+  },
+  "tagline": {
+   "de": "Wer hat den Beitrag bezahlt? Die Liste weiß es.",
+   "it": "Chi ha pagato la quota? L’elenco lo sa."
+  },
+  "benefit": {
+   "de": "Sie führen Mitglieder und Zahlungen eines Jahres an einem Ort; SociChiari zeigt offene Beiträge, Summen und druckt Quittungen.",
+   "it": "Tieni soci e pagamenti dell’anno in un unico posto; SociChiari mostra le quote da pagare, i totali e stampa le ricevute."
+  },
+  "headline": {
+   "de": "Mitgliedsbeiträge im Blick – ohne Zettelwirtschaft.",
+   "it": "Le quote associative sotto controllo – senza foglietti sparsi."
+  },
+  "intro": {
+   "de": "SociChiari ist ein Programm für Ihren Computer: Sie tragen die Mitglieder ein, legen den Jahresbeitrag fest und vermerken Zahlungen. Das Programm zeigt, wer bezahlt hat, wer teilweise und wer noch offen ist, rechnet Soll, Ist und Offen und druckt eine Liste oder einfache Zahlungsquittungen.",
+   "it": "SociChiari è un programma per il tuo computer: inserisci i soci, stabilisci la quota annuale e registri i pagamenti. Il programma mostra chi ha pagato, chi in parte e chi deve ancora pagare, calcola dovuto, incassato e da incassare e stampa un elenco o semplici ricevute di pagamento."
+  },
+  "audience": {
+   "de": "Vereine, Sportclubs, Kulturvereine, Pro Loco, Elternvereine und kleine Verbände.",
+   "it": "Associazioni, società sportive, circoli culturali, Pro Loco, comitati genitori e piccoli enti."
+  },
+  "job": {
+   "de": "Mitgliedsbeiträge eines Jahres festhalten und offene Beiträge erkennen.",
+   "it": "Registrare le quote dell’anno e riconoscere quelle ancora da pagare."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Daten bleiben auf Ihrem Gerät. Die Quittung ist eine Zahlungsbestätigung, keine Spendenbescheinigung; das Programm ersetzt keine Buchhaltung oder Steuerberatung.",
+   "it": "Funziona senza internet e senza account, i dati restano sul tuo dispositivo. La ricevuta è una conferma di pagamento, non una ricevuta per donazioni; il programma non sostituisce contabilità o consulenza fiscale."
+  },
+  "features": {
+   "de": [
+    "Mitglieder mit Nummer, Eintritt, Beitragsart, Zahlung, Datum und Zahlungsart",
+    "Vier Beitragsarten mit eigenem Betrag, dazu „befreit“",
+    "Status bezahlt, teilweise, offen oder befreit mit Summen Soll, eingegangen, offen",
+    "Ansichten: Gesamtliste, nur offene Beiträge oder Quittungen mit Unterschriftsfeld",
+    "Hinweise bei doppelter Nummer oder fehlendem Datum; Export CSV, Speichern als Datei"
+   ],
+   "it": [
+    "Soci con numero, iscrizione, tipo di quota, pagamento, data e modalità",
+    "Quattro tipi di quota con importo proprio, più „esente“",
+    "Stato pagata, parziale, da pagare o esente con totali dovuto, incassato, da incassare",
+    "Viste: elenco completo, solo quote da pagare o ricevute con spazio per la firma",
+    "Avvisi per numero doppio o data mancante; esporta in CSV, salvataggio su file"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich SociChiari?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Wo werden die Mitgliederdaten gespeichert?",
+     "a": "Nur auf Ihrem Gerät. Für eine dauerhafte Sicherung speichern Sie eine Datei, die Sie selbst aufbewahren. Es gibt keine Übertragung ins Internet."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo SociChiari?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Dove vengono salvati i dati dei soci?",
+     "a": "Solo sul tuo dispositivo. Per conservarli salvi un file che custodisci tu. Non c’è alcun invio su internet."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Mitglieder und Beitragsarten eintragen",
+    "Zahlungen vermerken und Liste drucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci soci e tipi di quota",
+    "Registri i pagamenti e stampi l’elenco"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "SociChiari · Circolo Esempio",
+   "titel": {
+    "de": "Mitgliedsbeiträge 2026",
+    "it": "Quote associative 2026"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "001 · Anna Esempio",
+      "it": "001 · Anna Esempio"
+     },
+     "neben": {
+      "de": "30 € von 30 €",
+      "it": "30 € su 30 €"
+     },
+     "chip": {
+      "de": "bezahlt",
+      "it": "pagata"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "002 · Marco Esempio",
+      "it": "002 · Marco Esempio"
+     },
+     "neben": {
+      "de": "10 € von 30 €",
+      "it": "10 € su 30 €"
+     },
+     "chip": {
+      "de": "teilweise",
+      "it": "parziale"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "003 · Giulia Esempio",
+      "it": "003 · Giulia Esempio"
+     },
+     "neben": {
+      "de": "0 € von 15 €",
+      "it": "0 € su 15 €"
+     },
+     "chip": {
+      "de": "offen",
+      "it": "da pagare"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Summe offen",
+      "it": "Totale da incassare"
+     },
+     "neben": {
+      "de": "65 €",
+      "it": "65 €"
+     },
+     "chip": {
+      "de": "3 Mitglieder",
+      "it": "3 soci"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Liste und Quittungen",
+     "it": "Elenco e ricevute"
+    },
+    "punkte": [
+     {
+      "de": "Offene Beiträge",
+      "it": "Quote da pagare"
+     },
+     {
+      "de": "Quittung je Zahlung",
+      "it": "Ricevuta per pagamento"
+     }
+    ]
+   }
+  },
+  "number": 58,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung: Setup-Datei für Windows (Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung), für Mac als ZIP; Deutsch und Italienisch, mit ausgefülltem Beispiel. Daten bleiben auf Ihrem Gerät; die Quittung ist keine Spendenbescheinigung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna: file di installazione per Windows (doppio clic, scegli la lingua, fatto – con guida illustrata), per Mac come ZIP; italiano e tedesco, con esempio compilato. I dati restano sul tuo dispositivo; la ricevuta non è una ricevuta per erogazioni liberali."
+  },
+  "erstellt": "2026-11-22T06:43:20.884Z",
+  "fertigAm": "2026-11-22"
+ },
+ {
+  "slug": "listinochiaro",
+  "brand": "ListinoChiaro",
+  "produktart": {
+   "de": "Preisliste für Dienstleister",
+   "it": "Listino prezzi per servizi"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "design-media",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von ListinoChiaro: gestaltete Preisliste mit Kategorien, Dauer und Preisen",
+   "it": "Anteprima di ListinoChiaro: listino impaginato con categorie, durata e prezzi"
+  },
+  "tagline": {
+   "de": "Ihre Preise ordentlich gesetzt – zum Aushängen.",
+   "it": "I tuoi prezzi ben impaginati – da esporre."
+  },
+  "benefit": {
+   "de": "Sie tragen Leistungen und Preise ein; ListinoChiaro setzt daraus eine gestaltete Preisliste in IT und DE und passt bei Bedarf alle Preise um einen Prozentsatz an.",
+   "it": "Inserisci servizi e prezzi; ListinoChiaro crea un listino impaginato in italiano e tedesco e, se serve, aggiorna tutti i prezzi di una percentuale."
+  },
+  "headline": {
+   "de": "Eine Preisliste, die man gern liest – und leicht ändert.",
+   "it": "Un listino che si legge volentieri – e si aggiorna facilmente."
+  },
+  "intro": {
+   "de": "ListinoChiaro ist ein Programm für Ihren Computer: Sie tragen Ihre Leistungen mit Kategorie, Dauer und Preis ein, auf Wunsch zweisprachig. Das Programm setzt daraus eine Preisliste im Studio-Breve-Stil zum Drucken als A4-Aushang oder PDF. Preise lassen sich gesammelt um einen Prozentsatz anpassen und runden.",
+   "it": "ListinoChiaro è un programma per il tuo computer: inserisci i tuoi servizi con categoria, durata e prezzo, anche in due lingue. Il programma crea un listino da stampare come foglio A4 o PDF. I prezzi si possono aggiornare tutti insieme di una percentuale, con arrotondamento."
+  },
+  "audience": {
+   "de": "Friseure, Kosmetikstudios, Werkstätten, Handwerker, Fotografen, Fahrschulen und andere Dienstleister.",
+   "it": "Parrucchieri, centri estetici, officine, artigiani, fotografi, autoscuole e altri servizi."
+  },
+  "job": {
+   "de": "Eine aktuelle Preisliste erstellen, drucken und bei Preisänderungen schnell anpassen.",
+   "it": "Creare un listino aggiornato, stamparlo e adattarlo in fretta quando cambiano i prezzi."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Preise und Hinweise (z. B. zur MwSt.) legen Sie selbst fest; das Programm ersetzt keine steuerliche oder rechtliche Beratung.",
+   "it": "Funziona senza internet e senza account. Prezzi e note (ad es. sull’IVA) li decidi tu; il programma non sostituisce una consulenza fiscale o legale."
+  },
+  "features": {
+   "de": [
+    "Leistungen mit Kategorie, Dauer, Preis, „ab“-Kennzeichen und Hinweis",
+    "Leistungsnamen auf Wunsch zweisprachig, der zweite Name kursiv",
+    "Alle Preise gesammelt um x % anpassen, gerundet auf 0,10 €, 0,50 € oder 1 €",
+    "Layout einspaltig oder zweispaltig, mit Kontaktzeile, Fußnote und Stand-Datum",
+    "Drucken als A4-Aushang oder PDF, Export als CSV"
+   ],
+   "it": [
+    "Servizi con categoria, durata, prezzo, indicazione „da“ e nota",
+    "Nomi dei servizi anche in due lingue, il secondo in corsivo",
+    "Aggiorna tutti i prezzi di x %, arrotondati a 0,10 €, 0,50 € o 1 €",
+    "Impaginazione a una o due colonne, con contatti, nota e data",
+    "Stampa come foglio A4 o PDF, esporta in CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich ListinoChiaro?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Kann ich die Preisliste später ändern?",
+     "a": "Ja. Ihre Eingaben bleiben auf dem Gerät gespeichert, zusätzlich können Sie eine Datei sichern. Preise ändern Sie einzeln oder gesammelt um einen Prozentsatz."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo ListinoChiaro?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Posso modificare il listino in seguito?",
+     "a": "Sì. I dati restano salvati sul dispositivo e puoi anche salvare un file. Cambi i prezzi uno per uno o tutti insieme di una percentuale."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Leistungen und Preise eintragen",
+    "Preisliste drucken und aushängen"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci servizi e prezzi",
+    "Stampi il listino e lo esponi"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "ListinoChiaro · Salone Esempio",
+   "titel": {
+    "de": "Preisliste Salone Esempio",
+    "it": "Listino Salone Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Schnitt und Föhnen",
+      "it": "Taglio e piega"
+     },
+     "neben": {
+      "de": "45 Min.",
+      "it": "45 min"
+     },
+     "chip": {
+      "de": "28,00 €",
+      "it": "28,00 €"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Färben",
+      "it": "Colore"
+     },
+     "neben": {
+      "de": "60 Min.",
+      "it": "60 min"
+     },
+     "chip": {
+      "de": "ab 45,00 €",
+      "it": "da 45,00 €"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Preise +3 %",
+      "it": "Prezzi +3 %"
+     },
+     "neben": {
+      "de": "gerundet auf 0,50 €",
+      "it": "arrotondati a 0,50 €"
+     },
+     "chip": {
+      "de": "angepasst",
+      "it": "aggiornati"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Stand 01.12.2026",
+      "it": "Aggiornato al 01/12/2026"
+     },
+     "neben": {
+      "de": "A4-Aushang",
+      "it": "foglio A4"
+     },
+     "chip": {
+      "de": "Druck",
+      "it": "stampa"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Aushang A4",
+     "it": "Foglio A4"
+    },
+    "punkte": [
+     {
+      "de": "IT und DE",
+      "it": "IT e DE"
+     },
+     {
+      "de": "Ein- oder zweispaltig",
+      "it": "Una o due colonne"
+     }
+    ]
+   }
+  },
+  "number": 59,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung: Setup-Datei für Windows (Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung), für Mac als ZIP; Deutsch und Italienisch, mit ausgefülltem Beispiel. Preise und Hinweise legen Sie selbst fest.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna: file di installazione per Windows (doppio clic, scegli la lingua, fatto – con guida illustrata), per Mac come ZIP; italiano e tedesco, con esempio compilato. Prezzi e note li decidi tu."
+  },
+  "erstellt": "2026-11-22T06:43:20.884Z",
+  "fertigAm": "2026-11-22"
  }
 ]
