@@ -9195,5 +9195,650 @@
   },
   "erstellt": "2026-11-22T06:43:20.884Z",
   "fertigAm": "2026-11-22"
+ },
+ {
+  "slug": "anticipochiaro",
+  "brand": "AnticipoChiaro",
+  "produktart": {
+   "de": "Liquiditätsplan für Förderprojekte",
+   "it": "Piano di liquidità per progetti a bando"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von AnticipoChiaro: Monatstabelle mit Ausgaben, Einnahmen und Kontostand eines Förderprojekts",
+   "it": "Anteprima di AnticipoChiaro: tabella mensile con uscite, entrate e saldo di un progetto finanziato"
+  },
+  "tagline": {
+   "de": "Sehen, wann das Geld im Projekt knapp wird.",
+   "it": "Vedere quando la cassa del progetto va in rosso."
+  },
+  "benefit": {
+   "de": "Sie tragen Ausgaben und erwartete Auszahlungen mit Monat ein; AnticipoChiaro zeigt den Kontostand Monat für Monat und den Betrag, der zwischendurch fehlen würde.",
+   "it": "Inserisci uscite ed erogazioni attese con il mese; AnticipoChiaro mostra il saldo mese per mese e quanto mancherebbe nel frattempo."
+  },
+  "headline": {
+   "de": "Förderung kommt oft später als die Rechnungen – planen Sie die Zeit dazwischen.",
+   "it": "Il contributo arriva spesso dopo le fatture – pianifica il periodo nel mezzo."
+  },
+  "intro": {
+   "de": "AnticipoChiaro ist ein Programm für Ihren Computer: Sie tragen Ausgaben (einmalig, monatlich oder alle 3 Monate) und Einnahmen wie Vorschuss, Zwischen- und Schlusszahlung, Darlehen oder Eigenmittel mit dem erwarteten Monat ein. Das Programm rechnet den Kontostand Monat für Monat, markiert Monate im Minus und zeigt den tiefsten Stand.",
+   "it": "AnticipoChiaro è un programma per il tuo computer: inserisci le uscite (una tantum, mensili o ogni 3 mesi) e le entrate come anticipo, erogazione intermedia e saldo, finanziamento o mezzi propri con il mese previsto. Il programma calcola il saldo mese per mese, evidenzia i mesi in negativo e mostra il punto più basso."
+  },
+  "audience": {
+   "de": "Kleine Betriebe, Vereine und Freiberufler, die ein gefördertes Projekt vorfinanzieren – und ihre Berater.",
+   "it": "Piccole imprese, associazioni e professionisti che anticipano le spese di un progetto finanziato – e chi li segue."
+  },
+  "job": {
+   "de": "Vor und während eines Förderprojekts erkennen, wann und wie viel Geld zwischendurch fehlt.",
+   "it": "Capire prima e durante un progetto finanziato quando e quanto denaro manca nel frattempo."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Die Termine und Beträge tragen Sie selbst ein, z. B. aus dem Bescheid; das Programm ersetzt keine Finanz-, Steuer- oder Förderberatung.",
+   "it": "Funziona senza internet e senza account. Date e importi li inserisci tu, ad es. dal decreto; il programma non sostituisce una consulenza finanziaria, fiscale o sui bandi."
+  },
+  "features": {
+   "de": [
+    "Ausgaben und Einnahmen mit Monat, Betrag, Art und Rhythmus",
+    "Monatstabelle mit Saldo, Kontostand und Balken",
+    "Tiefster Kontostand und rechnerische Lücke auf einen Blick",
+    "Schlusszahlung nach Projektende wird automatisch mitgerechnet",
+    "Drucken als A4/PDF, Export als CSV"
+   ],
+   "it": [
+    "Uscite ed entrate con mese, importo, tipo e frequenza",
+    "Tabella mensile con saldo del mese, saldo cassa e barre",
+    "Saldo più basso e scoperto calcolato a colpo d’occhio",
+    "Il saldo del contributo dopo la fine del progetto viene incluso",
+    "Stampa A4/PDF, esporta in CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich AnticipoChiaro?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Weiß AnticipoChiaro, wann die Förderung ausgezahlt wird?",
+     "a": "Nein. Termine und Beträge tragen Sie selbst ein, zum Beispiel aus dem Bescheid oder der Ausschreibung. Das Programm rechnet damit und zeigt, wie sich der Kontostand entwickelt."
+    },
+    {
+     "q": "Kann ich verschiedene Fälle durchspielen?",
+     "a": "Ja. Speichern Sie einen Stand als Datei, ändern Sie dann etwa den Monat der Schlusszahlung und vergleichen Sie den tiefsten Kontostand."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo AnticipoChiaro?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "AnticipoChiaro sa quando arriva il contributo?",
+     "a": "No. Date e importi li inserisci tu, ad esempio dal decreto o dal bando. Il programma fa i calcoli e mostra come cambia il saldo."
+    },
+    {
+     "q": "Posso provare scenari diversi?",
+     "a": "Sì. Salva una versione come file, poi cambia ad esempio il mese del saldo e confronta il saldo più basso."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Ausgaben und erwartete Einnahmen eintragen",
+    "Monatsplan prüfen und ausdrucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci uscite ed entrate previste",
+    "Controlli il piano mensile e lo stampi"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "AnticipoChiaro · Oleificio Esempio",
+   "titel": {
+    "de": "Liquiditätsplan – Projekt Esempio",
+    "it": "Piano di liquidità – progetto Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Mär 2027: Maschine",
+      "it": "mar 2027: macchinario"
+     },
+     "neben": {
+      "de": "−42.000 €",
+      "it": "−42.000 €"
+     },
+     "chip": {
+      "de": "Ausgabe",
+      "it": "uscita"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Sep 2027: Kontostand",
+      "it": "set 2027: saldo cassa"
+     },
+     "neben": {
+      "de": "tiefster Monat",
+      "it": "mese peggiore"
+     },
+     "chip": {
+      "de": "−19.500 €",
+      "it": "−19.500 €"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Okt 2027: Zwischenauszahlung",
+      "it": "ott 2027: erogazione intermedia"
+     },
+     "neben": {
+      "de": "Beispiel",
+      "it": "esempio"
+     },
+     "chip": {
+      "de": "+15.000 €",
+      "it": "+15.000 €"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Mär 2028: Schlusszahlung",
+      "it": "mar 2028: saldo contributo"
+     },
+     "neben": {
+      "de": "nach Projektende",
+      "it": "dopo la fine"
+     },
+     "chip": {
+      "de": "+13.000 €",
+      "it": "+13.000 €"
+     },
+     "ton": "gold"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Rechnerische Lücke",
+     "it": "Scoperto calcolato"
+    },
+    "punkte": [
+     {
+      "de": "19.500 € im September",
+      "it": "19.500 € a settembre"
+     },
+     {
+      "de": "Endstand 1.300 €",
+      "it": "Saldo finale 1300 €"
+     }
+    ]
+   }
+  },
+  "number": 60,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel als PDF.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. In italiano e tedesco, con esempio compilato in PDF."
+  },
+  "erstellt": "2026-11-23T22:22:14.327Z",
+  "fertigAm": "2026-11-23"
+ },
+ {
+  "slug": "tavolopronto",
+  "brand": "TavoloPronto",
+  "produktart": {
+   "de": "Tischplan und Reservierungsbuch",
+   "it": "Pianta tavoli e libro prenotazioni"
+  },
+  "category": "immobilien-gastgewerbe",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 24,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von TavoloPronto: Reservierungsliste eines Abends mit Tischen und Hinweisen",
+   "it": "Anteprima di TavoloPronto: lista prenotazioni di una sera con tavoli e avvisi"
+  },
+  "tagline": {
+   "de": "Reservierungen und Tische ohne Zettelchaos.",
+   "it": "Prenotazioni e tavoli senza foglietti."
+  },
+  "benefit": {
+   "de": "Sie tragen telefonische Reservierungen ein; TavoloPronto weist freie Tische zu, meldet Überschneidungen und zu kleine Tische und druckt die Liste für den Service.",
+   "it": "Inserisci le prenotazioni telefoniche; TavoloPronto assegna i tavoli liberi, segnala sovrapposizioni e tavoli troppo piccoli e stampa la lista per il servizio."
+  },
+  "headline": {
+   "de": "Das Reservierungsbuch am Tresen – geordnet, geprüft und druckbar.",
+   "it": "Il libro prenotazioni al bancone – ordinato, controllato e stampabile."
+  },
+  "intro": {
+   "de": "TavoloPronto ist ein Programm für den Computer im Lokal: Tische mit Plätzen und Bereich einmal anlegen, dann je Service die Reservierungen mit Uhrzeit, Personen, Telefon und Notiz eintragen. Das Programm prüft Tischgröße und Überschneidungen, verteilt freie Tische und zeigt die Belegung als Übersicht.",
+   "it": "TavoloPronto è un programma per il computer del locale: crei una volta i tavoli con posti e zona, poi per ogni servizio inserisci le prenotazioni con ora, persone, telefono e nota. Il programma controlla posti e sovrapposizioni, assegna i tavoli liberi e mostra l’occupazione in un colpo d’occhio."
+  },
+  "audience": {
+   "de": "Trattorien, Pizzerien, Restaurants, Agriturismi und Bars mit Tischservice, die Reservierungen per Telefon oder persönlich annehmen.",
+   "it": "Trattorie, pizzerie, ristoranti, agriturismi e bar con servizio al tavolo che prendono prenotazioni al telefono o di persona."
+  },
+  "job": {
+   "de": "Reservierungen eines Service sammeln, Tische sinnvoll vergeben und dem Team eine klare Liste geben.",
+   "it": "Raccogliere le prenotazioni di un servizio, assegnare i tavoli e dare allo staff una lista chiara."
+  },
+  "why": {
+   "de": "Keine Online-Buchung, keine Provision, kein Konto: Die Gästedaten bleiben auf Ihrem Gerät und lassen sich nach dem Service mit einem Klick löschen.",
+   "it": "Nessuna prenotazione online, nessuna commissione, nessun account: i dati degli ospiti restano sul tuo dispositivo e dopo il servizio si cancellano con un clic."
+  },
+  "features": {
+   "de": [
+    "Tische mit Plätzen und Bereich, bleiben für jeden Service erhalten",
+    "Reservierungen mit Uhrzeit, Personen, Telefon, Status und Notiz",
+    "Hinweise bei zu kleinem Tisch und Überschneidungen am selben Tisch",
+    "„Freie Tische zuweisen“ und Tischbelegung als Übersicht",
+    "„Service abschließen“ löscht die Gästedaten, Tische bleiben"
+   ],
+   "it": [
+    "Tavoli con posti e zona, restano per ogni servizio",
+    "Prenotazioni con ora, persone, telefono, stato e nota",
+    "Avvisi per tavolo troppo piccolo e sovrapposizioni",
+    "„Assegna tavoli liberi“ e occupazione tavoli a colpo d’occhio",
+    "„Chiudi servizio“ cancella i dati ospiti, i tavoli restano"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich TavoloPronto?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Können Gäste darüber online reservieren?",
+     "a": "Nein. TavoloPronto ist das Reservierungsbuch für Ihr Team – Sie tragen Anrufe und persönliche Reservierungen ein. Für Online-Buchungen gibt es eigene Lösungen."
+    },
+    {
+     "q": "Was passiert mit Namen und Telefonnummern?",
+     "a": "Sie bleiben nur auf Ihrem Gerät. Mit „Service abschließen“ löschen Sie alle Reservierungen eines Service, die Tischliste bleibt erhalten."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo TavoloPronto?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Gli ospiti possono prenotare online?",
+     "a": "No. TavoloPronto è il libro prenotazioni per il tuo staff – inserisci tu telefonate e prenotazioni di persona. Per le prenotazioni online esistono soluzioni dedicate."
+    },
+    {
+     "q": "Che fine fanno nomi e numeri di telefono?",
+     "a": "Restano solo sul tuo dispositivo. Con „Chiudi servizio“ cancelli tutte le prenotazioni di un servizio, l’elenco dei tavoli resta."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren und Tische anlegen",
+    "Reservierungen eintragen, Tische zuweisen",
+    "Liste drucken und Service starten"
+   ],
+   "it": [
+    "Installi il programma e crei i tavoli",
+    "Inserisci le prenotazioni e assegni i tavoli",
+    "Stampi la lista e parte il servizio"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "TavoloPronto · Trattoria Esempio",
+   "titel": {
+    "de": "Reservierungen Samstagabend",
+    "it": "Prenotazioni sabato sera"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "19:30 Rossi (Esempio)",
+      "it": "19:30 Rossi (Esempio)"
+     },
+     "neben": {
+      "de": "2 Pers.",
+      "it": "2 pers."
+     },
+     "chip": {
+      "de": "Tisch 1",
+      "it": "tavolo 1"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "20:00 Familie Esempio",
+      "it": "20:00 Famiglia Esempio"
+     },
+     "neben": {
+      "de": "6 Pers. · Terrasse",
+      "it": "6 pers. · terrazza"
+     },
+     "chip": {
+      "de": "Tisch 7",
+      "it": "tavolo 7"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "20:30 Gialli (Esempio)",
+      "it": "20:30 Gialli (Esempio)"
+     },
+     "neben": {
+      "de": "5 Pers.",
+      "it": "5 pers."
+     },
+     "chip": {
+      "de": "Tisch zu klein",
+      "it": "troppo piccolo"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "20:00 Verdi (Esempio)",
+      "it": "20:00 Verdi (Esempio)"
+     },
+     "neben": {
+      "de": "3 Pers.",
+      "it": "3 pers."
+     },
+     "chip": {
+      "de": "angefragt",
+      "it": "da confermare"
+     },
+     "ton": "gold"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Heute Abend",
+     "it": "Stasera"
+    },
+    "punkte": [
+     {
+      "de": "8 Reservierungen, 26 Gäste",
+      "it": "8 prenotazioni, 26 coperti"
+     },
+     {
+      "de": "Freie Tische automatisch zuweisen",
+      "it": "Assegna i tavoli liberi"
+     }
+    ]
+   }
+  },
+  "number": 61,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel als PDF.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. In italiano e tedesco, con esempio compilato in PDF."
+  },
+  "erstellt": "2026-11-23T22:22:14.327Z",
+  "fertigAm": "2026-11-23"
+ },
+ {
+  "slug": "attrezzichiari",
+  "brand": "AttrezziChiari",
+  "produktart": {
+   "de": "Geräte- und Werkzeugliste mit Ausgabe",
+   "it": "Elenco attrezzi e consegne"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von AttrezziChiari: Übersicht ausgegebener Geräte und fälliger Prüfungen",
+   "it": "Anteprima di AttrezziChiari: attrezzi consegnati e controlli in scadenza"
+  },
+  "tagline": {
+   "de": "Wissen, wo die Bohrmaschine gerade ist.",
+   "it": "Sapere dov’è il trapano in questo momento."
+  },
+  "benefit": {
+   "de": "Sie führen Geräte mit Inventar-Nr. und tragen ein, wer was mitnimmt; AttrezziChiari zeigt, was unterwegs oder überfällig ist und welche Prüfung bald ansteht.",
+   "it": "Registri gli attrezzi con numero di inventario e chi li prende; AttrezziChiari mostra cosa è fuori o in ritardo e quale controllo è in scadenza."
+  },
+  "headline": {
+   "de": "Werkzeug, Maschinen und Prüftermine in einer Liste – mit Ausgabe an Mitarbeitende und Baustellen.",
+   "it": "Attrezzi, macchinari e controlli in un unico elenco – con le consegne a collaboratori e cantieri."
+  },
+  "intro": {
+   "de": "AttrezziChiari ist ein Programm für Ihren Computer: Geräte mit Inventar-Nr., Standort, Zustand und nächstem Prüf- oder Wartungstermin anlegen und jede Ausgabe mit Person bzw. Baustelle und geplanter Rückgabe eintragen. Die Übersicht zeigt, was zurzeit draußen ist, was überfällig ist und welche Termine anstehen.",
+   "it": "AttrezziChiari è un programma per il tuo computer: registri gli attrezzi con numero di inventario, ubicazione, stato e prossimo controllo o manutenzione e annoti ogni consegna con persona o cantiere e rientro previsto. La panoramica mostra cosa è fuori, cosa è in ritardo e quali scadenze arrivano."
+  },
+  "audience": {
+   "de": "Handwerksbetriebe, Baufirmen, Gärtner, Werkstätten, Vermieter von Geräten und Vereine mit gemeinsamem Material.",
+   "it": "Artigiani, imprese edili, giardinieri, officine, noleggiatori di attrezzi e associazioni con materiale in comune."
+  },
+  "job": {
+   "de": "Den Überblick behalten, welches Gerät wo ist, wer es hat und wann es geprüft oder gewartet werden muss.",
+   "it": "Tenere sotto controllo quale attrezzo è dove, chi lo ha e quando va controllato o manutenuto."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Welche Prüfungen und Fristen gelten, legen Sie selbst fest; das Programm ersetzt keine Rechts- oder Sicherheitsberatung.",
+   "it": "Funziona senza internet e senza account. Quali controlli e scadenze valgono lo decidi tu; il programma non sostituisce una consulenza legale o sulla sicurezza."
+  },
+  "features": {
+   "de": [
+    "Geräte mit Inventar-Nr., Standort, Zustand und Prüftermin",
+    "Ausgaben an Mitarbeitende oder Baustellen, mit Verlauf",
+    "Übersicht: unterwegs, Rückgabe überfällig, defekt, im Lager",
+    "Prüf- und Wartungstermine mit Vorlauf von 14 bis 90 Tagen",
+    "Hinweise bei unbekannter Nr. und Doppelausgabe, Export CSV"
+   ],
+   "it": [
+    "Attrezzi con n. inventario, ubicazione, stato e controllo",
+    "Consegne a collaboratori o cantieri, con storico",
+    "Panoramica: fuori, rientro scaduto, guasto, in magazzino",
+    "Controlli e manutenzioni con preavviso da 14 a 90 giorni",
+    "Avvisi per numero sconosciuto e doppia consegna, CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich AttrezziChiari?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Ist das eine Lagerverwaltung für Material?",
+     "a": "Nein. AttrezziChiari ist für Geräte und Werkzeuge, die ausgegeben und zurückgebracht werden. Für Verbrauchsmaterial mit Bestellvorschlag gibt es MagazzinoBreve."
+    },
+    {
+     "q": "Sagt mir das Programm, welche Prüfungen Pflicht sind?",
+     "a": "Nein. Prüf- und Wartungstermine tragen Sie selbst ein. Das Programm erinnert Sie in der Übersicht, wenn ein Termin näher rückt oder überschritten ist."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo AttrezziChiari?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "È un gestionale di magazzino per i materiali?",
+     "a": "No. AttrezziChiari è per attrezzi e macchinari che vengono consegnati e restituiti. Per il materiale di consumo con proposta d’ordine c’è MagazzinoBreve."
+    },
+    {
+     "q": "Il programma mi dice quali controlli sono obbligatori?",
+     "a": "No. Le date di controllo e manutenzione le inserisci tu. Il programma le evidenzia nella panoramica quando si avvicinano o sono scadute."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Geräte anlegen und Ausgaben eintragen",
+    "Übersicht prüfen und ausdrucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Registri gli attrezzi e le consegne",
+    "Controlli la panoramica e la stampi"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "AttrezziChiari · Edilizia Esempio",
+   "titel": {
+    "de": "Geräteliste Edilizia Esempio",
+    "it": "Elenco attrezzi Edilizia Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "A-03 Winkelschleifer",
+      "it": "A-03 Smerigliatrice"
+     },
+     "neben": {
+      "de": "Marco (Esempio), bis 06.12.",
+      "it": "Marco (Esempio), fino al 06/12"
+     },
+     "chip": {
+      "de": "überfällig",
+      "it": "in ritardo"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "A-01 Bohrhammer",
+      "it": "A-01 Martello perforatore"
+     },
+     "neben": {
+      "de": "Baustelle Casa Esempio",
+      "it": "Cantiere Casa Esempio"
+     },
+     "chip": {
+      "de": "unterwegs",
+      "it": "fuori"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "A-04 Stromerzeuger",
+      "it": "A-04 Generatore"
+     },
+     "neben": {
+      "de": "Wartung 30.11.",
+      "it": "Manutenzione 30/11"
+     },
+     "chip": {
+      "de": "Prüfung überfällig",
+      "it": "controllo scaduto"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "B-02 Gerüstbock (Paar)",
+      "it": "B-02 Cavalletti (coppia)"
+     },
+     "neben": {
+      "de": "Lager",
+      "it": "Magazzino"
+     },
+     "chip": {
+      "de": "im Lager",
+      "it": "in magazzino"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Stichtag 10.12.",
+     "it": "Al 10/12"
+    },
+    "punkte": [
+     {
+      "de": "3 Geräte unterwegs",
+      "it": "3 attrezzi fuori"
+     },
+     {
+      "de": "2 Prüfungen fällig",
+      "it": "2 controlli in scadenza"
+     }
+    ]
+   }
+  },
+  "number": 62,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel als PDF.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. In italiano e tedesco, con esempio compilato in PDF."
+  },
+  "erstellt": "2026-11-23T22:22:14.327Z",
+  "fertigAm": "2026-11-23"
  }
 ]
