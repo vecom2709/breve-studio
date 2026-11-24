@@ -9840,5 +9840,650 @@
   },
   "erstellt": "2026-11-23T22:22:14.327Z",
   "fertigAm": "2026-11-23"
+ },
+ {
+  "slug": "chiarimentigara",
+  "brand": "ChiarimentiGara",
+  "produktart": {
+   "de": "Rückfragen-Register für Ausschreibungen",
+   "it": "Registro chiarimenti per gare e bandi"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von ChiarimentiGara: Fristen, offene Rückfragen und Aufgaben fürs Angebot",
+   "it": "Anteprima di ChiarimentiGara: termini, richieste aperte e attività per l’offerta"
+  },
+  "tagline": {
+   "de": "Jede Rückfrage zur Ausschreibung im Blick.",
+   "it": "Ogni chiarimento sulla gara sotto controllo."
+  },
+  "benefit": {
+   "de": "Sie sammeln eigene Rückfragen und Klarstellungen der Vergabestelle an einem Ort; ChiarimentiGara zeigt Fristen, offene Antworten und was am Angebot noch zu tun ist.",
+   "it": "Raccogli le tue richieste di chiarimento e i chiarimenti della stazione appaltante in un unico posto; ChiarimentiGara mostra termini, risposte attese e cosa resta da fare sull’offerta."
+  },
+  "headline": {
+   "de": "Rückfragen, Antworten und Klarstellungen zu einer Ausschreibung – mit Fristen und Aufgaben fürs Angebot.",
+   "it": "Richieste, risposte e chiarimenti di una gara – con termini e attività per l’offerta."
+  },
+  "intro": {
+   "de": "ChiarimentiGara ist ein Programm für Ihren Computer: Sie tragen Ihre Rückfragen mit Bezug zum Dokument ein, vermerken, wann gestellt und beantwortet wurde, und halten fest, was sich daraus für das Angebot ergibt. Veröffentlichte Klarstellungen der Vergabestelle kommen dazu. Entwürfe lassen sich als fertiges Schreiben speichern.",
+   "it": "ChiarimentiGara è un programma per il tuo computer: inserisci le richieste di chiarimento con il riferimento al documento, annoti quando sono state inviate e quando è arrivata la risposta e cosa cambia per l’offerta. Si aggiungono i chiarimenti pubblicati dalla stazione appaltante. Le bozze si salvano come testo pronto."
+  },
+  "audience": {
+   "de": "Kleine Betriebe, Handwerk, Dienstleister und Planungsbüros, die an öffentlichen oder privaten Ausschreibungen teilnehmen.",
+   "it": "Piccole imprese, artigiani, fornitori di servizi e studi tecnici che partecipano a gare pubbliche o private."
+  },
+  "job": {
+   "de": "Bis zur Abgabe den Überblick behalten, welche Fragen offen sind, was geantwortet wurde und was das für das Angebot bedeutet.",
+   "it": "Fino alla scadenza sapere quali domande sono aperte, cosa è stato risposto e cosa significa per l’offerta."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Eine Organisationshilfe – keine Rechtsberatung; maßgeblich sind die Unterlagen und Fristen der Vergabestelle.",
+   "it": "Funziona senza internet e senza account. Uno strumento organizzativo – non è consulenza legale; fanno fede i documenti e i termini della stazione appaltante."
+  },
+  "features": {
+   "de": [
+    "Fragefrist und Abgabefrist mit Resttagen",
+    "Rückfragen mit Bezug, Datum, Antwort und Status",
+    "Klarstellungen der Vergabestelle erfassen",
+    "Liste der offenen Aufgaben für das Angebot",
+    "Entwürfe als Schreiben (Text), Export CSV"
+   ],
+   "it": [
+    "Termine chiarimenti e termine offerta con giorni rimasti",
+    "Richieste con riferimento, date, risposta e stato",
+    "Chiarimenti della stazione appaltante",
+    "Elenco delle attività aperte per l’offerta",
+    "Bozze come testo pronto, esportazione CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich ChiarimentiGara?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Schickt das Programm meine Fragen an die Vergabestelle?",
+     "a": "Nein. Es speichert Ihre Entwürfe als Text. Einreichen tun Sie selbst über den Weg, den die Vergabestelle vorsieht, z. B. die Plattform der Ausschreibung."
+    },
+    {
+     "q": "Sagt mir ChiarimentiGara, ob ich teilnehmen darf?",
+     "a": "Nein. Das Programm ordnet Fragen, Antworten und Fristen. Die Prüfung der Teilnahmebedingungen bleibt bei Ihnen bzw. Ihren Fachleuten."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo ChiarimentiGara?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Il programma invia le domande alla stazione appaltante?",
+     "a": "No. Salva le bozze come testo. L’invio lo fai tu tramite il canale previsto dalla stazione appaltante, ad esempio la piattaforma della gara."
+    },
+    {
+     "q": "ChiarimentiGara mi dice se posso partecipare?",
+     "a": "No. Il programma ordina domande, risposte e termini. La verifica dei requisiti resta a te o ai tuoi consulenti."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Rückfragen und Klarstellungen eintragen",
+    "Fristen und Aufgaben prüfen, Register drucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci richieste e chiarimenti",
+    "Controlli termini e attività, stampi il registro"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "ChiarimentiGara · Comune di Esempio",
+   "titel": {
+    "de": "Rückfragen – Reinigung Gemeindebüros (Beispiel)",
+    "it": "Chiarimenti – Pulizia uffici comunali (esempio)"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Frist für Rückfragen 08.12.",
+      "it": "Termine chiarimenti 08/12"
+     },
+     "neben": {
+      "de": "noch 4 Tage",
+      "it": "mancano 4 giorni"
+     },
+     "chip": {
+      "de": "läuft",
+      "it": "aperto"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Frage 1: Lagerfläche im Umfang?",
+      "it": "Quesito 1: magazzino incluso?"
+     },
+     "neben": {
+      "de": "Antwort 27.11.",
+      "it": "Risposta 27/11"
+     },
+     "chip": {
+      "de": "beantwortet",
+      "it": "risposta"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Frage 3: Preise mit Sicherheitskosten?",
+      "it": "Quesito 3: prezzi con oneri sicurezza?"
+     },
+     "neben": {
+      "de": "gestellt 28.11.",
+      "it": "inviata 28/11"
+     },
+     "chip": {
+      "de": "wartet",
+      "it": "in attesa"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Berichtigung Preisblatt",
+      "it": "Rettifica modulo offerta"
+     },
+     "neben": {
+      "de": "Angebot anpassen",
+      "it": "adeguare l’offerta"
+     },
+     "chip": {
+      "de": "offen",
+      "it": "da fare"
+     },
+     "ton": "rot"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Stichtag 04.12.",
+     "it": "Al 04/12"
+    },
+    "punkte": [
+     {
+      "de": "1 Antwort ausstehend",
+      "it": "1 risposta attesa"
+     },
+     {
+      "de": "2 Aufgaben fürs Angebot",
+      "it": "2 attività per l’offerta"
+     }
+    ]
+   }
+  },
+  "number": 63,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel als PDF.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. In italiano e tedesco, con esempio compilato in PDF."
+  },
+  "erstellt": "2026-11-24T20:52:55.490Z",
+  "fertigAm": "2026-11-24"
+ },
+ {
+  "slug": "domandechiare",
+  "brand": "DomandeChiare",
+  "produktart": {
+   "de": "FAQ-Baukasten für die Website",
+   "it": "Generatore di FAQ per il sito"
+  },
+  "category": "website-sichtbarkeit",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von DomandeChiare: Fragen und Antworten mit fertigem Website-Code",
+   "it": "Anteprima di DomandeChiare: domande e risposte con codice pronto per il sito"
+  },
+  "tagline": {
+   "de": "Häufige Fragen einmal gut beantworten.",
+   "it": "Rispondere bene, una volta, alle domande frequenti."
+  },
+  "benefit": {
+   "de": "Sie schreiben Fragen und Antworten, DomandeChiare ordnet sie nach Thema, prüft auf Lücken und erzeugt den fertigen Code für Ihre Website.",
+   "it": "Scrivi domande e risposte, DomandeChiare le ordina per tema, segnala le lacune e genera il codice pronto per il tuo sito."
+  },
+  "headline": {
+   "de": "Eine FAQ-Seite für Ihre Website – geschrieben von Ihnen, Code fertig zum Einfügen.",
+   "it": "Una pagina FAQ per il tuo sito – scritta da te, codice pronto da inserire."
+  },
+  "intro": {
+   "de": "DomandeChiare ist ein Programm für Ihren Computer: Fragen und Antworten eintragen, nach Thema gruppieren, Entwürfe ausblenden. Die Vorschau zeigt die FAQ wie auf der Seite; dazu gibt es HTML-Code mit aufklappbaren Fragen und strukturierten Daten nach schema.org zum Kopieren oder als Datei.",
+   "it": "DomandeChiare è un programma per il tuo computer: inserisci domande e risposte, le raggruppi per tema, nascondi le bozze. L’anteprima mostra le FAQ come sul sito; in più ottieni il codice HTML con domande apribili e dati strutturati schema.org da copiare o salvare."
+  },
+  "audience": {
+   "de": "Betriebe mit eigener Website: Läden, Unterkünfte, Verleihe, Handwerk, Praxen und Vereine, die oft die gleichen Fragen hören.",
+   "it": "Attività con un proprio sito: negozi, strutture ricettive, noleggi, artigiani, studi e associazioni che sentono spesso le stesse domande."
+  },
+  "job": {
+   "de": "Wiederkehrende Kundenfragen sauber beantworten und als FAQ-Abschnitt auf die eigene Website bringen.",
+   "it": "Rispondere in modo chiaro alle domande ricorrenti e pubblicarle come sezione FAQ sul proprio sito."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, der Code lädt nichts von fremden Servern. Ob Suchmaschinen die strukturierten Daten anzeigen, entscheiden die Suchmaschinen.",
+   "it": "Funziona senza internet e senza account, il codice non carica nulla da server esterni. Se mostrare i dati strutturati lo decidono i motori di ricerca."
+  },
+  "features": {
+   "de": [
+    "Fragen mit Antwort, Thema und „anzeigen ja/nein“",
+    "Vorschau wie auf der Website, nach Thema gruppiert",
+    "HTML-Code mit aufklappbaren Fragen und schema.org-Daten",
+    "Prüfhinweise: ohne Antwort, zu kurz, doppelt",
+    "Kopierbare Anweisung für einen KI-Assistenten Ihrer Wahl"
+   ],
+   "it": [
+    "Domande con risposta, tema e „mostra sì/no“",
+    "Anteprima come sul sito, raggruppata per tema",
+    "Codice HTML con domande apribili e dati schema.org",
+    "Avvisi: senza risposta, troppo breve, doppia",
+    "Istruzioni da copiare per un assistente IA a tua scelta"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich DomandeChiare?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Funktioniert der Code mit meinem Website-Baukasten?",
+     "a": "Der Code ist normales HTML. Sie fügen ihn dort ein, wo Ihr Baukasten eigenes HTML erlaubt (oft ein Block „HTML“ oder „Code“). Ob das geht, hängt von Ihrem Anbieter ab."
+    },
+    {
+     "q": "Schreibt DomandeChiare die Antworten für mich?",
+     "a": "Nein. Die Antworten schreiben Sie selbst. Für Ideen gibt es eine kopierbare Anweisung, die Sie in einen KI-Assistenten Ihrer Wahl einfügen können – sie fragt nur nach typischen Kundenfragen."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo DomandeChiare?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Il codice funziona con il mio costruttore di siti?",
+     "a": "Il codice è normale HTML. Lo inserisci dove il tuo costruttore permette HTML personalizzato (spesso un blocco „HTML“ o „Codice“). Dipende dal tuo fornitore."
+    },
+    {
+     "q": "DomandeChiare scrive le risposte per me?",
+     "a": "No. Le risposte le scrivi tu. Per le idee c’è un testo da copiare in un assistente IA a tua scelta – chiede solo le domande tipiche dei clienti."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Fragen und Antworten schreiben",
+    "Code kopieren und auf der Website einfügen"
+   ],
+   "it": [
+    "Installi il programma",
+    "Scrivi domande e risposte",
+    "Copi il codice e lo inserisci nel sito"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "esempio.it/faq",
+   "titel": {
+    "de": "Häufige Fragen – Bici Esempio",
+    "it": "Domande frequenti – Bici Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Wann kann ich ein Fahrrad abholen?",
+      "it": "Quando posso ritirare una bici?"
+     },
+     "neben": {
+      "de": "Abholung",
+      "it": "Ritiro"
+     },
+     "chip": {
+      "de": "sichtbar",
+      "it": "visibile"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Kann ich kostenlos stornieren?",
+      "it": "Posso cancellare gratis?"
+     },
+     "neben": {
+      "de": "Buchung",
+      "it": "Prenotazione"
+     },
+     "chip": {
+      "de": "sichtbar",
+      "it": "visibile"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Gibt es E-Bikes",
+      "it": "Avete e-bike"
+     },
+     "neben": {
+      "de": "Ausstattung",
+      "it": "Dotazione"
+     },
+     "chip": {
+      "de": "ohne Fragezeichen",
+      "it": "senza „?“"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Interne Notiz: Preise prüfen",
+      "it": "Nota interna: prezzi"
+     },
+     "neben": {
+      "de": "Entwurf",
+      "it": "bozza"
+     },
+     "chip": {
+      "de": "ausgeblendet",
+      "it": "nascosta"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Code für die Website",
+     "it": "Codice per il sito"
+    },
+    "punkte": [
+     {
+      "de": "7 Fragen in 3 Themen",
+      "it": "7 domande in 3 temi"
+     },
+     {
+      "de": "mit schema.org FAQPage",
+      "it": "con schema.org FAQPage"
+     }
+    ]
+   }
+  },
+  "number": 64,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel als PDF.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. In italiano e tedesco, con esempio compilato in PDF."
+  },
+  "erstellt": "2026-11-24T20:52:55.492Z",
+  "fertigAm": "2026-11-24"
+ },
+ {
+  "slug": "biancheriachiara",
+  "brand": "BiancheriaChiara",
+  "produktart": {
+   "de": "Wäscheliste für Ferienwohnungen",
+   "it": "Biancheria per case vacanza"
+  },
+  "category": "immobilien-gastgewerbe",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von BiancheriaChiara: Wäschebestand im Schrank und bei der Wäscherei",
+   "it": "Anteprima di BiancheriaChiara: biancheria in armadio e in lavanderia"
+  },
+  "tagline": {
+   "de": "Wissen, wie viele Laken noch im Schrank sind.",
+   "it": "Sapere quante lenzuola restano in armadio."
+  },
+  "benefit": {
+   "de": "Sie tragen ein, was zur Wäscherei geht und zurückkommt; BiancheriaChiara zeigt den Bestand im Schrank, offene Lieferscheine mit Fehlmengen und die Wäschereikosten im Monat.",
+   "it": "Annoti cosa va in lavanderia e cosa rientra; BiancheriaChiara mostra cosa c’è in armadio, le bolle aperte con i pezzi mancanti e i costi di lavanderia del mese."
+  },
+  "headline": {
+   "de": "Bettwäsche und Handtücher im Griff – im Schrank, bei der Wäscherei und auf dem Lieferschein.",
+   "it": "Lenzuola e asciugamani sotto controllo – in armadio, in lavanderia e sulla bolla."
+  },
+  "intro": {
+   "de": "BiancheriaChiara ist ein Programm für Ihren Computer: Wäscheartikel mit Bestand und Mindestmenge anlegen, jede Abholung und Rücklieferung mit Lieferschein-Nr. eintragen, Neukäufe und Aussortiertes vermerken. Die Übersicht zeigt je Artikel, was im Schrank liegt, was knapp wird und welche Stücke noch bei der Wäscherei sind.",
+   "it": "BiancheriaChiara è un programma per il tuo computer: registri gli articoli con dotazione e minimo, annoti ogni ritiro e riconsegna con il numero di bolla, gli acquisti e i pezzi dismessi. La panoramica mostra per articolo cosa c’è in armadio, cosa scarseggia e quali pezzi sono ancora in lavanderia."
+  },
+  "audience": {
+   "de": "Vermieter von Ferienwohnungen, B&B, kleine Pensionen und Agriturismi, die mit einer externen Wäscherei arbeiten.",
+   "it": "Proprietari di case vacanza, B&B, piccole pensioni e agriturismi che lavorano con una lavanderia esterna."
+  },
+  "job": {
+   "de": "Vor jedem Wechsel genug saubere Wäsche haben und merken, wenn bei der Wäscherei Stücke fehlen.",
+   "it": "Avere sempre biancheria pulita per i cambi e accorgersi quando in lavanderia mancano dei pezzi."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Daten bleiben auf Ihrem Gerät. Mengen und Preise tragen Sie selbst ein.",
+   "it": "Funziona senza internet e senza account, i dati restano sul tuo dispositivo. Quantità e prezzi li inserisci tu."
+  },
+  "features": {
+   "de": [
+    "Artikel mit Anfangsbestand, Mindestmenge und Stückpreis",
+    "Bewegungen: Wäscherei hin und zurück, Kauf, Aussortiert",
+    "Bestand je Artikel: Schrank, Wäscherei, knapp",
+    "Offene Lieferscheine mit Fehlmengen und „überfällig“",
+    "Wäschereikosten im Monat, Export CSV"
+   ],
+   "it": [
+    "Articoli con dotazione, minimo e prezzo al pezzo",
+    "Movimenti: lavanderia andata e ritorno, acquisti, dismessi",
+    "Giacenze per articolo: armadio, lavanderia, scarso",
+    "Bolle aperte con pezzi mancanti e „in ritardo“",
+    "Costi lavanderia del mese, esportazione CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich BiancheriaChiara?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Ist das eine Lagerverwaltung?",
+     "a": "Nein. BiancheriaChiara ist nur für Wäsche, die zur Wäscherei geht und zurückkommt. Für Verbrauchsmaterial mit Bestellvorschlag gibt es MagazzinoBreve."
+    },
+    {
+     "q": "Kann ich mehrere Wohnungen führen?",
+     "a": "Ja, als gemeinsamer Bestand. Wer Wohnungen getrennt führen möchte, speichert je Wohnung eine eigene Datei."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo BiancheriaChiara?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "È un gestionale di magazzino?",
+     "a": "No. BiancheriaChiara è solo per la biancheria che va in lavanderia e rientra. Per il materiale di consumo con proposta d’ordine c’è MagazzinoBreve."
+    },
+    {
+     "q": "Posso gestire più appartamenti?",
+     "a": "Sì, come dotazione comune. Chi vuole tenerli separati salva un file per ogni appartamento."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Wäsche anlegen und Lieferscheine eintragen",
+    "Bestand und offene Stücke prüfen"
+   ],
+   "it": [
+    "Installi il programma",
+    "Registri la biancheria e le bolle",
+    "Controlli giacenze e pezzi mancanti"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "BiancheriaChiara · Case Vacanza Esempio",
+   "titel": {
+    "de": "Wäschebestand Case Vacanza Esempio",
+    "it": "Giacenze biancheria Case Vacanza Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Bettlaken 160×280",
+      "it": "Lenzuolo 160×280"
+     },
+     "neben": {
+      "de": "12 im Schrank",
+      "it": "12 in armadio"
+     },
+     "chip": {
+      "de": "ausreichend",
+      "it": "sufficiente"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Bettbezug 155×200",
+      "it": "Copripiumino 155×200"
+     },
+     "neben": {
+      "de": "2 im Schrank, mind. 3",
+      "it": "2 in armadio, min. 3"
+     },
+     "chip": {
+      "de": "knapp",
+      "it": "scarso"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "L-101 Duschtuch",
+      "it": "L-101 Telo doccia"
+     },
+     "neben": {
+      "de": "1 von 8 fehlt",
+      "it": "manca 1 su 8"
+     },
+     "chip": {
+      "de": "überfällig",
+      "it": "in ritardo"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Wäscherei Dezember",
+      "it": "Lavanderia dicembre"
+     },
+     "neben": {
+      "de": "98 Stück",
+      "it": "98 pezzi"
+     },
+     "chip": {
+      "de": "75,70 €",
+      "it": "75,70 €"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Stichtag 10.12.",
+     "it": "Al 10/12"
+    },
+    "punkte": [
+     {
+      "de": "65 Stück bei der Wäscherei",
+      "it": "65 pezzi in lavanderia"
+     },
+     {
+      "de": "1 Artikel knapp",
+      "it": "1 articolo scarso"
+     }
+    ]
+   }
+  },
+  "number": 65,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel als PDF.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. In italiano e tedesco, con esempio compilato in PDF."
+  },
+  "erstellt": "2026-11-24T20:52:55.493Z",
+  "fertigAm": "2026-11-24"
  }
 ]
