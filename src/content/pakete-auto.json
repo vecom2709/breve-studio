@@ -10485,5 +10485,620 @@
   },
   "erstellt": "2026-11-24T20:52:55.493Z",
   "fertigAm": "2026-11-24"
+ },
+ {
+  "slug": "partnerbando",
+  "brand": "PartnerBando",
+  "produktart": {
+   "de": "Partner-Mappe für Verbundprojekte",
+   "it": "Dossier partner per progetti in rete"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von PartnerBando: Partnerliste mit Budgetanteilen und Status der Absichtserklärungen",
+   "it": "Anteprima di PartnerBando: elenco partner con quote di budget e stato delle lettere d’intenti"
+  },
+  "tagline": {
+   "de": "Alle Partner, Anteile und Erklärungen auf einen Blick.",
+   "it": "Tutti i partner, le quote e le lettere in un colpo d’occhio."
+  },
+  "benefit": {
+   "de": "Sie tragen die Partner mit Rolle, Aufgaben und Budgetanteil ein; PartnerBando zeigt, ob die Summe zum Gesamtbudget passt, welche Absichtserklärungen fehlen, und erstellt je Partner einen Entwurf.",
+   "it": "Inserisci i partner del progetto in rete con ruolo, compiti e quota di budget; PartnerBando mostra se la somma torna con il budget totale, quali lettere d’intenti mancano e prepara una bozza per ogni partner."
+  },
+  "headline": {
+   "de": "Verbundprojekte vorbereiten, ohne den Überblick über die Partner zu verlieren.",
+   "it": "Preparare progetti in rete senza perdere di vista i partner."
+  },
+  "intro": {
+   "de": "PartnerBando ist ein Programm für Ihren Computer: Projektkopf mit Ausschreibung, Einreichungsfrist und Gesamtbudget, darunter die Partner mit Rolle, Ansprechperson, Aufgaben, Budgetanteil und Status der Absichtserklärung. Die Übersicht rechnet Anteile in Prozent, meldet Abweichungen und druckt für jeden Partner einen Entwurf der Absichtserklärung.",
+   "it": "PartnerBando è un programma per il tuo computer: intestazione con bando, scadenza e budget totale, poi i partner con ruolo, referente, compiti, quota di budget e stato della lettera d’intenti. La panoramica calcola le quote in percentuale, segnala le differenze e stampa per ogni partner una bozza di lettera d’intenti."
+  },
+  "audience": {
+   "de": "Kleine Betriebe, Vereine und Genossenschaften, die mit Partnern einen Förderantrag oder eine gemeinsame Bewerbung vorbereiten.",
+   "it": "Piccole imprese, associazioni e cooperative che preparano con altri partner una domanda di contributo o una candidatura comune."
+  },
+  "job": {
+   "de": "Vor der Einreichung wissen, welcher Partner was beiträgt und welche Erklärung noch fehlt.",
+   "it": "Sapere prima della scadenza chi contribuisce con cosa e quale lettera manca ancora."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Die Entwürfe sind Vorlagen und ersetzen keine Prüfung der Ausschreibungsbedingungen oder rechtliche Beratung.",
+   "it": "Funziona senza internet e senza account. Le bozze sono modelli e non sostituiscono la verifica del bando né una consulenza legale."
+  },
+  "features": {
+   "de": [
+    "Projektkopf mit Ausschreibung, Frist und Gesamtbudget",
+    "Partner mit Rolle, Aufgaben und Budgetanteil",
+    "Anteile in Prozent, nicht verteilter oder zu viel verteilter Betrag",
+    "Status der Absichtserklärungen mit Warnung ab 14 Tagen vor der Frist",
+    "Entwurf der Absichtserklärung je Partner zum Drucken, Export CSV"
+   ],
+   "it": [
+    "Intestazione con bando, scadenza e budget totale",
+    "Partner con ruolo, compiti e quota di budget",
+    "Quote in percentuale, importo non ripartito o in eccesso",
+    "Stato delle lettere d’intenti con avviso da 14 giorni prima",
+    "Bozza di lettera d’intenti per ogni partner da stampare, CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich PartnerBando?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Ersetzt PartnerBando die Prüfung der Ausschreibung?",
+     "a": "Nein. Es ordnet Ihre Angaben und erstellt Entwürfe. Welche Erklärungen und Formulare verlangt werden, steht in der jeweiligen Ausschreibung."
+    },
+    {
+     "q": "Kann ich die Absichtserklärung anpassen?",
+     "a": "Ja. Zweck, Beitrag und Schlusssatz übernehmen Ihre Eingaben; der gedruckte Entwurf lässt sich zusätzlich in jedem Textprogramm weiterbearbeiten."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo PartnerBando?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "PartnerBando sostituisce la lettura del bando?",
+     "a": "No. Ordina i tuoi dati e prepara bozze. Quali dichiarazioni e moduli servono lo stabilisce il singolo bando."
+    },
+    {
+     "q": "Posso modificare la lettera d’intenti?",
+     "a": "Sì. Finalità, contributo e frase finale riprendono i tuoi dati; la bozza stampata si può anche rielaborare in qualsiasi programma di testo."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Projekt und Partner eintragen",
+    "Übersicht prüfen und Entwürfe drucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci progetto e partner",
+    "Controlli la panoramica e stampi le bozze"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "PartnerBando · Rete Esempio",
+   "titel": {
+    "de": "Partner Projekt „Esempio Rete“",
+    "it": "Partner progetto „Esempio Rete“"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Cooperativa Esempio (Lead)",
+      "it": "Cooperativa Esempio (capofila)"
+     },
+     "neben": {
+      "de": "48.000 € · 40 %",
+      "it": "48.000 € · 40 %"
+     },
+     "chip": {
+      "de": "Lead",
+      "it": "capofila"
+     },
+     "ton": "grau"
+    },
+    {
+     "text": {
+      "de": "Associazione Esempio",
+      "it": "Associazione Esempio"
+     },
+     "neben": {
+      "de": "36.000 € · 30 %",
+      "it": "36.000 € · 30 %"
+     },
+     "chip": {
+      "de": "angefragt",
+      "it": "richiesta"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Comune di Esempio",
+      "it": "Comune di Esempio"
+     },
+     "neben": {
+      "de": "Unterstützer",
+      "it": "sostenitore"
+     },
+     "chip": {
+      "de": "fehlt",
+      "it": "manca"
+     },
+     "ton": "rot"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Frist in 6 Tagen",
+     "it": "Scadenza tra 6 giorni"
+    },
+    "punkte": [
+     {
+      "de": "1 von 3 Erklärungen erhalten",
+      "it": "1 lettera su 3 ricevuta"
+     },
+     {
+      "de": "Budget: 6.000 € nicht verteilt",
+      "it": "Budget: 6.000 € non ripartiti"
+     }
+    ]
+   }
+  },
+  "number": 66,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel. Die Entwürfe sind Vorlagen und ersetzen keine Prüfung der Ausschreibung oder rechtliche Beratung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Italiano e tedesco, con esempio compilato. Le bozze sono modelli e non sostituiscono la verifica del bando né una consulenza legale."
+  },
+  "erstellt": "2026-11-25T20:44:30.235Z",
+  "fertigAm": "2026-11-25"
+ },
+ {
+  "slug": "benvenutoteam",
+  "brand": "BenvenutoTeam",
+  "produktart": {
+   "de": "Einarbeitungsplan für neue Mitarbeitende",
+   "it": "Piano di inserimento nuovi collaboratori"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von BenvenutoTeam: Einarbeitungsplan nach Phasen mit erledigten und offenen Aufgaben",
+   "it": "Anteprima di BenvenutoTeam: piano di inserimento per fasi con attività svolte e aperte"
+  },
+  "tagline": {
+   "de": "Der erste Arbeitstag beginnt mit einem Plan.",
+   "it": "Il primo giorno di lavoro comincia con un piano."
+  },
+  "benefit": {
+   "de": "Sie tragen den ersten Arbeitstag ein; BenvenutoTeam ordnet die Einarbeitung nach Phasen, berechnet die Fälligkeiten, zeigt Erledigtes und Überfälliges und druckt einen Plan zum Abhaken.",
+   "it": "Inserisci il primo giorno di lavoro; BenvenutoTeam ordina l’inserimento per fasi, calcola le scadenze, mostra cosa è fatto e cosa è in ritardo e stampa un piano da spuntare."
+  },
+  "headline": {
+   "de": "Neue Mitarbeitende einarbeiten – Schritt für Schritt und ohne Vergessen.",
+   "it": "Inserire nuovi collaboratori – passo dopo passo, senza dimenticanze."
+  },
+  "intro": {
+   "de": "BenvenutoTeam ist ein Programm für Ihren Computer: Name, Stelle, erster Arbeitstag und Pate, darunter die Aufgaben von „vor dem ersten Tag“ bis „nach drei Monaten“ mit Zuständigen. Eine Startliste mit üblichen Aufgaben ist vorbereitet und lässt sich frei ändern. Die Übersicht zeigt Fälligkeiten, Fortschritt und offene Punkte je zuständiger Person.",
+   "it": "BenvenutoTeam è un programma per il tuo computer: nome, mansione, primo giorno e tutor, poi le attività da „prima del primo giorno“ a „dopo tre mesi“ con i responsabili. Un elenco iniziale con le attività abituali è già pronto e si modifica liberamente. La panoramica mostra scadenze, avanzamento e punti aperti per responsabile."
+  },
+  "audience": {
+   "de": "Gastronomie, Handel, Handwerk, Praxen und Büros, die neue Mitarbeitende, Saisonkräfte oder Auszubildende einarbeiten.",
+   "it": "Ristoranti, negozi, artigiani, studi e uffici che inseriscono nuovi collaboratori, stagionali o apprendisti."
+  },
+  "job": {
+   "de": "Dafür sorgen, dass jede neue Person alles Nötige rechtzeitig bekommt und gezeigt bekommt.",
+   "it": "Fare in modo che ogni nuova persona riceva e impari per tempo tutto ciò che serve."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Daten bleiben auf Ihrem Gerät. Die Startliste ist ein Vorschlag und ersetzt keine arbeitsrechtliche Beratung.",
+   "it": "Funziona senza internet e senza account, i dati restano sul tuo dispositivo. L’elenco iniziale è un suggerimento e non sostituisce una consulenza del lavoro."
+  },
+  "features": {
+   "de": [
+    "Startliste mit 15 üblichen Aufgaben, frei änderbar",
+    "Fünf Phasen von vor dem ersten Tag bis Monat 3",
+    "Fälligkeiten automatisch ab dem ersten Arbeitstag",
+    "Fortschritt, überfällige Punkte und offene Aufgaben je Person",
+    "Plan zum Abhaken mit Unterschriften, Export CSV"
+   ],
+   "it": [
+    "Elenco iniziale con 15 attività abituali, modificabile",
+    "Cinque fasi da prima del primo giorno al terzo mese",
+    "Scadenze calcolate dal primo giorno di lavoro",
+    "Avanzamento, ritardi e attività aperte per persona",
+    "Piano da spuntare con firme, esportazione CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich BenvenutoTeam?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Muss ich die Startliste übernehmen?",
+     "a": "Nein. Sie können jede Aufgabe ändern, löschen oder eigene ergänzen und den Stand als Vorlage für die nächste Einstellung speichern."
+    },
+    {
+     "q": "Ist das eine Personalverwaltung?",
+     "a": "Nein. BenvenutoTeam plant nur die Einarbeitung einer Person. Verträge, Lohn und Personalakten gehören in Ihre üblichen Unterlagen."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo BenvenutoTeam?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Devo usare l’elenco iniziale?",
+     "a": "No. Puoi modificare o cancellare ogni attività, aggiungerne di tue e salvare il tutto come modello per la prossima assunzione."
+    },
+    {
+     "q": "È un gestionale del personale?",
+     "a": "No. BenvenutoTeam pianifica solo l’inserimento di una persona. Contratti, buste paga e fascicoli restano nei tuoi documenti abituali."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Person und ersten Arbeitstag eintragen",
+    "Plan drucken und abhaken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci persona e primo giorno",
+    "Stampi il piano e spunti le attività"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "BenvenutoTeam · Trattoria Esempio",
+   "titel": {
+    "de": "Einarbeitung Giulia Esempio",
+    "it": "Inserimento Giulia Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Arbeitskleidung bereitlegen",
+      "it": "Preparare la divisa"
+     },
+     "neben": {
+      "de": "vor dem 1. Tag",
+      "it": "prima del 1° giorno"
+     },
+     "chip": {
+      "de": "erledigt",
+      "it": "fatto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Rundgang und Notausgänge",
+      "it": "Giro del locale e uscite"
+     },
+     "neben": {
+      "de": "Tag 1",
+      "it": "giorno 1"
+     },
+     "chip": {
+      "de": "erledigt",
+      "it": "fatto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Kassensystem zeigen",
+      "it": "Spiegare la cassa"
+     },
+     "neben": {
+      "de": "Woche 1",
+      "it": "settimana 1"
+     },
+     "chip": {
+      "de": "überfällig",
+      "it": "in ritardo"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Feedback-Gespräch",
+      "it": "Colloquio di riscontro"
+     },
+     "neben": {
+      "de": "Monat 1",
+      "it": "mese 1"
+     },
+     "chip": {
+      "de": "offen",
+      "it": "aperto"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Fortschritt 69 %",
+     "it": "Avanzamento 69 %"
+    },
+    "punkte": [
+     {
+      "de": "Pate: Marco Esempio",
+      "it": "Tutor: Marco Esempio"
+     },
+     {
+      "de": "1 Aufgabe überfällig",
+      "it": "1 attività in ritardo"
+     }
+    ]
+   }
+  },
+  "number": 67,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel. Die Startliste ist ein Vorschlag und ersetzt keine arbeitsrechtliche Beratung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Italiano e tedesco, con esempio compilato. L’elenco iniziale è un suggerimento e non sostituisce una consulenza del lavoro."
+  },
+  "erstellt": "2026-11-25T20:44:30.235Z",
+  "fertigAm": "2026-11-25"
+ },
+ {
+  "slug": "accessochiaro",
+  "brand": "AccessoChiaro",
+  "produktart": {
+   "de": "Barrierefreiheits-Selbstcheck (Website)",
+   "it": "Autoverifica accessibilità del sito"
+  },
+  "category": "website-sichtbarkeit",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von AccessoChiaro: Prüfpunkte zur Barrierefreiheit mit Ergebnis und Kontrastrechner",
+   "it": "Anteprima di AccessoChiaro: punti di controllo sull’accessibilità con esito e calcolo del contrasto"
+  },
+  "tagline": {
+   "de": "Die eigene Website Punkt für Punkt auf Barrieren prüfen.",
+   "it": "Controllare il proprio sito punto per punto."
+  },
+  "benefit": {
+   "de": "Sie gehen eine vorbereitete Prüfliste durch und tragen das Ergebnis ein; AccessoChiaro rechnet Farbkontraste nach, zeigt den Stand je Bereich und erstellt eine Maßnahmenliste für Sie oder Ihren Webdesigner.",
+   "it": "Segui un elenco di controlli già pronto e annoti l’esito; AccessoChiaro calcola il contrasto dei colori, mostra lo stato per area e prepara un elenco di interventi per te o per il tuo web designer."
+  },
+  "headline": {
+   "de": "Barrieren auf der eigenen Website finden – mit Prüfliste und Kontrastrechner.",
+   "it": "Trovare le barriere sul proprio sito – con elenco di controlli e calcolo del contrasto."
+  },
+  "intro": {
+   "de": "AccessoChiaro ist ein Programm für Ihren Computer: 18 Prüfpunkte in fünf Bereichen (Texte und Bilder, Farben, Bedienung, Formulare, Struktur), angelehnt an die Erfolgskriterien der WCAG 2.1, Stufe AA, jeweils mit kurzer Anleitung zum Selbstprüfen. Ein Kontrastrechner prüft Text- und Hintergrundfarbe. Das Ergebnis ist ein druckbarer Prüfbericht mit Maßnahmenliste.",
+   "it": "AccessoChiaro è un programma per il tuo computer: 18 punti di controllo in cinque aree (testi e immagini, colori, uso, moduli, struttura), ispirati ai criteri delle WCAG 2.1, livello AA, ognuno con una breve guida per la verifica. Un calcolatore controlla il contrasto tra testo e sfondo. Il risultato è un rapporto stampabile con elenco di interventi."
+  },
+  "audience": {
+   "de": "Betriebe, Vereine und Freiberufler mit eigener Website sowie Webdesigner, die einen ersten Überblick über Barrieren brauchen.",
+   "it": "Attività, associazioni e professionisti con un proprio sito e web designer che vogliono una prima panoramica delle barriere."
+  },
+  "job": {
+   "de": "Herausfinden, wo die eigene Website schwer bedienbar ist, und daraus konkrete Aufgaben machen.",
+   "it": "Capire dove il proprio sito è difficile da usare e trasformarlo in compiti concreti."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Der Selbstcheck ist eine Orientierung und ersetzt weder eine vollständige Prüfung noch eine rechtliche Bewertung.",
+   "it": "Funziona senza internet e senza account. L’autoverifica è un orientamento e non sostituisce né una verifica completa né una valutazione legale."
+  },
+  "features": {
+   "de": [
+    "18 Prüfpunkte in fünf Bereichen, je mit Anleitung und WCAG-Nummer",
+    "Ergebnis je Punkt mit Fundstelle und Maßnahme",
+    "Kontrastrechner nach WCAG-Formel (AA und AAA)",
+    "Stand je Bereich und Maßnahmenliste",
+    "Prüfbericht drucken, Export CSV"
+   ],
+   "it": [
+    "18 punti in cinque aree, con guida e numero WCAG",
+    "Esito per punto con posizione e intervento",
+    "Calcolo del contrasto con formula WCAG (AA e AAA)",
+    "Stato per area ed elenco di interventi",
+    "Rapporto in stampa, esportazione CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich AccessoChiaro?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Bekomme ich damit eine Bestätigung der Barrierefreiheit?",
+     "a": "Nein. AccessoChiaro hilft beim Selbstprüfen und Dokumentieren. Eine verbindliche Bewertung nach geltenden Vorschriften ersetzt es nicht."
+    },
+    {
+     "q": "Brauche ich technische Kenntnisse?",
+     "a": "Für die meisten Punkte nicht: Jede Prüfung hat eine kurze Anleitung, die mit Tastatur, Bildschirm-Zoom und Augenmaß auskommt."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo AccessoChiaro?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Ottengo una certificazione di accessibilità?",
+     "a": "No. AccessoChiaro aiuta a verificare e documentare da soli. Non sostituisce una valutazione vincolante secondo le norme vigenti."
+    },
+    {
+     "q": "Servono competenze tecniche?",
+     "a": "Per la maggior parte dei punti no: ogni controllo ha una breve guida che basta con tastiera, zoom dello schermo e occhio."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Website anhand der Prüfliste durchgehen",
+    "Prüfbericht und Maßnahmen weitergeben"
+   ],
+   "it": [
+    "Installi il programma",
+    "Controlli il sito con l’elenco",
+    "Condividi rapporto e interventi"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "AccessoChiaro · esempio.it",
+   "titel": {
+    "de": "Selbstcheck esempio.it",
+    "it": "Autoverifica esempio.it"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Alternativtexte für Bilder",
+      "it": "Testi alternativi per le immagini"
+     },
+     "neben": {
+      "de": "Texte und Bilder",
+      "it": "Testi e immagini"
+     },
+     "chip": {
+      "de": "teilweise",
+      "it": "in parte"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Bedienung mit der Tastatur",
+      "it": "Uso con la tastiera"
+     },
+     "neben": {
+      "de": "Bedienung",
+      "it": "Uso"
+     },
+     "chip": {
+      "de": "erfüllt",
+      "it": "conforme"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Kontrast Fußzeile 2,8 : 1",
+      "it": "Contrasto piè di pagina 2,8 : 1"
+     },
+     "neben": {
+      "de": "Farben",
+      "it": "Colori"
+     },
+     "chip": {
+      "de": "nicht erfüllt",
+      "it": "non conforme"
+     },
+     "ton": "rot"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "11 von 18 erfüllt",
+     "it": "11 su 18 conformi"
+    },
+    "punkte": [
+     {
+      "de": "4 Maßnahmen offen",
+      "it": "4 interventi aperti"
+     },
+     {
+      "de": "2 Farbpaare zu schwach",
+      "it": "2 coppie di colori deboli"
+     }
+    ]
+   }
+  },
+  "number": 68,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel. Selbstcheck als Orientierung – ersetzt keine vollständige Prüfung und keine rechtliche Bewertung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Italiano e tedesco, con esempio compilato. Autoverifica come orientamento – non sostituisce una verifica completa né una valutazione legale."
+  },
+  "erstellt": "2026-11-25T20:44:30.235Z",
+  "fertigAm": "2026-11-25"
  }
 ]
