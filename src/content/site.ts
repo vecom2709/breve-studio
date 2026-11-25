@@ -1,6 +1,7 @@
 /**
  * Marken- und Betreiberangaben für Studio Breve.
- * Alles hier ist ENTWURF: Die Seite ist noch nicht unter der eigenen Adresse veröffentlicht.
+ * Studio Breve ist ein Angebot von Vecom Design (Einzelunternehmen von Uwe Vetter);
+ * Steuer- und Kontaktdaten wie in den Rechtsangaben von vecom-design.it.
  */
 import type { L10n } from './packages';
 
@@ -26,14 +27,17 @@ export const site = {
     country: { de: 'Italien', it: 'Italia' } satisfies L10n,
     phone: '+39 380 190 7017',
     phoneHref: 'tel:+393801907017',
-    /** Platzhalter, Postfach existiert noch nicht. */
     email: 'info@studio-breve.it',
-    vatId: { de: '[wird ergänzt]', it: '[da inserire]' } satisfies L10n,
+    /** Unternehmen, über das Studio Breve läuft */
+    business: 'Vecom Design',
+    legalForm: { de: 'Einzelunternehmen (ditta individuale)', it: 'Ditta individuale' } satisfies L10n,
+    vatId: '03187630847',
+    pec: 'vecom-design@pec.it',
   },
   draftNote: {
-    de: 'Entwurf, noch nicht unter www.studio-breve.it veröffentlicht; die E-Mail-Adresse ist ein Platzhalter. Über diese Seite wird derzeit nichts verkauft.',
-    it: 'Bozza, non ancora pubblicata su www.studio-breve.it; l’indirizzo email è provvisorio. Al momento tramite questo sito non si vende nulla.',
+    de: 'Über diese Seite wird derzeit nichts verkauft.',
+    it: 'Al momento tramite questo sito non si vende nulla.',
   } satisfies L10n,
   /** Stand der Rechtstexte */
-  legalUpdated: '9.11.2026',
+  legalUpdated: '25.11.2026',
 } as const;

@@ -10,7 +10,7 @@ const de = lang === 'de';
 {de ? (
 <Legal lang={lang} routeKey="terms" title="Allgemeine Geschäftsbedingungen" description="Allgemeine Geschäftsbedingungen von Studio Breve (Entwurf).">
   <h2>1. Geltungsbereich und Anbieter</h2>
-  <p>Diese Bedingungen gelten für Leistungen von Studio Breve, {op.name}, {op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.de}, P.IVA [wird ergänzt].</p>
+  <p>Diese Bedingungen gelten für Leistungen von Studio Breve, {op.name}, {op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.de}, ein Angebot von {op.business}, P.IVA {op.vatId}, PEC {op.pec}.</p>
   <h2>2. Aktueller Stand</h2>
   <p>Studio Breve hat den Geschäftsbetrieb noch nicht aufgenommen. Über diese Website kommen <strong>keine Verträge</strong> zustande. Das Absenden des Formulars ist eine unverbindliche Anfrage bzw. Vormerkung und verpflichtet weder Sie noch uns.</p>
   <h2>3. Darstellung der Pakete und Preise</h2>
@@ -31,7 +31,7 @@ const de = lang === 'de';
 ) : (
 <Legal lang={lang} routeKey="terms" title="Condizioni generali" description="Condizioni generali di Studio Breve (bozza).">
   <h2>1. Ambito e fornitore</h2>
-  <p>Le presenti condizioni si applicano ai servizi di Studio Breve, {op.name}, {op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.it}, P.IVA [da inserire].</p>
+  <p>Le presenti condizioni si applicano ai servizi di Studio Breve, {op.name}, {op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.it}, un servizio di {op.business}, P.IVA {op.vatId}, PEC {op.pec}.</p>
   <h2>2. Stato attuale</h2>
   <p>Studio Breve non ha ancora avviato l’attività. Tramite questo sito <strong>non si conclude alcun contratto</strong>. L’invio del modulo è una richiesta o una segnalazione di interesse non vincolante, né per te né per noi.</p>
   <h2>3. Presentazione dei pacchetti e prezzi</h2>

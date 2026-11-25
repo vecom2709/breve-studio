@@ -22,7 +22,7 @@ const mitEinwilligung = mitApi;
           {op.street}<br />
           {op.postalCode} {op.city} ({op.province}), {op.country[lang]}<br />
           <a href={op.phoneHref}>{op.phone}</a><br />
-          <span>{op.email}</span> <span class="muted small">({lang === 'de' ? 'Platzhalter' : 'provvisorio'})</span>
+          <a href={`mailto:${op.email}`}>{op.email}</a>
         </address>
       </div>
       <nav class="col" aria-label={t.nav.packages}>
@@ -67,7 +67,7 @@ const mitEinwilligung = mitApi;
       </div>
     </div>
     <div class="base small">
-      <span>© 2026 Studio Breve · {op.name} · P.IVA {op.vatId[lang]}</span>
+      <span>© 2026 Studio Breve · {op.business} di {op.name} · P.IVA {op.vatId}</span>
       <a class="admin-link" href={apiBasis ? `${apiBasis}/` : '/verwaltung/'} rel="nofollow">{t.adminArea}</a>
       <span>{lang === 'de' ? 'Preise sind Listenpreise; ein Vertrag kommt über diese Seite nicht zustande.' : 'I prezzi sono di listino; tramite questo sito non si conclude alcun contratto.'}</span>
     </div>

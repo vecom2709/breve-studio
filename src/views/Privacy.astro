@@ -8,9 +8,9 @@ const op = site.operator;
 const de = lang === 'de';
 ---
 {de ? (
-<Legal lang={lang} routeKey="privacy" title="Datenschutzerklärung" description="Datenschutzerklärung von Studio Breve (Entwurf) nach DSGVO: Kontaktformular, Reichweitenmessung ohne Tracking-Cookies, keine Weitergabe an Dritte.">
+<Legal lang={lang} routeKey="privacy" title="Datenschutzerklärung" description="Datenschutzerklärung von Studio Breve nach DSGVO: Kontaktformular, Reichweitenmessung ohne Tracking-Cookies, keine Weitergabe an Dritte.">
   <h2>1. Verantwortlicher</h2>
-  <address>{op.name} · Studio Breve<br />{op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.de}<br />Telefon {op.phone} · E-Mail {op.email} [Platzhalter]</address>
+  <address>{op.name} · Studio Breve<br />{op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.de}<br />Telefon {op.phone} · E-Mail {op.email} · PEC {op.pec}<br />{op.business} · P.IVA {op.vatId}</address>
   <p>Ein Datenschutzbeauftragter ist nach derzeitigem Stand nicht bestellt, da keine Pflicht dazu besteht.</p>
 
   <h2>2. Kurz gesagt</h2>
@@ -54,9 +54,9 @@ const de = lang === 'de';
   <p>Für die einzelnen Pakete (z. B. Verarbeitung von Gästedaten oder Website-Wartung) gelten beim Start eigene Datenschutzhinweise und, wo nötig, ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO.</p>
 </Legal>
 ) : (
-<Legal lang={lang} routeKey="privacy" title="Informativa privacy" description="Informativa privacy di Studio Breve (bozza) ai sensi del GDPR: modulo di contatto, misurazione delle visite senza cookie di tracciamento, nessun trasferimento a terzi.">
+<Legal lang={lang} routeKey="privacy" title="Informativa privacy" description="Informativa privacy di Studio Breve ai sensi del GDPR: modulo di contatto, misurazione delle visite senza cookie di tracciamento, nessun trasferimento a terzi.">
   <h2>1. Titolare del trattamento</h2>
-  <address>{op.name} · Studio Breve<br />{op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.it}<br />Telefono {op.phone} · Email {op.email} [provvisoria]</address>
+  <address>{op.name} · Studio Breve<br />{op.street}, {op.postalCode} {op.city} ({op.province}), {op.country.it}<br />Telefono {op.phone} · Email {op.email} · PEC {op.pec}<br />{op.business} · P.IVA {op.vatId}</address>
   <p>Allo stato attuale non è stato nominato un responsabile della protezione dei dati (DPO), non essendo obbligatorio.</p>
 
   <h2>2. In breve</h2>

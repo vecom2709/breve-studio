@@ -27,7 +27,8 @@ const op = site.operator;
             {op.postalCode} {op.city} ({op.province}), {op.country[lang]}
           </address>
           <p><a href={op.phoneHref}>{op.phone}</a></p>
-          <p>{op.email} <span class="small muted">{de ? '(Platzhalter, Postfach noch nicht aktiv)' : '(provvisorio, casella non ancora attiva)'}</span></p>
+          <p><a href={`mailto:${op.email}`}>{op.email}</a></p>
+          <p class="small muted">{op.business} · P.IVA {op.vatId} · PEC {op.pec}</p>
         </div>
         <p class="small muted">{de ? 'Wir rufen nicht ungefragt an und versenden keine Werbung ohne Ihre Einwilligung.' : 'Non chiamiamo senza richiesta e non inviamo pubblicità senza il tuo consenso.'}</p>
       </div>
