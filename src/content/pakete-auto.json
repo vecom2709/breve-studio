@@ -11100,5 +11100,581 @@
   },
   "erstellt": "2026-11-25T20:44:30.235Z",
   "fertigAm": "2026-11-25"
+ },
+ {
+  "slug": "rischibando",
+  "brand": "RischiBando",
+  "produktart": {
+   "de": "Risiko-Register für Förderprojekte",
+   "it": "Registro rischi per progetti finanziati"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von RischiBando: Risiken eines Förderprojekts mit Bewertung, Maßnahme und Prüftermin",
+   "it": "Anteprima di RischiBando: rischi di un progetto finanziato con valutazione, misura e data di verifica"
+  },
+  "tagline": {
+   "de": "Risiken im Förderprojekt bewerten und im Blick behalten.",
+   "it": "Riconoscere, valutare e seguire i rischi del progetto."
+  },
+  "benefit": {
+   "de": "Sie tragen die Risiken Ihres Projekts mit Wahrscheinlichkeit, Auswirkung, Maßnahme und Verantwortlichen ein; RischiBando sortiert nach Bedeutung, zeigt eine Risikomatrix und erinnert an fällige Prüftermine.",
+   "it": "Inserisci i rischi del progetto con probabilità, impatto, misura e responsabile; RischiBando li ordina per importanza, mostra una matrice dei rischi e segnala le verifiche in scadenza."
+  },
+  "headline": {
+   "de": "Ein übersichtliches Risiko-Register für Ihr Förderprojekt – mit Matrix und Prüfterminen.",
+   "it": "Un registro dei rischi chiaro per il tuo progetto finanziato – con matrice e verifiche."
+  },
+  "intro": {
+   "de": "RischiBando ist ein Programm für Ihren Computer. Jedes Risiko erhält eine Bewertung von 1 bis 5 für Wahrscheinlichkeit und Auswirkung; daraus entstehen Stufe und Rangfolge. Viele Anträge verlangen eine Risikoanalyse – das Register hilft beim Schreiben und später bei der Projektsteuerung.",
+   "it": "RischiBando è un programma per il tuo computer. Ogni rischio riceve un punteggio da 1 a 5 per probabilità e impatto; ne derivano livello e priorità. Molti bandi chiedono un’analisi dei rischi – il registro aiuta a scriverla e poi a gestire il progetto."
+  },
+  "audience": {
+   "de": "Betriebe, Vereine, Genossenschaften und Berater, die ein gefördertes Projekt beantragen oder umsetzen.",
+   "it": "Imprese, associazioni, cooperative e consulenti che presentano o realizzano un progetto finanziato."
+  },
+  "job": {
+   "de": "Risiken des Projekts geordnet festhalten, Maßnahmen zuweisen und regelmäßig überprüfen.",
+   "it": "Annotare in modo ordinato i rischi del progetto, assegnare le misure e verificarle regolarmente."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Die Bewertung nehmen Sie selbst vor; das Programm ersetzt keine Prüfung der Ausschreibung und keine Beratung.",
+   "it": "Funziona senza internet e senza account. La valutazione la fai tu; il programma non sostituisce la verifica del bando né una consulenza."
+  },
+  "features": {
+   "de": [
+    "Risiken mit Bereich, Wahrscheinlichkeit und Auswirkung (1–5)",
+    "Risikomatrix 5 × 5 und Rangfolge nach Punktzahl",
+    "Maßnahme, verantwortliche Person, Prüftermin und Status",
+    "Hinweise auf Risiken ohne Maßnahme oder Verantwortliche und überfällige Prüfungen",
+    "Register drucken, Export CSV"
+   ],
+   "it": [
+    "Rischi con area, probabilità e impatto (1–5)",
+    "Matrice 5 × 5 e classifica per punteggio",
+    "Misura, responsabile, data di verifica e stato",
+    "Avvisi su rischi senza misura o responsabile e verifiche scadute",
+    "Stampa del registro, esportazione CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich RischiBando?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Gibt RischiBando vor, welche Risiken ich angeben muss?",
+     "a": "Nein. Sie tragen Ihre eigenen Risiken ein. Was ein Antrag genau verlangt, steht in der jeweiligen Ausschreibung."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo RischiBando?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "RischiBando indica quali rischi devo inserire?",
+     "a": "No. Inserisci i rischi del tuo progetto. Cosa chiede esattamente una domanda lo stabilisce il bando."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Risiken eintragen und bewerten",
+    "Register drucken und regelmäßig prüfen"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci e valuti i rischi",
+    "Stampi il registro e lo verifichi"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "RischiBando · Progetto Esempio",
+   "titel": {
+    "de": "Risiken – Progetto Esempio",
+    "it": "Rischi – Progetto Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Partner springt ab",
+      "it": "Un partner si ritira"
+     },
+     "neben": {
+      "de": "W 3 × A 5",
+      "it": "P 3 × I 5"
+     },
+     "chip": {
+      "de": "hoch",
+      "it": "alto"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Lieferverzug Ausstattung",
+      "it": "Ritardo forniture"
+     },
+     "neben": {
+      "de": "W 3 × A 3",
+      "it": "P 3 × I 3"
+     },
+     "chip": {
+      "de": "mittel",
+      "it": "medio"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Wetter bei Veranstaltung",
+      "it": "Meteo durante l’evento"
+     },
+     "neben": {
+      "de": "W 2 × A 2",
+      "it": "P 2 × I 2"
+     },
+     "chip": {
+      "de": "gering",
+      "it": "basso"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "6 Risiken, 1 hoch",
+     "it": "6 rischi, 1 alto"
+    },
+    "punkte": [
+     {
+      "de": "1 Prüfung überfällig",
+      "it": "1 verifica scaduta"
+     },
+     {
+      "de": "alle mit Maßnahme",
+      "it": "tutti con misura"
+     }
+    ]
+   }
+  },
+  "number": 69,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel. Die Bewertung nehmen Sie selbst vor – ersetzt keine Prüfung der Ausschreibung und keine Beratung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Italiano e tedesco, con esempio compilato. La valutazione la fai tu – non sostituisce la verifica del bando né una consulenza."
+  },
+  "erstellt": "2026-11-26T20:44:38.943Z",
+  "fertigAm": "2026-11-26"
+ },
+ {
+  "slug": "oggettitrovati",
+  "brand": "OggettiTrovati",
+  "produktart": {
+   "de": "Fundsachen-Register für Gastbetriebe",
+   "it": "Registro oggetti smarriti per strutture"
+  },
+  "category": "immobilien-gastgewerbe",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von OggettiTrovati: Fundsachen mit Fundort, Aufbewahrungsort und Status",
+   "it": "Anteprima di OggettiTrovati: oggetti trovati con luogo, deposito e stato"
+  },
+  "tagline": {
+   "de": "Vergessenes von Gästen geordnet erfassen und zurückgeben.",
+   "it": "Registrare e restituire con ordine gli oggetti dimenticati."
+  },
+  "benefit": {
+   "de": "Jeder Fund bekommt eine Nummer, Fundort und Aufbewahrungsort; OggettiTrovati zeigt, was noch wartet, wann Ihre eigene Aufbewahrungsfrist erreicht ist, druckt Etiketten und schreibt eine Nachricht an den Gast vor.",
+   "it": "Ogni oggetto riceve un numero, il luogo del ritrovamento e del deposito; OggettiTrovati mostra cosa è in attesa, quando scade il tuo termine di custodia, stampa le etichette e prepara un messaggio per l’ospite."
+  },
+  "headline": {
+   "de": "Fundsachen in Hotel, B&B und Restaurant: erfasst, beschriftet, zurückgegeben.",
+   "it": "Oggetti smarriti in hotel, B&B e ristorante: registrati, etichettati, restituiti."
+  },
+  "intro": {
+   "de": "OggettiTrovati ist ein Programm für Ihren Computer. Sie tragen Funde mit Datum, Gegenstand, Fundort (Zimmer, Tisch), Aufbewahrungsort und Status ein. Die Übersicht trennt Wartendes, Fälliges und Erledigtes; für jeden Fund lässt sich ein Etikett drucken.",
+   "it": "OggettiTrovati è un programma per il tuo computer. Inserisci gli oggetti con data, descrizione, luogo (camera, tavolo), deposito e stato. La panoramica separa ciò che è in attesa, in scadenza e concluso; per ogni oggetto puoi stampare un’etichetta."
+  },
+  "audience": {
+   "de": "Hotels, B&B, Ferienwohnungen, Restaurants, Bars und Veranstaltungsorte.",
+   "it": "Hotel, B&B, case vacanza, ristoranti, bar e location per eventi."
+  },
+  "job": {
+   "de": "Gefundene Gegenstände nachvollziehbar aufbewahren und dem Gast schnell zurückgeben.",
+   "it": "Custodire in modo tracciabile gli oggetti trovati e restituirli presto all’ospite."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, die Daten bleiben auf Ihrem Gerät. Die Aufbewahrungsfrist legen Sie selbst fest; das Programm ersetzt keine rechtliche Beratung.",
+   "it": "Funziona senza internet e senza account, i dati restano sul tuo dispositivo. Il termine di custodia lo decidi tu; il programma non sostituisce una consulenza legale."
+  },
+  "features": {
+   "de": [
+    "Funde mit Nummer, Datum, Fundort, Aufbewahrungsort und Status",
+    "Übersicht: in Aufbewahrung, Frist erreicht, erledigt – mit eigener Frist",
+    "Etiketten zum Ausdrucken für jeden offenen Fund",
+    "Nachrichtenvorlage an den Gast auf Deutsch, Italienisch oder Englisch",
+    "Hinweis zum Löschen alter Gastangaben, Export CSV"
+   ],
+   "it": [
+    "Oggetti con numero, data, luogo, deposito e stato",
+    "Panoramica: in custodia, termine raggiunto, conclusi – con termine proprio",
+    "Etichette da stampare per ogni oggetto aperto",
+    "Messaggio per l’ospite in italiano, tedesco o inglese",
+    "Avviso per cancellare i vecchi dati degli ospiti, esportazione CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich OggettiTrovati?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Wie lange muss ich Fundsachen aufbewahren?",
+     "a": "Das hängt von den Regeln Ihres Landes und Ihres Betriebs ab. Sie stellen Ihre eigene Frist im Programm ein; eine rechtliche Auskunft gibt OggettiTrovati nicht."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo OggettiTrovati?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Per quanto tempo devo custodire gli oggetti?",
+     "a": "Dipende dalle regole del tuo Paese e della tua struttura. Imposti il tuo termine nel programma; OggettiTrovati non fornisce indicazioni legali."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Fund eintragen und Etikett drucken",
+    "Gast benachrichtigen und Rückgabe vermerken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Registri l’oggetto e stampi l’etichetta",
+    "Avvisi l’ospite e annoti la restituzione"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "OggettiTrovati · B&B Esempio",
+   "titel": {
+    "de": "Fundsachen – B&B Esempio",
+    "it": "Oggetti trovati – B&B Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "F-014 Ladekabel",
+      "it": "F-014 Caricabatterie"
+     },
+     "neben": {
+      "de": "Zimmer 3",
+      "it": "Camera 3"
+     },
+     "chip": {
+      "de": "Gast informiert",
+      "it": "Ospite avvisato"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "F-012 Sonnenbrille",
+      "it": "F-012 Occhiali da sole"
+     },
+     "neben": {
+      "de": "Terrasse",
+      "it": "Terrazza"
+     },
+     "chip": {
+      "de": "Frist erreicht",
+      "it": "Termine raggiunto"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "F-011 Kinderjacke",
+      "it": "F-011 Giacca bimbo"
+     },
+     "neben": {
+      "de": "Frühstücksraum",
+      "it": "Sala colazioni"
+     },
+     "chip": {
+      "de": "zurückgegeben",
+      "it": "restituito"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "4 in Aufbewahrung",
+     "it": "4 in custodia"
+    },
+    "punkte": [
+     {
+      "de": "1 Frist erreicht",
+      "it": "1 termine raggiunto"
+     },
+     {
+      "de": "Etiketten bereit",
+      "it": "Etichette pronte"
+     }
+    ]
+   }
+  },
+  "number": 70,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel. Die Aufbewahrungsfrist legen Sie selbst fest – keine rechtliche Beratung.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Italiano e tedesco, con esempio compilato. Il termine di custodia lo decidi tu – nessuna consulenza legale."
+  },
+  "erstellt": "2026-11-26T20:44:38.943Z",
+  "fertigAm": "2026-11-26"
+ },
+ {
+  "slug": "fotodiritti",
+  "brand": "FotoDiritti",
+  "produktart": {
+   "de": "Bildnachweis-Register für Website",
+   "it": "Registro crediti foto per il sito"
+  },
+  "category": "website-sichtbarkeit",
+  "kind": "product",
+  "shopCategory": "design-media",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von FotoDiritti: Bilder der Website mit Quelle, Nutzungsrecht und Ablaufdatum",
+   "it": "Anteprima di FotoDiritti: immagini del sito con fonte, diritti d’uso e scadenza"
+  },
+  "tagline": {
+   "de": "Wissen, woher jedes Bild auf Ihrer Website stammt.",
+   "it": "Sapere da dove viene ogni immagine del tuo sito."
+  },
+  "benefit": {
+   "de": "Sie erfassen zu jedem Bild Quelle, Urheber, Nutzungsrecht und Ablaufdatum; FotoDiritti zeigt, wo Angaben oder Einwilligungen fehlen, welche Lizenzen bald ablaufen, und stellt die Bildnachweise zum Kopieren zusammen.",
+   "it": "Per ogni immagine annoti fonte, autore, diritto d’uso e scadenza; FotoDiritti mostra dove mancano dati o consensi, quali licenze stanno per scadere e prepara i crediti foto da copiare."
+  },
+  "headline": {
+   "de": "Bilder, Rechte und Bildnachweise Ihrer Website an einem Ort.",
+   "it": "Immagini, diritti e crediti del tuo sito in un unico posto."
+  },
+  "intro": {
+   "de": "FotoDiritti ist ein Programm für Ihren Computer. Für jedes Bild auf Website und Social Media halten Sie fest, wo es verwendet wird, woher es stammt, wer es gemacht hat, welches Nutzungsrecht vorliegt, bis wann es gilt und ob erkennbare Personen eingewilligt haben.",
+   "it": "FotoDiritti è un programma per il tuo computer. Per ogni immagine su sito e social annoti dove è usata, da dove proviene, chi l’ha realizzata, quale diritto d’uso hai, fino a quando vale e se le persone riconoscibili hanno dato il consenso."
+  },
+  "audience": {
+   "de": "Betriebe, Vereine, Freiberufler und Webdesigner, die Bilder auf Websites und Social-Media-Profilen verwenden.",
+   "it": "Attività, associazioni, professionisti e web designer che usano immagini su siti e profili social."
+  },
+  "job": {
+   "de": "Den Überblick über Bildquellen und Nutzungsrechte behalten und Bildnachweise vollständig angeben.",
+   "it": "Tenere sotto controllo fonti e diritti d’uso delle immagini e indicare i crediti in modo completo."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. FotoDiritti ist ein Ordnungswerkzeug und ersetzt keine rechtliche Prüfung von Lizenzen oder Einwilligungen.",
+   "it": "Funziona senza internet e senza account. FotoDiritti è uno strumento di ordine e non sostituisce una verifica legale di licenze o consensi."
+  },
+  "features": {
+   "de": [
+    "Bilder mit Verwendungsort, Quelle, Urheber/in und Nutzungsrecht",
+    "Ablaufdatum mit Vorwarnung (einstellbare Tage)",
+    "„Zu klären“: fehlender Nachweis, Urheber/in oder Einwilligung",
+    "Bildnachweise je Seite mit Knopf zum Kopieren",
+    "Register drucken, Export CSV"
+   ],
+   "it": [
+    "Immagini con uso, fonte, autore e diritto d’uso",
+    "Scadenza con preavviso (giorni regolabili)",
+    "„Da chiarire“: prova, autore o consenso mancanti",
+    "Crediti foto per pagina con pulsante per copiare",
+    "Stampa del registro, esportazione CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich FotoDiritti?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Prüft FotoDiritti, ob ich ein Bild verwenden darf?",
+     "a": "Nein. Sie tragen ein, was Sie über Quelle und Nutzungsrecht wissen. Das Programm zeigt Lücken, eine rechtliche Bewertung ersetzt es nicht."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo FotoDiritti?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "FotoDiritti verifica se posso usare un’immagine?",
+     "a": "No. Inserisci ciò che sai su fonte e diritto d’uso. Il programma mostra le lacune, ma non sostituisce una valutazione legale."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Bilder und Rechte eintragen",
+    "Lücken klären und Bildnachweise übernehmen"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci immagini e diritti",
+    "Chiarisci le lacune e copi i crediti"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "FotoDiritti · esempio.it",
+   "titel": {
+    "de": "Bilder – esempio.it",
+    "it": "Immagini – esempio.it"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "terrazza.jpg",
+      "it": "terrazza.jpg"
+     },
+     "neben": {
+      "de": "Startseite",
+      "it": "Home"
+     },
+     "chip": {
+      "de": "vollständig",
+      "it": "completo"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "team-2026.jpg",
+      "it": "team-2026.jpg"
+     },
+     "neben": {
+      "de": "Über uns",
+      "it": "Chi siamo"
+     },
+     "chip": {
+      "de": "Einwilligung fehlt",
+      "it": "Manca consenso"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "limoni.jpg",
+      "it": "limoni.jpg"
+     },
+     "neben": {
+      "de": "Bilddatenbank",
+      "it": "Banca immagini"
+     },
+     "chip": {
+      "de": "läuft bald ab",
+      "it": "in scadenza"
+     },
+     "ton": "gold"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "12 Bilder erfasst",
+     "it": "12 immagini registrate"
+    },
+    "punkte": [
+     {
+      "de": "2 Punkte zu klären",
+      "it": "2 punti da chiarire"
+     },
+     {
+      "de": "Bildnachweise bereit",
+      "it": "Crediti pronti"
+     }
+    ]
+   }
+  },
+  "number": 71,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – mit bebilderter Kurzanleitung, für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel. Ordnungswerkzeug – ersetzt keine rechtliche Prüfung von Lizenzen oder Einwilligungen.",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. File di installazione per Windows: doppio clic, scegli la lingua, fatto – con guida illustrata, per Mac come ZIP. Italiano e tedesco, con esempio compilato. Strumento di ordine – non sostituisce una verifica legale di licenze o consensi."
+  },
+  "erstellt": "2026-11-26T20:44:38.943Z",
+  "fertigAm": "2026-11-26"
  }
 ]
