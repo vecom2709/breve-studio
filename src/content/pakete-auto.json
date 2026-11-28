@@ -12297,5 +12297,626 @@
   },
   "erstellt": "2026-11-28T13:12:54.091Z",
   "fertigAm": "2026-11-28"
+ },
+ {
+  "slug": "squadragara",
+  "brand": "SquadraGara",
+  "produktart": {
+   "de": "Team-Abgleich für Ausschreibungen",
+   "it": "Verifica del gruppo di lavoro per gare"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von SquadraGara: geforderte Rollen einer Ausschreibung mit zugeordneten Personen und Lücken",
+   "it": "Anteprima di SquadraGara: ruoli richiesti da una gara con persone assegnate e lacune"
+  },
+  "tagline": {
+   "de": "Prüfen, ob Ihr Team zu den Anforderungen passt.",
+   "it": "Verificare se il tuo gruppo soddisfa i requisiti."
+  },
+  "benefit": {
+   "de": "Sie tragen Mitarbeitende mit Qualifikation, Erfahrung und Nachweisen ein und die geforderten Rollen der Ausschreibung; SquadraGara zeigt je Rolle, was erfüllt ist und wo Jahre, Nachweise oder Personen fehlen.",
+   "it": "Inserisci il personale con qualifiche, esperienza e attestati e i ruoli richiesti dalla gara; SquadraGara mostra per ogni ruolo cosa è soddisfatto e dove mancano anni, attestati o persone."
+  },
+  "headline": {
+   "de": "Geforderte Rollen und Ihr Team übersichtlich gegenübergestellt.",
+   "it": "Ruoli richiesti e il tuo gruppo di lavoro messi a confronto."
+  },
+  "intro": {
+   "de": "SquadraGara ist ein Programm für Ihren Computer. Sie erfassen Ihr Team einmal und legen für jede Ausschreibung die geforderten Rollen mit Mindesterfahrung und Nachweisen an. Das Programm gleicht beides ab und erstellt eine druckbare Übersicht der Arbeitsgruppe.",
+   "it": "SquadraGara è un programma per il tuo computer. Registri una volta il tuo personale e per ogni gara inserisci i ruoli richiesti con esperienza minima e attestati. Il programma confronta i dati e crea un prospetto stampabile del gruppo di lavoro."
+  },
+  "audience": {
+   "de": "Kleine Unternehmen, Planungsbüros, Genossenschaften und Freiberufler, die sich an öffentlichen oder privaten Ausschreibungen beteiligen.",
+   "it": "Piccole imprese, studi tecnici, cooperative e professionisti che partecipano a gare pubbliche o private."
+  },
+  "job": {
+   "de": "Vor der Abgabe sehen, ob das vorgesehene Team die geforderten Rollen abdeckt.",
+   "it": "Vedere prima della consegna se il gruppo previsto copre i ruoli richiesti."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, Personendaten bleiben auf Ihrem Gerät. Maßgeblich sind immer die Ausschreibungsunterlagen; SquadraGara ist ein Ordnungswerkzeug und ersetzt keine Prüfung.",
+   "it": "Funziona senza internet e senza account, i dati del personale restano sul tuo dispositivo. Fanno sempre fede i documenti di gara; SquadraGara è uno strumento di ordine e non sostituisce una verifica."
+  },
+  "features": {
+   "de": [
+    "Team mit Funktion, Qualifikation, Erfahrungsjahren, Nachweisen und Verfügbarkeit",
+    "Geforderte Rollen mit Anzahl, Mindestjahren und Nachweis (Stichwort)",
+    "Abgleich je Rolle: erfüllt oder Lücke mit Grund",
+    "Hinweis, wenn Nachweise vor dem Abgabetermin ablaufen",
+    "Übersicht der Arbeitsgruppe drucken, Export CSV"
+   ],
+   "it": [
+    "Personale con funzione, qualifica, anni di esperienza, attestati e disponibilità",
+    "Ruoli richiesti con numero, anni minimi e attestato (parola chiave)",
+    "Confronto per ruolo: soddisfatto o lacuna con motivo",
+    "Avviso se gli attestati scadono prima della consegna",
+    "Stampa del prospetto del gruppo di lavoro, esportazione CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich SquadraGara?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Prüft SquadraGara die Ausschreibung für mich?",
+     "a": "Nein. Sie übertragen die Anforderungen aus den Unterlagen selbst. Das Programm vergleicht sie mit Ihren Angaben und zeigt Lücken; die Prüfung der Unterlagen bleibt bei Ihnen."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo SquadraGara?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "SquadraGara verifica la gara al posto mio?",
+     "a": "No. I requisiti li riporti tu dai documenti. Il programma li confronta con i tuoi dati e mostra le lacune; la verifica dei documenti resta a te."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Team und geforderte Rollen eintragen",
+    "Lücken klären und Übersicht drucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci personale e ruoli richiesti",
+    "Chiarisci le lacune e stampi il prospetto"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "SquadraGara · esempio",
+   "titel": {
+    "de": "Arbeitsgruppe – Gara Esempio",
+    "it": "Gruppo di lavoro – Gara Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Projektleitung",
+      "it": "Direttore tecnico"
+     },
+     "neben": {
+      "de": "Ing. Esempio · 12 Jahre",
+      "it": "Ing. Esempio · 12 anni"
+     },
+     "chip": {
+      "de": "erfüllt",
+      "it": "soddisfatto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Sicherheitskoordination",
+      "it": "Coordinatore sicurezza"
+     },
+     "neben": {
+      "de": "Nachweis läuft ab",
+      "it": "attestato in scadenza"
+     },
+     "chip": {
+      "de": "Lücke",
+      "it": "lacuna"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Vorarbeiter (2)",
+      "it": "Capisquadra (2)"
+     },
+     "neben": {
+      "de": "1 von 2 zugeordnet",
+      "it": "1 su 2 assegnati"
+     },
+     "chip": {
+      "de": "Lücke",
+      "it": "lacuna"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Bauleitung",
+      "it": "Direttore di cantiere"
+     },
+     "neben": {
+      "de": "8 Jahre, gefordert 5",
+      "it": "8 anni, richiesti 5"
+     },
+     "chip": {
+      "de": "erfüllt",
+      "it": "soddisfatto"
+     },
+     "ton": "gruen"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "4 Rollen geprüft",
+     "it": "4 ruoli verificati"
+    },
+    "punkte": [
+     {
+      "de": "2 Lücken",
+      "it": "2 lacune"
+     },
+     {
+      "de": "Übersicht druckbereit",
+      "it": "Prospetto pronto"
+     }
+    ]
+   }
+  },
+  "number": 75,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung: Setup-Datei für Windows – Doppelklick, Sprache wählen, fertig, mit bebilderter Kurzanleitung; für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel. Die Setup-Datei ist nicht signiert; Windows fragt beim ersten Start ggf. nach („Weitere Informationen → Trotzdem ausführen“).",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna: file di installazione per Windows – doppio clic, scegli la lingua, fatto, con guida illustrata; per Mac come ZIP. Italiano e tedesco, con esempio compilato. Il file di installazione non è firmato; al primo avvio Windows può chiedere conferma („Ulteriori informazioni → Esegui comunque“)."
+  },
+  "erstellt": "2026-11-28T13:29:57.937Z",
+  "fertigAm": "2026-11-28"
+ },
+ {
+  "slug": "reclamichiari",
+  "brand": "ReclamiChiari",
+  "produktart": {
+   "de": "Reklamationsbuch mit Auswertung",
+   "it": "Registro reclami con analisi"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von ReclamiChiari: Reklamationen mit Ursache, Antwortfrist und Status",
+   "it": "Anteprima di ReclamiChiari: reclami con causa, termine di risposta e stato"
+  },
+  "tagline": {
+   "de": "Reklamationen festhalten, beantworten und daraus lernen.",
+   "it": "Annotare i reclami, rispondere e imparare."
+  },
+  "benefit": {
+   "de": "Sie erfassen jede Reklamation mit Kanal, Ursache und Zuständigkeit; ReclamiChiari zeigt offene und überfällige Fälle, die Bearbeitungsdauer und welche Ursachen sich wiederholen.",
+   "it": "Registri ogni reclamo con canale, causa e responsabile; ReclamiChiari mostra i casi aperti e in ritardo, i tempi di gestione e quali cause si ripetono."
+  },
+  "headline": {
+   "de": "Alle Reklamationen mit Antwort, Lösung und Ursache an einem Ort.",
+   "it": "Tutti i reclami con risposta, soluzione e causa in un unico posto."
+  },
+  "intro": {
+   "de": "ReclamiChiari ist ein Programm für Ihren Computer. Zu jeder Reklamation halten Sie Eingang, Kanal, Leistung, Ursache, Zuständigkeit, Antwort, Lösung und Maßnahme fest – mit selbst gewählter Antwortfrist und einer Übersicht nach Ursachen.",
+   "it": "ReclamiChiari è un programma per il tuo computer. Per ogni reclamo annoti arrivo, canale, prodotto o servizio, causa, responsabile, risposta, soluzione e misura – con un termine di risposta a tua scelta e un riepilogo per cause."
+  },
+  "audience": {
+   "de": "Läden, Handwerk, Gastronomie, Unterkünfte und Dienstleister, die Kundenbeschwerden geordnet bearbeiten möchten.",
+   "it": "Negozi, artigiani, ristorazione, strutture ricettive e servizi che vogliono gestire i reclami in modo ordinato."
+  },
+  "job": {
+   "de": "Keine Reklamation vergessen, fristgerecht antworten und wiederkehrende Ursachen erkennen.",
+   "it": "Non dimenticare nessun reclamo, rispondere in tempo e riconoscere le cause ricorrenti."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Kürzel statt voller Namen genügen; die Daten bleiben auf Ihrem Gerät. Die Antwortfrist legen Sie selbst fest, das Programm gibt keine Rechtsauskunft.",
+   "it": "Funziona senza internet e senza account. Bastano iniziali invece dei nomi completi; i dati restano sul tuo dispositivo. Il termine di risposta lo scegli tu, il programma non dà consulenza legale."
+  },
+  "features": {
+   "de": [
+    "Reklamationen mit Kanal, Leistung, Ursache und Zuständigkeit",
+    "Eigene Antwortfrist mit Hinweis auf überfällige Fälle",
+    "Lösung und Maßnahme zur Vermeidung je Fall",
+    "Übersicht nach Ursachen, Ø Tage bis Antwort und bis Erledigung",
+    "Liste drucken, Export CSV"
+   ],
+   "it": [
+    "Reclami con canale, prodotto/servizio, causa e responsabile",
+    "Termine di risposta proprio con avviso dei casi in ritardo",
+    "Soluzione e misura preventiva per ogni caso",
+    "Riepilogo per cause, media giorni alla risposta e alla chiusura",
+    "Stampa dell’elenco, esportazione CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich ReclamiChiari?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Welche Antwortfrist gilt für mich?",
+     "a": "Das legt ReclamiChiari nicht fest. Sie tragen Ihre eigene Frist in Tagen ein, etwa aus Ihren Geschäftsbedingungen; das Programm erinnert nur daran."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo ReclamiChiari?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Quale termine di risposta vale per me?",
+     "a": "ReclamiChiari non lo stabilisce. Inserisci tu il tuo termine in giorni, ad esempio dalle tue condizioni; il programma lo ricorda soltanto."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Reklamationen eintragen",
+    "Antworten, Ursachen auswerten, drucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci i reclami",
+    "Rispondi, analizzi le cause, stampi"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "ReclamiChiari · esempio",
+   "titel": {
+    "de": "Reklamationen – Negozio Esempio",
+    "it": "Reclami – Negozio Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Lieferung verspätet",
+      "it": "Consegna in ritardo"
+     },
+     "neben": {
+      "de": "E-Mail · M. E.",
+      "it": "e-mail · M. E."
+     },
+     "chip": {
+      "de": "erledigt",
+      "it": "chiuso"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Rechnung falsch",
+      "it": "Fattura errata"
+     },
+     "neben": {
+      "de": "Telefon · seit 16 Tagen",
+      "it": "telefono · da 16 giorni"
+     },
+     "chip": {
+      "de": "überfällig",
+      "it": "in ritardo"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Ware beschädigt",
+      "it": "Merce danneggiata"
+     },
+     "neben": {
+      "de": "vor Ort · Ersatz",
+      "it": "in negozio · sostituzione"
+     },
+     "chip": {
+      "de": "offen",
+      "it": "aperto"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Häufigste Ursache",
+      "it": "Causa più frequente"
+     },
+     "neben": {
+      "de": "Lieferung / Termin",
+      "it": "consegna / tempi"
+     },
+     "chip": {
+      "de": "3 Fälle",
+      "it": "3 casi"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "9 Reklamationen",
+     "it": "9 reclami"
+    },
+    "punkte": [
+     {
+      "de": "1 überfällig",
+      "it": "1 in ritardo"
+     },
+     {
+      "de": "Ø 4 Tage bis Antwort",
+      "it": "media 4 giorni"
+     }
+    ]
+   }
+  },
+  "number": 76,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung: Setup-Datei für Windows – Doppelklick, Sprache wählen, fertig, mit bebilderter Kurzanleitung; für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel. Die Setup-Datei ist nicht signiert; Windows fragt beim ersten Start ggf. nach („Weitere Informationen → Trotzdem ausführen“).",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna: file di installazione per Windows – doppio clic, scegli la lingua, fatto, con guida illustrata; per Mac come ZIP. Italiano e tedesco, con esempio compilato. Il file di installazione non è firmato; al primo avvio Windows può chiedere conferma („Ulteriori informazioni → Esegui comunque“)."
+  },
+  "erstellt": "2026-11-28T13:29:57.937Z",
+  "fertigAm": "2026-11-28"
+ },
+ {
+  "slug": "frigochiaro",
+  "brand": "FrigoChiaro",
+  "produktart": {
+   "de": "Temperaturliste für Kühlgeräte",
+   "it": "Registro temperature dei frigoriferi"
+  },
+  "category": "immobilien-gastgewerbe",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von FrigoChiaro: Kühlgeräte mit Sollbereich, gemessenen Temperaturen und Abweichungen",
+   "it": "Anteprima di FrigoChiaro: frigoriferi con intervallo previsto, temperature misurate e scostamenti"
+  },
+  "tagline": {
+   "de": "Kühltemperaturen eintragen, Abweichungen sofort sehen.",
+   "it": "Annotare le temperature, vedere subito gli scostamenti."
+  },
+  "benefit": {
+   "de": "Sie legen Ihre Kühlgeräte mit selbst gewähltem Sollbereich an und tragen die Messungen ein; FrigoChiaro markiert Abweichungen ohne Maßnahme, fehlende Messtage und druckt das Monatsblatt.",
+   "it": "Inserisci i tuoi frigoriferi con l’intervallo che scegli tu e registri le misure; FrigoChiaro segnala scostamenti senza azione, giorni senza misura e stampa il foglio mensile."
+  },
+  "headline": {
+   "de": "Temperaturen aller Kühlgeräte als ordentliches Monatsblatt.",
+   "it": "Le temperature di tutti i frigoriferi in un foglio mensile ordinato."
+  },
+  "intro": {
+   "de": "FrigoChiaro ist ein Programm für Ihren Computer. Für Kühlschränke, Tiefkühler, Kühlräume und Vitrinen erfassen Sie Datum, Uhrzeit, Temperatur, Kürzel und bei Abweichung die Maßnahme – und erhalten je Monat eine Tabelle Tag für Tag.",
+   "it": "FrigoChiaro è un programma per il tuo computer. Per frigoriferi, congelatori, celle e vetrine registri data, ora, temperatura, sigla e, in caso di scostamento, l’azione correttiva – e ottieni per ogni mese una tabella giorno per giorno."
+  },
+  "audience": {
+   "de": "Bars, Restaurants, Bäckereien, Lebensmittelläden, B&B mit Frühstück und Vereine mit Küche.",
+   "it": "Bar, ristoranti, panifici, alimentari, B&B con colazione e associazioni con cucina."
+  },
+  "job": {
+   "de": "Kühltemperaturen regelmäßig und lückenlos aufschreiben und Abweichungen mit Maßnahme belegen.",
+   "it": "Annotare le temperature con regolarità e senza lacune e documentare gli scostamenti con l’azione presa."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Die Sollbereiche tragen Sie aus Ihrem Eigenkontrollplan ein; FrigoChiaro ist ein Ordnungswerkzeug und ersetzt kein HACCP-Konzept und keine Beratung.",
+   "it": "Funziona senza internet e senza account. Gli intervalli li inserisci dal tuo piano di autocontrollo; FrigoChiaro è uno strumento di ordine e non sostituisce il piano HACCP né una consulenza."
+  },
+  "features": {
+   "de": [
+    "Kühlgeräte mit eigenem Sollbereich, auch Minusgrade",
+    "Messungen mit Datum, Uhrzeit, Temperatur, Kürzel und Maßnahme",
+    "Abweichungen ohne Maßnahme deutlich hervorgehoben",
+    "Tage ohne Messung je Gerät (Ruhetag ausgenommen)",
+    "Monatsblatt Tag für Tag drucken, Export CSV"
+   ],
+   "it": [
+    "Apparecchi con intervallo proprio, anche sotto zero",
+    "Misure con data, ora, temperatura, sigla e azione",
+    "Scostamenti senza azione ben evidenziati",
+    "Giorni senza misura per apparecchio (chiusura esclusa)",
+    "Stampa del foglio mensile giorno per giorno, esportazione CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich FrigoChiaro?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Welche Temperaturen muss ich einhalten?",
+     "a": "Das gibt FrigoChiaro nicht vor. Sie tragen die Sollbereiche aus Ihrem Eigenkontrollplan oder nach Vorgabe Ihrer Fachleute ein; das Programm vergleicht nur damit."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo FrigoChiaro?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Quali temperature devo rispettare?",
+     "a": "FrigoChiaro non le stabilisce. Inserisci gli intervalli dal tuo piano di autocontrollo o secondo i tuoi consulenti; il programma confronta solo con quelli."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Geräte anlegen, Messungen eintragen",
+    "Abweichungen klären, Monatsblatt drucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci apparecchi e misure",
+    "Chiarisci gli scostamenti, stampi il foglio"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "FrigoChiaro · esempio",
+   "titel": {
+    "de": "Temperaturen März – Bar Esempio",
+    "it": "Temperature marzo – Bar Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Kühlschrank Theke",
+      "it": "Frigo banco"
+     },
+     "neben": {
+      "de": "3,5 °C · Soll 0–4",
+      "it": "3,5 °C · previsto 0–4"
+     },
+     "chip": {
+      "de": "im Bereich",
+      "it": "nei limiti"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Tiefkühler",
+      "it": "Congelatore"
+     },
+     "neben": {
+      "de": "−12 °C · Maßnahme fehlt",
+      "it": "−12 °C · manca l’azione"
+     },
+     "chip": {
+      "de": "Abweichung",
+      "it": "scostamento"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Vitrine Dolci",
+      "it": "Vetrina dolci"
+     },
+     "neben": {
+      "de": "7 °C · Tür geschlossen",
+      "it": "7 °C · porta chiusa"
+     },
+     "chip": {
+      "de": "mit Maßnahme",
+      "it": "con azione"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Kühlraum",
+      "it": "Cella"
+     },
+     "neben": {
+      "de": "2 Tage ohne Messung",
+      "it": "2 giorni senza misura"
+     },
+     "chip": {
+      "de": "prüfen",
+      "it": "verificare"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Monatsblatt März",
+     "it": "Foglio di marzo"
+    },
+    "punkte": [
+     {
+      "de": "4 Geräte",
+      "it": "4 apparecchi"
+     },
+     {
+      "de": "Bereit zum Drucken",
+      "it": "Pronto da stampare"
+     }
+    ]
+   }
+  },
+  "number": 77,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung: Setup-Datei für Windows – Doppelklick, Sprache wählen, fertig, mit bebilderter Kurzanleitung; für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel. Die Setup-Datei ist nicht signiert; Windows fragt beim ersten Start ggf. nach („Weitere Informationen → Trotzdem ausführen“).",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna: file di installazione per Windows – doppio clic, scegli la lingua, fatto, con guida illustrata; per Mac come ZIP. Italiano e tedesco, con esempio compilato. Il file di installazione non è firmato; al primo avvio Windows può chiedere conferma („Ulteriori informazioni → Esegui comunque“)."
+  },
+  "erstellt": "2026-11-28T13:29:57.937Z",
+  "fertigAm": "2026-11-28"
  }
 ]
