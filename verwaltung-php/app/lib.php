@@ -96,6 +96,16 @@ function sb_db(): PDO
     }
     $db->exec('CREATE TABLE IF NOT EXISTS laeufe (id INTEGER PRIMARY KEY AUTOINCREMENT, zeit TEXT NOT NULL, status TEXT NOT NULL,
         anzahl INTEGER NOT NULL DEFAULT 0, pakete TEXT, meldung TEXT)');
+    // Einmalige Umstellung (28.11.2026, von Uwe freigegeben): Bau-Lauf auf 07:40 Uhr – die geplante Aufgabe steht bereits darauf.
+    $einmal = $db->prepare('INSERT OR IGNORE INTO einstellungen (schluessel, wert) VALUES (?, ?)');
+    $einmal->execute(['umstellung_0740', date('c')]);
+    if ($einmal->rowCount() === 1) {
+        $setzen = $db->prepare('INSERT INTO einstellungen (schluessel, wert) VALUES (?, ?)
+            ON CONFLICT(schluessel) DO UPDATE SET wert = excluded.wert');
+        foreach (['auto_uhrzeit' => '07:40', 'auto_uhrzeit_laeuft' => '07:40', 'auto_wechsel' => '0', 'auto_geaendert' => date('c')] as $k => $v) {
+            $setzen->execute([$k, $v]);
+        }
+    }
     return $db;
 }
 
