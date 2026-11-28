@@ -11676,5 +11676,626 @@
   },
   "erstellt": "2026-11-26T20:44:38.943Z",
   "fertigAm": "2026-11-26"
+ },
+ {
+  "slug": "benivincolati",
+  "brand": "BeniVincolati",
+  "produktart": {
+   "de": "Register geförderter Anschaffungen",
+   "it": "Registro dei beni finanziati"
+  },
+  "category": "ausschreibungen-foerderung",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 29,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von BeniVincolati: geförderte Geräte mit Standort, Bindungsfrist und Kennzeichnung",
+   "it": "Anteprima di BeniVincolati: beni finanziati con ubicazione, vincolo e targhetta"
+  },
+  "tagline": {
+   "de": "Geförderte Anschaffungen und ihre Bindungsfrist im Blick.",
+   "it": "Beni finanziati e vincoli di destinazione sotto controllo."
+  },
+  "benefit": {
+   "de": "Sie erfassen jedes geförderte Gerät mit Rechnung, Standort und Bindungsfrist; BeniVincolati zeigt, bis wann es gebunden ist, wo Kennzeichnung oder Belege fehlen und ob ein Abgang vor Fristende eingetragen wurde.",
+   "it": "Registri ogni bene finanziato con fattura, ubicazione e vincolo; BeniVincolati mostra fino a quando è vincolato, dove mancano targhetta o documenti e se una dismissione è avvenuta prima della scadenza."
+  },
+  "headline": {
+   "de": "Alle geförderten Geräte, Belege und Bindungsfristen in einem Register.",
+   "it": "Tutti i beni finanziati, i documenti e i vincoli in un unico registro."
+  },
+  "intro": {
+   "de": "BeniVincolati ist ein Programm für Ihren Computer. Zu jeder geförderten Anschaffung halten Sie Förderprogramm, Rechnung, Betrag, Seriennummer, Standort, Bindungsfrist, Kennzeichnung und Zustand fest – und sehen auf einen Blick, was bis wann am Ort bleiben muss.",
+   "it": "BeniVincolati è un programma per il tuo computer. Per ogni acquisto finanziato annoti bando, fattura, importo, numero di serie, ubicazione, durata del vincolo, targhetta e stato – e vedi subito cosa deve restare dove e fino a quando."
+  },
+  "audience": {
+   "de": "Kleine Betriebe, Vereine und Freiberufler, die Geräte, Maschinen oder Einrichtung mit Fördermitteln angeschafft haben.",
+   "it": "Piccole imprese, associazioni e professionisti che hanno acquistato attrezzature, macchinari o arredi con contributi pubblici."
+  },
+  "job": {
+   "de": "Geförderte Güter mit Belegen und Bindungsfristen ordentlich verwalten, auch Jahre nach der Abrechnung.",
+   "it": "Gestire in ordine i beni finanziati con documenti e vincoli, anche anni dopo la rendicontazione."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. Die Bindungsfrist tragen Sie selbst aus Ihrem Bescheid ein; BeniVincolati ist ein Ordnungswerkzeug und ersetzt keine Beratung zu Förderbedingungen.",
+   "it": "Funziona senza internet e senza account. La durata del vincolo la inserisci tu dal tuo decreto; BeniVincolati è uno strumento di ordine e non sostituisce una consulenza sulle regole del bando."
+  },
+  "features": {
+   "de": [
+    "Güter mit Förderprogramm, Rechnung, Betrag, Serien-/Inventarnummer und Standort",
+    "Bindungsende automatisch aus Beginn der Bindung und Jahren (aus Ihrem Bescheid)",
+    "„Zu klären“: Standort, Kennzeichnung oder Belege fehlen, Abgang vor Fristende",
+    "Summen je Förderprogramm, Vorwarnung vor Fristende (einstellbare Tage)",
+    "Inventarliste drucken, Export CSV"
+   ],
+   "it": [
+    "Beni con bando, fattura, importo, numero di serie/inventario e ubicazione",
+    "Fine vincolo calcolata da inizio vincolo e anni (dal tuo decreto)",
+    "„Da chiarire“: ubicazione, targhetta o documenti mancanti, dismissione prima della scadenza",
+    "Totali per bando, preavviso prima della fine (giorni regolabili)",
+    "Stampa dell’inventario, esportazione CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich BeniVincolati?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Kennt BeniVincolati die Bindungsfrist meines Programms?",
+     "a": "Nein. Sie tragen die Frist aus Ihrem Bescheid oder den Programmregeln ein. Das Programm rechnet damit und zeigt Hinweise, eine Prüfung der Förderbedingungen ersetzt es nicht."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo BeniVincolati?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "BeniVincolati conosce la durata del vincolo del mio bando?",
+     "a": "No. Inserisci tu la durata dal decreto o dalle regole del bando. Il programma la usa per calcoli e avvisi, ma non sostituisce una verifica delle condizioni del bando."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Geförderte Güter mit Frist eintragen",
+    "Hinweise klären und Inventar drucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci i beni finanziati con il vincolo",
+    "Chiarisci gli avvisi e stampi l’inventario"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "BeniVincolati · esempio",
+   "titel": {
+    "de": "Geförderte Güter – Officina Esempio",
+    "it": "Beni finanziati – Officina Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Laser-Gravurmaschine",
+      "it": "Incisore laser"
+     },
+     "neben": {
+      "de": "gebunden bis 03.2029",
+      "it": "vincolo fino a 03/2029"
+     },
+     "chip": {
+      "de": "vollständig",
+      "it": "completo"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Notebook Büro",
+      "it": "Notebook ufficio"
+     },
+     "neben": {
+      "de": "Standort fehlt",
+      "it": "ubicazione mancante"
+     },
+     "chip": {
+      "de": "zu klären",
+      "it": "da chiarire"
+     },
+     "ton": "rot"
+    },
+    {
+     "text": {
+      "de": "Kühlvitrine",
+      "it": "Vetrina frigo"
+     },
+     "neben": {
+      "de": "Kennzeichnung fehlt",
+      "it": "manca la targhetta"
+     },
+     "chip": {
+      "de": "zu klären",
+      "it": "da chiarire"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Werkbank",
+      "it": "Banco da lavoro"
+     },
+     "neben": {
+      "de": "Frist abgelaufen",
+      "it": "vincolo concluso"
+     },
+     "chip": {
+      "de": "frei",
+      "it": "libero"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "8 Güter erfasst",
+     "it": "8 beni registrati"
+    },
+    "punkte": [
+     {
+      "de": "2 Punkte zu klären",
+      "it": "2 punti da chiarire"
+     },
+     {
+      "de": "Inventar druckbereit",
+      "it": "Inventario pronto"
+     }
+    ]
+   }
+  },
+  "number": 72,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung: Setup-Datei für Windows – Doppelklick, Sprache wählen, fertig, mit bebilderter Kurzanleitung; für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel. Die Setup-Datei ist nicht signiert; Windows fragt beim ersten Start ggf. nach („Weitere Informationen → Trotzdem ausführen“).",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna: file di installazione per Windows – doppio clic, scegli la lingua, fatto, con guida illustrata; per Mac come ZIP. Italiano e tedesco, con esempio compilato. Il file di installazione non è firmato; al primo avvio Windows può chiedere conferma („Ulteriori informazioni → Esegui comunque“)."
+  },
+  "erstellt": "2026-11-28T13:12:54.090Z",
+  "fertigAm": "2026-11-28"
+ },
+ {
+  "slug": "chilometrichiari",
+  "brand": "ChilometriChiari",
+  "produktart": {
+   "de": "Fahrtenliste für Dienstfahrten",
+   "it": "Registro dei viaggi di lavoro"
+  },
+  "category": "wissen-vorlagen",
+  "kind": "product",
+  "shopCategory": "web-business",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von ChilometriChiari: Dienstfahrten mit Ziel, Zweck, Kilometern und Monatssumme",
+   "it": "Anteprima di ChilometriChiari: viaggi di lavoro con meta, motivo, chilometri e totale mensile"
+  },
+  "tagline": {
+   "de": "Dienstfahrten erfassen, Kilometer je Kunde zusammenzählen.",
+   "it": "Registrare i viaggi di lavoro e sommare i km per cliente."
+  },
+  "benefit": {
+   "de": "Sie tragen jede Dienstfahrt mit Ziel, Zweck und Kilometerstand ein; ChilometriChiari rechnet die Strecken, summiert je Monat und Kunde, meldet Lücken im Kilometerstand und rechnet mit Ihrem eigenen Satz.",
+   "it": "Inserisci ogni viaggio di lavoro con meta, motivo e contachilometri; ChilometriChiari calcola i km, somma per mese e cliente, segnala salti nel contachilometri e calcola con la tua tariffa."
+  },
+  "headline": {
+   "de": "Fahrten, Kilometer und Kosten je Kunde ordentlich festgehalten.",
+   "it": "Viaggi, chilometri e costi per cliente annotati in ordine."
+  },
+  "intro": {
+   "de": "ChilometriChiari ist ein Programm für Ihren Computer. Für ein oder mehrere Fahrzeuge erfassen Sie Datum, Start, Ziel, Zweck, Kunde oder Projekt und Kilometerstand – und erhalten Monatsübersicht, Summen je Kunde und eine druckbare Fahrtenliste.",
+   "it": "ChilometriChiari è un programma per il tuo computer. Per uno o più veicoli registri data, partenza, meta, motivo, cliente o progetto e contachilometri – e ottieni riepilogo mensile, totali per cliente e un registro stampabile."
+  },
+  "audience": {
+   "de": "Handwerker, Außendienst, Freiberufler, Vereine und kleine Betriebe, die regelmäßig zu Kunden oder Baustellen fahren.",
+   "it": "Artigiani, agenti, professionisti, associazioni e piccole imprese che si spostano spesso da clienti o cantieri."
+  },
+  "job": {
+   "de": "Dienstfahrten lückenlos festhalten und Kilometer je Kunde oder Projekt weiterberechnen können.",
+   "it": "Annotare i viaggi di lavoro senza lacune e poter riaddebitare i km per cliente o progetto."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto. ChilometriChiari ist ein Ordnungswerkzeug; ob eine Fahrtenliste steuerlich anerkannt wird, klären Sie bitte mit Ihrer Steuerberatung.",
+   "it": "Funziona senza internet e senza account. ChilometriChiari è uno strumento di ordine; se il registro è valido ai fini fiscali va chiarito con il tuo commercialista."
+  },
+  "features": {
+   "de": [
+    "Fahrten mit Datum, Start, Ziel, Zweck, Kunde/Projekt und Kilometerstand",
+    "Mehrere Fahrzeuge mit Kennzeichen, Fahrer/in je Fahrt, Art (dienstlich, Wohnung–Betrieb, privat)",
+    "Hinweis bei Lücken oder Rücksprüngen im Kilometerstand",
+    "Summen je Kunde/Projekt mit eigenem Kilometersatz, je Fahrzeug und je Monat",
+    "Fahrtenliste je Monat drucken, Export CSV"
+   ],
+   "it": [
+    "Viaggi con data, partenza, meta, motivo, cliente/progetto e contachilometri",
+    "Più veicoli con targa, conducente per viaggio, tipo (lavoro, casa–lavoro, privato)",
+    "Avviso per salti o valori all’indietro nel contachilometri",
+    "Totali per cliente/progetto con la tua tariffa al km, per veicolo e per mese",
+    "Stampa del registro mensile, esportazione CSV"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich ChilometriChiari?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Ist das ein steuerlich anerkanntes Fahrtenbuch?",
+     "a": "Das sagen wir nicht zu. ChilometriChiari hilft beim Erfassen und Auswerten. Welche Form das Finanzamt verlangt, klären Sie bitte mit Ihrer Steuerberatung."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo ChilometriChiari?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "È un registro valido ai fini fiscali?",
+     "a": "Non lo garantiamo. ChilometriChiari aiuta a registrare e analizzare i viaggi. Quale forma serve davvero va chiarito con il tuo commercialista."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Fahrzeuge und Fahrten eintragen",
+    "Monat auswerten und Liste drucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci veicoli e viaggi",
+    "Analizzi il mese e stampi il registro"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "ChilometriChiari · esempio",
+   "titel": {
+    "de": "Fahrten März – Impianti Esempio",
+    "it": "Viaggi marzo – Impianti Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Aragona → Agrigento",
+      "it": "Aragona → Agrigento"
+     },
+     "neben": {
+      "de": "Kundentermin · 32 km",
+      "it": "cliente · 32 km"
+     },
+     "chip": {
+      "de": "Bar Esempio",
+      "it": "Bar Esempio"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Agrigento → Favara",
+      "it": "Agrigento → Favara"
+     },
+     "neben": {
+      "de": "Baustelle · 14 km",
+      "it": "cantiere · 14 km"
+     },
+     "chip": {
+      "de": "Villa Esempio",
+      "it": "Villa Esempio"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Kilometerstand",
+      "it": "Contachilometri"
+     },
+     "neben": {
+      "de": "Lücke von 18 km",
+      "it": "salto di 18 km"
+     },
+     "chip": {
+      "de": "prüfen",
+      "it": "verificare"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Summe März",
+      "it": "Totale marzo"
+     },
+     "neben": {
+      "de": "412 km",
+      "it": "412 km"
+     },
+     "chip": {
+      "de": "eigener Satz",
+      "it": "tua tariffa"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "Fahrtenliste März",
+     "it": "Registro marzo"
+    },
+    "punkte": [
+     {
+      "de": "Summen je Kunde",
+      "it": "Totali per cliente"
+     },
+     {
+      "de": "Bereit zum Drucken",
+      "it": "Pronto da stampare"
+     }
+    ]
+   }
+  },
+  "number": 73,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung: Setup-Datei für Windows – Doppelklick, Sprache wählen, fertig, mit bebilderter Kurzanleitung; für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel. Die Setup-Datei ist nicht signiert; Windows fragt beim ersten Start ggf. nach („Weitere Informationen → Trotzdem ausführen“).",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna: file di installazione per Windows – doppio clic, scegli la lingua, fatto, con guida illustrata; per Mac come ZIP. Italiano e tedesco, con esempio compilato. Il file di installazione non è firmato; al primo avvio Windows può chiedere conferma („Ulteriori informazioni → Esegui comunque“)."
+  },
+  "erstellt": "2026-11-28T13:12:54.091Z",
+  "fertigAm": "2026-11-28"
+ },
+ {
+  "slug": "invitorecensione",
+  "brand": "InvitoRecensione",
+  "produktart": {
+   "de": "Bewertungs-Einladung mit QR-Code",
+   "it": "Invito alle recensioni con QR code"
+  },
+  "category": "website-sichtbarkeit",
+  "kind": "product",
+  "shopCategory": "marketing",
+  "prices": [
+   {
+    "amount": 19,
+    "interval": "once",
+    "unit": {
+     "de": "je Betrieb",
+     "it": "per attività"
+    },
+    "vat": "tbd"
+   }
+  ],
+  "imageAlt": {
+   "de": "Vorschau von InvitoRecensione: Tischaufsteller und Karten mit QR-Code zur Bewertungsseite",
+   "it": "Anteprima di InvitoRecensione: segnatavolo e biglietti con QR code verso la pagina recensioni"
+  },
+  "tagline": {
+   "de": "Kunden freundlich um eine Bewertung bitten – mit QR-Code.",
+   "it": "Chiedere una recensione ai clienti con garbo – con QR code."
+  },
+  "benefit": {
+   "de": "Sie tragen den Link zu Ihrer Bewertungsseite ein; InvitoRecensione erzeugt ohne Internet QR-Codes, druckfertige Aufsteller, Karten und Aushänge in DE, IT und EN sowie Nachrichtentexte zum Kopieren.",
+   "it": "Inserisci il link alla tua pagina recensioni; InvitoRecensione crea senza internet QR code, segnatavolo, biglietti e cartelli pronti da stampare in IT, DE e EN e testi di messaggio da copiare."
+  },
+  "headline": {
+   "de": "Druckfertige Bewertungs-Einladungen mit QR-Code für Theke, Tisch und Rechnung.",
+   "it": "Inviti alle recensioni con QR code pronti da stampare per banco, tavolo e conto."
+  },
+  "intro": {
+   "de": "InvitoRecensione ist ein Programm für Ihren Computer. Sie geben Betrieb, Bewertungslink und auf Wunsch einen eigenen Satz ein, wählen Format und Sprachen – das Programm erzeugt den QR-Code selbst und legt Tischaufsteller zum Falten, Karten im Visitenkartenformat und einen Aushang zum Drucken an.",
+   "it": "InvitoRecensione è un programma per il tuo computer. Inserisci attività, link per le recensioni e, se vuoi, una frase tua, scegli formato e lingue – il programma genera da sé il QR code e prepara segnatavolo da piegare, biglietti formato biglietto da visita e un cartello da stampare."
+  },
+  "audience": {
+   "de": "Gastronomie, Unterkünfte, Läden, Handwerk und Praxen, die Kunden vor Ort um eine Bewertung bitten möchten.",
+   "it": "Ristorazione, strutture ricettive, negozi, artigiani e studi che vogliono chiedere una recensione ai clienti sul posto."
+  },
+  "job": {
+   "de": "Zufriedene und alle anderen Kunden einfach und fair zur Bewertung einladen, ohne Link abzutippen.",
+   "it": "Invitare tutti i clienti a lasciare una recensione in modo semplice e corretto, senza digitare link."
+  },
+  "why": {
+   "de": "Läuft ohne Internet und ohne Konto, der QR-Code entsteht im Programm. Es lädt alle Kunden gleich ein, ohne Gegenleistung – so wie es die Regeln vieler Bewertungsportale verlangen.",
+   "it": "Funziona senza internet e senza account, il QR code nasce nel programma. Invita tutti i clienti allo stesso modo, senza contropartite – come chiedono le regole di molti portali di recensioni."
+  },
+  "features": {
+   "de": [
+    "QR-Code wird offline im Programm erzeugt (freie MIT-Bibliothek)",
+    "Druckbögen A4: Tischaufsteller zum Falten, 10 Karten 85 × 55 mm, Aushang",
+    "Texte in Deutsch, Italienisch und Englisch, eigener Satz je Sprache",
+    "Bis zu drei Bewertungslinks, je mit eigenem Code und Prüfhinweisen",
+    "Nachrichtentexte für E-Mail und Messenger zum Kopieren"
+   ],
+   "it": [
+    "QR code generato offline nel programma (libreria libera MIT)",
+    "Fogli A4: segnatavolo da piegare, 10 biglietti 85 × 55 mm, cartello",
+    "Testi in italiano, tedesco e inglese, frase propria per lingua",
+    "Fino a tre link per le recensioni, ognuno con il suo codice e controlli",
+    "Testi di messaggio per e-mail e messaggistica da copiare"
+   ]
+  },
+  "plannedOffer": {
+   "de": "Programm für Windows (Setup-Datei) und als ZIP für Mac, Deutsch und Italienisch, mit ausgefülltem Beispiel.",
+   "it": "Programma per Windows (file di installazione) e come ZIP per Mac, in italiano e tedesco, con esempio compilato."
+  },
+  "faq": {
+   "de": [
+    {
+     "q": "Wie bekomme ich InvitoRecensione?",
+     "a": "Sie erhalten eine Setup-Datei für Windows: Doppelklick, Sprache wählen, fertig – eine bebilderte Kurzanleitung liegt bei. Für Mac gibt es eine ZIP-Datei. Kein Konto, keine Internetverbindung nötig."
+    },
+    {
+     "q": "Bekomme ich dadurch mehr oder bessere Bewertungen?",
+     "a": "Das können wir nicht versprechen. InvitoRecensione macht die Bitte einfacher: Kunden scannen den Code statt den Link zu suchen. Ob und wie sie bewerten, entscheiden sie selbst."
+    }
+   ],
+   "it": [
+    {
+     "q": "Come ricevo InvitoRecensione?",
+     "a": "Ricevi un file di installazione per Windows: doppio clic, scegli la lingua, fatto – con una guida illustrata. Per Mac c’è un file ZIP. Nessun account, nessuna connessione internet necessaria."
+    },
+    {
+     "q": "Avrò più recensioni o recensioni migliori?",
+     "a": "Non possiamo prometterlo. InvitoRecensione rende la richiesta più semplice: i clienti scansionano il codice invece di cercare il link. Se e come recensire lo decidono loro."
+    }
+   ]
+  },
+  "market": {
+   "de": "Italien und deutschsprachiger Raum",
+   "it": "Italia e Paesi di lingua tedesca"
+  },
+  "ablauf": {
+   "de": [
+    "Programm installieren",
+    "Bewertungslink und Text eintragen",
+    "Format wählen und drucken"
+   ],
+   "it": [
+    "Installi il programma",
+    "Inserisci link e testo",
+    "Scegli il formato e stampi"
+   ]
+  },
+  "vorschau": {
+   "art": "fenster",
+   "adresse": "InvitoRecensione · esempio",
+   "titel": {
+    "de": "Einladung – Pasticceria Esempio",
+    "it": "Invito – Pasticceria Esempio"
+   },
+   "zeilen": [
+    {
+     "text": {
+      "de": "Tischaufsteller zum Falten",
+      "it": "Segnatavolo da piegare"
+     },
+     "neben": {
+      "de": "DE · IT · EN",
+      "it": "IT · DE · EN"
+     },
+     "chip": {
+      "de": "druckfertig",
+      "it": "pronto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "10 Karten 85 × 55 mm",
+      "it": "10 biglietti 85 × 55 mm"
+     },
+     "neben": {
+      "de": "für Theke und Rechnung",
+      "it": "per banco e conto"
+     },
+     "chip": {
+      "de": "druckfertig",
+      "it": "pronto"
+     },
+     "ton": "gruen"
+    },
+    {
+     "text": {
+      "de": "Link 2",
+      "it": "Link 2"
+     },
+     "neben": {
+      "de": "Adresse prüfen",
+      "it": "verifica indirizzo"
+     },
+     "chip": {
+      "de": "ohne https",
+      "it": "senza https"
+     },
+     "ton": "gold"
+    },
+    {
+     "text": {
+      "de": "Nachricht für Messenger",
+      "it": "Messaggio per messaggistica"
+     },
+     "neben": {
+      "de": "zum Kopieren",
+      "it": "da copiare"
+     },
+     "chip": {
+      "de": "bereit",
+      "it": "pronto"
+     },
+     "ton": "grau"
+    }
+   ],
+   "seite": {
+    "titel": {
+     "de": "QR-Code bereit",
+     "it": "QR code pronto"
+    },
+    "punkte": [
+     {
+      "de": "ohne Internet erzeugt",
+      "it": "generato senza internet"
+     },
+     {
+      "de": "3 Formate",
+      "it": "3 formati"
+     }
+    ]
+   }
+  },
+  "number": 74,
+  "status": "available",
+  "cta": "inquiry",
+  "notes": {
+   "de": "Fertig entwickelt; verkauft wird ab dem offiziellen Start. Lieferung: Setup-Datei für Windows – Doppelklick, Sprache wählen, fertig, mit bebilderter Kurzanleitung; für Mac als ZIP. Deutsch und Italienisch, mit ausgefülltem Beispiel. Die Setup-Datei ist nicht signiert; Windows fragt beim ersten Start ggf. nach („Weitere Informationen → Trotzdem ausführen“).",
+   "it": "Pronto; la vendita parte con l’avvio ufficiale. Consegna: file di installazione per Windows – doppio clic, scegli la lingua, fatto, con guida illustrata; per Mac come ZIP. Italiano e tedesco, con esempio compilato. Il file di installazione non è firmato; al primo avvio Windows può chiedere conferma („Ulteriori informazioni → Esegui comunque“)."
+  },
+  "erstellt": "2026-11-28T13:12:54.091Z",
+  "fertigAm": "2026-11-28"
  }
 ]
